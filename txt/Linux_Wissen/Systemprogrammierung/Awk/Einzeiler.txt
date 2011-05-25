@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T17:44:22+02:00
+
+====== Einzeiler ======
+Created Donnerstag 28 April 2011
+
+
+=== Anzeigen von Informationen zu einer Datei ===
+**awk 'END{print NR}' <Datei> **
+→  Anzahl der Zeilen einer <Datei>, **wc -l**
+ [[Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren]]
+
+**awk '{nw+=NF} END{print nw}' <Datei> **
+→  Gesamtzahl der Wörter / Felder von Datei, **wc -w**
+
+**awk '{ print FNR "\t" $0 }' <Datei1>,...**
+→ jede Datei einzeln durchnummerieren
+
+**awk '{ print NR "\t" $0 }' <Datei>,...**
+→ alle Eingabedateien als eine Datei druchnummerieren
+
+**awk '{ printf("%5d : %s\n", NR, $0) }' <Datei>**
+→ ein bisschen hübscher formatiert durchnummerieren
+
+=== Anzeigen ausgewählter Zeilen ===
+**awk 'NR == N' <Datei> **
+→  Ausgabe der N-ten Zeile von Datei, wie** head -N|tail-1**
+→ schnellere Laufzeit als die head tail Methode 
+[[Linux Wissen:Filterprogramme:head und tail]]
+
+**awk 'NF > 4' <Datei>** 
+→  Ausgabe aller Zeilen mit mehr als 4 Felder / Wörter
+
+**awk '/<Ausdruck>/ {++cnt} END {print cnt}' <Datei> **
+→  Anzahl der Zeilen von <Datei> die auf <Ausdruck> passt,** grep -c**
+[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep]]
+
+**awk 'NF > 0' <Datei> **
+→   Jede Zeile ausgeben, die mindestens 1 Feld / Wort enthält
+
+**awk 'length($0) > 80' <Datei> **
+→  gibt alle Zeilen aus, die mehr als 80 Zeichen haben
+
+**awk '{print NR, $0}' <Datei> **
+→  gibt jede Zeile von Datei mit Zeilennummer aus
+
+**awk '{$2=""; print}' <Datei>**
+→  Jede Zeile ausgeben und vorher das zweite Feld löschen
+
+**awk { if (data($0)++ == 0); print } <Data> **
+→  Ausgabe nur wenn die Eingabezeile zum ersten mal gesehen wurde, ein verbessertes **uniq**
+[[Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren]]
+
+**awk '{ field = $NF }; END { print field }' <Datei>**
+→ letztes Feld des letzten Records ausgeben
+
+
+=== zwischen Dos und Unix konvertieren ===
+**awk -v BINMODE="w" '1' <Datei>**
+→ konvertieren von DOS CRLF zu Linux LF
+
+
+=== Zeilen manipulieren ===
+**awk '{tmp=$1; $1=$2; $2=tmp; print}' <Datei> **
+→  vertauscht die ersten beiden Felder
+
+**awk 'NF { print $0 "\n" }' <Datei>**
+→ eine Leerzeile in <Datei> zwischen jede Zeile einfügen, so dass nur jeweils eine Leerzeile zwischen jeder Zeile steht
+
+**awk '1; { print "\n" }' <Datei>**
+→ drei Leerzeilen in <Datei> zwichen jeder Zeile einfügen
+
+**awk 'BEGIN{RS="\f"}; {weitere Befehle..}' <Datei1>**
+→ alle Zeilen als einen Record auffassen

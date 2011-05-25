@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T23:37:42+02:00
+
+====== Swap ======
+Created Donnerstag 21 April 2011
+
+**mkswap /dev/sdX **→ erstellt eine Swappartition
+**-c **→ nach defekten Blöcken suchen
+**-L <LABEL> **→ setzen eines Labels
+
+**swapon /dev/sdX <Datei> **→ Swappartition aktivieren|einhängen für /dev/sdX
+						    → statt einer Gerätedatei kann auch eine reguäre Datei verwendet werden
+						[[Linux Wissen:Partitionen und Dateisysteme:Script Swapspeicher erweitern]]
+**-a **→ alle in der */etc/fstab ( [[Linux Wissen:FHS:etc:fstab]]) eingetrgenden Swapgeräte aktivieren
+**-s **→ liefert den Status des aktuellen Dateisystems
+
+**swapoff /dev/sdX **→ Swappartition einhängen | aktivieren
+
+**free **→ zeigt die Auslastung des Arbeitsspeicher und des Swapspeicher
+**-m **→ in Megabytes
+**-k **→ in Kilobytes
+**-g **→ in Gigabytes abgerundet und daher sinnlos
+**-t **→ eine Zeile anzeigen welche eine Summe aus allen verfügbaren Speicherresourcen 
+
+ 

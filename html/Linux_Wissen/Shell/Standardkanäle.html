@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Shells_und_Subshells_beenden/screen.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Wildcards.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Standardkanäle</h1>
+
+<p>
+Created Montag 18 April 2011<br>
+</p>
+
+<h2>Diskriptoren</h2>
+<p>
+<strong>0 </strong>→ Standardeingabe (StdIn)<br>
+<strong>1 </strong>→ Standardausgabe (StdOut)<br>
+<strong>2 </strong>→ Standardfehler (StdtErr)<br>
+<strong>3,...</strong> → weiter Dateidiskriptoren<br>
+</p>
+
+<h2>Umleitungsoperatoren</h2>
+<p>
+<strong>&gt; </strong>→ Umlenkung von Standardausgabe<br>
+<strong>&gt;&gt; </strong>→ Umlenkung der Standardausgabe, dabei anhängen nicht überschreiben<br>
+<strong>2&gt; </strong>→ Umlenken von StdErr <br>
+<strong>&amp;&gt; </strong>→ Umlenken von StdtOut und StdErr <br>
+</p>
+
+<p>
+<strong>:&gt; &lt;Datei&gt; </strong>→ dasselbe wie <strong>cat /dev/null &gt; &lt;Datei&gt;</strong><br>
+<strong>&lt;Befehl&gt; &gt; &lt;Datei&gt; </strong>→ Ausgabe in Datei umlenken<br>
+<strong>&lt;Befehl&gt; 2&gt; &lt;Datei&gt; </strong>→ Fehlerausgabe in &lt;Datei&gt; umlenken<br>
+<strong>&lt;Befehl&gt; &amp;&gt; &lt;Datei&gt; </strong>→ Standardausgabe und Fehler in &lt;Datei&gt; umleiten<br>
+<strong>&lt;Befehl&gt; &gt; &lt;Datei&gt; 2&gt;&amp;1 </strong>→ -"                                                                 "-<br>
+<strong> &lt;Befehl&gt; &gt;&gt; &lt;Datei&gt; </strong>→ Ausgabe an &lt;Datei&gt; anhängen<br>
+<strong>&lt;Befehl&gt; &lt; &lt;Datei&gt; </strong>→ Programm liest eingabe aus &lt;Datei&gt;<br>
+<strong>&lt;Befehl&gt; 3&amp;1 1&gt; output 2&gt;&amp;3</strong> → Standardausgabe wird in die Datei output gelenkt und der Inhalt von Datei output in die Standardfehlerausgabe<br>
+</p>
+
+<h4>Achtung!:</h4>
+<p>
+&lt;Befehl&gt; 2&gt;&amp;1 &gt; &lt;Datei&gt; leitet <u>nicht</u> in die &lt;Datei&gt; um<br>
+</p>
+
+<p>
+*/dev/fd/N → Dateidiskriptor N<br>
+</p>
+
+<h2>Pipes</h2>
+<p>
+<strong>&lt;programm1&gt;|&lt;programm2&gt; </strong>→ &lt;programm2&gt; nimmt seine Eingabeargumente aus der Ausgabe  von<br>
+<div style='padding-left: 240pt'>
+&lt;programm1&gt;<br>
+</div>
+</p>
+
+<p>
+<strong>tee</strong><br>
+<strong>&lt;programme1&gt;</strong> |<strong>tee [-a] &lt;Datei&gt;|&lt;programm2&gt; </strong>→  &lt;programm1&gt; leitet seine Eingabeargumente in &lt;Datei&gt;<br>
+<div style='padding-left: 360pt'>
+ und nach &lt;programm2&gt; weiter<br>
+</div>
+<strong>-a </strong>→ an &lt;Datei&gt; anhängen<br>
+</p>
+ 
+<p>
+<strong>xargs </strong>→ Ausgabe eines Programms als Argumente Zeilenweise weiterleiten<br>
+<div style='padding-left: 30pt'>
+   → oft im zusammenhang mit find<br>
+</div>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>jede mit find gefundene Datei in ein Archiv packen</em><br>
+<em>find / -name "*.bak" |xargs tar xvfz backup.tar.gz</em><br>
+</p>
+
+<p>
+<u>Hinweis: beachte die Wirkung von set -o noclobber </u><a href="./Bash/Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash">Linux Wissen:Shell:Bash:Optionen für die Bash</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a></li>		<a href='../Dateien_verwalten/Dateien_betrachten.html'>Linux Wissen:Dateien verwalten:Dateien betrachten</a></li>		<a href='../Dateien_verwalten/Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

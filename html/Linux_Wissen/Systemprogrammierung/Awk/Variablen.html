@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Schleifen.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='../C.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Variablen</h1>
+
+<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>gültig sind abc, abc2, _abc_ _123_</li>
+<li>ungültig sind 1abc, &amp;abc; #abc, print, printf</li>
+<li><strong>awk</strong> unterscheidet zwischen Integer und String</li>
+<li>Mit $ wird wie in Bash auf den Wert der Variablen also deren Inhalt zugegriffen</li>
+<li>Eine Variable wird mit ihrem ersten erscheinen deklariert, muss nicht vorher bekannt gegeben werden</li>
+<li>Eine Variable wird mit ihrem ersten erscheinen deklariert, muss nicht vorher bekannt gegeben werdenn</li>
+</ul>
+</p>
+
+<p>
+<strong>Var=Wert </strong><br>
+→  Zuweisung<br>
+→  durch Zuweisung eines neuen Wertes an eine bestehende Variable, wird der alte Wer überschrieben<br>
+</p>
+
+<h5>awk kennt die üblichen Rechenoperationen + - * / % ^</h5>
+<p>
+<strong>var+= |wert var*= |wert var^=wert  </strong><br>
+→ inkrementiert<br>
+</p>
+
+<p>
+<strong>var-=wert | var/=wert | var%=wert  </strong><br>
+→ dekrementiert<br>
+</p>
+
+<p>
+<strong>var-- |var++ </strong><br>
+→  nach Durchführung einer Anweisung um 1 dekrementieren / inkrementieren<br>
+</p>
+
+<p>
+<strong>++var --var </strong><br>
+→  vor Durchführung einer Anweisung um 1 dekrementieren / inkrementieren<br>
+</p>
+
+<h4>Buildin Variablen</h4>
+<p>
+<ul>
+<li>haben bestimmte Verweuse auf Anweisungen oder Input Stream</li>
+</ul>
+</p>
+
+<p>
+<strong>$0</strong> <br>
+→  kompletter Inhalt einer eingelesenen Zeile, Wert wird verändert bei neuer Feld Zuweisung<br>
+</p>
+
+<p>
+<strong>$N</strong> <br>
+→  Inhalt der Spalte N in einer Zeile<br>
+</p>
+
+<p>
+<strong>NF</strong> →  <br>
+Anzahl der Felder pro Record<br>
+</p>
+
+<p>
+<strong>$NF </strong><br>
+→  Das letzte Feld eines Records<br>
+</p>
+
+<p>
+<strong>ARGC</strong><br>
+→  Anzahlder übergebenen Zeilen<br>
+</p>
+
+<p>
+<strong>ARGV</strong> <br>
+→  Array, enthält die übergebenen Argumente<br>
+<a href="./Array.html" title="Linux Wissen:Systemprogrammierung:Awk:Array">Linux Wissen:Systemprogrammierung:Awk:Array</a><br>
+</p>
+
+<p>
+<strong>CONVFMT</strong> <br>
+→  Formatierung von Zahlenwerten in Strings <br>
+<em>Bespiel:</em><br>
+<strong>CONVFMT="%.15g" </strong>gibt 15 Nachkommastellen<br>
+</p>
+
+<p>
+<strong>ENVIRON</strong> <br>
+→  Array, enthält die Shellvariablenumgebung<br>
+</p>
+
+<p>
+<strong>FILENAME</strong> <br>
+→  Inputdatei, beim Wechseln der Inputdatei wird eder Wert neu eingelesen<br>
+</p>
+
+<p>
+<strong>FNR </strong><br>
+→  Anzahl der bereits verarbeiteten Zeilen<br>
+</p>
+
+<p>
+<strong>FS</strong> (field Seperator) <br>
+→  der durch -F gesetzte Spaltentrenner, kann entweder ein Zeichen oder eine Regex sein<br>
+<em>Beispiel:</em><br>
+<strong>FS=", \t</strong>" →  Komma gefolg von einem Leerzeichen mit einem Tab wird als Spaltentrenner gesehen<br>
+<strong>FS=""</strong> →  Leerer Feldseperator, jeder Buchstabe wird als einzelner Record behandelt<br>
+</p>
+
+<p>
+<strong>IGNORECASE</strong> <br>
+→  Regel für das Behandeln von sensitiver Schreibung festlegen, falls Wert auf 1 gesetz wird Groß- und Kleinschreibung ignoriert<br>
+→  beeinflußt den Wert von FS nur wenn FS als Regex angegben wurde<br>
+</p>
+
+<p>
+<strong>NF</strong> (Number Fields) <br>
+→  Spalten pro Zeile, $NF evaluiert nach dem Inhalt der letzten Spalte,  Variable wird nach Zeile neu eingelesen<br>
+→  Wert wird nicht verändert bei neuer Feld Zuweisung <br>
+→  falls NF dekrementiert wird ändert sich der Wert von $0<br>
+</p>
+
+<p>
+<strong>OFMT </strong><br>
+→  Output Format<br>
+</p>
+
+<p>
+<strong>OFS</strong> <br>
+→  Separierung der Ausgabezeilen; Trenner für Output Stream<br>
+</p>
+
+<p>
+<strong>ORS</strong> <br>
+→  Separator für einzelne Zeilen (/n) Output Stream<br>
+</p>
+
+<p>
+<strong>RLENGTH</strong> <br>
+→  Länge die durch die Funktion math()  gefunden wurde<br>
+</p>
+
+<p>
+<strong>RS</strong> <br>
+→  Sperator der Eingabzeilen (/n) Eingabe, kann entweder ein Zeichen oder eine Regex sein<br>
+<em>Beispiele:</em><br>
+<strong>RS="\n\n+"</strong> →  matched ein Newline gefolgt von einer oder mehereren Zeilen<br>
+<strong>RSTART</strong> →  Anfangsposition des regulärer Azsdruck der Funktion math()<br>
+</p>
+
+<p>
+<strong>SUBSEP</strong> <br>
+→  Separierungszeichen der einzelenen Aray-Elemente<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./Anweisungen.html'>Linux Wissen:Systemprogrammierung:Awk:Anweisungen</a></li>		<a href='../Awk.html'>Linux Wissen:Systemprogrammierung:Awk</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

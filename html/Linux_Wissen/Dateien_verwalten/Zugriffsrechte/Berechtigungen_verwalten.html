@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./ACL.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Umask.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Berechtigungen verwalten</h1>
+
+<p>
+Created Dienstag 19 April 2011<br>
+</p>
+
+<p>
+<strong>chmod &lt;Berechtigungen&gt; &lt;Datei&gt; </strong> → &lt;Berechtigungen&gt; für &lt;Datei&gt; ändern<br>
+<div style='padding-left: 180pt'>
+                      → Berechtigungen für:<br>
+</div>
+<div style='padding-left: 330pt'>
+u → User<br>
+g → Gruppe<br>
+o → Other (Rest der Welt)<br>
+</div>
+<strong>-R </strong>→ rekursives Ändern<br>
+<strong>--reference=&lt;Name&gt; </strong>→ verwende die Rechte der Datei &lt;Name&gt; als Refernenz für die neuen Rechte <br>
+</p>
+
+<h4>Werte können explizit entweder Oktal oder durch Rechtebits vergeben werden</h4>
+<p>
+<em>Beispiele:</em><br>
+<strong>chmod 750 &lt;Datei&gt; </strong>oder <strong>chmod u=rwx g=rx o=--- &lt;Datei&gt;</strong><br>
+<strong>chmod u=rwx go=--- &lt;Dattei&gt;</strong><br>
+</p>
+
+<h4>Rechte können hinzugefügt oder entzogen werden</h4>
+<p>
+<em>Beispiele:</em><br>
+<strong>chmod +x &lt;Shellscript&gt; </strong>→ das Shellscript für alle ausführbar machen<br>
+<strong>chmod u+x &lt;Shellscript&gt; </strong>→ das Shellscript nur für den Nutzer ausführbar machen<br>
+<strong>chmod g-x &lt;Shellscript&gt; </strong>→ Das Recht zum Ausführen der Gruppe entziehen<br>
+</p>
+
+<p>
+<strong>chown &lt;Nutzer&gt;:&lt;Gruppe&gt; &lt;Datei&gt; </strong>→ gebe &lt;Datei&gt; die Zugehörigkeit von &lt;Nutzer&gt; und &lt;Gruppe&gt;<br>
+<strong>chown &lt;Nutzer&gt;: &lt;Datei&gt; </strong>→ gebe &lt;Datei&gt; die Zugehörigkeit von &lt;Nutzer&gt;<br>
+<strong>chown :&lt;Gruppe&gt; &lt;Datei&gt; </strong>→ gebe &lt;Datei&gt; die Zugehörigkeit von &lt;Gruppe&gt;<br>
+<strong>-R </strong>→ rekursiv<br>
+</p>
+
+<p>
+<strong>chgrp &lt;Gruppe&gt; &lt;Datei&gt; </strong>→ Gruppenzugehörigkeit als normaler Nutzer ändern<br>
+<div style='padding-left: 60pt'>
+                                  → Nutzer muss Mitglied der Gruppe sein<br>
+</div>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>		<a href='../Synchronisieren_von_Dateien.html'>Linux Wissen:Dateien verwalten:Synchronisieren von Dateien</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

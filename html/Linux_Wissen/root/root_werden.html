@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../root.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='../Shell.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>root werden</h1>
+
+<p>
+Created Freitag 15 April 2011<br>
+</p>
+
+<h4>!!Achtung!!:</h4>
+<p>
+Sollte ausschließlich zur Administration am System verwandt werden.<br>
+</p>
+
+<h4>!!Achtung!!:</h4>
+<p>
+ Die grafische Anmeldung sollte nicht erlaubt sein bzw. nicht genutzt werden.<br>
+</p>
+
+<p>
+<strong>su -</strong> → startet im Terminal eine Subshell als Nutzer root<br>
+        → dabei werden die Umgebungsvariblen für die Root-Shell neu einglesen (Parameter -)<br>
+</p>
+
+<h4>!!Vergewissern das su auf /bin/su gemappt ist.!!</h4>
+
+<p>
+<strong>sudo -s </strong>→ startet eine neue Shell über sudo <br>
+               → notwendig bei Distributionen wie Ubuntu, in der es keinen superuser gibt<br>
+</p>
+
+<p>
+<ul>
+<li>Nach der erfolgreicher Anmeldung ändert sich der Prompt von $ zu #</li>
+</ul>
+</p>
+
+<p>
+*/etc/securetty definiert Terminals an denen sich root anmelden darf<br>
+</p>
+
+<p>
+*/var/log/messages gibt über erfolgreiche und fehlgeschlagene Anmeldeversuche aufschluss:<br>
+<em>Besipiel</em><br>
+<em>Aug 28 22:31:48 Dickkopf su: (to root) l1zard on /dev/pts/3</em><br>
+<em>Aug 28 22:31:28 Dickkopf su: FAILED SU (to root) l1zard on /dev/pts/3 </em><br>
+</p>
+
+<p>
+<strong>sudo &lt;Befehl&gt; </strong>→ führt den Befehl als root aus ( <a href="../Sicherheit/sudo.html" title="Linux Wissen:Sicherheit:sudo">Linux Wissen:Sicherheit:sudo</a>) <br>
+<strong>-u &lt;User&gt; </strong>→ führt den Befehl als &lt;User&gt; aus sofern dieser laut */etc/sudoers die Berechtigung dazu hat<br>
+</p>
+
+<p>
+<u>Tipp: alias getroot='su -'</u><br>
+</p>
+
+ 
+
+
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

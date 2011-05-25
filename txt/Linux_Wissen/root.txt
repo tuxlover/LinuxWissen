@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T00:35:03+02:00
+
+====== root ======
+Created Freitag 15 April 2011
+
+* Der Super User des Systems.
+* hat die höchste Berechtigung im User Space
+* GID = 0
+* UID = 0
+
+

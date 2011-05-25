@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Dienste/chkconfig.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Herunterfahren_und_Neustarten.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>GRUB</h1>
+
+<p>
+Created Samstag 23 April 2011<br>
+</p>
+
+<p>
+*/etc/grub/menu.lst<br>
+<a href="../FHS/boot/grub%2B%2Bmenu.lst.html" title="Linux Wissen:FHS:boot:grub++menu.lst">Linux Wissen:FHS:boot:grub++menu.lst</a><br>
+</p>
+
+<p>
+<strong>grub</strong> → ruft die Grubshell auf, in der grunb installiert oder repariert werden kann<br>
+<strong>--batch </strong>→ Grub durch eine Reihe von Optionen steuern<br>
+</p>
+
+<p>
+<strong>grub --batch --device-map=/boot/grub/device.map &lt; /etc/grub.conf</strong><br>
+→ Grub wiederherstellen falls dieser überschrieben wurde<br>
+</p>
+
+<p>
+<strong>grub-md5-crypt</strong> → Tool welches einen Hashwert kreiert der zum Passwortschutz der /etc/grub verwendet werden kann <br>
+</p>
+
+<h4>GrubShell</h4>
+<p>
+grub&gt; find /boot/vmlinuz<br>
+&gt;&gt; (hd0,0)<br>
+→ finden der Bezeichnung der Partition auf der sich ein gültiges Kernel Image befindet <strong>(missing link)</strong><br>
+</p>
+
+<p>
+grub&gt; kernel /boot/vmlinuz root=/dev/sdX<br>
+&gt;&gt; Linux-bzImage setup=0x1400 size=0x11d3e7<br>
+→ festlegen des Kernel Images<br>
+</p>
+
+<p>
+grub&gt; initrd /boot/initrd  <br>
+&gt;&gt; [Linux-initrd @ 0x5f71000,0x7e864 bytes]<br>
+→ festlegen einer gültigen initialen Ramdisk <strong>(missing link)</strong><br>
+</p>
+
+<p>
+grub&gt;boot <br>
+→ booten des Konfigurierten Kernels <br>
+→ Im Bootloader Menu verfügbar<br>
+</p>
+
+<p>
+grub&gt; root (hd0) --&gt; sagt grub wo es nach dem root Dateisystem / suchen soll<br>
+grub&gt;setup (hd0,0) --&gt; konfiguriert und installiert den neunen Kernel in den bootloader der ersten partition<br>
+→ grub neu installieren<br>
+</p>
+
+<h4>Fehlermeldungen</h4>
+<p>
+<em>Hard Disk Error         Fehler, möglicherweise is der MBR oder die Platte beschädigt</em><br>
+<em>Read Errror             die zweite Stufe konnte nicht gelesen werden</em><br>
+<em>Geom Error              Partitionierungsfehler, falsches Partition die auf / verweist, defekte Parttionstabelle</em><br>
+</p>
+
+<h5>Workflow Grub durch ein Passwort schützen:</h5>
+<p>
+<strong>(1) </strong>Aufrufen des Tools <strong>grub-md5-crypt</strong><br>
+</p>
+
+<p>
+<strong>(2) </strong>Nach zweimaliger Eingabe eines Passworts (welches man sich merken sollte!!) wird ein Hashwert ausgegeben<br>
+</p>
+
+<p>
+<strong>(3) </strong>In der /boot/grub/menu.lst wird unter der Zeile <em>timeoute </em>folgende Zeile angefügt und für Hashwert der ausgegebene Haswert eingetragen:<br>
+++<br>
+...<br>
+password --md5 &lt;Hashwert&gt;<br>
+...<br>
+++<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Benutzer_und_Gruppen.html'>Linux Wissen:Benutzer und Gruppen</a></li>		<a href='../Booten.html'>Linux Wissen:Booten</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

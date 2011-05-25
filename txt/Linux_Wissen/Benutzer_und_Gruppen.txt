@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T05:52:33+02:00
+
+====== Benutzer und Gruppen ======
+Created Dienstag 19 April 2011
+
+* Linux/Unix teilt Zugriffsrechte in User Groups und Others (Rest der Welt) ein
+* jeder Teilnehmen ist einer primären Gruppe und mehren sekundären Gruppe zugeordnet
+* Jede Datei hat entsprechend Rechte zugewiesen für User Groups und Others (Rest der Welt)
+
+===== Nachrichten an alle Benutzer senden =====
+**wall [<Datei>] **→ schickt eine Nachricht an alle Nutzer von StdIn
+                            → falls Datei verwendet wird wird Nachricht aus <Datei> gelesen 
+
+===== Informationen über Nutzer und Gruppen =====
+* **w**
+* **who**
+* **id**
+* **groups**
+[[Linux Wissen:Benutzer und Gruppen:Informationen über Nutzer und Gruppen]]
+
+===== Konfigurationsdateien =====
+[[Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien]]
+
+
+===== Benutzerkonten verwalten =====
+* **useradd**
+* **usermod**
+* **userdel**
+* **groupadd**
+* **groupmod**
+* **groupdel**
+[[Linux Wissen:Benutzer und Gruppen:Benutzerkonten verwalten]]
+
+===== Passwörter konfigurieren =====
+* **passwd**
+* **pwconv**
+* **pwunconv**
+* **pwck**
+[[Linux Wissen:Benutzer und Gruppen:Passwörter konfigurieren]]
+
+===== Root Passwort wiederherstellen =====
+**(1) **Sarten des Rechners mit init=/bin/sh
+**(2)  **mit ** passwd root **neues Passwort setzen
+**(3) **neu starten
+
+__Hinweis:__ Sie sollten den **grub **durch ein Passsowort schützen und mögicherweise die Platten verschlüssenln. **(missing link)**
+[[Linux Wissen:Booten:GRUB]]
+

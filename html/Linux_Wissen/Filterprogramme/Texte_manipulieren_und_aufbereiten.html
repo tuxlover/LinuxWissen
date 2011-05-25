@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Oktaler_und_Hexadezimaler_Dump.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./W%C3%B6rter_z%C3%A4hlen_und_W%C3%B6rter_sortieren.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Texte manipulieren und aufbereiten</h1>
+
+<p>
+Created Montag 18 April 2011<br>
+</p>
+
+<p>
+<strong>expand</strong> → Tabs in Leerzeichen konvertieren<br>
+</p>
+
+<p>
+<strong>unexpand </strong>→ Leerzeichen in Tabs konvertieren<br>
+<strong>-t N</strong> → N Leerzeichen bilden einen Tab, überstehende Leerzeichen werden nicht berücksichtigt<br>
+</p>
+
+<p>
+<strong>cut </strong>→ beschneide eine Datei Spaltenweise<br>
+<strong>-c S,M-N </strong>→ schneide die Spalte S aus und zusätzlich die Spalten M-N, beliebig oft widerholbar, jede Spalte entspricht ein Zeichen<br>
+<strong>-d &lt;Trenner&gt; </strong>→ lege &lt;Trenner&gt; als Delimter fest<br>
+<strong>-f </strong>→ Spaltenweises ausschneiden, Spalten werden duch den Delimiter begrenzt<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>cut -d: -f1,1 /etc/passwd</em><br>
+<em>cut -d' '-f3 meinedatei </em><br>
+</p>
+
+
+<p>
+<strong>tr &lt;s1&gt; &lt;s2&gt; </strong>→ tauschen aller Zeichen &lt;s1&gt; durch &lt;s2&gt; in einem Datenstrom<br>
+<strong>-d &lt;s1&gt; </strong>→ löschen anstelle von austauschen der Zeichen &lt;s1&gt; <br>
+<strong>-c </strong>→ ersetzen der Zeichen die nicht in &lt;s1&gt; durch &lt;s2&gt;<br>
+<strong>-s </strong>→ mehrere Zeichen &lt;s1&gt; durch ein einzelnes &lt;s2&gt; ersetzen<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+tr -s Ae Ä &lt; text1 &gt; text2<br>
+</p>
+
+<p>
+<u>Hinweis: Für komplexere manipulationen empfiehlt sich </u><strong>sed</strong><br>
+<a href="../Systemprogrammierung/Sed.html" title="Linux Wissen:Systemprogrammierung:Sed">Linux Wissen:Systemprogrammierung:Sed</a><br>
+</p>
+
+<p>
+<strong>fmt &lt;Datei&gt; </strong>→ ohne zusätzliche Option bewirkt einen Zeilenumbruch nach 75 Zeichen<br>
+<strong>-w N</strong> → Zeilenumbruch nach N Zeichen bewirken<br>
+</p>
+
+<p>
+<strong>pr &lt;Datei&gt; </strong>→ die &lt;Datei&gt; für den Drucker vorformatieren<br>
+<strong>-N </strong>→ ergibt eine Darstellung von N Zeichen<br>
+<strong>-h &lt;text&gt; </strong>→ auf jedem Seitenkopf steht &lt;text&gt;<br>
+<strong>-l N</strong> → N Zeilen pro Seite<br>
+<strong>-n </strong>→ vergibt jeder Zeile eine 5 Stellige Zeilennummer<br>
+<strong>-o N </strong>→ text um N Leerzeichen vom linken Rand einrücken<br>
+<strong>-d </strong>→ Nutzer doppelte Leerzeichen anstelle von einfachen<br>
+</p>
+
+<p>
+<strong>nl &lt;Datei&gt; </strong>→ Die Zeilen von Datei durchnumerieren<br>
+<strong>-b a|t|p &lt;Ausdruck&gt; </strong>→ nummeriert a(lle)  nur nichtleere (-t) oder nur die auf die der &lt;Ausdruck&gt; passt (-t)<br>
+<strong>-i N</strong> → inkrement um N pro Zeile<br>
+<strong>-n ln|rn|rz|lz </strong>→ formatiere die Zeilennummerierung linksbündig|rechtsbündig|rechtsbündig mit führenden Nullen|linksbündig mit führenden Nullen  <br>
+<strong>-p </strong>→ ignoriere Seitenzeilenzahl, wird bei logischen Seiten nicht auf den Anfangswert zurückgesetzt<br>
+<strong>-v N </strong>→ beginne Nummerierung bei N<br>
+</p>
+
+<p>
+<strong>rev &lt;Datei&gt; </strong><br>
+→ Kehre die Reihenfolge der Buchstaben innerhalb jeder Zeile um<br>
+→ Das Zeichen was am Anfang einer Zeile steht, steht nun am Ende und so weiter <br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Filterprogramme.html'>Linux Wissen:Filterprogramme</a></li>		<a href='../Systemprogrammierung/Sed/Einzeiler.html'>Linux Wissen:Systemprogrammierung:Sed:Einzeiler</a></li>		<a href='../Systemprogrammierung/Awk.html'>Linux Wissen:Systemprogrammierung:Awk</a></li>		<a href='../Systemprogrammierung/Sed/Einf%C3%BCgen_und_Ver%C3%A4ndern.html'>Linux Wissen:Systemprogrammierung:Sed:Einfügen und Verändern</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

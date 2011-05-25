@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T20:52:54+02:00
+
+====== Exit Status ======
+Created Dienstag 26 April 2011
+
+* Der Exit Status ist ein Wert 0-127 der vom zuletzt aufgerufenen Prozess abgefragt wird.
+* Wird bei der logischen Verknüpfung || && abgefragt
+* exit Status 0 gibt Erfolg zurück
+* exit Status > 0 gibt Misserfolg zurück
+
+__Hinweis: Misserfolg meint hier auch, wenn zum Beispiel die Programme __**find**__ oder __**grep**__ nichts finden konnten.__
+
+**exit <0-127>**  →  setzt einen Wert für den zuletzt aufgerufenen Prozess fest
+
+**exit 1** →  vorzeitiger Ausbruch aus einer Schleife oder Bedingung festlegen
+
+__Hinweis: Shellscripte sollten immer mit __**exit 0 **__verlassen werden, wenn sie korrekt beendet wurden.__
+
+__Hinweis: Rückgabewerte > 127 lassen geben das Signal an, welches an diese geschickt wurde, und wodurch sie beendet wurden. Beispiel Rückgabewert von 136 lässt auf SIGNAL 9 schließen__
+
+**echo $?** →  liefert den letzten Rückgabewert

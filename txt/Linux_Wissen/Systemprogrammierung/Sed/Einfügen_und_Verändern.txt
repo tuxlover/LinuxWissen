@@ -1,0 +1,68 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-27T22:26:48+02:00
+
+====== Einfügen und Verändern ======
+Created Mittwoch 27 April 2011
+
+**i**
+→ einfügen (insert) von Zeichen vor Adresse
+→ Einzelverweis Adressierung
+→ Output Stream
+//Beispiel://
+**sed -e '/ABCD/i <<<' <Datei> **→ fügt eine Zeile <<< vor ABCD in Datei an
+
+**a **
+→ anhängen (append) von Zeichen hinter Adresse
+→ Einzelverweis Adressierung
+→ Output Stream
+//Beispiel://
+**sed -e '1~2a <<<' <Datei> **→ beginnet bei der 1. Zeile an jede 2. Zeile ein Zeile <<< anfügen
+
+**c **
+→ austauschen (change) der gefundenen Zeile durch einen selbstdefinierten String
+→ paarweise Adressierung
+→ Output Stream
+//Beispiel://
+**sed -e '/ABCDEF/c\12345' **→ austauschen aller auftauchenden Muster ABCDEF durch 12345
+
+**y **
+→ suchen von Zeichen im Patternspace und ersetzen durch Zeichen im Holdspace
+→ paarweise Adressierung
+→ Pattern Space
+//Beispiel://
+**sed -e 'y/a/b/ <Datei>' → **In <Datei> alle a's durch b's ersetzen, wie **tr**
+[[Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten]]
+
+**n **
+→ ausgeben des Pattern Space, nächste Zeile lesen
+→ wird **-n **verwendet wird der Inhalt von Pattern Space asugegben und druch die nächste Zeile ersetzt 
+→ paarweise Adressierung
+→ Input Stream
+→ Output Stream
+
+**N**
+→ nächste Zeile an Inhalt des Pattern Space, anfügen, inkrement
+→  paarweise Adressierung
+→ Input Stream
+→ Pattern Space
+
+
+**l**
+→ ausgeben des Patternspace, Sonderzeichen werden dann oktal dargestellt
+→ Einzelverweis Adressierung
+→ Output Stream  
+
+**w**
+→ schreiben (write) des Patternspace in eine Datei
+→ paarweise Adressierung
+→ Patternspace
+//Beispiel://
+**sed -n '/error/w error.log' programm.log **→ Schreib alle Zeilen die das Wort error enthalten in proramm.log
+
+**r**
+→ anhängen einer Datei nach Adresse / Muster
+→ Einzelverweis Adressierung
+→ Outpur Stream
+→ Patternspace
+

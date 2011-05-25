@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T01:55:07+02:00
+
+====== lib ======
+Created Dienstag 19 April 2011
+
+***/lib/libc.so.6 **→ diese Bibliothek verweist auf die Standard C Library
+			   → meistens ein Link auf die aktuelle C Library
+[[Linux Wissen:Bibliotheken:dynamische Bibliotheken]]
+
+***/lib/modules **→ Module die vom Kernel oder von root via **insmod|modprobe**  geladen werden
+[[Linux Wissen:Hardware und Systeminformationen:Module]]
+
+***/lib/security →** Module die vom PAM Stack benutz und verarbeitet werden** (missing link)**

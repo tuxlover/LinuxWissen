@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T23:14:07+02:00
+
+====== shadow ======
+Created Samstag 23 April 2011
+
+//<Benutzername>:<Kennwort verschlüsselt>:  ~>//
+//<Datum der letzten Änderung des Kennworts>:<Min>:<Max>:<Warnung>:<Frist>:<Sperre>// 

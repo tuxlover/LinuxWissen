@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T01:46:57+02:00
+
+====== kopieren und verschieben von Dateien und Verzeichnisse ======
+Created Samstag 16 April 2011
+
+**cp <Quelle> <Ziel> **→ kopiert <Quelle> nach <Ziel>, wenn Ziel bereits existiert wird Ziel überschrieben
+**-r | -R **→  rekursives kopieren. Einen Ordner mit mehreren Dateien kopieren
+**-i **→ existiert Datei bereits, dann frage nach ob es überschrieben werden soll
+**-b **→ lege von existierenden Dateien eine Sicherheistkopie im Ziel an
+**-p **→ Dateiattribute der Quelldatei bleiben erhalten
+**-u **→ kopiert nur wenn <Quelle> neuer als <Ziel> ist
+**-d **→ kopiert den Symbolischen Link aber nicht das Ziel auf den diese verweisen
+**-H **→ wenn Quelle symbolischen Link enthält kopier stattdessen das Ziel auf den diese verweisen
+**-v **→ verbose
+**-a **→ Kurzform von **-drp**    
+
+**mv <Quelle> <Ziel> **→ umbenennen von <Quelle> nach <Ziel>
+		                       → befinden sich Quellle und Ziel innerhalb des gleichen Verzeichnisses wird die Quelle in Ziel 

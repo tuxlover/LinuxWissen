@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T12:54:41+02:00
+
+====== Positions Parameter ======
+Created Freitag 15 April 2011
+
+$0 → Name der Shell | des Shellscripts
+
+$1 $2 ${10} → ... Parameter die dem Script übergeben werden. $1 ist der 1. Parameter usw.
+                    → ${10} muss die Zahl in geschweiften {} stehen
+
+$# → Anzahl der übergebenen Elemente
+
+$* → Alle Postions Parameter als ein einziges Wort 
+     → wie **echo "$1 $2 ..."**
+
+$@ → Alle Parameter geshen als ein Text, dabei wird jedes Argument einzeln interpretiert
+      → wie ** echo "$1"; echo "$2"; ...**
+
+$! → PID des letzten Hintergrundjobs
+
+$- → Flags die dem Script | der Shell beim Aufruf durch **set ** übergeben wurden ( [[Linux Wissen:Shell:Bash:Optionen für die Bash]] )
+
+$_ → letztes Argument des vorherigen Befehls
+
+$? → exit Status des letzten Befehls, der zuletzt ausgeführten Funktion|Scripts|Befehls
+ 
+$$ → PID des gerade laufenen Scriptes | der gerade laufenden Shell
+
+**shift **→ Positionsparameter nach links verschieben
+          → aus $2 wird $1 und so weiter

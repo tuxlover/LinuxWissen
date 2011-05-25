@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T06:18:12+02:00
+
+====== Konfigurationsdateien ======
+Created Dienstag 19 April 2011
+
+
+
+***/etc/passwd **[[Linux Wissen:FHS:etc:passwd]]
+
+
+***/etc/shells**
+→ Liste der Shells die für einen Nutzer mittels **chsh **als Login gesetzt werden kann 
+
+***/etc/shadow**[[Linux Wissen:FHS:etc:shadow]]
+
+
+***/etc/group **[[Linux Wissen:FHS:etc:group]]
+
+
+***/etc/login.defs**
+→ Standardkonfiguration für die login Programmtools **pwdutils**
+
+***/etc/default/useradd **
+→ Standardeinstellungen für **useradd**
+ 

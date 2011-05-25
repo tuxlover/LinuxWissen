@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T22:30:04+02:00
+
+====== apt ======
+Created Montag 25 April 2011
+
+— 
+**apt-get <Aktion> **
+→ Tool zum Holen, Installieren und Verwalten von Debian Paketen aus einem zentralen Repository
+→ Abhängigkeiten werden aufgelöst
+→ Repositories werden in */etc/apt/sources.lst konfiguriert
+[[Linux Wissen:FHS:etc:apt++soruces.lst]]
+ 
+//<Aktion>//
+**update **→ aktualisieren der Informationen über verfügbare Paket aus */etc/apt/sources.lst
+
+**install <Paket1>,... **→ holen von <Paket> aus dem Repository, und installieren 
+
+**remove <Paket1>,... **→ entfernen von <Paket> aus dem Repository 
+
+**upgrade **→ einspielen aller verfügbaren Updates aus dem Repository
+
+**dist-upgrade **→ aktuallisieren einer bestehende Version auf die nächste, dazu muss eventuell die 3. Spalte in der 
+*/etc/apt/sources.lst angepasst werden, wenn man zum Beispiel von //main // auf //testing // upgraden will
+
+**source <Paket> **→ holen der zu <Paket> gehörenden Dateien
+— 
+**apt-listbugs <Paket> **→ Eine Liste der für dieses Paket bekannten Fehler anzeigen
+
+**apt-build <Paket> **→ ein Paket aus dem Quellcode installieren um es für das System zu optimieren
+
+— 
+**apt-cache <Aktion> **
+→ durchsuchen der apt-Paketdatenbank
+
+//Aktion//
+**show <Paket> **→ Statusinfomationen über das <Paket> anzeigen
+
+**depends <Paket> **→ Abhängigkeiten für ein <Paket> auflisten
+
+**rdepends <Paket> **→ alle von <Paket> abhängigen Pakete auflisten
+
+**stats **→ Informationen über den Paket cache
+— 
+
+

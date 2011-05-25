@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Aufrufen_der_Shell.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Bash/Aliasse.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Bash</h1>
+
+<p>
+Created Freitag 15 April 2011<br>
+</p>
+
+<h2>Reihenfolge in der nach .profile gesucht wird:</h2>
+<p>
+*/etc/profile → *~/.bash_profile →  *~/.bash_login  → *~/.profile<br>
+</p>
+
+<p>
+*~/.profile | */etc/profile → Einstellungen für Nutzer | Global für bash als Login Shell<br>
+                                       → festlegen von   <strong>umask ( </strong><a href="../Dateien_verwalten/Zugriffsrechte/Umask.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask">Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask</a> )<br>
+                                       → festlegen der Umgebungsvariablen und der Tastaturbelegung<br>
+</p>
+
+<p>
+*~/.bashrc | */etc/bash.bashrc → bashspezifische Konfigurationseinstellungen für Nutzer | Global<br>
+                                                 → setzen von Aliassen, Programmen und Funktionen die beim aufrufen der Shell<br>
+                                                     ausgeführt werden soll.<br>
+</p>
+
+<p>
+*~/.bash_logout → Befehle und Variablen und Funktionen die beim Abmelden aus bash ausgeführt werden sollen<br>
+</p>
+
+<h2>Buildins</h2>
+<p>
+<ul>
+<li>Befehle die von der Shell selbst zur Verfügung gestellt werden</li>
+<li>werden immer von der Shell asugeführt</li>
+</ul>
+----<br>
+<strong>clear </strong>→ löschen des angezeigten Bildschirminhalts, wie strg+l<br>
+----<br>
+<a href="./Bash/Emacs_Modus.html" title="Linux Wissen:Shell:Bash:Emacs Modus">Linux Wissen:Shell:Bash:Emacs Modus</a><br>
+</p>
+
+<h2>Extern ausführbare Befehle</h2>
+<p>
+<ul>
+<li>Shell startet diese Programme durch Aufrufen ihres Namens aus PATH </li>
+</ul>
+<a href="./Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a><br>
+</p>
+
+<h2>Überprüfen ob ein Kommando ein Buildin oder ein externer Befehl ist</h2>
+<p>
+<strong>type &lt;Befehlsname&gt; </strong>→ gibt an ob ein Befehl ein Buildin oder ein externer Befehl ist<br>
+                                        → mögliche Rückgabewerte: hashed, Pfad/zu/bin, is Shell buildin, is aliased to ...<br>
+</p>
+
+<h2>Hashing</h2>
+<p>
+<ul>
+<li>Abspeichern der bereits aufgerufenen Programme in einem Cache</li>
+</ul>
+<strong>hash </strong>→ anzeigen der gehashten Befehle<br>
+<strong>-r </strong>→ löschen des Hashcaches<br>
+</p>
+
+<h2>Sonderzeichen</h2>
+<p>
+<ul>
+<li>Zeichen die für die Shell eine Sonderinterpretation haben müssen mindestens durch \ maskiert werden</li>
+<li>$&amp;(){}[]*?!&lt;&gt;"';\</li>
+</ul>
+</p>
+
+<h2>Maskieren</h2>
+<p>
+<strong>"mein text" </strong>→ "" maskiert Leerzeichen und Steuerzeichen aber keine Sonderzeichen<br>
+<strong>'mein $text' </strong>→ '' maskiert Steuerzeichen und Sonderzeichen <br>
+<strong>mein\ text </strong>→ maskiert ein einzelnes Steuerzeichen oder Sonderzeichen<br>
+</p>
+
+<p>
+<u>Hinweis: Um das \ Zeichen muss man es So \\ doppelt maskieren.</u><br>
+<u>Hinweis: mkdir "verzeichnis 22" erzeugt ein Verzeichnis mit Namen: verzeichnis 22</u><br>
+</p>
+
+<h2>Subshell einen Befehl mitgeben</h2>
+<p>
+<strong>bash -c &lt;Befehl&gt;</strong><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Hilfe_erhalten.html'>Linux Wissen:Hilfe erhalten</a></li>		<a href='../Dateien_verwalten/Zugriffsrechte/Umask.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

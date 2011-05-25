@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T15:07:33+02:00
+
+====== Magic Sys-Abf Taste ======
+Created Donnerstag 21 April 2011
+
+Ermöglicht das direkte Senden von Signalen und Kernel System Calls
+
+**(<FN>)+<Alt>+<Druck>+<Taste>**
+
+//<Taste>		Auswirkung//
+R			unraw, verlassen des Keyboard Modus in den X-Late Modus
+K			beende alle Prozesse auf dem aktuellen Terminal
+B			starte den Rechner neu
+O 			schalte den Rechner sofort über ACPI/APM aus
+S			schreibe alle noch verblieben Daten aus dem Kernelfestplattencache auf die Festplatte
+U 			aushängen aller Partitionen
+M			gebe die Hauptspeicherbelegung auf der Konsole aus
+E			sende Signal 15 ( [[Linux Wissen:Prozessverwaltung:kill]] )
+I			sende Signal 9 an alle Prozesse auss er init
+L			wie I nur inklusive init
+F			beende den Prozess der am meister Arbeitsspeicher verbraucht
+D			zeige alle derzeitig verwendeten Locks an
+Q			zeige alle derzeitigen Timer an
+T			zeige eine Liste derzeit laufender Prozesse
+W			zeige Prozesse die derzeit geblockt sind
+N			renice
+H			Hilfe
+Zahl		setzen des Kernel Loglevels
+
+__Hinweis die Befehlsfolge REISUB kann verwendet werden, um den Rechner neuzustarten.__
+
+__Hinweis: Die Magic Sys Abf kann/sollte als Kernelparameter in Sicherheitsrelevanten Umgebungen deaktiviert werden.__
+[[Linux Wissen:FHS:proc:sys:kernel]]

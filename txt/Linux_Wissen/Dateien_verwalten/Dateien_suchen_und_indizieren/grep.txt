@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T15:54:40+02:00
+
+====== grep ======
+Created Montag 18 April 2011
+
+* zum finden von Inhalten in ASCII Dateien mittels regulärer Ausdrücke
+[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke]]
+
+**grep '<Muster>' <Datei> **→ durchsucht <Datei> zeilenweise nach <Muster>
+                                                → wobei <Muster ein regulärer Ausdruck ist 
+**--color **→ farbliche Hervorhenung der gefundenen Suchmuster
+**-c **→ nur die Anzahl der auf das Suchmuster passenden Dateien ausgeben
+**-i **→ ignoriere Groß- und Kleinschreibung
+**-n **→ in welcher Zeile wurde der Ausdruck gefunden
+**-B **→ numerische 
+**-r **→ rekursiv mehere Dateien innherhalb eines Verzeichnisses nach Muster durchsuchen
+**-v **→ nur Zeilen die das Muster nicht enthlaten (Komplementrämenge v)
+**-e **→ meherer Muster mit oder Verknüpfen
+**-F **→ Muster wird als String interpretiert
+**-f <conf> **→ reguläre Ausdrücke aus der Datei <conf> lesen
+**--line-buffered **→ Zeilenweise ausgabe, nützlich für **read**
+[[Linux Wissen:Systemprogrammierung:Shellscripting:read]]
+**-E **→ extended reguläre Ausdrücke verwenden
+
+**fgrep <String> <Datei> **→ dasselbe wie **grep -F** 
+                                              → eine Liste von Strings in Dateien finden
+                                              → keine regulären Ausdrücke verwenden
+
+**egrep **→ wie **grep -E **
+
+===== Und und Oder =====
+grep -il wort1 <datei> | xargs grep -il wort2 → Suchmuster enthält wort1 und wort2
+grep -E "(wort1|wort2)" | egrep "(wort1|wort2)" --> Suchmuster enthält wort1 oder wort2
+
+//Beispiel://
+findet alle Nutzer der UID 4 Stellig ist
+**grep -E '^.*:x:\[\[:digit:\]\]{4}:' /etc/passwd**
+

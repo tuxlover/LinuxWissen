@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T20:14:12+02:00
+
+====== Rpm ======
+Created Montag 25 April 2011
+
+$Suse, Fedorra, Mandriva,Redhat$
+
+===== Aufbau eines Rpm Paketes =====
+//<Programm>-<Version>-<Release>.<Arch>.rpm//
+//<Programm> //→ Der Name des Programms, Bibliothek,...
+//<Version> //→ Versionsnummer des <Programm> zugrundeliegenden Quellpaketes
+//<Release> //→ Das wievielte Mal wurde dieses Paket in dieser Version gebaut
+//<Arch> //→ Architektur auf die dieses Paket installiert werden kann  (ppc, i386, i486, i586, i686, x86_64, noarch)
+
+__Hinweis: Pakete mit der Endung .src, .nosrc enthalten keine Installierbaren Programme sondern ledigliche ein Specfile und die dazugehörenden Quellen. Das Paket nosrc enthält lediglich eine Spec Datei.__
+[[Linux Wissen:Paketverwaltung:Rpm:Pakete bauen]]
+
+*/usr/lib/rpm → Scripte und Distributionsspezifische Macros
+*/etc/rpm → Konfigurationsdateien und globale Macros
+[[Linux Wissen:FHS:etc]]
+[[Linux Wissen:FHS:usr]]
+
+
+===== Entpacken eines Rpm Pakets ohne es zu entpacken =====
+* Rpm Pakete sind im Cio Format gepackt. Im Header stehen die Metainformationen
+
+**rpm2cpio **→ konverieten eines Rpms in das cpio format
+
+**rpm2cpio <Paket>|cpio -id **
+→ den Inhalt von <Paket> anzeigen, nachdem es ins Cpio Format konvertiert worden ist
+
+**rpm2cpio <Paket>|cpio -it **→ den Inalt von <Paket> entpacken
+
+**rpm -Uhv --ignorearch --nodeps --force  --root <Pfad> <Paket>.rpm**
+→ Das Paket samt Strukur nach <Pfad> entpacken
+
+===== Verwalten von Software =====
+* **rpm**
+* **rpmbuild**
+* **applydeltarpm**
+* **rpmgraph**
+* **rpmorphan**
+[[Linux Wissen:Paketverwaltung:Rpm:rpm]]
+* **zypper**
+[[Linux Wissen:Paketverwaltung:Rpm:zypper]]
+* **yum**
+[[Linux Wissen:Paketverwaltung:Rpm:yum]]
+
+**rpm-tidy **
+→ Tool zum bereinigen von Rpm-Caches 
+
+//Beispiel://
+**rpm-tidy --dir=/var/lib/zypp**

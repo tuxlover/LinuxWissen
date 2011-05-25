@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T18:09:36+02:00
+
+====== Schleifen ======
+Created Donnerstag 28 April 2011
+
+=== while Schleifen ===
+* Eine Anweisung wird solange ausgeführt, wie eiene Bedingung erfüllt ist
+
+++
+//while (Bedinung){//
+//        Anweisung//
+//}//
+++
+
+=== do-while-Schleifen ===
+* while Schleife mit mehreren Anweisungen
+* führe die erste Anweisung auf jeden Fall aus
+* führe alle weiteren nur aus, falls Bedingung erfüllt bleibt
+
+++
+//do {//
+//    Anweisungsblock1//
+//   } while (Bedingung) {//
+//        Anweisungsblock2//
+//     }//
+//++//
+
+**break** →  Abbruch der Schleife, Anweisung
+
+**continue** →  Abbruch des aktuellen Schleifendruchlaufs, danach Fortsetzunh beim nächsten Durchlauf
+
+=== for-Schleifen ===
+* Für jedes Element innerhalb eines bestimmten Definitionsintervall wird eine Aktion ausgeführt
+++
+//for (Beginn=wert; Beginn < Bedingung; Beginn++){//
+//        ANWEISUNGSBLOCK//
+//        }//
+++
+
+=== for-in-Schleife ===
+* Arrays mittels Zählschleife durchlaufen
+++
+//for (i in a )//
+//{//
+	//action a[i]//
+//}//
+++

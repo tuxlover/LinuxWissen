@@ -1,0 +1,69 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T01:42:37+02:00
+
+====== Dienste ======
+Created Sonntag 24 April 2011
+
+**/etc/init.d/<Dienst> start|stop|status|reload|restart**
+→ manuelle Verwaltung eines Dienstes
+**start **→ starten eines Dienstes
+**stop **→ stoppen eines Dienstes
+**status** → Status eines Dienstes abfragen
+**reload **→ liest die vom Dienst benötigten Konfigurationsdateien neu ein
+**restart **→ den Dienst neu starten, entspricht **stop && restart**
+
+**insserv**
+**chkconfig**
+[[Linux Wissen:Booten:Dienste:chkconfig]]
+
+=== Manuelles Hinzufügen eines Dienstes zu einem Runlevel ===
+**ln -s /etc/init.d/<Dienst> /etc/init.d/<K<N>Dienst>**
+**ln -s /etc/init.d/<Dienst> /etc/init.d/<S<N>Dienst>**
+[[Linux Wissen:Dateien verwalten:Links]]
+→ die Zahl <N> definiert die Reihenfolge, wann der Dienst gestarte | getstoppt werden soll
+→ beim Starten wird das Script mit dem kleinsten Wert zuerst ausgeführt
+→ beim Stoppen|Herunterfahren des Systems wird das Script dem kleinsten Wert zuleetzt ausgeführt
+
+__Hinweis: Um einen eigenen Dienst zu erstellen muss unter /etc/init.d/<Dienst> ein entsprechendes Script geschrieben werden. Dazu kann unter /etc/init.d/skeleton eine Gerüstdatei angepasst werden.__
+[[Linux Wissen:FHS:etc:init.d++Script]]
+
+== folgende Hilfsprogramme können für das Erstellen eines Startscript benutzt werden ==
+**start_daemon -p <PIDFILE> <DIENST> <ARGUMENTE> **
+→ starten eines Programms als Daemon 
+→ dabei wird ein <PIDFILE> angegeben
+→ es können auch Argumente und Optionen angefügt werden
+
+**pidofproc <Pfad zum Dienstprogramm> **
+→ Prozessinformationen zu einem bestimmten Dienst anzeigen
+→ ohne Optionen wird PID zurückgegeben
+
+**chekproc **→ siehe **pidofproc **$$SUSE$$
+**-p <PIDFILE> **→ ein anders PIDFILE als unter */var/run/daemon.pid 
+[[Linux Wissen:FHS:var]]
+**-n **→ einen Kernelthread verfolgen
+
+**killproc <Pfad zum Programm> **→ Signal an einen über **start_daemon **gestarteten Prozess senden
+**-G **→ sendet das SIGNAL auch an alle Kindprozesse des identischen Signals
+**-L **→ folge symbolischen Links
+**-p <PIDFILE> **→ angeben eines alternativen <PIDFILE>s
+**-n **→ einen Kernelthread ein SIGNAL schicken
+**-v **→ verbose
+
+**startproc -p <PIDFILE> <PFAD zum Dienst> <Argumente und Optionen> **
+→ starten eines Daemons
+**-n <-20 bis 19> **→ einen Nicewert vergeben, der Dienst muss dann als Root gestartet werden
+**-g <GID> **→ setzen der GID des zu startenden Prozess ( [[Linux Wissen:Dateien verwalten:Zugriffsrechte]] )
+**-u <UID> **→ setzen der UID des zu starteden Prozesses
+**-l <LOGFILE> **→ angeben eines Logfiles
+**-q **→ Ausgabe unterdrücken, sei leise
+**-s **→ Prozess wird in einer neuen Session gestartet
+**-t N  **→ Programm N Sekunden warten lassen
+
+**strartpar <Befehl1> <Befehl2> ... **→ mehrere Runlevel Scripte gleichzeitig starten
+**-p N **→ setzen eines Grades an Parallelität
+**-i M **→ Threading I/O setzen, der Standardwert ist 800 
+**-a **→  Argumente an die Scripte übergeben
+**-M **→ ein ähnliches Verhalten wie make 
+
+ 

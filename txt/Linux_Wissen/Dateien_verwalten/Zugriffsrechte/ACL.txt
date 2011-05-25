@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T17:48:34+02:00
+
+====== ACL ======
+Created Dienstag 19 April 2011
+
+**stetfacl **→ setzen, manipulieren von ACLs
+
+**setfacl -m|--set u:<Nutzer>:<rwx>,g:<Gruppe>:<rwx> <Datei> **
+→ modifiziere|setzen der ACL Werte für <Datei> für den User bzw. für die <Gruppe>
+→ beim Setzen werden alte ACL überschrieben
+
+**setfacl -d -m|--set u:<Nutzer>:rwx>,g<Gruppe>:<rwx> <Datei>**
+→ modifizieren|setzen der Standard ACL 
+→ beim Setzen werden alte ACL überschrieben
+→ Standard ACL können nur für Verzeichnisse vergeben, die ihre Rechte auf ihnen angelegte Dateien vererben
+
+**setfacl -b <Datei> **→ entfernt alle ACLs von <Datei>
+
+**setfacl -x u:<Nutzer1>,u:<Nutzer2>,..,g:<Gruppe>,... <Datei> **→ entfernt die ACL Werte für bestimmte <Nutzer> und <Gruppe>n von <Datei>
+
+**setfacl -M <ACL> <Datei> **→ liest die Rechte für <Datei> aus <ACL>
+
+**setfacl -m|--set mask:<rwx>:<rwx> <Datei> **
+→ modifizieren|setzen der "Efffektive Rights Mask" für <Datei>
+→ beim Setzen werden alte ACL überschrieben
+
+__Hinweis: setfacl kann mit nicht vorhandenen UIDs GIDs umgehen, nicht aber mit nicht vorhandenen Nutzer oder Gruppen.__
+
+//Beispiel <ACL> Datei://
+//user:axel:rw-//
+user:tippy::rw-
+//group:lensmen:r--//
+//group:fafnir:---//
+//mask::rw-//
+//other::---//
+
+Mit //mask// wird die effektive Rechtemaske gesetzt. 
+→ limitiert die efektiven Rechte die Nutzern und Gruppen zugewiesen werden können
+→ Ist die Maske restriktiver als die Rechte die man zuweisen möchte, wird die //mask //bevorzugt
+→ Die //mask //hat keinerlei Auswirkung auf die tradionellen ugo Recchten 
+
+__Hinweis: Werden die Berechtigungen der ACL geändert, so ändert sich auch die mask entsprechend der Berechtigungen die am höchsen sind. Entsprechend muss die mask dann erneut angepasst werden.__
+
+__Hinweis: chmod lässt ACL unverändert. Nur die mask könnte sich ändern.__
+
+**getfacl** → anzeigen der gesetzten ACLs
+**-n|--numeric **→ numerische anstelle von symbolischen Werten zur Darstellung der ACL verwenden
+**--ommit** → keine Headerinformationen ausgeben
+**-R **→ rekursiv
+

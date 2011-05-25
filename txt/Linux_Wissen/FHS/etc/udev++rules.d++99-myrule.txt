@@ -1,0 +1,64 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T18:25:20+02:00
+
+====== udev++rules.d++99-myrule ======
+Created Sonntag 24 April 2011
+
+++
+//<Regel>=[=]"Wert", <Regel2>=[=]"Wert",...//
+++
+= →  Zuweisungsoperator a=B
+==|!= →  Vergleichsoperator a==B Matching
+
+=== Matchkeys ===
+ACTION →  Event action
+
+KERNEL →  Kernel Name des Gerätes
+
+NAME →  Name des Geräteknotens
+
+SYMLINK →  Name des symbolischen Links
+
+DRIVER →  Name des Treibers
+
+ATTRS{filename} →  sysfs Attribute Werte
+
+ENV{key} →  Eigentümer Werte
+
+TAG →  device Tag
+
+=== Assignment Keys ===
+NAME  
+→  Regel, wie eine Gerät benannt werden sol
+→  überschreibt die Knerledefinition
+→  kann verwendet werden, um zum Beispiel dem USB-Geräte eine eindeutige Nummer zuzuweisen
+
+SYMLINK 
+→  zuweisung eines symbolischen Links
+→  wie Name
+→ += kann zusätzlichenr Symlink zugewiesen werden
+
+ATTR{key} 
+→  Wert der sysfs zugewiesen wird
+
+TAG 
+→  Einem Gerät ein Taf zuweisen
+
+RUN 
+→  Ein Programm ausführen
+→  voller Pfad zum Befehl | Script
+→  += mehere Programme gleichzeitig zuweisen| nahcheinaner ausführen
+
+=== String Matching ===
+%k →  Kernelname
+
+%n →  Kernelnumber
+
+%Variableninitialisierung
+
+* →  matcht eine oder mehrere Zeichen
+
+[abcdef] →  matcht eines der Zeichen in der Klammer
+
+? →  matcht ein Zeichen genau einmal

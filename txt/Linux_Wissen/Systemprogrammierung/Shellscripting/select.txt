@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-27T01:02:47+02:00
+
+====== select ======
+Created Mittwoch 27 April 2011
+
+* **select **präsentiert eine Auswahl mit einer Zahl
+* Wird Zahl eingegeben, wird <Befehlsliste> für die auswahl  ausgeführt
+* **select **muss mit einer **break **oder **continue **Anweisung beendet werden
+
+++
+//select <VARIABLE> in [Liste der Möglichen Antworten]//
+//        do//
+//                <Befehlsliste>//
+//        done//
+++
+
+//Beispiel://
+++
+//PS3="Choose: "//
+//select i in a b c quit//
+// do //
+// [ $i = "quit" ]  && exit 0//
+// echo "You chose $i"//
+//done//
+++
+→ solange nicht quit eingegeben wird, wird immer wieder gefragt
+

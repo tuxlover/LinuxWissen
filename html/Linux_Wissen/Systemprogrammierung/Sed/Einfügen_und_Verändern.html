@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Ausgeben_und_L%C3%B6schen.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Einzeiler.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Einfügen und Verändern</h1>
+
+<p>
+Created Mittwoch 27 April 2011<br>
+</p>
+
+<p>
+<strong>i</strong><br>
+→ einfügen (insert) von Zeichen vor Adresse<br>
+→ Einzelverweis Adressierung<br>
+→ Output Stream<br>
+<em>Beispiel:</em><br>
+<strong>sed -e '/ABCD/i &lt;&lt;&lt;' &lt;Datei&gt; </strong>→ fügt eine Zeile &lt;&lt;&lt; vor ABCD in Datei an<br>
+</p>
+
+<p>
+<strong>a </strong><br>
+→ anhängen (append) von Zeichen hinter Adresse<br>
+→ Einzelverweis Adressierung<br>
+→ Output Stream<br>
+<em>Beispiel:</em><br>
+<strong>sed -e '1~2a &lt;&lt;&lt;' &lt;Datei&gt; </strong>→ beginnet bei der 1. Zeile an jede 2. Zeile ein Zeile &lt;&lt;&lt; anfügen<br>
+</p>
+
+<p>
+<strong>c </strong><br>
+→ austauschen (change) der gefundenen Zeile durch einen selbstdefinierten String<br>
+→ paarweise Adressierung<br>
+→ Output Stream<br>
+<em>Beispiel:</em><br>
+<strong>sed -e '/ABCDEF/c\12345' </strong>→ austauschen aller auftauchenden Muster ABCDEF durch 12345<br>
+</p>
+
+<p>
+<strong>y </strong><br>
+→ suchen von Zeichen im Patternspace und ersetzen durch Zeichen im Holdspace<br>
+→ paarweise Adressierung<br>
+→ Pattern Space<br>
+<em>Beispiel:</em><br>
+<strong>sed -e 'y/a/b/ &lt;Datei&gt;' → </strong>In &lt;Datei&gt; alle a's durch b's ersetzen, wie <strong>tr</strong><br>
+<a href="../../Filterprogramme/Texte_manipulieren_und_aufbereiten.html" title="Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten">Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten</a><br>
+</p>
+
+<p>
+<strong>n </strong><br>
+→ ausgeben des Pattern Space, nächste Zeile lesen<br>
+→ wird <strong>-n </strong>verwendet wird der Inhalt von Pattern Space asugegben und druch die nächste Zeile ersetzt <br>
+→ paarweise Adressierung<br>
+→ Input Stream<br>
+→ Output Stream<br>
+</p>
+
+<p>
+<strong>N</strong><br>
+→ nächste Zeile an Inhalt des Pattern Space, anfügen, inkrement<br>
+→  paarweise Adressierung<br>
+→ Input Stream<br>
+→ Pattern Space<br>
+</p>
+
+
+<p>
+<strong>l</strong><br>
+→ ausgeben des Patternspace, Sonderzeichen werden dann oktal dargestellt<br>
+→ Einzelverweis Adressierung<br>
+→ Output Stream  <br>
+</p>
+
+<p>
+<strong>w</strong><br>
+→ schreiben (write) des Patternspace in eine Datei<br>
+→ paarweise Adressierung<br>
+→ Patternspace<br>
+<em>Beispiel:</em><br>
+<strong>sed -n '/error/w error.log' programm.log </strong>→ Schreib alle Zeilen die das Wort error enthalten in proramm.log<br>
+</p>
+
+<p>
+<strong>r</strong><br>
+→ anhängen einer Datei nach Adresse / Muster<br>
+→ Einzelverweis Adressierung<br>
+→ Outpur Stream<br>
+→ Patternspace<br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Sed.html'>Linux Wissen:Systemprogrammierung:Sed</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

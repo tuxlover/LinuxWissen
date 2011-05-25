@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T01:42:29+02:00
+
+====== Shells und Subshells beenden ======
+Created Freitag 15 April 2011
+
+===== Loginshells =====
+**logout **oder **exit**
+
+===== Subshells =====
+immer **exit**
+
+* **screen** → Tool zum Verwalten virtuellen Terminals

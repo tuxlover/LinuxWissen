@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Jobkontrolle.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Befehle</h1>
+
+<p>
+Created Freitag 15 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Eine Kette von Zeichen die durch drücken der Eingabetaste abgeschlossen wird</li>
+<li>Jede Zeichenkette wird durch Leerzeichen getrennt und in Wörter zerlegt</li>
+</ul>
+</p>
+
+<p>
+<u>Hinweis: \&lt;ENTER&gt; maskiert die Bedeutung der Entertaste und man kann in der nächsten Zeile weiterschreiben</u><br>
+</p>
+
+<h2>Parameter</h2>
+<p>
+<ul>
+<li>Optionen / Schalter → Parameter beginnt mit - (Aspekte eines Befehls lassen sich an oder ausschalten)</li>
+</ul>
+→ kurze Schalter: -a -f -g auch -afg<br>
+→ lange Schalter: --long --with-enabled <u>aber nicht</u> --longwith-enabled<br>
+</p>
+
+<p>
+<ul>
+<li>Argumente → Parameter beginnt ohne einleitendes - oder  --</li>
+</ul>
+→ meist Name einer Datei die mit dem Befehl bearbeitet oder verabeitet werden soll<br>
+</p>
+
+<p>
+KOMMANDO == Was wird gemacht?<br>
+OPTIONEN == Wie wird es gemacht?<br>
+ARGUMENTE == Womit wird es gemacht?<br>
+</p>
+
+<h2>Warten bis ein neuer Befehl ausgefügt wird</h2>
+<p>
+<strong>sleep N</strong> → warte N Sekunden und tue nichts<br>
+               → kann verwendet werden um ein Script kurzfristig anzuhalten<br>
+</p>
+ 
+
+<h2>Mehrere Befehle</h2>
+<p>
+<strong>&lt;Befehl1&gt;;&lt;Befehl2&gt;;... </strong>→ Befehle werden sequentiell abgearbeitet<br>
+</p>
+
+<p>
+<strong>&lt;Befehl1&gt; || &lt;Befehl2&gt; </strong>→ &lt;Befehl2&gt; wird nur ausgeführt, wenn der exit Status  von &lt;Befehl1&gt; <br>
+                                                  ungleich 0 war  (logisches oder)<br>
+</p>
+
+
+<p>
+&lt;<strong>Befehl1&gt; &amp;&amp; &lt;Befehl2&gt; </strong>→ &lt;Befehl2&gt; wird nur ausgeführt wenn der exit Status  von &lt;Befehl1&gt; <br>
+                                                    gleich 0 war (logisches und)<br>
+</p>
+
+<p>
+ <a href="../Systemprogrammierung/Shellscripting/Exit_Status.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status">Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a><br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Systemprogrammierung/Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

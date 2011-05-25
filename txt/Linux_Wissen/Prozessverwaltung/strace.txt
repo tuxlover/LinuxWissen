@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T16:25:12+02:00
+
+====== strace ======
+Created Sonntag 24 April 2011
+
+**strace **→ Ablauf von Prozessen und Systemaufrufe eines Programms verfolgen
+	     → Ausgabe erfolgt in einer C-ähnlichen Syntax **(missing link C)**
+
+**strace <Programm>|-p <PID> **→ Porgramm starten und strace Ausgagbe
+**-o <LOGFILE> **→ Die Ausgabe nicht auf dem Bildschirm ausgeben, sondern in <LOGFILE> schreiben
+**-f **→ berfolgt auch Kindprozesse die vom Programm gestartet werden
+**-e trace=open,close,read,write **→ nur Systemaufrufe ausgeben, auf die diese Systemaufrufe angewendet wurde
+**-r **→ Zeige zum Beginn der Zeile wieviele Sekunden seit dem Aufruf vergangen sind
+
+//Beispiele://
+**strace -e trace=open free **
+→ Anzeige der vom Programm "free" geöffneten Dateien. Dabei wird Ausgabe auf die Funktion "open" eingeschränkt. 
+**strace -o /tmp/file /opt/lib/sisis/siadmin/etc/S99siaddae start**
+→ Aufzeichnung der Funktionsaufrufe der Anwendung "S99siaddae" in der Datei "/tmp/file". 
+**strace -p 28756**
+→ Aufzeichnung der Funktionsaufrufe von PID 28756
+**strace -e trace=open,read -p 22254 -s 80  -o /tmp/debug.lighttpd.txt**
+→ Den Prozess mit der PID 22254 auf Port 80 tracen und nur öffnen und lesen Prozesse ausgeben
+**(missing link)**
+**strace -e file <Programm>**
+→ Alle Dateien die den Syscall file_open() gesendet bekommen anzeigen

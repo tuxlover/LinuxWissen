@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T22:20:58+02:00
+
+====== Plattenbelegung analysieren ======
+Created Samstag 23 April 2011
+
+**df [/dev/sdX]**→ mit df lässt sich der Platz auf einem Gerät|Partition analysieren
+                         → wird df ohne Argumente aufgerufen, werden alle eingehängten Geräte und Partitonen analysiert
+			  → wird df ohne Optionen aufgerufen, wird die Ausgabe in Blocks ausgeben
+
+**-h **→ zeige die Ausgabe in menschlich lesbarer Form an
+
+**du <Verzeichnis>**→ Eine Zusmmenfassung , wieviel jede Datei unterhalb eines <Verzeichnis>ses verbraucht
+**-s **→ Zusammenfassung, wiviel Speicherplatz wird insgesamt auf der Platte verbraucht
+**-h **→ in menschlich lesbarer Form ausgeben
+**-x **→ Verzeichnisse die sich auf einem anderem Dateisystem befinden werden ausgelassen
+**--exclude=<MUSTER> **→ Dateien die <Muster> entsprechend werden ausgeschlossen
+
+__Hinweis: Als <Verzeichnis kann auch . oder .. angegeben werden.__
+
+Einige nützliche Tipps mit find:[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:find]]

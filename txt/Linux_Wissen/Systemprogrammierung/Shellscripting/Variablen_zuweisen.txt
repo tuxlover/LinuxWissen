@@ -1,0 +1,66 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T20:28:26+02:00
+
+====== Variablen zuweisen ======
+Created Dienstag 26 April 2011
+
+**VAR=val **
+→  weist der Variblen **VAR** den Wert** val** zu. 
+→ Falls die Variable einen Anderen Wert bereits hatte wird der alte Wert überschrieben.
+
+**VAR= **
+→  Weist der Variablen den Wert NULL zu.
+
+**unset VAR** →  löschen der Variablen VAR
+[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]]
+
+**VAR[n]=val **
+→  Weist dem **n**-ten Element des Arrays **VAR **den Wert **val **zu. 
+→ Falls dieser bereits belegt war wird VAR mir einem neuen Wert überschrieben.
+
+**VAR=$(Befehl)** oder **VAR=`Befehl`** 
+→  Weist die Ausgabe von **Befehl** (Einzelenes Kommando oder Befehlskette) der Variablen **VAR **zu.
+
+**${VAR:=val}** 
+→  Die Variable **VAR** erhält den Wert **val** wenn **VAR** nicht gesetzt oder leer war.
+
+**${VAR=val}** 
+→  Die Variable **VAR** erhält den Wert **val** falls die Variable undefiniert war. 
+→  Der Wert NULL bleibt erhalten.
+
+**${VAR:-val}** 
+→  Nur der Ausdruck von **VAR** wird durch **val** ersetzt. 
+→ Der alte Wert bleibt aber erhalten.
+
+**${VAR:?<Fehlermeldung>}** 
+→  Ist **VAR** leer oder undefiniert wird **<Fehlermeldung>** ausgegeben
+
+**VAR1=${!VAR2}** 
+→  der Wert von **VAR2 **wird **VAR1** zugewiesen
+
+**${VAR:m:n}**
+→  Alle Werte von **VAR** bei der **m**-ten Postion beginnend der Länge **n**. 
+→ Startet bei Index 0, 
+→ m und n können auch Werte sein, die au Berechnungen entstehen
+
+**${#VAR}** 
+→  evaluiert die Länge des Strings der Variablen **VAR**
+
+**${STRING#Expr}** 
+→  entfernt den //kürztmöglich// passenden Ausdruck von **Expr** von //vorne// beginnend von **STRING**
+
+**${STRING##Expr}** 
+→  entfernt den //längstmöglichen// passenden Ausdruck von **Expr** von //vorne// beginnend von **STRING**
+
+**${STRING%Expr}** 
+→  entfernt den //kürztmöglichen// Ausdruck von **Expr** von //hinten// beginnend von **STRING**
+
+**${STRING%%Expr} **
+→  entfernt den //längstmöglichen// Ausdruck von **Expr** von //hinten// beginnend von **STRING**
+
+**${STRING/Expr/<Ersetzung>} **
+→  der Ausdruck **Expr** in **STRING**  wird durch **<Ersetzung>** ersetzt
+
+**${STRING//Expr//<Ersetzung>}** 
+→  alle Ausdrücke die auf **Expr** passen werden in **STRING** durch **<Ersetzung>** ersetzt

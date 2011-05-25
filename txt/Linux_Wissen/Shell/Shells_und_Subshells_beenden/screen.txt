@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T13:11:07+02:00
+
+====== screen ======
+Created Sonntag 24 April 2011
+
+**screen [<Befehl>]**
+→ von einem tty aus meherere Terminals starten und verwalten
+→ wird <Befehl> verwendet wird dieser auf dem gestarten Screen gebunden
+
+**<Strg>+<A> <c> **→ ein neues Terminal erstellen
+**<Strg>+<A> <Ziffer> **→ Auf das Terminal mit der Nummer <Ziffer> zugreifen
+**<Strg>+<A> <k> **→ das virtuelle Terminal beenden
+**<Strg>+<A> <"> **→ alle Virtuelle Termials und ihre gerade ausgeführten Jobs anzeigen

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Module.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./setserial.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>PCI</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+<strong>setpci </strong>→ Konfiguration und Abfrage von konfigurierten PCI Geräten<br>
+<strong>-v </strong>→ verbose<br>
+<strong>-D </strong>→ Demo Mode<br>
+</p>
+
+<p>
+<strong>setpci -d &lt;Device-ID&gt; </strong>→ lokalisieren eines Gerätes aufgrund einer bekannten Geräte-ID<br>
+</p>
+
+<p>
+<strong>lspci </strong>→ listet die vorhandenen PCI Geräte auf<br>
+<strong>-v </strong>→ ausführliche Ausgabe<br>
+<strong>-vv </strong>→ noch ausführlicher<br>
+<strong>-vvv </strong>→ noch viel ausführlicher<br>
+<strong>-n </strong>→ nicht die Datenbank unter */usr/share/pci.ids<br>
+<a href="../FHS/usr.html" title="Linux Wissen:FHS:usr">Linux Wissen:FHS:usr</a><br>
+<strong>-t </strong>→ zeige die Geräteabhängigeiten einzelner PCI-Geräte in einer Baumansicht<br>
+<strong>-d </strong>→ dump der PCI Geräte Daten direkt aus den Geräten<br>
+<strong>-mm </strong>→ dump der PCI Geräte Daten direkt aus den Geräten in einem für Script parsebare Form<br>
+<a href="../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting">Linux Wissen:Systemprogrammierung:Shellscripting</a><br>
+</p>
+
+<p>
+<strong>-k </strong>→ zeige die Kernelmodule an, die von entsprechenden Geräten verwendet werden<br>
+<strong>-x </strong>→ Hexdump einzelner PCI Geräte<br>
+<strong>-b </strong>→ BUS Centic View, ohne den Kernel zu fragen, es wird nur der PCI BUS gedumpt<br>
+</p>
+
+<p>
+<u>Hinweis: Benutzen Sie lspci -k um herauszufinden welche Kernelmodule tasächlich gebraucht werden um einen möglichst kleinen Kernel zu bauen. </u><br>
+<strong>(missing link Kernel bauen)</strong><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Hardware_und_Systeminformationen.html'>Linux Wissen:Hardware und Systeminformationen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

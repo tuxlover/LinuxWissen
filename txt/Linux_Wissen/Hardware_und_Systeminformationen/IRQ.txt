@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T14:13:02+02:00
+
+====== IRQ ======
+Created Sonntag 24 April 2011
+
+=== Liste der wichtigsten IRQ Kanäle ===
+0       System Timer
+1       Keyboard
+2       Cascade um IRQs 8-15 benutzen zu können
+3       Zweiter RS-232 serieller Port (COM 2)
+4       Erster RS-232 serieller Port (COM 1)
+5       Sound Karte oder zweiter paralleler Port (LPT2)
+6       Floppy Disk Controler
+7       Erster paralleler Port (LPT 1)
+8       Real Time Clock
+9-11    Freier Interrupt
+12      PS/2 Mouse
+13      Mathemathischer Coprozessor
+14      Erster ATA Controler */dev/sda  */dev/sdb
+15      Zeiter ATA Controler */dev/sdc */dev/sdd

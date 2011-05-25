@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Dateiattribute.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Dateien_betrachten.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Dateien anlegen und löschen</h1>
+
+<p>
+Created Samstag 16 April 2011<br>
+</p>
+
+<p>
+<strong>touch &lt;Datei&gt; </strong>→ Anlegen einer leeren Datei<br>
+</p>
+
+<p>
+<strong>mkdir &lt;DIR&gt; </strong>→ Das Verzeichnis &lt;DIR&gt; anlegen<br>
+<strong>-p </strong>→ erstelle auch Elternverzeichnis falls diese noch nicht existieren<br>
+</p>
+
+<p>
+<strong>rmdir &lt;DIR&gt; </strong>→ das leere Verzeichnis &lt;DIR&gt; löschen<br>
+<strong>-p </strong>→ lösche auch leere Ahnenverzeichnisse<br>
+<strong>-v </strong>→ verbose<br>
+<u>Hinweis: rmdir löscht nur leere Verzeichnisse. Verzeichnisse mit Inhalt müssen mir rm -r &lt;DIR&gt; gelöscht </u><br>
+</p>
+
+<p>
+<strong>mktemp &lt;Datei&gt;XXXXX </strong>→ erstelle eine temporäre Datei oder ein Verzeichnis in */tmp mit zufälligem Namen<br>
+                                              → wobei die X eine Zufallsschablone ist<br>
+<strong>-d </strong>→ ein Verzeichnis erstellen<br>
+<strong>-q </strong>→ Quiete<br>
+<strong>-u </strong>→ dry run, nichts tun nur simmulieren<br>
+<strong>-t </strong>→ erstellt das Verzeichnis welches durch die Umgebungsvariable $TMPDIR festgelegt wurde<br>
+</p>
+ 
+<p>
+<strong>rm &lt;Datei&gt; </strong>→ löscht &lt;Datei&gt;<br>
+<strong>-r </strong>→ löscht rekursiv auch Verezeichnisse und Unterverzeichnisse<br>
+<strong>-f </strong>→ force, nicht nachfragen, erzwingen<br>
+<strong>-i </strong>→ frage vorher nach<br>
+<strong>-v </strong>→ verbose<br>
+</p>
+
+<p>
+<u>Hinweis: alias rm=''rm -i" bewahrt root vor vorschnellen Dummheiten</u><br>
+<u>Hinweise: rm -rf /*</u><br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./Dateien_suchen_und_indizieren/find.html'>Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:find</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

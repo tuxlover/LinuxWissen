@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Bibliotheken.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='../Booten.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>dynamische Bibliotheken</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<h4>Der Linux Linker und ldconfig</h4>
+<p>
+<img src="../../linker.png" alt=""><br>
+</p>
+
+<p>
+<strong>ldconfig </strong><br>
+→ aktualisieren des Bibliothekenspeichers */etc/ld.so.cache aus der Datei */etc/ld.so.conf oder LD_LIBRARY_PATH<br>
+<a href="../FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
+<strong>-v </strong>→ verbose<br>
+<strong>-N </strong>→ aktualisiert nur Links zu den Bibliotheken<br>
+<strong>-X </strong>→ aktualisiert nur die Bibliotheken<br>
+<strong>-n &lt;PATH&gt; </strong>→ nur &lt;PATH&gt; akutalisieren<br>
+<strong>-f &lt;DATEI&gt; </strong>→ eine andere &lt;Datei&gt; als Konfigurationsdatei bestimmen <br>
+<strong>-C &lt;DATEI&gt; </strong>→ eine andere &lt;DATEI&gt; als Cache bestimmen<br>
+<strong>-r &lt;DIR&gt; </strong>→ das angegebene Verzeichnis als / behandeln<br>
+<strong>-p </strong>→ anzeigen des Inhalts von */etc/ld.so.cache<br>
+</p>
+
+<p>
+<u>Hinweis: Mit </u><strong>ldconfig -p |grep &lt;LIB&gt; </strong><u>kann man herausfinden ob eine &lt;LIB&gt; dem System bekannt ist.</u><br>
+</p>
+
+<p>
+<strong>strip </strong>→ entfernt Symboltabellen von Programmen<br>
+<strong>--strip-debug </strong>→ nur debugging Informationen entfernen<br>
+<strong>--strip-all </strong>→ alle Symbole entfernen, dies macht in den meisten Fällen das Programm unbrauchbar<br>
+<strong>--only-keep-debug </strong>→ das Gegenteil von <strong>--strip-debug</strong>, seperaten erzeugen von Debugging Symbolen<br>
+<strong>-v </strong>→ verbose<br>
+</p>
+
+<p>
+*/lib/libc.so.6<br>
+<a href="" title="Linux Wissen:Bibliotheken:dynamische Bibliotheken">Linux Wissen:Bibliotheken:dynamische Bibliotheken</a><br>
+</p>
+ 
+<p>
+<strong>ldd </strong>→ gibt Informationen über die zur Laufzeit benötigten Programme<br>
+<div style='padding-left: 30pt'>
+→ bei statisch gelinkten Programmen wird ein Fehler zurückgegeben<br>
+</div>
+<strong>-v </strong>→ verbose<br>
+</p>
+
+<p>
+<u>Hinweis:</u><br>
+<strong>ldd $(which &lt;Befehl&gt;)</strong><br>
+→ anzeigen aller benötigten Bibliotheken von &lt;Befehl&gt;<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Bibliotheken.html'>Linux Wissen:Bibliotheken</a></li>		<a href='../FHS/lib.html'>Linux Wissen:FHS:lib</a></li>		<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

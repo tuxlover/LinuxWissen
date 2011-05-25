@@ -1,0 +1,120 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T00:17:34+02:00
+
+====== src++packages++SPECS++beispiel.spec ======
+Created Dienstag 26 April 2011
+
+++
+//##der norootforbuild flag ist ein Indikator der für den opensuse buildservice benötigt wird//
+//#norootforbuild//
+
+//#Macros vorher definieren//
+//%define _prefix /usr/share//
+
+//###Kopfteil://
+//Name:                   AwOken                  #Name des Pakets//
+
+//Summary:                Awsome Token Icon Theme #Kurze Zusammenfassung wozu das Paket da ist//
+
+//Version:                1.1                     #Versionsnummer des Pakets//
+
+//Release:                1                       #Releasenummer des Build Vorgangs, bezieht sich auf die Versionsnummer//
+//                                                #des Pakets nicht auf die der Software//
+
+//Vendor:                 Opensuse BuildService   #Organisation die das Paket vertreibt und gebaut hat//
+
+//Packager:               propstmatthias <pmatthias@fancynet.com> #Nutzer und E-Mail Adresse des Packagers//
+
+//License:                Creative Commons Attribution-ShareAlike 2.5 License Agreement//
+//                                                #Lizenz unter der die Software, der Inhalt des Paketes steht//
+
+//Group:                  System/GUI/Gnome        #Die Zuordnung in der Rpm Datenbank//
+
+//URL:                    http://www.deviantart.com/download/163570862/ #URL zum Sourcecode des Paketes//
+
+//Source0:                 %{name}.tar.bz2                #Name inklusive Versionsnummer und tar.bz2|gz extension//
+
+//Source1:                index.theme             #weitere Dateien die zum Paket gehören aber nicht bestandteil des//
+//                                                #Source rpms sind//
+
+//Patch0:                 fancy-patch1.diff       #name diverser Patches die ebenfalls unter SOURCES liegen//
+
+//PATCH1:                 even-fancier.diff//
+
+//BuildRequires:  gtk2 >= 2.18                    #Zum Bau der Software benötigte Pakete die installiert sein müssen//
+//BuildRequires:  fdupes//
+
+//Requires:       gnome                           #Eine Abstrakte Abhängigkeit die vorhanden sein muss und von einem//
+//                                                #anderen Paket angeboten werden muss//
+
+//Provides:       Icon-Theme                      #Eine Abstrakte Abhängigkeit die von diesem Paket angeboten wird//
+
+//Conflicts:      AwOken-gnome                    #Ein Paket die mit diesem Paket im Konflikt steht//
+
+//Obsoletes:      sonar-icon-theme                #Ein Paket welches durch dieses Übrflüssig gemacht wird//
+
+//BuildArch:              noarch                  #Für welche Zielarchitektur wird das Paket gebaut//
+
+//BuildRoot:              %{buildroot}            #Das Verezeichnis indem das Paket gebaut wird//
+//                                                #%{buildroot} ist ein Macro der sich auf die buildroot des Servers bezieht//
+//###Kopfteil://
+
+//#beschreibt das Paket genauer. Meist wird hierfür ein teil der README Datei herangezogen//
+//%description//
+//My fancy icon theme for public use made with the customizable//
+//AwOken Icon Theme.//
+
+//#Angabe des Autors der Software, nicht des Packagers//
+//Authors://
+//---------//
+//        Alessandro Roncone//
+
+//#Vorbereiten des Übersetzens der Software//
+//Patchen der Software//
+//%prep//
+//%setup -q//
+//%patch0 -p1//
+//%patch1 -p0//
+
+//#Befehle die zum Bau der Software ausgeführt werden sollen//
+//%build//
+//%__make %{?_smp_flags}//
+
+//#Befehle die für die Installation der Software ausgeführt werden//
+//%install//
+//%__makeinstall DESTDIR=%{buildroot} PREFIX=%{_prefix}//
+//%fdupes %{buildroot}%{_prefix}//
+//find %{buildroot}/usr/share/icons/ -type f -exec %__chmod 0644 {} \;//
+
+//#Befehle vor der Installation ausführen//
+//%pre//
+
+//#Befehl nach der Installation ausführen//
+//%post//
+
+//#Befehl vor der Deinstallation ausführen//
+//%preun//
+
+//Befehle nach der Deinstallation ausführen//
+//%postun//
+
+//#Aufräumen nach der Erstellung des Rpms//
+//%clean//
+//rm -rf %{buildrot}//
+
+//#Auflisten der Files//
+//#dies ist der schwierigste Prozess beim Bauen//
+//%files//
+//%defattr(-,root,root)//
+//%{_prefix}/icons/%{name}//
+
+//%changelog//
+//* <Day of Week> <Month> <Day of Month> <Year> <Name des Autors> <Paket version>//
+//- Notiz//
+//  +genauere Bechreibung der Notiz//
+
+//* Wed Dec 8 2010 propstmattias 1.0.1-1//
+//- initial build//
+//   + no bugs known//
+++

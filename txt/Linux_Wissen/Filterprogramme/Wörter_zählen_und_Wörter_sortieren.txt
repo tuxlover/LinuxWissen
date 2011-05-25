@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T23:56:23+02:00
+
+====== Wörter zählen und Wörter sortieren ======
+Created Montag 18 April 2011
+
+**wc <Datei> **→ gibt die Anzahl von Zeilen, Wörtern und Zeichen von <Datei> aus
+**-l **→ nur Anzahl der Zeilen (Anzahl der \NL Zeichen)
+**-w **→ nur Anzahl der Wörter
+**-c **→ nur Anzahl der Zeichen
+
+**sort **→ sortiert den Standardeingabestrom standardmäßig aufsteigend nach ASCII
+**-k N **→ sortiert das N-te Feld
+**-k N,M **→ sortiert alles vom N-ten bis zum M-ten Feld (als ein Wort gesehen)
+**-b **→ ignoriere führende Leerzeichen
+**-d **→ sortiere wie im Wörterbuch
+**-f **→ Groß- und Kleinschreibung ignorieren
+**-i **→ Nichtdruckbare Zeichen ignorieren
+**-o <Datei> **→ schreibe Ausgabe in <Datei>
+**-r **→ sortiere Absteigend (reverse)
+**-n **→ nummerisch sortieren
+**-g **→ behandle Zahlen als Integer und sortiere dann, ignoriere Buchstaben
+**-u **→ filtere doppelte Vorkommen
+
+__Hinweis: __//export LC_ALL=de_DE setzt die Sortierwertigkeit auf die "deutsche Sortierung"//
+**(missing link Lokalisierung)**
+
+**uniq** → vergleich zwei aufeinander folgende Zeilen und gib identische Zeilen nicht aus
+**-u **→ gib nur einmalig vorkommende Zeilen aus, wirklich unique
+**-d **→ nur doppelte Zeilen ausgeben
+
+

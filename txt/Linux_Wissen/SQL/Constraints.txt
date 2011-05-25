@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-29T00:03:45+02:00
+
+====== Constraints ======
+Created Freitag 29 April 2011
+
+== Primärschlüssel Constraint ==
+* Kennzeichnen die Spalte, die in einer Tabelle die Eindeutigkeit gewährleisten
+
+== Fremdschlüssel Constraint ==
+* sorgen dafür, dass eine oder meherer Spalten nur Werte enthalten, die aus Primärschlüsselspalten stammen
+
+== Unique Constraint ==
+* Einschränken einer oder meherer Spalten auf eindeutige Werte
+
+== Check  Constraint ==
+* Einschränken zulässiger Werte für eine Spalte

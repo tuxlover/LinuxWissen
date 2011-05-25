@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T21:11:23+02:00
+
+====== Vim Editor ======
+Created Freitag 15 April 2011
+
+**view <Datei> **→ Datei im readonly Modus öffnen und anzeigen
+
+**vi**
+**-r recover <Datei> **→ Dateien nach einem Absturz wieder herstellen
+**-t <Marke> <Datei> **→ Starte Editor ab <Marke> falls vorhanden
+**+ <Datei> **→ öffne Datei an der letzten Zeile
+**+n <Datei> **→ öffne Datei an Zeile n
+**+"se nu"** → öffne Datei mit Zeilennummerrierung
+**+"<Befehle>" **→ öffne vi und führe dabei  anschließend <Befehle> aus  
+
+* vim lässt sich in der *~/.vimrc konfigurieren
+
+===== Kommando-Modus =====
+* Jede Taste stellt einen Befehl oder eine Folge von Befehlen dar
+* In der Kommando-Modus gelangt man nach öffnen einer Datei mit Editor oder durch **Esc**
+
+===== Eingabe-Modus =====
+* alle Eingaben werden als Text verstanden
+* Wechseln mit **i **(insert),  **a **(append), **o, O, A**
+
+===== Kommandozeilen-Modus =====
+* vom Kommando-Modus durch **:!<Befehl> **gewechselt
+* füht den <Befehl> aus, beenden mit **Enter**
+

@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T14:00:49+02:00
+
+====== kexec ======
+Created Sonntag 24 April 2011
+
+**kexec **
+→ Tool zum Auswechseln des Kernels oder einer Kernelkonfiguration im laufenden Betrieb
+→  Ein Neustart läuft schneller ab.
+→ Das BIOS hat keine Möglichkeit, sie mit Fehlern zu nerven.
+→ Das obige trifft vor allem zu, wenn Sie FakeRAID-Controller benutzen.
+→  Sie müssen nicht warten, bis der SCSI-Controller alle Geräte durch gezählt hat.
+→ Sie sind nicht von einer funktionierenden GRUB- oder LILO-Konfiguration abhängig.
+→  Sie könnten es auch dazu missbrauchen, eine neue Version von SUSE Linux zu Installieren, ohne das System von einer CD, DVD oder Diskette zu starten
+→  Sie können dem Kernel vorgeben, im Fall einer Kernel Panik über Kexec neu zu starten, wodurch auch entfernte Systeme auf schnellstem Weg neu starten. 
+
+
+=== Kernel austauschen ===
+**(1) **Betriebsystem muss im Einzelnutzermodus S laufen
+**(2) kexec -l --comand-line="$(cat /proc/cmdline)" --initrd=/boot/initrd vmlinuz**
+**(3) remount ro /**
+**(4) kexec -e**
+

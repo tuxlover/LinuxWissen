@@ -1,0 +1,243 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T21:56:57+02:00
+
+====== Test ======
+Created Dienstag 26 April 2011
+
+**test [ ]   (( ))**
+
+===== Arithmetische Tests =====
+**test "$x" **
+→   0 falls Variable exitiert und nicht leer
+→  1 falls Variable leer oder nicht gesetzt
+
+**test $x -gt N **
+→  0 falls x größer als N
+→  1 sonst
+
+**test $x -ge N **
+→  0 falls x größer oder gleich N
+→  1 sonst
+
+**test $x -eq N**
+ →  0 falls x gleich N
+→  1 sonst
+
+**test $x -lt N **
+→  0 falls x kleiner N
+→  1 sonst
+
+**test $x -le N **
+→  0 fals x kleiner oder gleich N
+ →  1 sonst
+
+**test $x -ne N **
+→  0 falls x ungleich N
+→  1 sonst
+
+=== Arithmetische Tests mit (( )) ===
+++
+//#!/bin/bash                                                            //
+//# arith-tests.sh                                                       //
+//# Arithmetic tests.                                                    //
+                                                                        
+// (( 0 ))                                                                //
+// echo "Exit status von \"(( 0 ))\" ist $?."         # 1                 //
+                                                                        
+// (( 1 ))                                                                //
+// echo "Exit status von \"(( 1 ))\" ist $?."         # 0                 //
+                                                                        
+// (( 5 > 4 ))                                      # wahr                //
+// echo "Exit status von \"(( 5 > 4 ))\" ist $?."   # 0                   //
+                                                                        
+// (( 5 > 9 ))                                      # false               //
+// echo "Exit status von \"(( 5 > 9 ))\" ist $?."   # 1                   //
+                                                                        
+// (( 5 == 5 ))                                     # wahr                //
+// # (( 5 = 5 ))  gibt einen Fehlerwert                                   //
+                                                                        
+// (( 5 - 5 ))                                      # 0                   //
+                                                                        
+// (( 5 / 4 ))                                      # Division o.k.       //
+                                                                        
+// (( 1 / 2 ))                                     # Division resultat < 1. //
+//                                                  # 1                   //
+                                                                        
+// (( 1 / 0 )) 2>/dev/null                        #Illegal division durch 0. //
+// # 1          ^^^^^^^^^^^                                               //
+                                                                        
+                                                                        
+// if (( var1 > var2 ))                                                   //
+// then #^      ^      Note: Not $var1, $var2. Why?                       //
+//  echo "$var1 ist größer $var2"                                   //
+// fi     # 5 ist größer als 4                                          //
+                                                                        
+// exit 0       //                                                          
+++
+
+===== Zeichenketten Tests =====
+**test -z $STRING **
+→  0 falls STRING nicht gesetzt oder die Länge Null hat
+ →  1 sonst
+
+**test -n $STRING **→  **test ! -z $STRING**
+
+**test ALPHA \> OMEGA**
+→  0 falls ALPHA lexiographisch nach OMEGA steht
+→  1 sonst
+
+**test ALPHA \< OMEGA **
+→  0 falls ALPHA lexiographisch vor OMEGA steht
+→  1 sonst
+
+**test ALPHA > OMEGA **
+→  0 falls ALPHA in ASCII Reihenfolge nach OMEGA steht
+→  1 sonst
+
+**test ALPHA < OMEGA **
+→  0 falls ALPHA in ASCII Reienfolge vor OMEGA steht
+→  1 sonst
+
+**test ALPHA == OMEGA**
+→  0 falls ALPHA der Zeichenkette OMEGA genau entspricht
+→  1 sonst
+
+**test ALPHA != OMEGA**
+ →  0 falls ALPHA der Zeichenkette OMEGA nicht entspricht
+ →  1 sonst
+
+===== Dateioperatoren Tests =====
+**test -[a|e|f|s|d|b|c|p|h|L|S|t|r|w|x|g|u|k|O|G|N] <Datei>** →  überprüft die Eigenschaft von Datei
+
+**-a|-e **
+→  0 falls Datei existiert
+→  1 sonst
+
+**-f** 
+→  0 falls Datei existiert und ist normale Datei
+→  1 falls Datei nicht existiert oder Datei ein Verzeichnis oder Gerätedatei ist
+
+**-s **
+→  0 falls Dateigröße ist Größer als 0
+→  1 sonst
+
+**-d **
+→  0 falls Datei existiert und ist ein Verzeichnis
+→  1 sonst
+
+**-b **
+→  0 falls Datei existiert und eine Blockgerätedatei ist
+→  1 sonst
+
+**-c **
+→  0 falls Datei existiert und ein zeichenorientiertes Gerät ist
+→  1 sonst
+
+**-p **
+→  0 falls Datei existiert und ein Pipe ist
+→  1 sonst
+
+**-h **
+→  0 falls Datei existiert und ein symbolischer Link ist, auch wenn dieser defekt ist
+→  1 sonst
+
+**-S** 
+→  0 falls Datei existiert und ein Socket ist
+→  1 sonst
+
+
+**-t **
+→  0 falls Datei mit einem Terminal Gerät assoziiert ist
+→  1 sonst
+
+**-r|-w|-x **
+→  0 falls Datei existiert und lese|schreib|ausführbahr ist
+→  1 sonst
+
+**-g **
+→  0 falls Verzeichnis|Datei das Setgid Bit gesetzt hat
+→ 1 sonst
+
+**-u **
+→  0 falls Datei das Setuid Bit gesetzt hat
+→  1 sonst
+
+**-k** 
+→  0 falls Verzeichnis|Datei das Sticky Bit gesetzt hat
+→  1 sonst
+
+
+**-O **
+→  0 der Aufrufende ist Beseitzer der Datei
+→  1 sonst
+
+**-G **
+→  0 der Aufrufende ist Mitglied der gleichen Gruppe wie Datei
+→  1 sonst
+
+**-N** 
+→  0 Die Datei wurde seit dem letzten lesen geändert
+→  1 sonst
+
+**test <Datei1> -nt <Datei2>**
+→  0 falls **<Datei1>** neuer als **<Datei2>** ist
+→  1 sonst
+
+**test <Datei1> -ot <Datei2> **
+→  0 falls **<Datei1>** älter als **<Datei2>** ist
+→  1 sonst
+
+**test <Datei1> -ef <Datei2>**
+→  0 falls **<Datei1>** und** <Datei2>** Hardlinks zur gleichen Datei sind
+→  1 sonst
+
+===== Bedinungen und Fallunterscheidungen =====
+
+=== if-Konstrukt ===
+++
+//if <Test>//
+//        then//
+//                <Test gab Exitstatus 0 zurück>//
+//        else//
+//                <Test gab Exitstaus 1 oder größer zurück>//
+//fi//
+++
+
+
+=== Elif-Konstrukt ===
+++
+//if <Test>//
+//        then//
+//                elif <Test 1>//
+//                        then//
+//                elif <Test 2>//
+//        else//
+//fi//
+++
+
+=== If Konstrukt mit logischer Bedingungsverknüpfung ===
+++
+**if [[ Bedinung1 || Bedinggung2 && Bedingung3 ]]**
+**        then**
+**                <Test gab Exitstatus 0 zurück>**
+**        else**
+**                <Test gab Exitstatus 1 oder größer zurück**
+**fi**
+++
+
+=== Case-Konstruckt ===
+++
+//case $<Var> in//
+//        Wert1) Aktion//
+//        ;;//
+//        Wert2) Aktion//
+//        ;;//
+//        ...//
+//        ;;//
+//        WertN) Aktion//
+//        ;;//
+//        \?) Aktion// #nichts davon traf zu
+esac
+++
+

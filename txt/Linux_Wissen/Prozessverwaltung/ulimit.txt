@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T14:19:11+02:00
+
+====== ulimit ======
+Created Donnerstag 21 April 2011
+
+**ulimt <LIMIT> **→ limitiere die Resourcen für eine Shell und der von ihr gestarteten Prozesse
+		           → Shell Buildin
+	                  → <LIMITS> werden in 1024 bytes Inkrementierungen übergeben
+**-S **→ eine weiche Grenze setzen
+**-H **→ eine harte Grenze setzen
+**-a **→ zeige die aktuelle gesetzten Limits an
+**-c **→ maximale Größe der Speicherabzüge (Core-files)
+**-d **→ schränkt die aktuelle Größe des Dateisegments|Heaps ein (Kilobyte)
+**-f **→ verbietet den Anwender eine Datei über eine bestimmte Größe zu erzeugen
+**-n **→ schränkt die maximal offenen Dateien pro Prozess ein
+**-m **→ schränkt die maximale Anzahl des verwendeten Speichers ein (Kilobyte)
+**-t **→ schränkt die verfügbare CPU-Zeit auf die angegebene Zahl Sekunden ein
+**-u **→ schränkt die Anzahl der Prozesse je Nutzer ein
+**-v **→ schränkt die maximale Größe des virtuellen Speichers ein (Kilobyte)
+
+=== Sicherheitsrelevante ulimits ===
+**ulimit -c 0 **→ Coredumps verhindern
+**ulimit -f 512000 **→ keine Dateien größer als 512 MB zulassen
+**ulimt -S -n **→ weiches Limit von maximal 250 Dateideskriptoren
+**ulimit -S -u 100 **→ weiches Maximum von 100 Prozessen
+**ulimit -H -v 50000 **→ nicht mehr als 50 MB virtuellen Speicher verwenden
+
+*/etc/security/limits.conf
+[[Linux Wissen:FHS:etc:security++limits.conf]]

@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T23:43:21+02:00
+
+====== Dateien bearbeiten ======
+Created Freitag 15 April 2011
+
+===== suchen =====
+**C-s **→ vorwärst i-search
+**C-r** → rückwärts i-search
+
+===== löschen =====
+**<delete> **löschen eines Zeichens (<entf>, <backspace> )
+
+**M-<delete> **→ löschen bis Wortanfang
+**M-d **→ löschen bis Wortende
+
+**C-k **→ löschen von Cursorposition bis zum Ende der Zeile
+**M-k **→ löschen bis zum Satzende
+
+**C-<space> C-w** → markieren und löschen
+
+===== einfügen =====
+**C-y **→ gelöschten Text einfügen
+
+===== undo =====
+**C-x u **→ die letzte Aktion rückgängig
+**C-_ **→ die letzte Aktion rückgängig
+
+===== Textteile ersetzen =====
+**M-x replace-string  <Ausdruck1> <Enter> <Ausdruck2> **→ Ausdruck1 wird durch Ausdruck2 ersetzt 
+
+

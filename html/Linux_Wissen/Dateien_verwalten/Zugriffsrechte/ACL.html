@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Zugriffsrechte.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Berechtigungen_verwalten.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>ACL</h1>
+
+<p>
+Created Dienstag 19 April 2011<br>
+</p>
+
+<p>
+<strong>stetfacl </strong>→ setzen, manipulieren von ACLs<br>
+</p>
+
+<p>
+<strong>setfacl -m|--set u:&lt;Nutzer&gt;:&lt;rwx&gt;,g:&lt;Gruppe&gt;:&lt;rwx&gt; &lt;Datei&gt; </strong><br>
+→ modifiziere|setzen der ACL Werte für &lt;Datei&gt; für den User bzw. für die &lt;Gruppe&gt;<br>
+→ beim Setzen werden alte ACL überschrieben<br>
+</p>
+
+<p>
+<strong>setfacl -d -m|--set u:&lt;Nutzer&gt;:rwx&gt;,g&lt;Gruppe&gt;:&lt;rwx&gt; &lt;Datei&gt;</strong><br>
+→ modifizieren|setzen der Standard ACL <br>
+→ beim Setzen werden alte ACL überschrieben<br>
+→ Standard ACL können nur für Verzeichnisse vergeben, die ihre Rechte auf ihnen angelegte Dateien vererben<br>
+</p>
+
+<p>
+<strong>setfacl -b &lt;Datei&gt; </strong>→ entfernt alle ACLs von &lt;Datei&gt;<br>
+</p>
+
+<p>
+<strong>setfacl -x u:&lt;Nutzer1&gt;,u:&lt;Nutzer2&gt;,..,g:&lt;Gruppe&gt;,... &lt;Datei&gt; </strong>→ entfernt die ACL Werte für bestimmte &lt;Nutzer&gt; und &lt;Gruppe&gt;n von &lt;Datei&gt;<br>
+</p>
+
+<p>
+<strong>setfacl -M &lt;ACL&gt; &lt;Datei&gt; </strong>→ liest die Rechte für &lt;Datei&gt; aus &lt;ACL&gt;<br>
+</p>
+
+<p>
+<strong>setfacl -m|--set mask:&lt;rwx&gt;:&lt;rwx&gt; &lt;Datei&gt; </strong><br>
+→ modifizieren|setzen der "Efffektive Rights Mask" für &lt;Datei&gt;<br>
+→ beim Setzen werden alte ACL überschrieben<br>
+</p>
+
+<p>
+<u>Hinweis: setfacl kann mit nicht vorhandenen UIDs GIDs umgehen, nicht aber mit nicht vorhandenen Nutzer oder Gruppen.</u><br>
+</p>
+
+<p>
+<em>Beispiel &lt;ACL&gt; Datei:</em><br>
+<em>user:axel:rw-</em><br>
+user:tippy::rw-<br>
+<em>group:lensmen:r--</em><br>
+<em>group:fafnir:---</em><br>
+<em>mask::rw-</em><br>
+<em>other::---</em><br>
+</p>
+
+<p>
+Mit <em>mask</em> wird die effektive Rechtemaske gesetzt. <br>
+→ limitiert die efektiven Rechte die Nutzern und Gruppen zugewiesen werden können<br>
+→ Ist die Maske restriktiver als die Rechte die man zuweisen möchte, wird die <em>mask </em>bevorzugt<br>
+→ Die <em>mask </em>hat keinerlei Auswirkung auf die tradionellen ugo Recchten <br>
+</p>
+
+<p>
+<u>Hinweis: Werden die Berechtigungen der ACL geändert, so ändert sich auch die mask entsprechend der Berechtigungen die am höchsen sind. Entsprechend muss die mask dann erneut angepasst werden.</u><br>
+</p>
+
+<p>
+<u>Hinweis: chmod lässt ACL unverändert. Nur die mask könnte sich ändern.</u><br>
+</p>
+
+<p>
+<strong>getfacl</strong> → anzeigen der gesetzten ACLs<br>
+<strong>-n|--numeric </strong>→ numerische anstelle von symbolischen Werten zur Darstellung der ACL verwenden<br>
+<strong>--ommit</strong> → keine Headerinformationen ausgeben<br>
+<strong>-R </strong>→ rekursiv<br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>		<a href='../Synchronisieren_von_Dateien.html'>Linux Wissen:Dateien verwalten:Synchronisieren von Dateien</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

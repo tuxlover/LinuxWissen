@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T01:31:50+02:00
+
+====== Wildcards ======
+Created Samstag 16 April 2011
+
+* →  eine beliebige Folge von Zeichen
+
+? → ein einzelnes Zeichen 
+
+[abc] → eines der Zeichen a,b oder c
+
+[!abc] → alle Zeichen außer a,b oder c
+
+{rot,gelb,blau}.txt → die Wörter rot.txt, gelb.txt und blau.txt
+
+//Beispiel: //
+//rm *.rpm → löscht alle Dateien die auf .rpm enden//
+//rm ?.ax → löscht zum Beispiel die Dateien die auf a.ax bax c.ax, aber nicht ca.ax//
+//rm [abc].deb → löscht a.deb, b.deb oder c.deb aber nicht d.deb, cd.deb//
+//mkdir -p /etc/init.d/rc{1,2,3,4,5}.d //            

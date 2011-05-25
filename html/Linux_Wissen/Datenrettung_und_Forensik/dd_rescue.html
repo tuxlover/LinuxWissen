@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Datenrettung_und_Forensik.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./foremost.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>dd rescue</h1>
+
+<p>
+Created Samstag 23 April 2011<br>
+</p>
+
+<p>
+<strong>dd_rescue [&lt;Options&gt;] &lt;Eingabe Datei&gt; &lt;Ausgabe Datei&gt; [&lt;Logfile&gt;]</strong><br>
+→ Tool zum lesen von Datenströmen aus Blockgeräten und Dateien<br>
+→ bricht nicht bei Fehlermeldungen ab, eine maximale Fehlertoleranz kann angegeben werden<br>
+→ kann Daten vom Ende einer Datei|Blockgerätes lesen<br>
+→ Datenrettung von Fehlerhaften Partitionen und Geräten<br>
+→ versucht erst die erhaltenen Daten zu retten, wenn ein Gerät gerade Probleme macht<br>
+→ kann nach einer Unterbrechung fortgesetzt werden, ohne das Daten die bereits geschrieben wurden, verlorengehen<br>
+→ kann keine Sparse - oder Nulldateien erzeugen wie <strong>dd ( </strong><a href="../Partitionen_und_Dateisysteme/dd.html" title="Linux Wissen:Partitionen und Dateisysteme:dd">Linux Wissen:Partitionen und Dateisysteme:dd</a> )<br>
+</p>
+
+<p>
+<strong>--blocksize=&lt;512|1024|2048&gt; </strong>→ Sektorengröße des Eingabestroms<br>
+<div style='padding-left: 210pt'>
+          512: Harddisk, 3,5 '' Diskette<br>
+          1024: 5,25'' Diskette<br>
+</div>
+<div style='padding-left: 240pt'>
+   2048: Isos, CD und Dvd<br>
+</div>
+</p>
+
+<p>
+<strong>-e +N|--max-errors </strong>→ Angabe der Fehler die maximal auftreten dürfen<br>
+</p>
+
+<p>
+<strong>-i &lt;pos&gt; </strong>→ eine Startposition auf dem Eingabegerät festelgen<br>
+<strong>-m &lt;logfile&gt; </strong>→ Die RescueDomain auf die bereits geretteten Blöcke beschränken<br>
+<strong>-o &lt;pos&gt; </strong>→ eine Zielposition auf der Ausgabedatei festlegen<br>
+<strong>-q </strong>→ keine Ausgabe<br>
+<strong>-r </strong>→ reverse<br>
+<strong>-s &lt;Bytes&gt;</strong> → maximale Anzahl der Bytes die aus der Ausgabedatei kopiert werden<br>
+<strong>-S </strong>→ nicht belegte Blöcke werden nicht in die Ausgabe Datei geschrieben<br>
+</p>
+ 
+
+<h4>Algorithmus:</h4>
+<p>
+<em>(1) Lesen einer Optionalen Datei, die ddrescue sagt, wo eszuletzt aufgehört hat (Logfile)</em><br>
+<div style='padding-left: 30pt'>
+<em>a) wurde kein Logfile angegeben, wird angenommen dass das dd_rescue bisher keinen erfolgreichen Verusch</em><br>
+     <em>unternommen hat</em><br>
+</div>
+</p>
+
+<p>
+<em>(2) Lesen der nicht probierten Blöcke aus der Einagedatei</em><br>
+<a href="http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html" title="http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html">http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html</a><br>
+</p>
+
+<p>
+<u>Hinweis: Das Logfile kann mit einem Texteditor geöffnet und bearbeitet werden. </u><br>
+</p>
+
+<p>
+<u>Hinweis: Ein rw eingehängtes Gerät kann als Einabe Datei benuztzt werden, das Resultat wird aber nutzlos sein.</u><br>
+</p>
+
+
+<h2>Rezepte:</h2>
+
+<h4>Retten einer ext-Festplatte /dev/sdX auf eine andere /dev/sdY</h4>
+<p>
+<strong>dd_rescue -f -n /dev/sdX /dev/sdY logfile</strong><br>
+<strong>sfdisk /dev/sdbY </strong><br>
+<strong>i=0;</strong> <strong>while true; $(($i++)); </strong> <strong>e2fsck -v -f /dev/sdY${1};done</strong><br>
+<a href="../Partitionen_und_Dateisysteme/Partitionswerkzeuge.html" title="Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge">Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge</a><br>
+<a href="../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting">Linux Wissen:Systemprogrammierung:Shellscripting</a><br>
+</p>
+
+<h4>Retten einer Partition /dev/sdX1 nach /dev/sdY2</h4>
+<p>
+<ul>
+<li>es muss vorher sdY2 erstellt worden sein und die entsprechende Größe haben </li>
+</ul>
+<strong>ddrescue -f -n /dev/sdX1 /dev/sdbY2 logfile</strong><br>
+<strong>ddrescue -d -f -r3 /dev/sdX1 /dev/sdY2 logfile</strong><br>
+<strong>e2fsck -v -f /dev/sdY2</strong><br>
+<strong>mount -t ext2 -o ro /dev/hdb2 /mnt</strong><br>
+</p>
+
+<h4>Retten einer CD-Rom aus 2 Kopien mit defekten Blöcken</h4>
+<p>
+<strong>     ddrescue -n -b2048 /dev/cdrom cdimage logfile</strong><br>
+<strong>     ddrescue -d -b2048 /dev/cdrom cdimage logfile</strong><br>
+<strong>       (2. CD einlegen)</strong><br>
+<strong>     ddrescue -d -r1 -b2048 /dev/cdrom cdimage logfile</strong><br>
+</p>
+
+<h4>Während der Rettung von /dev/sdX, schlägt die Rettung auf /dev/sdY fehl und eine Rettung</h4>
+
+<h4>muss nun auf /dev/sdZ erfolgen</h4>
+<p>
+<strong>    ddrescue -f -n /dev/sdX /dev/sdY logfile1     </strong>&lt;-- /dev/hdY schlegt fehl<br>
+<strong>     ddrescue -f -m logfile1 /dev/sdY /dev/sdZ logfile2</strong><br>
+<strong>     ddrescue -f -n /dev/sdX /dev/sdZ logfile2</strong><br>
+<strong>     ddrescue -d -f -r3 /dev/sdX /dev/sdZ logfile2</strong><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a></li>		<a href='../Partitionen_und_Dateisysteme/dd.html'>Linux Wissen:Partitionen und Dateisysteme:dd</a></li>		<a href='./foremost.html'>Linux Wissen:Datenrettung und Forensik:foremost</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

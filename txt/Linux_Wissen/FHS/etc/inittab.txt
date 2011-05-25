@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T01:00:15+02:00
+
+====== inittab ======
+Created Sonntag 24 April 2011
+
+++
+//#Standard-Runlevel                                                                      //
+//id:5:initdefault #Dieses runlevel wird gestartet wenn der Rechner hochgefahren wird     //
+                                                                                         
+//#Erstes auszuführendes Script                                                           //
+// si:bootwait:/etc/init.d/boot                                                            //
+                                                                                         
+//# Runlevels                                                                             //
+//#<Etikett>:<Runlevel>:<Aktion>:<Befehl>                                                 //
+//l0:0:wait:/etc/init.d/rc 0                                                              //
+//l1:1:wait:/etc/init.d/rc 1                                                              //
+//l2:2:wait:/etc/init.d/rc 2                                                              //
+//l3:3:wait:/etc/init.d/rc 3                                                              //
+//l4:4:wait:/etc/init.d/rc 4                                                              //
+//l5:5:wait:/etc/init.d/rc 5                                                              //
+// l6:6:wait:/etc/init.d/rc 6                                                              //
+                                                                                         
+//#Ctr-Alt-Del                                                                            //
+//#Was passiert wenn man Strg-Alt-Entf drückt                                             //
+
+//ca:ctraltdel:/bin/true                                                                  //
+                                                                                         
+//# Terminals                                                                             //
+//#<Terminal Nr>:<Runlevel>:<Aktion>:<Befehl>                                             //
+//1:2345:respawn:/sbin/mingetty --noclear tty1                                            //
+                                                                                         
+//samS:A:ondemand:rcsmb start && rcnmb start  #Samba bei bedarf starten und  stoppen      //
+//samK:B:ondemand:rcsmb stop && rcnmb stop//
+++
+
+<Etikett>: Dient zur eindeutigen Identifikation des Feldes, bei Terminals werden die Namen des betreffenden Gerätes bezeichnet
+
+<Runlevel>: Bezeichnung des Runlevel 0 bis 6
+
+<Aktion>: Beim Aufruf dieses Runlevels/Terminals soll diese Aktion ausgeführt werden
+        **respawn**     --> Der Prozess wird sofort wieder neu gestartet falls er sich beendet hat
+        **wait**        --> Prozess wird einmal gestarte, warten auf Fertigstellung
+        **bootwait**    --> Prozess wird beim Booten ausgeführt, init warte auf Fertigstellung
+        **initdefault** --> Prozess ist nun Standardrunlevel
+        **ondemand**    --> Prozess wird ausgeführt ohne das Init den Runlevel wechselt
+
+<Befehl>: Führe folgenden Befehl aus
+        --> /etc/init.d/rc --> führt die unter /etc/init.d/rc(0-S).d Scripte aus
+                Sn --> Startscripte, werden beim Starten in numerisch aufsteigender n Reihenfolge gestartet
+                Km --> Stopscripte, werden bei Stoppen in numerisch aufsteigender Reihenfolge beendett
+                        z.B. /etc/init.d/rc5.d/S01acpid --> als erstes beim Starten
+                             /etc/init.d/rc5.d/K09SuSEfirewall2_init --> als 9.tes beim Stoppen
+
+RUNLEVEL --> Umgebungsvariable, die den gestarteten RUNLEVEL enthält
+   

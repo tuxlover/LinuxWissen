@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Benutzer_und_Gruppen.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Informationen_%C3%BCber_Nutzer_und_Gruppen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Benutzerkonten verwalten</h1>
+
+<p>
+Created Dienstag 19 April 2011<br>
+</p>
+
+<p>
+<strong>useradd &lt;Name&gt; </strong>→ legt den Nutzer mit &lt;Name&gt; an<br>
+<strong>-c &lt;Eintrag in Gecos&gt;</strong><br>
+<strong>-d &lt;Heimatverzeichnis&gt;</strong><br>
+<strong>-e [JJ-MM-TT] </strong>→ Datum an dem der Zugang gesperrt wird, wird keine Datumsangabe verwendet, wird Zugang sofort <br>
+<div style='padding-left: 90pt'>
+    gesperrt<br>
+</div>
+<strong>-g &lt;Primäre Gruppe&gt;</strong><br>
+<strong>-G &lt;sekundäre Gruppen,...&gt;</strong><br>
+<strong>-s &lt;Login Shell&gt;</strong><br>
+<strong>-u &lt;UID&gt;</strong><br>
+<strong>-o </strong>→ in Zusammenhang mit mit -u, legt UID auch an, wenn UID schon vergeben ist<br>
+<strong>-m </strong>→ legt das Heimatverzeichnis des Nutzers an und kopiert Dateien aus *<strong>/etc/skel</strong><br>
+<a href="../FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
+<strong>-k </strong>→ nur in Zusammenhang mit -m, alternatives *<strong>/etc/skel </strong> <br>
+<strong>--show-defaults |-D </strong>→ anzeigen und manipulieren der Stanardwerte<br>
+</p>
+  
+<p>
+ <strong>usermod &lt;User&gt;</strong> → Einstellungen für &lt;User&gt; ändern<br>
+<div style='padding-left: 90pt'>
+          → nicht erlaubt für Nutzer die noch angemeldet sind<br>
+</div>
+                                 → hat keinen Effekt auf PIDs von laufenden Prozessen, Cronjobs und At-Jobs<br>
+<strong>-L </strong>→ den Account des Nutzers sperren<br>
+<strong>-U </strong>→ den Account des Nutzers entsperren<br>
+<strong>-g </strong>→ setzen der neuen Primärgruppe<br>
+<strong>-G </strong>→ ändern der Sekundärgruppe<br>
+<strong>-a </strong>→ nur im Zusammenhang mit <strong>-G </strong>$$Debian$$<br>
+<strong>-f </strong>→ Interakitv ändern<br>
+</p>
+  
+<p>
+<strong>userdel &lt;Nutzer&gt; </strong>→  &lt;Nutzer&gt; vom System entfernen<br>
+<strong>-r </strong>→ entfertn auch die entsprechenden Heimatverzeichnisse, Crontab und Mails<br>
+</p>
+
+<p>
+<u>Hinweis:find / -uid &lt;UID&gt; -delete entfernt alle von &lt;User&gt; angelegten oder zugehörigen Dateien</u><br>
+</p>
+
+<p>
+<strong>groupadd &lt;Gruppe&gt; </strong>→ &lt;Gruppe&gt; zum System hinzufügen<br>
+<strong>-g &lt;GID&gt; </strong>→ die Gruppe erhält GID<br>
+<strong>-r </strong>→ eine Systemgruppe anlegen<br>
+<strong>-o </strong>→ in zusammenhang mit <strong>-g </strong>die GID festlegen auch wenn diese schon vergeben ist<br>
+</p>
+
+<p>
+<strong>groupdmod &lt;Gruppe&gt; </strong>→ Parameter für &lt;Gruppe&gt; modifizieren<br>
+<strong>-g &lt;GID&gt; </strong>→ Gruppe einen neue &lt;GID&gt; zuweisen<br>
+<strong>-n &lt;Name&gt; </strong>→ Gruppe den neuen Namen &lt;Name&gt; zuweisen<br>
+<strong>-R &lt;Nutzer&gt; </strong>→ den &lt;Nutzer&gt; aus der Gruppe entfernen<br>
+</p>
+
+<p>
+<strong>groupdel &lt;Gruppe&gt; </strong>→ Gruppe entfernen<br>
+                                       → nur möglich wenn die &lt;Gruppe&gt; nicht als primäre Gruppe einem Nutzer zugewiesen ist<br>
+</p>
+ 
+
+<h4>Zugang sperren:</h4>
+<p>
+<strong>passwd -l &lt;Nutzer&gt;</strong><br>
+<strong>chage -E &lt;Datum&gt; &lt;Nutzer&gt;</strong><br>
+editieren der */etc/shadow durch setzen eines ! vor dem Kennwort Hash<br>
+editieren der */etc/passwd durch setzen eines * anstelle eines x in der zweiten Spalte<br>
+</p>
+
+<h4>Zugang freigeben</h4>
+<p>
+<strong>passwd -u &lt;Nutzer&gt;</strong><br>
+<strong>chage -E -1 &lt;Nutzer&gt;</strong><br>
+editieren der */etc/shadow und entfernen des ! vor dem Kennwort Hash<br>
+editieren der */ect/passwd und setzen eines x statt eines * in der zweiten Spalte<br>
+</p>
+
+<h4>Kennwortänderung höchstens alle N Tage</h4>
+<p>
+<strong>passwd -m N &lt;Nutzer&gt; </strong><br>
+<strong>chage -m N &lt;Nutzer&gt;</strong><br>
+editieren der */etc/shadow in der 4. Spalte<br>
+</p>
+
+<h4>Frist nach Ablauf des Kennwortes</h4>
+<p>
+<strong>chage -I N &lt;Nutzer&gt;</strong><br>
+editieren der */etc/shadow in der 7. Spalte<br>
+</p>
+
+<h4>Warnfrist bevor Kennwort abläuft</h4>
+<p>
+<strong>passwd -w N &lt;Nutzer&gt; </strong><br>
+<strong>chage -W N &lt;Nutzer&gt;</strong><br>
+editieren der */etc/shadow in der 6.Spalte<br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Benutzer_und_Gruppen.html'>Linux Wissen:Benutzer und Gruppen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

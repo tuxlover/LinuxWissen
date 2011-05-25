@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-27T00:08:03+02:00
+
+====== Funktion ======
+Created Mittwoch 27 April 2011
+
+=== Funktionen definieren ===
+++
+//function_name()//
+//{//
+//Aktionen//
+
+//return <Wert>//
+//}//
+
+//function_name #aufruf der Funktion function_name//
+++
+→ wird kein Funktions **return **Wert zurückgegeben, so entspricht der Rückgabewert der des letzten ausgeführten Befehls
+
+**typeset **→ Informationen über definierte Shellfunktion in der aktuellen Shell abfragen
+**-F **→ nur die Namen der aktuellen Funktion ausgeben
+**-f **→ alle definierten Funktionen vollständig ausgeben
+
+__Hinweis: Eine Bibliothek mit Shellfunktionen anlegen. __
+(1) Eine Datei my_lib,sh anlegen die die gewünschten Funktionen enthalten
+(2) sourcen der Datei zu Beginn des Scripts
+++
+//#!/bin/bash//
+//. my_lib.sh//
+++   
+
+//Beispiel://
+++
+//toupper()//
+//{//
+//echo $* | tr '[:upper:]' '[:lower:]'//
+//}//
+++
+→ Groß in Kleinbuchstaben konvertieren
+

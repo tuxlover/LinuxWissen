@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./dd.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Partitionstypen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Mounten</h1>
+
+<p>
+Created Freitag 22 April 2011<br>
+</p>
+
+<p>
+<strong>mount &lt;Blockgerät&gt; &lt;Mountpoint&gt; </strong>→ hängt das &lt;Blockgerät&gt; in den &lt;Mountpoint&gt; ein<br>
+<strong>-a </strong>alle Geräte die in der */etc/fstab  (<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a>) eingetragen sind<br>
+<strong>--bind </strong>→ ein &lt;Blockgerät&gt; auf zwei verschiedene &lt;Mountpoint&gt;s setzen<br>
+<strong>-o &lt;optionen&gt;,... </strong>→ weitere Optionen für mount angeben<br>
+</p>
+
+<p>
+<em>&lt;Optionen&gt; (können auch in */etc/fstab vergeben werden </em><a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a> )<br>
+<em>auto</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dateisystem wird  iterativ aus */proc/filesystems ermittlet ( <a href="../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a> )<br>
+<em>noauto</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dateisystem wird nicht automatisch eingehängt<br>
+<em>acl</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACLs aktivieren<br>
+<em>async</em> 		I/O zwischen Dateisystemen und RAM ist asynchron<br>
+<em>sync</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I/O zwischen Dateisystemen und RAM ist synchron <br>
+</p>
+
+<p>
+<u>Hinweis: Flashgeräte sollte async gemountet werden, um die Lebenszeit zu verlängern</u><br>
+</p>
+
+<p>
+<em>user_xattr</em>&nbsp;&nbsp;&nbsp;&nbsp;extendet User Attribute verwenden<br>
+<em>noatime</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I-Node Zugriffszeit nicht aktualiesieren<br>
+<em>defaults</em> 		Dasseelbe wie <em>rw,suid,dev,exec,auto,nouser,async</em><br>
+dev			Dieses Dateisystem erlaubt den Zugriff und das Schreiben auf zeichen- und blockorientierte Geräte<br>
+no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreiben auf zeichen- und blockorientierte Geräte<br>
+<em>exec		</em>erlaube dass Dateien auf diesem Dateisystem ausgeführt werden dürfen<br>
+<em>noexec		</em>verbiete dass Dateien auf deiesem Dateisystem ausgeführt werden dürfen<br>
+<em>suid			</em>erlaube dass Dateien mit mit SetUID Bit gesetzt werden dürfen<br>
+<em>nosuid</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dateien mit SetUID Bit dürfen nicht angelegt werden <br>
+<div style='padding-left: 90pt'>
+       <a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
+</div>
+<em>rw 			</em>Das Dateisystem ist schreibbar, es dürfen Dateien darauf angelegt werden<br>
+<em>ro			</em>Das Dateisystem ist nur lesbar, es dürfen keine Dateien darauf angelegt werden<br>
+<em>user			</em>Nutzer kann das Dateisystem einhängen aber nur root oder der Nutzer der es eingehängt hat, darf es <br>
+<div style='padding-left: 90pt'>
+ wieder aushängen<br>
+</div>
+<em>users		</em>alle dürfen das Dateisystem ein - und aushängen<br>
+<em>usrquota|grpquota	</em>Plattenkontigente altivieren<br>
+</p>
+
+<p>
+<em>remount </em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Platte einhängen, dies ist nur Sinnvoll wenn man <strong>mount </strong>manuell benutzt<br>
+<strong>mount -o remount,ro /platte </strong>→ Remount von /platte readonly<br>
+</p>
+
+<p>
+<strong>mount &lt;Mountpoint&gt;|&lt;Device&gt; </strong>→ es reicht einer der beiden Argumente anzugeben, <br>
+<div style='padding-left: 210pt'>
+      → falls es einen Eintrag */etc/fstab gibt ( <br>
+</div>
+<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a> )<br>
+</p>
+ 
+<p>
+<u>Hinweis:</u> <strong>mount -o loop,ro mycd.iso /home/iso </strong><u>hängt ein Iso ein.</u><br>
+</p>
+
+<p>
+<strong>umount &lt;Mountpoint&gt;|&lt;Device&gt; </strong>→ hängt das &lt;Device&gt; aus. <br>
+<div style='padding-left: 240pt'>
+ → Es reicht das &lt;Device&gt; oder den &lt;Mountpoint&gt; anzugeben<br>
+</div>
+<strong>-n </strong>→ die Einträge aus */etc/mtab nicht entfernen<br>
+<strong>-r </strong>→ falls das Aushängen fehlschlägt, versuche es ro einzuhängen<br>
+<strong>-d </strong>→ falls das Gerät ein Loop Gerät war, wird es das loop_Gerät zur Benutzung freigeben<br>
+<strong>-a </strong>→ alle Geräte in */etc/mtab ( <a href="../FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a> ) aushängen<br>
+<strong>-l </strong>→ Entfernen des Datei Dateisystems aus der Hierarchie, entferne und führe Cleanup wenn das Dateisystem<br>
+<div style='padding-left: 30pt'>
+ unbschäftigt ist<br>
+</div>
+<strong>--fake </strong>→ ruft nicht den Sytemcall auf, um das Dateisystem tatsächlich auszuhängen<br>
+</p>
+
+<p>
+<u>Hinweis: --fake kann verwendet werden um ein Dateisystem aus */etc/mtab auszutragen.</u><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>		<a href='../Booten.html'>Linux Wissen:Booten</a></li>		<a href='./Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>		<a href='../Dateien_verwalten/Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>		<a href='../Dateien_verwalten/Dateiattribute.html'>Linux Wissen:Dateien verwalten:Dateiattribute</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

@@ -1,0 +1,102 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T17:05:44+02:00
+
+====== Variablen ======
+Created Donnerstag 28 April 2011
+
+* gültig sind abc, abc2, _abc_ _123_
+* ungültig sind 1abc, &abc; #abc, print, printf
+* **awk** unterscheidet zwischen Integer und String
+* Mit $ wird wie in Bash auf den Wert der Variablen also deren Inhalt zugegriffen
+* Eine Variable wird mit ihrem ersten erscheinen deklariert, muss nicht vorher bekannt gegeben werden
+* Eine Variable wird mit ihrem ersten erscheinen deklariert, muss nicht vorher bekannt gegeben werdenn
+
+**Var=Wert **
+→  Zuweisung
+→  durch Zuweisung eines neuen Wertes an eine bestehende Variable, wird der alte Wer überschrieben
+
+== awk kennt die üblichen Rechenoperationen + - * / % ^ ==
+**var+= |wert var*= |wert var^=wert  **
+→ inkrementiert
+
+**var-=wert | var/=wert | var%=wert  **
+→ dekrementiert
+
+**var-- |var++ **
+→  nach Durchführung einer Anweisung um 1 dekrementieren / inkrementieren
+
+**++var --var **
+→  vor Durchführung einer Anweisung um 1 dekrementieren / inkrementieren
+
+=== Buildin Variablen ===
+* haben bestimmte Verweuse auf Anweisungen oder Input Stream
+
+**$0** 
+→  kompletter Inhalt einer eingelesenen Zeile, Wert wird verändert bei neuer Feld Zuweisung
+
+**$N** 
+→  Inhalt der Spalte N in einer Zeile
+
+**NF** →  
+Anzahl der Felder pro Record
+
+**$NF **
+→  Das letzte Feld eines Records
+
+**ARGC**
+→  Anzahlder übergebenen Zeilen
+
+**ARGV** 
+→  Array, enthält die übergebenen Argumente
+[[Linux Wissen:Systemprogrammierung:Awk:Array]]
+
+**CONVFMT** 
+→  Formatierung von Zahlenwerten in Strings 
+//Bespiel://
+**CONVFMT="%.15g" **gibt 15 Nachkommastellen
+
+**ENVIRON** 
+→  Array, enthält die Shellvariablenumgebung
+
+**FILENAME** 
+→  Inputdatei, beim Wechseln der Inputdatei wird eder Wert neu eingelesen
+
+**FNR **
+→  Anzahl der bereits verarbeiteten Zeilen
+
+**FS** (field Seperator) 
+→  der durch -F gesetzte Spaltentrenner, kann entweder ein Zeichen oder eine Regex sein
+//Beispiel://
+**FS=", \t**" →  Komma gefolg von einem Leerzeichen mit einem Tab wird als Spaltentrenner gesehen
+**FS=""** →  Leerer Feldseperator, jeder Buchstabe wird als einzelner Record behandelt
+
+**IGNORECASE** 
+→  Regel für das Behandeln von sensitiver Schreibung festlegen, falls Wert auf 1 gesetz wird Groß- und Kleinschreibung ignoriert
+→  beeinflußt den Wert von FS nur wenn FS als Regex angegben wurde
+
+**NF** (Number Fields) 
+→  Spalten pro Zeile, $NF evaluiert nach dem Inhalt der letzten Spalte,  Variable wird nach Zeile neu eingelesen
+→  Wert wird nicht verändert bei neuer Feld Zuweisung 
+→  falls NF dekrementiert wird ändert sich der Wert von $0
+
+**OFMT **
+→  Output Format
+
+**OFS** 
+→  Separierung der Ausgabezeilen; Trenner für Output Stream
+
+**ORS** 
+→  Separator für einzelne Zeilen (/n) Output Stream
+
+**RLENGTH** 
+→  Länge die durch die Funktion math()  gefunden wurde
+
+**RS** 
+→  Sperator der Eingabzeilen (/n) Eingabe, kann entweder ein Zeichen oder eine Regex sein
+//Beispiele://
+**RS="\n\n+"** →  matched ein Newline gefolgt von einer oder mehereren Zeilen
+**RSTART** →  Anfangsposition des regulärer Azsdruck der Funktion math()
+
+**SUBSEP** 
+→  Separierungszeichen der einzelenen Aray-Elemente

@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T00:34:23+02:00
+
+====== Linux Wissen ======
+Do 21 Apr 2011 14:56:40 CEST
+
+Dies ist die 2.  Version des Linux Wissens (ehemals Sheet). Sie ist zum Zeitpunkt ihrer Fertigstellung
+neuer als die Textversion. Derzeit befindet sie sich aber noch in Bearbeitung.
+
+Jedes Kapitel (ehemals eingleitet durch ===) wird in Unterkapitel (ehemals __) eingeteilt.
+
+Befehle werden **fett** hervorgehoben.
+Beispielkonfiguratione werden so
+
+++++
+//kursiv//
+++++
+
+kenntlich gemacht. 
+
+Pfade zu besonderen Dateien werden durch ein 
+
+ */PFAD 
+
+angegeben.
+
+Beispiele und  nützliche Tipps werden nun als __Tipps __hervorgehoben
+
+Gefahren werden durch 
+
+=== !ACHTUNG! ===
+markiert.
+
+Aufzählungen und Fakten werden durch 
+* Aufzähungsmarker gekennzeichnet
+
+Verweise werden nun innerhalb des Wikis gelinkt und sind so schneller auffindbar.
+
+In zzz Undokumentiert werden Programme nur gelistet die im Wiki erwähnt wurden aber bisher nicht Dokumentiert sind

@@ -1,0 +1,62 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T02:12:54+02:00
+
+====== chkconfig ======
+Created Sonntag 24 April 2011
+
+Die Programme **chkconfig **und **insserv **dienen der Verwaltung von Startscripten auf Rpm basierten Systemen.
+Bei Debian kann das **update-rc.d **Script verwendet werden.
+
+— 
+$$SUSE$$ 
+**insserv /etc/init.d/<Dienst> **
+→ fügt einen <Dienst> hinzu und löst dabei Startabhängigkeiten auf
+→ ermittlen des Standardrunlevel wird aus den Scripten ermittelt
+[[Linux Wissen:FHS:etc:init.d++Script]]
+— 
+
+**service <Dienst> on|off|status**
+→ Dienst verwalten
+**on **→ sofortitges aktivieren des Dienstes
+**off **→ sofortiges abschalten des Dienstes
+**status** → anzeigen des Status des Dienstes (running, nicht bekannter Dienst, nicht gestartet)
+
+— 
+$$Redhad$$|$$Fedora$$|$$SUSE$$
+**checkconfig **
+→ Verwaltung und Auflistung einer Runlevel Konfiguration
+→ hinzufügen und ändern von Startscripten
+
+**-A **→ listet alle Scipte auf, auch die nur zur Bootzeit B ausgeführt werden
+
+**-e **→ ermöglicht es die Konfiguration von dienstes wie in Yast Interaktiv zu bearbeiten
+
+**checkconfig <Dienst>**
+→ ohne weitere Optionen wird der Status für diesen <Dienst> abgefragt
+
+**checkconfig <Dienst1> <Dienst2> ...**
+→ Auflistung der aktuellen Runlevelkonfiguration für mehrere Dienste
+
+**checkconfig <Dienst> on **
+→ <Dienst> wird ab dem nächsten Bootvorgang automatisch gestartet und den Runlevln 3 und 5 hinzugefügt
+
+**checkconfig <Dienst> <N> <M> ...**
+→ <Dienst> wird ab dem nächsten Bootvorgang den Runlevel <N> <M> hinzugefügt
+
+**checkconfig <Dienst> off**
+→ <Dienst> wird ab dem nächsten Bootvorgang deaktiviert
+
+== Konfiguration speichern und wiederherstellen ==
+**checkconfig -A > runlevels.save **→ die aktuelle Konfiguration speichern
+**checkconfig -s < runlevels.save** → die Konfiguration aus der Datei runlevels.save wiederherstellen
+— 
+
+— 
+$$Debian$$|$$Ubuntu$$
+**update-rc.d <Dienst> [defaults] **
+→ <Dienst> wird den Runelveln 2,3,4 und 5 hinzugefügt
+→ In 0,1 und 6 wird der <Dienst> angehalten
+— 
+
+

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T02:35:32+02:00
+
+====== Diff und Merge von Dateibäumen ======
+Created Samstag 16 April 2011
+
+**diff <Optionen> <Dateien> **→ Dateien Zeilenweise vergleichen
+**-r **→ rekursiv durch Dateibäume 
+**-N **→ nicht vorhandene Dateien im Ziel als leer behandeln
+**-q **→ es wird nur ausgegeben ob Dateien von einander verchieden sind
+**-a **→ alles auch binäre Dateien als Text behandeln
+**-u **→ im Unified für gnu **patch **lesbaren und verwendtbaren Format ausgeben  
+
+**cmp <Datei1> <Datei2> **→ überprüft ob <Datei1> und <Datei2> byteweise identisch sind
+**-b **→ gebe unterschiedliche Bytes aus
+**-s **→ silent, keine Ausgabe auf dem Bildschirm. es wird ein exit Status übergeben
+ [[Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status]]

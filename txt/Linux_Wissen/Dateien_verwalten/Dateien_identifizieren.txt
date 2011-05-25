@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T00:28:03+02:00
+
+====== Dateien identifizieren ======
+Created Dienstag 19 April 2011
+
+* file zeigt den Dateityp basierend auf der MIME Datenbank */usr/share/misc/magic 
+
+**file <Datei> **→ zeigt den Dateityp der Datei an

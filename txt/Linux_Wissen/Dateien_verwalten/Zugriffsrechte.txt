@@ -1,0 +1,104 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T15:53:51+02:00
+
+====== Zugriffsrechte ======
+Created Dienstag 19 April 2011
+
+===== Rechte Oktal =====
+r = 4
+w = 2
+x = 1
+
+Bei regulären Dateien:
+t = 1ugo  → Sticky Bit
+		→ nur der Eigentümer kann die Datei löschen, alle anderen dürfen aber schreiben und lesen 
+               → Beachte :> <Datei>( [[Linux Wissen:Shell:Standardkanäle]] )
+		→ die Datei wird im Speicher vorgehalten und nicht ausgelagert oder zurückgeschrieben
+
+
+S = 2ugo → SetGID Bit 
+               → wird immer mit den Rechten der Gruppe ausgeführt oder geöffnet
+               → alle erzeugten Dateien gehören der gleichen Gruppe wie das Verzeichnis selber 
+
+s = 4ugo → SetUID Bit 
+               → wird immer mit den Rechten des Nutzers ausgeführt oder geöffnet
+
+kernel Syscall include fchmod()
+#include <sys/stat.h>
+       S_ISUID  (04000)
+
+       S_ISGID  (02000)
+
+       S_ISVTX  (01000)
+
+       S_IRUSR  (00400)
+
+       S_IWUSR  (00200)
+
+       S_IXUSR  (00100)
+
+       S_IRGRP  (00040)
+
+       S_IWGRP  (00020)
+
+       S_IXGRP  (00010)
+
+       S_IROTH  (00004)
+
+       S_IWOTH  (00002)
+
+       S_IXOTH  (00001)
+
+__Hinweis:Um binäre Programme auszuführen muss x gesetzt sein. Für Shellscripte muss x und r gesetzt sein.__
+
+__Hinweis: Bei Verzeichnen wird r benötigt um den Inhalt des Verzeichnisses lesen zu dürfen.__
+
+__Hinweis: w um im Verzeichnis Dateien anlegen zu dürfen__
+
+__Hinweis: x um das Vereichnis benutzen zu dürfen indem Sinne dass man darauf Programme wie cd anwenden darf __
+
+**ls -l ** → Zeigt Berechtigungen an ( [[Linux Wissen:Dateien verwalten:Verzeichnisse und Dateien auflisten]] )
+
+**stat -c "%a %n" **→ zeigt Berechtigungen Oktal an
+
+===== Berechtigungen verwalten =====
+* **chmod**
+* **chown **
+* **chgrp**
+[[+Berechtigungen verwalten]]
+
+===== Umask =====
+* legt fest welche Berechtigungen Dateien maximal haben wenn sie angelegt werden
+* **umask**
+[[+Umask]]
+
+===== ACL =====
+* Access Control Lists
+* erweiterte Berechtigungen für Nutzer und Gruppen 
+* erlaubt es meherere Nutzer und Gruppen auf eine Datei abzubilden
+* feingranularere Kontrolle
+* **setfacl **
+* **getfacl**
+[[+ACL]]
+
+* ACLs müssen in der */etc/fstab als Option bekannt gegeben werden
+	Option: acl
+	//Beispiel */etc/fstab://
+	+++
+	/dev/mapper/system_home            /home       ext3    rw,acl     1 2
+	+++
+	anschließend remounten: **mount -v -o remount /home **
+[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+
+__Hinweis: reiserfs kann nicht mit acl Option gemounted werden.__
+
+__Hinweis: Bei Benutzung von ACL erkennt Dateien auf denen ACL abgebildet wurden durch das +:__
+//Beispiel://
+//-rw-rw-r--+ 1 tristan tristan 19936 May 28 16:59 pizza//
+
+**cp -p **bzw. **cp -a ** erhält auch ACLs
+[[Linux Wissen:Dateien verwalten:kopieren und verschieben von Dateien und Verzeichnisse]]
+
+**rsync -A **→ erhält ACLs beim synchronisieren von Dateien
+[[Linux Wissen:Dateien verwalten:Synchronisieren von Dateien]]

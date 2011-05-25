@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T15:46:15+02:00
+
+====== History ======
+Created Freitag 15 April 2011
+
+* wird in der Datei *~/.bash_history abgelegt
+* zum durchsuchen der zuletzt ausgeführten Befehle
+
+**history [N]**→ gibt die komplette Liste aller zuletzt eingegebenen Befehle aus
+                    → wird eine Ganzzahl N eingegeben wird die Ausgabe auf die letzten N Befehle beschränkt
+**-c **→ löschen der history
+
+===== Emacs Modus Befehle zur Steuerung der History =====
+[[Linux Wissen:Shell:Bash:Emacs Modus]]
+
+===== Umgebungsvariablen der Bash History  =====
+ [[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]]
+
+===== Steuerung der History =====
+!! → den letzten Befehl wieder aufrufen
+__Tipp: __**sudo !! **__ ruft den letzten Befehl als root auf__
+
+!n → den n-ten Befehl von oben wieder aufrufen
+!-n → den n-ten Befehl von unten wieder aufrufen 
+
+!?<Muster> → der zuletzt aufgerufene Befehl, der dem <Muster> entspricht
+
+!n:$ → das letzte Wort des n-ten Befehls (!-n:$ respektive)
+!n:^ → das erste Wort des n-ten Befehls (!-n:^ respektive)
+!n:a-b → die Wörter a-b des n-ten Befehls (!-n:a-b respektive)
+!n:a* → alle Wörter ab dem a-ten des n-ten Befehls (!-n:a* respektive)
+
+^<StringA>^<StringB> → ersetze im letzten Befehl <StringA> durch <StringB> und führe den Befehl erneut aus
+
+sinnvolle Kombinationen sind möglich

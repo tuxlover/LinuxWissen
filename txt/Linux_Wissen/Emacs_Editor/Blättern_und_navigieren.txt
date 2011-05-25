@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T23:20:53+02:00
+
+====== Blättern und navigieren ======
+Created Freitag 15 April 2011
+
+**C-v **→ eine Bildschirmseite vorblättern
+**M-v **→ eine Bildschirmseite zurückblättern
+
+**C-l **→ lade den Inhalt des Bildschirm neu und stelle den aktuellen Text in die Mitte
+
+**C-p **→ eine Zeile zurückblättern
+**C-n **→ eine Zeile vorblättern
+
+**C-b **→ ein Zeichen zurückblättern
+**C-f **→ ein Zeichen vorblättern
+
+**M-b **→ ein Wort zurückblättern
+**M-f **→ ein Wort vorblättern
+
+**C-a** → zum Anfang der Zeile springen
+**C-e **→ zum Ende der Zeile springen
+**M-a **→ zum Anfang des Satzes springen
+**M-e **→ zum Ende des Satzes springen
+**M-> **→ zum Ende einer Datei springen
+**M-< **→ zum Anfang einer Datei springen
+
+===== Markierungen setzen =====
+**C-<Space>**
+
+ oder **C-@** → eine Markierung an der aktuellen Stelle setzen
+**C-u C-<Space> **→ zur gesetzten Markierung zurückkehren (erneutes Aufrufen kehrt zur Vorletzten zurück usw.)
+
+===== Bewegungszähler =====
+* dient dazu Bewegungsschritte vor einer Aktion zu definieren
+**C-u <Aktion>**
+//Beispiel: C-u 8 * schreibt achtmal das Zeichen *//

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T18:53:49+02:00
+
+====== head und tail ======
+Created Montag 18 April 2011
+
+**head **→ ohne Optionen liest head die ersten 10 Zeilen von StdIn
+**-N **→ liest die ersten N Zeilen
+**-n N** → wie -N
+**-c N **→ liest nur die ersten N Zeichen
+
+**tail **→ ohne Optionen liest tail die letzten 10 Zeilen von StdIn
+**-N **→ liest die letzten N Zeilen
+**+N** → liest alle Zeilen ab Zeile N
+**-n N** → wie **-N**
+-**f **→ ohne weitere Optionen liest die letzten 10 Zeilen und jede weitere neue
+**-c N **→ nur die letzten N Zeichen
+
+__Hinweis: Verwenden von __**tail -f **__zum betrachten von Protokolldateien__

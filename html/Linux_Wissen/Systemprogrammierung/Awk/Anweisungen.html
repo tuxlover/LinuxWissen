@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Awk.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Array.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Anweisungen</h1>
+
+<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+<p>
+<strong>print</strong> <br>
+→  Ausgeben eines Elements<br>
+<em>Beispiel:</em><br>
+<strong>awk '{print item1 item2 ...}' &lt;Datei&gt;</strong><br>
+</p>
+
+<p>
+<strong>printf</strong> <br>
+→  Ausgeben und Formatieren der Ausgabe<br>
+→  OFS ORS Variablen haben keine Auswirkung auf printf<br>
+→  einzelne printf Argumente müssen duch , getrennt werden<br>
+<em>Beispiel:</em><br>
+<strong>awk '{printf Formatierungi, item1, item2, ...}' Datei</strong><br>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>%c</strong> →  item wird als ASCII Verweis behandelt<br>
+<em>Beispiel:</em><br>
+<strong>awk '{printf "%c", 65}'</strong><br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>%i </strong>→  Ausgabe eines Integers<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>%N$</strong> →  Ausgabe von Print N mal<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>%-</strong> →  linksbüdnig ausrichtigen<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>"%Ms"</strong> →  die minimale Weite M eines Feldes festlegen und entsprechend einrücken<br>
+<em>Beispiel:</em><br>
+<strong>awk {printf "%4s, foobar}</strong><br>
+</div>
+</p>
+
+<p>
+<u>Hinweis: Formatierunsoptionen lassen sich miteinander kombinieren.</u><br>
+</p>
+
+<p>
+<strong>getline [&lt;VAR&gt;  &lt; &lt;Datei&gt;]</strong><br>
+→ liest den nächsten Record der aktuellen Eingabedatei in die variable <strong>$0</strong><br>
+→ wird <strong>&lt;VAR&gt; </strong>angegeben wird der Record in in die Variable &lt;VAR&gt; eingelesen<br>
+</p>
+
+<p>
+<strong> gsub(r,s,[t]) </strong>  <br>
+→ globales Ersetzen des Regilären Ausdrucks <strong>r</strong> durch einen String <strong>s</strong>, für einen Datenstrom<strong> t</strong><br>
+ → gebe die Anzahl der Ersetzungen aus<br>
+→ wird <strong>t </strong>nicht mit angegeben , wird <strong>$0 </strong>verwendet<br>
+<a href="./Variablen.html" title="Linux Wissen:Systemprogrammierung:Awk:Variablen">Linux Wissen:Systemprogrammierung:Awk:Variablen</a><br>
+</p>
+
+<p>
+<strong> gensub(r,s,h,[t]) </strong><br>
+→ ersetze den Regulären Ausdruck <strong>r </strong>durch String <strong>s</strong> an Anzahl des Matches <strong>h </strong>für einen Datenstrom <strong>t </strong> <br>
+→ gebe die Anzahl der gefundenen Muster aus<br>
+→ wird <strong>t</strong> nicht verwendet, wird $0 verwendet<br>
+</p>
+
+<p>
+<strong> index(s,t)</strong>     <br>
+→ gebe den Wert des Strings <strong>t</strong> in String <strong>s </strong>zurück<br>
+→ gebe 0 zurück, falls kein solches String gefunden wurde<br>
+<em>Beispiel:</em><br>
+++<br>
+<em>str = "Hallo, Welt! Welt, quo vadis?"</em><br>
+<em>n = index(str, "Welt") </em><br>
+<em>print n</em><br>
+++<br>
+</p>
+
+<p>
+<strong>length(s)</strong><br>
+→ gebe die Länge des Strings s aus<br>
+</p>
+
+<p>
+<strong>match(string, regexp [, array])</strong><br>
+→ match bietet ähnliche Funktionalität wie index, allerdings kann hier mittels regulärem Ausdruck gesucht werden.<br>
+</p>
+
+<p>
+<strong>split(string, array [, fieldsep])</strong><br>
+→ Zerteile einen String und speichere die einzelnen Felder im Array array. <br>
+→ Feldtrennzeichen sind standardmäßig Leerzeichen oder Tabulatoren. <br>
+→  kann aber mittels fieldsep geändert werden.<br>
+</p>
+
+<p>
+<strong>sprintf(format, expr1 [, expr2, ...])</strong><br>
+→ Liefert einen formatierten String. <br>
+→ Der Parameter format entspricht dem der Funktion <strong>printf</strong><br>
+</p>
+
+<p>
+<strong>substr(s, t [, l])</strong><br>
+→ Liefert einen Teilstring aus <em>string</em> ab der Position <em>start</em> (mit der maximalen Länge <em>length</em>).<br>
+</p>
+
+<p>
+<strong>tolower(string)</strong><br>
+→ Wandelt den String <em>string</em> in lauter Kleinbuchstaben um und gibt diesen String zurück.<br>
+</p>
+
+<p>
+<strong>toupper(string)</strong><br>
+→ Wandelt den String <em>string</em> in lauter Großbuchstaben um und gibt diesen String zurück.<br>
+</p>
+
+<h4>Bedingte Anweisungen</h4>
+<p>
+<ul>
+<li>zur Laufzeit einen Wert prüfen. Ist der Wert vorhanden soll eine Anweisung asugeführt werden</li>
+</ul>
+++<br>
+<em>if(Bedingung) {</em><br>
+<em>   Anweisungen1</em><br>
+<em>} else {</em><br>
+<em>   Anweisungen2</em><br>
+<em>}</em><br>
+++<br>
+</p>
+
+<h4>Logische Operatoren</h4>
+<p>
+<strong> AND(&amp;&amp;), OR(||), NOT(!)</strong><br>
+</p>
+
+<h4>Vergleichsoperatoren</h4>
+<p>
+<strong>x &lt;y </strong>→  	  	Kleiner<br>
+<strong>x &lt;= y</strong> → 	Kleiner oder gleich<br>
+<strong>x &gt;y </strong> → 		Größer<br>
+<strong>x &gt;= y </strong>→ 	Größer oder gleich<br>
+<strong>x == y</strong> → 	genau gleich<br>
+<strong>x != y </strong>→ 		ungleich<br>
+<strong>x ~y </strong>→ 		x entspricht der Regex y<br>
+<strong>x !~ y</strong> → 		x entspricht nícht der Regex y<br>
+</p>
+
+<p>
+<a href="./Schleifen.html" title="Linux Wissen:Systemprogrammierung:Awk:Schleifen">Linux Wissen:Systemprogrammierung:Awk:Schleifen</a><br>
+<a href="./Variablen.html" title="Linux Wissen:Systemprogrammierung:Awk:Variablen">Linux Wissen:Systemprogrammierung:Awk:Variablen</a><br>
+<a href="./Funktionen.html" title="Linux Wissen:Systemprogrammierung:Awk:Funktionen">Linux Wissen:Systemprogrammierung:Awk:Funktionen</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./Funktionen.html'>Linux Wissen:Systemprogrammierung:Awk:Funktionen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

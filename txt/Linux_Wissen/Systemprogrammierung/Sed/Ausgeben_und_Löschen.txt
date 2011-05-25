@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-27T22:27:43+02:00
+
+====== Ausgeben und Löschen ======
+Created Mittwoch 27 April 2011
+
+**d **
+→ Patternspacebefehl 
+→ löschen (delete) von auf Adressierung oder Ausdruck passenden Zeilen
+→ paarweise Adressierung
+→ Input Stream 
+→ Patternspace
+//Beispiel://
+**sed '11,$d'** → löschen der Zeilen 11 bis Endzeile, **head**
+ [[Linux Wissen:Filterprogramme:head und tail]]
+
+**D**
+→ Patternspacebefehl
+→ löschen (delete) des Pattern Space bis zum nächsten NL Zeichen
+→ paarweise Adressierung 
+→ Input Stream
+
+**p**
+→ Ausgeben (print) von auf Adressierung oder Ausdruck passenden Zeilen
+→ paarweise Adressierung 
+→ Input stream 
+//Beispiel://
+**sed -n '1,10p' <Datei>** → gibt nur die Zeilen 1 bis 10 aus **head (siehe oben)**
+__Hinweis: Wird __**-n **__nicht verwendet, wird auch der Patternspace mit ausgegeben.__
+
+**P**
+→ ausgeben (print) des ersten Teils des Pattern Space bis zum nächsten NL Zeichen
+→ paarweise Adressierung
+→ Input Stream
+
+
+**q **
+→ Abrechen des Eingabestroms nach Adressierung
+→ Einzelverweis Adressierung
+//Beispiel://
+**sed -e '10q' **→ bricht die Ausgabe des Datenstrohms nach den ersten 10 Zeilen ab und unterdrückt mit **-n** die Ausgabe.
+
+**= **
+→ gibt die Nummer der Zeilen aus, die im Patternspace gefunden wurden
+→ Output Stream 

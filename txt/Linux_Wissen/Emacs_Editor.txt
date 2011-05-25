@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T23:09:22+02:00
+
+====== Emacs Editor ======
+Created Freitag 15 April 2011
+
+Control-Taste <Strg> vorkonfiguriert C
+Meta-Taste <Esc> und <Alt> vorkonfiguriert M
+
+===== Statuszeile =====
+* unten links durch eine Kette von Zeichen dargestellt
+
+-:--- → Seit dem letzten Speichern unverändert
+-:**- → Inhalt geändert aber noch nicht gespeichert
+-:%%- → Inhalt der Datei nur lesbar
+
+\ → Am ende der Zeile, geht in der nächsten grafischen Zeile weiter. beide Zeilen sind eigentlich eine
+
+===== Beenden von Emacs =====
+**C-x C-c **
+**C-z **→ Emacs zeitweise verlassen (Emacs got stopped)
+
+===== Hilfe in Emacs =====
+**C-h r** → Emacs Manual
+**C-h t **→ Emacs Tutorial
+**C-h m **→ Hilfe zum aktuellen Modus
+
+===== Einen Emacs Befehl anhalten =====
+**C-g** → hält den letzten Befehl an und beginnt mit undefinierter Eingabe
+
+===== Fenster =====
+**C-x 1 **→ Zum normalen Fenster 1 zurückkehren, schließt ein versehentlich geöffnetes Fenster
+**C-x C-b **→ anzeigen aller Puffer
+**C-x b <Datei> **→ Rückkehr zu Puffer mit dem Inhalt der <Datei>
+
+===== Modes =====
+* Modes sind Zustände die der Editor annehmen kann um den Typ einer Datei besser zu Unterstützen
+* Status wird links unten angezeigt
+**M-x <mode>-mode** → schaltete den Modus ein
+c-mode
+perl-mode
+txt-mode
+fundamental-mode

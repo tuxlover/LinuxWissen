@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Positions_Parameter.html'>Prev</a> ]
+
+			[ <a href='../../../../index.html'>Index</a> ]
+
+	[ <a href='../../Befehle.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Umgebungsvariablen in bash</h1>
+
+<p>
+Created Freitag 15 April 2011<br>
+</p>
+
+<p>
+BASH → Pfad zur Binärdatei der aktuellen Shell<br>
+</p>
+
+<p>
+BASH_SUBSHELL → Indikator für die Tiefe der Subshellverschachtlelung, 0 bedeutet keine Subshell, 1 in der ersten Subshell 					 usw. <br>
+</p>
+
+<p>
+BASHPID → PID der aktuell aufgerufenen Bash Shell<br>
+</p>
+
+<p>
+BASH_VERSION → Version der aktuellen bash<br>
+</p>
+
+<p>
+DIRSTACK → Der Wert des Verezeichnis Stack ( <a href="../../../Dateien_verwalten/Durch_Verzeichnisse_bewegen.html" title="Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen">Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen</a> )<br>
+</p>
+
+<p>
+EDITOR → Der Standardeditor (vi, vim, emacs, pico, nano)<br>
+</p>
+
+<p>
+EUID → effektive UID<br>
+</p>
+
+<p>
+FUNCNAME → Name der aktuell aufgerufenen Funktion<br>
+                   →  <u>Hinweis</u>: function () {echo FUNCNAME}; function<br>
+<a href="../../../Systemprogrammierung/Shellscripting/Funktion.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Funktion">Linux Wissen:Systemprogrammierung:Shellscripting:Funktion</a><br>
+</p>
+
+<p>
+GROUPS → Gruppenzugehörigkeit des momentanen Benutzers<br>
+</p>
+
+<p>
+----<br>
+HISTFILE → Umgebungsvariable die auf die Datei verweist in der bash seine history ablegt<br>
+</p>
+
+<p>
+HISTSIZE → Größe der in der History gemerkten Befehle<br>
+</p>
+
+<p>
+HISTFILESIZE → Größe der in der Datei bash seine history anlegt <br>
+----<br>
+ <a href="../History.html" title="Linux Wissen:Shell:Bash:History">Linux Wissen:Shell:Bash:History</a><br>
+</p>
+
+<p>
+HOME → Heimatverzeichnis des momentanen Benutzers<br>
+</p>
+
+<p>
+HOSTNAME → Name des Hostes des aktuellen Systems <br>
+</p>
+
+<p>
+HOSTTYPE → identifiziert den Typ der Hardware auf dem die Bash ausgeführt wird<br>
+</p>
+
+<p>
+IFS → Internal Filed Seperator (Interner Zeichentrenner, standard ist $)<br>
+          <u>Hinweis:</u> <strong>echo</strong> $<strong>IFS</strong>|<strong>cat</strong> -<strong>A</strong> → gibt den Wert von IFS aus<br>
+</p>
+
+<p>
+LINENO → verweist auf die aktuelle Anzahl der Zeilen der Bash in einem Shellscript<br>
+             → verweist auf die aktuelle Anzahl der Zeilen der bash im Terminalemulator<br>
+</p>
+
+<p>
+OLDPWD → zuletzt in der aktuellen Shell/Subshell aufgerufenes Verzeichnis<br>
+</p>
+
+<p>
+OSTYPE → Typ des Betriebssystems<br>
+</p>
+
+<p>
+PATH → Pfade durch : getrennt in der in der Shell nach ausführbaren Dateien gesucht wird<br>
+         → <em>Bsp: /usr/lib/mpi/gcc/openmpi/bin:/home/l1zard/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/usr/lib/jvm/jre/bin:/usr/lib/mit/bin:/usr/lib/mit/sbin</em><br>
+</p>
+
+<p>
+PIPESTATUS → exit Status der letzten fg Pipe<br>
+</p>
+
+<p>
+PPID → Prozessid des Elternprozess der Shell<br>
+        → In einer Subshell ist es PID der abhängigen Elternshell<br>
+        → in Shellscripten die PID der Shell in der das Script gestartet wurde<br>
+</p>
+
+<p>
+PROMPT_COMMAND → ist diese Varibale gestzte kann sie einen Befehlt enthalten der vor dem Setzen des Prompts PS1<br>
+                                     ausgeführt wird<br>
+</p>
+
+<p>
+PS1 → erstes Promptzeichen<br>
+</p>
+
+<p>
+PS2 → zweites Promptzeichen<br>
+</p>
+
+<p>
+PS3 → Drittes Promptzeichen. Wird angezeigt wenn in einer <strong>select  </strong>Schleife genutzt<br>
+<a href="../../../Systemprogrammierung/Shellscripting/select.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:select">Linux Wissen:Systemprogrammierung:Shellscripting:select</a><br>
+</p>
+
+<p>
+PS4 → viertes Promptzeichen. Wird angezeigt wen <strong>set -x </strong>verwendet wird <br>
+<a href="../Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash">Linux Wissen:Shell:Bash:Optionen für die Bash</a><br>
+</p>
+
+<p>
+SECONDS → Anzahl der Sekunden die eine Shell | Shellscript gelaufen ist  <br>
+</p>
+
+<p>
+SHLVL → gibt die Tiefe der Verschachtelung der Shell an<br>
+</p>
+
+<p>
+UID → UID des Nutzers der die Shell | das Script zuletzt aufgerufen hat<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../../Dateien_verwalten/Dateien_suchen_und_indizieren.html'>Linux Wissen:Dateien verwalten:Dateien suchen und indizieren</a></li>		<a href='../History.html'>Linux Wissen:Shell:Bash:History</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

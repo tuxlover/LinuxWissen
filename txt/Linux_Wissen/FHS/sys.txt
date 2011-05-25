@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T15:15:18+02:00
+
+====== sys ======
+Created Sonntag 24 April 2011
+
+Grundlage biildet das Pseudodateisystem sysfs des Kernels 2.6.x
+
+* Allgemeine Geräteinformationen 
+* bildet nur Geräte ab, die  tatsächlich im System geladen sind
+* exportieren von Informationen zu bestimmter Hardware
+* wird komplett vom Kernel ausserhal des UserSpace verwaltet
+
+***/sys/bus/(pci,bus,scsi) **→ Geräte sortiert nach Anschlusstyp
+
+***/sys/block/ **→ Schnittstellen für Blockorientierte Geräte
+
+***/sys/class/ **→ Schnittstellen für zeichenorienterte Geräte
+
+***/sys/bus/usb **→ vom Kernel gerneriertes usbfs Abbild 

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T03:20:09+02:00
+
+====== net ======
+Created Dienstag 19 April 2011
+
+***/proc/net/arp **→ ARP-Tabelle des Kernels
+***/proc/net/dev **→ Statistiken der Netzwerk Geräte
+***/proc/net/dev_stat **→ Status der Netzwerkgeräte
+***/proc/net/igmp **→ Tabelle des Internet Group Management Protocol (routing)
+***/proc/net/ip_tables_$ **→ Informationen über die Firewall Regeln (Ip tables)
+***/proc/net//netstat **→ Netzwerkstatistiken
+***/proc/net/route **→ Routing Tabelle des Kernels
+***/proc/net/rpc **→ Informationen aktiver RPC Dienste
+***/proc/netsnmp **→ Daten des Simple Network Management Protocols 
+***/proc/net/tcp **→ Tabelle des TCP  Sockets
+***/proc/net/udp **→ Tabelle des UDP Sockets
+***/proc/net/unix **→ Tabelle der geöffneten Unix Domain Sockets mit Referenzzähler, Protokoll, Flags, Typ und Status
+ 

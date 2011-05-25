@@ -1,0 +1,118 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T20:03:03+02:00
+
+====== Awk ======
+Created Dienstag 26 April 2011
+
+* interpretierte Programmiersprache zur Verabeiteung von Textdateien
+* Operationen auf Strukturierte Daten durchführen (structured Data Types) 
+* Informatioen aus Dateien sammeln und daraus Reports und Logfiles generieren
+* Dateien von einem Format in ein anderes konvertieren
+* erstellen kleinerer textbasierter Datenbanken
+* mathematische Operationen auf zeilenbasierten Informationen von Dateien ausführen
+
+http://www.pement.org/awk/
+http://www.catonmat.net/blog/awk-one-liners-explained-part-one
+[[Linux Wissen:Systemprogrammierung:Awk:Einzeiler]]
+
+**awk <Optionen> '/<Ausdruck>/ {<Anweisungen>}' <Datei>**
+→ Aufruf von **awk **aus der Kommandozeile
+→ ein awk Befehl besteht //immer //aus einer <Anweisung und //optional //aus einem <Ausdruck>
+→ der Befehl muss immer in '' gesetzt werden
+**-F **→ festelgen des Spaltentrenners, wie **cut -d**
+[[Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten]]
+
+//<Ausdruck>//
+→ ein regulärer Ausdruck 
+→ muss durch die Form /<Ausdruck>/ kenntlich gemacht werden
+→ muss vor den Anweisungen des Befehls stehen
+
+→ Jede Zeile wird von **awk** als Record gesehen
+→ Jedes Zeichenkette, weches durch den FS getrennt wurde als Feld, falls nicht gestzt ist, ist FS=<LEER>  
+[[Linux Wissen:Systemprogrammierung:Awk:Variablen]]
+
+//Beispiel://
+**awk '/^A.*/ {print}' <Datei>**
+→ filtert <Datei> nach allen Vorkommen von A am Anfang der Zeile 
+
+===== Erstellen eines ausführbaren Scriptes =====
+++
+//#!/usr/bin/awk -f//
+//# Kommentar//
+///Ausdruck/ {Anweisung}//
+++
+
+=== Der Anweisungsblock ===
+++
+//{//
+//BEGIN {//
+//        Anweisung1 vor dem lesen der Datei;//
+//        ...//
+//        AnweisungN vor dem lesen der Datei;//
+//      }//
+//        { Anweisung1 während des lesens der Datei;//
+//         ...//
+//          AnweisungN während des lesens der Datei;//
+//        }//
+//END  {//
+//        Anweisung1 nach dem kompletten lesen der Datei;//
+//        ...//
+//        AnweisungN nach dem kompletten lesen der Datei;//
+//     }//
+//}//
+++
+→ Anweisungen innerhalb eines Blocks werden durch ; (Semikolon) getrennt
+→ BEGIN und END Anweisung sind Optional und müssen nach dem Schlüsselwort mit {} geklammert werden
+	BEGIN {} →  Kommandos vor dem lesen der Eingabe
+	END {} →  Kommandos nach dem lesen des letzten Datensatzes
+
+//Beispiel://
+**ls -l *.txt|awk 'BEGIN {sum=0} {sum = sum + $5} END {print sum}'**
+→ addieren der Gesamtgröße alle auf .txt endenden Dateien
+
+[[Linux Wissen:Systemprogrammierung:Awk]]
+
+=== lange Zeilen maskieren ===
+* Eine sehr lange Anweisungszeile kann durch maskieren \ des NL auf mehrere Zeilen verteilt werden
+//Beispiel://
+**awk {print "Diese Zeile wird zulang um sie auf \**
+**eine Zeile zu verteilen."}**
+
+
+===== Umleitungen und spezielle Dateien =====
+* prozessbasierte Informationen 
+* Standard Dateidiskriptoren
+
+> >> | 
+→  steht innerhalb einer print Anweistung so wird der Umleitungsoperator von awk und **nicht** von der Shell behandelt
+**awk ’{ print $2 > "phone-list" print $1 > "name-list" }’ BBS-lis**
+
+*/dev/stdin →  0
+
+*/dev/stdout →  1
+
+*/dev/stderr →  2
+
+*/dev/fd/N →  file Descriptor N
+
+*/proc tree und */sys
+[[Linux Wissen:FHS:dev]]
+[[Linux Wissen:FHS:proc]]
+[[Linux Wissen:FHS:sys]]
+
+__Hinweis: Spezial Files müssen gequotet werden wie in etwa hier__
+//Beispiel://
+**awk '{print "Serious error detected!" > "/dev/stderr"}'**
+
+===== Varibalen in Awk =====
+[[Linux Wissen:Systemprogrammierung:Awk:Variablen]]
+
+===== Array =====
+[[Linux Wissen:Systemprogrammierung:Awk:Array]]
+
+===== Schleifen =====
+[[Linux Wissen:Systemprogrammierung:Awk:Schleifen]]
+
+===== Escape Sequenzen =====
+[[Linux Wissen:Systemprogrammierung:Awk:Escape Sequenzen]]

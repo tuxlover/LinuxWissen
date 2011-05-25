@@ -1,0 +1,63 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T23:19:57+02:00
+
+====== Pakete bauen ======
+Created Montag 25 April 2011
+
+* Vorteile einer Paketverwaltung lassen sich nur bei konsequenter Nutzung nutzen.
+* einfachere Erkennung von Einbrüchen.
+* Insallierte Dateien können dank der Paketdatenbank besser verwaltet werden.
+* Alte Konfigurationsdateien bleiben bei der Deinistallation ohne Angabe sie zu löschen erhalten.
+
+*/usr/src/packages/SOURCES 
+→ Sourcecode, Patches und andere Dateien die als Rpm erstellt werden sollen
+
+*/usr/src/packages/SPECS 
+→ Specfiles, erhalten die Bauanleitung für Rpms
+
+*/usr/src/packages/RPMS 
+→ fertig erstellte Rpms werden hier erstellt
+
+*/usr/src/packages/BUILD
+→ auspacken und übersetzen der Quellen
+
+*/usr/src/packages/BUILDROOT
+→ hier werden Programme und Dateien testweise installiert
+[[Linux Wissen:FHS:usr]]
+
+**rpmbuild  **→ Tool zum erstellen eines Rpm Paketes
+** -bb <Spec> **→ nur das Binärpaket erzeugen
+**-ba <Spec> **→ das Binärpaket und ein src.rpm erzeugen
+**-bs **→ nur das 
+	**--clean **→ entfernen des Build Baumes nach dem das Paket erstellt wurden ist
+**-ta **<**tar.gz> **→ erzeugen des src.rpms und binären Rpms aus einem Tarball Archiv
+**--rebuild <Paket.src.rpm> **→  ein Rpm aus einem bestehenden src.rpm erstellen
+
+**rpmlint <Paket.rpm> **→ Toll zum überprüfen eines gebauten Paketes
+→ dabei werden Convention Verletzungen angezeigt
+
+== Workflow ein Paket bauen: ==
+**(1) **Specfile erstellen
+[[Linux Wissen:FHS:usr:src++packages++SPECS++beispiel.spec]]
+
+**(2) **Quellen anpassen. 
+Möglicherweise müssen Patches erstellt werden oder weitere Dateien erstellt werden, wie zum Beispiel .deskop Dateien.
+
+**(3) rpmbuild -ba /usr/src/packages/SPECS/specfile **ausführen.
+
+**(4) **Signieren des Paketes
+(4.1) **gpg --gen-key** erstllen eines Privaten Schlüssels **(missing link)**
+(4.2) anpassen der Datei */etc/rpm/macros:
+	++
+	       // %_signature gpg//
+	//        %_gpg_path <Pfad zum .gpg Verzeichnis>//
+	//        %_gpg_name <name und beschreibung mit **gpg --list-keys** erfragbar>//
+	//        %_gpgbin <Pfad zur Ausführbaren Datei> zum Beispiel /usr/bin/gpg//
+	++
+(4.3) signieren des Paketes mit **rpmsign --addsign --macros=/etc/rpm/macros <Paket>.rpm**
+(4.4) Importieren und exportieren der Signatur:
+**gpg -a --export > <file>**
+**rpmsign --import <file>**
+
+[[Linux Wissen:Systemprogrammierung:Shellscripting]]

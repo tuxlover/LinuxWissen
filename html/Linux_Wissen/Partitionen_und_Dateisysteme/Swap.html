@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Script_Swapspeicher_erweitern.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='../Prozessverwaltung.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Swap</h1>
+
+<p>
+Created Donnerstag 21 April 2011<br>
+</p>
+
+<p>
+<strong>mkswap /dev/sdX </strong>→ erstellt eine Swappartition<br>
+<strong>-c </strong>→ nach defekten Blöcken suchen<br>
+<strong>-L &lt;LABEL&gt; </strong>→ setzen eines Labels<br>
+</p>
+
+<p>
+<strong>swapon /dev/sdX &lt;Datei&gt; </strong>→ Swappartition aktivieren|einhängen für /dev/sdX<br>
+<div style='padding-left: 180pt'>
+    → statt einer Gerätedatei kann auch eine reguäre Datei verwendet werden<br>
+<a href="./Script_Swapspeicher_erweitern.html" title="Linux Wissen:Partitionen und Dateisysteme:Script Swapspeicher erweitern">Linux Wissen:Partitionen und Dateisysteme:Script Swapspeicher erweitern</a><br>
+</div>
+<strong>-a </strong>→ alle in der */etc/fstab ( <a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a>) eingetrgenden Swapgeräte aktivieren<br>
+<strong>-s </strong>→ liefert den Status des aktuellen Dateisystems<br>
+</p>
+
+<p>
+<strong>swapoff /dev/sdX </strong>→ Swappartition einhängen | aktivieren<br>
+</p>
+
+<p>
+<strong>free </strong>→ zeigt die Auslastung des Arbeitsspeicher und des Swapspeicher<br>
+<strong>-m </strong>→ in Megabytes<br>
+<strong>-k </strong>→ in Kilobytes<br>
+<strong>-g </strong>→ in Gigabytes abgerundet und daher sinnlos<br>
+<strong>-t </strong>→ eine Zeile anzeigen welche eine Summe aus allen verfügbaren Speicherresourcen <br>
+</p>
+
+ 
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

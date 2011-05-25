@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T20:14:06+02:00
+
+====== Debian ======
+Created Montag 25 April 2011
+http://www.debian.org/
+$Debian, Ubuntu, Knoppix, Xandros, Sidux$
+
+===== Aufbau eines Debian Pakets =====
+<programm>_<Version>_<Release>-<Arch>.deb
+//<programm> → //der Name des Programms,Bibliothek,...
+//<Version> //→ Versionsnummer des <Programm> zugrundeliegenden Quellpakets
+//<Release> //→ Das wievielte Mal wurde das Paket in dieser Version gebaut
+//<Arch> //→ Die Architektur auf der dieses Paket installiert werden kann (i386, amd64,all,any)
+
+===== Entpacken eines Debain Pakets ohne es zu installieren =====
+* Debian Pakete sind als ar gepackt
+**ar -t <Paket.deb> **→ entpackt das Debian Paket und zerlegt es in seine Bestandteile
+				     → es erfolgt keine Installation
+
+//debian-binary //→ binäre ausführbare Dateien und Programmbibliotheken
+[[Linux Wissen:Bibliotheken]]
+
+//control.gz //→ Anweisungen, die beschreiben was bei der Installation mit dem Paket geschehen soll
+                → typischerweise beinhaltet es Scripte, die vor und nach dem kopieren der Binärdateien ausgeführt werden
+
+//data.tar.gz → //Dateien die nicht binär sind (z.B.Icons,Scripte und Konfigurationsdateien)
+
+===== Verwalten von Software =====
+* **dpkg**
+* **debsums**
+[[Linux Wissen:Paketverwaltung:Debian:dpkg]]
+* **aptitude**
+* **apt-get** 
+[[Linux Wissen:Paketverwaltung:Debian:apt]]
+* Die Liste von Bezugsquelle von Debianquellen kann unter */etc/apt/sources.lst konfiguriert werden
+[[Linux Wissen:FHS:etc:apt++soruces.lst]]

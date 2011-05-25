@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T02:10:24+02:00
+
+====== Bash ======
+Created Freitag 15 April 2011
+
+===== Reihenfolge in der nach .profile gesucht wird: =====
+*/etc/profile → *~/.bash_profile →  *~/.bash_login  → *~/.profile
+
+*~/.profile | */etc/profile → Einstellungen für Nutzer | Global für bash als Login Shell
+                                       → festlegen von   **umask ( **[[Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask]] )
+                                       → festlegen der Umgebungsvariablen und der Tastaturbelegung
+
+*~/.bashrc | */etc/bash.bashrc → bashspezifische Konfigurationseinstellungen für Nutzer | Global
+                                                 → setzen von Aliassen, Programmen und Funktionen die beim aufrufen der Shell
+                                                     ausgeführt werden soll.
+
+*~/.bash_logout → Befehle und Variablen und Funktionen die beim Abmelden aus bash ausgeführt werden sollen
+
+===== Buildins =====
+* Befehle die von der Shell selbst zur Verfügung gestellt werden
+* werden immer von der Shell asugeführt
+----
+**clear **→ löschen des angezeigten Bildschirminhalts, wie strg+l
+----
+[[Linux Wissen:Shell:Bash:Emacs Modus]]
+
+===== Extern ausführbare Befehle =====
+* Shell startet diese Programme durch Aufrufen ihres Namens aus PATH 
+[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]]
+
+===== Überprüfen ob ein Kommando ein Buildin oder ein externer Befehl ist =====
+**type <Befehlsname> **→ gibt an ob ein Befehl ein Buildin oder ein externer Befehl ist
+                                        → mögliche Rückgabewerte: hashed, Pfad/zu/bin, is Shell buildin, is aliased to ...
+
+===== Hashing =====
+* Abspeichern der bereits aufgerufenen Programme in einem Cache
+**hash **→ anzeigen der gehashten Befehle
+**-r **→ löschen des Hashcaches
+
+===== Sonderzeichen =====
+* Zeichen die für die Shell eine Sonderinterpretation haben müssen mindestens durch \ maskiert werden
+* $&(){}[]*?!<>"';\
+
+===== Maskieren =====
+**"mein text" **→ "" maskiert Leerzeichen und Steuerzeichen aber keine Sonderzeichen
+**'mein $text' **→ '' maskiert Steuerzeichen und Sonderzeichen 
+**mein\ text **→ maskiert ein einzelnes Steuerzeichen oder Sonderzeichen
+
+__Hinweis: Um das \ Zeichen muss man es So \\ doppelt maskieren.__
+__Hinweis: mkdir "verzeichnis 22" erzeugt ein Verzeichnis mit Namen: verzeichnis 22__
+
+===== Subshell einen Befehl mitgeben =====
+**bash -c <Befehl>**

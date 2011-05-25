@@ -1,0 +1,126 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T20:01:07+02:00
+
+====== Shellscripting ======
+Created Dienstag 26 April 2011
+
+http://tldp.org/LDP/abs/html/
+
+===== Shell Scripte ausführen =====
+* Shell Scripte beginnen immer mit #!/bin/bash (dem SheBang teilt mit welcher Interpreter verwendet werden soll)
+* muss die Rechte **x **und **r **besitzen
+* Mehrere Befehle können in eine Datei geschrieben und verarbeitet werden
+[[Linux Wissen:Dateien verwalten:Zugriffsrechte]]
+* Shellscripte die sich in $PATH befinden können durch Angabe des Namnes wie ein Programm ausgeführt werden
+[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]]
+* Shellscripte ausserhalb von $PATH:
+
+**./PFAD/script.sh **→ ausführen auf einer Subshell mit expliziter Pfadangabe 
+**bash /Pfad/script.sh **→ ausführen einer Subshell ohne Ausführungsrechte
+**source Script | **. **Script **→ ausführen in der aktuellen Shell ohne erzeugen einer Subshell
+
+__Hinweis: Die Endung .sh ist nicht notwendig wird aber bein Schreiben von ShellScripten empfohlen.__
+
+
+===== Debuggen von Shellscripten =====
+* Aufrufen von **-x **aktiviert das Tracing
+**set -x **→ dauerhaftes Tracing in der aktuellen Shell aktivieren
+**sh -x <Script.sh> **→ Shellscript mit Tracing aufrufen
+ [[Linux Wissen:Shell:Bash:Optionen für die Bash]]
+
+__Hinweis: Innerhalb eines Shellscript das Tracing nur für einen Block aktivieren:__
+++
+//sh -x //
+//...//
+//CodeBlock//
+...
+//sh +x//
+++
+
+* Aufrufen von **-v **aktiviert verbosity, die Shell zeigt alle Befehle an, die durch das Script aufgerufen werden
+**sh -v <Script.sh>**
+
+* Aufrufen von **-u **warnt vor undefinierten Variablen
+**sh -u <Script.sh>**
+
+* Aufruf von echo vor einem Kommando dass eine Substitution enthält gibt alle Substitutionen und Expansionen aus ohne den Befehl tatsächlich auszuführen
+
+===== Variablen =====
+* Variablen können Rückgabewerte, Programmausgaben oder Werte von Berechnungen enthalten.
+* Die Bash kann diese weiter verarbeiten|auswerten.
+* Können Zeichenketten, Zahlen, oder Felder (Arrays) sein, generell gibt es in Bash aber keiner Typitisierung
+[[Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen]]
+
+===== Arithmetik =====
+* einfache arithmetische Ausdrücke werden durch **$((Berechnung)) **beschrieben und ausgewertet.
+* Shellscripting eigent sich nicht für das Lösen komplexer Mathematischer Algorithmen.
+
+=== Addition ===
+**$((a+b))**
+
+=== Multiplikation ===
+**$((a*b))**
+
+=== Division ===
+**$((a/b))**
+
+=== Modulo ===
+**$((a%b))**
+
+=== Potenz ===
+**$((a**b))**
+
+__Hinweis: Bash rundet die Ergebnisse immer ab.__
+
+===== Exit Status =====
+* Programme und Funktionen haben immer einen Rückgabewert der über Erfolg oder Misserfolg informiert
+* Anhand des Exit-Status kann ein Fehler meist genauer diagnostiziert werden
+* Wird von einem Kindprozess an die aktuelle Shell übergeben
+* Der Befehl **exit **beendet ein Script und gibt einen Wert an den Vaterprozess des Scriptes weiter.
+[[Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status]]
+
+===== Test =====
+* der **test **Befehl ist ein Bash Buildin
+* Ein **if/then/else **Konstrukt testet ob der **exit**-Status eines Befehls gleich **0** ist, und falls 
+* Der Befehl **[ ] **ist ein Synonym für das **test **Buildin. 
+* Der Befehl **[[ ]] **ist ein Synonym für **test **Buildin. Mit **[[ ]]**können logische Verknüpfungen vorgenommen werden
+* In **(( ))** können arithmetische ausgewertet werden.
+[[Linux Wissen:Shell:Befehle]]
+[[Linux Wissen:Systemprogrammierung:Shellscripting:Test]]
+
+===== Schleifen =====
+* Eine Schleife ist ein Code Block der solange wiederholt wird, bis die Anweisung aufgrund eines Exit-Wertes beendet ist
+* **for **Schleife zur Iteration über eine Liste von Werten oder Dateien
+* **while **Schleife zur Iteration bis eine Aussage falsch oder wahr ist
+
+__Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
+[[Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen]]
+
+===== Funktionen definieren und verwenden =====
+* Unterprogramme im aktuellen Shellscript die einen **return **Wert liefern können
+* Häufig verwendete Programmschnipsel nur einmal implementiert zu werden
+* schaffen Übersichtlichkeit und lesbarkeit
+* Positionsparameter innerhalb der Funktion entsprechen denen der Funktion und nicht der des eigentlichen Scripts
+ [[Linux Wissen:Systemprogrammierung:Shellscripting:Funktion]]
+
+===== Here-Dokumente =====
+* bietet einen Codeblock der mit einem Kommando anschließend eingelesen und verarbeitet werden kann
+* der Codeblock wird mit einem Schlüsselwort beendet, welches vorher festgelegt wird. meist //EOF //oder //EOL//
+* dem lesenden <Befehl> wird mittels **<Befel> << <Schlüsselwort>**  das <Schlüsselwort zum Ende des lesens mitgeteilt
+[[Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente]]
+
+===== read =====
+* liest Zeilen von StdIn
+[[Linux Wissen:Systemprogrammierung:Shellscripting:read]]
+
+===== Eine Menuauswahl mit select erstellen =====
+* Mit dem Shell Schlüsselwort **select **lassen sich einfache Auswahlmenus erstellen
+[[Linux Wissen:Systemprogrammierung:Shellscripting:select]]
+
+===== dialog =====
+* Mit **dialog **lassen sich komolexere Menus erstellen
+* es verwendet ncurses und Umleitungsoperatoren
+* **kdialog**
+* **zenity**
+[[Linux Wissen:Systemprogrammierung:Shellscripting:dialog]]

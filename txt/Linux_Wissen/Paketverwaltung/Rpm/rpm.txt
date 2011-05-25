@@ -1,0 +1,122 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T23:56:46+02:00
+
+====== rpm ======
+Created Montag 25 April 2011
+
+*/var/lib/rpm → Paketdatenbank
+[[Linux Wissen:FHS:var]]
+— 
+**rpm **→ Installieren und Verwalten von Rpm Paketen
+
+=== installieren ===
+**rpm -i|-F|-U <Paket>,... **
+→ Installieren|Erneuern falls vorhanden|in jedem Fall erneuern oder installieren von <Paket>
+→ Globbing ist erlaubt
+**-h **→ ausgeben eines durch # gekennzeichneten Fortschrittbalkens
+**-v **→ verbose
+**-vv **→ noch detailierter
+**--exclude-docs **→ Dateien die als Dokumentationsdokumente gekennzeichnet sind nicht installieren
+**--nodeps **→ keinen Abhängigkeitscheck ausführen
+**--nosuggest **→ Suggests nicht als Paketabhängigkeit behandeln
+**--nopre --nopost --nopreun --nopostun **→ Das Pre Post Preun Postun Script nicht ausführen
+									   → hilfreich wenn ein Paket defekte Scripte enthält
+**--oldpackage **→ Nur mit **-U, **ersetzt ein neues durch ein altes Paket
+**--replacefiles **→ ersetzt bereits auf dem System vorhandene Dateien
+**--replacepkgs **→  ersetze ein bereits installiertes Paket
+**--force **→ entspricht **--replacepkgs --replacefiles --oldpackage**
+**--test **→ nichts machen,nur die Aktion testen
+**--justdb **→ nur die Datenbank erneuern, tatsächlich aber keine Installation der Dateien vornehmen
+ 
+__Hinweis: Benutzen der Option __**--justdb**__ um einen zweiten Kernel zu installieren.__
+**rpm -i --justdb kernel-default-2.26.3.i586.rm && rpm -i <mein-generierter-Kernel>.rpm**
+
+=== löschen ===
+**rpm -e <Paket> **→ deinstallieren von <Paket>
+**--allmatches **→ kann benutzt werden um ein zweites Paket zu entfernen, falls es einen fehlerhaften Eintrag in der 				Datenbank gibt
+**--nodeps **→ keinen Abhängigkeitscheck durchführen
+**--noscripts **→ keinerlei Scipte bei der Deinstallation durchführen, zum Umgehen defekter Deinstallationsscripte
+**--test **→ nichts machen, nur die Aktion testen
+
+=== abfragen ===
+**rpm -q <Paket> |**-**-qa|-qp <Paket> [--qf "<Formatierung>"]|-qf <Datei> **
+→ Informationen über ein <Paket> erhalten
+→ ohne weiter Option fragt **-q **nur ab, ob das <Paket> in der Liste der installierten Pakete steht
+**-a **→ die Abfrage auf alle Pakete ausdehnen|bzw mit **-qa **alle installierten Pakete anzeigen 
+**--last **→ Die Pakete in ihrrer nach Datum absteigend sortierten Installationsreihenfolge
+**-p **→ Informationen über Pakete die noch nicht installtiert wurden sind, als Argument wird ein Rpm-Datei benötigt
+**-l **→ auflisten der von Paket installierten Dateien
+**-f <Datei> **→ Welches Paket hat <Datei> installiert, dabei ist <Datei> ein vollständiger absoluter Pfad
+**-d **→ nur als Dokumentationen gekennzeichnete Dateien listen, impliziert **-l**
+**-c **→ nur als Konfigurationsdateien gekennzeichnete Dateien listen, imliziert **-l**
+**--provides **→ zeigt an, welche virutellen Abhängigkeiten ein Paket anbietet
+**-R|--requires **→ zeigt an welche Abhängigkeiten ein Paket hat
+**--qf "%Formatstring"**→ Ausgabe formatieren
+
+__Hinweis: Mit __ r**pm -qa --last|head -N**__ kann man sich die letzten N installierten Pakete anzeigen lassen.__
+
+__Hinweis: Benutzen von __**rpm -qa --last|head -1|awk '{print $1}' |xargs rpm -e **__kann man das zuletzt installierte__
+__Paket deinstallieren, auch wenn man den Namen nicht mehr weiß.__
+
+=== überprüfen ===
+**rpm -V <Paket>|-Va **→ verifizieren der von Paket installierten| aller Pakete installierten Dateien
+
+=== Signaturen ===
+**rpm --import <Pubkey> **→ importiert einen öffentlichen Schlüssel <Pubkey> in die Datenbank
+**rpm -K <Paket> **→ überprüfen der Signatur eines Paketes
+
+=== Paketdatenbank verwalten ===
+**rpm --rebuilddb **→ die rpm Paketdatenbank neu erzeugen
+**rpm --initdb **→ die Paketdatenbank initialisieren, diese Option wird beim erstmaligen installieren vorgenommen
+**--dbpath =<PATH> **→ Pfad zu einer neuen Datenbank setzen
+— 
+
+=== Ein Quellpaket übersetzen ===
+**rpmbuild --rebuild <Paket>.src.rpm **
+→ ein Quellpaket wird erneut übersetzt
+→ fertig gebaute Pakte findet man in */usr/src/packages/RPMS
+[[Linux Wissen:FHS:usr]]
+[[Linux Wissen:Paketverwaltung:Rpm:Pakete bauen]]
+
+
+===== Rpms aus einem Delta erzeugen =====
+* Ein delta.rpm ist wie das diff eines Binärcodes und enthält nur die Unterschiede zu einer früheren Version.
+* mit **applydeltarpm **lässt sich daraus ein neues Rpm erstellen. Dazu muss eine ältere Version des Pakets im System 
+installiert sein.
+
+//Aufbau eines Delta-rpms//
+//<Programm>_<Version-alt>-<Release-alt>_<Version-neu>-<Release-neu>.<Arch>.delta.rpm//
+
+**applydeltarpm -r <Programm>-<Version-alt>-<Release-alt>.<Arch>.rpm -pv  <Delta> <Programm>-<Version-neu>-<Release-neu>.<Arch>.rpm**
+→ erezugt aus einem delta.rpm ein neues Paket 
+
+**applydeltarpm -c <delta>**
+ → überprüfen des delta.rpm und anzeigen der Änderungen, sowie ob dieses installiert werden kann
+
+===== Rpm Paketabhängigkeiten als Baum ausgeben =====
+**rpmgraph <Paket> **→ zeigt einen Abhängigkeitsbaum für ein noch nicht installiertes <Paket> an
+	                           →  zeigt auch Probleme mit defekten oder unsignierten Paketen an
+
+
+===== Verweise Pakete finden =====
+* Pakete die installiert sind, aber von keinem anderen Paket mehr benötigt werden und auch keine zusätzliche Funktionaliät anbieten.
+**rpmorphan [<Optionen> <Tragets> ] **→ auflisten aller verweisten Pakete
+**-gui|-tk **→ ein grafisches Userinterface erzeugen
+**-curses **→ ein ncurses basierter Userinterface erzeugen
+**-exclude <Paket> **→ dieses Paket bei den Resultaten nicht berücksichtigen
+**-keep-file <Datei> **→ Paketnamen die in <Datei> stehen werden nicht angezeigt
+
+//Targets//
+**-guess-all → **alle 
+-**guess-perl|-guess-python **→ nur verweiste perl|python Pakete finden
+**-guess-lib **→ nach verweisten Bibliotheken suchen
+**-guess-dev **→ nach verweisten development Paketen suchen
+
+
+//Beispiel://
+**rpmorphan -gui -exclude libdvdcss2 libdvdcss -guess-lib**
+
+__Hinweis: Von rpmorphan vorgeschlagenen Pakete sollten sehr gründlich geprüft werden.__
+
+

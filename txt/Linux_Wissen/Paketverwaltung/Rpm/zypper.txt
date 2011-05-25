@@ -1,0 +1,103 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T23:57:46+02:00
+
+====== zypper ======
+Created Montag 25 April 2011
+
+$SUSE$
+Das Tool zypper ist seit Version 11.0 bei SuSE zur Paketverwaltung verwendet. Es bietet seit Version 11.2 einen
+ähnlichen Komfort wie zum Beislpiel aptitute oder apt-get. Auch hier werden Pakete in Repositories verwaltet.
+Ein Repositorie kann ein lokaler Pfad, oder eine Adresse auf einem entfernteen Webserver sein, der entweder 
+ftp oder http spricht und halten die Rpms oder auch delta.rpms vor.
+
+**zypper <Globale Optionen> <Aktion> <Aktionsoptionen>**
+
+=== <Globale Optionen> ===
+**-v **→ verbose
+**-n **→ nicht um Bestätigung fragen und bei Aktionen die beste Option automatisch wählen
+**--no-cd **→ Repositories auf CD bei der Aktion ignorieren
+**-A **→ Text in Tabellen nicht abschneiden
+
+=== <Aktion> ===
+
+== Repositories verwalten ==
+**lr **→ Repositories auflisten, die zypper bekannt gemacht worden sind
+**-d **→ zeige Details, wie die URI des Repos an
+**--help **→ zeige eine Liste der zusätzlichen Aktionsoptionen
+**-e **→ exportieren der Repositorieliste in eine Datei
+
+__Hinweis: Um eine Liste zu exportieren: __**zypper -A lr -e Repo.repo**
+__Hinweis: Um eine Liste zu importieren: __**zypper ar -r Repo.repo**
+
+**ar <URI> <NAME> **→ fügt das Repository aus der ftp, http,lokalen <URI> als <Name> hinzu
+**-n **→ beschreibenden Namen für das Repository festlegen
+**-f **→ automatische Aktualisierien für dieses Repository festlegen
+**-c **→ URI übperprüfen
+**-K **→ deaktivieren des loaklen Rpm Caches für dieses Repository
+
+**rr <Nummer>|<Name> **→ das Repository aus der Datenbank entfernen
+
+**mr -a|-l|-t |<Nummer>|<Name> **
+→ die Einstellungen für ein Repositrory ändern
+→ wird die Optioen **-a **verwendet werden die Änderungen auf alle Repos angewandt
+→ wird **-l **benutzt, werden Änderungen nur auf lokale Repos angewandt
+→ wird **-t **benutzt werden Änderungen nur auf entfernte Repos angewandt
+**-d **→ deaktivieren des Repositories|aber nicht entfernen
+**-e **→ ein deaktiviertes Repository wieder aktivieren
+**-r|-R **→ aktivieren|deaktivieren der Autoaktualisierung für dieses Repository 
+**-p [1-99]**→ eine Priorität für dieses Repositorie festlegen, je höher die Zahl des kleiner die Priorität
+**-k|-K **→ aktivieren |deaktivieren des lokalen Caches für dieses Repository
+
+== Repositories auffrischen ==
+**ref **→ Alle Repositories mit der lokalen Datenbank abgleichen
+**-b **→ einen Rebuild der Datenbank erzwingen
+**-r <URI>|<Nummer>|<Name> **→ nur für dieses Repo die Datenbank auffrischen
+
+== Software veralten ==
+**se <Paket> **→ durchsuchen der Datenbank nach einem <Paket>
+**-s **→ Detils anzeigen
+**-d **→ auch in der Paketbeschreibung anstatt nur in <Paket> name suchen
+**-i **→ nur installierte anzeigen
+**-u **→ nur nichtinstallierte anzeigen
+**--sort-by-name **→ nach Namen sortieren
+**--sort-by-repo **→ nach Repository sortieren
+
+**if <Paket> **→ Informationen zu einen Paket anzeigen
+
+**in <Paket> **→ <Paket> aus dem Repository holen und installieren
+ **-f **→ das Paket nochmals installieren, auch wenn eine exakte Version dieses Pakets bereits installiert ist
+**-r <URI> |<Name> **→ nur von diesem Repository aus installieren
+**-l **→ automatische Zustimmung von Nicht GPL Lizenzen
+**--recommends **→ auch empfohlende Pakete installieren
+**-D **→ nur testen, nichts machen
+**-download-only **→ nur nach */var/lib/zypp herunterladen
+**--download-in-advance **→ alle benötigen Pakete werden erst heruntergeladen und dann installieren
+
+**inr **→ Installieren von neuen Paketen, die von anderen Paketen vorgeschlagen werden
+
+**up [<Paket>] **
+→ upgrade des gesamten Systems|eines bestimmten Pakets
+→ Vendor und Architekturwechsel sind standardmäßig nicht erlaubt
+**-r <URI>|<Name> **→ nur dieses Repository laden
+**-l **→ automatische Zustimmung von Nicht GPL Lizenzen
+**--download-in-advance **→ alle benötigten Pakete erst herunterladen und dann instllieren
+**--download-only **→ nur nach */var/lib/zypp herunterladen
+**-D **→ nur testen, nichts machen
+
+__Hinweis: Für die aktualisierung via cronjob sollte immer __**--download-in-advance **__und __**-l **__verwendet werden__.
+
+**dup **
+→ eine Versionsaktualisierung des gesamten Systems, seit Version (11.1)
+**--debug-solver **→ einen Testfall generieren
+**-D **→ nichts machen, nur testen
+
+__Hinweis: Um eine Versionsaktualisierung durchzuführen werden zunächst die Repositories entsprechend angepasst und dann __**zypper dup **__ausgeführt.__ 
+
+**rm <Paket> **→ ein <Paket> löschen
+**-u **→ seit version 11.3, automatisch nicht mehr benötigte Paketbaahängigkeiten entfernen
+**--force-resolution **→ finde auf jeden Fall eine Lösung, auch wenn das bedeutet das gesamte system wird gelöscht
+**-D **→ nichts machen, nur testen
+
+== Interaktiv ==
+**zypper sh** → startet eine interaktvie Shell in der zypper Kommandos ausgeführt werden können

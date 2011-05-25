@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./lilo.conf.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./passwd.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>modprobe.conf</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+++<br>
+<em>alias &lt;Modul&gt; &lt;Aliasname&gt; --&gt; alternative Namen für Module, die beim Laden mittels modprobe verwendet werden können</em><br>
+<em>alias nfs4 nfs</em><br>
+</p>
+
+<p>
+<em>options &lt;Modul&gt; &lt;Parameter&gt; --&gt; zusätzliche Angabe von Optionen zu einem Modul</em><br>
+<em>options ide-scsi idescsi_nocd=1</em><br>
+</p>
+
+<p>
+<em>install &lt;Modul&gt; &lt;Kommando&gt; --&gt; Zum Laden von &lt;Modul&gt; wird eigens definierter Befehl verwendet</em><br>
+<em>install ohci-hcd /sbin/modprobe ehci-hcd; /sbin/modprobe --ignore-install ohci-hcd</em><br>
+</p>
+
+<p>
+<em>remove &lt;Modul&gt; &lt;Kommando&gt; --&gt; zum entladen von &lt;Modul&gt; wird ein eigens definierter Befehl verwendet</em><br>
+<em>remove xfs /bin/echo "Not allowed to remove xfs from modules stack"</em><br>
+</p>
+
+<p>
+<em>include &lt;Datiename&gt; --&gt; Zum Laden der Konfiguration aus der entsprechenden Datei</em><br>
+<em>include /etc/modprobe.d/mydriver.conf</em><br>
+++<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Hardware_und_Systeminformationen.html'>Linux Wissen:Hardware und Systeminformationen</a></li>		<a href='../../Hardware_und_Systeminformationen/Module.html'>Linux Wissen:Hardware und Systeminformationen:Module</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

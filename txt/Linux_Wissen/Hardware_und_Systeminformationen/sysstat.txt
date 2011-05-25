@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T15:59:28+02:00
+
+====== sysstat ======
+Created Sonntag 24 April 2011
+
+**iostat **→ Report über CPU/IO für lokale und NFS Platten
+**-h **→ leichter lesbar, human readable
+**-c **→ die CPU Benutzung 
+**-m **→ Ausgabe in MB/s
+**-N **→ Logische Volumes im LVM anzeigen **(missing link LVM)**
+**-n **→ Report nur für NFS
+**-x **→ erweiterte Statistiken anzeigen
+
+**mpstat **→ Report über jeden einzelnen Prozessor
+**-u %CPU %user %nice %sys %iowait %irq %soft %steal %guest %idle**
+→ Anpassen des ausgegeben Reports
+
+**sar **→ Bericht über die Sytemaktivität anzeigen und loggen
+
+**pidsstat [<intervall]> [<count>] **→ Überwachen von einzelenn Tasks die gerade Im CPU Register liegen
+							       → wird ein Intervall angegegeben wird der Report alle Intervall Sekunden generiert
+							       → wird count angegeben wird nach <Count> abgebrochen 
+**-h **→ Alle Aktivitätäen horzontal in einer Linie anzeige, für Parsing von Scripten
+[[Linux Wissen:Systemprogrammierung:Shellscripting]]
+
+**-l **→ Anzeigen des Befehlsnamens und aller Argumente
+**-t **→ anzeigen von Threads
+**-p **→ ein Prozess mit dieser <PID> beobachten
+
+__Hinweis: Benutzen Sie __**watch**__ um Stattisktiken dauerhaft zu überwachen.__

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Exit_Status.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Here-Dokumente.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Funktion</h1>
+
+<p>
+Created Mittwoch 27 April 2011<br>
+</p>
+
+<h4>Funktionen definieren</h4>
+<p>
+++<br>
+<em>function_name()</em><br>
+<em>{</em><br>
+<em>Aktionen</em><br>
+</p>
+
+<p>
+<em>return &lt;Wert&gt;</em><br>
+<em>}</em><br>
+</p>
+
+<p>
+<em>function_name #aufruf der Funktion function_name</em><br>
+++<br>
+→ wird kein Funktions <strong>return </strong>Wert zurückgegeben, so entspricht der Rückgabewert der des letzten ausgeführten Befehls<br>
+</p>
+
+<p>
+<strong>typeset </strong>→ Informationen über definierte Shellfunktion in der aktuellen Shell abfragen<br>
+<strong>-F </strong>→ nur die Namen der aktuellen Funktion ausgeben<br>
+<strong>-f </strong>→ alle definierten Funktionen vollständig ausgeben<br>
+</p>
+
+<p>
+<u>Hinweis: Eine Bibliothek mit Shellfunktionen anlegen. </u><br>
+(1) Eine Datei my_lib,sh anlegen die die gewünschten Funktionen enthalten<br>
+(2) sourcen der Datei zu Beginn des Scripts<br>
+++<br>
+<em>#!/bin/bash</em><br>
+<em>. my_lib.sh</em><br>
+++   <br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+++<br>
+<em>toupper()</em><br>
+<em>{</em><br>
+<em>echo $* | tr '[:upper:]' '[:lower:]'</em><br>
+<em>}</em><br>
+++<br>
+→ Groß in Kleinbuchstaben konvertieren<br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>		<a href='../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html'>Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

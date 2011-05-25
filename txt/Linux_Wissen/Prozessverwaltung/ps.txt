@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T01:30:58+02:00
+
+====== ps ======
+Created Donnerstag 21 April 2011
+
+**ps [<PID>] | [-C <Name>]**→ zeigt Informationen zu Prozessen an
+      → die Ausgabe kann mittels **axo **formatiert werden
+      → unterschieden zwischen Possix Optionen die aus Komatibilitätsgründen existieren und GNU Optionen
+      → Possix Optionen werden ohne - eingeleitet
+      → Possix und GNU Optionen können miteinander kombiniert werden 
+     → ohne Optionen werden nur Prozesse aufgelistet die in der aktuellenSubshell laufen
+     → wird <PID> verwendet, werden nur Informationen über den Prozess mit <PID> angezeigt
+
+Possix Optionen:
+**a **→ zeigt alle laufenden Prozesse die ein tty haben inklusive Pfad
+   → Prozesse die in der aktullen Shell laufen oder einer Subshell der aktuellen Elternshell werden ohne Pfad und tty 	 
+	angegeben 
+**u|l **→ zeigt zusätzliche Informationen wie Laufzeit und Prozessstatus
+**r **→ listet nur die Prozesse auf, die momentan laufen (//running//), bei single threaded Kernel wird ps r ausgegeben
+**T **→ zeigt alle Prozesse die in der aktuellen Subshell laufen
+**t [<tty>] **→ zeige die Prozesse an, die im Terminal <tty> laufen
+                 → ohne <tty> verhält sich wie ''T''
+**x **→ zeigt auch Prozesse ohne Terminal an
+**U <Nutzer> **→ zeige alle Prozesse von <Nutzer>
+
+Gnu Optionen:
+**-A |-e **→  zeige alle auf der Maschine laufenden Prozesse und Damons
+**-w **→ bei der Ausgabe wird nichts abgeschnitten
+**-C <Name> **→ zeige Informationen zum Prozess mit <Name> anstelle von <PID>
+**--forest **→ die Prozesshierarchie als Baum anzeigen
+
+**ps axo stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm** → Prozessinformationsausgabe formatieren
+
+
+__Tipp: kill SIGNAL $(ps -A|awk '/<Name>/{print $1}' → alle Prozesse mit <Name> ein <SIGNAL> senden__
+wie killall
+[[Linux Wissen:Prozessverwaltung:kill]]
+
+**pstree **→ den Prozessbaum anzeigen
+**-a **→ mit Befehlsargumenten anzeigen
+**-A **→ ASCII Zeichen verwenden um den Baum zu zeichnen
+**-c **→ fasse gleiche Prozesse nicht zusammen wie 4*[ProzessXY]
+**-h **→ den aktuell Laufenden Prozess und seine Verwandten hervorheben
+**-l **→ Alles Anzeigen und nicht nach 132 Zeichen beschneiden
+**-n **→ numerische Sortierung nach PID
+**-p **→ mit PID anzeigen
+**-u **→ Besitzerwechsel anzeigen
+
+__Tipp benutzen Sie __**watch** **(missing link)**__ um  Prozesse permanent zu beobachten.__

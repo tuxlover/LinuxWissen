@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T20:03:25+02:00
+
+====== Partitionswerkzeuge ======
+Created Donnerstag 21 April 2011
+
+**fdisk /dev/sdX **→ ruft den Partitionierer fdisk auf, um /dev/sdX zu partitionieren
+
+===== Tastenbefehle innerhalb fdisk =====
+**m **→ zeigt Hilfe und verfügbare Optionen an
+**d **→ löscht eine Partition
+**a **→ setzt das Bootflag für eine Partition
+**p **→ die Partitionstabelle anelegen
+**l **→ auflisten verfügbarer Partitionstypen
+**n **→ neue Partiton anlegen
+**w **→ Partitionstabelle schreiben und Programm verlassen
+**q **→ Programm ohne Speichern der Änderungen verlassen
+
+== Workflow zum anlegen einer neuen 2 GB großen logischen ext3 Partition ==
+**(1) fdisk /dev/sdX**
+**(2) **Wähle n  ( →  e für extended, p für primär )
+**(3) **Wähle 1-4 für die Numer der Partition
+**(4) **Wähle Startzylinder (Vorgabe empfohlen)
+**(5) **+2G 
+**(6) **Mit w Tabelle auf den Datenträger schreiben und das Programm verlassen
+**(7) mke2fs -j /dev/sdX  ( **[[Linux Wissen:Partitionen und Dateisysteme:Dateisysteme]] )
+
+**sfdisk **→ liest Partitionstypen aus einer Datei
+
+**sfdisk -V **→ Statusinformationen über Partitionen anzeigen
+
+**sfdisk -l **→ Auflisten vorhandener Platten, auch nicht eingehängter
+
+**smartctl /dev/sdX**→ Smart Werte der Festplatte auslesen
+**-H **→ den Gesundheitsstatus der Festplatte überprüfen
+**-i ** → Hardwareinformationen der Festplatte anzeigen  
+
+

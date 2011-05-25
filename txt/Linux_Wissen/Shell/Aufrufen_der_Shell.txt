@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T01:30:27+02:00
+
+====== Aufrufen der Shell ======
+Created Fretag 15 April 2011
+
+===== Interaktiv durch ein Terminal =====
+* bei nichtgrafischer Anmeldung
+* gnome-terminal
+* Xterm
+* konsole
+* yakuake
+
+===== Auslesen von Befehlen aus Dateien =====
+* Shellscripte mit Schleifen, Bedingungen und definierbaren Datenstrukturen
+__HInweis: Der ausführende Benutzer sollte das Script mindestens lesen +r und ausführen +x dürfen__
+
+**chown +rx Script.sh** → Rechte für ein Script vergeben, das ausgeführt werden soll
+
+===== Sourcen von Befehlsfunktionen und Aliassen =====
+**. ~/.bashrc **oder **source ~/.bashrc** → einlesen von Befehlen, Funktionen und Variablen
+                                                              → es wird keine Subshell gestartet
+__Hinweis: Befehle inder zu sourcenden Datei müsenn in PATH sein__
+
+===== Login Shell =====
+Die Shell die beim login verwendet wird.
+**bash -l  **→ bash als Login Shell festlegen
+Der Aufruf von **su - **, **login ** und **ssh **gibt der Shell als erstes ein **-** mit, was sie zur Login Shell macht
+
+===== Interaktive Shell =====
+Shell reagiert auf Nutzeinagben und gibt Statusmeldungen zurück
+* einlesen der Shellspezifischen Konfiguraionsdateien des Benutzers wie zum Beispiel *~/.bashrc 
+
+===== Nichtinteraktive Shell =====
+* Ein Shellscript wird ohnen Nutzerintervention ausgeführt 
+* Ein Programm bedient sich einer Shell um ein anderes zu starten (Wrapper)

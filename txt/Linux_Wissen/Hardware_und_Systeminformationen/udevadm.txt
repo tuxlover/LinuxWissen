@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T18:37:41+02:00
+
+====== udevadm ======
+Created Sonntag 24 April 2011
+
+**udevadm** **info|trigger|settle|control|monitor|test **→  Administrationstool für udev
+	**info **→ Informationen zu einem Gerät
+		**--query --type=<name>|symlink|path|property|all**
+		**--name=<Name>=Gerät**
+		**--attribute walk**
+		**--export-db **→  die Udev Datenbank exportieren
+	
+	**trigger **→ sorgt dafür dass das entsprechende Gerät
+	
+	**settle **→ überwacht den Udev Event bis alle Udev Dienste beendet wurden
+	
+	**monitor **→ warten auf Udev UEvents und Ausgaen nach StdOut, ersetzt **udevmonitor**
+	**--kernel **→ Events vom Kernel
+	
+	**test **→ testen einer Regel und ausgeben von debugging Informationen  
+
+**udevadm info --query=all --name=<Gerät> --attribute-walk **
+→  zeigt an welche Regeln für <Gerät> vergeben werden können

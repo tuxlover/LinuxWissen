@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Shell_Varibalen_und_die_Umgebung.html'>Prev</a> ]
+
+			[ <a href='../../../../index.html'>Index</a> ]
+
+	[ <a href='./Umgebungsvariablen_in_bash.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Positions Parameter</h1>
+
+<p>
+Created Freitag 15 April 2011<br>
+</p>
+
+<p>
+$0 → Name der Shell | des Shellscripts<br>
+</p>
+
+<p>
+$1 $2 ${10} → ... Parameter die dem Script übergeben werden. $1 ist der 1. Parameter usw.<br>
+                    → ${10} muss die Zahl in geschweiften {} stehen<br>
+</p>
+
+<p>
+$# → Anzahl der übergebenen Elemente<br>
+</p>
+
+<p>
+$* → Alle Postions Parameter als ein einziges Wort <br>
+     → wie <strong>echo "$1 $2 ..."</strong><br>
+</p>
+
+<p>
+$@ → Alle Parameter geshen als ein Text, dabei wird jedes Argument einzeln interpretiert<br>
+      → wie <strong> echo "$1"; echo "$2"; ...</strong><br>
+</p>
+
+<p>
+$! → PID des letzten Hintergrundjobs<br>
+</p>
+
+<p>
+$- → Flags die dem Script | der Shell beim Aufruf durch <strong>set </strong> übergeben wurden ( <a href="../Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash">Linux Wissen:Shell:Bash:Optionen für die Bash</a> )<br>
+</p>
+
+<p>
+$_ → letztes Argument des vorherigen Befehls<br>
+</p>
+
+<p>
+$? → exit Status des letzten Befehls, der zuletzt ausgeführten Funktion|Scripts|Befehls<br>
+</p>
+ 
+<p>
+$$ → PID des gerade laufenen Scriptes | der gerade laufenden Shell<br>
+</p>
+
+<p>
+<strong>shift </strong>→ Positionsparameter nach links verschieben<br>
+          → aus $2 wird $1 und so weiter<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Aliasse.html'>Linux Wissen:Shell:Bash:Aliasse</a></li>		<a href='../../../Systemprogrammierung/Shellscripting/Schleifen.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

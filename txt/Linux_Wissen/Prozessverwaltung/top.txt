@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T01:32:10+02:00
+
+====== top ======
+Created Donnerstag 21 April 2011
+
+**top **→ zeigt eine dynamische und interaktive Prozesstabelle an
+**-d N** → Anzahl N in Sekunden nach der die Tabelle aktualisiert wird
+**-p <PID>,... **→ nur die Prozesse mit diesen <PID>s anzeigen
+**-n N** → stopt das Programm nach N durchläufen
+
+===== Navigation innerhalb von top =====
+**h** → Hilfe
+**k **→ Signal an Prozess senden
+**r **→ renice ( [[Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren]] )
+**t l m **→ Zusammenfassung für Load Avg, Task, CPU Stats, Speicherinfomationen an|ausschalten
+**d,s  **→ Updateintervall setzen
+ 
+
+//Beispiel://
+**top -d 4 -n 2 ** zeigt das Programm ( Sekunden lang an mit je 2 Durchläufen
+
+Weitere nützliche Programme:
+//htop//
+iotop
+iftop
+conky

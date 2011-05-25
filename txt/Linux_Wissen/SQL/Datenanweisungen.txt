@@ -1,0 +1,165 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-29T03:27:00+02:00
+
+====== Datenanweisungen ======
+Created Freitag 29 April 2011
+
+=== Transaktions Anweisungen ===
+**SOURCE <Schema.sql> | <Data.sql>**
+→ eine leere Schemadatei importieren, die das Gerüst der Datenbank enthält
+→ Daten in eine Datenbank aus einem Data.sql importieren
+
+**USE <DATABASE>**
+→ die Datenabank <DATABASE> laden
+→ eine nichtvorhandene Datenbank wird mit einem fehler quittiert
+
+**SHOW **→ vorhandene Datenbank Elemente anzeigen
+**SHOW databases **→ vorhandene Datenbanken anzeigen
+**SHOW tables **→ vorhandene 
+
+
+**DESC <table>**
+→ gibt eine Beschreibung für die Tabelle <Table> aus
+→ anzeigen der Tabellenform mit ihren zulässigen Zeichenklassen und Wertebereichen
+
+==== DML (Data Manipulation Language) ====
+
+=== Querry ===
+**SELECT version(),user() [<Database>]**
+→ Nutzer und Version der Datenbank <Database>
+
+**SELECT * FROM <table>**
+→ aus der der Tabelle <table> alle Zeilen anzeigen
+→ die ganze Tabelle <table anzeigen> 
+
+**SELCECT * FROM <table1>,...,<tableN>**
+→ aus allen Tabellen <table1> bis <tableN> alle Zeilen auswählen
+→ die Tabellen werden dabei kartesisch verknüpft
+
+== → !Achtung!: ==
+**Sehr hohe Laufzeit!**
+
+**SELECT <Spalte1>,<Spalte2>,... FROM <table>**
+→ aus einer Tabelle <table> mehrere Spalten abfragen
+
+**SELECT <Spalte> INTO OUTFILE <Datei> FROM <table>**
+→ eine <Spalte> einer Tabelle <table> in eine <Datei> schreiben
+→ der Nutzer mysql muss entsprechend auf die Dateien Zugriff haben
+
+== WHERE ==
+**SELECT <Spalte> FROM <table> WHERE <Condition>**
+→ nur die Werte von Spalte ausgeben die auf <Condition> passen
+→ die <Condition> kann auch auf andere auf andere <Spalten> als auf die angezeigte verweisen
+[[Linux Wissen:SQL:Bedingungen]]
+
+== DISTINCT ==
+→ festlegen dass jeder Wert nur einmal angezeigt werden soll
+
+**SELECT DISTINCT <Spalte> from <Tabelle>**
+→ eindeutige Zuordnungseinheiten
+→ muss in sortierter From vorliegen
+
+== GROUP BY ==
+**SELECT <Spalte> FROM <table> WHERE <Condition> GROUP BY **
+→ fasst Zeilen nach gemeinsamen Werten entsprechend von Spalte zusammen
+
+== HAVING ==
+**SELECT <Spalte> FROM <table> WHERE <Condition1> GROUPBY <Spalte> HAVING <Conditon2> **
+→ herausfiltern von unerwünschten Gruppen
+
+== LIMIT ==
+**SELECT <Spalte> FROM <table> WHERE <Condition1> LIMIT N**
+→ die auf <Condition> zutreffenden Ergebnisse auf die ersten N Ergebnise limmitiren
+
+== ORDER BY ==
+**SELECT <Spalte> FROM <table> WHERE <Condtion> ORDER BY <SpalteA>**
+→ die auf <Condition> zutreffenden Ergebnisse nach <SpalteA> sortieren
+→ sortiren der Abfrage nach 
+
+
+== INSERT ==
+→ schreiben von Daten in eine Tabelle
+
+**INSERT INTO <table> (<Attribute>,...) VALUES (<Werte>,...)**
+→ fügt in die Tabelle <table> die entrsprechenden <Attribute> und den dazugerhörigen <Werte> ein
+→ bijektiv Abbildung
+→ die <Attribute> müssen bereits definiert sein
+
+**INSERT INTO <table1> SELECT <Spalte> FROM <table2>**
+→ Werte von einer Tabelle <table2> einer <Spalte> in die Tabelle <table1> einfügen
+→ Dimenstion und Attribute müssen übereinstimmen
+
+== UPDATE ==
+→ verändern von Daten in einer Tabelle
+→ das Attribut ist bereits vergeben
+
+**UPDATE <table> SET <Attribut>=<Wert> [ WHERE <Condition>]**
+→ setzt einen neuen <Wert> für Attribut von Tabelle <table> wo die Bedingungen <Condition> zutreffen
+→ mehrere Attribute müssen durch Kommata getrennt werden
+
+==== DDL (Database Definition Language) ====
+
+=== Erstellen ===
+
+== CREATE ==
+→ erzeugen von Datenbanken, Tabellen und Indezies
+
+**CREATE DATABASE <Name>**
+→ eine neue Datenbank mit Name <Name> anlegen
+
+**CREATE TABLE <Name> (**
+**id INTEGER AUTO_INCREMENT,**
+**<Spalt1> <Datentyp> <Extra Function>,**
+**...**
+**PRIMARY KEY (id)**
+**);**
+→ erstellen einer neuen Tabelle <Name> 
+→ es kann alles in eine Zeile geschrieben werden
+→ Jede Spaltendefinition wird duch ein Komma abgeschlossen
+→ die Definition einer Tabelle wird durch ; abgeschlossen 
+→ __es muss immer ein Primärschlüssel definiert durch das Schlüsselwort PRIMARY KEY definiert werden__
+
+//Beispiel://
+// CREATE TABLE autor (//
+//    -> id_autor INTEGER AUTO_INCREMENT,//
+//    -> Name VARCHAR(30) NOT NULL,//
+//    -> Vorname VARCHAR(30) NOT NULL,//
+//    -> PRIMARY KEY (id_autor)//
+//    -> );//
+
+
+=== Löschen ===
+
+== DELETE ==
+→ löschen von Daten aus einer Tabelle
+
+**DELETE FROM <table> [WHERE <Condition>]**
+→ entfernen aller Werte aus der Tabelle die einer bestimmten <Condition> entsprechen 
+
+== DROP ==
+→ löschen ganzer Tabllen
+→ sind Views involviert werden diese ebenfalls gelöscht
+
+**DROP TABLE <table>**
+→ die Tabelle <table> löschen
+
+=== Manipulieren ===
+
+== ALTER ==
+→ die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen
+
+**ALTER TABLE <Name_alt> RENAME TO <Name_neu>**
+→ Tabelle mit <Name_Alt> in <Name_neu> umbenennen
+
+**ALTER TABLE <Name> ADD COLUMN <Spalte> <Datentyp>**
+→ das Attribut (Spalte)  mit dem entsprechenden <Datentyp> der Tabelle mit <Name> hinzufügen
+
+**ALTER TABLE <Name> modify <Spalte> <Datentyp> **
+→ die Bedigungnen (Datentyp) einer <Spalte> ändern
+
+
+
+
+
+__Hinweis: Mehere Datenanweisungen lassen sich durch IN und NOT IN sowie () verknüpfen.__

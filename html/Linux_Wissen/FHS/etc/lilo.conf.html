@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./inittab.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./modprobe.conf.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>lilo.conf</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+++<br>
+<em>prompt</em><br>
+<em>tineout=50  #Timer für den Bootprozess</em><br>
+<em>default=linux #verweist auf den Identifier label, der das zu startende System indetifiziert, wenn  der timeout</em><br>
+<em>              #abgelaufen ist</em><br>
+</p>
+
+<p>
+<em>boot=/dev/hda4 #verweist auf das gerät auf dem das /boot Gerät angehängt ist</em><br>
+<em>install=/boot/boot.b         #Pfad zum 2nd Stage Bootloader</em><br>
+</p>
+
+<p>
+<em>iamge=/boot/vmlinuz-2.4.7-10 #Pfad zum Kernel Image</em><br>
+<em>        label=linux          #Identifier für Image</em><br>
+<em>        initrd=/boot/initrd-2.4.7-10.img    #Initial Ram Disk</em><br>
+<em>        read=only                           #read only</em><br>
+<em>        root=/dev/hda9       #Verweis auf das / Verzeichnis</em><br>
+<em>        append=""            #Kernelparamter übergeben</em><br>
+++<br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../../Booten/LILO.html'>Linux Wissen:Booten:LILO</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

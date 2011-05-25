@@ -1,0 +1,59 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T20:58:20+02:00
+
+====== dpkg ======
+Created Montag 25 April 2011
+
+**dpkg **→ installieren und verwalten von Debian Paketen (.deb)
+
+=== installieren ===
+**-i |--install <Paket> **→ installiert das Paket sofern alle Abhängigkeiten erfüllt wurden
+	**--force-depends **→ überspringt die Überprüfung von benötigten Abhängigkeiten
+	**--force-overwrite **→ Im System bereits vorhandene Dateien werden überschrieben
+
+* Pakete können sich gegenseitig ausschließen 
+* virtuelle Abhängigkeiten: Paket hängt von einer einer Funktionalität ab, die von mehereren Paketen angeboten wird
+
+=== entfernen ===
+**-r |--remove <Name> **→ entfernen von Paket <Name>. Konfigurationsdateien bleiben erhalten
+**-p|--purge <Name> **→ entfernene von Paket <Name> inklusive der Konfigurationsdateien
+	**--force **→ entferne trotz bestehender Abhängigkeiten
+
+
+=== abfragen ===
+**-l|--list **→ liste der Pakete anzeigen
+	//ii //→ das Paket ist vollständig installiert
+	//un //→ Auf diesem System nicht installiert
+	//pn //→ Wurde von diesem System entfernt
+	//rc //→ nur noch Konfigurationsdateien  
+**-s |--status <Paket> **→ anzeigen des Status eines einzelnen Pakets
+**-L |--listfiles <Paket> **→ anzeigen der Dateien die zu <Paket gehören>
+**-S|--search <Datei> **→ zu welchem Paket gehört eine Datei
+ 
+__Hinweis: Mit __**dpkg -l|grep ^ii.* **kann man sich installierte Pakete anzeigen lassen
+
+__Hinweis: MIt __**dpkg -l|grep ^rc.* **kann man sich Pakete anzeigen lassen von denen noch Konfigurationsdatein übrig sind. 
+
+=== Quellcode zu einem Paket aus dem Debianarchiv erhalten ===
+**dpkg-source -x <Paket>.dsc **→ der zu Paket passenden Quelldateien 
+
+**debsums <Paket> **→ Überprüfen der Intigrität eines installierten Paketes
+*/var/lib/dpkg/info 
+[[Linux Wissen:FHS:var]]
+
+**dpkg-reconfigure <Paket> **→ eine neue Konfiguration für ein installiertes <Paket> erstellen
+**-f |--frontend **→ ein anderes Frontend definieren (**man 7 debconf **im  Paket debconf-doc)
+DEBCONF_FRONTEND  
+**-p |--priority <critical|high|medium|low **→ festlegen der Deteiltiefe der Konfiguration
+			**critical** → unbedingt zu beantwortende Fragen, nur critical wird abgefragt
+			**high **→ Fragen die bereits eine verünftige Voreinstellung benötigen, nur high und critical
+			**medium **→ Fragen die bereits eine vernünftige Voreinstellung haben, nur medium, high, critical
+			**low **→ Triviale Fragen mit meist funktionierenden Voreinstellungen, alle Fragen
+			
+
+===== Verweiste Pakete =====
+* Pakete die installiert sind, aber von keinem anderen Paket mehr benötigt werden und auch keine zusätzliche Funktionaliät anbieten.
+
+**deborphan **→ spürt Pakete auf, die verweist sind
+

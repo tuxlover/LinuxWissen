@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-20T23:35:10+02:00
+
+====== Dateiattribute ======
+Created Mittwoch 20 April 2011
+
+* steuern das Verhalten bei verschiedenen Operationen auf Dateien
+* kann nur in ext* Dateisystemen verwendet werden
+
+**chattr +|- <Atribut> <Datei> **→ setzen|entfernen von Atrributen auf Datei
+
+__Hinweis: Einige Operationen lassen sich auch durch mount Optionen  für ein gesamtes Dateisystem erstellen. __
+[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+
+//Attribute			Beschreibung									mount-Option//
+A				letzte Zugriffszeit nicht verändern					-o noatine
+a				An die Datei kann nur neue Bytes angefügt werden	
+c				Datei wird komprimiert gespeichert			
+d				Datei wird bei einem Backup mit dump **(missing link) **nicht berücksichtigt
+i				Datei kann nicht verändert oder gelöscht werden		-o ro
+j				Dateien werden zuerst im Journal gespeichert		-o data=journal
+s				Beim löschen einer Datei wird der Speicherbereich 
+				  mit Nullen überschrieben						-
+S				Nach jeder Dateioperation wird fsync durchgeführt	-o sync
+t				Dateienden die keinen vollen Block bilden werden
+                                 nicht mit anderen Dateien zusammngefasst		-o notail
+u				Dateien werden beim Löschen für ein Undelete 
+				 gespeichert
+
+
+**lsattr <Datei> **→ erweiterte Dateiattribute anzeigen
+**-a **→ alle Dateien anzeigen auch die mit . beginnen
+**-R **→ rekusives Auflisten der Dateiattribute
+**-d **→ Verzeichnisse als Datei behandeln und nicht deren Inhalt aufzeigen

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Plattenbelegung_analysieren.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Script_Dateien_unwiederherstellbar_l%C3%B6schen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Quotas</h1>
+
+<p>
+Created Samstag 23 April 2011<br>
+</p>
+
+<p>
+Quotas werden unterhalb des Mountpoints in den Dateien <em>aquota.user </em>und <em>aquota.group</em> angelegt<br>
+</p>
+
+<p>
+<strong>quotacheck </strong>→ Quotas neu initialisieren, dabei wird der Wert mit des Dateisystems mit den Quotas abgeglichen<br>
+<strong>-b </strong>→ ein Backup der alten Quotadatei erstellen<br>
+<strong>-v </strong>→ verbose<br>
+<strong>-a </strong>→ Aktion auf alle eingehängten Dateisysteme durchführen die quotas aktiviert haben<br>
+<strong>-u </strong>→ nur Quotas des aktuellen Benutzers checken<br>
+<strong>-g </strong>→ nur Quotas der aktuellen Gruppe checken<br>
+<strong>-i </strong>→ interaktiver Modus<br>
+<strong>-R </strong>→ nur mit <strong>-a</strong>, schließt root aus<br>
+</p>
+
+<p>
+<strong>quotaon|quotaoff </strong>→ Quotas aktivieren | deaktivieren<br>
+</p>
+
+<p>
+<strong>edquota </strong>→ editieren der Quotas<br>
+<strong>-u &lt;Nutzer&gt; </strong>→ die Quotas für &lt;Nutzer&gt; <br>
+<strong>-g &lt;Gruppe&gt; </strong>→ die Quotas für &lt;Gruppe&gt;<br>
+<strong>-f &lt;filesystem&gt; </strong>→ Nur die Quotas für das angegebene Dateisystem editieren<br>
+</p>
+
+<p>
+<strong>repquota -a|/dev/sdX </strong>→ Quotas anzeigen lassen für das entsprechende Dateisystem<br>
+<div style='padding-left: 150pt'>
+   → es wird der Inhalt der Dateien <em>aquota</em> ausgegeben<br>
+</div>
+<strong>-a </strong>→ für alle<br>
+<strong>-g </strong>→ für Gruppen<br>
+<strong>-u </strong>→ für Nutzer<br>
+</p>
+
+<p>
+<strong>quota </strong>→ Anzeigen des verbrauchten Plattenplatz und der eingestlleten Beschränkungen <br>
+            → kann auch als normaler Nutzer durchgeführt werden<br>
+</p>
+
+<h5>Workflow zum Anlegen von Quotas:</h5>
+<p>
+<strong>(1)</strong> nachinstallieren der entsprechenden Pakte <br>
+<a href="../Paketverwaltung.html" title="Linux Wissen:Paketverwaltung">Linux Wissen:Paketverwaltung</a><br>
+</p>
+
+<p>
+<strong>(2) </strong>eintragen der entsprechenden Mountoptionen in die */etc/fstab (usrquota, grpquota)<br>
+<a href="./Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
+<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a><br>
+</p>
+
+<p>
+<u>Hinweis: Neuer sind journaled Quotas, die nach einem unsauberen Abschalten Quotas aus einem journaled Dateisystem schneller wiederherstellen können. (grpjquota=aquota.group usrjquota=aquota.user jqfmt=vfv0)</u><br>
+</p>
+
+<p>
+<strong>(3) </strong>Blöcke insgesamt mittels <strong>df</strong> ermitteln <br>
+<a href="./Plattenbelegung_analysieren.html" title="Linux Wissen:Partitionen und Dateisysteme:Plattenbelegung analysieren">Linux Wissen:Partitionen und Dateisysteme:Plattenbelegung analysieren</a> <br>
+</p>
+
+<p>
+<strong>(4) </strong>%(der Blöcke harte|weiche Grenze)*(Blöcke insgesamt durch df ermittelt)/100=y<br>
+</p>
+
+<p>
+<strong>(5) edquota -u &lt;Nutzer&gt; </strong>und die Quotatabelle entsprechend bearbeiten (Wert y)<br>
+</p>
+
+<p>
+<strong>(6) </strong>In Runlevel S wechseln, alternativ kann auch das System neuggestartet werden. Indiesem fall entfällt (7)<br>
+</p>
+
+<p>
+<strong>(7) </strong>remount der entsprechenden Platte <strong>mount -o remount,&lt;Quotaoptionen&gt; /home</strong><br>
+</p>
+
+<p>
+<strong>(8) quotacheck -avu </strong>ausführen<br>
+</p>
+
+<p>
+<strong>(9) quotaon -avu </strong>die Quotas einschalten<br>
+</p>
+
+<p>
+<u>Hinweis: Mit dem InitScript /etc/init.d/boot.quota.restart können Quotas on the fly aktiviert werden</u><br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

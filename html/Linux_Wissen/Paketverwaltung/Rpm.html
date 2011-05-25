@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Debian/Pakete_bauen.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Rpm/Pakete_bauen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Rpm</h1>
+
+<p>
+Created Montag 25 April 2011<br>
+</p>
+
+<p>
+$Suse, Fedorra, Mandriva,Redhat$<br>
+</p>
+
+<h2>Aufbau eines Rpm Paketes</h2>
+<p>
+<em>&lt;Programm&gt;-&lt;Version&gt;-&lt;Release&gt;.&lt;Arch&gt;.rpm</em><br>
+<em>&lt;Programm&gt; </em>→ Der Name des Programms, Bibliothek,...<br>
+<em>&lt;Version&gt; </em>→ Versionsnummer des &lt;Programm&gt; zugrundeliegenden Quellpaketes<br>
+<em>&lt;Release&gt; </em>→ Das wievielte Mal wurde dieses Paket in dieser Version gebaut<br>
+<em>&lt;Arch&gt; </em>→ Architektur auf die dieses Paket installiert werden kann  (ppc, i386, i486, i586, i686, x86_64, noarch)<br>
+</p>
+
+<p>
+<u>Hinweis: Pakete mit der Endung .src, .nosrc enthalten keine Installierbaren Programme sondern ledigliche ein Specfile und die dazugehörenden Quellen. Das Paket nosrc enthält lediglich eine Spec Datei.</u><br>
+<a href="./Rpm/Pakete_bauen.html" title="Linux Wissen:Paketverwaltung:Rpm:Pakete bauen">Linux Wissen:Paketverwaltung:Rpm:Pakete bauen</a><br>
+</p>
+
+<p>
+*/usr/lib/rpm → Scripte und Distributionsspezifische Macros<br>
+*/etc/rpm → Konfigurationsdateien und globale Macros<br>
+<a href="../FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
+<a href="../FHS/usr.html" title="Linux Wissen:FHS:usr">Linux Wissen:FHS:usr</a><br>
+</p>
+
+
+<h2>Entpacken eines Rpm Pakets ohne es zu entpacken</h2>
+<p>
+<ul>
+<li>Rpm Pakete sind im Cio Format gepackt. Im Header stehen die Metainformationen</li>
+</ul>
+</p>
+
+<p>
+<strong>rpm2cpio </strong>→ konverieten eines Rpms in das cpio format<br>
+</p>
+
+<p>
+<strong>rpm2cpio &lt;Paket&gt;|cpio -id </strong><br>
+→ den Inhalt von &lt;Paket&gt; anzeigen, nachdem es ins Cpio Format konvertiert worden ist<br>
+</p>
+
+<p>
+<strong>rpm2cpio &lt;Paket&gt;|cpio -it </strong>→ den Inalt von &lt;Paket&gt; entpacken<br>
+</p>
+
+<p>
+<strong>rpm -Uhv --ignorearch --nodeps --force  --root &lt;Pfad&gt; &lt;Paket&gt;.rpm</strong><br>
+→ Das Paket samt Strukur nach &lt;Pfad&gt; entpacken<br>
+</p>
+
+<h2>Verwalten von Software</h2>
+<p>
+<ul>
+<li><strong>rpm</strong></li>
+<li><strong>rpmbuild</strong></li>
+<li><strong>applydeltarpm</strong></li>
+<li><strong>rpmgraph</strong></li>
+<li><strong>rpmorphan</strong></li>
+</ul>
+<a href="./Rpm/rpm.html" title="Linux Wissen:Paketverwaltung:Rpm:rpm">Linux Wissen:Paketverwaltung:Rpm:rpm</a><br>
+<ul>
+<li><strong>zypper</strong></li>
+</ul>
+<a href="./Rpm/zypper.html" title="Linux Wissen:Paketverwaltung:Rpm:zypper">Linux Wissen:Paketverwaltung:Rpm:zypper</a><br>
+<ul>
+<li><strong>yum</strong></li>
+</ul>
+<a href="./Rpm/yum.html" title="Linux Wissen:Paketverwaltung:Rpm:yum">Linux Wissen:Paketverwaltung:Rpm:yum</a><br>
+</p>
+
+<p>
+<strong>rpm-tidy </strong><br>
+→ Tool zum bereinigen von Rpm-Caches <br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<strong>rpm-tidy --dir=/var/lib/zypp</strong><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Paketverwaltung.html'>Linux Wissen:Paketverwaltung</a></li>		<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../FHS/usr.html'>Linux Wissen:FHS:usr</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Konfigurationsdateien.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='../Bibliotheken.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Passwörter konfigurieren</h1>
+
+<p>
+Created Dienstag 19 April 2011<br>
+</p>
+
+<p>
+<strong>passwd </strong>→ Passwörter für den aktuell angemeldeten Benutzer ändern<br>
+<strong>passwd &lt;User&gt; </strong>→ Passwort als root für &lt;User&gt; ändern<br>
+<strong>-S &lt;User&gt; </strong>→ Passworteinstellungen anzeigen<br>
+<strong>-Sa </strong>→ Passworteinstellungen für alle anzeigen<br>
+<strong>-e </strong>→ Benutzer wird gezwungen beim nächsten Login ein Passwort zu vergeben, setzt das 3.Feld in */etc/shadow ( <a href="./Konfigurationsdateien.html" title="Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien">Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien</a> ) auf 0<br>
+</p>
+
+<p>
+<strong>pwconv </strong>→ trägt alle Passworthashes, die in der */etc/passwd stehen in die */etc/shadow ein<br>
+<strong>-P &lt;Pfad&gt; </strong>→ einen alternativen Pfad für die */etc/shadow angeben<br>
+</p>
+
+<p>
+<strong>pwunconv </strong>→ trägt alle Passworthases die in der */etc/shadow  stehen in die */etc/passwd ein<br>
+<strong>-P &lt;Pfad&gt; </strong>→ einen alternativen &lt;Pfad&gt; für die */etc/passwd angeben<br>
+</p>
+
+<p>
+<strong>pwck </strong>→ überprüft die Dateien */etc/passwd und */etc/shadow auf Fehler und ungenutzten Einträgen<br>
+<strong>-s </strong>→ sortieren der Passwortdatei<br>
+<strong>-p &lt;Pfad&gt; </strong>→ suche nach den beiden Passwortdateien unter &lt;Pfad&gt;<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Benutzer_und_Gruppen.html'>Linux Wissen:Benutzer und Gruppen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

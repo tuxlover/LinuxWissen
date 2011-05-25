@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T01:44:00+02:00
+
+====== Befehle ======
+Created Freitag 15 April 2011
+
+* Eine Kette von Zeichen die durch drücken der Eingabetaste abgeschlossen wird
+* Jede Zeichenkette wird durch Leerzeichen getrennt und in Wörter zerlegt
+
+__Hinweis: \<ENTER> maskiert die Bedeutung der Entertaste und man kann in der nächsten Zeile weiterschreiben__
+
+===== Parameter =====
+* Optionen / Schalter → Parameter beginnt mit - (Aspekte eines Befehls lassen sich an oder ausschalten)
+→ kurze Schalter: -a -f -g auch -afg
+→ lange Schalter: --long --with-enabled __aber nicht__ --longwith-enabled
+
+* Argumente → Parameter beginnt ohne einleitendes - oder  --
+→ meist Name einer Datei die mit dem Befehl bearbeitet oder verabeitet werden soll
+
+KOMMANDO == Was wird gemacht?
+OPTIONEN == Wie wird es gemacht?
+ARGUMENTE == Womit wird es gemacht?
+
+===== Warten bis ein neuer Befehl ausgefügt wird =====
+**sleep N** → warte N Sekunden und tue nichts
+               → kann verwendet werden um ein Script kurzfristig anzuhalten
+ 
+
+===== Mehrere Befehle =====
+**<Befehl1>;<Befehl2>;... **→ Befehle werden sequentiell abgearbeitet
+
+**<Befehl1> || <Befehl2> **→ <Befehl2> wird nur ausgeführt, wenn der exit Status  von <Befehl1> 
+                                                  ungleich 0 war  (logisches oder)
+
+
+<**Befehl1> && <Befehl2> **→ <Befehl2> wird nur ausgeführt wenn der exit Status  von <Befehl1> 
+                                                    gleich 0 war (logisches und)
+
+ [[Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status]]
+

@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T13:28:15+02:00
+
+====== Optionen für die Bash ======
+Created Freitag 15 April 2011
+
+**set **→ Anzeigen der Shellvariablen und setzen von Optionen während der Ausführung eines Shellscriptes 
+           oder während der Benutzung einer Shell
+**-x **→ Debugging Modus für  Shellscripte einschalten
+**+x **→ Debugging Modus für Shellscripte einschalten
+**-o **→ Setzen einer Shell Option
+**+o **→ entfernen einer Shell Option
+		**emacs** → Emacs Mode der Shell (default)
+		**vi **→ Vi Mode der Shell
+		**possix **→ in den Possix Konformen Modus schalten
+		**noclobber **→ verhindert das bereists bestehende Dateien mit einer Ausgabeumlenkung überschrieben werden
+		**pipefail** → der Exitstatus der Pipe entspricht dem letzten Befehl, dass zuletzt einen Exit Status >0 hatte
+		**notify **→ sofort nach Beendigung des letzten Hindergrundjobs dessen Status ausgeben
+		**histexpand** → den ausgeführten Befehl mitsamt seiner Argumente in der History ablegen
+		**noexec **→ Befehle einlesen aber nicht ausführen
+		**monitor **→ einschalten des Moniromodus mit Jobkontrolle
+		**xtrace **→ dasselbe wie +x|-x 
+		
+__Hinweis: Verwenden von -x und -o noexec zum debuggen von Scripts__
+ 
+  

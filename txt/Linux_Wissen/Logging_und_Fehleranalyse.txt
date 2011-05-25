@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T00:49:23+02:00
+
+====== Logging und Fehleranalyse ======
+Created Sonntag 24 April 2011
+
+**(unfertige Seite)**
+__Fehler beim Booten analysieren__
+**dmesg <Optionen>** --> Kernel logging Informationen
+-c --> den Rinbuffer leeren
+
+**dmesg|less** --> analysieren der kompletten Systemnachrichten auch die im frühen Bootstadium
+
+Tricks:
+**dmesg|grep fail** --> sucht nach Problemen
+**dmesg|grep "\<E\:.*\>"** --> nach E: was ein Indikator für Fehler sein kann
+
+___Logfiles interaktiv lesen__
+**tail -f <Logfile>** --> zeigt die letzten 10 Zeilen von logfile und alle neu hinzukommenden

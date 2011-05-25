@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T18:38:20+02:00
+
+
+
+====== cat ======
+Created Montag 18 April 2011
+
+**cat **→ liest den Dateistrom einer Datei oder von StdIn
+        → fügt mit **split **erzeugte Dateien wieder zusammen ( [[Linux Wissen:Dateien verwalten:Splitten]] )
+
+**-b **→ durchnummerieren nichtleerer Zeilen
+-**E **→ Zeilende markieren
+**-n **→ durchnummerieren aller Zeilen, auch leere
+**-s **→ unterdrückt die Ausgabe von mehreren Leerzeilen
+**-T **→ stellt Tabulatorzeichen als ^I dar
+**-v **→ macht Steuerzeichen sichtbar
+**-A **→ -vET
+**-t **→ -vT
+**-e **→ -vE
+
+**cat > <Datei> << __EOF__**
+**blah**
+**__EOF__**
+→ schreibt den Inhalt blah in die <Datei>, __EOF__ ist ein Dateiseperator und signaliseier das Ende der Datei
+
+**cat <Datei* > <Datei> **→ fügt mit Split erzeugte Dateien wieder zusammen
+
+**cat <Datei1> <Datei2> <Datei3> ... > <großeDatei> **→ macht aus mehereren kleineren Dateien eine große
+
+**tac **→ liest den Datenstrom oder den Inhalt der Datei von unten nach oben    

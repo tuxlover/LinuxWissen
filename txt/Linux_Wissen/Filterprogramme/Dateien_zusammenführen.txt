@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T00:16:44+02:00
+
+====== Dateien zusammenführen ======
+Created Dienstag 19 April 2011
+
+**cat **[[Linux Wissen:Filterprogramme:cat]]
+
+**paste <Datei1> <Datei2> **→ Dateien Zeilenweise zusammenfügen
+                                                 → dabei enthalten 2 Zeilen die jeweiligen Zeilen <der Datei1> und <Datei2>
+							//dies ist eine Zeile aus Datei1//
+							//dies ist eine Zeile aus Datei2//
+							//dies ist eine weitere Zeile aus Datei1//
+							//dies ist eine weitere Zeile aus Datei2//
+**-s** → Dateien Spaltenweise zusammenfügen
+   //Dies ist eine Zeile aus Datei1 Dies ist eine Zeile aus Datei2//
+   //dies ist eine weitere Zeile aus Datei1 dies ist eine weitere Zeile aus Datei2//
+**-d <Trenner> **→ einen anderen <Trenner> angeben
+
+**join **→ Dateien relational miteinander verknüpfen
+**-t <Trenner> **→ einen anderen <Trenner> bestimmen
+**-i **→ ignoriere Groß- und Kleinschreibung
+**-R T** → nutze die T-te Spalte der R-ten Datei als Referenz
+**-o <Format> **→ eine andere Ausgabeformatierung als die der Eingabe benutzen
+ 

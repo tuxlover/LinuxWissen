@@ -1,0 +1,77 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T06:53:09+02:00
+
+====== Benutzerkonten verwalten ======
+Created Dienstag 19 April 2011
+
+**useradd <Name> **→ legt den Nutzer mit <Name> an
+**-c <Eintrag in Gecos>**
+**-d <Heimatverzeichnis>**
+**-e [JJ-MM-TT] **→ Datum an dem der Zugang gesperrt wird, wird keine Datumsangabe verwendet, wird Zugang sofort 
+			    gesperrt
+**-g <Primäre Gruppe>**
+**-G <sekundäre Gruppen,...>**
+**-s <Login Shell>**
+**-u <UID>**
+**-o **→ in Zusammenhang mit mit -u, legt UID auch an, wenn UID schon vergeben ist
+**-m **→ legt das Heimatverzeichnis des Nutzers an und kopiert Dateien aus ***/etc/skel**
+[[Linux Wissen:FHS:etc]]
+**-k **→ nur in Zusammenhang mit -m, alternatives ***/etc/skel ** 
+**--show-defaults |-D **→ anzeigen und manipulieren der Stanardwerte
+  
+ **usermod <User>** → Einstellungen für <User> ändern
+			          → nicht erlaubt für Nutzer die noch angemeldet sind
+                                 → hat keinen Effekt auf PIDs von laufenden Prozessen, Cronjobs und At-Jobs
+**-L **→ den Account des Nutzers sperren
+**-U **→ den Account des Nutzers entsperren
+**-g **→ setzen der neuen Primärgruppe
+**-G **→ ändern der Sekundärgruppe
+**-a **→ nur im Zusammenhang mit **-G **$$Debian$$
+**-f **→ Interakitv ändern
+  
+**userdel <Nutzer> **→  <Nutzer> vom System entfernen
+**-r **→ entfertn auch die entsprechenden Heimatverzeichnisse, Crontab und Mails
+
+__Hinweis:find / -uid <UID> -delete entfernt alle von <User> angelegten oder zugehörigen Dateien__
+
+**groupadd <Gruppe> **→ <Gruppe> zum System hinzufügen
+**-g <GID> **→ die Gruppe erhält GID
+**-r **→ eine Systemgruppe anlegen
+**-o **→ in zusammenhang mit **-g **die GID festlegen auch wenn diese schon vergeben ist
+
+**groupdmod <Gruppe> **→ Parameter für <Gruppe> modifizieren
+**-g <GID> **→ Gruppe einen neue <GID> zuweisen
+**-n <Name> **→ Gruppe den neuen Namen <Name> zuweisen
+**-R <Nutzer> **→ den <Nutzer> aus der Gruppe entfernen
+
+**groupdel <Gruppe> **→ Gruppe entfernen
+                                       → nur möglich wenn die <Gruppe> nicht als primäre Gruppe einem Nutzer zugewiesen ist
+ 
+
+=== Zugang sperren: ===
+**passwd -l <Nutzer>**
+**chage -E <Datum> <Nutzer>**
+editieren der */etc/shadow durch setzen eines ! vor dem Kennwort Hash
+editieren der */etc/passwd durch setzen eines * anstelle eines x in der zweiten Spalte
+
+=== Zugang freigeben ===
+**passwd -u <Nutzer>**
+**chage -E -1 <Nutzer>**
+editieren der */etc/shadow und entfernen des ! vor dem Kennwort Hash
+editieren der */ect/passwd und setzen eines x statt eines * in der zweiten Spalte
+
+=== Kennwortänderung höchstens alle N Tage ===
+**passwd -m N <Nutzer> **
+**chage -m N <Nutzer>**
+editieren der */etc/shadow in der 4. Spalte
+
+=== Frist nach Ablauf des Kennwortes ===
+**chage -I N <Nutzer>**
+editieren der */etc/shadow in der 7. Spalte
+
+=== Warnfrist bevor Kennwort abläuft ===
+**passwd -w N <Nutzer> **
+**chage -W N <Nutzer>**
+editieren der */etc/shadow in der 6.Spalte
+

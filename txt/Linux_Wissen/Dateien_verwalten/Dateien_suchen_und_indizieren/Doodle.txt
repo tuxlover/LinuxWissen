@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T15:12:57+02:00
+
+====== Doodle ======
+Created Montag 18 April 2011
+
+* libdoodle, doodle und libextractor installieren
+
+===== Dateien indizieren =====
+**doodle -bfV $HOME/Ebooks /usr/share/doc -P $HOME/Ebooks/Nicht_indizieren -B=DE -B=EN**
+→  indiziere die Verzeichnisse $HOME/Ebooks /usr/share/doc (-b)
+→ berücksichtige auch Dateinamen für die Index (-f)
+→ indiziere dabei nicht $HONME/Ebooks/Nicht_indizieren (-P)
+→ nutze die deutsche und englische Lokalisierung (-B=DE -B=EN) **(nicht in version 0.7.0)**
+
+**export DOODLE_PATH=$HOME/.doodle/index** → Indexdatei von doodle festlegen 
+
+__Tipp: Aktualisieren des Index um 3 Uhr nachts Montag bis Freitag__
+//0 3 * * 5 doodle -bf $HOME/Ebooks /usr/share/doc -B=DE -B=EN --database=$HOME/.doodle/index || mail l1zard@Alucard -s//
+//"error during doodle refresh action"//
+**(missing link mail)**
+
+__Hinweis: Beim Anlegen muss das Porgramm in der Lage sein auf das Verzeichnis unter dem der Index abgelegt werden soll, zuzugreifen. Das heißt es muss es existieren!!!!__
+
+===== Dateien finden =====
+**doodle -i [-e] --database=$HOME/.doodle/index <Begriff> **
+→ durchsuch die Indexdateienbank (--database=$HOME/.doodle/index)
+→ nach <Begriff> (-i)
+**-e **→ benutze libextractor um Schlüsselwörter aus Dateien zu extrahieren
+     → verlangsamt die Suche
+
+__Tipp: alias fdoodle='doodle -ie --database=$HOME/.doodle/index'__
+
+===== Catfish =====
+* grafisches Frontend für doodle
+* kann auch mit locate und iffind umgehen

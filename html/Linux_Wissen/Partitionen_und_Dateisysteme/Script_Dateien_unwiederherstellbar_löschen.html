@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Quotas.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Script_Swapspeicher_erweitern.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Script Dateien unwiederherstellbar löschen</h1>
+
+<p>
+Created Donnerstag 21 April 2011<br>
+</p>
+
+<p>
++++<br>
+<em>#!/bin/bash</em><br>
+<em>#Script wird mit name partition aufgerufen</em><br>
+<em>#Funktioniert am besten wenn Partition nicht vom System Kernel benutzt wird</em><br>
+</p>
+
+<p>
+<em>mkdir $1/wipe_</em><br>
+<em>i=0</em><br>
+<em>while true</em><br>
+<em>        do</em><br>
+<em>                i=$(($i+1))</em><br>
+</p>
+
+<p>
+<em>                dd if=/dev/urandom of="/$1/wipe_/$i" bs=4K count=20000 #bs an die Blockgröße des Dateisystems anpassen</em><br>
+</p>
+
+<p>
+<em>        done</em><br>
+<em>wipe -r $1/wipe_ #wipe muss installiert sein</em><br>
+<em>#Script läuft sehr lange</em><br>
++++<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

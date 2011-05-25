@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T21:29:24+02:00
+
+====== Quotas ======
+Created Samstag 23 April 2011
+
+Quotas werden unterhalb des Mountpoints in den Dateien //aquota.user //und //aquota.group// angelegt
+
+**quotacheck **→ Quotas neu initialisieren, dabei wird der Wert mit des Dateisystems mit den Quotas abgeglichen
+**-b **→ ein Backup der alten Quotadatei erstellen
+**-v **→ verbose
+**-a **→ Aktion auf alle eingehängten Dateisysteme durchführen die quotas aktiviert haben
+**-u **→ nur Quotas des aktuellen Benutzers checken
+**-g **→ nur Quotas der aktuellen Gruppe checken
+**-i **→ interaktiver Modus
+**-R **→ nur mit **-a**, schließt root aus
+
+**quotaon|quotaoff **→ Quotas aktivieren | deaktivieren
+
+**edquota **→ editieren der Quotas
+**-u <Nutzer> **→ die Quotas für <Nutzer> 
+**-g <Gruppe> **→ die Quotas für <Gruppe>
+**-f <filesystem> **→ Nur die Quotas für das angegebene Dateisystem editieren
+
+**repquota -a|/dev/sdX **→ Quotas anzeigen lassen für das entsprechende Dateisystem
+					   → es wird der Inhalt der Dateien //aquota// ausgegeben
+**-a **→ für alle
+**-g **→ für Gruppen
+**-u **→ für Nutzer
+
+**quota **→ Anzeigen des verbrauchten Plattenplatz und der eingestlleten Beschränkungen 
+            → kann auch als normaler Nutzer durchgeführt werden
+
+== Workflow zum Anlegen von Quotas: ==
+**(1)** nachinstallieren der entsprechenden Pakte 
+[[Linux Wissen:Paketverwaltung]]
+
+**(2) **eintragen der entsprechenden Mountoptionen in die */etc/fstab (usrquota, grpquota)
+[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+[[Linux Wissen:FHS:etc:fstab]]
+
+__Hinweis: Neuer sind journaled Quotas, die nach einem unsauberen Abschalten Quotas aus einem journaled Dateisystem schneller wiederherstellen können. (grpjquota=aquota.group usrjquota=aquota.user jqfmt=vfv0)__
+
+**(3) **Blöcke insgesamt mittels **df** ermitteln 
+[[Linux Wissen:Partitionen und Dateisysteme:Plattenbelegung analysieren]] 
+
+**(4) **%(der Blöcke harte|weiche Grenze)*(Blöcke insgesamt durch df ermittelt)/100=y
+
+**(5) edquota -u <Nutzer> **und die Quotatabelle entsprechend bearbeiten (Wert y)
+
+**(6) **In Runlevel S wechseln, alternativ kann auch das System neuggestartet werden. Indiesem fall entfällt (7)
+
+**(7) **remount der entsprechenden Platte **mount -o remount,<Quotaoptionen> /home**
+
+**(8) quotacheck -avu **ausführen
+
+**(9) quotaon -avu **die Quotas einschalten
+
+__Hinweis: Mit dem InitScript /etc/init.d/boot.quota.restart können Quotas on the fly aktiviert werden__
+

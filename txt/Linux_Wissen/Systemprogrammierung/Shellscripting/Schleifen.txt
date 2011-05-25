@@ -1,0 +1,102 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T22:36:16+02:00
+
+====== Schleifen ======
+Created Dienstag 26 April 2011
+
+=== for-Schleife ===
+++
+//for i in <Liste>//
+//        do//
+//                <Aktion> $i//
+//        done//
+++
+
+__Tipp: for-Schleife für eine Liste von Dateien im gleichen Verzeichnis__
+++
+for f in *
+        do
+                cp $f $f.sav
+        done
+++
+
+__Tipp: Durchlaufen aller Postionsparameter, wie $@__
+[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Positions Parameter]]
+++
+//for i ; do something; done //
+++
+
+=== for-Schleife mit Angabe eines Wertebereiches (Range) ===
+++
+//for (( i=Startwert ; $i [ < | > | =] Stopwert ; Increment | Decrement ))//
+	//do//
+		//<Aktion>//
+	//done//
+++
+
+++
+//for (( i=0; $i<10; i=i+1 ))        //
+//        do                              //
+//                <Aktion> $i                     //
+//        done     //
+++ 
+
+=== while-Schleife ===
+++
+//while <Test>//
+//        do//
+//                AKtion//
+//        done//
+++
+* dabei kann <Test> ein gültiges Testkommando sein, der entweder 0 oder 1 liefert, eine Befehlsfolge die irgendwann den Wert 1 liefert oder eine die Werte **True** oder **False** dirket annhemen.
+
+__Hinweis: Schleifen können Ein- und Ausgabeumleitungen in den Schleifenkopf übergeben bekommen:__
+//Beispiele://
+++
+//while ping; do : ; done || echo "Sie sind offline"//
+++
+→ testen ob ein Server noch läuft
+
+++
+//wnhile read LINE//
+//        do//
+//                echo "--$LINE--"//
+//        done < /etc/passwd//
+++
+→ gibt die Datei /etc/passwd Zeilenweise aus mit -- -- dazwischen
+
+=== until-Schleife ===
+* Das logische Gegenteil der **while**-Schleife
+
+=== Dekrement und Inkrement ===
+**$((j+=1))** 
+→  inkrementiert j auf 1
+
+**$((j-=1))** 
+→  dekrementiert j um 1
+
+
+=== break ===
+* bricht den Schleifendurchlauf ab und führt das Script hinter dem Schlüsselwort **done **fort
+++
+//for i in <Liste>//
+//        do//
+//                <Test> $i || break//
+//        done//
+++
+
+=== continue ===
+* bricht den Schleifendurchlauf ab und führt das Script nach der nächsten Iteration fort
+++
+//for i in <Liste>//
+//        do//
+//                <Test> $i || continue//
+//        done//
+++
+
+=== trap ===
+**trap "<Befehle>" SIGNAL1, SIGNAL2,...**
+→  <Befehle> ausführen, falls das Script eines der Signale SIGNAL1, SIGNAL2 geschickt bekommt
+→  die Signale 9 und 15 (SIGKILL, SIGSTOP) können nicht abgefangen werden
+

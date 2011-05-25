@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Array.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Escape_Sequenzen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Einzeiler</h1>
+
+<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+
+<h4>Anzeigen von Informationen zu einer Datei</h4>
+<p>
+<strong>awk 'END{print NR}' &lt;Datei&gt; </strong><br>
+→  Anzahl der Zeilen einer &lt;Datei&gt;, <strong>wc -l</strong><br>
+ <a href="../../Filterprogramme/W%C3%B6rter_z%C3%A4hlen_und_W%C3%B6rter_sortieren.html" title="Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren">Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren</a><br>
+</p>
+
+<p>
+<strong>awk '{nw+=NF} END{print nw}' &lt;Datei&gt; </strong><br>
+→  Gesamtzahl der Wörter / Felder von Datei, <strong>wc -w</strong><br>
+</p>
+
+<p>
+<strong>awk '{ print FNR "\t" $0 }' &lt;Datei1&gt;,...</strong><br>
+→ jede Datei einzeln durchnummerieren<br>
+</p>
+
+<p>
+<strong>awk '{ print NR "\t" $0 }' &lt;Datei&gt;,...</strong><br>
+→ alle Eingabedateien als eine Datei druchnummerieren<br>
+</p>
+
+<p>
+<strong>awk '{ printf("%5d : %s\n", NR, $0) }' &lt;Datei&gt;</strong><br>
+→ ein bisschen hübscher formatiert durchnummerieren<br>
+</p>
+
+<h4>Anzeigen ausgewählter Zeilen</h4>
+<p>
+<strong>awk 'NR == N' &lt;Datei&gt; </strong><br>
+→  Ausgabe der N-ten Zeile von Datei, wie<strong> head -N|tail-1</strong><br>
+→ schnellere Laufzeit als die head tail Methode <br>
+<a href="../../Filterprogramme/head_und_tail.html" title="Linux Wissen:Filterprogramme:head und tail">Linux Wissen:Filterprogramme:head und tail</a><br>
+</p>
+
+<p>
+<strong>awk 'NF &gt; 4' &lt;Datei&gt;</strong> <br>
+→  Ausgabe aller Zeilen mit mehr als 4 Felder / Wörter<br>
+</p>
+
+<p>
+<strong>awk '/&lt;Ausdruck&gt;/ {++cnt} END {print cnt}' &lt;Datei&gt; </strong><br>
+→  Anzahl der Zeilen von &lt;Datei&gt; die auf &lt;Ausdruck&gt; passt,<strong> grep -c</strong><br>
+<a href="../../Dateien_verwalten/Dateien_suchen_und_indizieren/grep.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep</a><br>
+</p>
+
+<p>
+<strong>awk 'NF &gt; 0' &lt;Datei&gt; </strong><br>
+→   Jede Zeile ausgeben, die mindestens 1 Feld / Wort enthält<br>
+</p>
+
+<p>
+<strong>awk 'length($0) &gt; 80' &lt;Datei&gt; </strong><br>
+→  gibt alle Zeilen aus, die mehr als 80 Zeichen haben<br>
+</p>
+
+<p>
+<strong>awk '{print NR, $0}' &lt;Datei&gt; </strong><br>
+→  gibt jede Zeile von Datei mit Zeilennummer aus<br>
+</p>
+
+<p>
+<strong>awk '{$2=""; print}' &lt;Datei&gt;</strong><br>
+→  Jede Zeile ausgeben und vorher das zweite Feld löschen<br>
+</p>
+
+<p>
+<strong>awk { if (data($0)++ == 0); print } &lt;Data&gt; </strong><br>
+→  Ausgabe nur wenn die Eingabezeile zum ersten mal gesehen wurde, ein verbessertes <strong>uniq</strong><br>
+<a href="../../Filterprogramme/W%C3%B6rter_z%C3%A4hlen_und_W%C3%B6rter_sortieren.html" title="Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren">Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren</a><br>
+</p>
+
+<p>
+<strong>awk '{ field = $NF }; END { print field }' &lt;Datei&gt;</strong><br>
+→ letztes Feld des letzten Records ausgeben<br>
+</p>
+
+
+<h4>zwischen Dos und Unix konvertieren</h4>
+<p>
+<strong>awk -v BINMODE="w" '1' &lt;Datei&gt;</strong><br>
+→ konvertieren von DOS CRLF zu Linux LF<br>
+</p>
+
+
+<h4>Zeilen manipulieren</h4>
+<p>
+<strong>awk '{tmp=$1; $1=$2; $2=tmp; print}' &lt;Datei&gt; </strong><br>
+→  vertauscht die ersten beiden Felder<br>
+</p>
+
+<p>
+<strong>awk 'NF { print $0 "\n" }' &lt;Datei&gt;</strong><br>
+→ eine Leerzeile in &lt;Datei&gt; zwischen jede Zeile einfügen, so dass nur jeweils eine Leerzeile zwischen jeder Zeile steht<br>
+</p>
+
+<p>
+<strong>awk '1; { print "\n" }' &lt;Datei&gt;</strong><br>
+→ drei Leerzeilen in &lt;Datei&gt; zwichen jeder Zeile einfügen<br>
+</p>
+
+<p>
+<strong>awk 'BEGIN{RS="\f"}; {weitere Befehle..}' &lt;Datei1&gt;</strong><br>
+→ alle Zeilen als einen Record auffassen<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Awk.html'>Linux Wissen:Systemprogrammierung:Awk</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

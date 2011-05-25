@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T04:31:55+02:00
+
+====== tar ======
+Created Dienstag 19 April 2011
+
+**tar [<Archiv>] [<Datei im Archiv>] **→ erzeugt und entpackt Archive die mit tar erstellt wurden
+**-cf **→ erzeugt ein neues Archiv
+**-M **→ bearbeiten von Multivolume Archiven
+**-r **→ hängt Dateien an einem bestehenden Archiv an
+**-t **→ zeigt nur den Inhalt der Datei an
+**-x **→ auspacken des Archives
+**-z **→ mit gz komprimieren|dekomprimieren
+**-j **→ mit bz2 komprimieren|dekomprimieren
+**-P **→ entferne keine / bei absoluten Pfaden
+**-C <Pfad> **→ beim entpacken ein anderen <Pfad> angeben 

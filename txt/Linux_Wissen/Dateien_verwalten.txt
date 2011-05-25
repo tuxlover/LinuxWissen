@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T00:23:09+02:00
+
+====== Dateien verwalten ======
+Created Samstag 16 April 2011
+__Hinweis: Linux behandelt Dateinamen Casesensitive__
+__Hinweis: Dateien müssen nicht durch Endungen markiert sein wie zum Beispiel, stattdessen wird der Header als Refernz herangezogen.__
+
+===== Versteckte Dateien =====
+**.<Dateiname> **→ .<Dateiname> ist nicht sichtbar mit dem normalen Aufruf von **ls **[[Linux Wissen:Dateien verwalten:Verzeichnisse und Dateien auflisten]]
+
+===== Absolute und relative Pfadnamen =====
+relativ → relativ zum aktuellen Verzeichnis (Pfadangabe startet ohne / im aktuellen Verzeichn $PWD)
+absolut → relativ zum gesamten Verzeichnisbaum (Pfadangaben startet mit / Symbol)
+
+.. → bezieht sich auf das Elternverzeichnis
+. → bezieht sich auf das aktuelle Verzeichnis
+
+ 

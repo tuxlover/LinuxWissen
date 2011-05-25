@@ -1,0 +1,70 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T00:32:19+02:00
+
+====== FHS ======
+Created Dienstag 19 April 2011
+
+* definiert Standards für die Aufbewahung von Dateien
+* wo legt ein Linux System Dateien ab, um optimale Sicherheit und Stabilität zu gewährleisten
+
+===== Dateischema =====
+					**stattisch				dynamisch**
+
+**lokal				***/etc */bin */sbin */lib		*/dev */var/log
+
+**remote			***/usr */opt				*/home */var/mail
+
+
+__TIpp__:
+**man hier **__→ Manpage die Informationen über die Hierarchie __
+
+===== Dateibaum =====
+***/bin **→ wichtige ausführbare Dateien, die jeder gültige Benutzer ausführen können muss
+          → diese Programme sind wichtig um grundlegende Funktionalität bereitzustellen
+
+***/boot **→ Dateien die zum Booten des Systems benötigt werden
+
+***/sbin ** → wichtige ausführbare Dateien, die nur root ausführen können muss und darf
+             → diese Programme sind wichtig um grundlegende Funktionalität bereitzustellen
+
+***/lib **→ Shared Libraries
+[[Linux Wissen:Bibliotheken]]
+
+***/dev **→ Gerätedateien
+
+***/etc **→ Konfigurationsdateien
+
+***/opt **→ Software von einem Drittanbieter / nicht offiziell unterstützter Vendor
+
+***/usr **→ Unix System resources
+          → zusätzliche Dateien die die Basisfunktionalität erweitern
+          → zusätzliche System resourcen die jeder Nutzen soll
+
+***/proc **→ vom Kernel erzeugtes Dateisystem 
+             → enthält Kerneleinstellungen die Onthefly verändert werden kann
+	     → enthält Informationen über das System die vom Kernel erkannt wurden
+	
+***/sys **→ Sicht auf die aktuelle Hardware aus Kernelsicht und Sterungsschicht
+
+***/var **→ varible Dateien, die vom System benötigt oder von im System befindliche Programmen benötigt werden
+
+***/tmp **→ temporäre Datenbanken die von anderen Programmen benötigt werden
+	   → Im Gegensatz zu Windows empfiehlt es sich nicht diese Dateien von Hand zu löschen
+	   → KDE und Gnome schreiben wichtige Dateien hier hin
+	
+***/srv **→ Dateien die von verschiedenen Servern angeboten werden 
+	**/www **→ Dateien des Apache
+	**/tomcatX **→ Dateien für den tomcat Servlet Container
+	
+***/media **→ wechselbare Medien (Cds Dvds Usbsticks) werden hier gemounted
+
+***/mnt **→ Zugriff auf andere Datenträger zum Beispiel, zum Beispiel gemountete Platte|Partition
+
+***/home **→ Heimatverzeichnisse der Benutzer im System ausser root
+
+***/root **→ Heimatverzeichnis von root   [[Linux Wissen:root]]
+
+***/lost+found **→ Dateien die beim Wiederherstellen von **e2fsck **wiederhergestellt wurden
+ [[Linux Wissen:Partitionen und Dateisysteme:Dateisysteme]]
+

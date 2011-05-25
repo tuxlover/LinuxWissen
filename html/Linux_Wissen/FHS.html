@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Emacs_Editor/Dateien_laden_und_speichern.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./FHS/bin.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>FHS</h1>
+
+<p>
+Created Dienstag 19 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>definiert Standards für die Aufbewahung von Dateien</li>
+<li>wo legt ein Linux System Dateien ab, um optimale Sicherheit und Stabilität zu gewährleisten</li>
+</ul>
+</p>
+
+<h2>Dateischema</h2>
+<p>
+<div style='padding-left: 150pt'>
+<strong>stattisch				dynamisch</strong><br>
+</div>
+</p>
+
+<p>
+<strong>lokal				</strong>*/etc */bin */sbin */lib		*/dev */var/log<br>
+</p>
+
+<p>
+<strong>remote			</strong>*/usr */opt				*/home */var/mail<br>
+</p>
+
+
+<p>
+<u>TIpp</u>:<br>
+<strong>man hier </strong><u>→ Manpage die Informationen über die Hierarchie </u><br>
+</p>
+
+<h2>Dateibaum</h2>
+<p>
+*<strong>/bin </strong>→ wichtige ausführbare Dateien, die jeder gültige Benutzer ausführen können muss<br>
+          → diese Programme sind wichtig um grundlegende Funktionalität bereitzustellen<br>
+</p>
+
+<p>
+*<strong>/boot </strong>→ Dateien die zum Booten des Systems benötigt werden<br>
+</p>
+
+<p>
+*<strong>/sbin </strong> → wichtige ausführbare Dateien, die nur root ausführen können muss und darf<br>
+             → diese Programme sind wichtig um grundlegende Funktionalität bereitzustellen<br>
+</p>
+
+<p>
+*<strong>/lib </strong>→ Shared Libraries<br>
+<a href="./Bibliotheken.html" title="Linux Wissen:Bibliotheken">Linux Wissen:Bibliotheken</a><br>
+</p>
+
+<p>
+*<strong>/dev </strong>→ Gerätedateien<br>
+</p>
+
+<p>
+*<strong>/etc </strong>→ Konfigurationsdateien<br>
+</p>
+
+<p>
+*<strong>/opt </strong>→ Software von einem Drittanbieter / nicht offiziell unterstützter Vendor<br>
+</p>
+
+<p>
+*<strong>/usr </strong>→ Unix System resources<br>
+          → zusätzliche Dateien die die Basisfunktionalität erweitern<br>
+          → zusätzliche System resourcen die jeder Nutzen soll<br>
+</p>
+
+<p>
+*<strong>/proc </strong>→ vom Kernel erzeugtes Dateisystem <br>
+             → enthält Kerneleinstellungen die Onthefly verändert werden kann<br>
+<div style='padding-left: 30pt'>
+     → enthält Informationen über das System die vom Kernel erkannt wurden<br>
+</div>
+</p>
+	
+<p>
+*<strong>/sys </strong>→ Sicht auf die aktuelle Hardware aus Kernelsicht und Sterungsschicht<br>
+</p>
+
+<p>
+*<strong>/var </strong>→ varible Dateien, die vom System benötigt oder von im System befindliche Programmen benötigt werden<br>
+</p>
+
+<p>
+*<strong>/tmp </strong>→ temporäre Datenbanken die von anderen Programmen benötigt werden<br>
+<div style='padding-left: 30pt'>
+   → Im Gegensatz zu Windows empfiehlt es sich nicht diese Dateien von Hand zu löschen<br>
+   → KDE und Gnome schreiben wichtige Dateien hier hin<br>
+</div>
+</p>
+	
+<p>
+*<strong>/srv </strong>→ Dateien die von verschiedenen Servern angeboten werden <br>
+<div style='padding-left: 30pt'>
+<strong>/www </strong>→ Dateien des Apache<br>
+<strong>/tomcatX </strong>→ Dateien für den tomcat Servlet Container<br>
+</div>
+</p>
+	
+<p>
+*<strong>/media </strong>→ wechselbare Medien (Cds Dvds Usbsticks) werden hier gemounted<br>
+</p>
+
+<p>
+*<strong>/mnt </strong>→ Zugriff auf andere Datenträger zum Beispiel, zum Beispiel gemountete Platte|Partition<br>
+</p>
+
+<p>
+*<strong>/home </strong>→ Heimatverzeichnisse der Benutzer im System ausser root<br>
+</p>
+
+<p>
+*<strong>/root </strong>→ Heimatverzeichnis von root   <a href="./root.html" title="Linux Wissen:root">Linux Wissen:root</a><br>
+</p>
+
+<p>
+*<strong>/lost+found </strong>→ Dateien die beim Wiederherstellen von <strong>e2fsck </strong>wiederhergestellt wurden<br>
+ <a href="./Partitionen_und_Dateisysteme/Dateisysteme.html" title="Linux Wissen:Partitionen und Dateisysteme:Dateisysteme">Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a><br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

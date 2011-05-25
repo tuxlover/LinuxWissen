@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T01:56:12+02:00
+
+====== boot ======
+Created Dienstag 19 April 2011
+
+***/boot/vmlinuz** → der Kernel **(missing link) **
+
+***/boot/grub/menu.lst** → Konfigurationsdateien für grub1 
+[[Linux Wissen:FHS:boot:grub++menu.lst]]
+
+***/boot/initrd **→ initial Ramdisk die beim laden des Kernel in den Ram benötigt wird **(missing link)**

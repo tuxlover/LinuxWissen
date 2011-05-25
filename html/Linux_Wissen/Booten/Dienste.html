@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Booten.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Dienste/chkconfig.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Dienste</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+<strong>/etc/init.d/&lt;Dienst&gt; start|stop|status|reload|restart</strong><br>
+→ manuelle Verwaltung eines Dienstes<br>
+<strong>start </strong>→ starten eines Dienstes<br>
+<strong>stop </strong>→ stoppen eines Dienstes<br>
+<strong>status</strong> → Status eines Dienstes abfragen<br>
+<strong>reload </strong>→ liest die vom Dienst benötigten Konfigurationsdateien neu ein<br>
+<strong>restart </strong>→ den Dienst neu starten, entspricht <strong>stop &amp;&amp; restart</strong><br>
+</p>
+
+<p>
+<strong>insserv</strong><br>
+<strong>chkconfig</strong><br>
+<a href="./Dienste/chkconfig.html" title="Linux Wissen:Booten:Dienste:chkconfig">Linux Wissen:Booten:Dienste:chkconfig</a><br>
+</p>
+
+<h4>Manuelles Hinzufügen eines Dienstes zu einem Runlevel</h4>
+<p>
+<strong>ln -s /etc/init.d/&lt;Dienst&gt; /etc/init.d/&lt;K&lt;N&gt;Dienst&gt;</strong><br>
+<strong>ln -s /etc/init.d/&lt;Dienst&gt; /etc/init.d/&lt;S&lt;N&gt;Dienst&gt;</strong><br>
+<a href="../Dateien_verwalten/Links.html" title="Linux Wissen:Dateien verwalten:Links">Linux Wissen:Dateien verwalten:Links</a><br>
+→ die Zahl &lt;N&gt; definiert die Reihenfolge, wann der Dienst gestarte | getstoppt werden soll<br>
+→ beim Starten wird das Script mit dem kleinsten Wert zuerst ausgeführt<br>
+→ beim Stoppen|Herunterfahren des Systems wird das Script dem kleinsten Wert zuleetzt ausgeführt<br>
+</p>
+
+<p>
+<u>Hinweis: Um einen eigenen Dienst zu erstellen muss unter /etc/init.d/&lt;Dienst&gt; ein entsprechendes Script geschrieben werden. Dazu kann unter /etc/init.d/skeleton eine Gerüstdatei angepasst werden.</u><br>
+<a href="../FHS/etc/init.d%2B%2BScript.html" title="Linux Wissen:FHS:etc:init.d++Script">Linux Wissen:FHS:etc:init.d++Script</a><br>
+</p>
+
+<h5>folgende Hilfsprogramme können für das Erstellen eines Startscript benutzt werden</h5>
+<p>
+<strong>start_daemon -p &lt;PIDFILE&gt; &lt;DIENST&gt; &lt;ARGUMENTE&gt; </strong><br>
+→ starten eines Programms als Daemon <br>
+→ dabei wird ein &lt;PIDFILE&gt; angegeben<br>
+→ es können auch Argumente und Optionen angefügt werden<br>
+</p>
+
+<p>
+<strong>pidofproc &lt;Pfad zum Dienstprogramm&gt; </strong><br>
+→ Prozessinformationen zu einem bestimmten Dienst anzeigen<br>
+→ ohne Optionen wird PID zurückgegeben<br>
+</p>
+
+<p>
+<strong>chekproc </strong>→ siehe <strong>pidofproc </strong>$$SUSE$$<br>
+<strong>-p &lt;PIDFILE&gt; </strong>→ ein anders PIDFILE als unter */var/run/daemon.pid <br>
+<a href="../FHS/var.html" title="Linux Wissen:FHS:var">Linux Wissen:FHS:var</a><br>
+<strong>-n </strong>→ einen Kernelthread verfolgen<br>
+</p>
+
+<p>
+<strong>killproc &lt;Pfad zum Programm&gt; </strong>→ Signal an einen über <strong>start_daemon </strong>gestarteten Prozess senden<br>
+<strong>-G </strong>→ sendet das SIGNAL auch an alle Kindprozesse des identischen Signals<br>
+<strong>-L </strong>→ folge symbolischen Links<br>
+<strong>-p &lt;PIDFILE&gt; </strong>→ angeben eines alternativen &lt;PIDFILE&gt;s<br>
+<strong>-n </strong>→ einen Kernelthread ein SIGNAL schicken<br>
+<strong>-v </strong>→ verbose<br>
+</p>
+
+<p>
+<strong>startproc -p &lt;PIDFILE&gt; &lt;PFAD zum Dienst&gt; &lt;Argumente und Optionen&gt; </strong><br>
+→ starten eines Daemons<br>
+<strong>-n &lt;-20 bis 19&gt; </strong>→ einen Nicewert vergeben, der Dienst muss dann als Root gestartet werden<br>
+<strong>-g &lt;GID&gt; </strong>→ setzen der GID des zu startenden Prozess ( <a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a> )<br>
+<strong>-u &lt;UID&gt; </strong>→ setzen der UID des zu starteden Prozesses<br>
+<strong>-l &lt;LOGFILE&gt; </strong>→ angeben eines Logfiles<br>
+<strong>-q </strong>→ Ausgabe unterdrücken, sei leise<br>
+<strong>-s </strong>→ Prozess wird in einer neuen Session gestartet<br>
+<strong>-t N  </strong>→ Programm N Sekunden warten lassen<br>
+</p>
+
+<p>
+<strong>strartpar &lt;Befehl1&gt; &lt;Befehl2&gt; ... </strong>→ mehrere Runlevel Scripte gleichzeitig starten<br>
+<strong>-p N </strong>→ setzen eines Grades an Parallelität<br>
+<strong>-i M </strong>→ Threading I/O setzen, der Standardwert ist 800 <br>
+<strong>-a </strong>→  Argumente an die Scripte übergeben<br>
+<strong>-M </strong>→ ein ähnliches Verhalten wie make <br>
+</p>
+
+ 
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Booten.html'>Linux Wissen:Booten</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

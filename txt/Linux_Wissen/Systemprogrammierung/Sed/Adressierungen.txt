@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-27T22:28:37+02:00
+
+====== Adressierungen ======
+Created Mittwoch 27 April 2011
+
+**N** 
+→ Eine Zahl als Zieladresse hat die Nummer N von dort wird fortlaufend weitergezählt, auch wenn die Eingabe aus 
+	meheren Dateien besteht
+
+**/<Ausdruck>/ **
+→ reguläre Ausdrücke selektiert alle Zeile die auf <Ausdruck> passen
+
+**N,M **
+→ Zeilen N bis einschließlich M
+
+**1,/^$/ **
+→ alle Zeilen bis zur ersten Leerzeile
+
+**1,$ **
+→ alle Zeilen der Eingabe
+
+**$** 
+→ die letzte Zeile der Eingabe
+
+**/<Starte>/,/<Stoppe>/ **
+→ alles zwischen Muster <Starte> und Muster <Stoppe> auswählen
+
+**/^<BEGIN>/,/^<END>/ **
+→ alle Zeilen zwischen <BEGIN> am Anfang der Zeile beginnen und mit <END> am Anfang der Zeile aufhören
+
+**!N** 
+→ adressertier alle Zeilen ausser der N-ten
+
+**N~M**
+→ beginnend bei N, jede M-te Zeile
+
+**/<^BEGIN>/,/<^END>/! **
+→ adressiert alle Zeilen der Eingabe die nicht Zeile eines <BEGIN>-<END> Blocks sind
+
+**0,/<Regex>/ **
+→ beginne die Suche nach dem Regulären Ausdruck <Regex> in der ersten Zeile, falls <REGEX> gefunden wurde, stoppe  
+
+__Achtung:  Bei Sed werden Regexe anders gehandhabt als bei grep oder awk.__
+
+
+=== Befehle: Adressierung ===
+**b [LABEL]**
+→ Verweis auf ein Label, ansonsten auf das Ende des Scripts 
+→ paarweise Adressierung
+
+**t LABEL**
+→ Verweist auf ein Label, falls der letzte Befehl den Patternspace verändert
+→ paarweise Adressierung

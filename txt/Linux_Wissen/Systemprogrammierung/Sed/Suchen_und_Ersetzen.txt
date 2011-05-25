@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T00:17:57+02:00
+
+====== Suchen und Ersetzen ======
+Created Donnerstag 28 April 2011
+
+**s **
+→ suchen nach Muster im Patternspace und ersetzen des ersten Treffer durch String im Holdspace
+→ paarweise Adressierung
+→ Patternspace
+//Beispiele://
+**sed 's/<Ausdruck>/(&)' **
+→ & ist ein Special Chracter der sich auf den Patternspace bezieht und () oder auch beliebige andere Zeichen 
+davor und dahinter anfügt
+
+**sed 's/<Ausdruck>/&&' **
+→ fügt den gefundenen Ausdruck im Patternspace im Holdspace an
+
+**g **
+→ alle (global) Treffer im Patternspace durch den Holdspace ersetzen
+→ paarweise Adressierung
+→ Pattern Space
+//Beispiele://
+**sed  -e 's/^\<A.*\>/ /g' testfile **
+→ entfernt in allen Zeilen die mit einem A Beginnen das erste Wort
+
+**sed 's/[a-z]*/(&)' Datei**
+→ schließt jeden durch den Ausdruck [a-z]* gefundenen Muster in Klammern
+
+**G**
+→ alle (global), anfügen des Holdspace an Patternspace
+→ paarweise Adressierung
+→ Pattern Space 
+
+**h**
+→ alle (global), ersetzen des Hold Space durch den Pattern Space
+→ paarweise Adressierung
+→ Hold Space
+
+**H **
+→ alle (global), anfügen des Pattern Space an den Hold Space
+→ paarweise Adressierung
+→ Hold Space 
+
+**x**
+→ vertausche Pattern Space und Hold Space
+→ paarweise Adresierung
+→ Pattern Space
+→ Hold Space
+
+=== Arbeiten mit mehreren Mustern ===
+**sed **kann sich bis zu 9 Muster merken, die dann anschließend adressiert werden können.
+Dies können durch die Ziffern \N im Holdspace und /N im Output Stream adressiert werden.
+
+//Beispiele://
+**sed 's/\(Muser1\) \(Muster2\)/\2 \1/'**
+→ vertauscht das erste Vorkommen von Muster1 mit dem von Muster2
+
+**sed 's/Muster/String/2g'**
+→ nur jedes 2-te Vorkommen von Muster durch String ersetzen

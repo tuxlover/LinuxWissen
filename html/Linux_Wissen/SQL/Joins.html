@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Intigrit%C3%A4tsregeln.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Mit_dem_Server_Verbinden.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Joins</h1>
+
+<p>
+Created Mittwoch 04 Mai 2011<br>
+</p>
+
+<p>
+<ul>
+<li>relatives Verbindden von Attributen zu einer Abfrage, liefert eine Tabelle zurück</li>
+<li>eine Datenbank ist umso mächtiger je mehr Verknüpfungen sie bilden kann</li>
+</ul>
+</p>
+
+<h4>Inner Joins</h4>
+<p>
+<strong>SELECT &lt;tabelle1&gt;.&lt;var_tab1&gt;,&lt;tabelle1&gt;.&lt;var2_tab1&gt;,...,&lt;tabelle1&gt;.&lt;varN_tab1&gt;,</strong><br>
+<strong>&lt;tabelle2&gt;.&lt;var1_tab2&gt;,...,&lt;tabele2&gt;.&lt;varM_tab2&gt;</strong><br>
+<strong>FROM &lt;tabelle1&gt; INNER JOIN &lt;tablle2&gt;</strong><br>
+<strong>ON &lt;tabelle1&gt;.Fremdschlüssel = &lt;tabelle2&gt;.Fremdschlüssel;</strong><br>
+→ falls beide Fremdschlüssel verschiedene Attribute haben<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>SELECT actor.first_name, actor.last_name,city.city FROM actor INNER JOIN  city ON actor.actor_id = city.city_id;</em><br>
+</p>
+
+<p>
+<strong>SELECT &lt;tabelle1&gt;.&lt;var1_tab1&gt;, &lt;tabelle1&gt;.&lt;var2_tab1&gt;,...,&lt;tabelle1&gt;.&lt;varN_tab1&gt;,</strong><br>
+<strong>&lt;tabelle2&gt;.&lt;var1_tab2&gt;,...,&lt;tabelle2&gt;.&lt;varM_tab2&gt; </strong><br>
+<strong>FROM &lt;tabelle1&gt; INNER JOIN &lt;tabelle2&gt; </strong><br>
+<strong>USING (&lt;Schlüssel&gt;);</strong><br>
+→ falls beide Schlüssel gleiche Attribute haben<br>
+→ <u>Hinweis: darauf Achten dass der Schlüssel geklammert werden muss</u><br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>SELECT film_actor.actor_id, film_actor.last_update, actor.actor_id,actor.first_name,actor.last_name FROM film_actor INNER JOIN actor USING (actor_id);</em><br>
+</p>
+
+
+
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

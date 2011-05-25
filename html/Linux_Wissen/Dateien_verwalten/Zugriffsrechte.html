@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Verzeichnisse_und_Dateien_auflisten.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Zugriffsrechte/ACL.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Zugriffsrechte</h1>
+
+<p>
+Created Dienstag 19 April 2011<br>
+</p>
+
+<h2>Rechte Oktal</h2>
+<p>
+r = 4<br>
+w = 2<br>
+x = 1<br>
+</p>
+
+<p>
+Bei regulären Dateien:<br>
+t = 1ugo  → Sticky Bit<br>
+<div style='padding-left: 60pt'>
+→ nur der Eigentümer kann die Datei löschen, alle anderen dürfen aber schreiben und lesen <br>
+</div>
+               → Beachte :&gt; &lt;Datei&gt;( <a href="../Shell/Standardkan%C3%A4le.html" title="Linux Wissen:Shell:Standardkanäle">Linux Wissen:Shell:Standardkanäle</a> )<br>
+<div style='padding-left: 60pt'>
+→ die Datei wird im Speicher vorgehalten und nicht ausgelagert oder zurückgeschrieben<br>
+</div>
+</p>
+
+
+<p>
+S = 2ugo → SetGID Bit <br>
+               → wird immer mit den Rechten der Gruppe ausgeführt oder geöffnet<br>
+               → alle erzeugten Dateien gehören der gleichen Gruppe wie das Verzeichnis selber <br>
+</p>
+
+<p>
+s = 4ugo → SetUID Bit <br>
+               → wird immer mit den Rechten des Nutzers ausgeführt oder geöffnet<br>
+</p>
+
+<p>
+kernel Syscall include fchmod()<br>
+#include &lt;sys/stat.h&gt;<br>
+       S_ISUID  (04000)<br>
+</p>
+
+<p>
+       S_ISGID  (02000)<br>
+</p>
+
+<p>
+       S_ISVTX  (01000)<br>
+</p>
+
+<p>
+       S_IRUSR  (00400)<br>
+</p>
+
+<p>
+       S_IWUSR  (00200)<br>
+</p>
+
+<p>
+       S_IXUSR  (00100)<br>
+</p>
+
+<p>
+       S_IRGRP  (00040)<br>
+</p>
+
+<p>
+       S_IWGRP  (00020)<br>
+</p>
+
+<p>
+       S_IXGRP  (00010)<br>
+</p>
+
+<p>
+       S_IROTH  (00004)<br>
+</p>
+
+<p>
+       S_IWOTH  (00002)<br>
+</p>
+
+<p>
+       S_IXOTH  (00001)<br>
+</p>
+
+<p>
+<u>Hinweis:Um binäre Programme auszuführen muss x gesetzt sein. Für Shellscripte muss x und r gesetzt sein.</u><br>
+</p>
+
+<p>
+<u>Hinweis: Bei Verzeichnen wird r benötigt um den Inhalt des Verzeichnisses lesen zu dürfen.</u><br>
+</p>
+
+<p>
+<u>Hinweis: w um im Verzeichnis Dateien anlegen zu dürfen</u><br>
+</p>
+
+<p>
+<u>Hinweis: x um das Vereichnis benutzen zu dürfen indem Sinne dass man darauf Programme wie cd anwenden darf </u><br>
+</p>
+
+<p>
+<strong>ls -l </strong> → Zeigt Berechtigungen an ( <a href="./Verzeichnisse_und_Dateien_auflisten.html" title="Linux Wissen:Dateien verwalten:Verzeichnisse und Dateien auflisten">Linux Wissen:Dateien verwalten:Verzeichnisse und Dateien auflisten</a> )<br>
+</p>
+
+<p>
+<strong>stat -c "%a %n" </strong>→ zeigt Berechtigungen Oktal an<br>
+</p>
+
+<h2>Berechtigungen verwalten</h2>
+<p>
+<ul>
+<li><strong>chmod</strong></li>
+<li><strong>chown </strong></li>
+<li><strong>chgrp</strong></li>
+</ul>
+<a href="./Zugriffsrechte/Berechtigungen_verwalten.html" title="+Berechtigungen verwalten">+Berechtigungen verwalten</a><br>
+</p>
+
+<h2>Umask</h2>
+<p>
+<ul>
+<li>legt fest welche Berechtigungen Dateien maximal haben wenn sie angelegt werden</li>
+<li><strong>umask</strong></li>
+</ul>
+<a href="./Zugriffsrechte/Umask.html" title="+Umask">+Umask</a><br>
+</p>
+
+<h2>ACL</h2>
+<p>
+<ul>
+<li>Access Control Lists</li>
+<li>erweiterte Berechtigungen für Nutzer und Gruppen </li>
+<li>erlaubt es meherere Nutzer und Gruppen auf eine Datei abzubilden</li>
+<li>feingranularere Kontrolle</li>
+<li><strong>setfacl </strong></li>
+<li><strong>getfacl</strong></li>
+</ul>
+<a href="./Zugriffsrechte/ACL.html" title="+ACL">+ACL</a><br>
+</p>
+
+<p>
+<ul>
+<li>ACLs müssen in der */etc/fstab als Option bekannt gegeben werden</li>
+</ul>
+<div style='padding-left: 30pt'>
+Option: acl<br>
+<em>Beispiel */etc/fstab:</em><br>
++++<br>
+/dev/mapper/system_home            /home       ext3    rw,acl     1 2<br>
++++<br>
+anschließend remounten: <strong>mount -v -o remount /home </strong><br>
+</div>
+<a href="../Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
+</p>
+
+<p>
+<u>Hinweis: reiserfs kann nicht mit acl Option gemounted werden.</u><br>
+</p>
+
+<p>
+<u>Hinweis: Bei Benutzung von ACL erkennt Dateien auf denen ACL abgebildet wurden durch das +:</u><br>
+<em>Beispiel:</em><br>
+<em>-rw-rw-r--+ 1 tristan tristan 19936 May 28 16:59 pizza</em><br>
+</p>
+
+<p>
+<strong>cp -p </strong>bzw. <strong>cp -a </strong> erhält auch ACLs<br>
+<a href="./kopieren_und_verschieben_von_Dateien_und_Verzeichnisse.html" title="Linux Wissen:Dateien verwalten:kopieren und verschieben von Dateien und Verzeichnisse">Linux Wissen:Dateien verwalten:kopieren und verschieben von Dateien und Verzeichnisse</a><br>
+</p>
+
+<p>
+<strong>rsync -A </strong>→ erhält ACLs beim synchronisieren von Dateien<br>
+<a href="./Synchronisieren_von_Dateien.html" title="Linux Wissen:Dateien verwalten:Synchronisieren von Dateien">Linux Wissen:Dateien verwalten:Synchronisieren von Dateien</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Partitionen_und_Dateisysteme/Mounten.html'>Linux Wissen:Partitionen und Dateisysteme:Mounten</a></li>		<a href='../Systemprogrammierung/Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>		<a href='../Booten/Dienste.html'>Linux Wissen:Booten:Dienste</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

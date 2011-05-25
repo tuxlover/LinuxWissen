@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T14:59:50+02:00
+
+====== locate ======
+Created Montag 18 April 2011
+
+**updatedb **→ aktuallisieren der Locate Datenbank
+                    → kann nur von root ausgeführt werden
+                    → meist durch ein Script einmal am Tag per cron ausgeführt
+
+**locate <Datei> **→ findet alle Vorkommen mit dem Namen <Datei in der Locate Datenbank
+                              → berücksichtigt keine Dateiberechtigungen
+
+
+
+**slocate <Datei> **→ berücksichtigt auch Dateiberechtigungen
+				→ es werden nur Dateien angezeigt die der Nutzer auch sehen darf
+**-u **→ wie updatedb
+
+Scriptvorschlag um updatedb als abhängigkeit einiger Programme beim kompillieren zu befriedigen:
++++
+//Scriptvorschlag linken nach updatedb um Abhängikeiten zu befriedigen://
+//#!/bin/bash//
+
+//slocate_updateddb()//
+//{//
+//SLOCATE=$(which slocate || echo "no")//
+//if ["$SLOCATE" != "no" ]//
+//        then//
+//                $SLOCATE -u//
+//        else//
+//                echo "slocate not found or script broken"//
+//fi//
+//}//
+
+//if [ "$UID" == "0" ]//
+//        then//
+//                slocate_updatedb//
+//        else//
+//                echo "must be root"//
+//                exit 1//
+//fi//
++++
+
+

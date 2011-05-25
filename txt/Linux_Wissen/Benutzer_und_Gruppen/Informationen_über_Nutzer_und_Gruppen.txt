@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T06:01:13+02:00
+
+====== Informationen über Nutzer und Gruppen ======
+Created Dienstag 19 April 2011
+
+
+**w **→ gibt Informationen über die Aktivitäten angemeldeter Benutzer aus
+
+**who **→ Informationen über Nutzer relational zu Systeminformationen ausgeben
+**-a **→ alles anzeigen
+**-b **→ Zeit seid dem letzten Booten
+**-d **→ ausgeben bereits toter Prozesse
+**-q **→ Anzahl der Nutzer die insgesamt am System angemeldet sind
+
+**id [<Nutzer>] **→ gibt UID, Username, GID, Gruppenname der Primären und Sekundären Gruppe von <Nutzer> aus
+			    → ohne Angabe des <Nutzers> erfolgt die Information zum aktuell angemeldeten Nutzer
+**-G **→ alle GIDs
+**-g **→ die effektive GID
+**-n **→ Namen anstelle von GID bzw . UID ausgeben
+**-u **→ effektive User ID
+                    
+**groups [<User>] **→ listet die Gruppengehörigkeit von <User> auf
+				  → falls keine <User> angegeben werden, werden alle Gruppen des momentan angemeldeten 	
+				      Nutzers angegeben 
+
+

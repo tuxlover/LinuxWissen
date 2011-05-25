@@ -1,0 +1,108 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T14:11:55+02:00
+
+====== Hardware und Systeminformationen ======
+Created Sonntag 24 April 2011
+
+=== Systeminformationen ===
+* **uname**
+[[Linux Wissen:Hardware und Systeminformationen:uname]]
+* **lsdev**
+* **hwinfo**
+* **vmstat**
+* **uptime**
+[[Linux Wissen:Hardware und Systeminformationen:Devices]]
+* **iostat**
+* **mpstat**
+* **sar**
+* **mpstat**
+* **pmap**
+[[Linux Wissen:Hardware und Systeminformationen:sysstat]]
+
+=== Geräte und Treiber ===
+* Unter */lib/modules/$(uname -r) befinden sich die vom Kernel als Module ladbaren Treiber.
+[[Linux Wissen:FHS:lib]]
+[[Linux Wissen:Hardware und Systeminformationen:Module]]
+* Während des Systemsarts benötigte Treiber werden in der Datei */etc/modprobe.conf, */etc/modprobe.d verwaltet
+[[Linux Wissen:FHS:etc:modprobe.conf]]
+* Eine Liste aller zu ladenden Module kann unter */etc/modules.conf bei älteren Systemen eingesehen werden
+
+
+=== IRQ ===
+Ein IRQ (Interupt Request) ist ein Signal dass an die CPU gesendet wird und den aktuellen Prozees unterbricht
+um auf ein externes Hardwareereignis zu lauschen und dieses zu bearbeiten.
+[[Linux Wissen:Hardware und Systeminformationen:IRQ]]
+
+*/proc/interrupts
+*/proc/dma
+[[Linux Wissen:FHS:proc]]
+
+=== PCI ===
+* **setpci**
+* **lspci**
+[[Linux Wissen:Hardware und Systeminformationen:PCI]]
+
+=== USB ===
+wird von libusb Bereitgestellt
+* **lsusb**
+[[Linux Wissen:Hardware und Systeminformationen:USB]]
+//verwendete Kernelmodule://
+usbcore  --> Kernkomponente des Kernels
+usb_ohci --> Modul für USB UHCI Controler
+usb_uhci --> Modul für USB OHCI Controler
+ehci_hcd --> Hilfsmodul für den USB 1.1 to 2.0 Controler
+
+=== IDE und ATA ===
+* meist Massenspeichergeräte
+* werden über Systembus gesteuert
+* kommunizieren über den BUS im ATAPI (Advanced Technology Atachment Protocol Interface)
+
+*/dev/hxX */dev/sdx → Gerätedatei
+[[Linux Wissen:FHS:dev]]
+
+=== SCSI ===
+* Protokoll zur Kommunikation mit Platten, Bandlaufwerken und anderen Geräten
+* Kommunikation erfolgt über den SCSI Hostadapter im eigenen BIOS
+* pro SCSI BUS können 7 Geräte angeschlossen werden
+
+Jedes SCSI Gerät lässt sich eindeutig durch das Quadrupel identifizieren:
+//<host>,<channel>,<ID>,<LUN>//
+* **lsscsi**
+[[Linux Wissen:Hardware und Systeminformationen:lsscsi]]
+
+=== Serial ATA ===
+* schnellere Übertragungsraten als bei IDE
+* hotswap möglich
+* pro Controler können maximal 4 Geräte angeschlossen werden
+* wird von //libata //ab Kernel 2.6 und 2.4.27 bereitgestellt
+[[Linux Wissen:Hardware und Systeminformationen:lsscsi]]
+[[Linux Wissen:FHS:proc]]
+
+=== Serielle Schnittstellen ===
+* I/O Ports serieller Geräte
+* Maus, Tastatur, Drucker Terminals
+* **setserial**
+[[Linux Wissen:Hardware und Systeminformationen:setserial]]
+
+=== HAL ===
+* Hardware Abstraction Layer
+* läuft im Kernel User Space
+* versorgt Programme mit Informationen die von einer Hardware gesendet wird
+**hald** → der HAL Daemon
+
+=== D-BUS ===
+* Desktop BUS Daemon
+* ermögliche Prozessen miteinander zu kommunizieren und registriert Hardware Ereignisse wie das hotplugging von Geräten
+* sendet Informationen über Hardwareereigisse an den Nutzer
+
+=== Udev ===
+* Daemon **udevd **zur dynamischen Geräteerzeugung lauscht */sys nach Geräten
+* Die Dateien */etc/udev/rules.d wird gelesen
+* Es werden Empfehlungen an den Kernel gegeben wie Geräte unter */dev verwaltet werden sollen
+Erstellen von Udev Regeln: 
+[[Linux Wissen:FHS:etc:udev++rules.d++99-myrule]]
+Konfiguration des Udev Daemon:
+[[Linux Wissen:FHS:etc:udev++udev.conf]]
+* **udevadm** 
+[[Linux Wissen:Hardware und Systeminformationen:udevadm]]

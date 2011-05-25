@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T19:59:47+02:00
+
+====== Systemprogrammierung ======
+Created Dienstag 26 April 2011
+
+* Anpassen von Programmen und Scripten
+* Automatisierung 
+* Schreiben eigener Programme
+* Beheben von Fehlern in installierten Scripten und Programmen 
+
+===== Shellscripting =====
+[[Linux Wissen:Systemprogrammierung:Shellscripting]]
+[[Linux Wissen:Systemprogrammierung:Sed]]
+[[Linux Wissen:Systemprogrammierung:Awk]]
+
+===== Python =====
+[[Linux Wissen:Systemprogrammierung:Python]]
+
+===== Perl =====
+[[Linux Wissen:Systemprogrammierung:Perl]]
+
+===== C/C++ =====
+[[Linux Wissen:Systemprogrammierung:C]]
+[[Linux Wissen:Systemprogrammierung:C++]]

@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T01:13:55+02:00
+
+====== Arten der Shell ======
+Created Freitag 15 April 2011
+
+[[Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien]]
+Die Datei */etc/shells sollte alle auf dem System validen Shells enthalten.
+Einige Distributionen $$SUSE$$ tragen aber zum Beispiel hier auch die 
+Shells ein die potentiell verfügbar (noch nicht installiert) sind.
+
+===== Bourne Artige Shells =====
+sh → bourne Shell
+bash → bourne again Shell
+ksh → Korn Shell
+zsh → Zhong Shell (Sehr stark konfigurierbare Shell)
+
+===== C Artige Shells =====
+csh → C Shell
+ash → Advanced Shell
+tcsh → Tenex C Shell
+
+===== Andere Shells =====
+sash → System Administrators Shell
+
+**chsh **→ ändern der Standardshell
+
+**echo $0 **→ zeigt den Typ der aktuell verwendeten Shell, Subshell oder Script an
+               → in einem ShellScript  verweist $0 auf das laufende Script selbst inklusive Pfad und Namen
+
+**exec <Shell> **→ auswechslen der aktuellen Shell
+                         → dabei wird keine Subshell  aufgerufen

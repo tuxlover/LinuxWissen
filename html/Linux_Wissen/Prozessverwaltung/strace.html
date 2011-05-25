@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./ps.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./top.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>strace</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+<strong>strace </strong>→ Ablauf von Prozessen und Systemaufrufe eines Programms verfolgen<br>
+<div style='padding-left: 30pt'>
+     → Ausgabe erfolgt in einer C-ähnlichen Syntax <strong>(missing link C)</strong><br>
+</div>
+</p>
+
+<p>
+<strong>strace &lt;Programm&gt;|-p &lt;PID&gt; </strong>→ Porgramm starten und strace Ausgagbe<br>
+<strong>-o &lt;LOGFILE&gt; </strong>→ Die Ausgabe nicht auf dem Bildschirm ausgeben, sondern in &lt;LOGFILE&gt; schreiben<br>
+<strong>-f </strong>→ berfolgt auch Kindprozesse die vom Programm gestartet werden<br>
+<strong>-e trace=open,close,read,write </strong>→ nur Systemaufrufe ausgeben, auf die diese Systemaufrufe angewendet wurde<br>
+<strong>-r </strong>→ Zeige zum Beginn der Zeile wieviele Sekunden seit dem Aufruf vergangen sind<br>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
+<strong>strace -e trace=open free </strong><br>
+→ Anzeige der vom Programm "free" geöffneten Dateien. Dabei wird Ausgabe auf die Funktion "open" eingeschränkt. <br>
+<strong>strace -o /tmp/file /opt/lib/sisis/siadmin/etc/S99siaddae start</strong><br>
+→ Aufzeichnung der Funktionsaufrufe der Anwendung "S99siaddae" in der Datei "/tmp/file". <br>
+<strong>strace -p 28756</strong><br>
+→ Aufzeichnung der Funktionsaufrufe von PID 28756<br>
+<strong>strace -e trace=open,read -p 22254 -s 80  -o /tmp/debug.lighttpd.txt</strong><br>
+→ Den Prozess mit der PID 22254 auf Port 80 tracen und nur öffnen und lesen Prozesse ausgeben<br>
+<strong>(missing link)</strong><br>
+<strong>strace -e file &lt;Programm&gt;</strong><br>
+→ Alle Dateien die den Syscall file_open() gesendet bekommen anzeigen<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

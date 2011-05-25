@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T01:54:55+02:00
+
+====== sbin ======
+Created Dienstag 19 April 2011
+

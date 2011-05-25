@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./dialog.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Funktion.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Exit Status</h1>
+
+<p>
+Created Dienstag 26 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Der Exit Status ist ein Wert 0-127 der vom zuletzt aufgerufenen Prozess abgefragt wird.</li>
+<li>Wird bei der logischen Verknüpfung || &amp;&amp; abgefragt</li>
+<li>exit Status 0 gibt Erfolg zurück</li>
+<li>exit Status &gt; 0 gibt Misserfolg zurück</li>
+</ul>
+</p>
+
+<p>
+<u>Hinweis: Misserfolg meint hier auch, wenn zum Beispiel die Programme </u><strong>find</strong><u> oder </u><strong>grep</strong><u> nichts finden konnten.</u><br>
+</p>
+
+<p>
+<strong>exit &lt;0-127&gt;</strong>  →  setzt einen Wert für den zuletzt aufgerufenen Prozess fest<br>
+</p>
+
+<p>
+<strong>exit 1</strong> →  vorzeitiger Ausbruch aus einer Schleife oder Bedingung festlegen<br>
+</p>
+
+<p>
+<u>Hinweis: Shellscripte sollten immer mit </u><strong>exit 0 </strong><u>verlassen werden, wenn sie korrekt beendet wurden.</u><br>
+</p>
+
+<p>
+<u>Hinweis: Rückgabewerte &gt; 127 lassen geben das Signal an, welches an diese geschickt wurde, und wodurch sie beendet wurden. Beispiel Rückgabewert von 136 lässt auf SIGNAL 9 schließen</u><br>
+</p>
+
+<p>
+<strong>echo $?</strong> →  liefert den letzten Rückgabewert<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Shell/Befehle.html'>Linux Wissen:Shell:Befehle</a></li>		<a href='../../Prozessverwaltung/kill.html'>Linux Wissen:Prozessverwaltung:kill</a></li>		<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>		<a href='../../Dateien_verwalten/Diff_und_Merge_von_Dateib%C3%A4umen.html'>Linux Wissen:Dateien verwalten:Diff und Merge von Dateibäumen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

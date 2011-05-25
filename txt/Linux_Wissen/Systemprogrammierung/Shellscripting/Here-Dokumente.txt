@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-27T00:33:40+02:00
+
+====== Here-Dokumente ======
+Created Mittwoch 27 April 2011
+
+//Beispiel://
+++
+//grep << EOF --line-buffered -f - $fifo | while read LINE//
+//ALARM//
+//WARNING//
+//FAIL//
+//EOF//
+//        do//
+//                AKTION//
+//        done//
+++

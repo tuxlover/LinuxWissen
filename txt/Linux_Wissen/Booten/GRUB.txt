@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T23:41:58+02:00
+
+====== GRUB ======
+Created Samstag 23 April 2011
+
+*/etc/grub/menu.lst
+[[Linux Wissen:FHS:boot:grub++menu.lst]]
+
+**grub** → ruft die Grubshell auf, in der grunb installiert oder repariert werden kann
+**--batch **→ Grub durch eine Reihe von Optionen steuern
+
+**grub --batch --device-map=/boot/grub/device.map < /etc/grub.conf**
+→ Grub wiederherstellen falls dieser überschrieben wurde
+
+**grub-md5-crypt** → Tool welches einen Hashwert kreiert der zum Passwortschutz der /etc/grub verwendet werden kann 
+
+=== GrubShell ===
+grub> find /boot/vmlinuz
+>> (hd0,0)
+→ finden der Bezeichnung der Partition auf der sich ein gültiges Kernel Image befindet **(missing link)**
+
+grub> kernel /boot/vmlinuz root=/dev/sdX
+>> Linux-bzImage setup=0x1400 size=0x11d3e7
+→ festlegen des Kernel Images
+
+grub> initrd /boot/initrd  
+>> [Linux-initrd @ 0x5f71000,0x7e864 bytes]
+→ festlegen einer gültigen initialen Ramdisk **(missing link)**
+
+grub>boot 
+→ booten des Konfigurierten Kernels 
+→ Im Bootloader Menu verfügbar
+
+grub> root (hd0) --> sagt grub wo es nach dem root Dateisystem / suchen soll
+grub>setup (hd0,0) --> konfiguriert und installiert den neunen Kernel in den bootloader der ersten partition
+→ grub neu installieren
+
+=== Fehlermeldungen ===
+//Hard Disk Error         Fehler, möglicherweise is der MBR oder die Platte beschädigt//
+//Read Errror             die zweite Stufe konnte nicht gelesen werden//
+//Geom Error              Partitionierungsfehler, falsches Partition die auf / verweist, defekte Parttionstabelle//
+
+== Workflow Grub durch ein Passwort schützen: ==
+**(1) **Aufrufen des Tools **grub-md5-crypt**
+
+**(2) **Nach zweimaliger Eingabe eines Passworts (welches man sich merken sollte!!) wird ein Hashwert ausgegeben
+
+**(3) **In der /boot/grub/menu.lst wird unter der Zeile //timeoute //folgende Zeile angefügt und für Hashwert der ausgegebene Haswert eingetragen:
+++
+...
+password --md5 <Hashwert>
+...
+++

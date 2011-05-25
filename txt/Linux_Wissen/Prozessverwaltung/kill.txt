@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T00:53:53+02:00
+
+====== kill ======
+Created Donnerstag 21 April 2011
+
+**kill -<SIGNR>| <SIGNAL> %<JOBNR> | <PID>** → sendet <SIGNAL> an Prozess mit der <PID> oder <JOBNR>
+
+Hinweis: kill -l listet alle die Signale auf über die Linux mit Prozessen kommunizieren kann
+
+//<SIGNAL>	<SIGNR>	Beschreibung//
+SIGHUP		1			hangup: beende alle Prozesse die Kindprozesse der aktuellen Shell sind
+SIGINT		2			interrupt: <Strg+c> den Prozess unterbrechen
+SIGKILL		9			kill: beende Prozess ohne Rückfrage, offene Dateien werden nicht geschlossen
+SIGTREM		15			terminate: beende Prozess,offene Dateien werden vorher geschlosseen
+SIGCONT		18			continue: setze einen mit SIGSTOP angehaltenen Prozess fort
+SIGTSTP		20			terminal stop: entspricht <Strg+z>
+
+//<PID>//
+PID > 0 → sende das <SIGNAL> an den Prozess mit der angegbenen PID
+PID = 0 → sende das <SIGNAL> an alle Prozesse der gleichen Prozessgruppe wie der gesendete
+PID < -1 → sende das <SIGNAL> an die Prozessgruppe dessen Identifizierungsgruppe zur entsprechenden <PID> 
+		  gehören
+PID == -1 → sende das <SIGNAL> an alle Prozesse die dem aktuellen Benutzer gehören
+
+**killall <SIGNAL> <NAME> **→ sende <SIGNAL> an alle Prozesse mit <Name>
+**-i **→ frage vor durchführung nach
+
+=== Achtung: ===
+__Unter BSD verwendet man killall um alle Prozesse zu beenden.__
+
+__Hinweis: __Es gilt__ "exit Status" -128 = <SIGNR>__
+[[Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status]]
+
+**nohup <Befehl> **→ <Befehl> wird auch nach dem beenden des Elternprozesses weiterausgeführt
+                               → normalerweise wird dieser <Befehl> dann direkter Kindprozess des init Prozesses
+                               → kann einen Zombie erzeugen
+ 

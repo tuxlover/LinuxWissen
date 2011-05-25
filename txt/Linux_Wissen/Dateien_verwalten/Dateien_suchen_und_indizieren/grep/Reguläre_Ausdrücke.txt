@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T16:01:01+02:00
+
+====== Reguläre Ausdrücke ======
+Created Montag 18 April 2011
+
+===== Suchmuster =====
+abc → die Zeichenkette abc
+
+[a-Z] → Eines der Zeichen von a-Z einmal
+
+[^abc] → alle Zeichen ausser a b oder c
+
+. → ein beliebiges Zeichen beliebig oft, auch gar nicht
+
++ → ein beliebiges Zeichen mindestens einmal
+
+? → ein optionales Zeichen oder ein optionales Suchmuster
+
+^abc → abc am Anfang einer Zeile
+
+abc$ → abc am Ende einer Zeile
+
+abc* → abc beliebig oft (abcabcabc aber nicht abc abc)
+
+\ → maskiere ein Sonderzeichen
+//Beispiel: ^a.*\.txt findet affe.txt, usw.//
+
+\< → Anfang eines Worts in Zeile
+
+\> → Ende eines Worts in Zeile
+
+a(bc) → die Buchstabenfolge bc beliebig oft nach a
+
+{n,m} → Muster mit n bis m maliger Wiederholung nur **egrep **oder **grep -e**
+
+**\[\[:alnum:\]\] **→ ein alfanumerisches Zeichen
+
+**\[\[:alpha:\]\] **→ ein Zeichen aus dem Alphabet
+
+\**[\[:blank:\]\] **→ Ein Leerzeichen oder Tab
+
+**\[\[:lower:\]\] **→ nur Kleinbuchstaben
+
+**\[\[:upper:\]\]** →    nur Großbuchstaben
+
+**\[\[:punct:\]\]** → ein Satzzeichen (! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \ ] ^ _ ` { | } ~'.`´)
+
+**\[\[:digit:\]\]** → eine Ziffer 
+
+**\[\[:xdigit:\]\]** → eine hexadezimale Ziffer 0 bis f
+
+(wort1|wort2) → wort1 oder wort2 nur **egrep **oder **grep -E**

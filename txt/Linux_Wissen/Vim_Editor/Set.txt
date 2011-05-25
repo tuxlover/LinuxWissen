@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T23:08:00+02:00
+
+====== Set ======
+Created Freitag 15 April 2011
+
+**:set number **→ Nummerierung einschalten
+**:syntax on ** → Syntaxhighlighing einschalten

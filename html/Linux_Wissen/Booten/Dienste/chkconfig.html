@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Dienste.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='../GRUB.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>chkconfig</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+Die Programme <strong>chkconfig </strong>und <strong>insserv </strong>dienen der Verwaltung von Startscripten auf Rpm basierten Systemen.<br>
+Bei Debian kann das <strong>update-rc.d </strong>Script verwendet werden.<br>
+</p>
+
+<p>
+— <br>
+$$SUSE$$ <br>
+<strong>insserv /etc/init.d/&lt;Dienst&gt; </strong><br>
+→ fügt einen &lt;Dienst&gt; hinzu und löst dabei Startabhängigkeiten auf<br>
+→ ermittlen des Standardrunlevel wird aus den Scripten ermittelt<br>
+<a href="../../FHS/etc/init.d%2B%2BScript.html" title="Linux Wissen:FHS:etc:init.d++Script">Linux Wissen:FHS:etc:init.d++Script</a><br>
+— <br>
+</p>
+
+<p>
+<strong>service &lt;Dienst&gt; on|off|status</strong><br>
+→ Dienst verwalten<br>
+<strong>on </strong>→ sofortitges aktivieren des Dienstes<br>
+<strong>off </strong>→ sofortiges abschalten des Dienstes<br>
+<strong>status</strong> → anzeigen des Status des Dienstes (running, nicht bekannter Dienst, nicht gestartet)<br>
+</p>
+
+<p>
+— <br>
+$$Redhad$$|$$Fedora$$|$$SUSE$$<br>
+<strong>checkconfig </strong><br>
+→ Verwaltung und Auflistung einer Runlevel Konfiguration<br>
+→ hinzufügen und ändern von Startscripten<br>
+</p>
+
+<p>
+<strong>-A </strong>→ listet alle Scipte auf, auch die nur zur Bootzeit B ausgeführt werden<br>
+</p>
+
+<p>
+<strong>-e </strong>→ ermöglicht es die Konfiguration von dienstes wie in Yast Interaktiv zu bearbeiten<br>
+</p>
+
+<p>
+<strong>checkconfig &lt;Dienst&gt;</strong><br>
+→ ohne weitere Optionen wird der Status für diesen &lt;Dienst&gt; abgefragt<br>
+</p>
+
+<p>
+<strong>checkconfig &lt;Dienst1&gt; &lt;Dienst2&gt; ...</strong><br>
+→ Auflistung der aktuellen Runlevelkonfiguration für mehrere Dienste<br>
+</p>
+
+<p>
+<strong>checkconfig &lt;Dienst&gt; on </strong><br>
+→ &lt;Dienst&gt; wird ab dem nächsten Bootvorgang automatisch gestartet und den Runlevln 3 und 5 hinzugefügt<br>
+</p>
+
+<p>
+<strong>checkconfig &lt;Dienst&gt; &lt;N&gt; &lt;M&gt; ...</strong><br>
+→ &lt;Dienst&gt; wird ab dem nächsten Bootvorgang den Runlevel &lt;N&gt; &lt;M&gt; hinzugefügt<br>
+</p>
+
+<p>
+<strong>checkconfig &lt;Dienst&gt; off</strong><br>
+→ &lt;Dienst&gt; wird ab dem nächsten Bootvorgang deaktiviert<br>
+</p>
+
+<h5>Konfiguration speichern und wiederherstellen</h5>
+<p>
+<strong>checkconfig -A &gt; runlevels.save </strong>→ die aktuelle Konfiguration speichern<br>
+<strong>checkconfig -s &lt; runlevels.save</strong> → die Konfiguration aus der Datei runlevels.save wiederherstellen<br>
+— <br>
+</p>
+
+<p>
+— <br>
+$$Debian$$|$$Ubuntu$$<br>
+<strong>update-rc.d &lt;Dienst&gt; [defaults] </strong><br>
+→ &lt;Dienst&gt; wird den Runelveln 2,3,4 und 5 hinzugefügt<br>
+→ In 0,1 und 6 wird der &lt;Dienst&gt; angehalten<br>
+— <br>
+</p>
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Booten.html'>Linux Wissen:Booten</a></li>		<a href='../Dienste.html'>Linux Wissen:Booten:Dienste</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

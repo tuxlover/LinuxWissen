@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Escape_Sequenzen.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Schleifen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Funktionen</h1>
+
+<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>implementierte und buildin Funktionen unterschieden</li>
+<li>erhalten Parameter zur Verarbeitung die einen Wert zurückliefern</li>
+</ul>
+</p>
+
+<p>
+++<br>
+<em>function Name (Parmeter1,...,ParameterN) {</em><br>
+<em>        ANWEISUNGSBLOCK</em><br>
+<em>}</em><br>
+++<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+++<br>
+<em>awk '</em><br>
+<em>function mittel(a, b, c) {</em><br>
+<em>mittelwert=(a+b+c)/3</em><br>
+<em>print mittelwert</em><br>
+<em>}</em><br>
+</p>
+
+<p>
+<em>BEGIN {</em><br>
+<em> mittel(1, 2, 3)</em><br>
+<em>}'</em><br>
+++<br>
+</p>
+
+<p>
+<strong>return</strong><br>
+→  Übergeben von Werten an eine Funktion oder Variable<br>
+</p>
+
+<h4>Buildin Funktionen</h4>
+<p>
+<strong>atan2(y,x); cos(x); exp(x); int(x); log(x); rand(); sin(x); sqrt(x);</strong><br>
+→ mathematische Funktionen<br>
+</p>
+
+<p>
+<strong>print; lenth; range(x,y);</strong><br>
+<a href="./Anweisungen.html" title="Linux Wissen:Systemprogrammierung:Awk:Anweisungen">Linux Wissen:Systemprogrammierung:Awk:Anweisungen</a><br>
+→ Operationen auf Records ausführen<br>
+</p>
+
+<p>
+<strong>system(cmd)</strong> →  Ausführen des Kommandos und Rückgabe des Exitstatus<br>
+</p>
+
+<p>
+<strong>match (s, r[,a])</strong> →  gibt die Position in s aus in der die Regex erschreint<br>
+</p>
+
+<p>
+<strong>sub</strong> →  wie <strong>sed 's/a/b/g'</strong><br>
+<a href="../Sed/Suchen_und_Ersetzen.html" title="Linux Wissen:Systemprogrammierung:Sed:Suchen und Ersetzen">Linux Wissen:Systemprogrammierung:Sed:Suchen und Ersetzen</a><br>
+</p>
+
+<p>
+<strong>next</strong> →  Stoppe das Einlesen des aktullen Records und mache beim nächsten Record weiter<br>
+</p>
+
+<p>
+<strong>nextfile</strong> →  Stoppe das Einlesen der aktuellen Datie, der nächste Record wird aus der nächsten Datei gelesen<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./Anweisungen.html'>Linux Wissen:Systemprogrammierung:Awk:Anweisungen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T03:36:22+02:00
+
+====== sys ======
+Created Dienstag 19 April 2011
+
+***/proc/sys/kernel **→ [[Linux Wissen:FHS:proc:sys:kernel]]
+
+

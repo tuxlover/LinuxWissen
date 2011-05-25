@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./init.d%2B%2BScript.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./lilo.conf.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>inittab</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+++<br>
+<em>#Standard-Runlevel                                                                      </em><br>
+<em>id:5:initdefault #Dieses runlevel wird gestartet wenn der Rechner hochgefahren wird     </em><br>
+</p>
+                                                                                         
+<p>
+<em>#Erstes auszuführendes Script                                                           </em><br>
+<em> si:bootwait:/etc/init.d/boot                                                            </em><br>
+</p>
+                                                                                         
+<p>
+<em># Runlevels                                                                             </em><br>
+<em>#&lt;Etikett&gt;:&lt;Runlevel&gt;:&lt;Aktion&gt;:&lt;Befehl&gt;                                                 </em><br>
+<em>l0:0:wait:/etc/init.d/rc 0                                                              </em><br>
+<em>l1:1:wait:/etc/init.d/rc 1                                                              </em><br>
+<em>l2:2:wait:/etc/init.d/rc 2                                                              </em><br>
+<em>l3:3:wait:/etc/init.d/rc 3                                                              </em><br>
+<em>l4:4:wait:/etc/init.d/rc 4                                                              </em><br>
+<em>l5:5:wait:/etc/init.d/rc 5                                                              </em><br>
+<em> l6:6:wait:/etc/init.d/rc 6                                                              </em><br>
+</p>
+                                                                                         
+<p>
+<em>#Ctr-Alt-Del                                                                            </em><br>
+<em>#Was passiert wenn man Strg-Alt-Entf drückt                                             </em><br>
+</p>
+
+<p>
+<em>ca:ctraltdel:/bin/true                                                                  </em><br>
+</p>
+                                                                                         
+<p>
+<em># Terminals                                                                             </em><br>
+<em>#&lt;Terminal Nr&gt;:&lt;Runlevel&gt;:&lt;Aktion&gt;:&lt;Befehl&gt;                                             </em><br>
+<em>1:2345:respawn:/sbin/mingetty --noclear tty1                                            </em><br>
+</p>
+                                                                                         
+<p>
+<em>samS:A:ondemand:rcsmb start &amp;&amp; rcnmb start  #Samba bei bedarf starten und  stoppen      </em><br>
+<em>samK:B:ondemand:rcsmb stop &amp;&amp; rcnmb stop</em><br>
+++<br>
+</p>
+
+<p>
+&lt;Etikett&gt;: Dient zur eindeutigen Identifikation des Feldes, bei Terminals werden die Namen des betreffenden Gerätes bezeichnet<br>
+</p>
+
+<p>
+&lt;Runlevel&gt;: Bezeichnung des Runlevel 0 bis 6<br>
+</p>
+
+<p>
+&lt;Aktion&gt;: Beim Aufruf dieses Runlevels/Terminals soll diese Aktion ausgeführt werden<br>
+        <strong>respawn</strong>     --&gt; Der Prozess wird sofort wieder neu gestartet falls er sich beendet hat<br>
+        <strong>wait</strong>        --&gt; Prozess wird einmal gestarte, warten auf Fertigstellung<br>
+        <strong>bootwait</strong>    --&gt; Prozess wird beim Booten ausgeführt, init warte auf Fertigstellung<br>
+        <strong>initdefault</strong> --&gt; Prozess ist nun Standardrunlevel<br>
+        <strong>ondemand</strong>    --&gt; Prozess wird ausgeführt ohne das Init den Runlevel wechselt<br>
+</p>
+
+<p>
+&lt;Befehl&gt;: Führe folgenden Befehl aus<br>
+        --&gt; /etc/init.d/rc --&gt; führt die unter /etc/init.d/rc(0-S).d Scripte aus<br>
+                Sn --&gt; Startscripte, werden beim Starten in numerisch aufsteigender n Reihenfolge gestartet<br>
+                Km --&gt; Stopscripte, werden bei Stoppen in numerisch aufsteigender Reihenfolge beendett<br>
+                        z.B. /etc/init.d/rc5.d/S01acpid --&gt; als erstes beim Starten<br>
+                             /etc/init.d/rc5.d/K09SuSEfirewall2_init --&gt; als 9.tes beim Stoppen<br>
+</p>
+
+<p>
+RUNLEVEL --&gt; Umgebungsvariable, die den gestarteten RUNLEVEL enthält<br>
+</p>
+   
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Booten.html'>Linux Wissen:Booten</a></li>		<a href='../../Booten/Init.html'>Linux Wissen:Booten:Init</a></li>		<a href='../proc/sys/kernel.html'>Linux Wissen:FHS:proc:sys:kernel</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

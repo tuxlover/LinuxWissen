@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Berechtigungen_verwalten.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='../../Datenrettung_und_Forensik.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Umask</h1>
+
+<p>
+Created Dienstag 19 April 2011<br>
+</p>
+
+<p>
+<strong>umask &lt;Maske&gt; </strong>→ setzen der Umask<br>
+<div style='padding-left: 90pt'>
+         → Wird keine &lt;Mask&gt; mitangegeben, wird die Standard Umask verwendet<br>
+</div>
+<strong>-S </strong>→ Werte symbolisch<br>
+</p>
+
+<p>
+*~/.profile →  <a href="../../Shell/Bash.html" title="Linux Wissen:Shell:Bash">Linux Wissen:Shell:Bash</a><br>
+</p>
+
+<p>
+<em>Bitweise Und Verknüpfung mit den Standardzugriffsrechten:</em><br>
+<em>Beispiel:</em><br>
+<em>rwxr-xr--		Rechte Symbolisch</em><br>
+0<em>754		Rechte Oktal</em><br>
+<em>7777</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+7777 <em>im Z_8</em><br>
+7023		<em>Ergebnis</em><br>
+<em>023			Umask</em><br>
+</p>
+
+<p>
+<em>072			Umask</em><br>
+<em>7072		Umask und fühende 7</em><br>
+<em>7777		+7777</em><br>
+<em>0705		das x bit abziehen (Dateien werden Grundsätzlich nicht ausführbar angelegt)</em><br>
+<em>0604		Rechte Oktal</em><br>
+<em>rw---r--		Rechte Symbolisch Dateien</em><br>
+<em>rwx---r-x		Rechte Symbolisch für Dateien</em><br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Shell/Bash.html'>Linux Wissen:Shell:Bash</a></li>		<a href='../Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

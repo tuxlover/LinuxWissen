@@ -1,0 +1,108 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T20:26:05+02:00
+
+====== Dateisysteme ======
+Created Donnerstag 21 April 2011
+
+===== Superblock =====
+Am Anfang des Dateisystems enthält Informationen über:
+* Typ des Dateisystem
+* wann wurde es zuletzt ein- und ausgehängt
+* Inodes
+* Bootflag (Windows aus dem Windowsbootloader laden) 
+
+**mkfs -t <Dateisystem> /dev/sdX **
+→ erstelle auf /dev/sdX ein Dateisystem vom Typ <Dateisystem>
+→ ruft die entsprechenden Programme auf die Partitionierung des entsprechenden Dateisystems verantwortlich
+**-c **→ Das Dateisystem auf defekte Blöcke überprüfen
+**-v **→ verbose
+
+=== Ext: ===
+**mke2fs {-j} /dev/sdX** → erstellen eines ext2{ext3} Dateisystems auf /dev/sdX
+**-b N **→ die Größe N pro Block
+**-c **→ nach defekten Blöcken suchen
+**-i **→ Inodedichte festlegen (bytes pro Inodes), sollte nicht kleiner als die Blockgröße des Dateisystems sein
+**-m **→ Anzahl der für Root reservierten Blöcke in Prozent, Standard sind 5% 
+**-j **→ erstelle ein Journal (ext3)
+**-F **→ Dateisysteme formatieren die keine Blockgeräte sind, zum Beispiel das Abbild eines Dateisystems
+
+**tune2fs /dev/sdX **→ die Parameter der ext2|ext3 Partition /dev/sdX ändern
+**-c N**→ nach N malen einhängen, findet eine Dateisystemüberprüfung statt, 0 bedeutet nie
+**-C **→ manipuliert den Wert der aktuellen Anzahl von bereits stattgefundenen Einhängevorgängen
+**-e continue|remount-ro|panic **→ legt das Verhalten beim Auftreten eines Fehlers fest
+	continue → normal weitermachen
+	remount-ro → Readonly einhängen und weitermachen
+	panic → Kernel Panic ausgeben
+**-i Nd|w|m**→ wie **-c **in Tagen d, Wochen w, Monaten m
+**-l **→ listet Informationen über den Superblock
+**-m **→ Anzahl der für Root reservierten Blöcke in Prozent, Standarrd sind 5%
+**-L <LABEL> **→ <LABEL> für die Partition (bis zu 16 Buchstaben)
+
+**dumpe2fs /dev/sdX **→ extrahieren von Dateisysteminformationen
+**-b **→ Ausgabe von bad Blocks
+**-i **→ Nutze eine reguläre Datei als Input Anstelle einer Gerätedatei
+**-o superblock=<superblock> **→ angeben eines alternativen Superblocks
+**-o blocksize=N **→ die Blockgröße des Dateisystems angeben 
+ 
+**e2image /dev/sdX IMAGE **
+→ speichern von kritischen Dateisystem Metadaten in IMAGE
+→ funktioniert auch wenn Dateisysteme noch gemountet sind
+
+=== Reiser: ===
+**mkreiserfs /dev/sdX **→ auf /dev/sdX ein Dateisystem erstellen
+
+**dumpreiserfs /dev/sdX **→ Informationen des Reiser Dateisystems auf /dev/sdX auslesen
+
+**resize_reiserfs **→ Größe einer momentan nicht vorhandenen Reiserpartition ändern
+
+**reisfstune **→ Parameter für eine Reiserpartition ändern und anpassen 
+
+__Hinweis: reiserfs != reiser4__
+
+=== VFAT: ===
+**mkfs.vfat /dev/sdX |mkdosfs /dev/sdX **→ erstellen einer FAT Partition
+**-F **→ FAT Dateigröße (12,16,32)
+**-c **→ nach defekten Blöcken suchen
+**-I **→ das ganze Gerät als eine Partition behandeln
+**-n <LABEL> **→ Volume Label vergeben
+
+=== NTFS: ===
+**mkntfs /dev/sdX** → erstelle eine Ntfs Partition auf /dev/sdX
+**-f **→ Schnellformatierung
+**-L <LABEL> **→ setzen eines Labels
+**-C **→ Kompression auf dieser Partition aktivieren
+**-N 1.2|3.1 **→ Version des verwendeten Ntfs Dateisystems festlegen
+**-I **→ Dateisystembasierte Indizierung abschalten
+
+__Hinweis; Mit stat <Datei> lassen sich Informationen über eine Datei auf Dateisystemebene abfragen.__
+
+===== Dateisysteme auf Fehler überprüfen =====
+**fsck -t <Type> /dev/sdX **→ Dateisystem <Type> auf /dev/sdX überprüfen
+**-A **→ alle Dateisysteme in der /etc/fstab ( [[Linux Wissen:FHS:etc:fstab]] )
+**-M **→ ignoriere eingehängte Dateisysteme
+**-R **→ in Zusammenhang mit **-A **ignoriert das /-Dateisystem
+**-a **→ automatisch reparieren
+**-c **→ nur checken, keine Reperaturen durchführen
+**-r **→ interaktives Reparieren
+**-y **→ ja zu allen Aktionen ohne Nachfrage
+**-V **→ verbose
+**-N **→ nur simmulieren, nichts tun
+**-p **→ wie **-ya**
+
+//Exit Code://
+0		Kein Fehler im Dateisystem gefunden
+1		Fehler im Dateisystem gefunden und korrigiert
+2		Schwerwiegende Fehler im Dateisystem gefunden und korigiert
+4		Fehler im Dateisystem gefunden aber nicht korrigiert
+8		Fehler beim Aufruf des Programms
+16		Fehler in der Kommandozeile
+128		Fehler in der Funktion der Shared Libraries
+[[Linux Wissen:Bibliotheken]]
+
+__Hinweis: shutdown -rF now ermöglicht einen Reboot mit anschließender Überprüfung von fsck. Dies ist die einzige Methode wie innerhalb des gleichen Systems eine Dateisystemprüfung von / erzwungen werden kann.__
+
+**debugfs /dev/sdX **→ öffnet das Dateisystem auf /dev/sdX im Debugmode
+**-w **→ Das Dateisystem ist auch schreibbar  **         !!ACHTUNG!!**
+**-c **→ Dateisystem im Katastrophenmodus starten
+**-s **→ einen anderen Superblock angeben

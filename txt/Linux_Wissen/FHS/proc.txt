@@ -1,0 +1,58 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T02:32:30+02:00
+
+====== proc ======
+Created Dienstag 19 April 2011
+
+***/proc/<PID>**
+	**/status** → Informationen zum laufenden Prozess mit der <PID>
+	**/environ **→ Umgebungsvariablen des laufenden Prozess mit der <PID>
+	**/exe **→ link zum ausgeführten Programm mit der <PID> 
+	**/fd **→ offene Dateidiskriptoren von Programm <PID>
+	**/maps **→ Specihermapping von Prozess mit der <PID> 
+	**/mem **→ Speicherbedarf des Prozesses mit der <PID>
+	**/stat **→ Satus des Prozesses mit der <PID>
+	**/statm **→ Informationen zum belegten Speicher mit dem Prozess mit der PID<PID>
+	
+***/proc/cpuinfo** → Informationen zur ausführenden/ den ausführenden CPUs
+
+***/proc/bus/usb **→ Informationen über usbfs
+
+***/proc/devices **→ Liste der Dateien die vom Kernel unterstützt werden
+
+***/proc/dma **→ Liste der benutzen DMA Kanäle
+
+***/proc/interrupts **→ Liste der vom Kernel beanspruchten Interrupts
+
+***/proc/filesystems **→ Liste der vom Kernel unterstützten Dateisysteme
+
+***/proc/ioports **→ Liste der vom Kernel beanspruchten I/O Ports
+
+***/proc/kcore **→ Abbild des Arbeitsspeichern, nur von root lesbar
+
+***/proc/loadavg **→ Auslastung der CPU innerhalb der letzten 1,5,15 Minuten
+
+***/proc/meminfo **→ Speicherauslastung des Swapbereichs
+
+***/proc/mounts **→ Liste der eingängten Dateisysteme
+
+***/proc/modules **→ Informationen über die vom Kernel geladenen Module
+
+***/proc/scsi **→ Informationen zu Scsi und Hostadapter
+
+***/proc/version **→ Versionsnummer des Kernels
+
+***/proc/cmdline **→ Kommandozeilenargumente die beim Booten dem Kernel übergeben wurden
+
+***/proc/kmsg **→ Protokolldatei des Kernels
+
+***/proc/partitions **→ Alle bekannten Partitionen
+
+***/proc/pci **→ PCI-Geräte
+
+***/proc/ide/drivers **→ Informationen zu IDE-Geräten
+
+***/proc/net ** →  [[Linux Wissen:FHS:proc:net]]
+
+***/proc/sys** → [[Linux Wissen:FHS:proc:sys]]

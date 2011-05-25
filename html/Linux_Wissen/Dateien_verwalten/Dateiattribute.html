@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Archivieren/tar.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Dateien_anlegen_und_l%C3%B6schen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Dateiattribute</h1>
+
+<p>
+Created Mittwoch 20 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>steuern das Verhalten bei verschiedenen Operationen auf Dateien</li>
+<li>kann nur in ext* Dateisystemen verwendet werden</li>
+</ul>
+</p>
+
+<p>
+<strong>chattr +|- &lt;Atribut&gt; &lt;Datei&gt; </strong>→ setzen|entfernen von Atrributen auf Datei<br>
+</p>
+
+<p>
+<u>Hinweis: Einige Operationen lassen sich auch durch mount Optionen  für ein gesamtes Dateisystem erstellen. </u><br>
+<a href="../Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
+</p>
+
+<p>
+<em>Attribute			Beschreibung									mount-Option</em><br>
+A				letzte Zugriffszeit nicht verändern					-o noatine<br>
+a				An die Datei kann nur neue Bytes angefügt werden	<br>
+c				Datei wird komprimiert gespeichert			<br>
+d				Datei wird bei einem Backup mit dump <strong>(missing link) </strong>nicht berücksichtigt<br>
+i				Datei kann nicht verändert oder gelöscht werden		-o ro<br>
+j				Dateien werden zuerst im Journal gespeichert		-o data=journal<br>
+s				Beim löschen einer Datei wird der Speicherbereich <br>
+<div style='padding-left: 120pt'>
+  mit Nullen überschrieben						-<br>
+</div>
+S				Nach jeder Dateioperation wird fsync durchgeführt	-o sync<br>
+t				Dateienden die keinen vollen Block bilden werden<br>
+                                 nicht mit anderen Dateien zusammngefasst		-o notail<br>
+u				Dateien werden beim Löschen für ein Undelete <br>
+<div style='padding-left: 120pt'>
+ gespeichert<br>
+</div>
+</p>
+
+
+<p>
+<strong>lsattr &lt;Datei&gt; </strong>→ erweiterte Dateiattribute anzeigen<br>
+<strong>-a </strong>→ alle Dateien anzeigen auch die mit . beginnen<br>
+<strong>-R </strong>→ rekusives Auflisten der Dateiattribute<br>
+<strong>-d </strong>→ Verzeichnisse als Datei behandeln und nicht deren Inhalt aufzeigen<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

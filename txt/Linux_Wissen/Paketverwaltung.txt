@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T20:13:57+02:00
+
+====== Paketverwaltung ======
+Created Montag 25 April 2011
+
+* Software wird als Pakequelle (tar.gz, tar.bz2) bereitgestellt
+* Distributionen packen Pakete (.deb,.rpm)
+* Verwaltung von Abhängigkeiten
+* bereitstllen von Updates
+* leichter zu installieren und damit leichter zu verwalten
+
+===== Debian =====
+[[Linux Wissen:Paketverwaltung:Debian]]
+
+===== Rpm =====
+[[Linux Wissen:Paketverwaltung:Rpm]]
+
+=== Pakete konvertieren ===
+**alien **
+→ Script zum konvertieren zwischen Installationsformaten, deb, rpm, Slackware
+→ benötigt mindest **rpm** und **deb** um zu funktionieren
+
+**alien --to-rpm <Paket>.deb **→ wandelt das Debian Paket in eine Rpm Variante um
+**alien --to-deb <Paket>.rpm **→ wandelt das Rpm Paket in eine Debian Variante um
+
+__Hinweis: Das Programm alien sollte nur im Notfall eingestetzt werden. Im zweifelsfall sollte man probieren selber ein Paket aus den Quellen zu installieren.__
+[[Linux Wissen:Paketverwaltung:Debian:Pakete bauen]]
+[[Linux Wissen:Paketverwaltung:Rpm:Pakete bauen]]

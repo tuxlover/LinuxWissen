@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T16:21:08+02:00
+
+====== Berechtigungen verwalten ======
+Created Dienstag 19 April 2011
+
+**chmod <Berechtigungen> <Datei> ** → <Berechtigungen> für <Datei> ändern
+						                      → Berechtigungen für:
+											u → User
+											g → Gruppe
+											o → Other (Rest der Welt)
+**-R **→ rekursives Ändern
+**--reference=<Name> **→ verwende die Rechte der Datei <Name> als Refernenz für die neuen Rechte 
+
+=== Werte können explizit entweder Oktal oder durch Rechtebits vergeben werden ===
+//Beispiele://
+**chmod 750 <Datei> **oder **chmod u=rwx g=rx o=--- <Datei>**
+**chmod u=rwx go=--- <Dattei>**
+
+=== Rechte können hinzugefügt oder entzogen werden ===
+//Beispiele://
+**chmod +x <Shellscript> **→ das Shellscript für alle ausführbar machen
+**chmod u+x <Shellscript> **→ das Shellscript nur für den Nutzer ausführbar machen
+**chmod g-x <Shellscript> **→ Das Recht zum Ausführen der Gruppe entziehen
+
+**chown <Nutzer>:<Gruppe> <Datei> **→ gebe <Datei> die Zugehörigkeit von <Nutzer> und <Gruppe>
+**chown <Nutzer>: <Datei> **→ gebe <Datei> die Zugehörigkeit von <Nutzer>
+**chown :<Gruppe> <Datei> **→ gebe <Datei> die Zugehörigkeit von <Gruppe>
+**-R **→ rekursiv
+
+**chgrp <Gruppe> <Datei> **→ Gruppenzugehörigkeit als normaler Nutzer ändern
+		                                  → Nutzer muss Mitglied der Gruppe sein

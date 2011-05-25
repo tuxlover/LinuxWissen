@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T12:28:42+02:00
+
+====== foremost ======
+Created Samstag 23 April 2011
+
+**foremost [-i /dev/sdX]** 
+→ kann Daten aufgrund Headers, Footers und interne Datenstrukturen wiederhestellen
+→ wird **-i /dev/sdX** nicht mit angegeben wird der Datenstrom von der Standardeingabe gelesen
+→ kann von Datenträgern oder von **dd oder ddrescue **erstellten Images lesen
+[[Linux Wissen:Datenrettung und Forensik:dd rescue]]
+[[Linux Wissen:Partitionen und Dateisysteme:dd]]
+**-t <Typ> **→ siehe Manpage, den Typ festlegen 
+**-T **→ Setze einen Zeitstempel für den Namen des Ausgabeverzeichnisses
+**-Q **→ nicht verbose
+**-c <Konfigurationsdatei> **→ diese Konfiguration anstelle der die in */etc/foremost liegt
+
+
+*/etc/foremost.conf
+[[Linux Wissen:FHS:etc:foremost.conf]]
+
+**foremost -t all -i <Abbilddatei> **→ alle konfigurierten und BuildIn Datentypen aus <Abbilddatei> wiederherstellen
+**foremost -t all -i /dev/sdX **→ alle konfigurierten und Buildin Datentypen aus /dev/sdX wiederherstellen

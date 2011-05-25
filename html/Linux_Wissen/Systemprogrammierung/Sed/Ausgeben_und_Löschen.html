@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Adressierungen.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Einf%C3%BCgen_und_Ver%C3%A4ndern.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Ausgeben und Löschen</h1>
+
+<p>
+Created Mittwoch 27 April 2011<br>
+</p>
+
+<p>
+<strong>d </strong><br>
+→ Patternspacebefehl <br>
+→ löschen (delete) von auf Adressierung oder Ausdruck passenden Zeilen<br>
+→ paarweise Adressierung<br>
+→ Input Stream <br>
+→ Patternspace<br>
+<em>Beispiel:</em><br>
+<strong>sed '11,$d'</strong> → löschen der Zeilen 11 bis Endzeile, <strong>head</strong><br>
+ <a href="../../Filterprogramme/head_und_tail.html" title="Linux Wissen:Filterprogramme:head und tail">Linux Wissen:Filterprogramme:head und tail</a><br>
+</p>
+
+<p>
+<strong>D</strong><br>
+→ Patternspacebefehl<br>
+→ löschen (delete) des Pattern Space bis zum nächsten NL Zeichen<br>
+→ paarweise Adressierung <br>
+→ Input Stream<br>
+</p>
+
+<p>
+<strong>p</strong><br>
+→ Ausgeben (print) von auf Adressierung oder Ausdruck passenden Zeilen<br>
+→ paarweise Adressierung <br>
+→ Input stream <br>
+<em>Beispiel:</em><br>
+<strong>sed -n '1,10p' &lt;Datei&gt;</strong> → gibt nur die Zeilen 1 bis 10 aus <strong>head (siehe oben)</strong><br>
+<u>Hinweis: Wird </u><strong>-n </strong><u>nicht verwendet, wird auch der Patternspace mit ausgegeben.</u><br>
+</p>
+
+<p>
+<strong>P</strong><br>
+→ ausgeben (print) des ersten Teils des Pattern Space bis zum nächsten NL Zeichen<br>
+→ paarweise Adressierung<br>
+→ Input Stream<br>
+</p>
+
+
+<p>
+<strong>q </strong><br>
+→ Abrechen des Eingabestroms nach Adressierung<br>
+→ Einzelverweis Adressierung<br>
+<em>Beispiel:</em><br>
+<strong>sed -e '10q' </strong>→ bricht die Ausgabe des Datenstrohms nach den ersten 10 Zeilen ab und unterdrückt mit <strong>-n</strong> die Ausgabe.<br>
+</p>
+
+<p>
+<strong>= </strong><br>
+→ gibt die Nummer der Zeilen aus, die im Patternspace gefunden wurden<br>
+→ Output Stream <br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Sed.html'>Linux Wissen:Systemprogrammierung:Sed</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

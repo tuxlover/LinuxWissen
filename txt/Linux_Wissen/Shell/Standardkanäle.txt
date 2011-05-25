@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T16:35:17+02:00
+
+====== Standardkanäle ======
+Created Montag 18 April 2011
+
+===== Diskriptoren =====
+**0 **→ Standardeingabe (StdIn)
+**1 **→ Standardausgabe (StdOut)
+**2 **→ Standardfehler (StdtErr)
+**3,...** → weiter Dateidiskriptoren
+
+===== Umleitungsoperatoren =====
+**> **→ Umlenkung von Standardausgabe
+**>> **→ Umlenkung der Standardausgabe, dabei anhängen nicht überschreiben
+**2> **→ Umlenken von StdErr 
+**&> **→ Umlenken von StdtOut und StdErr 
+
+**:> <Datei> **→ dasselbe wie **cat /dev/null > <Datei>**
+**<Befehl> > <Datei> **→ Ausgabe in Datei umlenken
+**<Befehl> 2> <Datei> **→ Fehlerausgabe in <Datei> umlenken
+**<Befehl> &> <Datei> **→ Standardausgabe und Fehler in <Datei> umleiten
+**<Befehl> > <Datei> 2>&1 **→ -"                                                                 "-
+** <Befehl> >> <Datei> **→ Ausgabe an <Datei> anhängen
+**<Befehl> < <Datei> **→ Programm liest eingabe aus <Datei>
+**<Befehl> 3&1 1> output 2>&3** → Standardausgabe wird in die Datei output gelenkt und der Inhalt von Datei output in die Standardfehlerausgabe
+
+=== Achtung!:  ===
+<Befehl> 2>&1 > <Datei> leitet __nicht__ in die <Datei> um
+
+*/dev/fd/N → Dateidiskriptor N
+
+===== Pipes =====
+**<programm1>|<programm2> **→ <programm2> nimmt seine Eingabeargumente aus der Ausgabe  von
+								<programm1>
+
+**tee**
+**<programme1>** |**tee [-a] <Datei>|<programm2> **→  <programm1> leitet seine Eingabeargumente in <Datei>
+												 und nach <programm2> weiter
+**-a **→ an <Datei> anhängen
+ 
+**xargs **→ Ausgabe eines Programms als Argumente Zeilenweise weiterleiten
+	   → oft im zusammenhang mit find
+
+//Beispiel://
+//jede mit find gefundene Datei in ein Archiv packen//
+//find / -name "*.bak" |xargs tar xvfz backup.tar.gz//
+
+__Hinweis: beachte die Wirkung von set -o noclobber __[[Linux Wissen:Shell:Bash:Optionen für die Bash]]

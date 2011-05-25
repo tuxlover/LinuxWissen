@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./dd_rescue.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='../Emacs_Editor.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>foremost</h1>
+
+<p>
+Created Samstag 23 April 2011<br>
+</p>
+
+<p>
+<strong>foremost [-i /dev/sdX]</strong> <br>
+→ kann Daten aufgrund Headers, Footers und interne Datenstrukturen wiederhestellen<br>
+→ wird <strong>-i /dev/sdX</strong> nicht mit angegeben wird der Datenstrom von der Standardeingabe gelesen<br>
+→ kann von Datenträgern oder von <strong>dd oder ddrescue </strong>erstellten Images lesen<br>
+<a href="./dd_rescue.html" title="Linux Wissen:Datenrettung und Forensik:dd rescue">Linux Wissen:Datenrettung und Forensik:dd rescue</a><br>
+<a href="../Partitionen_und_Dateisysteme/dd.html" title="Linux Wissen:Partitionen und Dateisysteme:dd">Linux Wissen:Partitionen und Dateisysteme:dd</a><br>
+<strong>-t &lt;Typ&gt; </strong>→ siehe Manpage, den Typ festlegen <br>
+<strong>-T </strong>→ Setze einen Zeitstempel für den Namen des Ausgabeverzeichnisses<br>
+<strong>-Q </strong>→ nicht verbose<br>
+<strong>-c &lt;Konfigurationsdatei&gt; </strong>→ diese Konfiguration anstelle der die in */etc/foremost liegt<br>
+</p>
+
+
+<p>
+*/etc/foremost.conf<br>
+<a href="../FHS/etc/foremost.conf.html" title="Linux Wissen:FHS:etc:foremost.conf">Linux Wissen:FHS:etc:foremost.conf</a><br>
+</p>
+
+<p>
+<strong>foremost -t all -i &lt;Abbilddatei&gt; </strong>→ alle konfigurierten und BuildIn Datentypen aus &lt;Abbilddatei&gt; wiederherstellen<br>
+<strong>foremost -t all -i /dev/sdX </strong>→ alle konfigurierten und Buildin Datentypen aus /dev/sdX wiederherstellen<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

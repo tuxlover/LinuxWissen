@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T14:29:48+02:00
+
+====== PCI ======
+Created Sonntag 24 April 2011
+
+**setpci **→ Konfiguration und Abfrage von konfigurierten PCI Geräten
+**-v **→ verbose
+**-D **→ Demo Mode
+
+**setpci -d <Device-ID> **→ lokalisieren eines Gerätes aufgrund einer bekannten Geräte-ID
+
+**lspci **→ listet die vorhandenen PCI Geräte auf
+**-v **→ ausführliche Ausgabe
+**-vv **→ noch ausführlicher
+**-vvv **→ noch viel ausführlicher
+**-n **→ nicht die Datenbank unter */usr/share/pci.ids
+[[Linux Wissen:FHS:usr]]
+**-t **→ zeige die Geräteabhängigeiten einzelner PCI-Geräte in einer Baumansicht
+**-d **→ dump der PCI Geräte Daten direkt aus den Geräten
+**-mm **→ dump der PCI Geräte Daten direkt aus den Geräten in einem für Script parsebare Form
+[[Linux Wissen:Systemprogrammierung:Shellscripting]]
+
+**-k **→ zeige die Kernelmodule an, die von entsprechenden Geräten verwendet werden
+**-x **→ Hexdump einzelner PCI Geräte
+**-b **→ BUS Centic View, ohne den Kernel zu fragen, es wird nur der PCI BUS gedumpt
+
+__Hinweis: Benutzen Sie lspci -k um herauszufinden welche Kernelmodule tasächlich gebraucht werden um einen möglichst kleinen Kernel zu bauen. __
+**(missing link Kernel bauen)**

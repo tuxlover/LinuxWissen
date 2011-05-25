@@ -1,0 +1,266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Bibliotheken/dynamische_Bibliotheken.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Booten/Dienste.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Booten</h1>
+
+<p>
+Created Samstag 23 April 2011<br>
+</p>
+
+<h2>MBR</h2>
+<p>
+Der MBR besteht im wesentlichen aus 512 Bytes<br>
+<ul>
+<li>446 Bytes für den Bootloader</li>
+<li>4*16 Bytes für die Partitionstabelle</li>
+</ul>
+<a href="./Partitionen_und_Dateisysteme.html" title="Linux Wissen:Partitionen und Dateisysteme">Linux Wissen:Partitionen und Dateisysteme</a><br>
+</p>
+
+<h2>Bootloader</h2>
+<p>
+Aufgabe des Bootloaders ist es einen Kernel zu finden und in den RAM zu laden, sowie die Verwaltung mehrerer Betriebsysteme.<br>
+<ul>
+<li>LILO</li>
+</ul>
+<a href="./Booten/LILO.html" title="Linux Wissen:Booten:LILO">Linux Wissen:Booten:LILO</a><br>
+<ul>
+<li>GRUB</li>
+</ul>
+<a href="./Booten/GRUB.html" title="Linux Wissen:Booten:GRUB">Linux Wissen:Booten:GRUB</a><br>
+</p>
+
+<h4>Allgemeine Bootoptionen</h4>
+<p>
+ro → veranlasst den Kernel die /-Partition nur lesbar einzuhängen<br>
+</p>
+
+<p>
+rw → veranlasst den Kernel die /-Partiton mit Schreibberechtigungne einzuhängen<br>
+</p>
+
+<p>
+init=&lt;Programm&gt; → startet das Programm anstelle von <strong>/sbin/init</strong><br>
+init=/bin/sh → startet eine Minimale Shell ohne Jobkontrolle<br>
+<a href="./Booten/Init.html" title="Linux Wissen:Booten:Init">Linux Wissen:Booten:Init</a><br>
+</p>
+
+<p>
+single → starten des Einzelbenutzermodus<br>
+</p>
+
+<p>
+maxcpus=N → verwende nur N der voorhandenen Kerne |CPUs<br>
+</p>
+
+<p>
+panic=N → Im Falle eines Kernel Panic wird nach N Sekunden ein Neustart erzwungen<br>
+</p>
+
+<p>
+noapic, acpi=off, apic=off → Schaltet die APIC oder ACPI Kernelmodule ab<br>
+</p>
+
+<p>
+vga=&lt;Videomodus&gt; → festlegen des Videomodus für verwendete Terminals<br>
+</p>
+
+<p>
+console=tty,9600 → festlegen einer Konsole auf einen seriellen Port<br>
+</p>
+
+<p>
+netdev=&lt;irq&gt;,&lt;io&gt;,&lt;mem_start&gt;,&lt;mem_end&gt;,&lt;name&gt; <br>
+→ Einstellungen an der Netzwerkkarte erzwingen  <br>
+</p>
+
+<p>
+nosmp → Abschalten des Symmetischen Multiprozessing wenn meherere Kerne|CPUs verwendet werden<br>
+</p>
+
+<p>
+<u>Hinweis: Wenn die LInux Quellen installiert sind kann man unter </u><br>
+<u>/usr/src/linux/Documentation/kernel-parameters.txt weitere Informationen erhalten.</u><br>
+<a href="./FHS/usr.html" title="Linux Wissen:FHS:usr">Linux Wissen:FHS:usr</a><br>
+</p>
+
+<p>
+<u>Hinweis: Wegen init=/bin/sh sollte immer ein Grub Passwort vergeben werden.</u><br>
+</p>
+
+<h4>Rettungsanker</h4>
+<p>
+<strong>(1)</strong> Mounten der Platte mit dem Defekten Betriebssystem von Live CD  <strong>mount /dev/sdX /mnt/system</strong><br>
+</p>
+
+<p>
+<strong>(2)</strong> Falls das System zusätzliche Partitionen wie /boot oder /usr beinhalten werden diese nun einghängt<br>
+<strong>      mount /dev/sdX{1,5,6} /mnt/system/{boot,usr,tmp}</strong><br>
+</p>
+
+<p>
+<strong>(3) mount -o bind /dev /mnt/system/dev</strong><br>
+</p>
+
+<p>
+<strong>(4) mount -o bind /sys /mnt/system/sys</strong><br>
+</p>
+
+<p>
+<strong>(5) *mount -o bind /proc /mnt/system/proc</strong><br>
+<a href="./Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
+</p>
+
+<p>
+<strong>(6)</strong> erstellen der /etc/mtab auf dem chroot system<br>
+<strong>    cp /mnt/proc/mounts /mnt/system/etc/mtab</strong><br>
+</p>
+
+<p>
+<strong>(7)</strong> kopieren der resolv.conf falls Netzzugriff benötigt wird<br>
+<strong>    cp /etc/resolv.conf /mnt/system/etc/resolv.conf</strong><br>
+</p>
+
+<p>
+<strong>(8)</strong> Einsetzen des Changeroots und festlegen der verwendeten Shell <strong>chroot /mnt/system /bin/bash</strong><br>
+</p>
+
+<p>
+<strong>(9)</strong> Durchführen der Systemarbeiten<br>
+</p>
+
+<p>
+<strong>(10) </strong>Verlassen des chroot und syncen der Platte <strong>sync &amp;&amp; exit</strong><br>
+</p>
+
+<h4>System V und der Init Prozess</h4>
+<p>
+<ul>
+<li><strong>/sbin/init mit PID 1</strong></li>
+<li><strong>runlevel</strong></li>
+<li>über einen <em>Runlevel</em> wird der Zustand in dem sich ein System befindet definiert</li>
+</ul>
+<div style='padding-left: 30pt'>
++ reboot, aus<br>
++ welche Dienste sind gestartet<br>
+</div>
+</p>
+
+<p>
+<a href="./Booten/Init.html" title="Linux Wissen:Booten:Init">Linux Wissen:Booten:Init</a><br>
+<ul>
+<li>Runelvel werden in der */etc/inittab definiert</li>
+</ul>
+<a href="./FHS/etc/inittab.html" title="Linux Wissen:FHS:etc:inittab">Linux Wissen:FHS:etc:inittab</a><br>
+</p>
+
+<h4>Beim Starten in den Wartungsmodus gelangen</h4>
+<p>
+a) Durch Anhängen an die Bootoptionen des Grub|LiLO Startbildschirms<br>
+<strong>-s </strong>→ starten des Runlevels S, single wird das entsprechende Runlevel gestartet<br>
+<strong>-b </strong>→ starten des Runlevels S, ohne die */etc/inittab zu lesen<br>
+</p>
+
+<p>
+b) Durch eintragen von <br>
+<strong>init=/bin/sh </strong>wird eine Rootshell ohne Passwortabfrage gestartet. Dabei wird der init Prozess durch die Shell /bin/sh ersetzt. Eine Verarbeitung der Datei */etc/inittab findet nicht statt<br>
+</p>
+
+<h4>Dienste</h4>
+<p>
+<ul>
+<li>bieten eine Funktion an die als Daemon im Hintergrund läuft</li>
+<li>Serverprozesse</li>
+</ul>
+*/etc/init.d/&lt;Dienst&gt; → Startscript für einen Dienst<br>
+<strong>/etc/init.d/&lt;Dienst&gt; start|stop|status|reload|restart</strong><br>
+<ul>
+<li><strong>start_daemon</strong></li>
+<li><strong>pidofproc</strong></li>
+<li><strong>checkproc</strong></li>
+<li><strong>killproc</strong></li>
+<li><strong>startproc</strong></li>
+<li><strong>startpar</strong></li>
+</ul>
+<a href="./Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a><br>
+<ul>
+<li><strong>chkconfig</strong></li>
+<li><strong>insserv</strong></li>
+<li><strong>service</strong></li>
+</ul>
+<a href="./Booten/Dienste/chkconfig.html" title="Linux Wissen:Booten:Dienste:chkconfig">Linux Wissen:Booten:Dienste:chkconfig</a><br>
+</p>
+
+<h4>Herunterfahren und Neustarten</h4>
+<p>
+<ul>
+<li><strong>shutdown</strong></li>
+<li><strong>halt</strong></li>
+<li><strong>reboot</strong></li>
+</ul>
+<a href="./Booten/Herunterfahren_und_Neustarten.html" title="Linux Wissen:Booten:Herunterfahren und Neustarten">Linux Wissen:Booten:Herunterfahren und Neustarten</a><br>
+</p>
+
+<h4>Kernel tauschen</h4>
+<p>
+<ul>
+<li>Möglichkeit ein System ohne Senden des ACPI Signals neu zustarten</li>
+<li>Auswechseln eines laufenden Kernels ohne GRUB/LILO zu lesen</li>
+<li>der alte Kernel lässt sich im Falle eines Panic sofort benutzen (fallback)</li>
+<li><strong>kexec</strong></li>
+</ul>
+<a href="./Booten/kexec.html" title="Linux Wissen:Booten:kexec">Linux Wissen:Booten:kexec</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./FHS/etc.html'>Linux Wissen:FHS:etc</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

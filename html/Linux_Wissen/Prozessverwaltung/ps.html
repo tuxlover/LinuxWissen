@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Nice_Werte_kontrollieren.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./strace.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>ps</h1>
+
+<p>
+Created Donnerstag 21 April 2011<br>
+</p>
+
+<p>
+<strong>ps [&lt;PID&gt;] | [-C &lt;Name&gt;]</strong>→ zeigt Informationen zu Prozessen an<br>
+      → die Ausgabe kann mittels <strong>axo </strong>formatiert werden<br>
+      → unterschieden zwischen Possix Optionen die aus Komatibilitätsgründen existieren und GNU Optionen<br>
+      → Possix Optionen werden ohne - eingeleitet<br>
+      → Possix und GNU Optionen können miteinander kombiniert werden <br>
+     → ohne Optionen werden nur Prozesse aufgelistet die in der aktuellenSubshell laufen<br>
+     → wird &lt;PID&gt; verwendet, werden nur Informationen über den Prozess mit &lt;PID&gt; angezeigt<br>
+</p>
+
+<p>
+Possix Optionen:<br>
+<strong>a </strong>→ zeigt alle laufenden Prozesse die ein tty haben inklusive Pfad<br>
+   → Prozesse die in der aktullen Shell laufen oder einer Subshell der aktuellen Elternshell werden ohne Pfad und tty 	 <br>
+<div style='padding-left: 30pt'>
+angegeben <br>
+</div>
+<strong>u|l </strong>→ zeigt zusätzliche Informationen wie Laufzeit und Prozessstatus<br>
+<strong>r </strong>→ listet nur die Prozesse auf, die momentan laufen (<em>running</em>), bei single threaded Kernel wird ps r ausgegeben<br>
+<strong>T </strong>→ zeigt alle Prozesse die in der aktuellen Subshell laufen<br>
+<strong>t [&lt;tty&gt;] </strong>→ zeige die Prozesse an, die im Terminal &lt;tty&gt; laufen<br>
+                 → ohne &lt;tty&gt; verhält sich wie <code>T</code><br>
+<strong>x </strong>→ zeigt auch Prozesse ohne Terminal an<br>
+<strong>U &lt;Nutzer&gt; </strong>→ zeige alle Prozesse von &lt;Nutzer&gt;<br>
+</p>
+
+<p>
+Gnu Optionen:<br>
+<strong>-A |-e </strong>→  zeige alle auf der Maschine laufenden Prozesse und Damons<br>
+<strong>-w </strong>→ bei der Ausgabe wird nichts abgeschnitten<br>
+<strong>-C &lt;Name&gt; </strong>→ zeige Informationen zum Prozess mit &lt;Name&gt; anstelle von &lt;PID&gt;<br>
+<strong>--forest </strong>→ die Prozesshierarchie als Baum anzeigen<br>
+</p>
+
+<p>
+<strong>ps axo stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm</strong> → Prozessinformationsausgabe formatieren<br>
+</p>
+
+
+<p>
+<u>Tipp: kill SIGNAL $(ps -A|awk '/&lt;Name&gt;/{print $1}' → alle Prozesse mit &lt;Name&gt; ein &lt;SIGNAL&gt; senden</u><br>
+wie killall<br>
+<a href="./kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a><br>
+</p>
+
+<p>
+<strong>pstree </strong>→ den Prozessbaum anzeigen<br>
+<strong>-a </strong>→ mit Befehlsargumenten anzeigen<br>
+<strong>-A </strong>→ ASCII Zeichen verwenden um den Baum zu zeichnen<br>
+<strong>-c </strong>→ fasse gleiche Prozesse nicht zusammen wie 4*[ProzessXY]<br>
+<strong>-h </strong>→ den aktuell Laufenden Prozess und seine Verwandten hervorheben<br>
+<strong>-l </strong>→ Alles Anzeigen und nicht nach 132 Zeichen beschneiden<br>
+<strong>-n </strong>→ numerische Sortierung nach PID<br>
+<strong>-p </strong>→ mit PID anzeigen<br>
+<strong>-u </strong>→ Besitzerwechsel anzeigen<br>
+</p>
+
+<p>
+<u>Tipp benutzen Sie </u><strong>watch</strong> <strong>(missing link)</strong><u> um  Prozesse permanent zu beobachten.</u><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

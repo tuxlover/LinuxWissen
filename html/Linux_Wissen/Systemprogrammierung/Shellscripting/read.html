@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Here-Dokumente.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Schleifen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>read</h1>
+
+<p>
+Created Mittwoch 27 April 2011<br>
+</p>
+
+<p>
+<strong>read &lt;VAR1&gt; ... &lt;VARN&gt; </strong><br>
+→ liest von der Standardeingabe und weist <strong>VAR1 </strong>bis <strong>VARN </strong>den übergebenen Wert zu<br>
+<strong>-a </strong>→  weist mehrere Werte der Variable als Array zu<br>
+<strong>-e</strong> →  benutzt readline, verhidnert hässliche Ausgaben beim benutzen der &lt;Backspace&gt; &lt;entf&gt; Taste<br>
+<strong>-p </strong> <strong>" Prompt" </strong>→  defineire einen Eingabeprompt<br>
+<strong>-t &lt;Seconds&gt;</strong> →  nach &lt;Seconds&gt; read mit einem exit &gt; 0, falls keine Eingabe erfolgt ist<br>
+<strong>-s</strong> →  den Input nicht auf dem Terminal ausgeben sondern nur den Wert in die Variablen einlesen<br>
+<strong>-n &lt;N&gt;</strong> →  nach N Zeichen wird die Eingabe beendet<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+++<br>
+<em>read -e -n 1 -p "Abbrechen? (y/n)" ANSWER</em><br>
+<em>${ANSWER:="y"}</em><br>
+</p>
+
+
+<p>
+<em>while read -n 1 -p "Abbrechen (y/n)" ANSWER</em><br>
+<div style='padding-left: 30pt'>
+<em>do</em><br>
+</div>
+<em>                case $ANSWER in</em><br>
+<em>                        [yY]*) result=0; break</em><br>
+<em>                        ;;</em><br>
+<em>                        [nN]*) result=1; break</em><br>
+<em>                        ;;</em><br>
+<em>                        [jJ]*) result=0; break</em><br>
+<em>                        ;;</em><br>
+<em>                        *) echo "Bitte antworten Sie mit j(y) oder n"</em><br>
+<em>                esac</em><br>
+<em>        done</em><br>
+++<br>
+→ dem Benutzer eine Frage stelllen<br>
+</p>
+
+<p>
+++<br>
+<em>grep --line-buffered &lt;Muster&gt; &lt;Datei&gt; | while read line</em><br>
+<em>        do</em><br>
+<em>                AKtion mit $line</em><br>
+<em>        done</em><br>
+++<br>
+→ eingehendes Muster in einer Schleife verarbeiten<br>
+</p>
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>		<a href='../../Dateien_verwalten/Dateien_suchen_und_indizieren/grep.html'>Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

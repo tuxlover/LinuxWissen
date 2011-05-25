@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T00:20:02+02:00
+
+====== lilo.conf ======
+Created Sonntag 24 April 2011
+
+++
+//prompt//
+//tineout=50  #Timer für den Bootprozess//
+//default=linux #verweist auf den Identifier label, der das zu startende System indetifiziert, wenn  der timeout//
+//              #abgelaufen ist//
+
+//boot=/dev/hda4 #verweist auf das gerät auf dem das /boot Gerät angehängt ist//
+//install=/boot/boot.b         #Pfad zum 2nd Stage Bootloader//
+
+//iamge=/boot/vmlinuz-2.4.7-10 #Pfad zum Kernel Image//
+//        label=linux          #Identifier für Image//
+//        initrd=/boot/initrd-2.4.7-10.img    #Initial Ram Disk//
+//        read=only                           #read only//
+//        root=/dev/hda9       #Verweis auf das / Verzeichnis//
+//        append=""            #Kernelparamter übergeben//
+++
+

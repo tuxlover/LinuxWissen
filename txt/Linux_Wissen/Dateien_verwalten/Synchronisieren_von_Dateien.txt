@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T01:59:51+02:00
+
+====== Synchronisieren von Dateien ======
+Created Samstag 16 April 2011
+
+**rsync <Quelle> <Ziel> **→ zwischen <Quelle> und <Ziel> synchronisieren
+**-A **→ erhalte ACLS [[Linux Wissen:Dateien verwalten:Zugriffsrechte:ACL]]
+**-r **→ rekursiv 
+**-t **→ erhalte Zeitmodifikations Stempel
+**-p **→ erhalte Rechte [[Linux Wissen:Dateien verwalten:Zugriffsrechte:Berechtigungen verwalten]]
+**-o **→ erhalte Besitzer
+**-g **→ erhalte Gruppe
+**-v **→ verbose
+**--progress **→ zeige den Fortschrittsbalken an
+**--exclude=<PATTERN> **→ Dateien die diesem <PATTERN> matchen werden nicht gesynct
+**--delete **→ falls Datei beim letzten synchronisieren in <Quelle> gelöscht wurde, lösche sie auch in <Ziel>
+**-c **→ berechne keine Prüfsumme beim synchronisieren (sinnvoll bei vermehrt großen Dateien > 1 GB)
+**-l **→ kopiere symbolische Links als Links
+**-s **→ no-space-splitting
+ 
+  

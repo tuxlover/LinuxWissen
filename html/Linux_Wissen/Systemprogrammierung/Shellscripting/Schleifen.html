@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./read.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./select.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Schleifen</h1>
+
+<p>
+Created Dienstag 26 April 2011<br>
+</p>
+
+<h4>for-Schleife</h4>
+<p>
+++<br>
+<em>for i in &lt;Liste&gt;</em><br>
+<em>        do</em><br>
+<em>                &lt;Aktion&gt; $i</em><br>
+<em>        done</em><br>
+++<br>
+</p>
+
+<p>
+<u>Tipp: for-Schleife für eine Liste von Dateien im gleichen Verzeichnis</u><br>
+++<br>
+for f in *<br>
+        do<br>
+                cp $f $f.sav<br>
+        done<br>
+++<br>
+</p>
+
+<p>
+<u>Tipp: Durchlaufen aller Postionsparameter, wie $@</u><br>
+<a href="../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Positions_Parameter.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Positions Parameter">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Positions Parameter</a><br>
+++<br>
+<em>for i ; do something; done </em><br>
+++<br>
+</p>
+
+<h4>for-Schleife mit Angabe eines Wertebereiches (Range)</h4>
+<p>
+++<br>
+<em>for (( i=Startwert ; $i [ &lt; | &gt; | =] Stopwert ; Increment | Decrement ))</em><br>
+<div style='padding-left: 30pt'>
+<em>do</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<em>&lt;Aktion&gt;</em><br>
+</div>
+<div style='padding-left: 30pt'>
+<em>done</em><br>
+</div>
+++<br>
+</p>
+
+<p>
+++<br>
+<em>for (( i=0; $i&lt;10; i=i+1 ))        </em><br>
+<em>        do                              </em><br>
+<em>                &lt;Aktion&gt; $i                     </em><br>
+<em>        done     </em><br>
+++ <br>
+</p>
+
+<h4>while-Schleife</h4>
+<p>
+++<br>
+<em>while &lt;Test&gt;</em><br>
+<em>        do</em><br>
+<em>                AKtion</em><br>
+<em>        done</em><br>
+++<br>
+<ul>
+<li>dabei kann &lt;Test&gt; ein gültiges Testkommando sein, der entweder 0 oder 1 liefert, eine Befehlsfolge die irgendwann den Wert 1 liefert oder eine die Werte <strong>True</strong> oder <strong>False</strong> dirket annhemen.</li>
+</ul>
+</p>
+
+<p>
+<u>Hinweis: Schleifen können Ein- und Ausgabeumleitungen in den Schleifenkopf übergeben bekommen:</u><br>
+<em>Beispiele:</em><br>
+++<br>
+<em>while ping; do : ; done || echo "Sie sind offline"</em><br>
+++<br>
+→ testen ob ein Server noch läuft<br>
+</p>
+
+<p>
+++<br>
+<em>wnhile read LINE</em><br>
+<em>        do</em><br>
+<em>                echo "--$LINE--"</em><br>
+<em>        done &lt; /etc/passwd</em><br>
+++<br>
+→ gibt die Datei /etc/passwd Zeilenweise aus mit -- -- dazwischen<br>
+</p>
+
+<h4>until-Schleife</h4>
+<p>
+<ul>
+<li>Das logische Gegenteil der <strong>while</strong>-Schleife</li>
+</ul>
+</p>
+
+<h4>Dekrement und Inkrement</h4>
+<p>
+<strong>$((j+=1))</strong> <br>
+→  inkrementiert j auf 1<br>
+</p>
+
+<p>
+<strong>$((j-=1))</strong> <br>
+→  dekrementiert j um 1<br>
+</p>
+
+
+<h4>break</h4>
+<p>
+<ul>
+<li>bricht den Schleifendurchlauf ab und führt das Script hinter dem Schlüsselwort <strong>done </strong>fort</li>
+</ul>
+++<br>
+<em>for i in &lt;Liste&gt;</em><br>
+<em>        do</em><br>
+<em>                &lt;Test&gt; $i || break</em><br>
+<em>        done</em><br>
+++<br>
+</p>
+
+<h4>continue</h4>
+<p>
+<ul>
+<li>bricht den Schleifendurchlauf ab und führt das Script nach der nächsten Iteration fort</li>
+</ul>
+++<br>
+<em>for i in &lt;Liste&gt;</em><br>
+<em>        do</em><br>
+<em>                &lt;Test&gt; $i || continue</em><br>
+<em>        done</em><br>
+++<br>
+</p>
+
+<h4>trap</h4>
+<p>
+<strong>trap "&lt;Befehle&gt;" SIGNAL1, SIGNAL2,...</strong><br>
+→  &lt;Befehle&gt; ausführen, falls das Script eines der Signale SIGNAL1, SIGNAL2 geschickt bekommt<br>
+→  die Signale 9 und 15 (SIGKILL, SIGSTOP) können nicht abgefangen werden<br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

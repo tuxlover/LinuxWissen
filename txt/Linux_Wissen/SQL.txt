@@ -1,0 +1,107 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T21:42:12+02:00
+
+====== SQL ======
+Created Donnerstag 28 April 2011
+
+* zur Abfrage und Manipulation relationaler Datenbanken
+* Relationale Datenbanken bestehen aus einer|mehrerer zueinander logisch in Beziehung stehender Tabellen
+* In Spaltenköpfe stehen Feldnamen die ein Attribut besschreiben
+* Zellen enthalten eindeutig verifizierbare Werte
+* Jede Zeile definiert einen Datensatz (Record) bestehend aus meherer zu einander in Beziehung stehenden Feldnamen, sowie deren Werte
+* Tabellen (tables) enthalten dauerhaft gespeicherte Zeilen
+**sqlite3 → **Dateienbasiert, Datenbnaken werden in Daten gelesen und geschrieben 
+**mysql **→ Server/Client basiert
+
+http://dev.mysql.com/doc/sakila/en/sakila.html 
+
+== Workflow Mysql einrichten ==
+**(1) **Installiern von **mysql **und **mysql-client**
+**(2) chkconfig --add mysqld**
+**(3) /etc/init.d/mysql start**
+**(4) /usr/bin/mysql_secure_installation**
+**(5) **Als rootbenutzer der Mysql Datenbank anmelden:
+**mysql -u root -p**
+**(6) **eine erste Datenbank einrichten:
+**CREATE DATABASE <Name> CHARACTER SET <Zeichensatz>;**
+→ erstellt in mysql eine Datenbank <Name> basierend auf den <Zeichensatz> erstellen
+
+**sqlite3 Datenbank.db**
+→ erstellen eine Datenbank in der Datei <Datenbank.db>
+
+== Schema ==
+* Die Struktur der Datenbank inklusive der zulässigen Datenfelder und Datentypen 
+* auch complete logical View
+
+
+== Domain ==
+* der endliche Wertebereich für die zulässigen Datentypen eines Attributes
+
+== Constraints ==
+* Zeiger auf Schlüsselwerte (Primär Schlüssel, Fremdschlüssel)
+* festlegen von Bedingungen die ein Wert erfüllen sollen
+* verhindern das Eingeben nicht zulässiger Daten
+* Festlegen eines Primäschlüssel **(mysql)**
+[[Linux Wissen:SQL:Constraints]]
+
+== Primärschlüssel ==
+→ zur **eindeutigen **Beschreibung einer Entität (Tabelle)
+* darf nicht NULL sein 
+* keine Duplikate in der gleichen Tabelle 
+* Jede Tabelle hat genau einen Primärschlüssel
+* Ein Attribut, dass eine Zeile **endeutig** Identifiziert
+* es ist statisch und kann nicht verändert werden
+* es können Primärschlüssel aus mehreren Tabellenattributen genutzt werden (//zusammengesetzter Primärschlüssel//)
+→ autoinkrementierend wird empfohlen durch AUTOINCREMENT
+
+== Fremdschlüssel ==
+→ beschreibung von Beziehungen über Beziehungen zwischen //Entitäten// (Tabellen)
+* bezeiht sich auf den Primärschlüssel einer anderen Relation
+* verweist auf den Primärschlüssel einer Tabelle oder einer Relation
+* ermöglicht die Vereinigung von Relationen
+* muss nicht eindeutig sein
+→ ein Kunde in einer Datenbank kann mehrere Fremdschlüsselverweise haben, weil er mehrere Produkte gekauft hat
+
+{{../../SQL_Schlüssel.jpg.jpeg}}
+
+
+== Views ==
+* ein gespeicherter Query der aus einem oder mehreren Teiltabellen bestehen kann
+* dynamische virtuelle Tabelle
+
+**CREATE VIEW <Name> AS <Auswahl Anweisungen>**
+→ erstellen eines Views
+[[Linux Wissen:SQL:Views]]
+
+__Hinweis: Beachte, dass Anweisungen immer mit __**;**__abgeschlossen werden.__
+
+===== Schema Anweisungen =====
+[[+Schemaanweisungen]]
+
+===== Datentypen =====
+[[Linux Wissen:SQL:Datentypen]]
+
+===== Intigritätsregeln =====
+* Stellt sicher das ein Datensatz nicht die Konsistenz der Datenbank gefährdet
+* verhindert das Fehlen von Feldern die obligatorisch ausgefüllt sein müssn 
+[[Linux Wissen:SQL:Intigritätsregeln]]
+
+===== Anweisungen =====
+* können dazu genutzt werden, Daten aus einer Datenbank abzufragen
+* können dazu genutzt werden, Daten in einer Datenbank zu ändern und neue Datensätze anzufügen
+* zum Steuern der Datenbank
+* Jede Anweisung besteht aus **CREATE | ALTER | DROP **Befehle die mit **arithmetischen Operatoren, logischen **
+**Operatoren oder Vergleichsoperatoren **verknüpft werden.
+
+**Verknüpfungsoperatoren → **zur Verknüpfung von 
+**Unterabfragen **→ Schachtelung verschiedener SQL Ausdrücke
+**gespeicherte Prozeduren **→ Wiederverwendbare Ausdrücke, die als Metadaten gespeichert werden (Views)
+[[Linux Wissen:SQL:Views]]
+[[Linux Wissen:SQL:Datenanweisungen]]
+ [[Linux Wissen:SQL:Bedingungen]]
+
+===== Abfragen verbinden =====
+* **JOIN **
+* **USING**
+* **INNER JOIN**

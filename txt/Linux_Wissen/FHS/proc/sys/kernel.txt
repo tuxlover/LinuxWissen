@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T03:37:03+02:00
+
+====== kernel ======
+Created Dienstag 19 April 2011
+
+***/proc/sys/kernel/acct **→ Kontrolle zur Prozesserzeugung
+
+***/proc/sys/kernel/ctr-alt-del **→ Was passiert beim Druck auf Strg-Alt-Entf 
+                                                   → einzustellen in ***/etc/inittab**
+[[Linux Wissen:FHS:etc:inittab]]
+
+***/proc/sys/kernel/domainname **→ der NIS **(missing link) **Domainname des Rechners
+
+***/proc/sys/kernel/hostname **→ der Rechnername
+
+***/proc/sys/kernel/modprobe **→ Zugriffspfad zum Programm dass die Moduel nachläd
+
+***/proc/sys/kernel/osrelease **→ Version des Kernels
+
+***/proc/sys/kernel/ostype **→ Linux, bsd
+
+***/proc/sys/kernel/panic **→ letzter schwerwiegender Fehler
+
+***/proc/sys/kernel/version **→ Übersetzungsdatum des Kernels
+
+***/proc/sys/kernel/sysrq **→ ein und ausschalten der Magic Sys-Abf Taste

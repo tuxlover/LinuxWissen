@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T17:17:41+02:00
+
+====== Umask ======
+Created Dienstag 19 April 2011
+
+**umask <Maske> **→ setzen der Umask
+			         → Wird keine <Mask> mitangegeben, wird die Standard Umask verwendet
+**-S **→ Werte symbolisch
+
+*~/.profile →  [[Linux Wissen:Shell:Bash]]
+
+//Bitweise Und Verknüpfung mit den Standardzugriffsrechten://
+//Beispiel://
+//rwxr-xr--		Rechte Symbolisch//
+0//754		Rechte Oktal//
+//7777//		+7777 //im Z_8//
+7023		//Ergebnis//
+//023			Umask//
+
+//072			Umask//
+//7072		Umask und fühende 7//
+//7777		+7777//
+//0705		das x bit abziehen (Dateien werden Grundsätzlich nicht ausführbar angelegt)//
+//0604		Rechte Oktal//
+//rw---r--		Rechte Symbolisch Dateien//
+//rwx---r-x		Rechte Symbolisch für Dateien//
+

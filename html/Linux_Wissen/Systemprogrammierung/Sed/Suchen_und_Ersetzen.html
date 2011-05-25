@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Einzeiler.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='../Shellscripting.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Suchen und Ersetzen</h1>
+
+<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+<p>
+<strong>s </strong><br>
+→ suchen nach Muster im Patternspace und ersetzen des ersten Treffer durch String im Holdspace<br>
+→ paarweise Adressierung<br>
+→ Patternspace<br>
+<em>Beispiele:</em><br>
+<strong>sed 's/&lt;Ausdruck&gt;/(&amp;)' </strong><br>
+→ &amp; ist ein Special Chracter der sich auf den Patternspace bezieht und () oder auch beliebige andere Zeichen <br>
+davor und dahinter anfügt<br>
+</p>
+
+<p>
+<strong>sed 's/&lt;Ausdruck&gt;/&amp;&amp;' </strong><br>
+→ fügt den gefundenen Ausdruck im Patternspace im Holdspace an<br>
+</p>
+
+<p>
+<strong>g </strong><br>
+→ alle (global) Treffer im Patternspace durch den Holdspace ersetzen<br>
+→ paarweise Adressierung<br>
+→ Pattern Space<br>
+<em>Beispiele:</em><br>
+<strong>sed  -e 's/^\&lt;A.*\&gt;/ /g' testfile </strong><br>
+→ entfernt in allen Zeilen die mit einem A Beginnen das erste Wort<br>
+</p>
+
+<p>
+<strong>sed 's/[a-z]*/(&amp;)' Datei</strong><br>
+→ schließt jeden durch den Ausdruck [a-z]* gefundenen Muster in Klammern<br>
+</p>
+
+<p>
+<strong>G</strong><br>
+→ alle (global), anfügen des Holdspace an Patternspace<br>
+→ paarweise Adressierung<br>
+→ Pattern Space <br>
+</p>
+
+<p>
+<strong>h</strong><br>
+→ alle (global), ersetzen des Hold Space durch den Pattern Space<br>
+→ paarweise Adressierung<br>
+→ Hold Space<br>
+</p>
+
+<p>
+<strong>H </strong><br>
+→ alle (global), anfügen des Pattern Space an den Hold Space<br>
+→ paarweise Adressierung<br>
+→ Hold Space <br>
+</p>
+
+<p>
+<strong>x</strong><br>
+→ vertausche Pattern Space und Hold Space<br>
+→ paarweise Adresierung<br>
+→ Pattern Space<br>
+→ Hold Space<br>
+</p>
+
+<h4>Arbeiten mit mehreren Mustern</h4>
+<p>
+<strong>sed </strong>kann sich bis zu 9 Muster merken, die dann anschließend adressiert werden können.<br>
+Dies können durch die Ziffern \N im Holdspace und /N im Output Stream adressiert werden.<br>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
+<strong>sed 's/\(Muser1\) \(Muster2\)/\2 \1/'</strong><br>
+→ vertauscht das erste Vorkommen von Muster1 mit dem von Muster2<br>
+</p>
+
+<p>
+<strong>sed 's/Muster/String/2g'</strong><br>
+→ nur jedes 2-te Vorkommen von Muster durch String ersetzen<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Sed.html'>Linux Wissen:Systemprogrammierung:Sed</a></li>		<a href='../Awk/Funktionen.html'>Linux Wissen:Systemprogrammierung:Awk:Funktionen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

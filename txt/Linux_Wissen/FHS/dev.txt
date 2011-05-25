@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T01:57:28+02:00
+
+====== dev ======
+Created Dienstag 19 April 2011
+
+***/dev/null **→ Der Mülleimer
+***/dev/random **→ generiert zufällige Zahlenfolge
+***/dev/urandom **→ generiert zufällige Zahlenfolge
+***/dev/zero **→ generiert Nullen
+
+***/dev/sdX **→ Scsi Geräde, ATA Platten, Usb Platten und Sticks
+***/dev/disk/by-uuid** → symbolsiche Links deren Namen der UUID seines Ziels entspricht
+***/dev/disk/by-id **→ symbolische Links deren Namen der ID seines Ziels entspricht
+***/dev/disk/by-label **→ symbolsiche Links deren Namen dem Label seines Ziels entspricht
+***/dev/disk/by-patN **→ symbolische Links deren Namen dem Name der Partiton des Ziels entspricht
+
+***/dev/hdX **→ IDE Platten
+***/dev/maper/** → virtuelle Geräte des Gerätemappers für **RAID und LVM ** **(missing link)**
+***/dev/dvd **→ DVD Spieler
+***/dev/sr0 **→ optische Laufwerke
+
+***/dev/stdin **→ Standardeingabe, Kanal 0
+***/dev/stdout** →  Standardausgabe, Kanal 1
+***/dev/stderr** →  Standardfehler, Kanal 2
+

@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T00:56:07+02:00
+
+====== Verzeichnisse und Dateien auflisten ======
+Created Samstag 16 April 2011
+
+**ls **→ listet alle (außer versteckte) Dateien im aktuellen Verzeichnis auf
+**-a **→ alle, auch versteckte Dateien
+**-l **→ detailliert
+			rwxrwxrwx+ N <user> <group> <Dateigröße in Bytes> <letzte Änderung> <Name der Datei>
+
+**-i **→ zeige Informationen zu i-Nodes
+**-s **→ zeige Informationen über die Größe der Dateien
+**-R **→ zeige Rekursiv , **-R1 **zeigt rekursiv eine Zeile pro Eintrag
+**-F **→ zeige Informationen über den Typ an
+
+         * ausführbar 
+	/ Verezeichnis
+	@ link
+	| FIFO
+	= Unix Domain Socket
+ 
+**-p **→ Zeige Verzeichnisse
+**-h **→ Größenangaben in lesbarer Form MB GB usw anstelle von Blöcken angeben
+**-t **→ sortiert nach Erstellungszeit
+**-S **→ sortiert nach Größe
+**-X **→ sortiert nach Dateityp
+**-d <DIR> **→ nur Informationen über das Verzeichnis <DIR> nicht seinen Inhalt
+
+__Hinweis: merke ls -lisah__
+ 
+

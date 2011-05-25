@@ -1,0 +1,69 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T02:00:50+02:00
+
+====== etc ======
+Created Dienstag 19 April 2011
+***/etc/fstab **→ alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften
+[[Linux Wissen:FHS:etc:fstab]]
+
+***/etc/lilo.conf **→ Konfiguratonsdatei für den Bootloader LILO
+[[Linux Wissen:FHS:etc:lilo.conf]]
+
+***/etc/mtab **→ alle momentan eingehängten Dateisysteme
+***/etc/hosts **→ Konfiguration der lokalen DNS Auflösung
+***/etc/inittab **→ Konfigurationsdatei für den Start von Linux 
+
+***/etc/init.d/rc.x **→ Scripte die im Runlevel x ausgeführt werden
+			     → links aus dem Übergeordneten Elternverzeichnis ***/etc/init.d/** 
+[[Linux Wissen:Booten]]
+[[Linux Wissen:FHS:etc:init.d++Script]]
+
+***/etc/ld.so.conf **→ Konfigurationdatei für den dynamischen Linker
+***/etc/ld.so.cache **→ Cache für den dynamischen Linker
+ [[Linux Wissen:Bibliotheken:dynamische Bibliotheken]]
+
+***/etc/issue **→ Begrüßungstext der vor der Anmeldung angezeigt werden
+***/etc/motd **→ Begrüßungstext der nach der Anmeldung angezeigt werden
+
+***/etc/modprobe.conf **→ Liste der zu ladenden Module während des systmstarts
+					 → Konfiguration der zu ladentdeen module
+					 → kann auch aufgeteilt sein in einzelne Dateien **modprobe.d/**
+					→ in **modprobe.d/local.conf **können eigenen Module eingetragen werden
+
+**/etc/modules.conf **→ Liste verwendeter Kernelmoduel (veraltet)
+
+***/etc/nologin **→ Wenn angelegt kann sich niemand ausser root am System anmelden
+                         → wird von **PAM **ausgewertet **(missing link)**           
+
+***/etc**/**passwd **→ Nutzer inklusive Gruppenzugehörigkeit und Shell sind hier festgelegt 
+[[Linux Wissen:FHS:etc:passwd]]
+
+***/etc/shadow **→ enthält verschlüsselte Passwörter und ihre Einstellungen
+
+***/etc/skel/ **→ Dateien die beim Anlegen eines neuen Nutzers in dessen Heimatverzeichnis kopiert werden
+
+***/etc/group **→ Gruppen und zugehröige GID und ihr angehörende Nutzer 
+[[Linux Wissen:FHS:etc:group]]
+
+***/etc/security/limits.conf**
+[[Linux Wissen:FHS:etc:security++limits.conf]]
+
+***/etc/foremost.conf **
+[[Linux Wissen:FHS:etc:foremost.conf]]
+
+***/etc/udev/ **→ Konfigurattion des Udev Daemons
+		**udev.conf **→ globale Konfiguration (logging, loglevel)
+		**rules.d/ **→ Verzeichnis für Udev-Regeln die beim Start des Daemons gelesen werden
+
+***/etc/apt/sources **→ nur bei $Debian$, Liste von Bezugsquellen für das **apt-get** Paketmanagement
+[[Linux Wissen:FHS:etc:apt++soruces.lst]]
+[[Linux Wissen:Paketverwaltung:Debian:apt]]
+
+***/rpm/ **→ Scripte und globale Macors die von der Paketverwaltung **rpm **benötigt werden
+	**macros **→ Konfigurationsdatei für global verfügbare Macros
+
+[[Linux Wissen:Paketverwaltung:Rpm]]
+***/etc/yum/repos.d **→ Konfigurationsdateien für einzelne Yum Repos
+***/etc/yum.conf **→ globale Konfigurationsdateien für yum 
+[[Linux Wissen:Paketverwaltung:Rpm:yum]]

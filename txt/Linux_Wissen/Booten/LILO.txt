@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T23:41:51+02:00
+
+====== LILO ======
+Created Samstag 23 April 2011
+
+__Hinweise:__
+Kann nur in den MBR installiert werden.
+nach eine Änderung der Konfigurationsdatei muss **lilo **aufgerufen werden.
+
+*/etc/lilo.conf 
+[[Linux Wissen:FHS:etc:lilo.conf]]
+
+=== Ferhlemeldungen in LILO ===
+//L       1st Stage wurde geladen und gestartet, wird zusammen mit einer Fehlermeldung in hexadezimal ausgegeben//
+//        kann einen BIOS Fehler Indikator sein//
+//L 00   internal error//
+//L 01   illegal command//
+//L 02   address mark not found//
+//L 03   write-protected disk//
+//L 04   sector not found//
+//L 06   change line active//
+//L 07   invalid initialization//
+//L 08   DMA overrun//
+//L 09   DMA attempt across 64k boundary//
+//L 0C   invalid media//
+//L 10   CRC error//
+//L 11   ECC correction successful//
+//L 20   controller error//
+//L 40   seek failure//
+//L 80   disk timeout//
+//L BB   BIOS error//
+
+//LI      2nd Stage wurde geladen//
+//LIL     2nd Stage wurde gestartet//
+//LIL?    2nd Stage wurde in einen fehlerhaften Adressbereich geladen, kann auf Fehlerhaften Speicher schließen//
+//LIL-    2n Stage wurde mit einem Fehlerhaften File Descriptor geladen//
+//LILO    Keine Fehler, LILO ist normal gestartet//
+
+

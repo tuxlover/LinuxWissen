@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Dateisysteme.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Mounten.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>dd</h1>
+
+<p>
+Created Freitag 22 April 2011<br>
+</p>
+
+<p>
+<strong>dd if=&lt;INPUT&gt; of=&lt;OUTPUT&gt; bs=&lt;Blockgröße&gt; count=&lt;Zähler&gt;</strong><br>
+→ low-level kopieren von Datenblöcken und Dateisysteme<br>
+→ Bytewesises Auslesen von Datenströmen eines Dateisystems<br>
+</p>
+
+<p>
+<strong>dd if=/dev/sdX of=/mnt/Backup/sdX.dump </strong><br>
+→ erstellt eine Abbilddatei von /dev/sdX als Datei unter /mnt/Backup/sdX.dump<br>
+</p>
+
+<p>
+<strong>dd if=/mnt/Backup/sdX,dump of=/dev/sdX </strong><br>
+→ spielt das Image zurück<br>
+</p>
+
+<p>
+<strong>dd if=/dev/sdX of=/dev/sdY conv=notrunc</strong><br>
+→ Spiegeln einer Partition auf eine andere<br>
+→ <strong>conv=notrunc</strong> bewirkt hier dass die Quellpartition /dev/sdX als eine ganze Datei übertragen werden soll<br>
+→ das Quelldateisystem sollte dazu asugehängt oder nur lesbar eingehängt sein <br>
+</p>
+
+<p>
+<strong>dd if=/dev/sda of=/mnt/Backup/mbr_sda.dump bs=512 count=1 </strong><br>
+→ sichert den MBR<br>
+</p>
+
+<p>
+<strong>dd if=/mnt/Backup/mbr_sda.dump if=/dev/sda </strong><br>
+→ stellt den MBR wieder her<br>
+</p>
+
+<p>
+<strong>dd if=/dev/sda of=/mnt/Backup/bootloader.dump bs=446 count=1</strong><br>
+→ sichert den Bootloader<br>
+</p>
+
+<p>
+<strong>dd if=/dev/sr0 of=/home/User/dvd.iso </strong><br>
+→ erstelle ein Iso von der Dvd<br>
+</p>
+
+<p>
+<strong>dd if=/dev/sdX of=/dev/sdY bs=1 count=66 skip=446 seek=446 </strong><br>
+→ Partitionstabelle (nur Partitionen 1 bis 4) auf andere Platte direkt kopieren (sdX -&gt; sdY) <br>
+</p>
+
+<p>
+<strong>dd if=/dev/zero of=/dev/sdX bs=1 count=64 seek=446</strong><br>
+→ Partitionstabelle löschen<br>
+</p>
+
+<p>
+<strong>echo -en "\x55\xaa" | dd of=/dev/sdX bs=1 count=2 seek=510</strong><br>
+→ MBR-Signatur wieder mit 0x55 0xAA beschreiben ( MBR wieder gültig machen) <br>
+</p>
+
+<p>
+<strong>dd if=/dev/zero of=file.leer bs=1M count=1024</strong><br>
+→ erzeugen einer 1 GB großen Datei die mit Nullen gefüllt ist<br>
+</p>
+
+<p>
+<strong>dd if=/dev/zero of=file.sparse count=0 obs=1 seek=1G</strong><br>
+→ erzeugt eine 1GB große Datei, also einer Datei ohne Inhalt<br>
+→ benutzen Sie <strong>stat (missing link) </strong>um den Unterschied anzeigen zu lassen<br>
+</p>
+
+<p>
+<strong>dd if=/dev/urandom of=file.zufall bs=1M count=1024</strong><br>
+→ Eine 1 GB große Datei mit Zufallsbytes erzeugen<br>
+</p>
+
+<p>
+<strong>dd if=/dev/sdX of=/dev/null bs=4k count=1000</strong><br>
+→ testen einer Festplatte /dev/sdX<br>
+</p>
+
+<p>
+<strong>dd if=/dev/sdX bs=8K | ssh &lt;RECHNER&gt; "dd of=/dev/sdY bs=8K"</strong><br>
+→ Festplatte sdX remote auf dem &lt;RECHNER&gt; klonen<br>
+<strong>(missing Link ssh)</strong><br>
+</p>
+
+<p>
+<u>Hinweis: Den Inhalt eines Gerätes hexdezimal anschauen</u><br>
+<strong>dd if=/dev/sdX bs=512 count=1 | hexdump -C | more</strong><br>
+</p>
+
+<p>
+<u>Hinweis: Partitionstabelle in Hex anschauen</u><br>
+<strong>dd if=/dev/hda bs=1 count=66 skip=446 | hexdump -C </strong><br>
+</p>
+
+<p>
+<strong>dd_rescue</strong> → tool das auch aus Fehlerhaften Datenströmen lesen kann<br>
+<a href="../Datenrettung_und_Forensik/dd_rescue.html" title="Linux Wissen:Datenrettung und Forensik:dd rescue">Linux Wissen:Datenrettung und Forensik:dd rescue</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>		<a href='../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a></li>		<a href='../Datenrettung_und_Forensik/dd_rescue.html'>Linux Wissen:Datenrettung und Forensik:dd rescue</a></li>		<a href='../Datenrettung_und_Forensik/foremost.html'>Linux Wissen:Datenrettung und Forensik:foremost</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

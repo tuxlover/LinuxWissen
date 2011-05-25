@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T03:51:30+02:00
+
+====== var ======
+Created Dienstag 19 April 2011
+
+***/var/log/ **→ Logdateien
+		**messages **→ Logdatei des Kernel Ring buffers **dmesg **(**missing link**)
+
+***/var/spool/mail **→ Systemmails
+***/var/spool/mqueue **→ Mails die noch nicht abegschickt wurden **( missing link )**
+
+***/var/spool/cups **→ wartende Druckaufträge **(missing link)**
+
+***/var/spool/cron **→ Cronjobs von Nutzern **(missing link)**
+
+***/var/lib/ **→ temporäre Datenbanken die von anderen Programmen benötigt werden
+		**clamav/ **→ Virendefinition für clamav
+		**zypp/ **→ Informationen die zypper auf dem System zwischenspeichert
+		**locatedb **→ die Datenbank die von updatedb   
+( [[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:locate]] ) angelegt wurden
+		
+		**usbutils/  **→ Informationen die vom Programm **usbutils** benutzt wird
+			**usb.ids **→ Datenbank bekannter USB IDs
+		
+		**dpkg/info **→ MD5-Prüfsummen Datei für das **dpkg **Pakettool
+
+		[[Linux Wissen:Paketverwaltung:Debian:dpkg]]
+		
+		**rpm **→ >Rpm Paketdatenbank für das **rpm **Pakettool
+		[[Linux Wissen:Paketverwaltung:Rpm:rpm]]
+
+**var/run **→ temporäre Dateien die sich zur Laufzeit des Systems ständig ändern und von diesen benötigt werden
+	**dameon.pidfile **→ die PID des Daemons

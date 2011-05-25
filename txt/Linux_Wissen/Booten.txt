@@ -1,0 +1,125 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T23:36:01+02:00
+
+====== Booten ======
+Created Samstag 23 April 2011
+
+===== MBR =====
+Der MBR besteht im wesentlichen aus 512 Bytes
+* 446 Bytes für den Bootloader
+* 4*16 Bytes für die Partitionstabelle
+[[Linux Wissen:Partitionen und Dateisysteme]]
+
+===== Bootloader =====
+Aufgabe des Bootloaders ist es einen Kernel zu finden und in den RAM zu laden, sowie die Verwaltung mehrerer Betriebsysteme.
+* LILO
+[[Linux Wissen:Booten:LILO]]
+* GRUB
+[[Linux Wissen:Booten:GRUB]]
+
+=== Allgemeine Bootoptionen ===
+ro → veranlasst den Kernel die /-Partition nur lesbar einzuhängen
+
+rw → veranlasst den Kernel die /-Partiton mit Schreibberechtigungne einzuhängen
+
+init=<Programm> → startet das Programm anstelle von **/sbin/init**
+init=/bin/sh → startet eine Minimale Shell ohne Jobkontrolle
+[[Linux Wissen:Booten:Init]]
+
+single → starten des Einzelbenutzermodus
+
+maxcpus=N → verwende nur N der voorhandenen Kerne |CPUs
+
+panic=N → Im Falle eines Kernel Panic wird nach N Sekunden ein Neustart erzwungen
+
+noapic, acpi=off, apic=off → Schaltet die APIC oder ACPI Kernelmodule ab
+
+vga=<Videomodus> → festlegen des Videomodus für verwendete Terminals
+
+console=tty,9600 → festlegen einer Konsole auf einen seriellen Port
+
+netdev=<irq>,<io>,<mem_start>,<mem_end>,<name> 
+→ Einstellungen an der Netzwerkkarte erzwingen  
+
+nosmp → Abschalten des Symmetischen Multiprozessing wenn meherere Kerne|CPUs verwendet werden
+
+__Hinweis: Wenn die LInux Quellen installiert sind kann man unter __
+__/usr/src/linux/Documentation/kernel-parameters.txt weitere Informationen erhalten.__
+[[Linux Wissen:FHS:usr]]
+
+__Hinweis: Wegen init=/bin/sh sollte immer ein Grub Passwort vergeben werden.__
+
+=== Rettungsanker ===
+**(1)** Mounten der Platte mit dem Defekten Betriebssystem von Live CD  **mount /dev/sdX /mnt/system**
+
+**(2)** Falls das System zusätzliche Partitionen wie /boot oder /usr beinhalten werden diese nun einghängt
+**      mount /dev/sdX{1,5,6} /mnt/system/{boot,usr,tmp}**
+
+**(3) mount -o bind /dev /mnt/system/dev**
+
+**(4) mount -o bind /sys /mnt/system/sys**
+
+**(5) *mount -o bind /proc /mnt/system/proc**
+[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+
+**(6)** erstellen der /etc/mtab auf dem chroot system
+**    cp /mnt/proc/mounts /mnt/system/etc/mtab**
+
+**(7)** kopieren der resolv.conf falls Netzzugriff benötigt wird
+**    cp /etc/resolv.conf /mnt/system/etc/resolv.conf**
+
+**(8)** Einsetzen des Changeroots und festlegen der verwendeten Shell **chroot /mnt/system /bin/bash**
+
+**(9)** Durchführen der Systemarbeiten
+
+**(10) **Verlassen des chroot und syncen der Platte **sync && exit**
+
+=== System V und der Init Prozess  ===
+* **/sbin/init mit PID 1**
+* **runlevel**
+* über einen //Runlevel// wird der Zustand in dem sich ein System befindet definiert
+	+ reboot, aus
+	+ welche Dienste sind gestartet
+
+[[Linux Wissen:Booten:Init]]
+* Runelvel werden in der */etc/inittab definiert
+[[Linux Wissen:FHS:etc:inittab]]
+
+=== Beim Starten in den Wartungsmodus gelangen ===
+a) Durch Anhängen an die Bootoptionen des Grub|LiLO Startbildschirms
+**-s **→ starten des Runlevels S, single wird das entsprechende Runlevel gestartet
+**-b **→ starten des Runlevels S, ohne die */etc/inittab zu lesen
+
+b) Durch eintragen von 
+**init=/bin/sh **wird eine Rootshell ohne Passwortabfrage gestartet. Dabei wird der init Prozess durch die Shell /bin/sh ersetzt. Eine Verarbeitung der Datei */etc/inittab findet nicht statt
+
+=== Dienste ===
+* bieten eine Funktion an die als Daemon im Hintergrund läuft
+* Serverprozesse
+*/etc/init.d/<Dienst> → Startscript für einen Dienst
+**/etc/init.d/<Dienst> start|stop|status|reload|restart**
+* **start_daemon**
+* **pidofproc**
+* **checkproc**
+* **killproc**
+* **startproc**
+* **startpar**
+[[Linux Wissen:Booten:Dienste]]
+* **chkconfig**
+* **insserv**
+* **service**
+[[Linux Wissen:Booten:Dienste:chkconfig]]
+
+=== Herunterfahren und Neustarten ===
+* **shutdown**
+* **halt**
+* **reboot**
+[[Linux Wissen:Booten:Herunterfahren und Neustarten]]
+
+=== Kernel tauschen ===
+* Möglichkeit ein System ohne Senden des ACPI Signals neu zustarten
+* Auswechseln eines laufenden Kernels ohne GRUB/LILO zu lesen
+* der alte Kernel lässt sich im Falle eines Panic sofort benutzen (fallback)
+* **kexec**
+[[Linux Wissen:Booten:kexec]]

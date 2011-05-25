@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Partitionstypen.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Plattenbelegung_analysieren.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Partitionswerkzeuge</h1>
+
+<p>
+Created Donnerstag 21 April 2011<br>
+</p>
+
+<p>
+<strong>fdisk /dev/sdX </strong>→ ruft den Partitionierer fdisk auf, um /dev/sdX zu partitionieren<br>
+</p>
+
+<h2>Tastenbefehle innerhalb fdisk</h2>
+<p>
+<strong>m </strong>→ zeigt Hilfe und verfügbare Optionen an<br>
+<strong>d </strong>→ löscht eine Partition<br>
+<strong>a </strong>→ setzt das Bootflag für eine Partition<br>
+<strong>p </strong>→ die Partitionstabelle anelegen<br>
+<strong>l </strong>→ auflisten verfügbarer Partitionstypen<br>
+<strong>n </strong>→ neue Partiton anlegen<br>
+<strong>w </strong>→ Partitionstabelle schreiben und Programm verlassen<br>
+<strong>q </strong>→ Programm ohne Speichern der Änderungen verlassen<br>
+</p>
+
+<h5>Workflow zum anlegen einer neuen 2 GB großen logischen ext3 Partition</h5>
+<p>
+<strong>(1) fdisk /dev/sdX</strong><br>
+<strong>(2) </strong>Wähle n  ( →  e für extended, p für primär )<br>
+<strong>(3) </strong>Wähle 1-4 für die Numer der Partition<br>
+<strong>(4) </strong>Wähle Startzylinder (Vorgabe empfohlen)<br>
+<strong>(5) </strong>+2G <br>
+<strong>(6) </strong>Mit w Tabelle auf den Datenträger schreiben und das Programm verlassen<br>
+<strong>(7) mke2fs -j /dev/sdX  ( </strong><a href="./Dateisysteme.html" title="Linux Wissen:Partitionen und Dateisysteme:Dateisysteme">Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a> )<br>
+</p>
+
+<p>
+<strong>sfdisk </strong>→ liest Partitionstypen aus einer Datei<br>
+</p>
+
+<p>
+<strong>sfdisk -V </strong>→ Statusinformationen über Partitionen anzeigen<br>
+</p>
+
+<p>
+<strong>sfdisk -l </strong>→ Auflisten vorhandener Platten, auch nicht eingehängter<br>
+</p>
+
+<p>
+<strong>smartctl /dev/sdX</strong>→ Smart Werte der Festplatte auslesen<br>
+<strong>-H </strong>→ den Gesundheitsstatus der Festplatte überprüfen<br>
+<strong>-i </strong> → Hardwareinformationen der Festplatte anzeigen  <br>
+</p>
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>		<a href='../Datenrettung_und_Forensik/dd_rescue.html'>Linux Wissen:Datenrettung und Forensik:dd rescue</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

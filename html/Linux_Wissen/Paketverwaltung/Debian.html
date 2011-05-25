@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Paketverwaltung.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Debian/apt.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Debian</h1>
+
+<p>
+Created Montag 25 April 2011<br>
+<a href="http://www.debian.org/" title="http://www.debian.org/">http://www.debian.org/</a><br>
+$Debian, Ubuntu, Knoppix, Xandros, Sidux$<br>
+</p>
+
+<h2>Aufbau eines Debian Pakets</h2>
+<p>
+&lt;programm&gt;_&lt;Version&gt;_&lt;Release&gt;-&lt;Arch&gt;.deb<br>
+<em>&lt;programm&gt; → </em>der Name des Programms,Bibliothek,...<br>
+<em>&lt;Version&gt; </em>→ Versionsnummer des &lt;Programm&gt; zugrundeliegenden Quellpakets<br>
+<em>&lt;Release&gt; </em>→ Das wievielte Mal wurde das Paket in dieser Version gebaut<br>
+<em>&lt;Arch&gt; </em>→ Die Architektur auf der dieses Paket installiert werden kann (i386, amd64,all,any)<br>
+</p>
+
+<h2>Entpacken eines Debain Pakets ohne es zu installieren</h2>
+<p>
+<ul>
+<li>Debian Pakete sind als ar gepackt</li>
+</ul>
+<strong>ar -t &lt;Paket.deb&gt; </strong>→ entpackt das Debian Paket und zerlegt es in seine Bestandteile<br>
+<div style='padding-left: 120pt'>
+     → es erfolgt keine Installation<br>
+</div>
+</p>
+
+<p>
+<em>debian-binary </em>→ binäre ausführbare Dateien und Programmbibliotheken<br>
+<a href="../Bibliotheken.html" title="Linux Wissen:Bibliotheken">Linux Wissen:Bibliotheken</a><br>
+</p>
+
+<p>
+<em>control.gz </em>→ Anweisungen, die beschreiben was bei der Installation mit dem Paket geschehen soll<br>
+                → typischerweise beinhaltet es Scripte, die vor und nach dem kopieren der Binärdateien ausgeführt werden<br>
+</p>
+
+<p>
+<em>data.tar.gz → </em>Dateien die nicht binär sind (z.B.Icons,Scripte und Konfigurationsdateien)<br>
+</p>
+
+<h2>Verwalten von Software</h2>
+<p>
+<ul>
+<li><strong>dpkg</strong></li>
+<li><strong>debsums</strong></li>
+</ul>
+<a href="./Debian/dpkg.html" title="Linux Wissen:Paketverwaltung:Debian:dpkg">Linux Wissen:Paketverwaltung:Debian:dpkg</a><br>
+<ul>
+<li><strong>aptitude</strong></li>
+<li><strong>apt-get</strong> </li>
+</ul>
+<a href="./Debian/apt.html" title="Linux Wissen:Paketverwaltung:Debian:apt">Linux Wissen:Paketverwaltung:Debian:apt</a><br>
+<ul>
+<li>Die Liste von Bezugsquelle von Debianquellen kann unter */etc/apt/sources.lst konfiguriert werden</li>
+</ul>
+<a href="../FHS/etc/apt%2B%2Bsoruces.lst.html" title="Linux Wissen:FHS:etc:apt++soruces.lst">Linux Wissen:FHS:etc:apt++soruces.lst</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Paketverwaltung.html'>Linux Wissen:Paketverwaltung</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

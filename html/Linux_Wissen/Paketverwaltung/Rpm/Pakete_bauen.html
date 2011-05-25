@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../Rpm.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./rpm.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Pakete bauen</h1>
+
+<p>
+Created Montag 25 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Vorteile einer Paketverwaltung lassen sich nur bei konsequenter Nutzung nutzen.</li>
+<li>einfachere Erkennung von Einbrüchen.</li>
+<li>Insallierte Dateien können dank der Paketdatenbank besser verwaltet werden.</li>
+<li>Alte Konfigurationsdateien bleiben bei der Deinistallation ohne Angabe sie zu löschen erhalten.</li>
+</ul>
+</p>
+
+<p>
+*/usr/src/packages/SOURCES <br>
+→ Sourcecode, Patches und andere Dateien die als Rpm erstellt werden sollen<br>
+</p>
+
+<p>
+*/usr/src/packages/SPECS <br>
+→ Specfiles, erhalten die Bauanleitung für Rpms<br>
+</p>
+
+<p>
+*/usr/src/packages/RPMS <br>
+→ fertig erstellte Rpms werden hier erstellt<br>
+</p>
+
+<p>
+*/usr/src/packages/BUILD<br>
+→ auspacken und übersetzen der Quellen<br>
+</p>
+
+<p>
+*/usr/src/packages/BUILDROOT<br>
+→ hier werden Programme und Dateien testweise installiert<br>
+<a href="../../FHS/usr.html" title="Linux Wissen:FHS:usr">Linux Wissen:FHS:usr</a><br>
+</p>
+
+<p>
+<strong>rpmbuild  </strong>→ Tool zum erstellen eines Rpm Paketes<br>
+<strong> -bb &lt;Spec&gt; </strong>→ nur das Binärpaket erzeugen<br>
+<strong>-ba &lt;Spec&gt; </strong>→ das Binärpaket und ein src.rpm erzeugen<br>
+<strong>-bs </strong>→ nur das <br>
+<div style='padding-left: 30pt'>
+<strong>--clean </strong>→ entfernen des Build Baumes nach dem das Paket erstellt wurden ist<br>
+</div>
+<strong>-ta </strong>&lt;<strong>tar.gz&gt; </strong>→ erzeugen des src.rpms und binären Rpms aus einem Tarball Archiv<br>
+<strong>--rebuild &lt;Paket.src.rpm&gt; </strong>→  ein Rpm aus einem bestehenden src.rpm erstellen<br>
+</p>
+
+<p>
+<strong>rpmlint &lt;Paket.rpm&gt; </strong>→ Toll zum überprüfen eines gebauten Paketes<br>
+→ dabei werden Convention Verletzungen angezeigt<br>
+</p>
+
+<h5>Workflow ein Paket bauen:</h5>
+<p>
+<strong>(1) </strong>Specfile erstellen<br>
+<a href="../../FHS/usr/src%2B%2Bpackages%2B%2BSPECS%2B%2Bbeispiel.spec.html" title="Linux Wissen:FHS:usr:src++packages++SPECS++beispiel.spec">Linux Wissen:FHS:usr:src++packages++SPECS++beispiel.spec</a><br>
+</p>
+
+<p>
+<strong>(2) </strong>Quellen anpassen. <br>
+Möglicherweise müssen Patches erstellt werden oder weitere Dateien erstellt werden, wie zum Beispiel .deskop Dateien.<br>
+</p>
+
+<p>
+<strong>(3) rpmbuild -ba /usr/src/packages/SPECS/specfile </strong>ausführen.<br>
+</p>
+
+<p>
+<strong>(4) </strong>Signieren des Paketes<br>
+(4.1) <strong>gpg --gen-key</strong> erstllen eines Privaten Schlüssels <strong>(missing link)</strong><br>
+(4.2) anpassen der Datei */etc/rpm/macros:<br>
+<div style='padding-left: 30pt'>
+++<br>
+       <em> %_signature gpg</em><br>
+<em>        %_gpg_path &lt;Pfad zum .gpg Verzeichnis&gt;</em><br>
+//        %_gpg_name &lt;name und beschreibung mit <strong>gpg --list-keys</strong> erfragbar&gt;//<br>
+<em>        %_gpgbin &lt;Pfad zur Ausführbaren Datei&gt; zum Beispiel /usr/bin/gpg</em><br>
+++<br>
+</div>
+(4.3) signieren des Paketes mit <strong>rpmsign --addsign --macros=/etc/rpm/macros &lt;Paket&gt;.rpm</strong><br>
+(4.4) Importieren und exportieren der Signatur:<br>
+<strong>gpg -a --export &gt; &lt;file&gt;</strong><br>
+<strong>rpmsign --import &lt;file&gt;</strong><br>
+</p>
+
+<p>
+<a href="../../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting">Linux Wissen:Systemprogrammierung:Shellscripting</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Paketverwaltung.html'>Linux Wissen:Paketverwaltung</a></li>		<a href='../Rpm.html'>Linux Wissen:Paketverwaltung:Rpm</a></li>		<a href='../../FHS/usr.html'>Linux Wissen:FHS:usr</a></li>		<a href='./rpm.html'>Linux Wissen:Paketverwaltung:Rpm:rpm</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

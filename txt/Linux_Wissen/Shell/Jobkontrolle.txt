@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T17:21:32+02:00
+
+====== Jobkontrolle ======
+Created Freitag 15 April 2011
+
+Programme die auf der CPU Zeitscheibe Laufzeit erhalten nennt man Prozesse
+ 
+* Prozesse können im Vordergrund oder Hintergrund einer Shell laufen
+* Prozesse können Prioriäten zugewiesen bekommen
+* Prozesse können Signale geschickt bekommen die das Verhalten eines Prozess verändert 
+[[Linux Wissen:Shell:Bash:Emacs Modus]]
+
+**<Befehl> & **→ startet den Befehl im Hintergrund
+
+**<Strg+z> **→ sendet Signal 20 SIGTSTP an Prozess
+                   → stoppt den Prozess um ihm **bg **oder **fg **schicken zu können
+
+**jobs **→ zeigt alle Jobs mit Jobnummmer und PID
+**-n **→ listet nur die PID
+**-l **→ listet PID und Jobnummmer
+
+**kill %n **→ sendet SIGTERM (Signal 15) an den Jobnummer n
+[[Linux Wissen:Prozessverwaltung:kill]]
+
+**bg %n **→ stellt den Job mit der Nummer n in den Hintergrund
+
+**fg %n **→ stellt den Job mit der Nummer n in den Vordergrund
+
+__Hinweis: Es kann immer nur ein Prozess im Vordergrund und mehrere Prozesse im Hintergrund laufen__
+

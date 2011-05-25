@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./init/System_V_und_der_Init_Prozess.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Paketverwaltung.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Logging und Fehleranalyse</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+<strong>(unfertige Seite)</strong><br>
+<u>Fehler beim Booten analysieren</u><br>
+<strong>dmesg &lt;Optionen&gt;</strong> --&gt; Kernel logging Informationen<br>
+-c --&gt; den Rinbuffer leeren<br>
+</p>
+
+<p>
+<strong>dmesg|less</strong> --&gt; analysieren der kompletten Systemnachrichten auch die im frühen Bootstadium<br>
+</p>
+
+<p>
+Tricks:<br>
+<strong>dmesg|grep fail</strong> --&gt; sucht nach Problemen<br>
+<strong>dmesg|grep "\&lt;E\:.*\&gt;"</strong> --&gt; nach E: was ein Indikator für Fehler sein kann<br>
+</p>
+
+<p>
+_<u>Logfiles interaktiv lesen</u><br>
+<strong>tail -f &lt;Logfile&gt;</strong> --&gt; zeigt die letzten 10 Zeilen von logfile und alle neu hinzukommenden<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

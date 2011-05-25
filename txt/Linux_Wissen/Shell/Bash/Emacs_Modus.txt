@@ -1,0 +1,73 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T15:39:13+02:00
+
+====== Emacs Modus ======
+Created Freitag 15 April 2011
+
+=== Strg+c ===
+→ Befehl abbrechen, Signal STOP Senden ( [[Shell:Jobkontrolle]] )
+
+=== Strg+d ===
+→ den Eingabestrom beenden 
+
+----
+
+=== Strg+z ===
+→ Befehl unterbrechen, anhalten aber nicht beenden
+                → danach kann mittels **fg **und **bg ** der Befehl in der Vorder- | Hintergrund gestellt werden
+[[Shell:Jobkontrolle]]
+----
+----
+
+=== Strg+r ===
+→ Liste der zuletzt aufgerufenen Befehle inkrementell durchsuchen 
+                   mehrmaliger Aufrug der Tastenkombination durchsucht die history 
+                   nach allen passenden Suchmustern
+
+=== Strg+s ===
+→  siehe Strg+r nur vorwärts
+
+=== Strg+g ===
+→ durchsuchen der Shellhistory beenden 
+----
+[[Linux Wissen:Shell:Bash:History]]
+
+=== Strg+w ===
+→ lösche ein Wort von rechts nach links (<<)
+
+=== Strg+d ===
+→ lösche ein Zeichen von links nach recht (>)
+
+=== Strg+u ===
+→ lösche alles von rechts nach links (<<<...)
+
+=== Strg+k ===
+→ lösche alles von links nach rechts (...>>>)
+
+=== Strg+t ===
+ → die beiden Zeichen vor dem Cursor tauschen
+
+=== Alt+t ===
+ → die Wörter vor dem Cursor tauschen
+
+=== Alt+u ===
+→ ein ganzes Wort in Großbuchstaben konvertieren
+
+=== Alt+l ===
+ → ein ganzes Wort in Kleinbuchstaben konvertieren
+
+=== Alt+c ===
+ → ein einzelnes Zeichen in Groß|Kleinbuchstaben kovertieren, je nachdem ob es vorher Groß  oder Klein war
+
+=== Strg+a ===
+→ zum Anfang des Textes springen
+
+=== Strg+e ===
+→ zum ende des Textes springen
+
+=== Alt+f ===
+→ ein Wort vorwärts bewegen
+
+=== Alt+b ===
+→ ein Wort rückwärst bewegen

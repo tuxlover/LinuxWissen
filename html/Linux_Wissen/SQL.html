@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Sicherheit/sudo.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./SQL/Bedingungen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>SQL</h1>
+
+<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>zur Abfrage und Manipulation relationaler Datenbanken</li>
+<li>Relationale Datenbanken bestehen aus einer|mehrerer zueinander logisch in Beziehung stehender Tabellen</li>
+<li>In Spaltenköpfe stehen Feldnamen die ein Attribut besschreiben</li>
+<li>Zellen enthalten eindeutig verifizierbare Werte</li>
+<li>Jede Zeile definiert einen Datensatz (Record) bestehend aus meherer zu einander in Beziehung stehenden Feldnamen, sowie deren Werte</li>
+<li>Tabellen (tables) enthalten dauerhaft gespeicherte Zeilen</li>
+</ul>
+<strong>sqlite3 → </strong>Dateienbasiert, Datenbnaken werden in Daten gelesen und geschrieben <br>
+<strong>mysql </strong>→ Server/Client basiert<br>
+</p>
+
+<p>
+<a href="http://dev.mysql.com/doc/sakila/en/sakila.html" title="http://dev.mysql.com/doc/sakila/en/sakila.html">http://dev.mysql.com/doc/sakila/en/sakila.html</a> <br>
+</p>
+
+<h5>Workflow Mysql einrichten</h5>
+<p>
+<strong>(1) </strong>Installiern von <strong>mysql </strong>und <strong>mysql-client</strong><br>
+<strong>(2) chkconfig --add mysqld</strong><br>
+<strong>(3) /etc/init.d/mysql start</strong><br>
+<strong>(4) /usr/bin/mysql_secure_installation</strong><br>
+<strong>(5) </strong>Als rootbenutzer der Mysql Datenbank anmelden:<br>
+<strong>mysql -u root -p</strong><br>
+<strong>(6) </strong>eine erste Datenbank einrichten:<br>
+<strong>CREATE DATABASE &lt;Name&gt; CHARACTER SET &lt;Zeichensatz&gt;;</strong><br>
+→ erstellt in mysql eine Datenbank &lt;Name&gt; basierend auf den &lt;Zeichensatz&gt; erstellen<br>
+</p>
+
+<p>
+<strong>sqlite3 Datenbank.db</strong><br>
+→ erstellen eine Datenbank in der Datei &lt;Datenbank.db&gt;<br>
+</p>
+
+<h5>Schema</h5>
+<p>
+<ul>
+<li>Die Struktur der Datenbank inklusive der zulässigen Datenfelder und Datentypen </li>
+<li>auch complete logical View</li>
+</ul>
+</p>
+
+
+<h5>Domain</h5>
+<p>
+<ul>
+<li>der endliche Wertebereich für die zulässigen Datentypen eines Attributes</li>
+</ul>
+</p>
+
+<h5>Constraints</h5>
+<p>
+<ul>
+<li>Zeiger auf Schlüsselwerte (Primär Schlüssel, Fremdschlüssel)</li>
+<li>festlegen von Bedingungen die ein Wert erfüllen sollen</li>
+<li>verhindern das Eingeben nicht zulässiger Daten</li>
+<li>Festlegen eines Primäschlüssel <strong>(mysql)</strong></li>
+</ul>
+<a href="./SQL/Constraints.html" title="Linux Wissen:SQL:Constraints">Linux Wissen:SQL:Constraints</a><br>
+</p>
+
+<h5>Primärschlüssel</h5>
+<p>
+→ zur <strong>eindeutigen </strong>Beschreibung einer Entität (Tabelle)<br>
+<ul>
+<li>darf nicht NULL sein </li>
+<li>keine Duplikate in der gleichen Tabelle </li>
+<li>Jede Tabelle hat genau einen Primärschlüssel</li>
+<li>Ein Attribut, dass eine Zeile <strong>endeutig</strong> Identifiziert</li>
+<li>es ist statisch und kann nicht verändert werden</li>
+<li>es können Primärschlüssel aus mehreren Tabellenattributen genutzt werden (<em>zusammengesetzter Primärschlüssel</em>)</li>
+</ul>
+→ autoinkrementierend wird empfohlen durch AUTOINCREMENT<br>
+</p>
+
+<h5>Fremdschlüssel</h5>
+<p>
+→ beschreibung von Beziehungen über Beziehungen zwischen <em>Entitäten</em> (Tabellen)<br>
+<ul>
+<li>bezeiht sich auf den Primärschlüssel einer anderen Relation</li>
+<li>verweist auf den Primärschlüssel einer Tabelle oder einer Relation</li>
+<li>ermöglicht die Vereinigung von Relationen</li>
+<li>muss nicht eindeutig sein</li>
+</ul>
+→ ein Kunde in einer Datenbank kann mehrere Fremdschlüsselverweise haben, weil er mehrere Produkte gekauft hat<br>
+</p>
+
+<p>
+<img src="../SQL_Schl%C3%BCssel.jpg.jpeg" alt=""><br>
+</p>
+
+
+<h5>Views</h5>
+<p>
+<ul>
+<li>ein gespeicherter Query der aus einem oder mehreren Teiltabellen bestehen kann</li>
+<li>dynamische virtuelle Tabelle</li>
+</ul>
+</p>
+
+<p>
+<strong>CREATE VIEW &lt;Name&gt; AS &lt;Auswahl Anweisungen&gt;</strong><br>
+→ erstellen eines Views<br>
+<a href="./SQL/Views.html" title="Linux Wissen:SQL:Views">Linux Wissen:SQL:Views</a><br>
+</p>
+
+<p>
+<u>Hinweis: Beachte, dass Anweisungen immer mit </u><strong>;</strong><u>abgeschlossen werden.</u><br>
+</p>
+
+<h2>Schema Anweisungen</h2>
+<p>
+<a href="./SQL/Schemaanweisungen.html" title="+Schemaanweisungen">+Schemaanweisungen</a><br>
+</p>
+
+<h2>Datentypen</h2>
+<p>
+<a href="./SQL/Datentypen.html" title="Linux Wissen:SQL:Datentypen">Linux Wissen:SQL:Datentypen</a><br>
+</p>
+
+<h2>Intigritätsregeln</h2>
+<p>
+<ul>
+<li>Stellt sicher das ein Datensatz nicht die Konsistenz der Datenbank gefährdet</li>
+<li>verhindert das Fehlen von Feldern die obligatorisch ausgefüllt sein müssn </li>
+</ul>
+<a href="./SQL/Intigrit%C3%A4tsregeln.html" title="Linux Wissen:SQL:Intigritätsregeln">Linux Wissen:SQL:Intigritätsregeln</a><br>
+</p>
+
+<h2>Anweisungen</h2>
+<p>
+<ul>
+<li>können dazu genutzt werden, Daten aus einer Datenbank abzufragen</li>
+<li>können dazu genutzt werden, Daten in einer Datenbank zu ändern und neue Datensätze anzufügen</li>
+<li>zum Steuern der Datenbank</li>
+<li>Jede Anweisung besteht aus <strong>CREATE | ALTER | DROP </strong>Befehle die mit <strong>arithmetischen Operatoren, logischen </strong></li>
+</ul>
+<strong>Operatoren oder Vergleichsoperatoren </strong>verknüpft werden.<br>
+</p>
+
+<p>
+<strong>Verknüpfungsoperatoren → </strong>zur Verknüpfung von <br>
+<strong>Unterabfragen </strong>→ Schachtelung verschiedener SQL Ausdrücke<br>
+<strong>gespeicherte Prozeduren </strong>→ Wiederverwendbare Ausdrücke, die als Metadaten gespeichert werden (Views)<br>
+<a href="./SQL/Views.html" title="Linux Wissen:SQL:Views">Linux Wissen:SQL:Views</a><br>
+<a href="./SQL/Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen">Linux Wissen:SQL:Datenanweisungen</a><br>
+ <a href="./SQL/Bedingungen.html" title="Linux Wissen:SQL:Bedingungen">Linux Wissen:SQL:Bedingungen</a><br>
+</p>
+
+<h2>Abfragen verbinden</h2>
+<p>
+<ul>
+<li><strong>JOIN </strong></li>
+<li><strong>USING</strong></li>
+<li><strong>INNER JOIN</strong></li>
+</ul>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

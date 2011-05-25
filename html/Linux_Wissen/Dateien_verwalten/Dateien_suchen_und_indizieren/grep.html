@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./find.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./grep/Regul%C3%A4re_Ausdr%C3%BCcke.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>grep</h1>
+
+<p>
+Created Montag 18 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>zum finden von Inhalten in ASCII Dateien mittels regulärer Ausdrücke</li>
+</ul>
+<a href="./grep/Regul%C3%A4re_Ausdr%C3%BCcke.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke</a><br>
+</p>
+
+<p>
+<strong>grep '&lt;Muster&gt;' &lt;Datei&gt; </strong>→ durchsucht &lt;Datei&gt; zeilenweise nach &lt;Muster&gt;<br>
+                                                → wobei &lt;Muster ein regulärer Ausdruck ist <br>
+<strong>--color </strong>→ farbliche Hervorhenung der gefundenen Suchmuster<br>
+<strong>-c </strong>→ nur die Anzahl der auf das Suchmuster passenden Dateien ausgeben<br>
+<strong>-i </strong>→ ignoriere Groß- und Kleinschreibung<br>
+<strong>-n </strong>→ in welcher Zeile wurde der Ausdruck gefunden<br>
+<strong>-B </strong>→ numerische <br>
+<strong>-r </strong>→ rekursiv mehere Dateien innherhalb eines Verzeichnisses nach Muster durchsuchen<br>
+<strong>-v </strong>→ nur Zeilen die das Muster nicht enthlaten (Komplementrämenge v)<br>
+<strong>-e </strong>→ meherer Muster mit oder Verknüpfen<br>
+<strong>-F </strong>→ Muster wird als String interpretiert<br>
+<strong>-f &lt;conf&gt; </strong>→ reguläre Ausdrücke aus der Datei &lt;conf&gt; lesen<br>
+<strong>--line-buffered </strong>→ Zeilenweise ausgabe, nützlich für <strong>read</strong><br>
+<a href="../../Systemprogrammierung/Shellscripting/read.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:read">Linux Wissen:Systemprogrammierung:Shellscripting:read</a><br>
+<strong>-E </strong>→ extended reguläre Ausdrücke verwenden<br>
+</p>
+
+<p>
+<strong>fgrep &lt;String&gt; &lt;Datei&gt; </strong>→ dasselbe wie <strong>grep -F</strong> <br>
+                                              → eine Liste von Strings in Dateien finden<br>
+                                              → keine regulären Ausdrücke verwenden<br>
+</p>
+
+<p>
+<strong>egrep </strong>→ wie <strong>grep -E </strong><br>
+</p>
+
+<h2>Und und Oder</h2>
+<p>
+grep -il wort1 &lt;datei&gt; | xargs grep -il wort2 → Suchmuster enthält wort1 und wort2<br>
+grep -E "(wort1|wort2)" | egrep "(wort1|wort2)" --&gt; Suchmuster enthält wort1 oder wort2<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+findet alle Nutzer der UID 4 Stellig ist<br>
+<strong>grep -E '^.*:x:\[\[:digit:\]\]{4}:' /etc/passwd</strong><br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a></li>		<a href='../../Systemprogrammierung/Sed/Einzeiler.html'>Linux Wissen:Systemprogrammierung:Sed:Einzeiler</a></li>		<a href='../../Systemprogrammierung/Awk/Einzeiler.html'>Linux Wissen:Systemprogrammierung:Awk:Einzeiler</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

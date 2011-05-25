@@ -1,0 +1,107 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T18:04:17+02:00
+
+====== Man Pages ======
+Created Freitag 15 April 2011
+
+* werden meist mit dem dazugehörigen Programm installiert
+* sind im groff Format geschrieben
+* sind in Themengebiete (Sektionen unterteilt)
+
+**man <n> <Befehl>** → ruft die n-te Handbuchseite zum <Befehl> auf
+                                     → wird n nicht mit angegben wird die erste aufgerufen die gefunden wird
+
+**man -a <Befehl> **→ zeigt alle Handbuchseiten von Befehl nacheinander an
+**man -l <Mandatei> **→  <Mandatei> lesen die nicht der Datenbank steht
+**man -H<Browser> <Befehl> **→ die Manpage von <Befehl> im angegebenen <Browser> lesen
+
+__Hinweis: __** ./configure --prefix=~/test && make && make install **durchführen um anschließend erst einmal 
+               die manpage mittels -l zu lesen.
+
+**groff **→ Programm das zum Betrachten von Manpages verwendet werden kann
+
+===== MANPATH =====
+MANPATH → Umgebungsvariable ( [[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]] ) die Pfade durch :
+                     getrennt zu den Manpages angeben
+
+**manpath **→ Programm zum Konfigurieren falls MANPATH nicht gesetzt ist
+
+===== Aufbau einer Man Page =====
+NAME (Kommandoname mit knapper Kurzbeschreibung)
+SYNOPSIS (Beschreibung der Befehlssyntax)
+DESCRIPTION (Ausführliche Beschreibung der Kommandowirkung)
+OPTIONS (Auflistung und Beschreibung der zur Verfügung gestellten Optionen)
+ARGUMENTS (Die möglichen Argumente)
+FILES (benötigte und bearbeitete Dateien damit das Programm korrekt funktionieren kann)
+EXAMPLES (Beispiele zur Anwendung)
+SEE ALSO (Querverweise auf verwandte Themen)
+DIAGNOSTICS (Fehlermeldung und Interpretationen des Befehls)
+COPYRIGHT (Autoren des Programms)
+BUGS (Fehler die aus dem Ansatz der Implementation des Programms folgen)
+
+**fetter Text**		l''iterale Angaben wie in der Anzeige''
+//kursiver Text			//ersetzen durch passendes Argument
+[-abc]				Ein oder mehrere Argumente innerhal der [ ] sind optional
+-a|-b   				Optionen die durch | abgegrenzt sind, können nicht zusammen benutzt werden
+Argument... 			Argument kann wiederholt auftreten
+[Ausdruck]			gesamter Ausdruck innerhalb der [ ] kann wiederholt angegeben werden
+
+===== Themengebiete der Man Pages =====
+* Jede Man Page ist in Themenabschnitte 1 bis 9 und n unterteilt
+* Zur jeder Man Page kann es eine Seite in den entsprechenden Themengebieten geben
+
+1 Benutzerkommandos die jeder Benutzer ausführen darf
+
+2 Systemcalls die an der Kernel geschickt werden können
+
+3 Funktionen der Programmiersprache C
+
+4 Gerätedateien und Treiber
+
+5 Konfigurationsdateien und Dateiformate
+
+6 Spiele
+
+7 Makros und Konventionen (ASCII Tabelle)
+
+8 Programme die nur von root benutzt werden sollen
+
+9 Funktionen des Kernels
+
+n neue Befehle
+
+===== Navigieren in Man Pages =====
+* **less ** wird als Pager für man Standardmäßig verwendet
+    [[Linux Wissen:Dateien verwalten:Dateien betrachten]]
+
+Rückwärts suchen: /
+Vorwärts suchen: ?
+
+=== Space ===
+→ Seite vorblättern
+
+=== Alt+v ===
+→ eine Seite zurückblättern
+
+=== gg ===
+→ zum Anfang der Manpage springen
+
+=== g<N> ===
+→ zur Zeile N in der Manpage springen
+
+=== GG ===
+→ zum Ende des Textes springen
+
+=== q ===
+→ verlassen der Man Page
+
+=== h ===
+→ kurze Hilfe zu less
+
+===== Man Pages nach Namen durchsuchen =====
+**whatis <Stichwort>**
+
+===== Man Pages nach DESCRIPTION durchsuchen =====
+**apropos <Stichwort>**
+**man -k <Stichwort>**

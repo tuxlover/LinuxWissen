@@ -1,0 +1,110 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T17:15:18+02:00
+
+====== Anweisungen ======
+Created Donnerstag 28 April 2011
+
+**print** 
+→  Ausgeben eines Elements
+//Beispiel://
+**awk '{print item1 item2 ...}' <Datei>**
+
+**printf** 
+→  Ausgeben und Formatieren der Ausgabe
+→  OFS ORS Variablen haben keine Auswirkung auf printf
+→  einzelne printf Argumente müssen duch , getrennt werden
+//Beispiel://
+**awk '{printf Formatierungi, item1, item2, ...}' Datei**
+
+	**%c** →  item wird als ASCII Verweis behandelt
+	//Beispiel://
+	**awk '{printf "%c", 65}'**
+
+	**%i **→  Ausgabe eines Integers
+
+	**%N$** →  Ausgabe von Print N mal
+
+	**%-** →  linksbüdnig ausrichtigen
+
+	**"%Ms"** →  die minimale Weite M eines Feldes festlegen und entsprechend einrücken
+	//Beispiel://
+	**awk {printf "%4s, foobar}**
+
+__Hinweis: Formatierunsoptionen lassen sich miteinander kombinieren.__
+
+**getline [<VAR>  < <Datei>]**
+→ liest den nächsten Record der aktuellen Eingabedatei in die variable **$0**
+→ wird **<VAR> **angegeben wird der Record in in die Variable <VAR> eingelesen
+
+** gsub(r,s,[t]) **  
+→ globales Ersetzen des Regilären Ausdrucks **r** durch einen String **s**, für einen Datenstrom** t**
+ → gebe die Anzahl der Ersetzungen aus
+→ wird **t **nicht mit angegeben , wird **$0 **verwendet
+[[Linux Wissen:Systemprogrammierung:Awk:Variablen]]
+
+** gensub(r,s,h,[t]) **
+→ ersetze den Regulären Ausdruck **r **durch String **s** an Anzahl des Matches **h **für einen Datenstrom **t ** 
+→ gebe die Anzahl der gefundenen Muster aus
+→ wird **t** nicht verwendet, wird $0 verwendet
+
+** index(s,t)**     
+→ gebe den Wert des Strings **t** in String **s **zurück
+→ gebe 0 zurück, falls kein solches String gefunden wurde
+//Beispiel://
+++
+//str = "Hallo, Welt! Welt, quo vadis?"//
+//n = index(str, "Welt") //
+//print n//
+++
+
+**length(s)**
+→ gebe die Länge des Strings s aus
+
+**match(string, regexp [, array])**
+→ match bietet ähnliche Funktionalität wie index, allerdings kann hier mittels regulärem Ausdruck gesucht werden.
+
+**split(string, array [, fieldsep])**
+→ Zerteile einen String und speichere die einzelnen Felder im Array array. 
+→ Feldtrennzeichen sind standardmäßig Leerzeichen oder Tabulatoren. 
+→  kann aber mittels fieldsep geändert werden.
+
+**sprintf(format, expr1 [, expr2, ...])**
+→ Liefert einen formatierten String. 
+→ Der Parameter format entspricht dem der Funktion **printf**
+
+**substr(s, t [, l])**
+→ Liefert einen Teilstring aus //string// ab der Position //start// (mit der maximalen Länge //length//).
+
+**tolower(string)**
+→ Wandelt den String //string// in lauter Kleinbuchstaben um und gibt diesen String zurück.
+
+**toupper(string)**
+→ Wandelt den String //string// in lauter Großbuchstaben um und gibt diesen String zurück.
+
+=== Bedingte Anweisungen ===
+* zur Laufzeit einen Wert prüfen. Ist der Wert vorhanden soll eine Anweisung asugeführt werden
+++
+//if(Bedingung) {//
+//   Anweisungen1//
+//} else {//
+//   Anweisungen2//
+//}//
+++
+
+=== Logische Operatoren ===
+** AND(&&), OR(||), NOT(!)**
+
+=== Vergleichsoperatoren ===
+**x <y **→  	  	Kleiner
+**x <= y** → 	Kleiner oder gleich
+**x >y ** → 		Größer
+**x >= y **→ 	Größer oder gleich
+**x == y** → 	genau gleich
+**x != y **→ 		ungleich
+**x ~y **→ 		x entspricht der Regex y
+**x !~ y** → 		x entspricht nícht der Regex y
+
+[[Linux Wissen:Systemprogrammierung:Awk:Schleifen]]
+[[Linux Wissen:Systemprogrammierung:Awk:Variablen]]
+[[Linux Wissen:Systemprogrammierung:Awk:Funktionen]]

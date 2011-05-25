@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Datenanweisungen.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Intigrit%C3%A4tsregeln.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Datentypen</h1>
+
+<p>
+Created Freitag 29 April 2011<br>
+</p>
+
+<h4>Zeichenbasiert</h4>
+<p>
+<ul>
+<li>bestehen aus Strings fester oder variabler Größe</li>
+</ul>
+</p>
+
+<p>
+<strong>CHAR(N)</strong><br>
+→ eine Zeichenkette mit fest definierter Länge N <br>
+→ maximale Länge 64KB<br>
+</p>
+
+<p>
+<strong>VARCHAR(N)</strong><br>
+→ eine Zeichenkette variabler Länge<br>
+→ maximale Länge 64 KB<br>
+</p>
+
+<p>
+<strong>TinyText</strong><br>
+→ mehrere Zeichenketten <br>
+→ 255 Zeichen<br>
+</p>
+
+<p>
+<strong>Text | STRING</strong><br>
+→ mehrere Zeichenketten<br>
+→ 65.535 Zeichen<br>
+</p>
+
+<p>
+<strong>MediumText</strong><br>
+→ mehrere Zeichenketten<br>
+→ 16.777.215 Zeichen<br>
+</p>
+
+<p>
+<strong>LongText</strong><br>
+→ mehrere Zeichenketten<br>
+→ 4.294.967.295 Zeichen<br>
+</p>
+
+<h4>Zahlenbasiert</h4>
+<p>
+<strong>INTEGER</strong><br>
+→ 4 Byte bei der Adressierung ( 32^2 )<br>
+</p>
+
+<p>
+<strong>Tinyint</strong><br>
+→ Wertebereich -128 -127<br>
+→ ohne Vorzeichen 0 - 255<br>
+→ ein Byte bei der Adressierung<br>
+</p>
+
+<p>
+<strong>SmallInt</strong><br>
+→ zwei Byte bei der Adressierung<br>
+</p>
+
+<p>
+<strong>MediumInt | BIGINT</strong><br>
+</p>
+
+
+<p>
+<strong>Double(p,s) | Float(p,s)</strong><br>
+→ Fließkommazahlen mit Präzision nahe <strong>p </strong> der Länge <strong>s</strong><br>
+</p>
+
+<h4>Datums und Zeitbasierend</h4>
+<p>
+<strong>Date</strong> → <strong>YY-MM-DD</strong><br>
+</p>
+
+<p>
+<strong>Datetime </strong>→ <strong>YY-MM-DD:hh:mm:ss</strong><br>
+</p>
+
+<p>
+<strong>Timestamp → </strong>Unixtime artiges Datetimeformat<br>
+</p>
+
+<p>
+<strong>Year </strong>→ <strong>YYYY</strong><br>
+</p>
+
+<p>
+<strong>TIME </strong>→ <strong>hh:mm:ss</strong><br>
+</p>
+
+<h4>Andere</h4>
+<p>
+<strong>Bool </strong>→ Datenwert, <strong>true, false </strong>oder <strong>unknown</strong><br>
+</p>
+
+<p>
+<strong>Array[N]</strong><br>
+→ Array der Länge N definieren<br>
+→ ein Attribut kann mehrere Werte haben<br>
+→ zum Beispiel kann ein Mensch mehrere Telefonnummern haben<br>
+</p>
+
+<p>
+<strong>ROW</strong><br>
+→ Datentyp der eine Zeile innerhalb eines Array definiert<br>
+<em>Beispiel:</em><br>
+++<br>
+<em>CREATE ROW CUSTOMER (</em><br>
+<em>CustID        INTEGER      PRIMARY KEY,    </em><br>
+<em>LastName      CHARACTER VARYING (25),         </em><br>
+<em>FirstName     CHARACTER VARYING (20),         </em><br>
+<em>Address       addr_typ,                       </em><br>
+<em>Phone         CHARACTER VARYING (15)          </em><br>
+<em>) ;         </em>                            <br>
+++<br>
+</p>
+
+<p>
+<strong>ENUM </strong><br>
+→ festlegen einer eingegrenzten Menge von Zeichen im Werte und Defintionsbereich<br>
+<em>Beispiel:</em><br>
+++<br>
+<em>gender ENUM('m','f')</em><br>
+++<br>
+→ nur m oder f dürfen für den Eintrag in gender verwendet werden<br>
+</p>
+
+<p>
+<strong>AUTO_INCREMENT</strong><br>
+→ der Zähler wird selbsständig inkrementiert, nützlich für Primärschlüssel<br>
+</p>
+
+<h4>Bit-Ketten</h4>
+<p>
+→ dient zur Speicherung von Dateien<br>
+</p>
+
+<p>
+<strong>BIT(n) </strong><br>
+→ eine Bitkette mit n Bits<br>
+</p>
+
+<p>
+<strong>VARBIT(n) </strong><br>
+→ variable Bitkette mit maximal n Bits<br>
+</p>
+
+<p>
+<strong>BLOB </strong><br>
+→ binary large Object<br>
+→ für beliebig Große Dateien<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./Schemaanweisungen.html'>Linux Wissen:SQL:Schemaanweisungen</a></li>		<a href='../SQL.html'>Linux Wissen:SQL</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

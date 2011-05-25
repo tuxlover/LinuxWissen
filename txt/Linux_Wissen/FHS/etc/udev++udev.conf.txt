@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T18:39:29+02:00
+
+====== udev++udev.conf ======
+Created Sonntag 24 April 2011
+
+//<Variablen>//
+//udev_root --> Wo soll udev Geräte Dateien anlegen, der Standard ist /dev//
+//udev_log --> Was soll udev an den Syslogdaemon senden, Werte sind hier://
+//                N --> Syslogprioritätslevel//
+//                err, debug, info//

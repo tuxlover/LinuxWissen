@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T23:57:54+02:00
+
+====== yum ======
+Created Montag 25 April 2011
+
+Verwalten von Repositories und Rpm Paketen.
+$Alle Rpm basierten Distributionen$
+Für $Suse$ nich empfholen. **zypper** verwenden.
+[[Linux Wissen:Paketverwaltung:Rpm:zypper]]
+
+*/etc/yum/repos.d → Konfigurationsdateien für einzelne Yum Repos
+*/etc/yum.conf → globale Konfigurationsdateien für yum 
+
+**yum <Globale Option> <Aktion> <Aktionsoptionen>** 
+
+== Repository Verwaltung ==
+**repolist **→ auflisten verfügbarer Repositories
+	**disabled **→ auflisten der aktivierten Repositories
+	**--enablerepo=<Name> repolist **→ aktivieren eines deaktivierten Repository
+	**--disablerepo=<Name> repolist **→ deaktivieren eines aktivierten Repository
+	
+
+
+== Software Veraltung ==
+**install <Paket> **→ installieren von <Paket>
+**--resolve **→ auch die benötigten Abhängigkeiten herunterladen
+**--source **→ lade die Quellpakete und nicht die korrespondierenden Binärpakete herunter
+
+**remove <Paket> **→ entfernen von <Paket>
+
+**update **→ aktualisieren des gesamten Systems
+**--obsoletes **→ behandelt auch den Fall, dass ein Paket durch ein anderes ersetzt wurde
+
+**list [ installed|available] <Paket>,... **→ <Paket>e auflisten 
+	**installed **→ nur installierte <Pakete> auflisten
+	**available **→ nur nicht installierte <Paket>e auflisten
+
+**info <Paket> **→ Informationen zu einem <Paket> anzeigen
+
+**deplist **→ auflisten der Abhängigkeiten
+
+**yumdownload --destdir <Path> <Paket> **→ <Paket> nur nach <Path> herunterladen
+
+== Gruppen verwalten ==
+**grouplist **→ auflisten verfügbarer Gruppen
+
+**groupinfo <Group> **→ Informationen zu einer Gruppe auflisten
+
+
+**yum-shell **→ Startet einen interaktive Shell in der **yum-Befehle **interaktiv asugeführt werden können
+ 

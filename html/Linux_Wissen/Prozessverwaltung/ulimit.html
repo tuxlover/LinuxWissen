@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./top.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='../root.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>ulimit</h1>
+
+<p>
+Created Donnerstag 21 April 2011<br>
+</p>
+
+<p>
+<strong>ulimt &lt;LIMIT&gt; </strong>→ limitiere die Resourcen für eine Shell und der von ihr gestarteten Prozesse<br>
+<div style='padding-left: 60pt'>
+           → Shell Buildin<br>
+</div>
+<div style='padding-left: 30pt'>
+                  → &lt;LIMITS&gt; werden in 1024 bytes Inkrementierungen übergeben<br>
+</div>
+<strong>-S </strong>→ eine weiche Grenze setzen<br>
+<strong>-H </strong>→ eine harte Grenze setzen<br>
+<strong>-a </strong>→ zeige die aktuelle gesetzten Limits an<br>
+<strong>-c </strong>→ maximale Größe der Speicherabzüge (Core-files)<br>
+<strong>-d </strong>→ schränkt die aktuelle Größe des Dateisegments|Heaps ein (Kilobyte)<br>
+<strong>-f </strong>→ verbietet den Anwender eine Datei über eine bestimmte Größe zu erzeugen<br>
+<strong>-n </strong>→ schränkt die maximal offenen Dateien pro Prozess ein<br>
+<strong>-m </strong>→ schränkt die maximale Anzahl des verwendeten Speichers ein (Kilobyte)<br>
+<strong>-t </strong>→ schränkt die verfügbare CPU-Zeit auf die angegebene Zahl Sekunden ein<br>
+<strong>-u </strong>→ schränkt die Anzahl der Prozesse je Nutzer ein<br>
+<strong>-v </strong>→ schränkt die maximale Größe des virtuellen Speichers ein (Kilobyte)<br>
+</p>
+
+<h4>Sicherheitsrelevante ulimits</h4>
+<p>
+<strong>ulimit -c 0 </strong>→ Coredumps verhindern<br>
+<strong>ulimit -f 512000 </strong>→ keine Dateien größer als 512 MB zulassen<br>
+<strong>ulimt -S -n </strong>→ weiches Limit von maximal 250 Dateideskriptoren<br>
+<strong>ulimit -S -u 100 </strong>→ weiches Maximum von 100 Prozessen<br>
+<strong>ulimit -H -v 50000 </strong>→ nicht mehr als 50 MB virtuellen Speicher verwenden<br>
+</p>
+
+<p>
+*/etc/security/limits.conf<br>
+<a href="../FHS/etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf">Linux Wissen:FHS:etc:security++limits.conf</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

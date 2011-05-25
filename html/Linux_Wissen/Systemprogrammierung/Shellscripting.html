@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Sed/Suchen_und_Ersetzen.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Shellscripting/dialog.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Shellscripting</h1>
+
+<p>
+Created Dienstag 26 April 2011<br>
+</p>
+
+<p>
+<a href="http://tldp.org/LDP/abs/html/" title="http://tldp.org/LDP/abs/html/">http://tldp.org/LDP/abs/html/</a><br>
+</p>
+
+<h2>Shell Scripte ausführen</h2>
+<p>
+<ul>
+<li>Shell Scripte beginnen immer mit #!/bin/bash (dem SheBang teilt mit welcher Interpreter verwendet werden soll)</li>
+<li>muss die Rechte <strong>x </strong>und <strong>r </strong>besitzen</li>
+<li>Mehrere Befehle können in eine Datei geschrieben und verarbeitet werden</li>
+</ul>
+<a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
+<ul>
+<li>Shellscripte die sich in $PATH befinden können durch Angabe des Namnes wie ein Programm ausgeführt werden</li>
+</ul>
+<a href="../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a><br>
+<ul>
+<li>Shellscripte ausserhalb von $PATH:</li>
+</ul>
+</p>
+
+<p>
+<strong>./PFAD/script.sh </strong>→ ausführen auf einer Subshell mit expliziter Pfadangabe <br>
+<strong>bash /Pfad/script.sh </strong>→ ausführen einer Subshell ohne Ausführungsrechte<br>
+<strong>source Script | </strong>. <strong>Script </strong>→ ausführen in der aktuellen Shell ohne erzeugen einer Subshell<br>
+</p>
+
+<p>
+<u>Hinweis: Die Endung .sh ist nicht notwendig wird aber bein Schreiben von ShellScripten empfohlen.</u><br>
+</p>
+
+
+<h2>Debuggen von Shellscripten</h2>
+<p>
+<ul>
+<li>Aufrufen von <strong>-x </strong>aktiviert das Tracing</li>
+</ul>
+<strong>set -x </strong>→ dauerhaftes Tracing in der aktuellen Shell aktivieren<br>
+<strong>sh -x &lt;Script.sh&gt; </strong>→ Shellscript mit Tracing aufrufen<br>
+ <a href="../Shell/Bash/Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash">Linux Wissen:Shell:Bash:Optionen für die Bash</a><br>
+</p>
+
+<p>
+<u>Hinweis: Innerhalb eines Shellscript das Tracing nur für einen Block aktivieren:</u><br>
+++<br>
+<em>sh -x </em><br>
+<em>...</em><br>
+<em>CodeBlock</em><br>
+...<br>
+<em>sh +x</em><br>
+++<br>
+</p>
+
+<p>
+<ul>
+<li>Aufrufen von <strong>-v </strong>aktiviert verbosity, die Shell zeigt alle Befehle an, die durch das Script aufgerufen werden</li>
+</ul>
+<strong>sh -v &lt;Script.sh&gt;</strong><br>
+</p>
+
+<p>
+<ul>
+<li>Aufrufen von <strong>-u </strong>warnt vor undefinierten Variablen</li>
+</ul>
+<strong>sh -u &lt;Script.sh&gt;</strong><br>
+</p>
+
+<p>
+<ul>
+<li>Aufruf von echo vor einem Kommando dass eine Substitution enthält gibt alle Substitutionen und Expansionen aus ohne den Befehl tatsächlich auszuführen</li>
+</ul>
+</p>
+
+<h2>Variablen</h2>
+<p>
+<ul>
+<li>Variablen können Rückgabewerte, Programmausgaben oder Werte von Berechnungen enthalten.</li>
+<li>Die Bash kann diese weiter verarbeiten|auswerten.</li>
+<li>Können Zeichenketten, Zahlen, oder Felder (Arrays) sein, generell gibt es in Bash aber keiner Typitisierung</li>
+</ul>
+<a href="./Shellscripting/Variablen_zuweisen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen">Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen</a><br>
+</p>
+
+<h2>Arithmetik</h2>
+<p>
+<ul>
+<li>einfache arithmetische Ausdrücke werden durch <strong>$((Berechnung)) </strong>beschrieben und ausgewertet.</li>
+<li>Shellscripting eigent sich nicht für das Lösen komplexer Mathematischer Algorithmen.</li>
+</ul>
+</p>
+
+<h4>Addition</h4>
+<p>
+<strong>$((a+b))</strong><br>
+</p>
+
+<h4>Multiplikation</h4>
+<p>
+<strong>$((a*b))</strong><br>
+</p>
+
+<h4>Division</h4>
+<p>
+<strong>$((a/b))</strong><br>
+</p>
+
+<h4>Modulo</h4>
+<p>
+<strong>$((a%b))</strong><br>
+</p>
+
+<h4>Potenz</h4>
+<p>
+<strong>$((a</strong>b))**<br>
+</p>
+
+<p>
+<u>Hinweis: Bash rundet die Ergebnisse immer ab.</u><br>
+</p>
+
+<h2>Exit Status</h2>
+<p>
+<ul>
+<li>Programme und Funktionen haben immer einen Rückgabewert der über Erfolg oder Misserfolg informiert</li>
+<li>Anhand des Exit-Status kann ein Fehler meist genauer diagnostiziert werden</li>
+<li>Wird von einem Kindprozess an die aktuelle Shell übergeben</li>
+<li>Der Befehl <strong>exit </strong>beendet ein Script und gibt einen Wert an den Vaterprozess des Scriptes weiter.</li>
+</ul>
+<a href="./Shellscripting/Exit_Status.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status">Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a><br>
+</p>
+
+<h2>Test</h2>
+<p>
+<ul>
+<li>der <strong>test </strong>Befehl ist ein Bash Buildin</li>
+<li>Ein <strong>if/then/else </strong>Konstrukt testet ob der <strong>exit</strong>-Status eines Befehls gleich <strong>0</strong> ist, und falls </li>
+<li>Der Befehl <strong>[ ] </strong>ist ein Synonym für das <strong>test </strong>Buildin. </li>
+<li>Der Befehl **<a href="" title=" "> </a> <strong>ist ein Synonym für </strong>test <strong>Buildin. Mit </strong><a href="" title=" "> </a>**können logische Verknüpfungen vorgenommen werden</li>
+<li>In <strong>(( ))</strong> können arithmetische ausgewertet werden.</li>
+</ul>
+<a href="../Shell/Befehle.html" title="Linux Wissen:Shell:Befehle">Linux Wissen:Shell:Befehle</a><br>
+<a href="./Shellscripting/Test.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Test">Linux Wissen:Systemprogrammierung:Shellscripting:Test</a><br>
+</p>
+
+<h2>Schleifen</h2>
+<p>
+<ul>
+<li>Eine Schleife ist ein Code Block der solange wiederholt wird, bis die Anweisung aufgrund eines Exit-Wertes beendet ist</li>
+<li><strong>for </strong>Schleife zur Iteration über eine Liste von Werten oder Dateien</li>
+<li><strong>while </strong>Schleife zur Iteration bis eine Aussage falsch oder wahr ist</li>
+</ul>
+</p>
+
+<p>
+<u>Hinweis: Für die Turingvollständigkeit reicht die while Schleife.</u><br>
+<a href="./Shellscripting/Schleifen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen">Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen</a><br>
+</p>
+
+<h2>Funktionen definieren und verwenden</h2>
+<p>
+<ul>
+<li>Unterprogramme im aktuellen Shellscript die einen <strong>return </strong>Wert liefern können</li>
+<li>Häufig verwendete Programmschnipsel nur einmal implementiert zu werden</li>
+<li>schaffen Übersichtlichkeit und lesbarkeit</li>
+<li>Positionsparameter innerhalb der Funktion entsprechen denen der Funktion und nicht der des eigentlichen Scripts</li>
+</ul>
+ <a href="./Shellscripting/Funktion.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Funktion">Linux Wissen:Systemprogrammierung:Shellscripting:Funktion</a><br>
+</p>
+
+<h2>Here-Dokumente</h2>
+<p>
+<ul>
+<li>bietet einen Codeblock der mit einem Kommando anschließend eingelesen und verarbeitet werden kann</li>
+<li>der Codeblock wird mit einem Schlüsselwort beendet, welches vorher festgelegt wird. meist <em>EOF </em>oder <em>EOL</em></li>
+<li>dem lesenden &lt;Befehl&gt; wird mittels <strong>&lt;Befel&gt; &lt;&lt; &lt;Schlüsselwort&gt;</strong>  das &lt;Schlüsselwort zum Ende des lesens mitgeteilt</li>
+</ul>
+<a href="./Shellscripting/Here-Dokumente.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente">Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente</a><br>
+</p>
+
+<h2>read</h2>
+<p>
+<ul>
+<li>liest Zeilen von StdIn</li>
+</ul>
+<a href="./Shellscripting/read.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:read">Linux Wissen:Systemprogrammierung:Shellscripting:read</a><br>
+</p>
+
+<h2>Eine Menuauswahl mit select erstellen</h2>
+<p>
+<ul>
+<li>Mit dem Shell Schlüsselwort <strong>select </strong>lassen sich einfache Auswahlmenus erstellen</li>
+</ul>
+<a href="./Shellscripting/select.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:select">Linux Wissen:Systemprogrammierung:Shellscripting:select</a><br>
+</p>
+
+<h2>dialog</h2>
+<p>
+<ul>
+<li>Mit <strong>dialog </strong>lassen sich komolexere Menus erstellen</li>
+<li>es verwendet ncurses und Umleitungsoperatoren</li>
+<li><strong>kdialog</strong></li>
+<li><strong>zenity</strong></li>
+</ul>
+<a href="./Shellscripting/dialog.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:dialog">Linux Wissen:Systemprogrammierung:Shellscripting:dialog</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Systemprogrammierung.html'>Linux Wissen:Systemprogrammierung</a></li>		<a href='../Hardware_und_Systeminformationen/sysstat.html'>Linux Wissen:Hardware und Systeminformationen:sysstat</a></li>		<a href='../Hardware_und_Systeminformationen/PCI.html'>Linux Wissen:Hardware und Systeminformationen:PCI</a></li>		<a href='../Datenrettung_und_Forensik/dd_rescue.html'>Linux Wissen:Datenrettung und Forensik:dd rescue</a></li>		<a href='../Paketverwaltung/Rpm/Pakete_bauen.html'>Linux Wissen:Paketverwaltung:Rpm:Pakete bauen</a></li>		<a href='../Paketverwaltung/Debian/Pakete_bauen.html'>Linux Wissen:Paketverwaltung:Debian:Pakete bauen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

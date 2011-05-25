@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Paketverwaltung/Rpm/zypper.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Partitionen_und_Dateisysteme/Dateisysteme.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Partitionen und Dateisysteme</h1>
+
+<p>
+Created Donnerstag 21 April 2011<br>
+</p>
+
+<h2>Interner Verschnitt</h2>
+<p>
+<u>Bei einer Blockgröße von 4 Kib belegt eine Datei mit 500 Bytes 1/8 eines Blocks. Effektiv verbraucht Sie aber dennoch einen 4 Kib großen Block. Kleinere Blockgrößen veringern den Platzverbrauch durch internen Verschnitt, erhöhen aber die I/O-Zeit beim Lesen und Schreiben.</u><br>
+</p>
+
+<h2>Beschränkungen beim Festlegen von Partitionen</h2>
+<p>
+<em>IDE/SATA		4 Primäre Max	3 Primäre, 1 Extended und 63 logishce Max</em><br>
+<em>SCSI		4 Prmäre Max		3 Primäre 1 Extended und 15 logische Max</em><br>
+</p>
+
+<h2>Festplattengeometrie</h2>
+<p>
+<ul>
+<li>Daten auf der Festplatte werden in Datenblöcken zu je 4 mal 512 Bytes (nicht zu verwechseln mit Blockggrößen des Dateisystesm) abgelegt</li>
+<li>Durchnummerierung aller Scheiben</li>
+<li>Kreisförmige Spuren</li>
+<li>Sektor pro Spur</li>
+</ul>
+</p>
+
+<p>
+Geometrisch:<br>
+→ Dadurch lässt sich jeder Datenblock durch seine Kopf, Zylinder und Sektorennummer (CHS) identifzieren<br>
+→ Cylinder, Heads, Sectors<br>
+</p>
+
+<p>
+Logisch:<br>
+→ logische durchnumerierung der Datenblöcke (LBA)<br>
+</p>
+
+<h2>Plattenbelegung analysieren</h2>
+<p>
+<ul>
+<li><strong>df </strong></li>
+<li><strong>du</strong></li>
+</ul>
+</p>
+
+<h2>Partitionen anlegen und verwalten</h2>
+<p>
+<ul>
+<li><strong>fdisk</strong> </li>
+<li><strong>sfdisk</strong></li>
+<li><strong>smartctl</strong></li>
+</ul>
+<a href="./Partitionen_und_Dateisysteme/Partitionswerkzeuge.html" title="Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge">Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge</a><br>
+</p>
+
+<p>
+*/proc/partitions <br>
+<a href="./FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a><br>
+</p>
+
+<h4>Partitionstypen:</h4>
+<p>
+82 → Linux Swap<br>
+83 → Linux<br>
+8e → Linux LVM<br>
+fd → Linux RAID<br>
+<a href="./Partitionen_und_Dateisysteme/Partitionstypen.html" title="Linux Wissen:Partitionen und Dateisysteme:Partitionstypen">Linux Wissen:Partitionen und Dateisysteme:Partitionstypen</a><br>
+</p>
+
+<h2>Dateisystme</h2>
+<p>
+<ul>
+<li><strong>mkfs </strong></li>
+<li><strong>mkefs</strong></li>
+<li><strong>tune2fs</strong></li>
+<li><strong>dumpe2fs</strong></li>
+<li><strong>e2fsck</strong></li>
+<li><strong>debugfs</strong></li>
+<li><strong>e2image</strong></li>
+<li><strong>mkreiserfs|dumpreiserfs|resize_reiserfs|reisfstune</strong></li>
+<li><strong>mkdosfs</strong></li>
+<li><strong>mkntfs</strong></li>
+</ul>
+<a href="./Partitionen_und_Dateisysteme/Dateisysteme.html" title="Linux Wissen:Partitionen und Dateisysteme:Dateisysteme">Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a><br>
+</p>
+
+<h2>Mounten</h2>
+<p>
+<ul>
+<li>einhängen eines Dateisystems in das System, so dass auf dieses zugegriffen werden kann</li>
+<li>automatisch mittels */etc/fstab, mindestens / muss während des Bootens eingehängt werden</li>
+</ul>
+<a href="./FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a><br>
+<ul>
+<li>manuelle mittles <strong>mount </strong></li>
+</ul>
+<a href="./Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
+</p>
+
+<h4>Mountpoint</h4>
+<p>
+Ein im Dateibaum befindlicher Ort von dem aus mittels Dateiwerkzeuge auf Dateien in diesem Dateisystem zugegriffen werden kann.<br>
+</p>
+
+<h4>Labels und UUIDs</h4>
+<p>
+Ein Label ist ein im Superblock abgelegter Text von maximal 16 Zeichen.<br>
+Eine UUID (Universal Unique Identifier) ist einem Gerät zugewiesene eindeutige Kennung.<br>
+</p>
+
+<p>
+<strong>blkid [&lt;/dev/sdX&gt;] </strong>→ Informationen über UUID, typ des Dateissystems anzeigen<br>
+                                     → wird ein spezielles Gerät angegeben, werden nur Informationen für    <br>
+</p>
+
+<p>
+<u>Hinweis: UUID und Labels können für die */etc/fstab in der ersten Zeile verwendet.( </u><a href="./FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a> )<br>
+</p>
+
+<p>
+<strong>e2label /dev/sdX &lt;LABEL&gt; </strong>→ das Gerät /dev/sdX erhält das &lt;LABEL&gt;<br>
+</p>
+
+<p>
+<strong>tune2fs -U random /dev/sdX </strong>→ ein neues zufälliges Label erzeugen<br>
+</p>
+
+<p>
+*/dev/by-uuid/ <br>
+</p>
+
+<h3>Swap</h3>
+<p>
+<ul>
+<li>Ist der Auslagerungsspeicher auf der Festplatte für den Kernel</li>
+<li>Zugriff ist langsamer als der Arbeitspeicher</li>
+<li><strong>mkswap</strong></li>
+<li><strong>swapon</strong></li>
+<li><strong>swapoff</strong></li>
+<li><strong>free</strong></li>
+</ul>
+<a href="./Partitionen_und_Dateisysteme/Swap.html" title="Linux Wissen:Partitionen und Dateisysteme:Swap">Linux Wissen:Partitionen und Dateisysteme:Swap</a><br>
+<a href="./Partitionen_und_Dateisysteme/Script_Swapspeicher_erweitern.html" title="+Script Swapspeicher erweitern">+Script Swapspeicher erweitern</a><br>
+</p>
+
+<p>
+<u>Hinweis: Kernel 2.4 beschränkt sich auf 8 zu maximal 2G, 2.6 auf 32 zu beliebiger Größe. </u><br>
+</p>
+
+<h2>dd</h2>
+<p>
+<ul>
+<li><strong>dd</strong></li>
+<li><strong>dd_rescue</strong></li>
+</ul>
+<a href="./Partitionen_und_Dateisysteme/dd.html" title="Linux Wissen:Partitionen und Dateisysteme:dd">Linux Wissen:Partitionen und Dateisysteme:dd</a><br>
+</p>
+
+<h2>Quotas</h2>
+<p>
+<ul>
+<li>zum Beschränken der Dateien|Blöcke|Inodes die die ein Nutzer auf einem Dateisystem anlegen darf</li>
+<li>Beschränkungen werden mittels <strong>edquota </strong>für jeden Benutzer | Gruppe festgelegt</li>
+<li>Seit Version 2.6.32 wird journeled Quota unterstütz, welches es ermöglicht Quotas schneller aus einem</li>
+</ul>
+    ext3/ext4 System wiederherzustellen<br>
+<ul>
+<li>Es kann eine harte Grenze und eine weiche Grenze angeben werden (diese Grenze )</li>
+<li><strong>quotacheck</strong></li>
+<li><strong>repquota</strong></li>
+<li><strong>edquota</strong></li>
+<li><strong>quota</strong></li>
+</ul>
+<a href="./Partitionen_und_Dateisysteme/Quotas.html" title="Linux Wissen:Partitionen und Dateisysteme:Quotas">Linux Wissen:Partitionen und Dateisysteme:Quotas</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./Booten.html'>Linux Wissen:Booten</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

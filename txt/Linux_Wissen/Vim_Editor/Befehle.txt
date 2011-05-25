@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T21:38:22+02:00
+
+====== Befehle ======
+Created Freitag 15 April 2011
+
+**Strg+g **→ die aktuelle Zeile und den Status der Datei anzeigen
+
+**j,k** → runter, hoch navigieren
+**l,h **→ rechts und links navigieren
+**gg** → zum Anfang der Datei springen
+**G **→ zum Ende der Datei springen
+**<n>g **→ zur Zeile n springen
+**w **→ zum Anfang des nächsten Wortes springen
+**e **→ zum Ende des nächsten Wortes springen
+**0 **→ zum Anfang der Zeile springen
+**$** → zum Ende der Zeile springen
+
+**:q **→ beenden ohne den Puffer zu speichern
+**:w **→ Speichern
+**:q! **→ Beenden und alle Änderungen verwerfen
+**:wq **→ Speichern und beenden
+
+**v **→ den Text "visuell hervorgehoben markieren"
+**y<n><Bewegung> **→ n Zeichen Bewegungn Text in den Zwischenspeicher kopieren
+**v <Bewegung> :w <Dateiname> **→ den durch Bewegung markierten Text in Datei speichern 
+
+**<n>x **→ löschen von n Zeichen
+**dd **→ eine Zeile löschen und in den Zwischenspeicher ablegen
+**<Bewegung><n>d **→ löschen von n Zeichen Bewegung
+
+**p **→ den kopierten oder gelöschten Text einfügen
+
+**i **→ Text einfügen
+**a **→ Text anfügen
+**A **→ Text am Ende der Zeile einfügen
+
+**c **→ Änderungen durchführen
+**ce **→ Änderungen bis zum Ende eines Wortes durchführen
+
+**R **→ Text ersetzen
+**r <Neuzeichen> **→ das Zeichen unter dem Cursor durch <Neuzeichen> ersetzen
+
+**u** → mache die vorherige Aktion rückgängig
+**U **→ mache alle Aktionen rückgängig
+**Strg+r **→ mache das Rückgängig machen 
+
+**/<Ausdruck> **→ Ausdruck im Text suchen, mit **n **zum nächsten gefundenen Ausdruck springen
+**% **→ eine korrespondierende Klammer finden
+**:s/alt/neu** **<Enter>** → einmal Wort alt durch das Wort neu in der aktuellen Zeile ersetzen
+**:s/alt/neu/g **→ alle Wörter alt duch das Wort neu in der aktuellen Zeile ersetzen
+**:%s/alt/neu/gc** → alle Wörter alt duch das Wort neu in gesamten Text ersetzen und dabei um Bestätigung fragen
+  

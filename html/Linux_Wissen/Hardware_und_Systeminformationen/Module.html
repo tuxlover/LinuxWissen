@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./lsscsi.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./PCI.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Module</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+<strong>modprobe &lt;Modulname&gt; </strong>→ läd ein Kernelmodul mit dem Namen &lt;Modulname&gt;<br>
+<div style='padding-left: 150pt'>
+           → Modulabhängigkeiten werden aufgelöst<br>
+           → Modulname muss unter */lib/modules/$(uname -r) liegen<br>
+</div>
+<strong>-c </strong>→ dumpen der aktuellen Konfiguration im Format der /etc/modprobe.conf <br>
+<strong>-C </strong>→ überschreiben der */etc/modprobe.d | */etc/modprobe.conf <br>
+<a href="../FHS/etc/modprobe.conf.html" title="Linux Wissen:FHS:etc:modprobe.conf">Linux Wissen:FHS:etc:modprobe.conf</a><br>
+<strong>-n </strong>→ nichts machen<br>
+<strong>-s </strong>→ Fehler an den Syslog Daemon schicken und nicht nach StdErr<br>
+<strong>-r </strong>→ entfernen eines geladenen Modules<br>
+<strong>-a </strong>→ laden aller passenden Module<br>
+<strong>-q </strong>→ Fehlermeldung unterdrücken<br>
+</p>
+
+<p>
+<strong>insmod /lib/moduels/$(uname -r)/&lt;Datei&gt; </strong>→ läd Kernelmodule aus der angegebenen Datei<br>
+<div style='padding-left: 180pt'>
+                                → Modulabhängikeiten werden nicht aufgelöst<br>
+</div>
+<strong>-f </strong>→ erzwinge das Laden eines Moduls<br>
+<strong>-k |--autoclean </strong>→ setzen der autoclean markierung, entlädt das Modul sobald nicht mehr benutzt<br>
+                            → automatisches Entladen durch den kmod Daemon<br>
+<strong>-n|-p </strong>→ testen ob ein Kernel geladen werden kann<br>
+<strong>-m |--map </strong>→ Anzeigen der Kernelmapping Informationen (Loadmap)<br>
+<strong>-O &lt;Datei&gt; </strong>→ schreiben eines Binary Blobs der anzeigt was in den Kernel geladen wurde<br>
+<strong>-q </strong>→ Fehlermeldung unterdrücken<br>
+<strong>-s </strong>→ Nachrichten an den Syslog Daemon übergeben<br>
+<strong>(missing link Syslog)</strong><br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<strong>insmod -n -m /lib/modules/$(uname -r)/module.ko</strong><br>
+→ testen eines Kernelmoduls und anzeigen seiner Loadmap<br>
+</p>
+
+<p>
+<strong>rmmod /lib/modules/$(uname -r)/&lt;Datei&gt; </strong>→ entfernen von Kernelmodulen zur Laufzeit<br>
+<strong>-r |--stacks </strong>→ rekursives entladen mehrerer voneinander abhängiger Kernelmodule<br>
+<div style='padding-left: 60pt'>
+      → dabei wird vom obersten Stack beginnend alle Module entladen<br>
+</div>
+<strong>-s </strong>→ Nachrichten an den Syslog Daemin übergben <br>
+</p>
+
+<h4>Informationen über Module</h4>
+<p>
+MODPATH → Umgebungsvariable die den Pfad von Modulen des aktuellen Kernels enthalten kann<br>
+<div style='padding-left: 60pt'>
+ → wird von <strong>insmod </strong>verwendet<br>
+</div>
+</p>
+
+<p>
+<strong>modprobe</strong> <strong>-l [&lt;Wildcard&gt;] </strong><br>
+→ listen der Module die zum angegeben &lt;Wildcard&gt; passen<br>
+→ wird &lt;Wildcard&gt; nicht angeben wird eine liste aller Module ausgegeben<br>
+</p>
+
+<p>
+<strong>lsmod </strong>→ Auflisten der aktuell geladenen Module aus */proc/modules ( <a href="../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a> )<br>
+&gt;&gt; &lt;Name des Moduls&gt;       &lt;Größe in Kb&gt;   &lt;UseCount&gt;      &lt;Welche anderen Module&gt;<br>
+</p>
+
+<p>
+<strong>modinfo &lt;Module&gt; </strong>→ Informationen zum &lt;Module&gt; einholen<br>
+<strong>-k &lt;Kernel&gt; </strong>→ eine andere Kernelversion als den aktuell laufenden<br>
+<strong>-F &lt;Field&gt; </strong>→ nur das Feld mit der entsprechenden Information ausgeben<br>
+<strong>-a </strong>→ nur Autor<br>
+<strong>-d </strong>→ nur Beschreibung<br>
+<strong>-l </strong>→ nur Lizens des Modules ausgeben<br>
+<strong>-p </strong>→ übergebe Parameter ausgeben<br>
+<strong>-n </strong>→ Dateiname des geladenen Modules ausgeben<br>
+</p>
+
+<p>
+<em>&lt;Field&gt;</em><br>
+ author, description, license parm,,depends, alias, filename<br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Hardware_und_Systeminformationen.html'>Linux Wissen:Hardware und Systeminformationen</a></li>		<a href='../FHS/lib.html'>Linux Wissen:FHS:lib</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

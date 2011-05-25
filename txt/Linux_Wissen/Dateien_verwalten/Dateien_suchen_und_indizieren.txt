@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T14:16:29+02:00
+
+====== Dateien suchen und indizieren ======
+Created Montag 18 April 2011
+
+===== Find =====
+* zum finden von Dateien nach bestimmten Merkmalen und Operieren auf diesen
+
+===== Locate =====
+* Schnelle suche durch Indexdatenbank
+* möglicherweise Sicherheitsproblem
+
+===== Doodle =====
+* indizieren von Dateien und ihren Inhalten
+* wiederfinder von dateien aufgrund ihrer Inhalte
+
+===== Grep =====
+* ASCII Dateien nach Inhalten durchsuchen
+* Verwendet Reguläre Ausdrücke
+
+**which <Datei> **→ suche nach Dateien in PATH
+[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]]
+
+**whereis <Name> **→  findet Dateien, Verzeichnisse, Manpages, Quelldateien zu <Name>
+**-b **→ findet nur binär Dateien
+**-s **→ findet nur Quelldateien
+**-m **→ findet nur Manpages
+  
+
+

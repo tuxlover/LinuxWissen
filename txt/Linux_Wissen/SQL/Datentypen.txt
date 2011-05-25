@@ -1,0 +1,107 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-29T00:28:24+02:00
+
+====== Datentypen ======
+Created Freitag 29 April 2011
+
+=== Zeichenbasiert ===
+* bestehen aus Strings fester oder variabler Größe
+
+**CHAR(N)**
+→ eine Zeichenkette mit fest definierter Länge N 
+→ maximale Länge 64KB
+
+**VARCHAR(N)**
+→ eine Zeichenkette variabler Länge
+→ maximale Länge 64 KB
+
+**TinyText**
+→ mehrere Zeichenketten 
+→ 255 Zeichen
+
+**Text | STRING**
+→ mehrere Zeichenketten
+→ 65.535 Zeichen
+
+**MediumText**
+→ mehrere Zeichenketten
+→ 16.777.215 Zeichen
+
+**LongText**
+→ mehrere Zeichenketten
+→ 4.294.967.295 Zeichen
+
+=== Zahlenbasiert ===
+**INTEGER**
+→ 4 Byte bei der Adressierung ( 32^2 )
+
+**Tinyint**
+→ Wertebereich -128 -127
+→ ohne Vorzeichen 0 - 255
+→ ein Byte bei der Adressierung
+
+**SmallInt**
+→ zwei Byte bei der Adressierung
+
+**MediumInt | BIGINT**
+
+
+**Double(p,s) | Float(p,s)**
+→ Fließkommazahlen mit Präzision nahe **p ** der Länge **s**
+
+=== Datums und Zeitbasierend ===
+**Date** → **YY-MM-DD**
+
+**Datetime **→ **YY-MM-DD:hh:mm:ss**
+
+**Timestamp → **Unixtime artiges Datetimeformat
+
+**Year **→ **YYYY**
+
+**TIME **→ **hh:mm:ss**
+
+=== Andere ===
+**Bool **→ Datenwert, **true, false **oder **unknown**
+
+**Array[N]**
+→ Array der Länge N definieren
+→ ein Attribut kann mehrere Werte haben
+→ zum Beispiel kann ein Mensch mehrere Telefonnummern haben
+
+**ROW**
+→ Datentyp der eine Zeile innerhalb eines Array definiert
+//Beispiel://
+++
+//CREATE ROW CUSTOMER (//
+//CustID        INTEGER      PRIMARY KEY,    //
+//LastName      CHARACTER VARYING (25),         //
+//FirstName     CHARACTER VARYING (20),         //
+//Address       addr_typ,                       //
+//Phone         CHARACTER VARYING (15)          //
+//) ;         //                            
+++
+
+**ENUM **
+→ festlegen einer eingegrenzten Menge von Zeichen im Werte und Defintionsbereich
+//Beispiel://
+++
+//gender ENUM('m','f')//
+++
+→ nur m oder f dürfen für den Eintrag in gender verwendet werden
+
+**AUTO_INCREMENT**
+→ der Zähler wird selbsständig inkrementiert, nützlich für Primärschlüssel
+
+=== Bit-Ketten ===
+→ dient zur Speicherung von Dateien
+
+**BIT(n) **
+→ eine Bitkette mit n Bits
+
+**VARBIT(n) **
+→ variable Bitkette mit maximal n Bits
+
+**BLOB **
+→ binary large Object
+→ für beliebig Große Dateien

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Mit_dem_Server_Verbinden.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Views.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Schemaanweisungen</h1>
+
+<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>zum Erstellen der Datenbank wird ein Schema angegeben</li>
+<li>definieren der Datenstrukturen</li>
+<li>kann mit einem Texteditor definiert werden</li>
+<li>es empfiehlt sich die Endung .sql zu verwenden</li>
+</ul>
+</p>
+
+<p>
+<em>Definieren einer Tabelle:</em><br>
+++<br>
+<em>CREATE TABLE &lt;Tabllenname&gt;</em><br>
+<em>(</em><br>
+<div style='padding-left: 30pt'>
+<em>ID(PRIMÄRSCHLÜSSEL)	INTEGER	PRIMARY KEY,</em><br>
+<em>ITEM1	DATENTYP,</em><br>
+<em>...</em><br>
+<em>...</em><br>
+<em>ITEM(N)	DATENTYP,</em><br>
+<em>CONSTRAINT &lt;Name_des_Contraint&gt; PRIMARY KEY (Name Bezugsspalte für Primary Key)</em><br>
+</div>
+<em>);</em><br>
+++<br>
+</p>
+
+<h5>Einlesen des Schemas in eine Sqlite3 Datenbank</h5>
+<p>
+<strong>sqlite3 datenbank.db &lt; schema.sql</strong><br>
+</p>
+
+<p>
+<strong>SOURCE &lt;Shema.sql&gt;</strong><br>
+→ eine leeres Gerüsteschema importieren<br>
+</p>
+
+<p>
+<strong>SOURCE &lt;Data.sql&gt;</strong><br>
+→ die Daten der Datenbank in das Schma importieren<br>
+<a href="./Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a><br>
+<a href="./Datentypen.html" title="Linux Wissen:SQL:Datentypen">Linux Wissen:SQL:Datentypen</a><br>
+<a href="./Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../SQL.html'>Linux Wissen:SQL</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

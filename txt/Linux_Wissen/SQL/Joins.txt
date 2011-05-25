@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-05-04T02:45:47+02:00
+
+====== Joins ======
+Created Mittwoch 04 Mai 2011
+
+* relatives Verbindden von Attributen zu einer Abfrage, liefert eine Tabelle zurück
+* eine Datenbank ist umso mächtiger je mehr Verknüpfungen sie bilden kann
+
+=== Inner Joins ===
+**SELECT <tabelle1>.<var_tab1>,<tabelle1>.<var2_tab1>,...,<tabelle1>.<varN_tab1>,**
+**<tabelle2>.<var1_tab2>,...,<tabele2>.<varM_tab2>**
+**FROM <tabelle1> INNER JOIN <tablle2>**
+**ON <tabelle1>.Fremdschlüssel = <tabelle2>.Fremdschlüssel;**
+→ falls beide Fremdschlüssel verschiedene Attribute haben
+
+//Beispiel://
+//SELECT actor.first_name, actor.last_name,city.city FROM actor INNER JOIN  city ON actor.actor_id = city.city_id;//
+
+**SELECT <tabelle1>.<var1_tab1>, <tabelle1>.<var2_tab1>,...,<tabelle1>.<varN_tab1>,**
+**<tabelle2>.<var1_tab2>,...,<tabelle2>.<varM_tab2> **
+**FROM <tabelle1> INNER JOIN <tabelle2> **
+**USING (<Schlüssel>);**
+→ falls beide Schlüssel gleiche Attribute haben
+→ __Hinweis: darauf Achten dass der Schlüssel geklammert werden muss__
+
+//Beispiel://
+//SELECT film_actor.actor_id, film_actor.last_update, actor.actor_id,actor.first_name,actor.last_name FROM film_actor INNER JOIN actor USING (actor_id);//
+
+
+
+
+

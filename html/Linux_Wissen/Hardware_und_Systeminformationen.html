@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Filterprogramme/W%C3%B6rter_z%C3%A4hlen_und_W%C3%B6rter_sortieren.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Hardware_und_Systeminformationen/Devices.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Hardware und Systeminformationen</h1>
+
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<h4>Systeminformationen</h4>
+<p>
+<ul>
+<li><strong>uname</strong></li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/uname.html" title="Linux Wissen:Hardware und Systeminformationen:uname">Linux Wissen:Hardware und Systeminformationen:uname</a><br>
+<ul>
+<li><strong>lsdev</strong></li>
+<li><strong>hwinfo</strong></li>
+<li><strong>vmstat</strong></li>
+<li><strong>uptime</strong></li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/Devices.html" title="Linux Wissen:Hardware und Systeminformationen:Devices">Linux Wissen:Hardware und Systeminformationen:Devices</a><br>
+<ul>
+<li><strong>iostat</strong></li>
+<li><strong>mpstat</strong></li>
+<li><strong>sar</strong></li>
+<li><strong>mpstat</strong></li>
+<li><strong>pmap</strong></li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/sysstat.html" title="Linux Wissen:Hardware und Systeminformationen:sysstat">Linux Wissen:Hardware und Systeminformationen:sysstat</a><br>
+</p>
+
+<h4>Geräte und Treiber</h4>
+<p>
+<ul>
+<li>Unter */lib/modules/$(uname -r) befinden sich die vom Kernel als Module ladbaren Treiber.</li>
+</ul>
+<a href="./FHS/lib.html" title="Linux Wissen:FHS:lib">Linux Wissen:FHS:lib</a><br>
+<a href="./Hardware_und_Systeminformationen/Module.html" title="Linux Wissen:Hardware und Systeminformationen:Module">Linux Wissen:Hardware und Systeminformationen:Module</a><br>
+<ul>
+<li>Während des Systemsarts benötigte Treiber werden in der Datei */etc/modprobe.conf, */etc/modprobe.d verwaltet</li>
+</ul>
+<a href="./FHS/etc/modprobe.conf.html" title="Linux Wissen:FHS:etc:modprobe.conf">Linux Wissen:FHS:etc:modprobe.conf</a><br>
+<ul>
+<li>Eine Liste aller zu ladenden Module kann unter */etc/modules.conf bei älteren Systemen eingesehen werden</li>
+</ul>
+</p>
+
+
+<h4>IRQ</h4>
+<p>
+Ein IRQ (Interupt Request) ist ein Signal dass an die CPU gesendet wird und den aktuellen Prozees unterbricht<br>
+um auf ein externes Hardwareereignis zu lauschen und dieses zu bearbeiten.<br>
+<a href="./Hardware_und_Systeminformationen/IRQ.html" title="Linux Wissen:Hardware und Systeminformationen:IRQ">Linux Wissen:Hardware und Systeminformationen:IRQ</a><br>
+</p>
+
+<p>
+*/proc/interrupts<br>
+*/proc/dma<br>
+<a href="./FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a><br>
+</p>
+
+<h4>PCI</h4>
+<p>
+<ul>
+<li><strong>setpci</strong></li>
+<li><strong>lspci</strong></li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/PCI.html" title="Linux Wissen:Hardware und Systeminformationen:PCI">Linux Wissen:Hardware und Systeminformationen:PCI</a><br>
+</p>
+
+<h4>USB</h4>
+<p>
+wird von libusb Bereitgestellt<br>
+<ul>
+<li><strong>lsusb</strong></li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/USB.html" title="Linux Wissen:Hardware und Systeminformationen:USB">Linux Wissen:Hardware und Systeminformationen:USB</a><br>
+<em>verwendete Kernelmodule:</em><br>
+usbcore  --&gt; Kernkomponente des Kernels<br>
+usb_ohci --&gt; Modul für USB UHCI Controler<br>
+usb_uhci --&gt; Modul für USB OHCI Controler<br>
+ehci_hcd --&gt; Hilfsmodul für den USB 1.1 to 2.0 Controler<br>
+</p>
+
+<h4>IDE und ATA</h4>
+<p>
+<ul>
+<li>meist Massenspeichergeräte</li>
+<li>werden über Systembus gesteuert</li>
+<li>kommunizieren über den BUS im ATAPI (Advanced Technology Atachment Protocol Interface)</li>
+</ul>
+</p>
+
+<p>
+*/dev/hxX */dev/sdx → Gerätedatei<br>
+<a href="./FHS/dev.html" title="Linux Wissen:FHS:dev">Linux Wissen:FHS:dev</a><br>
+</p>
+
+<h4>SCSI</h4>
+<p>
+<ul>
+<li>Protokoll zur Kommunikation mit Platten, Bandlaufwerken und anderen Geräten</li>
+<li>Kommunikation erfolgt über den SCSI Hostadapter im eigenen BIOS</li>
+<li>pro SCSI BUS können 7 Geräte angeschlossen werden</li>
+</ul>
+</p>
+
+<p>
+Jedes SCSI Gerät lässt sich eindeutig durch das Quadrupel identifizieren:<br>
+<em>&lt;host&gt;,&lt;channel&gt;,&lt;ID&gt;,&lt;LUN&gt;</em><br>
+<ul>
+<li><strong>lsscsi</strong></li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/lsscsi.html" title="Linux Wissen:Hardware und Systeminformationen:lsscsi">Linux Wissen:Hardware und Systeminformationen:lsscsi</a><br>
+</p>
+
+<h4>Serial ATA</h4>
+<p>
+<ul>
+<li>schnellere Übertragungsraten als bei IDE</li>
+<li>hotswap möglich</li>
+<li>pro Controler können maximal 4 Geräte angeschlossen werden</li>
+<li>wird von <em>libata </em>ab Kernel 2.6 und 2.4.27 bereitgestellt</li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/lsscsi.html" title="Linux Wissen:Hardware und Systeminformationen:lsscsi">Linux Wissen:Hardware und Systeminformationen:lsscsi</a><br>
+<a href="./FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a><br>
+</p>
+
+<h4>Serielle Schnittstellen</h4>
+<p>
+<ul>
+<li>I/O Ports serieller Geräte</li>
+<li>Maus, Tastatur, Drucker Terminals</li>
+<li><strong>setserial</strong></li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/setserial.html" title="Linux Wissen:Hardware und Systeminformationen:setserial">Linux Wissen:Hardware und Systeminformationen:setserial</a><br>
+</p>
+
+<h4>HAL</h4>
+<p>
+<ul>
+<li>Hardware Abstraction Layer</li>
+<li>läuft im Kernel User Space</li>
+<li>versorgt Programme mit Informationen die von einer Hardware gesendet wird</li>
+</ul>
+<strong>hald</strong> → der HAL Daemon<br>
+</p>
+
+<h4>D-BUS</h4>
+<p>
+<ul>
+<li>Desktop BUS Daemon</li>
+<li>ermögliche Prozessen miteinander zu kommunizieren und registriert Hardware Ereignisse wie das hotplugging von Geräten</li>
+<li>sendet Informationen über Hardwareereigisse an den Nutzer</li>
+</ul>
+</p>
+
+<h4>Udev</h4>
+<p>
+<ul>
+<li>Daemon <strong>udevd </strong>zur dynamischen Geräteerzeugung lauscht */sys nach Geräten</li>
+<li>Die Dateien */etc/udev/rules.d wird gelesen</li>
+<li>Es werden Empfehlungen an den Kernel gegeben wie Geräte unter */dev verwaltet werden sollen</li>
+</ul>
+Erstellen von Udev Regeln: <br>
+<a href="./FHS/etc/udev%2B%2Brules.d%2B%2B99-myrule.html" title="Linux Wissen:FHS:etc:udev++rules.d++99-myrule">Linux Wissen:FHS:etc:udev++rules.d++99-myrule</a><br>
+Konfiguration des Udev Daemon:<br>
+<a href="./FHS/etc/udev%2B%2Budev.conf.html" title="Linux Wissen:FHS:etc:udev++udev.conf">Linux Wissen:FHS:etc:udev++udev.conf</a><br>
+<ul>
+<li><strong>udevadm</strong> </li>
+</ul>
+<a href="./Hardware_und_Systeminformationen/udevadm.html" title="Linux Wissen:Hardware und Systeminformationen:udevadm">Linux Wissen:Hardware und Systeminformationen:udevadm</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

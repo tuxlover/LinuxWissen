@@ -1,0 +1,82 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T13:54:57+02:00
+
+====== find ======
+Created Montag 18 April 2011
+
+===== Find =====
+* Aufspüren von Dateien und Verzeichnissen aufgrund gewisser Eigenschaften
+* Verarbeiten von Dateien die entsprechende Eigenschaften haben mit **-exec **(zum Beispiel ändern falscher Berechtigungen) 
+
+**find <PFAD> <Optionen> **→ sucht im Pfad nach Dateien mit den durch Optionen festgelegten Eigenschaften
+**-name '<Muster>'**→  sucht nach Dateinamen auf die <Muster> passt, 
+[[Linux Wissen:Shell:Wildcards]] 
+[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke]]
+**-type <[b][c][d][f][l][p][s]> **→ die Datei ist vom Dateityp:
+										b=blockorientiertes Gerät **(missing Link)**
+										--
+										d=Verzeichnis
+										f=normale Datei  
+								[[Linux Wissen:Dateien verwalten:Dateien anlegen und löschen]] 
+										--
+										l=symbolischer Link  
+								[[Linux Wissen:Dateien verwalten:Links]] 
+										p=FIFO Pipe
+										s=Unix Domain Socket
+**-user|-group <Name> **→ nach Dateien suchen die dem Nutzer <Name> bzw. der Gruppe <Name> gehören
+**-size +|-<b|c|k|M|G> **→ suche nach Dateien mit mindest so groß wie|kleiner als in 512-byte blocks|bites|kilobites|	
+					      Megabites|Gigabites
+**-atime|-amin **→ Zugriffszeit in Tagen|Minuten
+**-mtime|mmin **→ Änderungszeit in Tagen|Minuten
+**-ctime|-cmin **→ letzte Änderung in Tagen|Minuten
+**-links <N> **→ suche nach Dateien deren Referenzzähler den angegebenen Zahlenwert hat
+**-inum <INODE> **→  finde  Verweise mit der entsprechenden I-Node Nummer 
+**-a **→ logisches AND
+**-o **→ logisches Oder
+! → Nicht
+**-exec <Befehl> {} \; **→ <Befehl> wird auf die gefundenen Dateien angwendet
+**-ok <Befehl> {} \;**→ wie -**exec** aber bei jeder gefundenen Datei wird um eine Bestätigung gefragt
+**-ls **→ gebe die Detaillierte Dateiinformationen aus
+**-delete **→ lösche gefundene Dateien
+
+//Beispiele;//
+__Reguläre Dateien die mit my beginnen im aktuellen Verzeichnis finden und die erweiterte Dateiinformationen anzeigen__
+//find . -iname 'my*' -type f -ls//
+
+__Finde die Datei myfile und suche dabei nicht in proc und nicht in sys__
+//find / -path /proc -prune -o -path /sys -prune -o -type f -name myfile -print//
+
+__Alle Dateien MP3 und mp3 werden auf nur lesbar gesetzt__
+//find /home -iname "*.mp3" -type f -exec chmod 444 {} \;//
+
+__Alle Dateien in Peters /home in ein tar.gz packen__
+//find /home/peter -type f -print0|xargs -0 tar cvfz peters_home.tar.gz//
+
+__Liste alle Verzeichnisse und Dateien auf nach der Anzahl des Typs im aktuellen Verzeichnis__
+//find ${*-.}//  -type f |xargs file|awk -F, 'print $1'|awk '{$1=NULL;print $1}'|sort|uniq -c|sort -n
+
+__Finde und lösche leere Verzeichnisse__
+//find . -type d -empty -print0|xargs -0 rmdir//
+//find . -type d -empty -ok rmdir {} \;//
+ 
+__Stelle die Verzeichnisstruktur als Baum dar__
+//find . -type d |sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"//
+
+__Checksummen über alle Verzeichnisse berechnen die unter . liegen__
+//IFS=' ; for i in $(find . -type f -print); do sha256sum "$i"; done//
+
+__Finde und ersetze .php3 files in .php files__
+//find . -name "*.php3" | sed 's/\(.*\).php3$/mv "&" "\1.php"/'|sh//
+
+__konvertiere alle ASCII Dateien von DOS in Unix Style__
+//for f in $(find * -type f); do echo "dos2unix $f $f";done|sh//
+
+__Finde das Verzeichnis dass den meisten Platz auf der Platte/Partition verbraucht__
+find . -type d |xargs du -ms |sort -g
+
+__finde defekte symbolische Links__
+//for f in $(find / -type l -printf "%p \n"); do test -h "$f" && test -e "$f" || echo ""$f" broken";done//
+//find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"//
+//find / -type l -exec ls -L {} \;|grep "nicht möglich"//
+

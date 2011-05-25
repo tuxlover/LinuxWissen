@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T23:38:33+02:00
+
+====== grub++menu.lst ======
+Created Samstag 23 April 2011
+++
+//# Modified by YaST2. Last modification on Thu Jul  8 09:05:40 CEST 2010//
+//# THIS FILE WILL BE PARTIALLY OVERWRITTEN by perl-Bootloader//
+//# Configure custom boot parameters for updated kernels in /etc/sysconfig/bootloader//
+
+//default 0  <-- Wenn keine Auswahl nach timeout erfolgt wird dieser Systemabschnitt gestartet//
+//timeout 4  <-- timeout bis zum Start des Standardabschnitt//
+//password --md5 x <-- Benutze md5 Algorhithmus um den Bootloader durch ein Passwort zu schütern **grub-md5-crypt**//
+//##YaST - generic_mbr//
+//gfxmenu (hd0,0)/message//
+//##YaST - activate//
+
+//#0//
+//###Don't change this comment - YaST2 identifier: Original name: linux###//
+//title openSUSE 11.2 - 2.6.31.12-0.2//
+//    root (hd0,0)//
+//    kernel /vmlinuz-2.6.31.12-0.2-default root=/dev/system/root resume=/dev/system/swap splash=silent quiet showopts vga=0x314//
+//    initrd /initrd-2.6.31.12-0.2-default//
+
+//#1//
+//###Don't change this comment - YaST2 identifier: Original name: failsafe###//
+//title Failsafe -- openSUSE 11.2 - 2.6.31.12-0.2//
+//    root (hd0,0)//
+//    kernel /vmlinuz-2.6.31.12-0.2-default root=/dev/system/root showopts apm=off noresume nosmp maxcpus=0 edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 x11failsafe vga=0x314//
+//    initrd /initrd-2.6.31.12-0.2-default//
+++
+
+Parmeter:
+default --> Wenn keine Tastatureingabe wird nach timeout diese Sektion gestartet
+timeout --> In Sekunden gibt an, nach wieveil Sekunden default Abschnitt gestartet wird
+title --> Betriebssystemeintrag der als Auswahl im Menu beim Booten angezeigt wird
+kernel --> den zu bootenden Kernel
+root --> das Root Dateisystem
+chainloader +1 --> Bezeichnet einen von einer Fremd-Partition zu ladenden Bootloader
+initrd --> die intiale RAM-Disk aus der diverse Kernelmodule gestartet werden
+ **(missing link)**

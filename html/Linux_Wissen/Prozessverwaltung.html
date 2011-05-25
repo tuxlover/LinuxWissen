@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Partitionen_und_Dateisysteme/Swap.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Prozessverwaltung/kill.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Prozessverwaltung</h1>
+
+<p>
+Created Donnerstag 21 April 2011<br>
+</p>
+
+<p>
+Pseudoprozess (0) → ruft den Init Prozess (1) auf → Startet weitere Prozesse<br>
+<ul>
+<li>Jeder Prozess ist einer PID (Prozess Identifikationsnummer) und PPID (Der PID seines Elternprozesses) zugeordnet</li>
+<li>Init hat die PID 1 und die PPID 0</li>
+</ul>
+</p>
+
+<p>
+<strong>&lt;Strg+c&gt; </strong>→ Sendet Signal 15 SIGTERM an Prozess der in der aktuellen Shell im Vordergrund läuft<br>
+<strong>&lt;Strg+z&gt; </strong>→ Sendet Signal 20 SIGTSTP an Prozess der in der aktuellen Shell im Vordergrund läuft<br>
+</p>
+
+<h2>Jobs</h2>
+<p>
+<a href="./Shell/Jobkontrolle.html" title="Linux Wissen:Shell:Jobkontrolle">Linux Wissen:Shell:Jobkontrolle</a><br>
+</p>
+
+<h2>Kernelthreads</h2>
+<p>
+<ul>
+<li>Kindprozesse des Kernels die Hardwarenahe Aufgaben übernehmen</li>
+<li>werden zusammen mit dem Kernel im Ring 0 ausgeführt</li>
+<li>meistens in [] bei der Nutzung von <strong>ps ( </strong><a href="./Prozessverwaltung/ps.html" title="Linux Wissen:Prozessverwaltung:ps">Linux Wissen:Prozessverwaltung:ps</a> )</li>
+<li>verbrauchen in der Prozesstabelle keinen zusätzlichen Speicher</li>
+<li>können keinen SIGKILL oder SIGTERM geschickt bekommen</li>
+</ul>
+</p>
+
+<p>
+<u>Hinweis:</u> <strong>ps -A u|awk '{ if($5 == 0){print }}' </strong><u>zeigt alle Kernel Threads an</u><br>
+</p>
+
+
+<h2>Prozesszustände</h2>
+<p>
+<em>runnable </em>→ Prozess wartet auf Ausführung<br>
+<em>operating → </em>Prozess wird gerade von der CPU bearbeitet<br>
+<em>sleeping → </em>Prozess wartet auf einen anderen Prozess <em>→ runnable</em>, <em>sleeping</em><br>
+<em>end </em>→ Prozess wird beendet<br>
+<em>stopped</em> → Prozess wurde mit Signal 20 gestoppt<br>
+</p>
+
+<p>
+<u>Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vordergrund laufenden Prozesses.</u><br>
+</p>
+
+<h2>Zombies</h2>
+<p>
+<ul>
+<li>Prozess ohne Elternprozess</li>
+</ul>
+</p>
+
+<h2>Prozessinformationen einholen</h2>
+<p>
+<ul>
+<li><strong>ps</strong></li>
+<li><strong>pstree</strong> </li>
+</ul>
+<a href="./Prozessverwaltung/ps.html" title="Linux Wissen:Prozessverwaltung:ps">Linux Wissen:Prozessverwaltung:ps</a><br>
+</p>
+
+<p>
+<ul>
+<li><strong>top</strong></li>
+</ul>
+<a href="./Prozessverwaltung/top.html" title="Linux Wissen:Prozessverwaltung:top">Linux Wissen:Prozessverwaltung:top</a><br>
+</p>
+
+<h2>Signale</h2>
+<p>
+<ul>
+<li><strong>kill</strong></li>
+<li><strong>killall</strong></li>
+<li><strong>nohup</strong></li>
+</ul>
+<a href="./Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a><br>
+</p>
+
+<h2>Prozessprioritäten</h2>
+<p>
+<ul>
+<li>jeder Prozess wird mit einem nice Wert gestartet</li>
+<li>Intervall: -20 &lt;= x &lt;= 19 </li>
+<li>je kleiner die Zahl desto höher die Priorität  </li>
+<li>init hat immer den nice Wet 0</li>
+<li>neue Prozesse wenn nicht anders angegen werden mit nice Wert +10 gestartet</li>
+<li><strong>nice</strong></li>
+<li><strong>renice</strong></li>
+</ul>
+<a href="./Prozessverwaltung/Nice_Werte_kontrollieren.html" title="Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren">Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren</a><br>
+</p>
+
+<h2>Prozessresourcen</h2>
+<p>
+<ul>
+<li>Jeder Prozess belegt Resourcen auf dem Rechner:</li>
+</ul>
+<div style='padding-left: 150pt'>
++ den Zustand eines Programms im Speicher nach einem Absturz  (Größe des Coredumps)<br>
++ ein bereitgestelltes Datensegment in dem Objekte abgelegt werden (Größe des Heaps)<br>
+</div>
+<div style='padding-left: 90pt'>
+               + Anzahl von offenen und verwendeten Dateien während der Ausführung<br>
+</div>
+<div style='padding-left: 30pt'>
+                              +  Anzahl der zusätzliche aufgerufnenen Kindprozesse<br>
+</div>
+                                      + eine Anzahl Bytes im Arbeitsspeicher<br>
+<div style='padding-left: 90pt'>
+               + eine Anzahl an Zeit auf der CPU <br>
+</div>
+<ul>
+<li><strong>ulimit</strong></li>
+</ul>
+<a href="./Prozessverwaltung/ulimit.html" title="Linux Wissen:Prozessverwaltung:ulimit">Linux Wissen:Prozessverwaltung:ulimit</a><br>
+</p>
+
+<p>
+*/etc/security/limits.conf<br>
+<a href="./FHS/etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf">Linux Wissen:FHS:etc:security++limits.conf</a><br>
+</p>
+
+<h2>Magic Sys-Abf Taste</h2>
+<p>
+<ul>
+<li>ermöglicht das direkte Signalen und SysCalls an den Rechner</li>
+</ul>
+<a href="./Prozessverwaltung/Magic_Sys-Abf_Taste.html" title="Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste">Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

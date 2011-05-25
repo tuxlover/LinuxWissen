@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T14:19:23+02:00
+
+====== uname ======
+Created Sonntag 24 April 2011
+
+**uname **→ Informationen zum verwendeten System erhalten
+**-n **→ zeigt den Namen, meist Hostnamen des Systems an
+**-s **→ zeigt den Namen des Systemkernels an, unter Linux wird "Linux" zurückgegeben
+**-r **→ zeigt den Namen des Kernels inklusive Versionsnummer an
+**-m **→ zeigt Informationen zum verwendeten Architekturtyp an
+**-p **→ zeigt den verwendeten Prozessortyp an
+**-i **→ zeigt die verwendete Hardwareplattform an
+**-o **→ zeigt das verwendete Betriebsystem an, unter Linux wird "GNU/Linux" zurückgegeben
+**-v **→ zeigt Informationen über das Datum des eingestzten Kernels an
+**-a **→ wie **-nsrvmpio**
+

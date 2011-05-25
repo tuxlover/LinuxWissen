@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Optionen_f%C3%BCr_die_Bash.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Shell_Varibalen_und_die_Umgebung/Positions_Parameter.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Shell Varibalen und die Umgebung</h1>
+
+<p>
+Created Freitag 15 April 2011<br>
+</p>
+
+<p>
+<strong>FOO=bar </strong>→ weist der Variablen Foo den Wert bar zu<br>
+</p>
+
+<h2>Shellvariablen</h2>
+<p>
+<ul>
+<li>nur in der aktuellen Shell oder Subshell oder Script sichtbar</li>
+</ul>
+</p>
+
+<h2>Umgebungsvariablen</h2>
+<p>
+<ul>
+<li>werden beim Starten eines Befehls an den Kindprozess weiter vererbt</li>
+<li>steuern das Verhalten von einigen Programmen und bash im besonderen</li>
+</ul>
+</p>
+
+<h2>Umgebungsvariablen deklarieren</h2>
+<p>
+<strong>export FOO=bar </strong>→ deklariert die Variable FOO mit dem Wert bar und exportiert diese als Umgebungsvariable<br>
+<strong>export FOO BAR VAR </strong>→ exportiert die Variablen FOO BAR und VAR als Umgebungsvariablen<br>
+</p>
+
+<h2>Umgebungsvariablen anzeigen</h2>
+<p>
+<strong>env </strong><br>
+<strong>export</strong><br>
+<strong>printenv VAR </strong>→ Inhalt einer Umgebungsvariable anzeigen<br>
+</p>
+
+<h2>Alle Shellvariablen anzeigen</h2>
+<p>
+<strong>set</strong><br>
+</p>
+
+<p>
+<u>Hinweis: Umgebungsvariablen sind Shellvariablen aber nicht umgekehrt. Die Aussage ist nicht äquivalent.</u><br>
+</p>
+
+<h2>Ein Programm in einer veränderten Laufzeitumgebung starten</h2>
+<p>
+<strong>env &lt;Optionen&gt; &lt;Befehl&gt; </strong>→ ein Programm in einer angepassten Umgebung starten <br>
+<strong>-i </strong>→ Starte mit einer leeren Shellumgebung, keine Umgebungsvariable gesetzt<br>
+<strong>-u &lt;VAR&gt; </strong>→ entferne &lt;VAR&gt; temporär aus der Umgebung<br>
+</p>
+
+<h2>Unexportieren einer Variablen</h2>
+<p>
+<strong>export -n &lt;VAR&gt; </strong>→ unexportiert (negiert) die Variable VAR<br>
+</p>
+
+<h2>Löschen einer Varibalen</h2>
+<p>
+<strong>unset &lt;VAR&gt; </strong>→ löscht eine Shellvariable und damit auch Umgebungsvariablen<br>
+</p>
+
+<h2>Anzeigen des Inhalts von Shellvariablen</h2>
+<p>
+<strong>echo $VAR</strong> → zeigt den Inhalt der Varibalen VAR an<br>
+</p>
+
+<h2>Anzeigen des aktuellen virtuellen Geräts</h2>
+<p>
+<strong>tty </strong>→ zeigt das unter */dev gemappte Gerät an auf der das Terminal lauscht<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Hilfe_erhalten/Man_Pages.html'>Linux Wissen:Hilfe erhalten:Man Pages</a></li>		<a href='../Bash.html'>Linux Wissen:Shell:Bash</a></li>		<a href='../../Systemprogrammierung/Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>		<a href='../../Systemprogrammierung/Shellscripting/Variablen_zuweisen.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

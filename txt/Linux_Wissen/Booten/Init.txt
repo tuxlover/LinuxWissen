@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T01:01:53+02:00
+
+====== Init ======
+Created Sonntag 24 April 2011
+
+**/sbin/init <Rrunlevel>|<q|Q> **
+→ in das entsprechende Runlevel wechseln
+→ dabei werden die in der */etc/inittab angegebenen Scripte entsprechend des Runlevels ausgeführt
+**-t N **→ zwischen dem Senden von SIGTERM und SIGKILL N Sekunden verstreichen lassen
+wird der Parmeter q|Q verwendet wird ein erneuetes einlesen der */etc/inittab erzwungen
+[[Linux Wissen:Prozessverwaltung:kill]]
+[[Linux Wissen:FHS:etc:inittab]]
+
+//<Runlevel> //
+//A,B,C  Bedarfsrunlevel die den Zustand des Systems nicht ändern//
+//N  kein vorheriger runlevel. Ist der Standardrunlevel aus dem init in die runlevel S beim Starten wechselt//
+//S -wird beim Starten durchlaufen, bevor das System in einen der Runlevel 2 bis 5 übergeht (Systemreperaturmodus andere)//
+//0 entspricht im wesntlichen dem nicht vorhandensein eines Runlevels also dem Halt des Systems//
+//1 Einzelbenutzermodus ohne Netzwerk (Systemreparaturmodus Debian)//
+//2 Mehrbenutzer ohne Netzwerk//
+//3 Mehrbenutzer mit Netzwerk (Standardrunlevel bei Servern)//
+//4 Nicht benutzt / frei Konfigurierbar//
+//5 Wie 3 mit grafischer X Umgebung//
+//6 Neustart des Systems//
+
+**runlevel**
+→ zeigt das aktuelle und das vorherige Runlevel an
+→ Der Wert N bedeutet dass das System keinen vorherigen Runlevel hatte bzw. den Runlevel 0 hatte
+
+=== Systemwartungmodus ===
+**init s **→ bringt das System in den Systemwartungsmodus
+           → verlangt das Root Passwort
+           → andere ttys sind nicht Verfügbar, **screen **verwenden
+ [[Linux Wissen:Shell:Shells und Subshells beenden:screen]]

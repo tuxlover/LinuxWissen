@@ -1,0 +1,113 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T15:44:24+02:00
+
+====== Partitionen und Dateisysteme ======
+Created Donnerstag 21 April 2011
+
+===== Interner Verschnitt =====
+__Bei einer Blockgröße von 4 Kib belegt eine Datei mit 500 Bytes 1/8 eines Blocks. Effektiv verbraucht Sie aber dennoch einen 4 Kib großen Block. Kleinere Blockgrößen veringern den Platzverbrauch durch internen Verschnitt, erhöhen aber die I/O-Zeit beim Lesen und Schreiben.__
+
+===== Beschränkungen beim Festlegen von Partitionen =====
+//IDE/SATA		4 Primäre Max	3 Primäre, 1 Extended und 63 logishce Max//
+//SCSI		4 Prmäre Max		3 Primäre 1 Extended und 15 logische Max//
+
+===== Festplattengeometrie =====
+* Daten auf der Festplatte werden in Datenblöcken zu je 4 mal 512 Bytes (nicht zu verwechseln mit Blockggrößen des Dateisystesm) abgelegt
+* Durchnummerierung aller Scheiben
+* Kreisförmige Spuren
+* Sektor pro Spur
+
+Geometrisch:
+→ Dadurch lässt sich jeder Datenblock durch seine Kopf, Zylinder und Sektorennummer (CHS) identifzieren
+→ Cylinder, Heads, Sectors
+
+Logisch:
+→ logische durchnumerierung der Datenblöcke (LBA)
+
+===== Plattenbelegung analysieren =====
+* **df **
+* **du**
+
+===== Partitionen anlegen und verwalten =====
+* **fdisk** 
+* **sfdisk**
+* **smartctl**
+[[Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge]]
+
+*/proc/partitions 
+[[Linux Wissen:FHS:proc]]
+
+=== Partitionstypen: ===
+82 → Linux Swap
+83 → Linux
+8e → Linux LVM
+fd → Linux RAID
+[[Linux Wissen:Partitionen und Dateisysteme:Partitionstypen]]
+
+===== Dateisystme =====
+* **mkfs **
+* **mkefs**
+* **tune2fs**
+* **dumpe2fs**
+* **e2fsck**
+* **debugfs**
+* **e2image**
+* **mkreiserfs|dumpreiserfs|resize_reiserfs|reisfstune**
+* **mkdosfs**
+* **mkntfs**
+[[Linux Wissen:Partitionen und Dateisysteme:Dateisysteme]]
+
+===== Mounten =====
+* einhängen eines Dateisystems in das System, so dass auf dieses zugegriffen werden kann
+* automatisch mittels */etc/fstab, mindestens / muss während des Bootens eingehängt werden
+[[Linux Wissen:FHS:etc:fstab]]
+* manuelle mittles **mount **
+[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+
+=== Mountpoint ===
+Ein im Dateibaum befindlicher Ort von dem aus mittels Dateiwerkzeuge auf Dateien in diesem Dateisystem zugegriffen werden kann.
+
+=== Labels und UUIDs ===
+Ein Label ist ein im Superblock abgelegter Text von maximal 16 Zeichen.
+Eine UUID (Universal Unique Identifier) ist einem Gerät zugewiesene eindeutige Kennung.
+
+**blkid [</dev/sdX>] **→ Informationen über UUID, typ des Dateissystems anzeigen
+                                     → wird ein spezielles Gerät angegeben, werden nur Informationen für    
+
+__Hinweis: UUID und Labels können für die */etc/fstab in der ersten Zeile verwendet.( __[[Linux Wissen:FHS:etc:fstab]] )
+
+**e2label /dev/sdX <LABEL> **→ das Gerät /dev/sdX erhält das <LABEL>
+
+**tune2fs -U random /dev/sdX **→ ein neues zufälliges Label erzeugen
+
+*/dev/by-uuid/ 
+
+==== Swap ====
+* Ist der Auslagerungsspeicher auf der Festplatte für den Kernel
+* Zugriff ist langsamer als der Arbeitspeicher
+* **mkswap**
+* **swapon**
+* **swapoff**
+* **free**
+[[Linux Wissen:Partitionen und Dateisysteme:Swap]]
+[[+Script Swapspeicher erweitern]]
+
+__Hinweis: Kernel 2.4 beschränkt sich auf 8 zu maximal 2G, 2.6 auf 32 zu beliebiger Größe. __
+
+===== dd =====
+* **dd**
+* **dd_rescue**
+[[Linux Wissen:Partitionen und Dateisysteme:dd]]
+
+===== Quotas =====
+* zum Beschränken der Dateien|Blöcke|Inodes die die ein Nutzer auf einem Dateisystem anlegen darf
+* Beschränkungen werden mittels **edquota **für jeden Benutzer | Gruppe festgelegt
+* Seit Version 2.6.32 wird journeled Quota unterstütz, welches es ermöglicht Quotas schneller aus einem
+    ext3/ext4 System wiederherzustellen
+* Es kann eine harte Grenze und eine weiche Grenze angeben werden (diese Grenze )
+* **quotacheck**
+* **repquota**
+* **edquota**
+* **quota**
+[[Linux Wissen:Partitionen und Dateisysteme:Quotas]]

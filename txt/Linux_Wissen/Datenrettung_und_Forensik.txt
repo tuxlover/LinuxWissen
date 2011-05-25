@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-22T19:01:46+02:00
+
+====== Datenrettung und Forensik ======
+Created Freitag 22 April 2011
+
+**testdisk/photorec **→ untersucht Festplatten nach verlorenen Partitionen und stellt gelöschte Dateien wieder her
+				   → interaktives Programm
+				   → kann im laufenden Betrieb verwendet werden
+				
+**foremost **→ gelöschte Dateien aufgrund verbliebener Footer und Header wiederherstellen
+[[Linux Wissen:Datenrettung und Forensik:foremost]]
+
+===== Dateirettung mit dd =====
+[[Linux Wissen:Partitionen und Dateisysteme:dd]]
+
+Wir nehmen folgendes an:
+    (1 )Partition /dev/sdX
+    (2 )Größe der Datei R-S Zeilen
+    (3) genaue Wortkombination im letztem Drittel "text" 
+
+**dd if=/dev/sdX bs=4K | strings | grep -B S -A R "text" > /tmp/gefunden.txt**
+
+[[Linux Wissen:Dateien verwalten:Dateien betrachten]]
+[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep]]
+[[Linux Wissen:Shell:Standardkanäle]]
+
+===== Datenrettung mit dd_rescue =====
+* dd_rescue → Datenrettung aus defekten Partitionen und Festplatten
+[[Linux Wissen:Datenrettung und Forensik:dd rescue]]

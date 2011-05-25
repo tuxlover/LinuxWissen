@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T23:40:58+02:00
+
+====== Script Swapspeicher erweitern ======
+Created Donnerstag 21 April 2011
+
++++
+//#!/bin/bash//
+
+//double_swap()//
+//{//
+//SWAP_PART=$(tail -1 /proc/swaps | awk '{print $1}')//
+
+//dd if="$SWAP_PART" of=/swapfile//
+//swapon /swapfile//
+
+//return $?//
+//}//
+
+
+//remove_swapfile()//
+//{//
+//if [-f /swapfile ]//
+//        then//
+//                swapoff /swapfile//
+//                rm swapfile//
+//fi//
+//return $?//
+//}//
+
+//case $1 in//
+//        on) double_swap || echo "failed"//
+//        ;;//
+//        off) remove_swapfile || echo "failed"//
+//esac//
+
+//exit 0//
++++

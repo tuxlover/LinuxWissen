@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T02:43:57+02:00
+
+====== Shell Varibalen und die Umgebung ======
+Created Freitag 15 April 2011
+
+**FOO=bar **→ weist der Variablen Foo den Wert bar zu
+
+===== Shellvariablen =====
+* nur in der aktuellen Shell oder Subshell oder Script sichtbar
+
+===== Umgebungsvariablen =====
+* werden beim Starten eines Befehls an den Kindprozess weiter vererbt
+* steuern das Verhalten von einigen Programmen und bash im besonderen
+
+===== Umgebungsvariablen deklarieren =====
+**export FOO=bar **→ deklariert die Variable FOO mit dem Wert bar und exportiert diese als Umgebungsvariable
+**export FOO BAR VAR **→ exportiert die Variablen FOO BAR und VAR als Umgebungsvariablen
+
+===== Umgebungsvariablen anzeigen =====
+**env **
+**export**
+**printenv VAR **→ Inhalt einer Umgebungsvariable anzeigen
+
+===== Alle Shellvariablen anzeigen =====
+**set**
+
+__Hinweis: Umgebungsvariablen sind Shellvariablen aber nicht umgekehrt. Die Aussage ist nicht äquivalent.__
+
+===== Ein Programm in einer veränderten Laufzeitumgebung starten =====
+**env <Optionen> <Befehl> **→ ein Programm in einer angepassten Umgebung starten 
+**-i **→ Starte mit einer leeren Shellumgebung, keine Umgebungsvariable gesetzt
+**-u <VAR> **→ entferne <VAR> temporär aus der Umgebung
+
+===== Unexportieren einer Variablen =====
+**export -n <VAR> **→ unexportiert (negiert) die Variable VAR
+
+===== Löschen einer Varibalen =====
+**unset <VAR> **→ löscht eine Shellvariable und damit auch Umgebungsvariablen
+
+===== Anzeigen des Inhalts von Shellvariablen =====
+**echo $VAR** → zeigt den Inhalt der Varibalen VAR an
+
+===== Anzeigen des aktuellen virtuellen Geräts =====
+**tty **→ zeigt das unter */dev gemappte Gerät an auf der das Terminal lauscht

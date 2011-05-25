@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T18:32:47+02:00
+
+====== Filterprogramme ======
+Created Montag 18 April 2011
+
+* lesen immer von StdIn 
+* sortieren, anzeigen, parsen von ASCII Textdateien
+* bearbeiten und maninpulieren von ASCII Textinhalten
+* Wörter zählen und sortieren
+
+===== cat =====
+[[Linux Wissen:Filterprogramme:cat]]
+
+===== head und tail =====
+[[Linux Wissen:Filterprogramme:head und tail]]
+
+===== Oktaler und Hexdezimaler Dump =====
+* **od **
+* **hexdum**
+* **xxd**
+[[Linux Wissen:Filterprogramme:Oktaler und Hexadezimaler Dump]]
+
+===== Texte manipulieren und aufbereiten =====
+* **expand** 
+* **unexpand**
+* **tr**
+* **fmt**
+* **pr**
+* **nl**
+* **cut**
+[[Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten]]
+
+===== Wörter zählen und Wörter sortieren =====
+* **wc**
+* **sort**
+* **uniq**
+[[Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren]]
+
+===== Dateien zusammenfügen =====
+* **cat**
+* **paste**
+* **join **
+[[Linux Wissen:Filterprogramme:Dateien zusammenführen]]

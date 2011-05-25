@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T20:11:44+02:00
+
+====== Escape Sequenzen ======
+Created Donnerstag 28 April 2011
+
+**\b       **
+→ backspace (^H)
+** \f       **
+→ formfeed (^L)
+** \n       **
+→ newline (DOS, CR/LF; Unix, LF)
+** \r       **
+→ carriage return
+** \t       **
+→ tab (^I)
+** \ddd     **
+→ oktaler Wert `ddd' wobei `ddd' eine 1-3 stellige Zahl von 0 bis 7 ist
+** \c     **
+→ Jedes andere Zeichen würd durch ein Literal gesehen , \" für " und \\ für \

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T02:58:31+02:00
+
+====== Links ======
+Created Samstag 16 April 2011
+
+===== symbolische Links erstellen =====
+* symbolische Links erstellen eine Datei mit dem Verweis auf eine andere Datei (i-nodes sind unterschiedlich)
+* löschen der Quelle zerstört das Ziel
+* kann über Dateigrenzen hinweg auf deine andere Datei zeigen
+
+**ln -s <Quelle> <Ziel> **→ symbolische Verknüpfung von <Quelle> nach <Ziel> erstellen
+
+===== harte Links von erstellen =====
+* eine Datei verweist auf den gleichen i-node
+* löschen von Quelle lässt Ziel intakt
+* kann nicht über Dateigrenzen hinweg angelegt werden, da auf diesem ein i-node bereits vorhanden ist und möglicherweise auf eine andere Quelle verweist
+
+**ln <Quelle> <Ziel> **→ einen harten Link von <Quelle> nach <Ziel> erstellen

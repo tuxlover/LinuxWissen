@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T03:28:13+02:00
+
+====== Dateien betrachten ======
+Created Samstag 16 April 2011
+
+===== Pager =====
+* einfache Programme um ASCII Dateien Seitenweise anzuzeigen
+* der Aufruf erfolgt durch <Pager> Datei oder durch das Verbinden in einer Pipe
+[[Linux Wissen:Shell:Standardkanäle]]
+
+**more**
+**z **→ nächste Seite anzeigen
+**b **→ vorherige Seite anzeigen
+**v **→ vi Editor aufrufen
+**/ **→ rückärts suchen
+**Strg+l **→ zeichnet Bildschirm auf
+**Enter **→ nächste Zeile anzuzeigen
+**! <Befehl> **→ Befehl in Subshell ausführen
+
+ **less **
+**<down>, e, j, <Enter> **→ nächste Zeile anzeigen
+**<up>, y, k **→ vorherige Zeile anzeigen
+**f, z** → nächste Seite anzeigen
+**b **→ vorherige Seite anzeigen
+**g **→ zum Dateianfang springen
+**G **→ zum Dateiende springen
+**? /** → vorwärts | rückwärts suchen
+**N n **→ Suche vorwärts | rückwärts fortsetzen
+**! <Befehl> **→ Befehl in Subshell ausführen
+**v **→ ruft vi auf
+**r **→  zeichnet Bildschirm neu
+
+===== Non Pager =====
+* alle anderen Programme die als Betrachter für ASCII Dateien dienen aber nicht interaktiv bedient werden können
+[[Linux Wissen:Filterprogramme]]
+
+**strings** → Anzeigen von lesbaren ASCII Zeichen einer Binärdatei

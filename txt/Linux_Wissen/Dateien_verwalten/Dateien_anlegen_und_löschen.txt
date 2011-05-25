@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T01:10:43+02:00
+
+====== Dateien anlegen und löschen ======
+Created Samstag 16 April 2011
+
+**touch <Datei> **→ Anlegen einer leeren Datei
+
+**mkdir <DIR> **→ Das Verzeichnis <DIR> anlegen
+**-p **→ erstelle auch Elternverzeichnis falls diese noch nicht existieren
+
+**rmdir <DIR> **→ das leere Verzeichnis <DIR> löschen
+**-p **→ lösche auch leere Ahnenverzeichnisse
+**-v **→ verbose
+__Hinweis: rmdir löscht nur leere Verzeichnisse. Verzeichnisse mit Inhalt müssen mir rm -r <DIR> gelöscht __
+
+**mktemp <Datei>XXXXX **→ erstelle eine temporäre Datei oder ein Verzeichnis in */tmp mit zufälligem Namen
+                                              → wobei die X eine Zufallsschablone ist
+**-d **→ ein Verzeichnis erstellen
+**-q **→ Quiete
+**-u **→ dry run, nichts tun nur simmulieren
+**-t **→ erstellt das Verzeichnis welches durch die Umgebungsvariable $TMPDIR festgelegt wurde
+ 
+**rm <Datei> **→ löscht <Datei>
+**-r **→ löscht rekursiv auch Verezeichnisse und Unterverzeichnisse
+**-f **→ force, nicht nachfragen, erzwingen
+**-i **→ frage vorher nach
+**-v **→ verbose
+
+__Hinweis: alias rm=''rm -i" bewahrt root vor vorschnellen Dummheiten__
+__Hinweise: rm -rf /*__
+

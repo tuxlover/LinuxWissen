@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T19:02:18+02:00
+
+====== Oktaler und Hexadezimaler Dump ======
+Created Montag 18 April 2011
+
+**od **→ Oktaler Dump einer Datei
+
+**hexdump** → hexadezimaler Dump einer Datei
+
+**xxd **→ kann zusätzlich zum Hexdump eine zusätzliche binäre Datei erzeugen

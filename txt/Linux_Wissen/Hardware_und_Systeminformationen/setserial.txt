@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T15:54:27+02:00
+
+====== setserial ======
+Created Sonntag 24 April 2011
+
+**setserial /dev/ttySX **→ setzen und anzeigen der Konfiguration für serielle Schnittstellen
+**-a **→ vollständige Informationen über das Gerät ausgeben
+
+**setserial /dev/ttySX port <IO-Port> irq <IRQ> [Optionen]**
+→ Setzen einer Konfiguration für ein Serielles Terminal
+
+//Beispiel://
+**setserial /dev/ttyS0 port 0x3f8 irq 4 spd_vhi**

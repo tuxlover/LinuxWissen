@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T14:50:32+02:00
+
+====== security++limits.conf ======
+Created Donnerstag 21 April 2011
+
+***/etc/security/limits.conf**
+++
+//#Jede Zeile beschreibt ein gesteztes Limit für einen Nutzer in der Form//
+//#//
+//#<Domain>        <Typ>  <Item>  <Wert>//
+//#//
+//#Wobei://
+//#<Domain> sein kann://
+//#        - ein Nutzer Name//
+//#        - eine Gruuppe wird entsprechend mt @Gruppe refernziert//
+//#        - * Für den Standardeintrag//
+//#        - % kann mit %Gruppe anagegeben werden um eine Maximalzahl von Logins festzulegen//
+//#//
+//#<Typ> kann die folgenden Werte haben://
+//#        - "soft" für Softlimits//
+//#        - "hard" für Hardlimits//
+//#//
+//#<Item> kann eines der folgende Werte annehemn://
+//#        - core - die größe der coredumps die bei segfaults etc. angelegt werden (KB)//
+//#        - data - maximale Data Größe (KB)//
+//#        - fsize - maximale Dateigröße (KB)//
+//#        - memlock - max locked-in-memory Adress Raum (KB)//
+//#        - nofile - max Anzahl offener Dateien//
+//#        - rss - Maximal residente Speichnutzung (KB)//
+//#        - stack - max Stack Größe (KB)//
+//#        - cpu - max CPU Zeit (MIN)//
+//#        - nproc - max Anzahl von Prozessen//
+//#        - as - address space limit (KB)//
+//#        - maxlogins - Maximale Anzahl der Logins für diesen User//
+//#        - maxsyslogins - Maximale Anzahl der Logins auf diesem System//
+//#        - priority - Die Priorität mit der die Prozesse des Nutzers laufen//
+//#        - locks - Maximale Anzahl der Locks die der Nutzer erhalten kann//
+//#        - sigpending - Maximale Anzahl der ausseteehden Signale//
+//#        - msgqueue - Maxiamle Anzahl von Ques (bytes)//
+//#        - nice - max nice Werte die mit renice erhöht werden können [-20, 19]//
+//#        - rtprio - max Realzeit Priorität//
+//++//

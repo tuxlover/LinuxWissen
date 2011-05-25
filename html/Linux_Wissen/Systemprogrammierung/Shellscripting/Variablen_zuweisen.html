@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Test.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='../../Vim_Editor.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Variablen zuweisen</h1>
+
+<p>
+Created Dienstag 26 April 2011<br>
+</p>
+
+<p>
+<strong>VAR=val </strong><br>
+→  weist der Variblen <strong>VAR</strong> den Wert<strong> val</strong> zu. <br>
+→ Falls die Variable einen Anderen Wert bereits hatte wird der alte Wert überschrieben.<br>
+</p>
+
+<p>
+<strong>VAR= </strong><br>
+→  Weist der Variablen den Wert NULL zu.<br>
+</p>
+
+<p>
+<strong>unset VAR</strong> →  löschen der Variablen VAR<br>
+<a href="../../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a><br>
+</p>
+
+<p>
+<strong>VAR[n]=val </strong><br>
+→  Weist dem <strong>n</strong>-ten Element des Arrays <strong>VAR </strong>den Wert <strong>val </strong>zu. <br>
+→ Falls dieser bereits belegt war wird VAR mir einem neuen Wert überschrieben.<br>
+</p>
+
+<p>
+<strong>VAR=$(Befehl)</strong> oder <strong>VAR=`Befehl`</strong> <br>
+→  Weist die Ausgabe von <strong>Befehl</strong> (Einzelenes Kommando oder Befehlskette) der Variablen <strong>VAR </strong>zu.<br>
+</p>
+
+<p>
+<strong>${VAR:=val}</strong> <br>
+→  Die Variable <strong>VAR</strong> erhält den Wert <strong>val</strong> wenn <strong>VAR</strong> nicht gesetzt oder leer war.<br>
+</p>
+
+<p>
+<strong>${VAR=val}</strong> <br>
+→  Die Variable <strong>VAR</strong> erhält den Wert <strong>val</strong> falls die Variable undefiniert war. <br>
+→  Der Wert NULL bleibt erhalten.<br>
+</p>
+
+<p>
+<strong>${VAR:-val}</strong> <br>
+→  Nur der Ausdruck von <strong>VAR</strong> wird durch <strong>val</strong> ersetzt. <br>
+→ Der alte Wert bleibt aber erhalten.<br>
+</p>
+
+<p>
+<strong>${VAR:?&lt;Fehlermeldung&gt;}</strong> <br>
+→  Ist <strong>VAR</strong> leer oder undefiniert wird <strong>&lt;Fehlermeldung&gt;</strong> ausgegeben<br>
+</p>
+
+<p>
+<strong>VAR1=${!VAR2}</strong> <br>
+→  der Wert von <strong>VAR2 </strong>wird <strong>VAR1</strong> zugewiesen<br>
+</p>
+
+<p>
+<strong>${VAR:m:n}</strong><br>
+→  Alle Werte von <strong>VAR</strong> bei der <strong>m</strong>-ten Postion beginnend der Länge <strong>n</strong>. <br>
+→ Startet bei Index 0, <br>
+→ m und n können auch Werte sein, die au Berechnungen entstehen<br>
+</p>
+
+<p>
+<strong>${#VAR}</strong> <br>
+→  evaluiert die Länge des Strings der Variablen <strong>VAR</strong><br>
+</p>
+
+<p>
+<strong>${STRING#Expr}</strong> <br>
+→  entfernt den <em>kürztmöglich</em> passenden Ausdruck von <strong>Expr</strong> von <em>vorne</em> beginnend von <strong>STRING</strong><br>
+</p>
+
+<p>
+<strong>${STRING##Expr}</strong> <br>
+→  entfernt den <em>längstmöglichen</em> passenden Ausdruck von <strong>Expr</strong> von <em>vorne</em> beginnend von <strong>STRING</strong><br>
+</p>
+
+<p>
+<strong>${STRING%Expr}</strong> <br>
+→  entfernt den <em>kürztmöglichen</em> Ausdruck von <strong>Expr</strong> von <em>hinten</em> beginnend von <strong>STRING</strong><br>
+</p>
+
+<p>
+<strong>${STRING%%Expr} </strong><br>
+→  entfernt den <em>längstmöglichen</em> Ausdruck von <strong>Expr</strong> von <em>hinten</em> beginnend von <strong>STRING</strong><br>
+</p>
+
+<p>
+<strong>${STRING/Expr/&lt;Ersetzung&gt;} </strong><br>
+→  der Ausdruck <strong>Expr</strong> in <strong>STRING</strong>  wird durch <strong>&lt;Ersetzung&gt;</strong> ersetzt<br>
+</p>
+
+<p>
+<strong>${STRING//Expr//&lt;Ersetzung&gt;}</strong> <br>
+→  alle Ausdrücke die auf <strong>Expr</strong> passen werden in <strong>STRING</strong> durch <strong>&lt;Ersetzung&gt;</strong> ersetzt<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

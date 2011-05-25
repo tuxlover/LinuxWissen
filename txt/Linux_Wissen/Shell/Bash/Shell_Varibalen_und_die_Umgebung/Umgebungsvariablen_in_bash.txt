@@ -1,0 +1,79 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T03:18:48+02:00
+
+====== Umgebungsvariablen in bash ======
+Created Freitag 15 April 2011
+
+BASH → Pfad zur Binärdatei der aktuellen Shell
+
+BASH_SUBSHELL → Indikator für die Tiefe der Subshellverschachtlelung, 0 bedeutet keine Subshell, 1 in der ersten Subshell 					 usw. 
+
+BASHPID → PID der aktuell aufgerufenen Bash Shell
+
+BASH_VERSION → Version der aktuellen bash
+
+DIRSTACK → Der Wert des Verezeichnis Stack ( [[Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen]] )
+
+EDITOR → Der Standardeditor (vi, vim, emacs, pico, nano)
+
+EUID → effektive UID
+
+FUNCNAME → Name der aktuell aufgerufenen Funktion
+                   →  __Hinweis__: function () {echo FUNCNAME}; function
+[[Linux Wissen:Systemprogrammierung:Shellscripting:Funktion]]
+
+GROUPS → Gruppenzugehörigkeit des momentanen Benutzers
+
+----
+HISTFILE → Umgebungsvariable die auf die Datei verweist in der bash seine history ablegt
+
+HISTSIZE → Größe der in der History gemerkten Befehle
+
+HISTFILESIZE → Größe der in der Datei bash seine history anlegt 
+----
+ [[Linux Wissen:Shell:Bash:History]]
+
+HOME → Heimatverzeichnis des momentanen Benutzers
+
+HOSTNAME → Name des Hostes des aktuellen Systems 
+
+HOSTTYPE → identifiziert den Typ der Hardware auf dem die Bash ausgeführt wird
+
+IFS → Internal Filed Seperator (Interner Zeichentrenner, standard ist $)
+          __Hinweis:__ **echo** $**IFS**|**cat** -**A** → gibt den Wert von IFS aus
+
+LINENO → verweist auf die aktuelle Anzahl der Zeilen der Bash in einem Shellscript
+             → verweist auf die aktuelle Anzahl der Zeilen der bash im Terminalemulator
+
+OLDPWD → zuletzt in der aktuellen Shell/Subshell aufgerufenes Verzeichnis
+
+OSTYPE → Typ des Betriebssystems
+
+PATH → Pfade durch : getrennt in der in der Shell nach ausführbaren Dateien gesucht wird
+         → //Bsp: /usr/lib/mpi/gcc/openmpi/bin:/home/l1zard/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/usr/lib/jvm/jre/bin:/usr/lib/mit/bin:/usr/lib/mit/sbin//
+
+PIPESTATUS → exit Status der letzten fg Pipe
+
+PPID → Prozessid des Elternprozess der Shell
+        → In einer Subshell ist es PID der abhängigen Elternshell
+        → in Shellscripten die PID der Shell in der das Script gestartet wurde
+
+PROMPT_COMMAND → ist diese Varibale gestzte kann sie einen Befehlt enthalten der vor dem Setzen des Prompts PS1
+                                     ausgeführt wird
+
+PS1 → erstes Promptzeichen
+
+PS2 → zweites Promptzeichen
+
+PS3 → Drittes Promptzeichen. Wird angezeigt wenn in einer **select  **Schleife genutzt
+[[Linux Wissen:Systemprogrammierung:Shellscripting:select]]
+
+PS4 → viertes Promptzeichen. Wird angezeigt wen **set -x **verwendet wird 
+[[Linux Wissen:Shell:Bash:Optionen für die Bash]]
+
+SECONDS → Anzahl der Sekunden die eine Shell | Shellscript gelaufen ist  
+
+SHLVL → gibt die Tiefe der Verschachtelung der Shell an
+
+UID → UID des Nutzers der die Shell | das Script zuletzt aufgerufen hat

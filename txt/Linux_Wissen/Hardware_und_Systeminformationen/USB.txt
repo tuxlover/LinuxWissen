@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T15:00:38+02:00
+
+====== USB ======
+Created Sonntag 24 April 2011
+
+**lsusb **→ listet die vorhandenen USB Geräte
+**-v **→ ausführliche Ausgabe
+**-t ** → physikalische USB Baum ansicht als Baum
+**-n **→ nichts machen, nur testen
+
+**lsusb -v -t <descriptor> **→ Auswerten des Gerätebaumes unter <descriptor>
+
+*/var/lib/usbutils/usb.ids → Datenbank der USB Ids
+[[Linux Wissen:FHS:var]]
+
+*/proc/bus/usb → Mountpoint für usbfs 
+                         → welche Geräte und Driver für USB Geräte abgebildet werden
+ 
+*/sys/bus/usb → Mountpoint für usbfs 
+                       → vom Kernel generiert 
+[[Linux Wissen:FHS:sys]]
+[[Linux Wissen:FHS:proc]]
+
+**usbview **→ grafisches Programm für USB BUS Topologien
+

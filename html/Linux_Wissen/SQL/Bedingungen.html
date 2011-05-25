@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../SQL.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Constraints.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Bedingungen</h1>
+
+<p>
+Created Dienstag 03 Mai 2011<br>
+</p>
+
+<h4>Vergleichsoperatoren</h4>
+
+<p>
+<strong>&lt;SpalteN&gt;='&lt;Wert&gt;'</strong><br>
+→ &lt;SpalteN&gt; enthält genau den &lt;Wert&gt;<br>
+→ bei zusammengesetzten Wörtern als &lt;Wert&gt; müssen ' ' benutzt werden<br>
+→ entsprechend sind die Operatoren <strong>&lt;, &gt; </strong>verwendet werden<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>select title, special_features from film where length &gt; 180</em><br>
+</p>
+
+<p>
+<strong>&lt;SpalteN&gt; != '&lt;Wert&gt;'</strong><br>
+→ &lt;SpalteN&gt; enthält genau den &lt;Wert&gt; nicht<br>
+→ bei zusammengestzten Wörtern als zu matchenden &lt;Wert&gt; müssen '' benutzt werden<br>
+</p>
+
+<p>
+<strong>&lt;Spalte&gt; BETWEEN &lt;Untere Schranke&gt; AND &lt;Obere Schranke&gt;</strong><br>
+→ Angabe eines Intervalls<br>
+</p>
+
+<p>
+<strong>&lt;Spalte&gt; LIKE '&lt;Wildcards&gt;'</strong><br>
+→ Spalte enthält Werte die auf bestimmten &lt;Wildcards&gt; Ausdrücke passen<br>
+<em>&lt;Wildcards&gt;</em><br>
+_ → ein  eliebiges Zeichen <br>
+% → beliebig viele Zeichen<br>
+a% → a am Anfang und beliebige Zeichen<br>
+%teilstring% → entspricht dem teilstring innerhal eines Stings<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>select title from film where special_features LIKE 'B%';</em><br>
+</p>
+
+<h4>Logische Operatoren</h4>
+
+<p>
+<strong>&lt;Spalte&gt; IS NULL</strong><br>
+→ die Spalte enthält keinen Wert<br>
+</p>
+
+<p>
+<strong>&lt;Spalte&gt; IS NOT NULL</strong><br>
+→ die Spalte enthält einen Wert<br>
+</p>
+
+<p>
+<strong>&lt;Spalte&gt; IN ('&lt;Wert1&gt;',...,'&lt;WertN&gt;')</strong><br>
+→ eine Spalte enthält die &lt;Wert1&gt; oder &lt;Wert2&gt; oder ...<br>
+→ in Arrays auf Enthaltensein überprüfen<br>
+</p>
+
+<p>
+<strong>&lt;Spalte&gt; NOT IN ('&lt;Wert1&gt;',...,'&lt;WertN&gt;')</strong><br>
+→ eine Spalte darf keinen der Werte &lt;Wert1&gt; bis &lt;WertN&gt; enthalten<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>select title from film where special_features IN ('Trailers', 'Commentaries');</em><br>
+</p>
+
+<p>
+<strong>&lt;Condition1&gt; OR ... OR &lt;ConditionN&gt;</strong><br>
+→ mehrere Bedingungen durch Oder verknüpft<br>
+</p>
+
+<p>
+<strong>&lt;Condition1&gt; AND ... AND &lt;ConditionN&gt;</strong><br>
+→ meherer Bedingungen durch Und verknüpft<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>select title from film where special_features LIKE 'B%' AND length &lt; 90;</em><br>
+</p>
+
+  
+
+<h4>NULL</h4>
+<p>
+<ul>
+<li>bezeichnet einen Wert der nicht vergeben, leer oder nicht vergeben ist</li>
+<li>nicht zutreffend</li>
+<li>nicht bekannt</li>
+<li>nicht definiert </li>
+</ul>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>		<a href='../SQL.html'>Linux Wissen:SQL</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

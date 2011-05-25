@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T19:12:06+02:00
+
+====== Bibliotheken ======
+Created Sonntag 24 April 2011
+
+=== statische und dynamisch gelinkte Programme ===
+//statisch://
+benötigte Programme und Abhängigkeiten sind statisch in das Programm gelinkt.
+* erzeugt sehr große Binärdateien
+* zur Laufzeit nich mehr Abhängig von möglicherweise defekten Paketen und Bibliotheken
+
+//dynamisch://
+benötigte Programme und Abhängigkeiten werden erst zur Laufzeit gelinkt.
+* bei defekten Bibliotheken oder gar fehlenden kann das Programm nicht korrekt arbeiten
+* erzeugt kleine Binärdateien
+* haben eine höhere Laufzeit, da der Linker zur Laufzeit laden und linken muss
+
+**file </lib/Schnippschnapp.so> **→ So== Shared Oejecjt File 
+ >> ELF 32-Bit LSB shared object
+
+* **ldd **
+* **ldconfig**
+[[Linux Wissen:Bibliotheken:dynamische Bibliotheken]]
+
+

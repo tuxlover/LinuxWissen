@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T13:07:52+02:00
+
+====== Aliasse ======
+Created Freitag 15 April 2011
+
+* kürzere Befehle für lange Befehlsketten 
+
+**alias <Name>='<Befehl <Optionen> <Argumente>'**
+→ <Name> als Alias für den <Befehl> setzen. Es können <Optionen>, <Argumente> und Positionsparameter verwendet
+    werden ([[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Positions Parameter]])
+
+→ die Aufruf von **alias **ohne Zueweisung zeigt alle definierten Aliasse an
+__Hinweis: verwenden sie __**alias|grep <name>**__ um nach einem bestimmten Alias zu suchen__
+
+**unalias <Name> **→ entfernt einen bereits vergebenen Alias, so dass <Name> neu gesetzt werden kann
+**-a **→ alle vergebenen aliasse von der aktiven Shell| dem Script entfernen
+__Hinweis: dies ist nützlich in Shellscripten wenn unglücklich vergebene Aliasse das Script nicht sauber laufen lassen__
+
+*/etc/bash.bashrc → gloable Aliasse festlegen
+*~/.bashrc → vom Nutzer vergebene Aliasse
+
+      

@@ -1,0 +1,76 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-26T20:02:47+02:00
+
+====== Sed ======
+Created Dienstag 26 April 2011
+
+* Stream Editor
+* Sed liest den Datenstrom Zeile für Zeile ein und manipuliert nach einem gefundenen Muster
+* zur automatischen Manipulation von Dateiströmen die keine Interaktion mit den Nutzer erfordern
+* werden muess in Shell Scripten verwendet
+* Dabei ist ein Dateistrom StdtIn und Ausgabe StdOut bzw. ein oder mehrere Dateien
+* Um mehrere Dateien als einen Strom zu lesen und zu manipilieren benutzt man **-s**
+
+http://sed.sourceforge.net/sed1line_de.html
+[[Linux Wissen:Systemprogrammierung:Sed:Einzeiler]]
+
+**sed <Optionen> ~>**
+**'<Startadrese>,<Stopadresse><Befehl vor Patternspace>/<Patternspace>/<Holdspace>/  ~>**
+**<Befehl nach Holdspace>' **
+__Hinweis: Mehrere Befehle werden druch ; getrennt hintereinander ausgeführt.__
+**-n **→ Ausgabe des Patternspace unterdrücken
+**-e **→ mehrere Verabeitungsbefehle an eine Datei hängen **sed -e <Befehl1> -e <Befehl2>, -e ...<Datei>**
+**-i <Suffix>**→ Eingabedatei ist dieselbe wie die Ausgabedatei 
+		  → wird <Suffix> angegeben wird von Eingabedatei ein Backup angelegt
+**-f <Datei> **→ **sed-Befehle **aus einer Datei lesen
+		   → **#!/usr/bin/sed -f**
+**-r **→ Reguläre Ausdrücke verwenden
+
+== Achtung: ==
+** sed ... datei.txt > datei.txt **__wird die Datei zerstören!__
+
+===== Patternspace und Holdspace =====
+ 
+**Patternspace**: Das ist der Puffer in dem eine Zeile geladen wird, wenn sie einem bestimmten Muster entsprach.
+
+**Holdspace: **Nach der Bearbeitung der Zeile wird dies von den Pattern in den Holdspace kopiert.
+
+**Input Stream: **von hier liest **sed, **in der Regel StdIn oder eine Datei
+
+**Output Stream: **Ausgabe die nach StdOut geschrieben wird
+
+**sed '/[Muster]/x'**
+
+===== Erstellen eines ausführbaren Scriptes =====
+++
+//#!/usr/bin/sed -f//
+
+//<Sed Befehle>//
+...
+++
+
+===== Verschiedene Delimiter einsetzen =====
+Das erste Zeichen hinter dem Befehl ist ein Delimiter. Konvnetionell setzt man // als Delimiter ein. Aber man kann 
+auch jedes (!) andere Zeichen verwenden, dass nicht im Muster oder im Replacementstring vorkommt. So kann
+mittles der Befehl **s_/usr/bin/_/bin_g **sed auch ohne lästiges Quoten der // im Pfadname verwenden.
+
+===== Das & Zeichen =====
+Das & Zeichen korrespondeirt zu dem Muster was gefunden wurde im Holdspace und fügt diesem Zeichen an.
+
+   
+
+===== Adressieren von Zeilen in Sed =====
+[[Linux Wissen:Systemprogrammierung:Sed:Adressierungen]]
+
+
+===== Befehle: Ausgeben und Löschen einer Zeile =====
+[[Linux Wissen:Systemprogrammierung:Sed:Ausgeben und Löschen]]
+
+===== Befehle: Einfügen und Verändern =====
+[[Linux Wissen:Systemprogrammierung:Sed:Einfügen und Verändern]]
+
+===== Befehle: Suchen und erstzen =====
+[[Linux Wissen:Systemprogrammierung:Sed:Suchen und Ersetzen]]
+
+

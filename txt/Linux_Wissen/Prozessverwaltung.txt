@@ -1,0 +1,80 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-21T00:57:59+02:00
+
+====== Prozessverwaltung ======
+Created Donnerstag 21 April 2011
+
+Pseudoprozess (0) → ruft den Init Prozess (1) auf → Startet weitere Prozesse
+* Jeder Prozess ist einer PID (Prozess Identifikationsnummer) und PPID (Der PID seines Elternprozesses) zugeordnet
+* Init hat die PID 1 und die PPID 0
+
+**<Strg+c> **→ Sendet Signal 15 SIGTERM an Prozess der in der aktuellen Shell im Vordergrund läuft
+**<Strg+z> **→ Sendet Signal 20 SIGTSTP an Prozess der in der aktuellen Shell im Vordergrund läuft
+
+===== Jobs =====
+[[Linux Wissen:Shell:Jobkontrolle]]
+
+===== Kernelthreads =====
+* Kindprozesse des Kernels die Hardwarenahe Aufgaben übernehmen
+* werden zusammen mit dem Kernel im Ring 0 ausgeführt
+* meistens in [] bei der Nutzung von **ps ( **[[Linux Wissen:Prozessverwaltung:ps]] )
+* verbrauchen in der Prozesstabelle keinen zusätzlichen Speicher
+* können keinen SIGKILL oder SIGTERM geschickt bekommen
+
+__Hinweis:__ **ps -A u|awk '{ if($5 == 0){print }}' **__zeigt alle Kernel Threads an__
+
+
+===== Prozesszustände =====
+//runnable //→ Prozess wartet auf Ausführung
+//operating → //Prozess wird gerade von der CPU bearbeitet
+//sleeping → //Prozess wartet auf einen anderen Prozess //→ runnable//, //sleeping//
+//end //→ Prozess wird beendet
+//stopped// → Prozess wurde mit Signal 20 gestoppt
+
+__Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vordergrund laufenden Prozesses.__
+
+===== Zombies =====
+* Prozess ohne Elternprozess
+
+===== Prozessinformationen einholen =====
+* **ps**
+* **pstree** 
+[[Linux Wissen:Prozessverwaltung:ps]]
+
+* **top**
+[[Linux Wissen:Prozessverwaltung:top]]
+
+===== Signale =====
+* **kill**
+* **killall**
+* **nohup**
+[[Linux Wissen:Prozessverwaltung:kill]]
+
+===== Prozessprioritäten =====
+* jeder Prozess wird mit einem nice Wert gestartet
+* Intervall: -20 <= x <= 19 
+* je kleiner die Zahl desto höher die Priorität  
+* init hat immer den nice Wet 0
+* neue Prozesse wenn nicht anders angegen werden mit nice Wert +10 gestartet
+* **nice**
+* **renice**
+[[Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren]]
+
+===== Prozessresourcen =====
+* Jeder Prozess belegt Resourcen auf dem Rechner:
+					+ den Zustand eines Programms im Speicher nach einem Absturz  (Größe des Coredumps)
+					+ ein bereitgestelltes Datensegment in dem Objekte abgelegt werden (Größe des Heaps)
+			               + Anzahl von offenen und verwendeten Dateien während der Ausführung
+	                              +  Anzahl der zusätzliche aufgerufnenen Kindprozesse
+                                      + eine Anzahl Bytes im Arbeitsspeicher
+			               + eine Anzahl an Zeit auf der CPU 
+* **ulimit**
+[[Linux Wissen:Prozessverwaltung:ulimit]]
+
+*/etc/security/limits.conf
+[[Linux Wissen:FHS:etc:security++limits.conf]]
+
+===== Magic Sys-Abf Taste =====
+* ermöglicht das direkte Signalen und SysCalls an den Rechner
+[[Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste]]

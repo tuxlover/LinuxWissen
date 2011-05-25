@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T23:18:06+02:00
+
+====== Dateien laden und speichern ======
+Created Freitag 15 April 2011
+
+**C-x C-s **→ speichern des aktuellen Puffers
+**C-x s **→ speichern aller ungespeicherten Puffer
+**C-x C-w **→ speichern des aktuellen Puffers in eine andere Datei
+
+**C-x C-f **→ finde (laden) einer Datei 

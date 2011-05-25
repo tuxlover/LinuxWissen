@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-18T19:06:28+02:00
+
+====== Texte manipulieren und aufbereiten ======
+Created Montag 18 April 2011
+
+**expand** → Tabs in Leerzeichen konvertieren
+
+**unexpand **→ Leerzeichen in Tabs konvertieren
+**-t N** → N Leerzeichen bilden einen Tab, überstehende Leerzeichen werden nicht berücksichtigt
+
+**cut **→ beschneide eine Datei Spaltenweise
+**-c S,M-N **→ schneide die Spalte S aus und zusätzlich die Spalten M-N, beliebig oft widerholbar, jede Spalte entspricht ein Zeichen
+**-d <Trenner> **→ lege <Trenner> als Delimter fest
+**-f **→ Spaltenweises ausschneiden, Spalten werden duch den Delimiter begrenzt
+
+//Beispiel://
+//cut -d: -f1,1 /etc/passwd//
+//cut -d' '-f3 meinedatei //
+
+
+**tr <s1> <s2> **→ tauschen aller Zeichen <s1> durch <s2> in einem Datenstrom
+**-d <s1> **→ löschen anstelle von austauschen der Zeichen <s1> 
+**-c **→ ersetzen der Zeichen die nicht in <s1> durch <s2>
+**-s **→ mehrere Zeichen <s1> durch ein einzelnes <s2> ersetzen
+
+//Beispiel://
+tr -s Ae Ä < text1 > text2
+
+__Hinweis: Für komplexere manipulationen empfiehlt sich __**sed**
+[[Linux Wissen:Systemprogrammierung:Sed]]
+
+**fmt <Datei> **→ ohne zusätzliche Option bewirkt einen Zeilenumbruch nach 75 Zeichen
+**-w N** → Zeilenumbruch nach N Zeichen bewirken
+
+**pr <Datei> **→ die <Datei> für den Drucker vorformatieren
+**-N **→ ergibt eine Darstellung von N Zeichen
+**-h <text> **→ auf jedem Seitenkopf steht <text>
+**-l N** → N Zeilen pro Seite
+**-n **→ vergibt jeder Zeile eine 5 Stellige Zeilennummer
+**-o N **→ text um N Leerzeichen vom linken Rand einrücken
+**-d **→ Nutzer doppelte Leerzeichen anstelle von einfachen
+
+**nl <Datei> **→ Die Zeilen von Datei durchnumerieren
+**-b a|t|p <Ausdruck> **→ nummeriert a(lle)  nur nichtleere (-t) oder nur die auf die der <Ausdruck> passt (-t)
+**-i N** → inkrement um N pro Zeile
+**-n ln|rn|rz|lz **→ formatiere die Zeilennummerierung linksbündig|rechtsbündig|rechtsbündig mit führenden Nullen|linksbündig mit führenden Nullen  
+**-p **→ ignoriere Seitenzeilenzahl, wird bei logischen Seiten nicht auf den Anfangswert zurückgesetzt
+**-v N **→ beginne Nummerierung bei N
+
+**rev <Datei> **
+→ Kehre die Reihenfolge der Buchstaben innerhalb jeder Zeile um
+→ Das Zeichen was am Anfang einer Zeile steht, steht nun am Ende und so weiter 

@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-15T18:00:59+02:00
+
+====== Hilfe erhalten ======
+Created Freitag 15 April 2011
+
+**<Befehl -h | --help **→ zeigt meist eine kurze Hilfe für die meisten Programme an
+
+**help <Buildin> **→ Hilfe zu einem Shellbuildin erhalten ( [[Linux Wissen:Shell:Bash]] )
+
+===== Man Pages =====
+**man <Befehl> **→ ruft die Manpage ( [[Linux Wissen:Hilfe erhalten:Man Pages]] ) auf
+
+**apropos <Begriff> **→ durchsucht die Manpages nach einem Begriff ( [[Linux Wissen:Hilfe erhalten:Man Pages]] )
+
+==== Info Pages ====
+* alle Befehle die zu Coreutils gehören bieten ausführliche Info Seiten an
+**info <Befehl>**
+
+http://www.tldp.org
+
+*/usr/share/doc/

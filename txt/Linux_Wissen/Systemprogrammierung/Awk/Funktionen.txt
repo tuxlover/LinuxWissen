@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T18:13:34+02:00
+
+====== Funktionen ======
+Created Donnerstag 28 April 2011
+
+* implementierte und buildin Funktionen unterschieden
+* erhalten Parameter zur Verarbeitung die einen Wert zurückliefern
+
+++
+//function Name (Parmeter1,...,ParameterN) {//
+//        ANWEISUNGSBLOCK//
+//}//
+++
+
+//Beispiel://
+++
+//awk '//
+//function mittel(a, b, c) {//
+//mittelwert=(a+b+c)/3//
+//print mittelwert//
+//}//
+
+//BEGIN {//
+// mittel(1, 2, 3)//
+//}'//
+++
+
+**return**
+→  Übergeben von Werten an eine Funktion oder Variable
+
+=== Buildin Funktionen ===
+**atan2(y,x); cos(x); exp(x); int(x); log(x); rand(); sin(x); sqrt(x);**
+→ mathematische Funktionen
+
+**print; lenth; range(x,y);**
+[[Linux Wissen:Systemprogrammierung:Awk:Anweisungen]]
+→ Operationen auf Records ausführen
+
+**system(cmd)** →  Ausführen des Kommandos und Rückgabe des Exitstatus
+
+**match (s, r[,a])** →  gibt die Position in s aus in der die Regex erschreint
+
+**sub** →  wie **sed 's/a/b/g'**
+[[Linux Wissen:Systemprogrammierung:Sed:Suchen und Ersetzen]]
+
+**next** →  Stoppe das Einlesen des aktullen Records und mache beim nächsten Record weiter
+
+**nextfile** →  Stoppe das Einlesen der aktuellen Datie, der nächste Record wird aus der nächsten Datei gelesen

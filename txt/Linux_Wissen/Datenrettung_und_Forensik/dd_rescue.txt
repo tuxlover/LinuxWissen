@@ -1,0 +1,74 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-23T12:06:28+02:00
+
+====== dd rescue ======
+Created Samstag 23 April 2011
+
+**dd_rescue [<Options>] <Eingabe Datei> <Ausgabe Datei> [<Logfile>]**
+→ Tool zum lesen von Datenströmen aus Blockgeräten und Dateien
+→ bricht nicht bei Fehlermeldungen ab, eine maximale Fehlertoleranz kann angegeben werden
+→ kann Daten vom Ende einer Datei|Blockgerätes lesen
+→ Datenrettung von Fehlerhaften Partitionen und Geräten
+→ versucht erst die erhaltenen Daten zu retten, wenn ein Gerät gerade Probleme macht
+→ kann nach einer Unterbrechung fortgesetzt werden, ohne das Daten die bereits geschrieben wurden, verlorengehen
+→ kann keine Sparse - oder Nulldateien erzeugen wie **dd ( **[[Linux Wissen:Partitionen und Dateisysteme:dd]] )
+
+**--blocksize=<512|1024|2048> **→ Sektorengröße des Eingabestroms
+							          512: Harddisk, 3,5 '' Diskette
+							          1024: 5,25'' Diskette
+								   2048: Isos, CD und Dvd
+
+**-e +N|--max-errors **→ Angabe der Fehler die maximal auftreten dürfen
+
+**-i <pos> **→ eine Startposition auf dem Eingabegerät festelgen
+**-m <logfile> **→ Die RescueDomain auf die bereits geretteten Blöcke beschränken
+**-o <pos> **→ eine Zielposition auf der Ausgabedatei festlegen
+**-q **→ keine Ausgabe
+**-r **→ reverse
+**-s <Bytes>** → maximale Anzahl der Bytes die aus der Ausgabedatei kopiert werden
+**-S **→ nicht belegte Blöcke werden nicht in die Ausgabe Datei geschrieben
+ 
+
+=== Algorithmus: ===
+//(1) Lesen einer Optionalen Datei, die ddrescue sagt, wo eszuletzt aufgehört hat (Logfile)//
+	//a) wurde kein Logfile angegeben, wird angenommen dass das dd_rescue bisher keinen erfolgreichen Verusch//
+	     //unternommen hat//
+
+//(2) Lesen der nicht probierten Blöcke aus der Einagedatei//
+http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html
+
+__Hinweis: Das Logfile kann mit einem Texteditor geöffnet und bearbeitet werden. __
+
+__Hinweis: Ein rw eingehängtes Gerät kann als Einabe Datei benuztzt werden, das Resultat wird aber nutzlos sein.__
+
+
+===== Rezepte: =====
+
+=== Retten einer ext-Festplatte /dev/sdX auf eine andere /dev/sdY ===
+**dd_rescue -f -n /dev/sdX /dev/sdY logfile**
+**sfdisk /dev/sdbY **
+**i=0;** **while true; $(($i++)); ** **e2fsck -v -f /dev/sdY${1};done**
+[[Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge]]
+[[Linux Wissen:Systemprogrammierung:Shellscripting]]
+
+=== Retten einer Partition /dev/sdX1 nach /dev/sdY2 ===
+* es muss vorher sdY2 erstellt worden sein und die entsprechende Größe haben 
+**ddrescue -f -n /dev/sdX1 /dev/sdbY2 logfile**
+**ddrescue -d -f -r3 /dev/sdX1 /dev/sdY2 logfile**
+**e2fsck -v -f /dev/sdY2**
+**mount -t ext2 -o ro /dev/hdb2 /mnt**
+
+=== Retten einer CD-Rom aus 2 Kopien mit defekten Blöcken ===
+**     ddrescue -n -b2048 /dev/cdrom cdimage logfile**
+**     ddrescue -d -b2048 /dev/cdrom cdimage logfile**
+**       (2. CD einlegen)**
+**     ddrescue -d -r1 -b2048 /dev/cdrom cdimage logfile**
+
+=== Während der Rettung von /dev/sdX, schlägt die Rettung auf /dev/sdY fehl und eine Rettung ===
+
+=== muss nun auf /dev/sdZ erfolgen ===
+**    ddrescue -f -n /dev/sdX /dev/sdY logfile1     **<-- /dev/hdY schlegt fehl
+**     ddrescue -f -m logfile1 /dev/sdY /dev/sdZ logfile2**
+**     ddrescue -f -n /dev/sdX /dev/sdZ logfile2**
+**     ddrescue -d -f -r3 /dev/sdX /dev/sdZ logfile2**

@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-27T00:36:25+02:00
+
+====== read ======
+Created Mittwoch 27 April 2011
+
+**read <VAR1> ... <VARN> **
+→ liest von der Standardeingabe und weist **VAR1 **bis **VARN **den übergebenen Wert zu
+**-a **→  weist mehrere Werte der Variable als Array zu
+**-e** →  benutzt readline, verhidnert hässliche Ausgaben beim benutzen der <Backspace> <entf> Taste
+**-p ** **" Prompt" **→  defineire einen Eingabeprompt
+**-t <Seconds>** →  nach <Seconds> read mit einem exit > 0, falls keine Eingabe erfolgt ist
+**-s** →  den Input nicht auf dem Terminal ausgeben sondern nur den Wert in die Variablen einlesen
+**-n <N>** →  nach N Zeichen wird die Eingabe beendet
+
+//Beispiel://
+++
+//read -e -n 1 -p "Abbrechen? (y/n)" ANSWER//
+//${ANSWER:="y"}//
+
+
+//while read -n 1 -p "Abbrechen (y/n)" ANSWER//
+	//do//
+//                case $ANSWER in//
+//                        [yY]*) result=0; break//
+//                        ;;//
+//                        [nN]*) result=1; break//
+//                        ;;//
+//                        [jJ]*) result=0; break//
+//                        ;;//
+//                        *) echo "Bitte antworten Sie mit j(y) oder n"//
+//                esac//
+//        done//
+++
+→ dem Benutzer eine Frage stelllen
+
+++
+//grep --line-buffered <Muster> <Datei> | while read line//
+//        do//
+//                AKtion mit $line//
+//        done//
+++
+→ eingehendes Muster in einer Schleife verarbeiten
+
+

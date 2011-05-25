@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T16:49:00+02:00
+
+====== modprobe.conf ======
+Created Sonntag 24 April 2011
+
+++
+//alias <Modul> <Aliasname> --> alternative Namen für Module, die beim Laden mittels modprobe verwendet werden können//
+//alias nfs4 nfs//
+
+//options <Modul> <Parameter> --> zusätzliche Angabe von Optionen zu einem Modul//
+//options ide-scsi idescsi_nocd=1//
+
+//install <Modul> <Kommando> --> Zum Laden von <Modul> wird eigens definierter Befehl verwendet//
+//install ohci-hcd /sbin/modprobe ehci-hcd; /sbin/modprobe --ignore-install ohci-hcd//
+
+//remove <Modul> <Kommando> --> zum entladen von <Modul> wird ein eigens definierter Befehl verwendet//
+//remove xfs /bin/echo "Not allowed to remove xfs from modules stack"//
+
+//include <Datiename> --> Zum Laden der Konfiguration aus der entsprechenden Datei//
+//include /etc/modprobe.d/mydriver.conf//
+++

@@ -1,0 +1,214 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T23:19:47+02:00
+
+====== Pakete bauen ======
+Created Montag 25 April 2011
+
+* Vorteile einer Paketverwaltung lassen sich nur bei konsequenter Nutzung nutzen.
+* einfachere Erkennung von Einbrüchen.
+* Insallierte Dateien können dank der Paketdatenbank besser verwaltet werden.
+* Alte Konfigurationsdateien bleiben bei der Deinistallation ohne Angabe sie zu löschen erhalten.
+
+=== Minimale Umgebung: ===
+**gcc, g++, make, libc6-dev, dpkg-dev } **→ im Metapaket //build-essentials//
+
+=== zusätzliche Dokumentation: ===
+**debian-policy, developers-reference**
+http://www.debian.org/doc/developers-reference/
+
+**apt-get build-dep <Paket>|aptitude build-dep <Paket> **
+→ herunterladen und installieren der Paketbauabhängigkeiten für <Paket>
+
+
+**fakeroot **
+→ Programm was den Root Account unter Debian vortäuscht und so das Paket baut
+→ kann in einer Umgebung ausgeführt werden, um root Privilegien vorzutäuschen
+**--  <Befehl> **→ einen kompletten <Befehl> an den Fakeroot account übergeben
+**-s <Datei> **→ die Einstellungen der Fakeroot Umgebung als Snapshot in die <Datei> speichern
+**-i <Datei> **→ den Snapshot für die Fakeroot Umgebung lesen
+**-u **→ den Besitzer auf unknown wechseln anstelle von [[root:root]]
+
+== Workflow ein Paket neu Übersetzen ==
+**(1) apt-get -d source **
+→ holt Quellpakete ohne sie zu entpacken
+→ enthält in der Regel die Dateien <programm.orig.tar.gz>, <programm.dsc> und <programm.diff.gz>, die in das aktuelle Verzeichnis gepackt werden
+
+//<programm.orig.tar.gz> → //Original Quellen auf dem das <Paket> basiert
+
+//<programm.dsc> //→ Prüfsummen zu den beiden anderen Dateien
+			     → Email Adresse des Paketbetreuers
+			     → Informationen zum Paketbau 
+			     → Ist vom Paketbetreuer signiert
+
+//<Programm.diff.gz> //→ enthält die Änderungen zum Original
+
+**(2) dpkg-source -x <programm.dsc> **
+→ asupacken und für den Kompilationsvorgang vorbereiten
+→ anwenden der Patches
+→ Dabei wird ein Ordner <programm>/debian angelegt
+
+//<programm>/debian/README.debian //→ Debian betreffende Änderungen und Anmerkungen
+
+//<programm>/debian/changelog //→ Changelog des Paketmaintainers
+++
+//<name_programm> (<Versionsnummer) <Codename>; urgency=<level>//
+//  * <Kommantar>//
+//  -- <Name und Email in <> des Maintainers> <Tag der Woche>, <Tag des Jahes> <Monat> <Jahr> <Uhrzeit in HH:MM:SS> <+|-UTC>//
+
+//quemu (0.7.2-1) unstable; urgency=low//
+//  * Initial release Closes #nnn//
+//  -- Paul Seelig <pseelig@debian.org> Wed, 7 Sep 2005 22:03:21 +0200//
+++
+
+//<programm>/debian/control //→ enthält Informationen die zum Bau des Paketes benötigt werden
+++
+//Source:                 <Source Paket Name>//
+//Section:                <Angabe der Application Area für das Paket spezifiziert wurde>//
+//Priority:               <Wie wichtig ist es diese Paket zu installiern> requiered, importend, standard, optional, extra//
+//Maintainer:             <Name und E-Mail Adresse (in <>) des Package Maintainers>//
+//Standard-Version:       <Version des Standards (Policy, Manual) mit denen das Paket gebaut wird>//
+//Build-Depends:          <Abhängigkeiten die erfüllt sein müssen um das Paket zu bauen> (>, <, = Versions), ...//
+//Recommends:             das zu installierende Paket empfiehlt dringend auch das hier aufgelistete mitzuinstallieren//
+//Suggests:               das zu installierende Paket ist nützlicher wenn auch dieses Paket installiert//
+//Enhances:               das zu installierende Paket wird durch dieses Paket sinnvoll ergänzt//
+//Conflicts:              Das zu installierende Paket kann nicht gleichzeitig mit diesem installiert sein//
+
+//Package:                <Name des zu erzeugenden Debian Pakets>//
+//Architecture:           <die Zielarchitektur des Paketes> any,all,i386,am64//
+//Depends:                <Abhängigkeiten zur Laufzeit>//
+//Description:            <Kurze Beschreibung des Paketes>//
+//<Lange Beschreibung des Pakets>//
+
+//Binary:                 <Eine durch Kommata searierte Liste, die auflistet welche Binärpalete ein Quellpaket erzeugt>//
+//Homepage:               <URL von der der Original Qullcode erstanden werden kann>//
+//Uploaders:              <Liste von nbamen udn E-Mail Adressen weiterer Mitautoren//
+//Files:                  <md5sum> <Größe> <Section> <Priorität>//
+++
+
+//<porgramm>/debian/copyright //→ Lizenz und Autoren der Software
+
+//<programm>/debian/dirs //→ festlegen von Verzeichnissen, die gebraucht werden aber von Debian nicht automatisch erkannt werden
+++
+//etc/X11/app-defaults//
+//usr/bin//
+//usr/share/doc/xtartan//
+//usr/share/lintian/overrides//
+//usr/share/menu//
+++
+
+//<programm>/debian/lintian.overrides //
+→ Regeln und Definitionen die von **lintian **nicht beachtet werden
+→ Ausnahmen 
+
+//<programm>/debian/menu //
+→ definieren einer Menudatei
+++
+//?package(totem):\//
+//needs="X11"\//
+//section="Applications/Video"\//
+//title="Totem"\//
+//icon="/usr/share/pixmaps/totem.xpm"\//
+//command="/usr/bin/totem"//
+++
+
+//<programm>/debian/postinst → //Script dass nach der Installation ausgeführt wird 
+[[Linux Wissen:Systemprogrammierung:Shellscripting]]
+
+//<programm>/debian/prerm → //Scripte dass nach dem entfernen ausgeführt wird
+
+//<programm>/debian/rules //
+//→  //Regeln und **make** Anweisungen die aus dem Quellcode das Kompilat erzeugt
+→ wird als //Makefile //relalisiert
+++
+//#!/usr/bin/make -f//
+//config.status:  configure//
+//        dh_testdir//
+//        ./configure --cc=gcc-3.4 --preifx=/usr//
+
+//build: build-stamp//
+//build-stamp:    config.status//
+//        dh_testdir//
+//        $(MAKE)//
+//        touch build-stamp//
+//clean://
+//        dh_testdir//
+//        dh_testroot//
+//        rm -f build-stamp//
+//        -$(MAKE) distclean//
+//        dh_clean//
+
+//install: build//
+//        #deb helper scripte befinden sich im paket dh-make//
+//        dh_testdir//
+//        dh_testroot//
+//        dh_clean -k//
+//        dh_installdirs//
+//        $(MAKE) install prefix=$(CURDIR)/debian/quemu/usr//
+
+//binary-indep: build install//
+
+//binary-arch: build install//
+//        dh_...//
+
+//binary: binary-indep binary-arch #wird zuerst ausgeführt und ruft die verweisenden Sektionen auf//
+//.PHONY: build clean binary-indep binary-arch binary install//
+++
+
+== Tools ==
+**dh-make **→ konvertieren und anpassen eines Sourcecode Paketes an die Debian Reggeln
+**-c <Lizenz> **→ angeben der Paketlizenz 
+**-e <mail@mail.dom> **→ angeben einer E-Mail Adresse
+**-n **→ natives Debian Paket bauen, es wird keine orig.tar.gz benötigt
+**-f <File.tar.gz> **→ wandelt tar.gz Datei in eine orig.tar.gz Datei um
+**-l **→ Setzen der Paketklasse auf Bibliothek
+**-s **→ setzen der Paketklasse auf einzelne binäre Datei
+**-m **→ setzen der Paketklasse auf multiple binäre Datei
+**-p <Name> **→ angeben eines alternernativen Paketnamens abweichend von der Quelldatei
+
+  
+**dpkg-builder **→ Programm dass aus einem Debian Konformen Quellpaket das Debian Paket baut
+**-us **→ (unsigned) Paket nicht signieren
+**-uc **→ // Changes //Datei nicht signieren
+**-b **→ nur binäre Dateien bauen,keine Quelldateien ereugen
+**-S **→ nur Quellpakete erzeugen, keine binären Dateien erzeugen
+**-a <Arch> **→ explizite Angabe einer Zielarchitektur
+**-d **→ Abhängigkeiten beim Bauen ignorieren
+**-rfakroot **→ benutze eine gefälschte Rootumgebung zum Bauen
+
+**lintian <Paket.deb> **
+→ Untersucht das Paket nach Bugs und Policyverletzungen
+→ dabei wird ein Verzeichnis, labortory angelegt in welche Informationen über das Paket abgelegt werden
+ **-d **→ anzeigen von Debugging Nachrichten
+**-i|--info **→ anzeigen von detaillierten Informationen zu den einzelnnen Problemen
+**-o **→ override Policy nicht benutzen
+**--color **→ ein bisschen bunter
+**-l|--lab <Verzeichnis> **→ ein alternatives labortory <Verzeichnis> angeben
+**-j N **→ Anzahl der Aufträge die gleichzeitig abgewickelt werden
+
+**pbuilder **
+→ bauen eines .deb Pakets in einer sicheren sauberen Umgebung
+→ stellt sicher dass Abhängigkeiten richtig erkannt wurden
+→ es wird eine Chroot Umgebung in einem tarball erstellt
+
+**pbuilder create **
+→ erstellt eine Chroot Umgebung für debian sid
+**--distribution <Code> **→ erstellt eine Chroot Umgebung für die Distribution <Code>
+
+**pbuilder update **→ aktualisieren der Chroot Umgebung
+
+**pbuilder builder <programm.dsc> **→ baut das Programm aus der  Datei //<programm.dsc>//
+
+== Workflow ein eigenes Paket bauen ==
+**(1) **Herunterladen und auspacken des Quellcodes, sowie lesen der Dokumentation um entsprechend fehlende Libraries nachzuinstallieren
+
+**(2) **Aufruf von **dh_make:**
+**cd <programm>**
+**dh_make -f ../<programm.tar.gz> --email noop@mail.dom -c gpl**
+
+**(3) **Anpassen und bearbeiten von Dateien in //debian //Unterverzeichnis
+(3.1) debuggen
+
+**(4) **Das Paket mit **dpkg-buildpackage **bauen: **dpkg-buildpackage -uc -us -rfakeroot**
+
+**(5) **Paket mit **lintian **und **pbuilder **nach Fehlern durchsuchen 

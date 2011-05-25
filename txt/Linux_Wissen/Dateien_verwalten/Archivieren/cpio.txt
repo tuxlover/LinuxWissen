@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-19T04:54:03+02:00
+
+====== cpio ======
+Created Dienstag 19 April 2011
+
+**cpio **→ Archiv aus der Standardausgabe erzeugen
+**-o **→ erzeuge Archive auf der Standardausgabe (output)
+**-i **→ einlesen eines Archivs (input)
+**-t **→ gebe Namen beim Extrahieren aus
+**-d **→ erzeuge Verezeichnis falls notwendig, immer dann wenn eine Verzeichnishierarchie entpackt werden soll
+**-F **→ eine Datei angeben
+**-u **→ überschreiben von Dateien auspacken
+**-p <DIR> **→ angeben eines zusätzlichen Verzeichnis
+
+//Beispiele einpacken://
+//find . -type f| cpio -ov > archive.cpio//
+//ls | cpio -ov > verzeichnis.cpio//
+
+//Beispiel auspacken://
+cpio -iv < archive.cpio
+//rpm2cpio linux-kernel.2.6.38.2-source.src.rpm|cpio -id //
+
+
+ 

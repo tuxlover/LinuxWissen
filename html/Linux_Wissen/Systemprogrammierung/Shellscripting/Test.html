@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./select.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Variablen_zuweisen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Test</h1>
+
+<p>
+Created Dienstag 26 April 2011<br>
+</p>
+
+<p>
+<strong>test [ ]   (( ))</strong><br>
+</p>
+
+<h2>Arithmetische Tests</h2>
+<p>
+<strong>test "$x" </strong><br>
+→   0 falls Variable exitiert und nicht leer<br>
+→  1 falls Variable leer oder nicht gesetzt<br>
+</p>
+
+<p>
+<strong>test $x -gt N </strong><br>
+→  0 falls x größer als N<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test $x -ge N </strong><br>
+→  0 falls x größer oder gleich N<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test $x -eq N</strong><br>
+ →  0 falls x gleich N<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test $x -lt N </strong><br>
+→  0 falls x kleiner N<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test $x -le N </strong><br>
+→  0 fals x kleiner oder gleich N<br>
+ →  1 sonst<br>
+</p>
+
+<p>
+<strong>test $x -ne N </strong><br>
+→  0 falls x ungleich N<br>
+→  1 sonst<br>
+</p>
+
+<h4>Arithmetische Tests mit (( ))</h4>
+<p>
+++<br>
+<em>#!/bin/bash                                                            </em><br>
+<em># arith-tests.sh                                                       </em><br>
+<em># Arithmetic tests.                                                    </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 0 ))                                                                </em><br>
+<em> echo "Exit status von \"(( 0 ))\" ist $?."         # 1                 </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 1 ))                                                                </em><br>
+<em> echo "Exit status von \"(( 1 ))\" ist $?."         # 0                 </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 5 &gt; 4 ))                                      # wahr                </em><br>
+<em> echo "Exit status von \"(( 5 &gt; 4 ))\" ist $?."   # 0                   </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 5 &gt; 9 ))                                      # false               </em><br>
+<em> echo "Exit status von \"(( 5 &gt; 9 ))\" ist $?."   # 1                   </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 5 == 5 ))                                     # wahr                </em><br>
+<em> # (( 5 = 5 ))  gibt einen Fehlerwert                                   </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 5 - 5 ))                                      # 0                   </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 5 / 4 ))                                      # Division o.k.       </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 1 / 2 ))                                     # Division resultat &lt; 1. </em><br>
+<em>                                                  # 1                   </em><br>
+</p>
+                                                                        
+<p>
+<em> (( 1 / 0 )) 2&gt;/dev/null                        #Illegal division durch 0. </em><br>
+<em> # 1          ^^^^^^^^^^^                                               </em><br>
+</p>
+                                                                        
+                                                                        
+<p>
+<em> if (( var1 &gt; var2 ))                                                   </em><br>
+<em> then #^      ^      Note: Not $var1, $var2. Why?                       </em><br>
+<em>  echo "$var1 ist größer $var2"                                   </em><br>
+<em> fi     # 5 ist größer als 4                                          </em><br>
+</p>
+                                                                        
+<p>
+<em> exit 0       </em>                                                          <br>
+++<br>
+</p>
+
+<h2>Zeichenketten Tests</h2>
+<p>
+<strong>test -z $STRING </strong><br>
+→  0 falls STRING nicht gesetzt oder die Länge Null hat<br>
+ →  1 sonst<br>
+</p>
+
+<p>
+<strong>test -n $STRING </strong>→  <strong>test ! -z $STRING</strong><br>
+</p>
+
+<p>
+<strong>test ALPHA \&gt; OMEGA</strong><br>
+→  0 falls ALPHA lexiographisch nach OMEGA steht<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test ALPHA \&lt; OMEGA </strong><br>
+→  0 falls ALPHA lexiographisch vor OMEGA steht<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test ALPHA &gt; OMEGA </strong><br>
+→  0 falls ALPHA in ASCII Reihenfolge nach OMEGA steht<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test ALPHA &lt; OMEGA </strong><br>
+→  0 falls ALPHA in ASCII Reienfolge vor OMEGA steht<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test ALPHA == OMEGA</strong><br>
+→  0 falls ALPHA der Zeichenkette OMEGA genau entspricht<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test ALPHA != OMEGA</strong><br>
+ →  0 falls ALPHA der Zeichenkette OMEGA nicht entspricht<br>
+ →  1 sonst<br>
+</p>
+
+<h2>Dateioperatoren Tests</h2>
+<p>
+<strong>test -[a|e|f|s|d|b|c|p|h|L|S|t|r|w|x|g|u|k|O|G|N] &lt;Datei&gt;</strong> →  überprüft die Eigenschaft von Datei<br>
+</p>
+
+<p>
+<strong>-a|-e </strong><br>
+→  0 falls Datei existiert<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-f</strong> <br>
+→  0 falls Datei existiert und ist normale Datei<br>
+→  1 falls Datei nicht existiert oder Datei ein Verzeichnis oder Gerätedatei ist<br>
+</p>
+
+<p>
+<strong>-s </strong><br>
+→  0 falls Dateigröße ist Größer als 0<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-d </strong><br>
+→  0 falls Datei existiert und ist ein Verzeichnis<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-b </strong><br>
+→  0 falls Datei existiert und eine Blockgerätedatei ist<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-c </strong><br>
+→  0 falls Datei existiert und ein zeichenorientiertes Gerät ist<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-p </strong><br>
+→  0 falls Datei existiert und ein Pipe ist<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-h </strong><br>
+→  0 falls Datei existiert und ein symbolischer Link ist, auch wenn dieser defekt ist<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-S</strong> <br>
+→  0 falls Datei existiert und ein Socket ist<br>
+→  1 sonst<br>
+</p>
+
+
+<p>
+<strong>-t </strong><br>
+→  0 falls Datei mit einem Terminal Gerät assoziiert ist<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-r|-w|-x </strong><br>
+→  0 falls Datei existiert und lese|schreib|ausführbahr ist<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-g </strong><br>
+→  0 falls Verzeichnis|Datei das Setgid Bit gesetzt hat<br>
+→ 1 sonst<br>
+</p>
+
+<p>
+<strong>-u </strong><br>
+→  0 falls Datei das Setuid Bit gesetzt hat<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-k</strong> <br>
+→  0 falls Verzeichnis|Datei das Sticky Bit gesetzt hat<br>
+→  1 sonst<br>
+</p>
+
+
+<p>
+<strong>-O </strong><br>
+→  0 der Aufrufende ist Beseitzer der Datei<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-G </strong><br>
+→  0 der Aufrufende ist Mitglied der gleichen Gruppe wie Datei<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>-N</strong> <br>
+→  0 Die Datei wurde seit dem letzten lesen geändert<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test &lt;Datei1&gt; -nt &lt;Datei2&gt;</strong><br>
+→  0 falls <strong>&lt;Datei1&gt;</strong> neuer als <strong>&lt;Datei2&gt;</strong> ist<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test &lt;Datei1&gt; -ot &lt;Datei2&gt; </strong><br>
+→  0 falls <strong>&lt;Datei1&gt;</strong> älter als <strong>&lt;Datei2&gt;</strong> ist<br>
+→  1 sonst<br>
+</p>
+
+<p>
+<strong>test &lt;Datei1&gt; -ef &lt;Datei2&gt;</strong><br>
+→  0 falls <strong>&lt;Datei1&gt;</strong> und<strong> &lt;Datei2&gt;</strong> Hardlinks zur gleichen Datei sind<br>
+→  1 sonst<br>
+</p>
+
+<h2>Bedinungen und Fallunterscheidungen</h2>
+
+<h4>if-Konstrukt</h4>
+<p>
+++<br>
+<em>if &lt;Test&gt;</em><br>
+<em>        then</em><br>
+<em>                &lt;Test gab Exitstatus 0 zurück&gt;</em><br>
+<em>        else</em><br>
+<em>                &lt;Test gab Exitstaus 1 oder größer zurück&gt;</em><br>
+<em>fi</em><br>
+++<br>
+</p>
+
+
+<h4>Elif-Konstrukt</h4>
+<p>
+++<br>
+<em>if &lt;Test&gt;</em><br>
+<em>        then</em><br>
+<em>                elif &lt;Test 1&gt;</em><br>
+<em>                        then</em><br>
+<em>                elif &lt;Test 2&gt;</em><br>
+<em>        else</em><br>
+<em>fi</em><br>
+++<br>
+</p>
+
+<h4>If Konstrukt mit logischer Bedingungsverknüpfung</h4>
+<p>
+++<br>
+**if <a href="./Bedinung1.html" title=""></a>**<br>
+<strong>        then</strong><br>
+<strong>                &lt;Test gab Exitstatus 0 zurück&gt;</strong><br>
+<strong>        else</strong><br>
+<strong>                &lt;Test gab Exitstatus 1 oder größer zurück</strong><br>
+<strong>fi</strong><br>
+++<br>
+</p>
+
+<h4>Case-Konstruckt</h4>
+<p>
+++<br>
+<em>case $&lt;Var&gt; in</em><br>
+<em>        Wert1) Aktion</em><br>
+<em>        ;;</em><br>
+<em>        Wert2) Aktion</em><br>
+<em>        ;;</em><br>
+<em>        ...</em><br>
+<em>        ;;</em><br>
+<em>        WertN) Aktion</em><br>
+<em>        ;;</em><br>
+<em>        \?) Aktion</em> #nichts davon traf zu<br>
+esac<br>
+++<br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

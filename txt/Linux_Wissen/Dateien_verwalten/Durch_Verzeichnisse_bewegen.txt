@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-16T00:35:48+02:00
+
+====== Durch Verzeichnisse bewegen ======
+Created Samstag 16 April 2011
+
+**cd <DIR> **→ gehe zu <DIR> 
+**cd .. **→ gehe in das Elternverzeichnis
+**cd - **→ gehe in das zuletzt aufgerufene Verzeichnis
+**cd  -- ** → gehe in das vorangehend aufgerufne Verzeichnis
+
+**pwd **→ gebe das aktuelle Verzeichnis inklusiver absuluter Pfadangabe auf dem Bildschirm aus
+
+===== Der Verzeichnis Stack =====
+**pushd <DIR> **→ lege <DIR> auf den Verzeichnisstabel und wechsle in <DIR>
+**+N **→ lege das N-te (von l nach r gesehen) Verzeichnis im Stack nach oben und rotiere
+**-N **→ lege das N-te (von r nach l gesehen)  Verzeichnis im Stack nach oben und rotiere
+**-n <DIR> **→ lege <DIR> unter das erste Verezeichnis im Stack ohne zu wechseln
+
+**dirs** → zeige den momenten Verzeichnisstapel
+**-v **→ zeige den Verzeichnisstapel nummerriert beginnend bei 0
+
+**popd** **<DIR> **→ entferne <DIR> vom Verzeichnisstapel
+**+N **→ entferne das N-te (von l nach r gesehen) Verzeichnis im Stack und rotiere
+**-N **→ entferne das N-te (von r nach l geshen) Verezeichnis im Stack und rotiere
+**-n <DIR> **→ entferne <DIR> aus dem Verzeichnis ohne zu rotieren
+
+**<Aktion> ~+<N>** → Führe <Aktion> auf dem Stack im Verzeichnis N aus
+//Beispiel: mv testfile ~+2//
+ 
+
+ 

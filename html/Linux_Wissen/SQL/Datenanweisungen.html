@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Constraints.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Datentypen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Datenanweisungen</h1>
+
+<p>
+Created Freitag 29 April 2011<br>
+</p>
+
+<h4>Transaktions Anweisungen</h4>
+<p>
+<strong>SOURCE &lt;Schema.sql&gt; | &lt;Data.sql&gt;</strong><br>
+→ eine leere Schemadatei importieren, die das Gerüst der Datenbank enthält<br>
+→ Daten in eine Datenbank aus einem Data.sql importieren<br>
+</p>
+
+<p>
+<strong>USE &lt;DATABASE&gt;</strong><br>
+→ die Datenabank &lt;DATABASE&gt; laden<br>
+→ eine nichtvorhandene Datenbank wird mit einem fehler quittiert<br>
+</p>
+
+<p>
+<strong>SHOW </strong>→ vorhandene Datenbank Elemente anzeigen<br>
+<strong>SHOW databases </strong>→ vorhandene Datenbanken anzeigen<br>
+<strong>SHOW tables </strong>→ vorhandene <br>
+</p>
+
+
+<p>
+<strong>DESC &lt;table&gt;</strong><br>
+→ gibt eine Beschreibung für die Tabelle &lt;Table&gt; aus<br>
+→ anzeigen der Tabellenform mit ihren zulässigen Zeichenklassen und Wertebereichen<br>
+</p>
+
+<h3>DML (Data Manipulation Language)</h3>
+
+<h4>Querry</h4>
+<p>
+<strong>SELECT version(),user() [&lt;Database&gt;]</strong><br>
+→ Nutzer und Version der Datenbank &lt;Database&gt;<br>
+</p>
+
+<p>
+<strong>SELECT * FROM &lt;table&gt;</strong><br>
+→ aus der der Tabelle &lt;table&gt; alle Zeilen anzeigen<br>
+→ die ganze Tabelle &lt;table anzeigen&gt; <br>
+</p>
+
+<p>
+<strong>SELCECT * FROM &lt;table1&gt;,...,&lt;tableN&gt;</strong><br>
+→ aus allen Tabellen &lt;table1&gt; bis &lt;tableN&gt; alle Zeilen auswählen<br>
+→ die Tabellen werden dabei kartesisch verknüpft<br>
+</p>
+
+<h5>→ !Achtung!:</h5>
+<p>
+<strong>Sehr hohe Laufzeit!</strong><br>
+</p>
+
+<p>
+<strong>SELECT &lt;Spalte1&gt;,&lt;Spalte2&gt;,... FROM &lt;table&gt;</strong><br>
+→ aus einer Tabelle &lt;table&gt; mehrere Spalten abfragen<br>
+</p>
+
+<p>
+<strong>SELECT &lt;Spalte&gt; INTO OUTFILE &lt;Datei&gt; FROM &lt;table&gt;</strong><br>
+→ eine &lt;Spalte&gt; einer Tabelle &lt;table&gt; in eine &lt;Datei&gt; schreiben<br>
+→ der Nutzer mysql muss entsprechend auf die Dateien Zugriff haben<br>
+</p>
+
+<h5>WHERE</h5>
+<p>
+<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt;</strong><br>
+→ nur die Werte von Spalte ausgeben die auf &lt;Condition&gt; passen<br>
+→ die &lt;Condition&gt; kann auch auf andere auf andere &lt;Spalten&gt; als auf die angezeigte verweisen<br>
+<a href="./Bedingungen.html" title="Linux Wissen:SQL:Bedingungen">Linux Wissen:SQL:Bedingungen</a><br>
+</p>
+
+<h5>DISTINCT</h5>
+<p>
+→ festlegen dass jeder Wert nur einmal angezeigt werden soll<br>
+</p>
+
+<p>
+<strong>SELECT DISTINCT &lt;Spalte&gt; from &lt;Tabelle&gt;</strong><br>
+→ eindeutige Zuordnungseinheiten<br>
+→ muss in sortierter From vorliegen<br>
+</p>
+
+<h5>GROUP BY</h5>
+<p>
+<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt; GROUP BY </strong><br>
+→ fasst Zeilen nach gemeinsamen Werten entsprechend von Spalte zusammen<br>
+</p>
+
+<h5>HAVING</h5>
+<p>
+<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; GROUPBY &lt;Spalte&gt; HAVING &lt;Conditon2&gt; </strong><br>
+→ herausfiltern von unerwünschten Gruppen<br>
+</p>
+
+<h5>LIMIT</h5>
+<p>
+<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; LIMIT N</strong><br>
+→ die auf &lt;Condition&gt; zutreffenden Ergebnisse auf die ersten N Ergebnise limmitiren<br>
+</p>
+
+<h5>ORDER BY</h5>
+<p>
+<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condtion&gt; ORDER BY &lt;SpalteA&gt;</strong><br>
+→ die auf &lt;Condition&gt; zutreffenden Ergebnisse nach &lt;SpalteA&gt; sortieren<br>
+→ sortiren der Abfrage nach <br>
+</p>
+
+
+<h5>INSERT</h5>
+<p>
+→ schreiben von Daten in eine Tabelle<br>
+</p>
+
+<p>
+<strong>INSERT INTO &lt;table&gt; (&lt;Attribute&gt;,...) VALUES (&lt;Werte&gt;,...)</strong><br>
+→ fügt in die Tabelle &lt;table&gt; die entrsprechenden &lt;Attribute&gt; und den dazugerhörigen &lt;Werte&gt; ein<br>
+→ bijektiv Abbildung<br>
+→ die &lt;Attribute&gt; müssen bereits definiert sein<br>
+</p>
+
+<p>
+<strong>INSERT INTO &lt;table1&gt; SELECT &lt;Spalte&gt; FROM &lt;table2&gt;</strong><br>
+→ Werte von einer Tabelle &lt;table2&gt; einer &lt;Spalte&gt; in die Tabelle &lt;table1&gt; einfügen<br>
+→ Dimenstion und Attribute müssen übereinstimmen<br>
+</p>
+
+<h5>UPDATE</h5>
+<p>
+→ verändern von Daten in einer Tabelle<br>
+→ das Attribut ist bereits vergeben<br>
+</p>
+
+<p>
+<strong>UPDATE &lt;table&gt; SET &lt;Attribut&gt;=&lt;Wert&gt; [ WHERE &lt;Condition&gt;]</strong><br>
+→ setzt einen neuen &lt;Wert&gt; für Attribut von Tabelle &lt;table&gt; wo die Bedingungen &lt;Condition&gt; zutreffen<br>
+→ mehrere Attribute müssen durch Kommata getrennt werden<br>
+</p>
+
+<h3>DDL (Database Definition Language)</h3>
+
+<h4>Erstellen</h4>
+
+<h5>CREATE</h5>
+<p>
+→ erzeugen von Datenbanken, Tabellen und Indezies<br>
+</p>
+
+<p>
+<strong>CREATE DATABASE &lt;Name&gt;</strong><br>
+→ eine neue Datenbank mit Name &lt;Name&gt; anlegen<br>
+</p>
+
+<p>
+<strong>CREATE TABLE &lt;Name&gt; (</strong><br>
+<strong>id INTEGER AUTO_INCREMENT,</strong><br>
+<strong>&lt;Spalt1&gt; &lt;Datentyp&gt; &lt;Extra Function&gt;,</strong><br>
+<strong>...</strong><br>
+<strong>PRIMARY KEY (id)</strong><br>
+<strong>);</strong><br>
+→ erstellen einer neuen Tabelle &lt;Name&gt; <br>
+→ es kann alles in eine Zeile geschrieben werden<br>
+→ Jede Spaltendefinition wird duch ein Komma abgeschlossen<br>
+→ die Definition einer Tabelle wird durch ; abgeschlossen <br>
+→ <u>es muss immer ein Primärschlüssel definiert durch das Schlüsselwort PRIMARY KEY definiert werden</u><br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em> CREATE TABLE autor (</em><br>
+<em>    -&gt; id_autor INTEGER AUTO_INCREMENT,</em><br>
+<em>    -&gt; Name VARCHAR(30) NOT NULL,</em><br>
+<em>    -&gt; Vorname VARCHAR(30) NOT NULL,</em><br>
+<em>    -&gt; PRIMARY KEY (id_autor)</em><br>
+<em>    -&gt; );</em><br>
+</p>
+
+
+<h4>Löschen</h4>
+
+<h5>DELETE</h5>
+<p>
+→ löschen von Daten aus einer Tabelle<br>
+</p>
+
+<p>
+<strong>DELETE FROM &lt;table&gt; [WHERE &lt;Condition&gt;]</strong><br>
+→ entfernen aller Werte aus der Tabelle die einer bestimmten &lt;Condition&gt; entsprechen <br>
+</p>
+
+<h5>DROP</h5>
+<p>
+→ löschen ganzer Tabllen<br>
+→ sind Views involviert werden diese ebenfalls gelöscht<br>
+</p>
+
+<p>
+<strong>DROP TABLE &lt;table&gt;</strong><br>
+→ die Tabelle &lt;table&gt; löschen<br>
+</p>
+
+<h4>Manipulieren</h4>
+
+<h5>ALTER</h5>
+<p>
+→ die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen<br>
+</p>
+
+<p>
+<strong>ALTER TABLE &lt;Name_alt&gt; RENAME TO &lt;Name_neu&gt;</strong><br>
+→ Tabelle mit &lt;Name_Alt&gt; in &lt;Name_neu&gt; umbenennen<br>
+</p>
+
+<p>
+<strong>ALTER TABLE &lt;Name&gt; ADD COLUMN &lt;Spalte&gt; &lt;Datentyp&gt;</strong><br>
+→ das Attribut (Spalte)  mit dem entsprechenden &lt;Datentyp&gt; der Tabelle mit &lt;Name&gt; hinzufügen<br>
+</p>
+
+<p>
+<strong>ALTER TABLE &lt;Name&gt; modify &lt;Spalte&gt; &lt;Datentyp&gt; </strong><br>
+→ die Bedigungnen (Datentyp) einer &lt;Spalte&gt; ändern<br>
+</p>
+
+
+
+
+
+<p>
+<u>Hinweis: Mehere Datenanweisungen lassen sich durch IN und NOT IN sowie () verknüpfen.</u><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./Schemaanweisungen.html'>Linux Wissen:SQL:Schemaanweisungen</a></li>		<a href='../SQL.html'>Linux Wissen:SQL</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Dateien_verwalten/Zugriffsrechte/Umask.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Datenrettung_und_Forensik/dd_rescue.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Datenrettung und Forensik</h1>
+
+<p>
+Created Freitag 22 April 2011<br>
+</p>
+
+<p>
+<strong>testdisk/photorec </strong>→ untersucht Festplatten nach verlorenen Partitionen und stellt gelöschte Dateien wieder her<br>
+<div style='padding-left: 120pt'>
+   → interaktives Programm<br>
+   → kann im laufenden Betrieb verwendet werden<br>
+</div>
+</p>
+				
+<p>
+<strong>foremost </strong>→ gelöschte Dateien aufgrund verbliebener Footer und Header wiederherstellen<br>
+<a href="./Datenrettung_und_Forensik/foremost.html" title="Linux Wissen:Datenrettung und Forensik:foremost">Linux Wissen:Datenrettung und Forensik:foremost</a><br>
+</p>
+
+<h2>Dateirettung mit dd</h2>
+<p>
+<a href="./Partitionen_und_Dateisysteme/dd.html" title="Linux Wissen:Partitionen und Dateisysteme:dd">Linux Wissen:Partitionen und Dateisysteme:dd</a><br>
+</p>
+
+<p>
+Wir nehmen folgendes an:<br>
+    (1 )Partition /dev/sdX<br>
+    (2 )Größe der Datei R-S Zeilen<br>
+    (3) genaue Wortkombination im letztem Drittel "text" <br>
+</p>
+
+<p>
+<strong>dd if=/dev/sdX bs=4K | strings | grep -B S -A R "text" &gt; /tmp/gefunden.txt</strong><br>
+</p>
+
+<p>
+<a href="./Dateien_verwalten/Dateien_betrachten.html" title="Linux Wissen:Dateien verwalten:Dateien betrachten">Linux Wissen:Dateien verwalten:Dateien betrachten</a><br>
+<a href="./Dateien_verwalten/Dateien_suchen_und_indizieren/grep.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep</a><br>
+<a href="./Shell/Standardkan%C3%A4le.html" title="Linux Wissen:Shell:Standardkanäle">Linux Wissen:Shell:Standardkanäle</a><br>
+</p>
+
+<h2>Datenrettung mit dd_rescue</h2>
+<p>
+<ul>
+<li>dd_rescue → Datenrettung aus defekten Partitionen und Festplatten</li>
+</ul>
+<a href="./Datenrettung_und_Forensik/dd_rescue.html" title="Linux Wissen:Datenrettung und Forensik:dd rescue">Linux Wissen:Datenrettung und Forensik:dd rescue</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

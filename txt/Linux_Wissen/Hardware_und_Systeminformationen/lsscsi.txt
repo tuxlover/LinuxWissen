@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T15:42:15+02:00
+
+====== lsscsi ======
+Created Sonntag 24 April 2011
+
+**lscsi [<Host>:<Channel>:<ID>:<LUN>] **→ Informationen über SCSI Geräte anzeigen
+									     → Jedes Gerät kann entsprechend nach H:C:I:L gefiltert werden
+**-c|--classic **→ **cat /proc/scsi **[[Linux Wissen:FHS:proc]]
+**-H **→ anzeigen der momentanen angeschlossenen Geräte
+**-l **→ zusätzliche ausführliche Informationen anzeigen
+

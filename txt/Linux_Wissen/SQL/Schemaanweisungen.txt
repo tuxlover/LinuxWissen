@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T23:16:41+02:00
+
+====== Schemaanweisungen ======
+Created Donnerstag 28 April 2011
+
+* zum Erstellen der Datenbank wird ein Schema angegeben
+* definieren der Datenstrukturen
+* kann mit einem Texteditor definiert werden
+* es empfiehlt sich die Endung .sql zu verwenden
+
+//Definieren einer Tabelle://
+++
+//CREATE TABLE <Tabllenname>//
+//(//
+	//ID(PRIMÄRSCHLÜSSEL)	INTEGER	PRIMARY KEY,//
+	//ITEM1	DATENTYP,//
+	//...//
+	//...//
+	//ITEM(N)	DATENTYP,//
+	//CONSTRAINT <Name_des_Contraint> PRIMARY KEY (Name Bezugsspalte für Primary Key)//
+//);//
+++
+
+== Einlesen des Schemas in eine Sqlite3 Datenbank ==
+**sqlite3 datenbank.db < schema.sql**
+
+**SOURCE <Shema.sql>**
+→ eine leeres Gerüsteschema importieren
+
+**SOURCE <Data.sql>**
+→ die Daten der Datenbank in das Schma importieren
+[[Datenanweisungen]]
+[[Linux Wissen:SQL:Datentypen]]
+[[Intigritätsregeln]]

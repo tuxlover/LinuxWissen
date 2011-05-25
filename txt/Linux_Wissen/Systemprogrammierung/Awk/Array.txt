@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-28T17:44:56+02:00
+
+====== Array ======
+Created Donnerstag 28 April 2011
+
+* Arrays können mehrere Werte an eine Variable übergeben
+* awk unterstützt assoziative Arrays. Statt eines numerischen Wertes Zahlen zu übergeben 
+* kann man die Elemente eines Arrays benennen und bereits benannte Arrays assoziativ verknüpfen
+
+**Array[Index] **
+→ zugreifen auf das Element eines Arrays
+
+**if(<String> in Array)**
+→ testet ob es einen Ientsprechenden Index im Array gibt
+
+**delete Array[Index] **
+→ löscht das Element mit dem Index aus dem Array
+
+//Beispiele://
+**awk 'BEGIN {Array[1]=3; Array[2]=4; Array[3]=5} {print Array[1] Array[2] Array[3]}'**
+→ zuweisen und ausgeben von Arrays
+
+**awk '{use[$NF] = use[$NF] " " $1}'**
+→ der Variablen mit dem Index **NF **werden auf alle Felder **$NF a**ssoziativ verknüpft und das Feld $1 hinzugefügt.
+
+**awk '{delete Array[1]}'**
+→ das zweite Elemnet des Arrays löschen
+
+
+**in **
+→ ist der Array Mitgliedsoperator
+→ kann nach Enthaltensein testen

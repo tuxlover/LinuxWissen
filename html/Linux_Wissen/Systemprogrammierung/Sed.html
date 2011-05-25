@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Python.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Sed/Adressierungen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Sed</h1>
+
+<p>
+Created Dienstag 26 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Stream Editor</li>
+<li>Sed liest den Datenstrom Zeile für Zeile ein und manipuliert nach einem gefundenen Muster</li>
+<li>zur automatischen Manipulation von Dateiströmen die keine Interaktion mit den Nutzer erfordern</li>
+<li>werden muess in Shell Scripten verwendet</li>
+<li>Dabei ist ein Dateistrom StdtIn und Ausgabe StdOut bzw. ein oder mehrere Dateien</li>
+<li>Um mehrere Dateien als einen Strom zu lesen und zu manipilieren benutzt man <strong>-s</strong></li>
+</ul>
+</p>
+
+<p>
+<a href="http://sed.sourceforge.net/sed1line_de.html" title="http://sed.sourceforge.net/sed1line_de.html">http://sed.sourceforge.net/sed1line_de.html</a><br>
+<a href="./Sed/Einzeiler.html" title="Linux Wissen:Systemprogrammierung:Sed:Einzeiler">Linux Wissen:Systemprogrammierung:Sed:Einzeiler</a><br>
+</p>
+
+<p>
+<strong>sed &lt;Optionen&gt; ~&gt;</strong><br>
+<strong>'&lt;Startadrese&gt;,&lt;Stopadresse&gt;&lt;Befehl vor Patternspace&gt;/&lt;Patternspace&gt;/&lt;Holdspace&gt;/  ~&gt;</strong><br>
+<strong>&lt;Befehl nach Holdspace&gt;' </strong><br>
+<u>Hinweis: Mehrere Befehle werden druch ; getrennt hintereinander ausgeführt.</u><br>
+<strong>-n </strong>→ Ausgabe des Patternspace unterdrücken<br>
+<strong>-e </strong>→ mehrere Verabeitungsbefehle an eine Datei hängen <strong>sed -e &lt;Befehl1&gt; -e &lt;Befehl2&gt;, -e ...&lt;Datei&gt;</strong><br>
+<strong>-i &lt;Suffix&gt;</strong>→ Eingabedatei ist dieselbe wie die Ausgabedatei <br>
+<div style='padding-left: 60pt'>
+  → wird &lt;Suffix&gt; angegeben wird von Eingabedatei ein Backup angelegt<br>
+</div>
+<strong>-f &lt;Datei&gt; </strong>→ <strong>sed-Befehle </strong>aus einer Datei lesen<br>
+<div style='padding-left: 60pt'>
+   → <strong>#!/usr/bin/sed -f</strong><br>
+</div>
+<strong>-r </strong>→ Reguläre Ausdrücke verwenden<br>
+</p>
+
+<h5>Achtung:</h5>
+<p>
+<strong> sed ... datei.txt &gt; datei.txt </strong><u>wird die Datei zerstören!</u><br>
+</p>
+
+<h2>Patternspace und Holdspace</h2>
+ 
+<p>
+<strong>Patternspace</strong>: Das ist der Puffer in dem eine Zeile geladen wird, wenn sie einem bestimmten Muster entsprach.<br>
+</p>
+
+<p>
+<strong>Holdspace: </strong>Nach der Bearbeitung der Zeile wird dies von den Pattern in den Holdspace kopiert.<br>
+</p>
+
+<p>
+<strong>Input Stream: </strong>von hier liest <strong>sed, </strong>in der Regel StdIn oder eine Datei<br>
+</p>
+
+<p>
+<strong>Output Stream: </strong>Ausgabe die nach StdOut geschrieben wird<br>
+</p>
+
+<p>
+<strong>sed '/[Muster]/x'</strong><br>
+</p>
+
+<h2>Erstellen eines ausführbaren Scriptes</h2>
+<p>
+++<br>
+<em>#!/usr/bin/sed -f</em><br>
+</p>
+
+<p>
+<em>&lt;Sed Befehle&gt;</em><br>
+...<br>
+++<br>
+</p>
+
+<h2>Verschiedene Delimiter einsetzen</h2>
+<p>
+Das erste Zeichen hinter dem Befehl ist ein Delimiter. Konvnetionell setzt man // als Delimiter ein. Aber man kann <br>
+auch jedes (!) andere Zeichen verwenden, dass nicht im Muster oder im Replacementstring vorkommt. So kann<br>
+mittles der Befehl <strong>s_/usr/bin/_/bin_g </strong>sed auch ohne lästiges Quoten der // im Pfadname verwenden.<br>
+</p>
+
+<h2>Das &amp; Zeichen</h2>
+<p>
+Das &amp; Zeichen korrespondeirt zu dem Muster was gefunden wurde im Holdspace und fügt diesem Zeichen an.<br>
+</p>
+
+   
+
+<h2>Adressieren von Zeilen in Sed</h2>
+<p>
+<a href="./Sed/Adressierungen.html" title="Linux Wissen:Systemprogrammierung:Sed:Adressierungen">Linux Wissen:Systemprogrammierung:Sed:Adressierungen</a><br>
+</p>
+
+
+<h2>Befehle: Ausgeben und Löschen einer Zeile</h2>
+<p>
+<a href="./Sed/Ausgeben_und_L%C3%B6schen.html" title="Linux Wissen:Systemprogrammierung:Sed:Ausgeben und Löschen">Linux Wissen:Systemprogrammierung:Sed:Ausgeben und Löschen</a><br>
+</p>
+
+<h2>Befehle: Einfügen und Verändern</h2>
+<p>
+<a href="./Sed/Einf%C3%BCgen_und_Ver%C3%A4ndern.html" title="Linux Wissen:Systemprogrammierung:Sed:Einfügen und Verändern">Linux Wissen:Systemprogrammierung:Sed:Einfügen und Verändern</a><br>
+</p>
+
+<h2>Befehle: Suchen und erstzen</h2>
+<p>
+<a href="./Sed/Suchen_und_Ersetzen.html" title="Linux Wissen:Systemprogrammierung:Sed:Suchen und Ersetzen">Linux Wissen:Systemprogrammierung:Sed:Suchen und Ersetzen</a><br>
+</p>
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Systemprogrammierung.html'>Linux Wissen:Systemprogrammierung</a></li>		<a href='../Filterprogramme/Texte_manipulieren_und_aufbereiten.html'>Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

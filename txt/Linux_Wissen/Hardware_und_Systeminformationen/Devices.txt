@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-24T15:20:40+02:00
+
+====== Devices ======
+Created Sonntag 24 April 2011
+
+**lsdev **→ Informatioen über installierte Hardware anzeigen
+           → sammelt Informatione aus */proc/interrupts, */proc/ioports, */proc/dma
+ [[Linux Wissen:FHS:proc]]
+
+**cat /proc/scsi/<Device> **→ Informatioen über ein scsi Gerät einholen
+
+**hwinfo **→ zum üversichtlichen Anzeigen und erzeigen von Hardwareinformatioenne
+**--short **→ kurze Zusammenfassung
+**--listmd **→ auch RAID Geräte anzeigen **(missing link RAID)**
+**--only <DEV> **→ nur Informationen zu diesem Gerät <DEV> anzeigen
+**--log <FILE> **→ schreibe Informationen in die Datei **<FILE>**
+**--show-config <UDI> **→ zeige Informationen zum Gerät mit der entsprechenden UDI
+**--dumb-db **→ dumpen der Hardwaredatenbank
+
+**vmstat **→ Informationen über Prozesse, Arbeitsspeicher, Paging, Block I/O 
+
+__Hinweis: Benutzen von watch vmstat.__
+
+**uptime **→ zeit die verstrichen ist, seit dem das System das letzte Mal hochgefahren wurde
