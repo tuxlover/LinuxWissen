@@ -9,6 +9,7 @@ Created Donnerstag 28 April 2011
 * ungültig sind 1abc, &abc; #abc, print, printf
 * **awk** unterscheidet zwischen Integer und String
 * Mit $ wird wie in Bash auf den Wert der Variablen also deren Inhalt zugegriffen
+* __ausgegeben wird der Inhalt einer Variablen allerdings durch deren Angabe ohne $__
 * Eine Variable wird mit ihrem ersten erscheinen deklariert, muss nicht vorher bekannt gegeben werden
 * Eine Variable wird mit ihrem ersten erscheinen deklariert, muss nicht vorher bekannt gegeben werdenn
 

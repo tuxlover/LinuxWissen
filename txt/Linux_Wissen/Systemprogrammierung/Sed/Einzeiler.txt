@@ -93,7 +93,7 @@ Created Donnerstag 28 April 2011
 → ersetze alle vorkommen von //foo// durch //bar// in <Datei>
  
 **sed 's/\(.*\)foo\(.*foo\)/\1bar\2/' <Datei>**
-→ ersetze nur das Vorkommen von //foo //durch //bar // in <Datei>
+→ ersetze nur das zweite Vorkommen von //foo //durch //bar // in <Datei>
 
 **sed 's/\(.*\)foo/\1bar/'  <Datei>**
 → ersetze nur das letzte Vorkommen in <Datei> von //foo // durch //bar//
@@ -126,7 +126,7 @@ Created Donnerstag 28 April 2011
 **sed -e :a -e '$!N;s/\n=/ /;ta' -e 'P;D' <Datei>**
 → falls eine Zeile in der <Datei> mit einem = beginnt, füge vorherige Zeile hinzu und ersetze = durch Leerzeichen
 
-=== Anzeigen ausgewählter Zeilen  ===
+=== Anzeigen ausgewählter Zeilen ===
 ** sed 10q <Datei>**
 → wie **head **ohne weitere Optionen
 [[Linux Wissen:Filterprogramme:head und tail]]

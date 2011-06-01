@@ -18,6 +18,7 @@ http://www.catonmat.net/blog/awk-one-liners-explained-part-one
 
 **awk <Optionen> '/<Ausdruck>/ {<Anweisungen>}' <Datei>**
 → Aufruf von **awk **aus der Kommandozeile
+→ wird keine **<Datei> **angegeben liest awk von StdIn
 → ein awk Befehl besteht //immer //aus einer <Anweisung und //optional //aus einem <Ausdruck>
 → der Befehl muss immer in '' gesetzt werden
 **-F **→ festelgen des Spaltentrenners, wie **cut -d**

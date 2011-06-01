@@ -41,82 +41,62 @@
 
 <h1>Awk</h1>
 
-<p>
-Created Dienstag 26 April 2011<br>
-</p>
-
-<p>
-<ul>
 <li>interpretierte Programmiersprache zur Verabeiteung von Textdateien</li>
 <li>Operationen auf Strukturierte Daten durchführen (structured Data Types) </li>
 <li>Informatioen aus Dateien sammeln und daraus Reports und Logfiles generieren</li>
 <li>Dateien von einem Format in ein anderes konvertieren</li>
 <li>erstellen kleinerer textbasierter Datenbanken</li>
 <li>mathematische Operationen auf zeilenbasierten Informationen von Dateien ausführen</li>
-</ul>
-</p>
 
-<p>
-<a href="http://www.pement.org/awk/" title="http://www.pement.org/awk/">http://www.pement.org/awk/</a><br>
-<a href="http://www.catonmat.net/blog/awk-one-liners-explained-part-one" title="http://www.catonmat.net/blog/awk-one-liners-explained-part-one">http://www.catonmat.net/blog/awk-one-liners-explained-part-one</a><br>
-<a href="./Awk/Einzeiler.html" title="Linux Wissen:Systemprogrammierung:Awk:Einzeiler">Linux Wissen:Systemprogrammierung:Awk:Einzeiler</a><br>
-</p>
+<a href="http://www.pement.org/awk/" title="http://www.pement.org/awk/">http://www.pement.org/awk/</a>
+<a href="http://www.catonmat.net/blog/awk-one-liners-explained-part-one" title="http://www.catonmat.net/blog/awk-one-liners-explained-part-one">http://www.catonmat.net/blog/awk-one-liners-explained-part-one</a>
+<a href="./Awk/Einzeiler.html" title="Linux Wissen:Systemprogrammierung:Awk:Einzeiler">Linux Wissen:Systemprogrammierung:Awk:Einzeiler</a>
 
-<p>
 <strong>awk &lt;Optionen&gt; '/&lt;Ausdruck&gt;/ {&lt;Anweisungen&gt;}' &lt;Datei&gt;</strong><br>
 → Aufruf von <strong>awk </strong>aus der Kommandozeile<br>
+→ wird keine <strong>&lt;Datei&gt; </strong>angegeben liest awk von StdIn<br>
 → ein awk Befehl besteht <em>immer </em>aus einer &lt;Anweisung und <em>optional </em>aus einem &lt;Ausdruck&gt;<br>
 → der Befehl muss immer in '' gesetzt werden<br>
-<strong>-F </strong>→ festelgen des Spaltentrenners, wie <strong>cut -d</strong><br>
-<a href="../Filterprogramme/Texte_manipulieren_und_aufbereiten.html" title="Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten">Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten</a><br>
-</p>
+<strong>-F </strong>→ festelgen des Spaltentrenners, wie <strong>cut -d</strong>
+<a href="../Filterprogramme/Texte_manipulieren_und_aufbereiten.html" title="Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten">Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten</a>
 
-<p>
 <em>&lt;Ausdruck&gt;</em><br>
 → ein regulärer Ausdruck <br>
 → muss durch die Form /&lt;Ausdruck&gt;/ kenntlich gemacht werden<br>
 → muss vor den Anweisungen des Befehls stehen<br>
-</p>
-
-<p>
+<br>
 → Jede Zeile wird von <strong>awk</strong> als Record gesehen<br>
 → Jedes Zeichenkette, weches durch den FS getrennt wurde als Feld, falls nicht gestzt ist, ist FS=&lt;LEER&gt;  <br>
-<a href="./Awk/Variablen.html" title="Linux Wissen:Systemprogrammierung:Awk:Variablen">Linux Wissen:Systemprogrammierung:Awk:Variablen</a><br>
-</p>
+<a href="./Awk/Variablen.html" title="Linux Wissen:Systemprogrammierung:Awk:Variablen">Linux Wissen:Systemprogrammierung:Awk:Variablen</a>
 
-<p>
-<em>Beispiel:</em><br>
+<em>Beispiel:</em>
 <strong>awk '/^A.*/ {print}' &lt;Datei&gt;</strong><br>
 → filtert &lt;Datei&gt; nach allen Vorkommen von A am Anfang der Zeile <br>
-</p>
-
-<h2>Erstellen eines ausführbaren Scriptes</h2>
-<p>
+<br>
+<h2>Erstellen eines ausführbaren Scriptes</h2><br>
 ++<br>
-<em>#!/usr/bin/awk -f</em><br>
+<em>#!/usr/bin/awk -f</em>
 <em># Kommentar</em><br>
 /<em>Ausdruck/ {Anweisung}</em><br>
 ++<br>
-</p>
-
-<h4>Der Anweisungsblock</h4>
-<p>
+<br>
+<h4>Der Anweisungsblock</h4><br>
 ++<br>
-<em>{</em><br>
-<em>BEGIN {</em><br>
-<em>        Anweisung1 vor dem lesen der Datei;</em><br>
-<em>        ...</em><br>
-<em>        AnweisungN vor dem lesen der Datei;</em><br>
-<em>      }</em><br>
-<em>        { Anweisung1 während des lesens der Datei;</em><br>
-<em>         ...</em><br>
-<em>          AnweisungN während des lesens der Datei;</em><br>
-<em>        }</em><br>
-<em>END  {</em><br>
-<em>        Anweisung1 nach dem kompletten lesen der Datei;</em><br>
-<em>        ...</em><br>
-<em>        AnweisungN nach dem kompletten lesen der Datei;</em><br>
-<em>     }</em><br>
+<em>{</em>
+<em>BEGIN {</em>
+<em>        Anweisung1 vor dem lesen der Datei;</em>
+<em>        ...</em>
+<em>        AnweisungN vor dem lesen der Datei;</em>
+<em>      }</em>
+<em>        { Anweisung1 während des lesens der Datei;</em>
+<em>         ...</em>
+<em>          AnweisungN während des lesens der Datei;</em>
+<em>        }</em>
+<em>END  {</em>
+<em>        Anweisung1 nach dem kompletten lesen der Datei;</em>
+<em>        ...</em>
+<em>        AnweisungN nach dem kompletten lesen der Datei;</em>
+<em>     }</em>
 <em>}</em><br>
 ++<br>
 → Anweisungen innerhalb eines Blocks werden durch ; (Semikolon) getrennt<br>
@@ -125,91 +105,56 @@ Created Dienstag 26 April 2011<br>
 BEGIN {} →  Kommandos vor dem lesen der Eingabe<br>
 END {} →  Kommandos nach dem lesen des letzten Datensatzes<br>
 </div>
-</p>
 
-<p>
-<em>Beispiel:</em><br>
+<em>Beispiel:</em>
 <strong>ls -l *.txt|awk 'BEGIN {sum=0} {sum = sum + $5} END {print sum}'</strong><br>
 → addieren der Gesamtgröße alle auf .txt endenden Dateien<br>
-</p>
-
-<p>
-<a href="" title="Linux Wissen:Systemprogrammierung:Awk">Linux Wissen:Systemprogrammierung:Awk</a><br>
-</p>
+<br>
+<a href="" title="Linux Wissen:Systemprogrammierung:Awk">Linux Wissen:Systemprogrammierung:Awk</a>
 
 <h4>lange Zeilen maskieren</h4>
-<p>
-<ul>
 <li>Eine sehr lange Anweisungszeile kann durch maskieren \ des NL auf mehrere Zeilen verteilt werden</li>
-</ul>
-<em>Beispiel:</em><br>
-<strong>awk {print "Diese Zeile wird zulang um sie auf \</strong><br>
-<strong>eine Zeile zu verteilen."}</strong><br>
-</p>
+<em>Beispiel:</em>
+<strong>awk {print "Diese Zeile wird zulang um sie auf \</strong>
+<strong>eine Zeile zu verteilen."}</strong>
 
 
 <h2>Umleitungen und spezielle Dateien</h2>
-<p>
-<ul>
 <li>prozessbasierte Informationen </li>
 <li>Standard Dateidiskriptoren</li>
-</ul>
-</p>
-
-<p>
+<br>
 &gt; &gt;&gt; | <br>
 →  steht innerhalb einer print Anweistung so wird der Umleitungsoperator von awk und <strong>nicht</strong> von der Shell behandelt<br>
 <strong>awk ’{ print $2 &gt; "phone-list" print $1 &gt; "name-list" }’ BBS-lis</strong><br>
-</p>
-
-<p>
+<br>
 */dev/stdin →  0<br>
-</p>
-
-<p>
+<br>
 */dev/stdout →  1<br>
-</p>
-
-<p>
+<br>
 */dev/stderr →  2<br>
-</p>
-
-<p>
+<br>
 */dev/fd/N →  file Descriptor N<br>
-</p>
-
-<p>
+<br>
 */proc tree und */sys<br>
-<a href="../FHS/dev.html" title="Linux Wissen:FHS:dev">Linux Wissen:FHS:dev</a><br>
-<a href="../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a><br>
-<a href="../FHS/sys.html" title="Linux Wissen:FHS:sys">Linux Wissen:FHS:sys</a><br>
-</p>
+<a href="../FHS/dev.html" title="Linux Wissen:FHS:dev">Linux Wissen:FHS:dev</a>
+<a href="../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a>
+<a href="../FHS/sys.html" title="Linux Wissen:FHS:sys">Linux Wissen:FHS:sys</a>
 
-<p>
-<u>Hinweis: Spezial Files müssen gequotet werden wie in etwa hier</u><br>
-<em>Beispiel:</em><br>
-<strong>awk '{print "Serious error detected!" &gt; "/dev/stderr"}'</strong><br>
-</p>
+<u>Hinweis: Spezial Files müssen gequotet werden wie in etwa hier</u>
+<em>Beispiel:</em>
+<strong>awk '{print "Serious error detected!" &gt; "/dev/stderr"}'</strong>
 
 <h2>Varibalen in Awk</h2>
-<p>
-<a href="./Awk/Variablen.html" title="Linux Wissen:Systemprogrammierung:Awk:Variablen">Linux Wissen:Systemprogrammierung:Awk:Variablen</a><br>
-</p>
+<a href="./Awk/Variablen.html" title="Linux Wissen:Systemprogrammierung:Awk:Variablen">Linux Wissen:Systemprogrammierung:Awk:Variablen</a>
 
 <h2>Array</h2>
-<p>
-<a href="./Awk/Array.html" title="Linux Wissen:Systemprogrammierung:Awk:Array">Linux Wissen:Systemprogrammierung:Awk:Array</a><br>
-</p>
+<a href="./Awk/Array.html" title="Linux Wissen:Systemprogrammierung:Awk:Array">Linux Wissen:Systemprogrammierung:Awk:Array</a>
 
 <h2>Schleifen</h2>
-<p>
-<a href="./Awk/Schleifen.html" title="Linux Wissen:Systemprogrammierung:Awk:Schleifen">Linux Wissen:Systemprogrammierung:Awk:Schleifen</a><br>
-</p>
+<a href="./Awk/Schleifen.html" title="Linux Wissen:Systemprogrammierung:Awk:Schleifen">Linux Wissen:Systemprogrammierung:Awk:Schleifen</a>
 
 <h2>Escape Sequenzen</h2>
-<p>
-<a href="./Awk/Escape_Sequenzen.html" title="Linux Wissen:Systemprogrammierung:Awk:Escape Sequenzen">Linux Wissen:Systemprogrammierung:Awk:Escape Sequenzen</a><br>
-</p>
+<a href="./Awk/Escape_Sequenzen.html" title="Linux Wissen:Systemprogrammierung:Awk:Escape Sequenzen">Linux Wissen:Systemprogrammierung:Awk:Escape Sequenzen</a>
 
 
 <!-- End wiki content -->

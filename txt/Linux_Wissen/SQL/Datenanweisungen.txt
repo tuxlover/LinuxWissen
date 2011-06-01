@@ -159,7 +159,4 @@ Created Freitag 29 April 2011
 → die Bedigungnen (Datentyp) einer <Spalte> ändern
 
 
-
-
-
 __Hinweis: Mehere Datenanweisungen lassen sich durch IN und NOT IN sowie () verknüpfen.__

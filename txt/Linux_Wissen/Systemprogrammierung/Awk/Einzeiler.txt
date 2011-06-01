@@ -73,3 +73,11 @@ Created Donnerstag 28 April 2011
 
 **awk 'BEGIN{RS="\f"}; {weitere Befehle..}' <Datei1>**
 → alle Zeilen als einen Record auffassen
+
+
+=== Berechnungen durchführen ===
+**awk '{ total = total + NF }; END {print total}' file**
+→ die Anzahl der insgesamt enthaltenden Feldern
+
+**awk '{ total = total + $2} END{print total/$NFR}' beispiel.txt**
+→ den Mittelwert aller Zahlen in der Zweiten Spalte berechnen
