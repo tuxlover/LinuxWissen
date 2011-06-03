@@ -46,7 +46,8 @@ http://dev.mysql.com/doc/sakila/en/sakila.html
 [[Linux Wissen:SQL:Constraints]]
 
 == Primärschlüssel ==
-→ zur **eindeutigen **Beschreibung einer Entität (Tabelle)
+→ ein **eindeutiges Attribut **zur Beschreibung einer Entität (Tabelle)
+→ Jede Tabelle hat genau einen Primärschlüssel
 * darf nicht NULL sein 
 * keine Duplikate in der gleichen Tabelle 
 * Jede Tabelle hat genau einen Primärschlüssel
@@ -81,6 +82,11 @@ __Hinweis: Beachte, dass Anweisungen immer mit __**;**__abgeschlossen werden.__
 
 ===== Datentypen =====
 [[Linux Wissen:SQL:Datentypen]]
+
+===== Normalisierung =====
+* trägt zur Perfomence und Wartbarkeit bei
+* definiert eindeutige Objekte mit einzigartigen Attributen
+[[Linux Wissen:SQL:Normalisierung]]
 
 ===== Intigritätsregeln =====
 * Stellt sicher das ein Datensatz nicht die Konsistenz der Datenbank gefährdet

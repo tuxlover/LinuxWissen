@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-03T19:51:59+02:00
+
+====== Normalisierung ======
+Created Freitag 03 Juni 2011
+
+=== 1. Normalform ===
+* Eine Relation befindet sich in der 1. Normalform, wenn keine Splate mit gleichem Inhalt
+vorliegt und Daten in einer Tabelle keine untergeordnete Relation bilden.
+→ keine Wiederholungen
+
+* Eine Tabelle in der ersten Normalform muss einen Attributwert besitzen der eine Zeile einer Tabelle
+eindeutig identifieziert.
+→ Schlüselattribut
+
+=== 2. Normalform ===
+* Muss in der ersten Normalform vorliegen.
+* Jedes Nicht-Schlüsselattribut ist vom **Primärschlüssel** funktional abhänig
+→ Informationen die nicht vom selben Schlüssel abhängen werden in unterschiedliche Tabellen geschrieben
+
+
+=== 3. Normalform ===
+* Muss in der zweiten Normalform vorliegen
+* Jede Spalte darf nur vom Schlüsselattribut abhängen
+→ Spalten dürfen nur vom Schlüsselattribut abhängen
+
+=== 4. Normalform ===
+* Muss in der dritten Normalform vorliegen
+* Mehrfachabhängigkeiten müssen in Einzelabhängigkeiten aufgelöst sein
+
+=== 5. Normalform ===
+* Ist keine verlustfreie Zerlegung in EInzelabhängigkeiten möglich müssen weitere **Schlüssel  **hinzugefügt werden
+→ entgültige Spaltung in eigene Attributklassen
+
