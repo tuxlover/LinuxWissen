@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./UML.html'>Prev</a> ]
+	[ <a href='./Schemaanweisungen.html'>Prev</a> ]
 
 			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='../Systemprogrammierung.html'>Next</a> ]
+	[ <a href='./Views.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,11 +39,50 @@
 
 <!-- Wiki content -->
 
-<h1>Views</h1>
+<h1>UML</h1>
 
 <p>
-Created Mittwoch 04 Mai 2011<br>
+Created Dienstag 07 Juni 2011<br>
 </p>
+
+<p>
+Die UML Notation wird genutzt um Bezeihungen zwischen einzelnen Objekten darzustellen<br>
+</p>
+
+<h5>0..1 → optional eindeutig</h5>
+<p>
+        → ein Verweis auf diese Tabelle muss nicht vorhanden sein<br>
+<div style='padding-left: 30pt'>
+→ ist ein Verweis vorhanden, so ist dieser eindeutig zuordnenbar<br>
+</div>
+</p>
+
+
+<h5>0..* → optional mehrdeutig</h5>
+<p>
+<div style='padding-left: 30pt'>
+→ ein Verweis auf diese Tabelle muss nicht vorhanden sein<br>
+→ es können mehr als ein Verweis auf das Ziel verweisen<br>
+</div>
+</p>
+
+
+<h5>1..1 → obligatorische eindeutig</h5>
+<p>
+<div style='padding-left: 30pt'>
+→ ein Verweis muss auf diese Tabelle zeigen<br>
+→ dieser muss eindeutig sein<br>
+</div>
+</p>
+	
+<h5>1..* → obligatorisch mehrdeutig</h5>
+<p>
+<div style='padding-left: 30pt'>
+→ mindestens ein Verweis muss auf diese Tabelle<br>
+→ es können mehrere Verweise auf diese Tabelle zeigen<br>
+</div>
+</p>
+
 
 
 

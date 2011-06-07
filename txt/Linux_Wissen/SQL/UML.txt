@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-07T14:52:45+02:00
+
+====== UML ======
+Created Dienstag 07 Juni 2011
+
+Die UML Notation wird genutzt um Bezeihungen zwischen einzelnen Objekten darzustellen
+
+== 0..1 → optional eindeutig ==
+        → ein Verweis auf diese Tabelle muss nicht vorhanden sein
+	→ ist ein Verweis vorhanden, so ist dieser eindeutig zuordnenbar
+
+
+== 0..* → optional mehrdeutig ==
+	→ ein Verweis auf diese Tabelle muss nicht vorhanden sein
+	→ es können mehr als ein Verweis auf das Ziel verweisen
+
+
+== 1..1 → obligatorische eindeutig ==
+	→ ein Verweis muss auf diese Tabelle zeigen
+	→ dieser muss eindeutig sein
+	
+== 1..* → obligatorisch mehrdeutig ==
+	→ mindestens ein Verweis muss auf diese Tabelle
+	→ es können mehrere Verweise auf diese Tabelle zeigen
+
+

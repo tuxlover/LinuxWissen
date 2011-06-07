@@ -94,7 +94,7 @@ Created Freitag 29 April 2011
 → verändern von Daten in einer Tabelle
 → das Attribut ist bereits vergeben
 
-**UPDATE <table> SET <Attribut>=<Wert> [ WHERE <Condition>]**
+**UPDATE <table> SET <Attribut>=<Wert> [ WHERE <Condition>][,..]**
 → setzt einen neuen <Wert> für Attribut von Tabelle <table> wo die Bedingungen <Condition> zutreffen
 → mehrere Attribute müssen durch Kommata getrennt werden
 

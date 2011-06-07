@@ -45,7 +45,6 @@
 Created Sonntag 08 Mai 2011<br>
 </p>
 
-
 <p>
 <strong>NOT NULL </strong><br>
 → Diese Spalte muss immer ausgefüllt sein und darf nich leer sein<br>
@@ -57,8 +56,35 @@ Created Sonntag 08 Mai 2011<br>
 </p>
 
 <p>
+<em>Syntax:</em><br>
++++<br>
+<em>CREATE TABLE tabellenname</em><br>
+<em>(</em><br>
+<em>spaltenname1 datentyp,</em><br>
+<em>spaltenname2 datentyp</em><br>
+<em>[...]</em><br>
+<em>[PRIMARY KEY (spaltenliste)]</em><br>
+<em>[CONSTRAINT constraintname]</em><br>
+<em>UNIQUE (spaltenname1, spaltenname2 [...])</em><br>
+<em>);</em><br>
++++<br>
+</p>
+
+<p>
 <strong>CHECK</strong><br>
 → definieren von Überpfüfungsregeln definieren um Fehlereingaben zu verhindern<br>
+</p>
+
+<p>
+<em>Syntax:</em><br>
++++<br>
+<em>CREATE TABLE tabellenname</em><br>
+<em>(</em><br>
+<em>spaltenname datentyp [CONSTRAINT constraintname]</em><br>
+<em>CHECK (bedingung)</em><br>
+<em>[...]</em><br>
+<em>);</em><br>
++++<br>
 </p>
 
 <p>
@@ -67,10 +93,70 @@ Created Sonntag 08 Mai 2011<br>
 </p>
 
 <p>
+<em>Syntax:</em><br>
++++<br>
+<em>CREATE TABLE tabellenname</em><br>
+<em>(</em><br>
+<em>spaltenname datentyp DEFAULT vorgabewert</em><br>
+<em>[...]</em><br>
+<em>);</em><br>
++++<br>
+</p>
+
+<h4>Für den Primärschlüssel</h4>
+
+<p>
 <strong>AUTOINCREMENT</strong><br>
 → automatisches vergeben des Primärschlüssels als fortlaufenden Integer<br>
 </p>
 
+<p>
+<a href="./Constraints.html" title="Linux Wissen:SQL:Constraints">Linux Wissen:SQL:Constraints</a><br>
+</p>
+
+<h4>Für den Fremdschlüssel</h4>
+<p>
+<strong>NO ACTION</strong><br>
+→ keine Veränderung falls Vatertabelle des betreffenden Fremdschlüssel geändert oder gelöscht wird<br>
+</p>
+
+<p>
+<strong>CASCADE</strong><br>
+→ alle von der Vatertabelle abhängigen Tabellen des betreffenden Fremdschlüssels werden geändert oder gelöscht<br>
+</p>
+
+<p>
+<strong>SET DEFAULT</strong><br>
+→ wird Datensatz in der Vatertabelle geändert | gelöscht, so wird der Schlüsselwert der abhängigen Tabelle auf einen<br>
+Standard Wert gesetzt<br>
+</p>
+
+<p>
+<strong>SET NULL</strong><br>
+→ Wird ein Datensatz in der Vatertabelle gelöscht oder verändert, wird der Wert in der abhängigen Tabelle auf Null gesetzt<br>
+</p>
+
+<p>
+<em>Syntax:</em><br>
++++<br>
+<em>CREATE TABLE tabellenname</em><br>
+<em>(</em><br>
+<em>spaltenname Datentyp,</em><br>
+<em>FOREIGN KEY (spaltenname)</em><br>
+<em>REFERENCES tabellenname (spaltenname)</em><br>
+<em>[ON DELETE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]</em><br>
+<em>[ON UPDATE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]</em><br>
+<em>);</em><br>
++++<br>
+</p>
+
+<h4>Domänen</h4>
+<p>
+<ul>
+<li>Wertebrereich einer Spalte durch eine vorher definierte Menge von zulässigen Werten einschränken</li>
+</ul>
+<a href="./Datenanweisungen/Dom%C3%A4nen.html" title="Datenanweisungen:Domänen">Datenanweisungen:Domänen</a><br>
+</p>
 
 
 <!-- End wiki content -->
@@ -79,7 +165,7 @@ Created Sonntag 08 Mai 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='./Schemaanweisungen.html'>Linux Wissen:SQL:Schemaanweisungen</a></li>		<a href='../SQL.html'>Linux Wissen:SQL</a></li>
+	Backlinks:		<a href='../SQL.html'>Linux Wissen:SQL</a></li>		<a href='./Schemaanweisungen.html'>Linux Wissen:SQL:Schemaanweisungen</a></li>
 
 <!-- End Backlinks -->
 

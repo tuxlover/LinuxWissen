@@ -111,3 +111,8 @@ __Hinweis: Beachte, dass Anweisungen immer mit __**;**__abgeschlossen werden.__
 * **JOIN **
 * **USING**
 * **INNER JOIN**
+
+===== UML =====
+* genutzt um Beziehungen zwischen einzelnen Tabellen Darzustellen
+* dadurch wird ersichtlich welche **Fremdschllüssel ** auf welche **Primärschlüssel ** verweisen
+[[Linux Wissen:SQL:UML]]

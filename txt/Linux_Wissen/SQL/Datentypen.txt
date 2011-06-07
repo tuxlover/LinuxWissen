@@ -11,10 +11,12 @@ Created Freitag 29 April 2011
 **CHAR(N)**
 → eine Zeichenkette mit fest definierter Länge N 
 → maximale Länge 64KB
+→ es wird immer die definierte Länge im Hauptspeicher reserviert
 
 **VARCHAR(N)**
 → eine Zeichenkette variabler Länge
 → maximale Länge 64 KB
+→ es wird immer nur die tatsächlich benutzte Größe im Hauptspeicher reserviert
 
 **TinyText**
 → mehrere Zeichenketten 

@@ -5,19 +5,83 @@ Creation-Date: 2011-05-08T23:50:04+02:00
 ====== Intigritätsregeln ======
 Created Sonntag 08 Mai 2011
 
-
 **NOT NULL **
 → Diese Spalte muss immer ausgefüllt sein und darf nich leer sein
 
 **UNIQUE**
 → verhindert das Abspeichern von doppelten Werten, wo dieses nicht sinnvoll ist
 
+//Syntax://
++++
+//CREATE TABLE tabellenname//
+//(//
+//spaltenname1 datentyp,//
+//spaltenname2 datentyp//
+//[...]//
+//[PRIMARY KEY (spaltenliste)]//
+//[CONSTRAINT constraintname]//
+//UNIQUE (spaltenname1, spaltenname2 [...])//
+//);//
++++
+
 **CHECK**
 → definieren von Überpfüfungsregeln definieren um Fehlereingaben zu verhindern
+
+//Syntax://
++++
+//CREATE TABLE tabellenname//
+//(//
+//spaltenname datentyp [CONSTRAINT constraintname]//
+//CHECK (bedingung)//
+//[...]//
+//);//
++++
 
 **DEFAULT**
 → setzen von Standardwerten, wenn nichts anderes angegeben wurde
 
+//Syntax://
++++
+//CREATE TABLE tabellenname//
+//(//
+//spaltenname datentyp DEFAULT vorgabewert//
+//[...]//
+//);//
++++
+
+=== Für den Primärschlüssel ===
+
 **AUTOINCREMENT**
 → automatisches vergeben des Primärschlüssels als fortlaufenden Integer
 
+[[Linux Wissen:SQL:Constraints]]
+
+=== Für den Fremdschlüssel ===
+**NO ACTION**
+→ keine Veränderung falls Vatertabelle des betreffenden Fremdschlüssel geändert oder gelöscht wird
+
+**CASCADE**
+→ alle von der Vatertabelle abhängigen Tabellen des betreffenden Fremdschlüssels werden geändert oder gelöscht
+
+**SET DEFAULT**
+→ wird Datensatz in der Vatertabelle geändert | gelöscht, so wird der Schlüsselwert der abhängigen Tabelle auf einen
+Standard Wert gesetzt
+
+**SET NULL**
+→ Wird ein Datensatz in der Vatertabelle gelöscht oder verändert, wird der Wert in der abhängigen Tabelle auf Null gesetzt
+
+//Syntax://
++++
+//CREATE TABLE tabellenname//
+//(//
+//spaltenname Datentyp,//
+//FOREIGN KEY (spaltenname)//
+//REFERENCES tabellenname (spaltenname)//
+//[ON DELETE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]//
+//[ON UPDATE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]//
+//);//
++++
+
+=== Domänen ===
+* Wertebrereich einer Spalte durch eine vorher definierte Menge von zulässigen Werten einschränken
+[[Datenanweisungen:Domänen]]
