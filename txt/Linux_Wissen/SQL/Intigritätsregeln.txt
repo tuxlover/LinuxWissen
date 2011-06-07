@@ -5,3 +5,19 @@ Creation-Date: 2011-05-08T23:50:04+02:00
 ====== Intigritätsregeln ======
 Created Sonntag 08 Mai 2011
 
+
+**NOT NULL **
+→ Diese Spalte muss immer ausgefüllt sein und darf nich leer sein
+
+**UNIQUE**
+→ verhindert das Abspeichern von doppelten Werten, wo dieses nicht sinnvoll ist
+
+**CHECK**
+→ definieren von Überpfüfungsregeln definieren um Fehlereingaben zu verhindern
+
+**DEFAULT**
+→ setzen von Standardwerten, wenn nichts anderes angegeben wurde
+
+**AUTOINCREMENT**
+→ automatisches vergeben des Primärschlüssels als fortlaufenden Integer
+
