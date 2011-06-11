@@ -60,7 +60,28 @@ a% → a am Anfang und beliebige Zeichen
 //Beispiel://
 //select title from film where special_features LIKE 'B%' AND length < 90;//
 
-  
+=== Mengenoperationen ===
+
+**SELECT <spaltenliste_tabelleA> FROM <tabelleA>** 
+**UNION **
+**SELECT <spaltenliste_tabelleB> FROM <tabelleB>**
+**UNION**
+**...**
+→ Ergebnissmenge sind alle Datensätze, die in beiden Tabellen vorkommen
+
+**SELECT** **<spaltenliste_tabelleA> FROM <tabelleA>**
+**INTERSECT**
+**SELECT <spalten_tabelleB> FROM <tabelleB>**
+**INTERSECT**
+**...**
+→ Ergebnissmenge sind nur die Datensätze die sich in Tabelle 1 als auch in Tabelle 2 befinden
+
+**SELECT <spaltenliste_tabelleA> FROM <tabelleA>**
+**EXECPT**
+**SELECT <spaltenliste_tabelleB> FROM <tablleB>**
+**EXECPT**
+**...**
+→ Ergebnismenge sind nur die Datensätze die auschließlich in der ersten Tabelle vorkommen
 
 === NULL ===
 * bezeichnet einen Wert der nicht vergeben, leer oder nicht vergeben ist

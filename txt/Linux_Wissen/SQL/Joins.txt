@@ -8,15 +8,42 @@ Created Mittwoch 04 Mai 2011
 * relatives Verbindden von Attributen zu einer Abfrage, liefert eine Tabelle zurück
 * eine Datenbank ist umso mächtiger je mehr Verknüpfungen sie bilden kann
 
+=== Old Style Join ===
+**SELECT <TabelleA>.<spalte1_TabelleA> , <TabelleB>.<spalte2_TabelleB>**
+	**FROM <TabelleA>, <TabelleB>**
+	**WHERE <spalteX>.<TabelleA> = <spalteX>.<TabelleB> **
+
+
+=== Join ===
+→ erlaubt die Verknüpfung alter 
+**SELECT <TabelleA>.<Spalte1_TabelleA>, <TabelleB>.<Spalte2_TabelleB>**
+	**FROM <TabelleA> JOIN <TabelleB>**
+	**ON <TabelleA>.<SpalteX> = <TabelleB>.<SpalteX>**
+	**[WHERE BEDINGUNG ...]**
+	
+//Beispiel://
+//SELECT customer.first_name, customer.last_name, address.address //
+	//FROM customer JOIN address //
+	//ON customer.address_id = address.address_id //
+	//ORDER BY customer.last_name;//
+
+
+
 === Inner Joins ===
-**SELECT <tabelle1>.<var_tab1>,<tabelle1>.<var2_tab1>,...,<tabelle1>.<varN_tab1>,**
-**<tabelle2>.<var1_tab2>,...,<tabele2>.<varM_tab2>**
-**FROM <tabelle1> INNER JOIN <tablle2>**
-**ON <tabelle1>.Fremdschlüssel = <tabelle2>.Fremdschlüssel;**
+→ verbietet die Verknüpfung leerer Datensätze
+→ gibt  nur Datensätze aus, die in beiden Tabellen vorhanden sind
+
+**SELECT <TabelleA>.<Spalte1>,... <TabelleB>.<Spalte2>,...**
+	**FROM <TabelleA> INNER JOIN <TabelleB>**
+	**ON <TabelleA>.<SpalteX> = <TabelleB>.<SpalteX>**
+	....
+
 → falls beide Fremdschlüssel verschiedene Attribute haben
 
 //Beispiel://
-//SELECT actor.first_name, actor.last_name,city.city FROM actor INNER JOIN  city ON actor.actor_id = city.city_id;//
+//SELECT actor.first_name, actor.last_name,city.city //
+	//FROM actor //
+	//INNER JOIN  city ON actor.actor_id = city.city_id;//
 
 **SELECT <tabelle1>.<var1_tab1>, <tabelle1>.<var2_tab1>,...,<tabelle1>.<varN_tab1>,**
 **<tabelle2>.<var1_tab2>,...,<tabelle2>.<varM_tab2> **
@@ -27,8 +54,3 @@ Created Mittwoch 04 Mai 2011
 
 //Beispiel://
 //SELECT film_actor.actor_id, film_actor.last_update, actor.actor_id,actor.first_name,actor.last_name FROM film_actor INNER JOIN actor USING (actor_id);//
-
-
-
-
-

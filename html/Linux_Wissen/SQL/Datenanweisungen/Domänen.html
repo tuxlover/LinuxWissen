@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='../Datenanweisungen.html'>Prev</a> ]
+	[ <a href='./Datumsfunktionen.html'>Prev</a> ]
 
 			[ <a href='../../../index.html'>Index</a> ]
 
-	[ <a href='../Datentypen.html'>Next</a> ]
+	[ <a href='./Indicies.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -48,22 +48,74 @@ Created Dienstag 07 Juni 2011<br>
 <p>
 <ul>
 <li>erstellen mit dem <strong>CREATE</strong> Befehl und dem Schlüsselwort <strong>DOMAIN</strong></li>
+<li>mit dem <strong>ALTER </strong>Befehl können Domains gändert werden</li>
+<li>mit dem <strong>DROP  </strong>Befehl können Domains glöscht werden </li>
+</ul>
+<div style='padding-left: 30pt'>
+→ löschen erst alle Werte die von der <strong>DOMAIN </strong>genutzt werden<br>
+</div>
+<ul>
 <li>festlegen eines Datentyps für die Domäne und deren Bedingungen</li>
 </ul>
 </p>
 
 <p>
+<u>Werden nicht von Mysql unterstützt</u><br>
 <u>Durch die Bedingungen wird der Datentyp zu einer neue Menge definiert</u><br>
 </p>
 
 <p>
-<em>CREATE DOMAIN domänenname</em><br>
-<em>AS datentyp</em><br>
-<em>DEFAULT vorgabewert</em><br>
+<strong>CREATE DOMAIN &lt;domänenname&gt;</strong><br>
+<strong>AS &lt;datentyp&gt;</strong><br>
+<strong>DEFAULT &lt;vorgabewert&gt;</strong><br>
+<strong>CHECK</strong><br>
+<strong>(</strong><br>
+<strong>VALUE &lt;bedingung&gt;</strong><br>
+...<br>
+<strong>);</strong><br>
+→ erstellen einer Domain &lt;domänenname&gt; mit der Grundmenge &lt;Datentyp&gt;<br>
+→ verwende wenn nichts anderes angegeben &lt;vorgabewert&gt;<br>
+→ schränke Domäne durch die in CHECK festgelegten &lt;bedingungen&gt; ein<br>
+</p>
+
+<p>
+<strong>BETWEEN → </strong>definieren von Werten mit Unter und Obergrenze<br>
+<div style='padding-left: 60pt'>
+  → Angabe eines Intervalls<br>
+</div>
+</p>
+		
+<p>
+<strong>CONTAINING </strong>→ definieren eines Wertes der in der Zeichenfolge vorkommen muss<br>
+<div style='padding-left: 30pt'>
+              →  zum Beispiel @<br>
+</div>
+</p>
+	
+<p>
+<em>Beispiel:</em><br>
++++<br>
+<em>CREATE DOMAIN u_mail</em><br>
+<em>AS VARCHAR(120)</em><br>
 <em>CHECK</em><br>
 <em>(</em><br>
-<em>VALUE bedingung</em><br>
+<em>VALUE CONTAINING @</em><br>
 <em>);</em><br>
++++<br>
+</p>
+
+<p>
+<strong>VALUE LIKE &lt;Muster&gt;</strong><br>
+→  als Muster können nur Wildcards verwendet werden <br>
+→ % ist wie *<br>
+→ dieses Muster muss in dem entsprechenden Datenfeld vorhanden sein<br>
+</p>
+
+<p>
+<strong>VALUE NOT LIKE &lt;Muster&gt;</strong><br>
+→ als Muster können nur Wildcards verwendet werden<br>
+→ % ist wie *<br>
+→ dieses Muster darf nicht im entsprechenden Datenfeld vorhanden sein<br>
 </p>
 
 

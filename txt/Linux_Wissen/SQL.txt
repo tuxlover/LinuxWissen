@@ -99,6 +99,7 @@ __Hinweis: Beachte, dass Anweisungen immer mit __**;**__abgeschlossen werden.__
 * zum Steuern der Datenbank
 * Jede Anweisung besteht aus **CREATE | ALTER | DROP **Befehle die mit **arithmetischen Operatoren, logischen **
 **Operatoren oder Vergleichsoperatoren **verknüpft werden.
+[[Linux Wissen:SQL:Datenanweisungen]]
 
 **Verknüpfungsoperatoren → **zur Verknüpfung von 
 **Unterabfragen **→ Schachtelung verschiedener SQL Ausdrücke
@@ -116,3 +117,9 @@ __Hinweis: Beachte, dass Anweisungen immer mit __**;**__abgeschlossen werden.__
 * genutzt um Beziehungen zwischen einzelnen Tabellen Darzustellen
 * dadurch wird ersichtlich welche **Fremdschllüssel ** auf welche **Primärschlüssel ** verweisen
 [[Linux Wissen:SQL:UML]]
+
+===== Indicies =====
+* beschleunigen von Abfragen
+* beschleunigung von Sortiervorgängen
+* definieren von Maximal- und Minimalwerten
+[[Linux Wissen:SQL:Datenanweisungen:Indicies]]

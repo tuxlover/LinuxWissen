@@ -102,6 +102,6 @@ Vorwärts suchen: ?
 ===== Man Pages nach Namen durchsuchen =====
 **whatis <Stichwort>**
 
-===== Man Pages nach DESCRIPTION durchsuchen =====
+===== Man Pages in Kurzbeschreibung durchsuchen =====
 **apropos <Stichwort>**
 **man -k <Stichwort>**

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-11T00:04:50+02:00
+
+====== Cast ======
+Created Samstag 11 Juni 2011
+
+* Die Cast Funktion wandelt Datentypen um
+* Der umzuwandelnde Datentyp muss die weiteren Anweisungen unterstützen
+
+== CAST() ==
+
+**SELECT <spalte>**
+	**CAST(<Spalte> <Operation> AS <Datentyp>**
+	**FROM <tabelle>**
+→ umwandeln des in <Spalte> definierten  Datentyp in einen neuen <Datentyp>
+→ es können weitere Operationen ausgeführt werden
+→ kann mit weiteren Anweisungen kombiniert werden
+

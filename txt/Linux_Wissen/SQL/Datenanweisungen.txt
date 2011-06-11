@@ -26,6 +26,10 @@ Created Freitag 29 April 2011
 ==== DML (Data Manipulation Language) ====
 
 === Querry ===
+* können mit Aggregatfunktionen kombiniert werden
+[[Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen]]
+[[Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen]]
+
 **SELECT version(),user() [<Database>]**
 → Nutzer und Version der Datenbank <Database>
 
@@ -40,8 +44,9 @@ Created Freitag 29 April 2011
 == → !Achtung!: ==
 **Sehr hohe Laufzeit!**
 
-**SELECT <Spalte1>,<Spalte2>,... FROM <table>**
+**SELECT <Spalte1>,<Spalte2>,... FROM <table> <Alias>**
 → aus einer Tabelle <table> mehrere Spalten abfragen
+→ ein * steht stellvertretend für alle Spalten einer Tabelle
 
 **SELECT <Spalte> INTO OUTFILE <Datei> FROM <table>**
 → eine <Spalte> einer Tabelle <table> in eine <Datei> schreiben
@@ -64,24 +69,47 @@ Created Freitag 29 April 2011
 **SELECT <Spalte> FROM <table> WHERE <Condition> GROUP BY **
 → fasst Zeilen nach gemeinsamen Werten entsprechend von Spalte zusammen
 
+//Beispiel://
+//+++//
+//SELECT ort, COUNT(*)//
+	//FROM person//
+	//WHERE ort = 'Berlin' OR ort = 'Hamburg'//
+	//GROUP BY ort;//
+//+++//
+//>> Berlin 212//
+//>> Hamburg 17//
+
 == HAVING ==
 **SELECT <Spalte> FROM <table> WHERE <Condition1> GROUPBY <Spalte> HAVING <Conditon2> **
 → herausfiltern von unerwünschten Gruppen
+
+//Beispiel://
+//+++//
+//SELECT ort, COUNT(*)//
+	//FROM person//
+	//GROUP BY ort//
+	//HAVING COUNT(*) >= 100;//
+//+++//
+//>> Berlin 212//
+//>> Dresden 112//
+//>> Köln 150//
 
 == LIMIT ==
 **SELECT <Spalte> FROM <table> WHERE <Condition1> LIMIT N**
 → die auf <Condition> zutreffenden Ergebnisse auf die ersten N Ergebnise limmitiren
 
 == ORDER BY ==
-**SELECT <Spalte> FROM <table> WHERE <Condtion> ORDER BY <SpalteA>**
+**SELECT <Spalte> FROM <table> WHERE <Condtion> ORDER BY <SpalteA> [ ASC | DESC ]**
 → die auf <Condition> zutreffenden Ergebnisse nach <SpalteA> sortieren
 → sortiren der Abfrage nach 
-
 
 == INSERT ==
 → schreiben von Daten in eine Tabelle
 
-**INSERT INTO <table> (<Attribute>,...) VALUES (<Werte>,...)**
+**INSERT INTO <table> **
+	**(<Attribute>,...) **
+**VALUES **
+	**(<Werte>,...);**
 → fügt in die Tabelle <table> die entrsprechenden <Attribute> und den dazugerhörigen <Werte> ein
 → bijektiv Abbildung
 → die <Attribute> müssen bereits definiert sein
@@ -152,11 +180,16 @@ Created Freitag 29 April 2011
 **ALTER TABLE <Name_alt> RENAME TO <Name_neu>**
 → Tabelle mit <Name_Alt> in <Name_neu> umbenennen
 
-**ALTER TABLE <Name> ADD COLUMN <Spalte> <Datentyp>**
+**ALTER TABLE <Name> ADD [ CONSTARINT ] <Spalte> <Datentyp>**
 → das Attribut (Spalte)  mit dem entsprechenden <Datentyp> der Tabelle mit <Name> hinzufügen
+→ wird das Schlüsselwort CONSTRANT benutzt, wird ein Constraint hinzugefügt
+[[Linux Wissen:SQL:Constraints]]
 
-**ALTER TABLE <Name> modify <Spalte> <Datentyp> **
+**ALTER TABLE <Name> MODIFY <Spalte> <Datentyp> **
 → die Bedigungnen (Datentyp) einer <Spalte> ändern
 
+**ALTER TABLE <Name> DROP [ CONSTRAINT ] <Spalte>**
+→ entfernen einer Spalte aus der Tabelle <Name>
+→ wird das Schlüsselwort CONSTRAINT verwendet, wird ein Constraint gelöscht
 
 __Hinweis: Mehere Datenanweisungen lassen sich durch IN und NOT IN sowie () verknüpfen.__

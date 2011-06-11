@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Indicies.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='../Datentypen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Mathematische Funktionen</h1>
+
+<p>
+Created Freitag 10 Juni 2011<br>
+</p>
+
+<p>
+<ul>
+<li>mathematische und Aggregatfunktionen können beliebig miteinander kombiniert werden</li>
+</ul>
+</p>
+
+<p>
+<strong>SELECT &lt;spalte&gt; * &lt;Wert&gt; FROM &lt;tabelle&gt; </strong><br>
+→ multiplizieren Spalte mit &lt;Wert&gt;<br>
+</p>
+
+<p>
+<strong>SELECT &lt;spalte&gt; + &lt;Wert&gt; FROM &lt;tabelle&gt;</strong><br>
+<strong>→ </strong>addieren von &lt;Wert&gt; zu <br>
+</p>
+
+<p>
+<strong>SELECT &lt;spalte&gt; - &lt;Wert&gt; FROM &lt;tabele&gt; </strong><br>
+→ subtrahiere &lt;Wert&gt; Spalte<br>
+</p>
+
+<p>
+<strong>SELECT &lt;spalte&gt; / &lt;Wert&gt; FROM &lt;tabelle&gt;</strong><br>
+→ dividiere &lt;spalte&gt; durch &lt;Wert&gt; <br>
+</p>
+
+
+<h5>ABS()</h5>
+
+<p>
+<strong>SELECT ABS( &lt;Ausdruck&gt; )</strong><br>
+<div style='padding-left: 30pt'>
+<strong>FROM &lt;tabelle&gt; ...</strong><br>
+</div>
+→ gibt den Absoluten Wert | die Metrik  eines &lt;Ausdruck&gt; von &lt;tabelle&gt; zurück<br>
+</p>
+
+<h5>EXTRACT()</h5>
+
+<p>
+<strong>SELECT EXTRACT( {DAY | MONTH | YEAR} FROM &lt;spalte&gt; ) </strong><br>
+<div style='padding-left: 30pt'>
+<strong>FROM &lt;tabelle&gt;</strong><br>
+</div>
+→ gibt Tag, Monat oder Jahr als Zahl von einer &lt;spalte&gt; vom Datentyp &lt;Date&gt; aus<br>
+</p>
+
+<h5>MOD()</h5>
+
+<p>
+<strong>SELECT MOD(&lt;spalte&gt;,N) </strong><br>
+<div style='padding-left: 30pt'>
+<strong>FROM &lt;tabelle&gt;</strong><br>
+</div>
+→ gibt den Modulowert bei der Devision der &lt;Spalte&gt; durch N zurück<br>
+</p>
+
+<h5>POSITION()</h5>
+
+<p>
+<strong>SELECT POSITION ( '&lt;zeichen&gt;' IN &lt;spalte)</strong><br>
+<div style='padding-left: 30pt'>
+<strong>FROM &lt;tabelle&gt;</strong><br>
+</div>
+→ zeigt die Postion eines bestimmten Zeichens in einer bestimmen &lt;spalte&gt; von &lt;tabelle&gt;<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
++++<br>
+<em>SELECT * FROM person</em><br>
+<div style='padding-left: 30pt'>
+<em>WHERE POSITION ( '@' IN E-Mail) &lt; 1</em><br>
+</div>
++++<br>
+</p>
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

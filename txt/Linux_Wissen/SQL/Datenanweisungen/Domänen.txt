@@ -6,15 +6,49 @@ Creation-Date: 2011-06-07T15:58:32+02:00
 Created Dienstag 07 Juni 2011
 
 * erstellen mit dem **CREATE** Befehl und dem Schlüsselwort **DOMAIN**
+* mit dem **ALTER **Befehl können Domains gändert werden
+* mit dem **DROP  **Befehl können Domains glöscht werden 
+	→ löschen erst alle Werte die von der **DOMAIN **genutzt werden
 * festlegen eines Datentyps für die Domäne und deren Bedingungen
 
+__Werden nicht von Mysql unterstützt__
 __Durch die Bedingungen wird der Datentyp zu einer neue Menge definiert__
 
-//CREATE DOMAIN domänenname//
-//AS datentyp//
-//DEFAULT vorgabewert//
+**CREATE DOMAIN <domänenname>**
+**AS <datentyp>**
+**DEFAULT <vorgabewert>**
+**CHECK**
+**(**
+**VALUE <bedingung>**
+...
+**);**
+→ erstellen einer Domain <domänenname> mit der Grundmenge <Datentyp>
+→ verwende wenn nichts anderes angegeben <vorgabewert>
+→ schränke Domäne durch die in CHECK festgelegten <bedingungen> ein
+
+**BETWEEN → **definieren von Werten mit Unter und Obergrenze
+		  → Angabe eines Intervalls
+		
+**CONTAINING **→ definieren eines Wertes der in der Zeichenfolge vorkommen muss
+	              →  zum Beispiel @
+	
+//Beispiel://
++++
+//CREATE DOMAIN u_mail//
+//AS VARCHAR(120)//
 //CHECK//
 //(//
-//VALUE bedingung//
+//VALUE CONTAINING @//
 //);//
++++
+
+**VALUE LIKE <Muster>**
+→  als Muster können nur Wildcards verwendet werden 
+→ % ist wie *
+→ dieses Muster muss in dem entsprechenden Datenfeld vorhanden sein
+
+**VALUE NOT LIKE <Muster>**
+→ als Muster können nur Wildcards verwendet werden
+→ % ist wie *
+→ dieses Muster darf nicht im entsprechenden Datenfeld vorhanden sein
 

@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-10T14:29:29+02:00
+
+====== Aggregatfunktionen ======
+Created Freitag 10 Juni 2011
+
+* Aggregatfunktionen und Mathematische Funktionen können beliebig kombiniert werdens
+
+== COUNT() ==
+
+**SELECT <spalte>, COUNT(*)**
+	**FROM <tabelle> ...**
+→ berechnet die Anzahl von Datensätzen oder bestimmten Werten in einer Tabelle
+
+
+== SUM() ==
+
+**SELECT SUM(<spalte>)**
+	**FROM <tabelle> ...**
+→ die Summe von nummerischen Werten einer <spalte>
+
+== AVG() ==
+
+**SELECT AVG(<spalte>) AS Alias**
+	**FROM <tabelle> ...**
+→ der Durchschnitt von nummerischen Werte einer <spalte>
+
+== MAX() ==
+
+**SELECT MAX(<spalte>) AS maximum**
+	**FROM <tabelle> ...**
+→ das Maximum von nummerischen Werte einer <spalte>
+
+== MIN() ==
+
+**SELECT MIN(<spalte>) AS minimum**
+	**FROM <tabelle> ...**
+→ das Minimum von mummerischen Werte einer <spalte>

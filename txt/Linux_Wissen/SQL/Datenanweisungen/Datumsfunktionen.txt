@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-10T23:51:30+02:00
+
+====== Datumsfunktionen ======
+Created Freitag 10 Juni 2011
+
+== CURRENT_DATE() ==
+**SELECT ... CURRENT_DATE**
+**...**
+→ Ausgabe des aktuellen Datums zurückgeben
+
+== CURRENT_TIMESTAMP() ==
+**SELECT ... CURRENT_TIMESTAMP(N)**
+**...**
+→ Ausgabe des aktuellen Zeitstempels
+→ Datum und Uhrzeit
+→ wird N genutzt wird ein Zeitstempel der Länge N erzeugt
+

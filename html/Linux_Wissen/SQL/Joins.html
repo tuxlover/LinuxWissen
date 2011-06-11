@@ -41,49 +41,65 @@
 
 <h1>Joins</h1>
 
-<p>
-Created Mittwoch 04 Mai 2011<br>
-</p>
-
-<p>
-<ul>
 <li>relatives Verbindden von Attributen zu einer Abfrage, liefert eine Tabelle zurück</li>
 <li>eine Datenbank ist umso mächtiger je mehr Verknüpfungen sie bilden kann</li>
-</ul>
-</p>
 
-<h4>Inner Joins</h4>
-<p>
-<strong>SELECT &lt;tabelle1&gt;.&lt;var_tab1&gt;,&lt;tabelle1&gt;.&lt;var2_tab1&gt;,...,&lt;tabelle1&gt;.&lt;varN_tab1&gt;,</strong><br>
-<strong>&lt;tabelle2&gt;.&lt;var1_tab2&gt;,...,&lt;tabele2&gt;.&lt;varM_tab2&gt;</strong><br>
-<strong>FROM &lt;tabelle1&gt; INNER JOIN &lt;tablle2&gt;</strong><br>
-<strong>ON &lt;tabelle1&gt;.Fremdschlüssel = &lt;tabelle2&gt;.Fremdschlüssel;</strong><br>
+<h4>Old Style Join</h4>
+<strong>SELECT &lt;TabelleA&gt;.&lt;spalte1_TabelleA&gt; , &lt;TabelleB&gt;.&lt;spalte2_TabelleB&gt;</strong>
+<div style='padding-left: 30pt'>
+<strong>FROM &lt;TabelleA&gt;, &lt;TabelleB&gt;</strong><br>
+<strong>WHERE &lt;spalteX&gt;.&lt;TabelleA&gt; = &lt;spalteX&gt;.&lt;TabelleB&gt; </strong><br>
+</div>
+
+
+<h4>Join</h4><br>
+→ erlaubt die Verknüpfung alter <br>
+<strong>SELECT &lt;TabelleA&gt;.&lt;Spalte1_TabelleA&gt;, &lt;TabelleB&gt;.&lt;Spalte2_TabelleB&gt;</strong>
+<div style='padding-left: 30pt'>
+<strong>FROM &lt;TabelleA&gt; JOIN &lt;TabelleB&gt;</strong><br>
+<strong>ON &lt;TabelleA&gt;.&lt;SpalteX&gt; = &lt;TabelleB&gt;.&lt;SpalteX&gt;</strong><br>
+<strong>[WHERE BEDINGUNG ...]</strong><br>
+<br>
+</div>
+<em>Beispiel:</em>
+<em>SELECT customer.first_name, customer.last_name, address.address </em>
+<div style='padding-left: 30pt'>
+<em>FROM customer JOIN address </em><br>
+<em>ON customer.address_id = address.address_id </em><br>
+<em>ORDER BY customer.last_name;</em><br>
+</div>
+
+
+
+<h4>Inner Joins</h4><br>
+→ verbietet die Verknüpfung leerer Datensätze<br>
+→ gibt  nur Datensätze aus, die in beiden Tabellen vorhanden sind<br>
+<br>
+<strong>SELECT &lt;TabelleA&gt;.&lt;Spalte1&gt;,... &lt;TabelleB&gt;.&lt;Spalte2&gt;,...</strong>
+<div style='padding-left: 30pt'>
+<strong>FROM &lt;TabelleA&gt; INNER JOIN &lt;TabelleB&gt;</strong><br>
+<strong>ON &lt;TabelleA&gt;.&lt;SpalteX&gt; = &lt;TabelleB&gt;.&lt;SpalteX&gt;</strong><br>
+....<br>
+</div>
+<br>
 → falls beide Fremdschlüssel verschiedene Attribute haben<br>
-</p>
+<br>
+<em>Beispiel:</em>
+<em>SELECT actor.first_name, actor.last_name,city.city </em>
+<div style='padding-left: 30pt'>
+<em>FROM actor </em><br>
+<em>INNER JOIN  city ON actor.actor_id = city.city_id;</em><br>
+</div>
 
-<p>
-<em>Beispiel:</em><br>
-<em>SELECT actor.first_name, actor.last_name,city.city FROM actor INNER JOIN  city ON actor.actor_id = city.city_id;</em><br>
-</p>
-
-<p>
-<strong>SELECT &lt;tabelle1&gt;.&lt;var1_tab1&gt;, &lt;tabelle1&gt;.&lt;var2_tab1&gt;,...,&lt;tabelle1&gt;.&lt;varN_tab1&gt;,</strong><br>
-<strong>&lt;tabelle2&gt;.&lt;var1_tab2&gt;,...,&lt;tabelle2&gt;.&lt;varM_tab2&gt; </strong><br>
-<strong>FROM &lt;tabelle1&gt; INNER JOIN &lt;tabelle2&gt; </strong><br>
+<strong>SELECT &lt;tabelle1&gt;.&lt;var1_tab1&gt;, &lt;tabelle1&gt;.&lt;var2_tab1&gt;,...,&lt;tabelle1&gt;.&lt;varN_tab1&gt;,</strong>
+<strong>&lt;tabelle2&gt;.&lt;var1_tab2&gt;,...,&lt;tabelle2&gt;.&lt;varM_tab2&gt; </strong>
+<strong>FROM &lt;tabelle1&gt; INNER JOIN &lt;tabelle2&gt; </strong>
 <strong>USING (&lt;Schlüssel&gt;);</strong><br>
 → falls beide Schlüssel gleiche Attribute haben<br>
-→ <u>Hinweis: darauf Achten dass der Schlüssel geklammert werden muss</u><br>
-</p>
+→ <u>Hinweis: darauf Achten dass der Schlüssel geklammert werden muss</u>
 
-<p>
-<em>Beispiel:</em><br>
-<em>SELECT film_actor.actor_id, film_actor.last_update, actor.actor_id,actor.first_name,actor.last_name FROM film_actor INNER JOIN actor USING (actor_id);</em><br>
-</p>
-
-
-
-
-
+<em>Beispiel:</em>
+<em>SELECT film_actor.actor_id, film_actor.last_update, actor.actor_id,actor.first_name,actor.last_name FROM film_actor INNER JOIN actor USING (actor_id);</em>
 
 
 <!-- End wiki content -->

@@ -128,7 +128,34 @@ a% → a am Anfang und beliebige Zeichen<br>
 <em>select title from film where special_features LIKE 'B%' AND length &lt; 90;</em><br>
 </p>
 
-  
+<h4>Mengenoperationen</h4>
+
+<p>
+<strong>SELECT &lt;spaltenliste_tabelleA&gt; FROM &lt;tabelleA&gt;</strong> <br>
+<strong>UNION </strong><br>
+<strong>SELECT &lt;spaltenliste_tabelleB&gt; FROM &lt;tabelleB&gt;</strong><br>
+<strong>UNION</strong><br>
+<strong>...</strong><br>
+→ Ergebnissmenge sind alle Datensätze, die in beiden Tabellen vorkommen<br>
+</p>
+
+<p>
+<strong>SELECT</strong> <strong>&lt;spaltenliste_tabelleA&gt; FROM &lt;tabelleA&gt;</strong><br>
+<strong>INTERSECT</strong><br>
+<strong>SELECT &lt;spalten_tabelleB&gt; FROM &lt;tabelleB&gt;</strong><br>
+<strong>INTERSECT</strong><br>
+<strong>...</strong><br>
+→ Ergebnissmenge sind nur die Datensätze die sich in Tabelle 1 als auch in Tabelle 2 befinden<br>
+</p>
+
+<p>
+<strong>SELECT &lt;spaltenliste_tabelleA&gt; FROM &lt;tabelleA&gt;</strong><br>
+<strong>EXECPT</strong><br>
+<strong>SELECT &lt;spaltenliste_tabelleB&gt; FROM &lt;tablleB&gt;</strong><br>
+<strong>EXECPT</strong><br>
+<strong>...</strong><br>
+→ Ergebnismenge sind nur die Datensätze die auschließlich in der ersten Tabelle vorkommen<br>
+</p>
 
 <h4>NULL</h4>
 <p>
@@ -147,7 +174,7 @@ a% → a am Anfang und beliebige Zeichen<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='./Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>		<a href='../SQL.html'>Linux Wissen:SQL</a></li>
+	Backlinks:		<a href='../SQL.html'>Linux Wissen:SQL</a></li>		<a href='./Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>
 
 <!-- End Backlinks -->
 
