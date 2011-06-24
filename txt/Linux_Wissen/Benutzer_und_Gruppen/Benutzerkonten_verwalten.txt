@@ -29,7 +29,10 @@ Created Dienstag 19 April 2011
 **-G **→ ändern der Sekundärgruppe
 **-a **→ nur im Zusammenhang mit **-G **$$Debian$$
 **-f **→ Interakitv ändern
-  
+
+__Hinweis: Es gibt offensichtlich verschiedene Implementierungen der Tools zur Verwaltung __
+__von Nutzer und Gruppen.__  
+
 **userdel <Nutzer> **→  <Nutzer> vom System entfernen
 **-r **→ entfertn auch die entsprechenden Heimatverzeichnisse, Crontab und Mails
 

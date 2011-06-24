@@ -28,7 +28,6 @@ Created Mittwoch 04 Mai 2011
 	//ORDER BY customer.last_name;//
 
 
-
 === Inner Joins ===
 → verbietet die Verknüpfung leerer Datensätze
 → gibt  nur Datensätze aus, die in beiden Tabellen vorhanden sind
@@ -45,12 +44,52 @@ Created Mittwoch 04 Mai 2011
 	//FROM actor //
 	//INNER JOIN  city ON actor.actor_id = city.city_id;//
 
-**SELECT <tabelle1>.<var1_tab1>, <tabelle1>.<var2_tab1>,...,<tabelle1>.<varN_tab1>,**
-**<tabelle2>.<var1_tab2>,...,<tabelle2>.<varM_tab2> **
-**FROM <tabelle1> INNER JOIN <tabelle2> **
-**USING (<Schlüssel>);**
+
+== *  Column Name Join ==
+
+**SELECT <TabelleA>.<Spalte1>,... <TabelleB>.<Spalte2>,...**
+	**FROM <TabelleA> JOIN <Tabelle2>**
+	**USING <spalteX>**
+	
+→ Spalten sind in beiden Tabellen gleich benannt
 → falls beide Schlüssel gleiche Attribute haben
 → __Hinweis: darauf Achten dass der Schlüssel geklammert werden muss__
 
 //Beispiel://
 //SELECT film_actor.actor_id, film_actor.last_update, actor.actor_id,actor.first_name,actor.last_name FROM film_actor INNER JOIN actor USING (actor_id);//
+
+== •  Natural Join ==
+
+**SELECT <TabelleA>.<Spalte1>,...<TabelleB>.<Spalte2>,...**
+	**FROM <TabelleA> NATURAL JOIN <TabelleB>**
+
+
+→ verknüpft über den gleichen Spaltenname
+→ alle Spalten müssen in den zu verknüpfenden Tabellen vorhanden sein
+
+== • Self Join  ==
+→ Tabellen mit sich selbst verknüpfen
+
+**SELECT <Alias1>.<Spalte1>,...<Alias2>.<Spalte2>,...**
+	**FROM <Tabelle> AS <Alias1> INNER JOIN <Tabelle> AS <Alias2>**
+	**USING <Spalte>**
+
+//Beispiel://
+//SELECT s1.Name, s2.Name AS Geschw, s1.Vater//
+	//FROM Film AS s1 INNER JOIN Film AS s2 //
+	USING Vater 
+	//WHERE s1.name <> s2.name;//
+
+
+=== Cross Join ===
+→ verbindet alle Zeilen der einen Tabelle mit allen Zeilen einer anderen Tabelle
+→ bildet das kartesiche Produkt aller Spalten
+
+**SELECT <TabelleA>.<Spalte1>,...<TabelleB>.<Spalte2>,...**
+	**FROM <TabelleA> CROSS JOIN <TabelleB>**
+
+//Beispiel://
+//SELECT title.film, film_id.film_actor //
+	//FROM title CROSS JOIN film_actor;//
+>> 200000 rows in set (0.24 sec)
+

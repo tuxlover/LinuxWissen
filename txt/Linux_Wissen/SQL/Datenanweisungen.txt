@@ -15,7 +15,7 @@ Created Freitag 29 April 2011
 → eine nichtvorhandene Datenbank wird mit einem fehler quittiert
 
 **SHOW **→ vorhandene Datenbank Elemente anzeigen
-**SHOW databases **→ vorhandene Datenbanken anzeigen
+**SHOW databases **→ vorhandene Datenbanken anzeigen zu denen Berichtigungen existieren
 **SHOW tables **→ vorhandene 
 
 
@@ -44,6 +44,8 @@ Created Freitag 29 April 2011
 == → !Achtung!: ==
 **Sehr hohe Laufzeit!**
 
+
+
 **SELECT <Spalte1>,<Spalte2>,... FROM <table> <Alias>**
 → aus einer Tabelle <table> mehrere Spalten abfragen
 → ein * steht stellvertretend für alle Spalten einer Tabelle
@@ -57,6 +59,14 @@ Created Freitag 29 April 2011
 → nur die Werte von Spalte ausgeben die auf <Condition> passen
 → die <Condition> kann auch auf andere auf andere <Spalten> als auf die angezeigte verweisen
 [[Linux Wissen:SQL:Bedingungen]]
+
+**SELECT <Spalte1>,...**
+	**FROM <Tabelle>**
+	**WHERE <BEDINGUNG>**
+	**(**
+	**SELECT <ABFRAGE>**
+	**);**
+→ Unterabfrage in einer Abfrage
 
 == DISTINCT ==
 → festlegen dass jeder Wert nur einmal angezeigt werden soll
