@@ -27,6 +27,7 @@ Created Dienstag 19 April 2011
 **-U **→ den Account des Nutzers entsperren
 **-g **→ setzen der neuen Primärgruppe
 **-G **→ ändern der Sekundärgruppe
+**-A **→ Sekundäre Gruppe zu Nutzer hinzufügen $$SUSE$$
 **-a **→ nur im Zusammenhang mit **-G **$$Debian$$
 **-f **→ Interakitv ändern
 

@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-29T11:28:55+02:00
+
+====== my.cnf ======
+Created Mittwoch 29 Juni 2011
+
+//++//
+//##Konfigration für die Clientprogramme mysql und mysqladmin//
+//[client]//
+//#Port auf dem die Clients lauschen//
+//port = <N>//
+
+//#Socketdatei über die die Clients mit dem Server kommunizieren //
+//socket = /var/run/mysql/mysql.sock//
+
+//##Konfiguration für den Server Daemon mysqld//
+//##mysqld1-mysqldN können für weitere Server Daemonen verwendet werden//
+//##um zum Beispiel mehrere Serverinstanzen auf verschiedenen Ports laufen zu lassen//
+//[mysqld]//
+
+//#Nutzer mit dessen Privilegien der Server läuft//
+//user = <USER>//
+
+//#Port auf dem der Server Anfragen bearbeitet//
+//port = <M>//
+
+//#Socketdatei über die der Server kommuniziert//
+//socket = /var/run/mysql/mysql.sock//
+
+//#Error Log Datei für den Server//
+//log-error = /var/log/mysql/error.log//
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Mysql_Clients.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Upgrade_des_Servers.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Mysql Daemon</h1>
+
+<p>
+Created Mittwoch 29 Juni 2011<br>
+</p>
+
+<h4>Mit dem Server verbinden</h4>
+<p>
+<strong>mysql [-h &lt;hostname] [&lt;Datenbankname&gt;] -u &lt;Nutzer&gt; -p</strong><br>
+→ verbinden mit dem Mysql Client auf &lt;hostnamen&gt; mit der Datenbank<br>
+→ mit <strong>-u </strong>kann ein Nutzer angegeben werden<br>
+→ wird zusätzlich zu <strong>-u </strong>die Option <strong>-p </strong>angegeben, wird beim ersten Verbinden nach einem Passwort gefragt<br>
+→ Es kann eine Konfigruationsdatei ~/.<em>my.cnf </em>verwendet werden <br>
+→ der Server wird mit <strong>EOF </strong>oder <strong>quit </strong>geschlossen<br>
+<a href="http://dev.mysql.com/doc/refman/5.1/de/option-files.html" title="http://dev.mysql.com/doc/refman/5.1/de/option-files.html">http://dev.mysql.com/doc/refman/5.1/de/option-files.html</a> <br>
+</p>
+
+<h4>myql Hilfsprogramme</h4>
+<p>
+<strong>mysql_secure_installation </strong><br>
+→ Script das nach dem erstmaligen Starten des Servers ausgeführt werden kann um eine sichere Konifguration<br>
+    zu erreichen<br>
+</p>
+
+<p>
+<strong>my_print_defaults</strong><br>
+→ Script das die Standardoptionen die der Server verwendet ausgibt<br>
+</p>
+
+<p>
+<strong>mysql_install_db</strong><br>
+→ System Tabellen installieren<br>
+</p>
+
+
+<h4>Mysql Server Optionen</h4>
+<p>
+<strong>--print-defaults</strong><br>
+→ Anzeigen der Standardoptionen mit denen der Server gestartet wird<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Mysql_Server.html'>Linux Wissen:SQL:Mysql Server</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

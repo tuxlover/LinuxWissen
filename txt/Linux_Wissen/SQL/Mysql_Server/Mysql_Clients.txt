@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-29T13:21:54+02:00
+
+====== Mysql Clients ======
+Created Mittwoch 29 Juni 2011
+
+=== mysql KommandozeilenClient ===
+**mysql **→ Client um Datennamlen zu bearbeiten und Statements auf Datenbanken auszufürhen
+**-u |--user <Nutzer> **
+→ mit diesem <Nutzer> an der Datenbank anmelden
+-**p|--password [<Password>] **
+→ Ein Password bei der Anmeldung verwenden
+→ Wird <Passwort> nicht übergeben, wird danach gefragt
+**-D|--database <Name>**
+→ beim Verbinden mit dem Server die Datenbank <Name> verwenden
+**--compress**
+→ komprimiert Daten die zwischen Client und Server ausgetauscht werden
+**--default-character-set=Charstet**
+→ Angeben des vom Client verwendeten Zeichensatzes
+→ verwenden von **SHOW CHARSET; **um sich alle mögliche Zeichensätze anzeigen zu lassen
+→ verwenden von** SET CHARSET <CHARSET> **um den Zeichensatz nachträglich festzulegen
+**--protocol [=TCP|=Socket] **
+→ Festlegen des benutzten Protocols
+→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird
+**--port=N**
+→  festelgen des Ports über den eine Verbindung erfolgt
+**-S|--socket =<PATH> **
+→ festlegen des Pfades zum Socket
+→ */tmp/mysqld.sock wird als Standardsocket verwendet
+→ nur mit //--protocol=Socket//
+**-h|--host [IP|FQDN|localhost]**
+→ festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll
+→ Standard ist //localhost//
+
+__HInweise:__
+* __Wird keine der Optionen --protocol, --port, -h oder -S verwendet, so wird ein Socket benutzt und ein Default__
+	__Wert für den Socket benutzt__
+
+* __Wird die Option --port verwendet, nicht aber --protocol und --host, wird ein Socket benutzt und ein Default Wert__
+	__für den Socket benutzt.__
+
+•__Wird als Protocol TCP angegeben, erfolgt die Verbindung über TCP/IP__
+
+* __Falls als Portocoltyp Socket angegeben wird und der Hosttyp nicht localhost ist, wird ein Fehler ausgegeben__
+
+== mysql ssl Optionen ==
+**--ssl-ca=<Pfad>**
+→ Pfad zu vetrauenswürdigen SSL Certifcate Authorities
+**--ssl-capath=<Pfad>**
+→  
+**(missing link sssl)**
+

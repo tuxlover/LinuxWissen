@@ -15,6 +15,7 @@ Created Donnerstag 28 April 2011
 **mysql **→ Server/Client basiert
 
 http://dev.mysql.com/doc/sakila/en/sakila.html 
+[[Linux Wissen:SQL:Mysql Server]]
 
 == Workflow Mysql einrichten ==
 **(1) **Installiern von **mysql **und **mysql-client**

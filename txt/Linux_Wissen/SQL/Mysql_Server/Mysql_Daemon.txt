@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-29T12:50:09+02:00
+
+====== Mysql Daemon ======
+Created Mittwoch 29 Juni 2011
+
+=== Mit dem Server verbinden ===
+**mysql [-h <hostname] [<Datenbankname>] -u <Nutzer> -p**
+→ verbinden mit dem Mysql Client auf <hostnamen> mit der Datenbank
+→ mit **-u **kann ein Nutzer angegeben werden
+→ wird zusätzlich zu **-u **die Option **-p **angegeben, wird beim ersten Verbinden nach einem Passwort gefragt
+→ Es kann eine Konfigruationsdatei ~/.//my.cnf //verwendet werden 
+→ der Server wird mit **EOF **oder **quit **geschlossen
+http://dev.mysql.com/doc/refman/5.1/de/option-files.html 
+
+=== myql Hilfsprogramme ===
+**mysql_secure_installation **
+→ Script das nach dem erstmaligen Starten des Servers ausgeführt werden kann um eine sichere Konifguration
+    zu erreichen
+
+**my_print_defaults**
+→ Script das die Standardoptionen die der Server verwendet ausgibt
+
+**mysql_install_db**
+→ System Tabellen installieren
+
+
+=== Mysql Server Optionen ===
+**--print-defaults**
+→ Anzeigen der Standardoptionen mit denen der Server gestartet wird

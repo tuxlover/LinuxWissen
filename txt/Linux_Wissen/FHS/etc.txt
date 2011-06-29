@@ -67,3 +67,7 @@ Created Dienstag 19 April 2011
 ***/etc/yum/repos.d **→ Konfigurationsdateien für einzelne Yum Repos
 ***/etc/yum.conf **→ globale Konfigurationsdateien für yum 
 [[Linux Wissen:Paketverwaltung:Rpm:yum]]
+
+***/etc/my.cnf **→ Konfigurationsatei für den Mysql Server und den Mysql Clients
+[[Linux Wissen:SQL:Mysql Server]]
+[[Linux Wissen:FHS:etc:my.cnf]]

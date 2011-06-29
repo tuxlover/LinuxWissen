@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-29T12:41:52+02:00
+
+====== Upgrade des Servers ======
+Created Mittwoch 29 Juni 2011
+
+* Vor einen upgrade auf eine neuere Version wird dringend das kummulative Lesen der //changelogs// empfohlen
+* Absichern der bestehenden Mysql Umgebung inklusive der vorhandenen Konfigurationsdateien
+* Ausführen des **mysql_upgrade **Scripts nach dem upgrade
+

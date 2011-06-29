@@ -14,7 +14,7 @@ Created Sonntag 24 April 2011
 //boot=/dev/hda4 #verweist auf das gerät auf dem das /boot Gerät angehängt ist//
 //install=/boot/boot.b         #Pfad zum 2nd Stage Bootloader//
 
-//iamge=/boot/vmlinuz-2.4.7-10 #Pfad zum Kernel Image//
+//image=/boot/vmlinuz-2.4.7-10 #Pfad zum Kernel Image//
 //        label=linux          #Identifier für Image//
 //        initrd=/boot/initrd-2.4.7-10.img    #Initial Ram Disk//
 //        read=only                           #read only//

@@ -14,7 +14,7 @@ Created Donnerstag 21 April 2011
 //#Wobei://
 //#<Domain> sein kann://
 //#        - ein Nutzer Name//
-//#        - eine Gruuppe wird entsprechend mt @Gruppe refernziert//
+//#        - eine Gruppe wird entsprechend mt @Gruppe refernziert//
 //#        - * Für den Standardeintrag//
 //#        - % kann mit %Gruppe anagegeben werden um eine Maximalzahl von Logins festzulegen//
 //#//

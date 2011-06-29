@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Anweisungen.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./Mysql_Daemon.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Mysql Clients</h1>
+
+<p>
+Created Mittwoch 29 Juni 2011<br>
+</p>
+
+<h4>mysql KommandozeilenClient</h4>
+<p>
+<strong>mysql </strong>→ Client um Datennamlen zu bearbeiten und Statements auf Datenbanken auszufürhen<br>
+<strong>-u |--user &lt;Nutzer&gt; </strong><br>
+→ mit diesem &lt;Nutzer&gt; an der Datenbank anmelden<br>
+-<strong>p|--password [&lt;Password&gt;] </strong><br>
+→ Ein Password bei der Anmeldung verwenden<br>
+→ Wird &lt;Passwort&gt; nicht übergeben, wird danach gefragt<br>
+<strong>-D|--database &lt;Name&gt;</strong><br>
+→ beim Verbinden mit dem Server die Datenbank &lt;Name&gt; verwenden<br>
+<strong>--compress</strong><br>
+→ komprimiert Daten die zwischen Client und Server ausgetauscht werden<br>
+<strong>--default-character-set=Charstet</strong><br>
+→ Angeben des vom Client verwendeten Zeichensatzes<br>
+→ verwenden von <strong>SHOW CHARSET; </strong>um sich alle mögliche Zeichensätze anzeigen zu lassen<br>
+→ verwenden von<strong> SET CHARSET &lt;CHARSET&gt; </strong>um den Zeichensatz nachträglich festzulegen<br>
+<strong>--protocol [=TCP|=Socket] </strong><br>
+→ Festlegen des benutzten Protocols<br>
+→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird<br>
+<strong>--port=N</strong><br>
+→  festelgen des Ports über den eine Verbindung erfolgt<br>
+<strong>-S|--socket =&lt;PATH&gt; </strong><br>
+→ festlegen des Pfades zum Socket<br>
+→ */tmp/mysqld.sock wird als Standardsocket verwendet<br>
+→ nur mit <em>--protocol=Socket</em><br>
+<strong>-h|--host [IP|FQDN|localhost]</strong><br>
+→ festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll<br>
+→ Standard ist <em>localhost</em><br>
+</p>
+
+<p>
+<u>HInweise:</u><br>
+<ul>
+<li><u>Wird keine der Optionen --protocol, --port, -h oder -S verwendet, so wird ein Socket benutzt und ein Default</u></li>
+</ul>
+<div style='padding-left: 30pt'>
+<u>Wert für den Socket benutzt</u><br>
+</div>
+</p>
+
+<p>
+<ul>
+<li><u>Wird die Option --port verwendet, nicht aber --protocol und --host, wird ein Socket benutzt und ein Default Wert</u></li>
+</ul>
+<div style='padding-left: 30pt'>
+<u>für den Socket benutzt.</u><br>
+</div>
+</p>
+
+<p>
+•<u>Wird als Protocol TCP angegeben, erfolgt die Verbindung über TCP/IP</u><br>
+</p>
+
+<p>
+<ul>
+<li><u>Falls als Portocoltyp Socket angegeben wird und der Hosttyp nicht localhost ist, wird ein Fehler ausgegeben</u></li>
+</ul>
+</p>
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

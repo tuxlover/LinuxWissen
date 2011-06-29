@@ -1,0 +1,45 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-06-29T11:18:41+02:00
+
+====== Mysql Server ======
+Created Mittwoch 29 Juni 2011
+
+=== Starten und Stoppen des Daemons ===
+**service mysql start**
+→ Startet den Daemon
+→ benötigt Rootrechte
+→ Dauerhafftes hinzufügen mittels **chkconfig** oder **update-rc.d**
+[[Linux Wissen:Booten:Dienste:chkconfig]]
+[[Linux Wissen:Booten:Dienste]]
+[[Linux Wissen:SQL:Mysql Server:Mysql Daemon]]
+
+=== mysql Konfiguration ===
+***/etc/my.cnf ; ~/.my.cnf**
+[[Linux Wissen:FHS:etc:my.cnf]]
+→ mysql Konfigurationsdatei für den Server und den Clients
+→ beim Start werden alle Konfigurationsdsateien unter $MYSQL_HOME eingelesen
+→ mit Hilfe der unter $HOME abgelgeten Konfigurationsdatei kann für jeden Nutzer auf dem System eine spezifische 
+    Konfigurationserreicht werdden 
+	* Benutzung unterschiedlicher Ports
+	* Benutzung unterschiedlicher Verzeichnisse
+	* Benutzung in einem chroot
+	* Benutzung unterschiedlicher Charactersets
+
+***/usr/share/my-{huge,large,medium,small}.cnf **
+→ Beispielkonfigurationsdateien die entsprechend angepasst und kopiert werden können
+→ die Angabe der Größe bezieht sich auf den zu verwendeneden RAM
+	* huge (1-2G RAM)
+	* large (bis zu 512 M RAM)
+	* medium (zwischen 32 und 64M Ram)
+	* small (kleiner als 64 M Ram)
+
+***/usr/bin/mysql_secure_installation**
+→ kann zur Sicheren Konfiguraion des mysql Server und der Clients verwendet werden
+
+=== mysql Logfile ===
+***/var/log/mysql **
+→ enthält Logdateien für den Server
+
+=== Anweisungen ===
+[[Linux Wissen:SQL:Mysql Server:Anweisungen]]
