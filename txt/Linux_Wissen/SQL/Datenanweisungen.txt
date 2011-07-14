@@ -5,6 +5,10 @@ Creation-Date: 2011-04-29T03:27:00+02:00
 ====== Datenanweisungen ======
 Created Freitag 29 April 2011
 
+/* Kommentar */
+/* !<Version digit> <Statement> */ → Diese Anweisung kann nur von //mysql// ausgeführt werden
+				                            → Angabe einer Minimalen Versionsnummer für die die Anwesiugn ausgeführt 				  werden soll
+
 === Transaktions Anweisungen ===
 **SOURCE <Schema.sql> | <Data.sql>**
 → eine leere Schemadatei importieren, die das Gerüst der Datenbank enthält

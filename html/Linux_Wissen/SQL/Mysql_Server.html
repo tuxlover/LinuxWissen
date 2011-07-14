@@ -41,44 +41,67 @@
 
 <h1>Mysql Server</h1>
 
+<p>
+Created Mittwoch 29 Juni 2011<br>
+</p>
+
 <h4>Starten und Stoppen des Daemons</h4>
+<p>
 <strong>service mysql start</strong><br>
 → Startet den Daemon<br>
 → benötigt Rootrechte<br>
-→ Dauerhafftes hinzufügen mittels <strong>chkconfig</strong> oder <strong>update-rc.d</strong>
-<a href="../Booten/Dienste/chkconfig.html" title="Linux Wissen:Booten:Dienste:chkconfig">Linux Wissen:Booten:Dienste:chkconfig</a>
-<a href="../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a>
-<a href="./Mysql_Server/Mysql_Daemon.html" title="Linux Wissen:SQL:Mysql Server:Mysql Daemon">Linux Wissen:SQL:Mysql Server:Mysql Daemon</a>
+→ Dauerhafftes hinzufügen mittels <strong>chkconfig</strong> oder <strong>update-rc.d</strong><br>
+<a href="../Booten/Dienste/chkconfig.html" title="Linux Wissen:Booten:Dienste:chkconfig">Linux Wissen:Booten:Dienste:chkconfig</a><br>
+<a href="../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a><br>
+<a href="./Mysql_Server/Mysql_Daemon.html" title="Linux Wissen:SQL:Mysql Server:Mysql Daemon">Linux Wissen:SQL:Mysql Server:Mysql Daemon</a><br>
+</p>
 
 <h4>mysql Konfiguration</h4>
-<strong>*/etc/my.cnf ; ~/.my.cnf</strong>
+<p>
+*<strong>/etc/my.cnf ; ~/.my.cnf</strong><br>
 <a href="../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
 → mysql Konfigurationsdatei für den Server und den Clients<br>
 → beim Start werden alle Konfigurationsdsateien unter $MYSQL_HOME eingelesen<br>
 → mit Hilfe der unter $HOME abgelgeten Konfigurationsdatei kann für jeden Nutzer auf dem System eine spezifische <br>
     Konfigurationserreicht werdden <br>
+<ul style='padding-left: 30pt'>
 <li>Benutzung unterschiedlicher Ports</li>
 <li>Benutzung unterschiedlicher Verzeichnisse</li>
 <li>Benutzung in einem chroot</li>
 <li>Benutzung unterschiedlicher Charactersets</li>
+</ul>
+</p>
 
-<strong>*/usr/share/my-{huge,large,medium,small}.cnf </strong><br>
+<p>
+*<strong>/usr/share/my-{huge,large,medium,small}.cnf </strong><br>
 → Beispielkonfigurationsdateien die entsprechend angepasst und kopiert werden können<br>
 → die Angabe der Größe bezieht sich auf den zu verwendeneden RAM<br>
+<ul style='padding-left: 30pt'>
 <li>huge (1-2G RAM)</li>
 <li>large (bis zu 512 M RAM)</li>
 <li>medium (zwischen 32 und 64M Ram)</li>
 <li>small (kleiner als 64 M Ram)</li>
-<br>
+</ul>
+</p>
+
+<p>
 *<strong>/usr/bin/mysql_secure_installation</strong><br>
 → kann zur Sicheren Konfiguraion des mysql Server und der Clients verwendet werden<br>
-<br>
-<h4>mysql Logfile</h4><br>
+</p>
+
+<h4>mysql Logfile</h4>
+<p>
 *<strong>/var/log/mysql </strong><br>
 → enthält Logdateien für den Server<br>
-<br>
+</p>
+
 <h4>Anweisungen</h4>
-<a href="./Mysql_Server/Anweisungen.html" title="Linux Wissen:SQL:Mysql Server:Anweisungen">Linux Wissen:SQL:Mysql Server:Anweisungen</a>
+<p>
+<ul>
+<li>Diese Anweisungen funktionieren nicht generell mit SQL Implementierungen, sondern nur mit Mysql</li>
+</ul>
+<a href="./Mysql_Server/Anweisungen.html" title="Linux Wissen:SQL:Mysql Server:Anweisungen">Linux Wissen:SQL:Mysql Server:Anweisungen</a><br>
+</p>
 
 
 <!-- End wiki content -->
@@ -87,7 +110,7 @@
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../SQL.html'>Linux Wissen:SQL</a></li>		<a href='../FHS/var.html'>Linux Wissen:FHS:var</a></li>		<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>
+	Backlinks:		<a href='../FHS/var.html'>Linux Wissen:FHS:var</a></li>		<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../SQL.html'>Linux Wissen:SQL</a></li>
 
 <!-- End Backlinks -->
 

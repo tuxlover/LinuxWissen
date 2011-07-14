@@ -41,32 +41,60 @@
 
 <h1>my.cnf</h1>
 
-<em>++</em>
-<em>##Konfigration für die Clientprogramme mysql und mysqladmin</em>
-<em>[client]</em>
-<em>#Port auf dem die Clients lauschen</em>
-<em>port = &lt;N&gt;</em>
+<p>
+Created Mittwoch 29 Juni 2011<br>
+</p>
 
-<em>#Socketdatei über die die Clients mit dem Server kommunizieren </em>
-<em>socket = /var/run/mysql/mysql.sock</em>
+<p>
+<em>++</em><br>
+<em>##Konfigration für die Clientprogramme mysql und mysqladmin</em><br>
+<em>[client]</em><br>
+<em>#Port auf dem die Clients lauschen</em><br>
+<em>port = &lt;N&gt;</em><br>
+</p>
 
-<em>##Konfiguration für den Server Daemon mysqld</em>
-<em>##mysqld1-mysqldN können für weitere Server Daemonen verwendet werden</em>
-<em>##um zum Beispiel mehrere Serverinstanzen auf verschiedenen Ports laufen zu lassen</em>
-<em>[mysqld]</em>
+<p>
+<em>#Socketdatei über die die Clients mit dem Server kommunizieren </em><br>
+<em>socket = /var/run/mysql/mysql.sock</em><br>
+</p>
 
-<em>#Nutzer mit dessen Privilegien der Server läuft</em>
-<em>user = &lt;USER&gt;</em>
+<p>
+<em>##Konfiguration für den Server Daemon mysqld</em><br>
+<em>##mysqld1-mysqldN können für weitere Server Daemonen verwendet werden</em><br>
+<em>##um zum Beispiel mehrere Serverinstanzen auf verschiedenen Ports laufen zu lassen</em><br>
+<em>[mysqld]</em><br>
+</p>
 
-<em>#Port auf dem der Server Anfragen bearbeitet</em>
-<em>port = &lt;M&gt;</em>
+<p>
+<em>#Nutzer mit dessen Privilegien der Server läuft</em><br>
+<em>user = &lt;USER&gt;</em><br>
+</p>
 
-<em>#Socketdatei über die der Server kommuniziert</em>
-<em>socket = /var/run/mysql/mysql.sock</em>
+<p>
+<em>#Port auf dem der Server Anfragen bearbeitet</em><br>
+<em>port = &lt;M&gt;</em><br>
+</p>
 
-<em>#Error Log Datei für den Server</em>
-<em>log-error = /var/log/mysql/error.log</em>
+<p>
+#Verzeichnis in dem die Datenbank als .frm Dateistappel abgelegt wird<br>
+datadir = &lt;DIR&gt;<br>
+</p>
 
+<p>
+<em>#Socketdatei über die der Server kommuniziert</em><br>
+<em>socket = /var/run/mysql/mysql.sock</em><br>
+</p>
+
+<p>
+<em>#Error Log Datei für den Server</em><br>
+<em>log-error = /var/log/mysql/error.log</em><br>
+</p>
+
+<p>
+#Zeitzone die Mysql für die Verwaltung der Zeit in der Datenbank benötigt<br>
+#Wird diese Variable nicht gesetzt wird der Wert des Betriebssystem verwendet<br>
+system_time_zone = &lt;TZ&gt;|SYSTEM<br>
+</p>
 
 
 
@@ -76,7 +104,7 @@
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../../SQL/Mysql_Server.html'>Linux Wissen:SQL:Mysql Server</a></li>
+	Backlinks:		<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../../SQL/Mysql_Server/Mysql_Clients.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients</a></li>		<a href='../../SQL/Mysql_Server.html'>Linux Wissen:SQL:Mysql Server</a></li>
 
 <!-- End Backlinks -->
 

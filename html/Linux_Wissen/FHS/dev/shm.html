@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='../Mysql_Server.html'>Prev</a> ]
+	[ <a href='../dev.html'>Prev</a> ]
 
 			[ <a href='../../../index.html'>Index</a> ]
 
-	[ <a href='./Mysql_Clients.html'>Next</a> ]
+	[ <a href='../etc.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,39 +39,20 @@
 
 <!-- Wiki content -->
 
-<h1>Anweisungen</h1>
+<h1>shm</h1>
 
 <p>
-Created Mittwoch 06 Juli 2011<br>
+Created Donnerstag 07 Juli 2011<br>
 </p>
 
 <p>
 <ul>
-<li>Für Mysql typische Anweisungen und Konventionen</li>
+<li>Konzept des Shared Memory zur Verwaltung von Speicherbereichen zwoischen Prozessen</li>
+<li>EIn Programm erstellt dabei ein geschützten Speicherbereich unter */dev/shm/ </li>
+<li>dieser wird vom tmpfs Dateisystem verwaltet und kann daten zwischen dem programm und dessen genutzten prozessen bereitgestellt werden</li>
+<li>das Dateisystem tmpfs nutzt nur virtuelle Speicherbereiche im Hauptspeicher</li>
 </ul>
 </p>
-
-<h4>.Dot-Notation</h4>
-<p>
-→ Tabellen ausserhalb einer Tabelle können mit &lt;Datenbank&gt;.&lt;Tabelle&gt; angesprochen werden<br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-<em>SELECT * FROM sakila.film_list</em><br>
-</p>
-
-<h4>Server Anfragen</h4>
-<p>
-<strong>SHOW ERRORS</strong><br>
-→ Alle Fehler seit dem Start ausgeben<br>
-</p>
-
-<p>
-<strong>SHOW WARNINGS</strong><br>
-→ Alle Warnungen seit dem Start ausgeben<br>
-</p>
-
 
 
 <!-- End wiki content -->
@@ -80,7 +61,7 @@ Created Mittwoch 06 Juli 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Mysql_Server.html'>Linux Wissen:SQL:Mysql Server</a></li>
+	Backlinks:		<a href='../dev.html'>Linux Wissen:FHS:dev</a></li>
 
 <!-- End Backlinks -->
 

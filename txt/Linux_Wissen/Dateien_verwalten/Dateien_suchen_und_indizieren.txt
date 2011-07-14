@@ -7,6 +7,7 @@ Created Montag 18 April 2011
 
 ===== Find =====
 * zum finden von Dateien nach bestimmten Merkmalen und Operieren auf diesen
+[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:find]]
 
 ===== Locate =====
 * Schnelle suche durch Indexdatenbank
@@ -15,10 +16,12 @@ Created Montag 18 April 2011
 ===== Doodle =====
 * indizieren von Dateien und ihren Inhalten
 * wiederfinder von dateien aufgrund ihrer Inhalte
+[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:Doodle]]
 
 ===== Grep =====
 * ASCII Dateien nach Inhalten durchsuchen
 * Verwendet Reguläre Ausdrücke
+[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep]]
 
 **which <Datei> **→ suche nach Dateien in PATH
 [[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]]

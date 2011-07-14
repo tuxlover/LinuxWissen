@@ -47,14 +47,42 @@ Created Mittwoch 29 Juni 2011<br>
 
 <h4>mysql KommandozeilenClient</h4>
 <p>
-<strong>mysql </strong>→ Client um Datennamlen zu bearbeiten und Statements auf Datenbanken auszufürhen<br>
+<ul>
+<li>Absetzen von Abfragen von DDL UND DML Anweisungen</li>
+<li>Arbeiten mit der SQL Abfragesprache</li>
+<li>Client um Datenbanken zu bearbeiten und Statements auf Datenbanken auszuführen</li>
+</ul>
+</p>
+
+<h5>Nicht interaktiver Modus</h5>
+<p>
+<strong>mysql &lt; &lt;Schema.sql&gt;</strong><br>
+→ einlesen und ausführen von DDL und DML Anweisungen aus einer .sql Datei<br>
+→ wie <strong>SOURCE</strong><br>
+→ es dürfen nie zwei argument hintereinander verwendet werden<br>
+<a href="../Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen">Linux Wissen:SQL:Datenanweisungen</a><br>
+</p>
+
+<h5>Trick:</h5>
+<p>
+<strong>mysql &lt;|xargs cat &lt;Schema1.sql&gt; &lt;Schema2.sql&gt; ...</strong><br>
+</p>
+
+<h5>die häufigsten Optionen</h5>
+<p>
 <strong>-u |--user &lt;Nutzer&gt; </strong><br>
 → mit diesem &lt;Nutzer&gt; an der Datenbank anmelden<br>
 -<strong>p|--password [&lt;Password&gt;] </strong><br>
 → Ein Password bei der Anmeldung verwenden<br>
 → Wird &lt;Passwort&gt; nicht übergeben, wird danach gefragt<br>
+→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort<br>
 <strong>-D|--database &lt;Name&gt;</strong><br>
 → beim Verbinden mit dem Server die Datenbank &lt;Name&gt; verwenden<br>
+<strong>-A </strong><br>
+→ Tab Complettion deaktivieren<br>
+<strong>-E |--vertical</strong><br>
+→ vertikale Ausgabe der einzelnen Spalten<br>
+→ sinnvoll wenn zu erwarten ist, dass die Ausgabe nicht in das Terminal passt<br>
 <strong>--compress</strong><br>
 → komprimiert Daten die zwischen Client und Server ausgetauscht werden<br>
 <strong>--default-character-set=Charstet</strong><br>
@@ -104,7 +132,166 @@ Created Mittwoch 29 Juni 2011<br>
 </ul>
 </p>
 
+<h5>mysql ssl Optionen</h5>
+<p>
+<strong>--ssl-ca=&lt;Datei&gt;</strong><br>
+→ Pfad zu vetrauenswürdigen SSL Certifcate Authorities<br>
+<strong>--ssl-capath=&lt;DIR&gt;</strong><br>
+→  festelgen des Verzeichnisses für Dateien, die SSL Zertifikate im PEM Format enthalten<br>
+<strong>--ssl-cert=&lt;Datei&gt;</strong><br>
+→ Pfad zur Datei mit dem SSL Zertifikat<br>
+<strong>--ssl-cipher-list=&lt;sha1:aes...&gt; </strong><br>
+→ Liste der Zulässigen Verschlüsselungsalgorithmen<br>
+<strong>--ssl-key=&lt;Datei&gt;</strong><br>
+→ Angeben er SSL Schlüsseldatei<br>
+<strong>--ssl-verify-server-cert</strong><br>
+→ Server Certifcates name ist derselbe wie der Hostname<br>
+<u>→ Schutz vor man in the middle</u><br>
+<strong>(missing link ssl)</strong><br>
+</p>
 
+<h5>mysql Client Befehle</h5>
+<p>
+<strong>\h</strong> → auflisten der Clientbefehle<br>
+<strong>\! &lt;Shell-Befehl&gt; </strong>→ Ausführen eines Shell Befehls im mysql Client<br>
+</p>
+
+<h4>mysqladmin</h4>
+<p>
+<ul>
+<li>ausführen administrativer Aufgaben</li>
+<li>erstellen und löschen von Datenbanken</li>
+<li>kann in Scripte verarbeitet werden </li>
+</ul>
+<strong>mysqladmin [Option] Kommando [Argument] [Kommando [Argument]] ...</strong><br>
+</p>
+
+<h5>Optionen</h5>
+<p>
+<strong>-u |--user &lt;Nutzer&gt; </strong><br>
+→ mit diesem &lt;Nutzer&gt; an der Datenbank anmelden<br>
+-<strong>p|--password [&lt;Password&gt;] </strong><br>
+→ Ein Password bei der Anmeldung verwenden<br>
+→ Wird &lt;Passwort&gt; nicht übergeben, wird danach gefragt<br>
+→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort<br>
+<strong>--protocol [=TCP|=Socket] </strong><br>
+→ Festlegen des benutzten Protocols<br>
+→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird<br>
+<strong>--port=N</strong><br>
+→  festelgen des Ports über den eine Verbindung erfolgt<br>
+<strong>-S|--socket =&lt;PATH&gt; </strong><br>
+→ festlegen des Pfades zum Socket<br>
+→ */tmp/mysqld.sock wird als Standardsocket verwendet<br>
+→ nur mit <em>--protocol=Socket</em><br>
+<strong>-h|--host [IP|FQDN|localhost]</strong><br>
+→ festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll<br>
+→ Standard ist <em>localhost</em><br>
+<strong>--count=N</strong><br>
+→ den Befehl N Mal wiederholen<br>
+→ kann mit <em>--sleep</em> verwendet werden<br>
+<strong>--sleep=N</strong><br>
+→  den Befehl nach N Sekunden wiederholen<br>
+→ kann mit <em>--count</em> verwendet werden<br>
+<strong>--debug-info</strong><br>
+→ den Befehl mit zusätzlicher Debug-Informationen aufrufen<br>
+<strong>--bind-address=&lt;IP&gt;</strong><br>
+→ festlegen des zu verwendeten NIC IPs, falls der Rechner mehr als eine NIC verwendet<br>
+</p>
+
+<h5>Befehle</h5>
+<p>
+<strong>create &lt;Datenbank&gt; </strong><br>
+→ eine neue leere Tabelle anlegen<br>
+</p>
+
+<p>
+<strong>debug </strong><br>
+→ Sendet detailierte Informationen an das Error Log<br>
+</p>
+
+<p>
+<strong>drop &lt;Datenbank&gt;</strong><br>
+→ die &lt;Datenbank&gt; vom Server löschen<br>
+</p>
+
+<p>
+<strong>extended-status</strong><br>
+→ einen Statusbericht über den laufenden Server und seiner Verbindungen anzeigen<br>
+</p>
+
+<p>
+<strong>flush-hosts</strong><br>
+→ bereinigen der Hostinformationen<br>
+→ leeren des DNS Caches un der Hostnames<br>
+</p>
+
+<p>
+<strong>flush-logs</strong><br>
+→ bereinigen der Logfiles<br>
+→ bisher verwendete Logfiles werden geschlossen, deren Inhalt bereinigt und neue logfiles angelegt<br>
+</p>
+
+<p>
+<strong>flush-privileges</strong><br>
+→ erneuern der Nutzerprivilegien, falls dies geändert wurden<br>
+</p>
+
+<p>
+<strong>flush-status</strong><br>
+→  erneuern der verwendeten Serveroptionen aus den KOnfigurationsdateien<br>
+</p>
+
+<p>
+<strong>flush-threads</strong><br>
+→ neuladen des Threadcaches<br>
+</p>
+
+<p>
+<strong>kill&lt;ThreadID&gt;</strong><br>
+→ den mysqlthread mit der entsprechenden ID beenden<br>
+</p>
+
+<p>
+<strong>password &lt;Passwort&gt;</strong><br>
+→ setzen oder ändern eines Passwortes dass für die Verbindung zum Server benötigt wird<br>
+</p>
+
+<p>
+<strong>ping</strong><br>
+→ erfragen ob der Server läuft<br>
+</p>
+
+<p>
+<strong>processlist</strong><br>
+→ erfragen der vom mysqld verwenddeten Prozesse<br>
+<a href="../../Prozessverwaltung.html" title="Linux Wissen:Prozessverwaltung">Linux Wissen:Prozessverwaltung</a><br>
+</p>
+
+<p>
+<strong>reload</strong><br>
+→ neu einlesen der Konfigurationsdatei<br>
+<a href="../../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
+</p>
+
+<p>
+<strong>shutdown</strong><br>
+→ stoppen des Mysqld<br>
+</p>
+
+<p>
+<strong>status</strong><br>
+→ Status des Servers abfragen<br>
+</p>
+
+<p>
+<strong>start-slave|stop-slave</strong><br>
+→ Starten|Stoppen einer Replikation<br>
+</p>
+
+<p>
+<strong>variables</strong><br>
+→ Anzeigen er verwendeten und nicht verwendeten Systemvariablen der mysqld-Konfiguration<br>
+</p>
 
 
 <!-- End wiki content -->

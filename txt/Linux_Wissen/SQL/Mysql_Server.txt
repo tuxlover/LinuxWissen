@@ -42,4 +42,5 @@ Created Mittwoch 29 Juni 2011
 → enthält Logdateien für den Server
 
 === Anweisungen ===
+* Diese Anweisungen funktionieren nicht generell mit SQL Implementierungen, sondern nur mit Mysql
 [[Linux Wissen:SQL:Mysql Server:Anweisungen]]

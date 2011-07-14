@@ -6,14 +6,34 @@ Creation-Date: 2011-06-29T13:21:54+02:00
 Created Mittwoch 29 Juni 2011
 
 === mysql KommandozeilenClient ===
-**mysql **→ Client um Datennamlen zu bearbeiten und Statements auf Datenbanken auszufürhen
+* Absetzen von Abfragen von DDL UND DML Anweisungen
+* Arbeiten mit der SQL Abfragesprache
+* Client um Datenbanken zu bearbeiten und Statements auf Datenbanken auszuführen
+
+== Nicht interaktiver Modus ==
+**mysql < <Schema.sql>**
+→ einlesen und ausführen von DDL und DML Anweisungen aus einer .sql Datei
+→ wie **SOURCE**
+→ es dürfen nie zwei argument hintereinander verwendet werden
+[[Linux Wissen:SQL:Datenanweisungen]]
+
+== Trick: ==
+**mysql <|xargs cat <Schema1.sql> <Schema2.sql> ...**
+
+== die häufigsten Optionen  ==
 **-u |--user <Nutzer> **
 → mit diesem <Nutzer> an der Datenbank anmelden
 -**p|--password [<Password>] **
 → Ein Password bei der Anmeldung verwenden
 → Wird <Passwort> nicht übergeben, wird danach gefragt
+→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort
 **-D|--database <Name>**
 → beim Verbinden mit dem Server die Datenbank <Name> verwenden
+**-A **
+→ Tab Complettion deaktivieren
+**-E |--vertical**
+→ vertikale Ausgabe der einzelnen Spalten
+→ sinnvoll wenn zu erwarten ist, dass die Ausgabe nicht in das Terminal passt
 **--compress**
 → komprimiert Daten die zwischen Client und Server ausgetauscht werden
 **--default-character-set=Charstet**
@@ -45,9 +65,116 @@ __HInweise:__
 * __Falls als Portocoltyp Socket angegeben wird und der Hosttyp nicht localhost ist, wird ein Fehler ausgegeben__
 
 == mysql ssl Optionen ==
-**--ssl-ca=<Pfad>**
+**--ssl-ca=<Datei>**
 → Pfad zu vetrauenswürdigen SSL Certifcate Authorities
-**--ssl-capath=<Pfad>**
-→  
-**(missing link sssl)**
+**--ssl-capath=<DIR>**
+→  festelgen des Verzeichnisses für Dateien, die SSL Zertifikate im PEM Format enthalten
+**--ssl-cert=<Datei>**
+→ Pfad zur Datei mit dem SSL Zertifikat
+**--ssl-cipher-list=<sha1:aes...> **
+→ Liste der Zulässigen Verschlüsselungsalgorithmen
+**--ssl-key=<Datei>**
+→ Angeben er SSL Schlüsseldatei
+**--ssl-verify-server-cert**
+→ Server Certifcates name ist derselbe wie der Hostname
+__→ Schutz vor man in the middle__
+**(missing link ssl)**
 
+== mysql Client Befehle ==
+**\h** → auflisten der Clientbefehle
+**\! <Shell-Befehl> **→ Ausführen eines Shell Befehls im mysql Client
+
+=== mysqladmin ===
+* ausführen administrativer Aufgaben
+* erstellen und löschen von Datenbanken
+* kann in Scripte verarbeitet werden 
+**mysqladmin [Option] Kommando [Argument] [Kommando [Argument]] ...**
+
+== Optionen ==
+**-u |--user <Nutzer> **
+→ mit diesem <Nutzer> an der Datenbank anmelden
+-**p|--password [<Password>] **
+→ Ein Password bei der Anmeldung verwenden
+→ Wird <Passwort> nicht übergeben, wird danach gefragt
+→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort
+**--protocol [=TCP|=Socket] **
+→ Festlegen des benutzten Protocols
+→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird
+**--port=N**
+→  festelgen des Ports über den eine Verbindung erfolgt
+**-S|--socket =<PATH> **
+→ festlegen des Pfades zum Socket
+→ */tmp/mysqld.sock wird als Standardsocket verwendet
+→ nur mit //--protocol=Socket//
+**-h|--host [IP|FQDN|localhost]**
+→ festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll
+→ Standard ist //localhost//
+**--count=N**
+→ den Befehl N Mal wiederholen
+→ kann mit //--sleep// verwendet werden
+**--sleep=N**
+→  den Befehl nach N Sekunden wiederholen
+→ kann mit //--count// verwendet werden
+**--debug-info**
+→ den Befehl mit zusätzlicher Debug-Informationen aufrufen
+**--bind-address=<IP>**
+→ festlegen des zu verwendeten NIC IPs, falls der Rechner mehr als eine NIC verwendet
+
+== Befehle ==
+**create <Datenbank> **
+→ eine neue leere Tabelle anlegen
+
+**debug **
+→ Sendet detailierte Informationen an das Error Log
+
+**drop <Datenbank>**
+→ die <Datenbank> vom Server löschen
+
+**extended-status**
+→ einen Statusbericht über den laufenden Server und seiner Verbindungen anzeigen
+
+**flush-hosts**
+→ bereinigen der Hostinformationen
+→ leeren des DNS Caches un der Hostnames
+
+**flush-logs**
+→ bereinigen der Logfiles
+→ bisher verwendete Logfiles werden geschlossen, deren Inhalt bereinigt und neue logfiles angelegt
+
+**flush-privileges**
+→ erneuern der Nutzerprivilegien, falls dies geändert wurden
+
+**flush-status**
+→  erneuern der verwendeten Serveroptionen aus den KOnfigurationsdateien
+
+**flush-threads**
+→ neuladen des Threadcaches
+
+**kill<ThreadID>**
+→ den mysqlthread mit der entsprechenden ID beenden
+
+**password <Passwort>**
+→ setzen oder ändern eines Passwortes dass für die Verbindung zum Server benötigt wird
+
+**ping**
+→ erfragen ob der Server läuft
+
+**processlist**
+→ erfragen der vom mysqld verwenddeten Prozesse
+[[Linux Wissen:Prozessverwaltung]]
+
+**reload**
+→ neu einlesen der Konfigurationsdatei
+[[Linux Wissen:FHS:etc:my.cnf]]
+
+**shutdown**
+→ stoppen des Mysqld
+
+**status**
+→ Status des Servers abfragen
+
+**start-slave|stop-slave**
+→ Starten|Stoppen einer Replikation
+
+**variables**
+→ Anzeigen er verwendeten und nicht verwendeten Systemvariablen der mysqld-Konfiguration

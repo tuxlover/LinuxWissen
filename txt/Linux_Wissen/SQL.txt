@@ -65,9 +65,6 @@ http://dev.mysql.com/doc/sakila/en/sakila.html
 * muss nicht eindeutig sein
 → ein Kunde in einer Datenbank kann mehrere Fremdschlüsselverweise haben, weil er mehrere Produkte gekauft hat
 
-{{../../SQL_Schlüssel.jpg.jpeg}}
-
-
 == Views ==
 * ein gespeicherter Query der aus einem oder mehreren Teiltabellen bestehen kann
 * dynamische virtuelle Tabelle

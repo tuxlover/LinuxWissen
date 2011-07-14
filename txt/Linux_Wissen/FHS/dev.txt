@@ -25,3 +25,5 @@ Created Dienstag 19 April 2011
 ***/dev/stdout** →  Standardausgabe, Kanal 1
 ***/dev/stderr** →  Standardfehler, Kanal 2
 
+***/dev/shm **→ Shared Memroy des tmpfs
+[[Linux Wissen:FHS:dev:shm]]
