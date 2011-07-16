@@ -71,3 +71,8 @@ Created Dienstag 19 April 2011
 ***/etc/my.cnf **→ Konfigurationsatei für den Mysql Server und den Mysql Clients
 [[Linux Wissen:SQL:Mysql Server]]
 [[Linux Wissen:FHS:etc:my.cnf]]
+
+
+***/etc/termcap**
+→ obsolete Datenbank die von **tput **benutzt wird
+[[Linux Wissen:Systemprogrammierung:Shellscripting:tput]]

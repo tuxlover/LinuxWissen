@@ -26,7 +26,7 @@ Created Montag 18 April 2011
 **<Befehl> < <Datei> **→ Programm liest eingabe aus <Datei>
 **<Befehl> 3&1 1> output 2>&3** → Standardausgabe wird in die Datei output gelenkt und der Inhalt von Datei output in die Standardfehlerausgabe
 
-=== Achtung!:  ===
+=== Achtung!: ===
 <Befehl> 2>&1 > <Datei> leitet __nicht__ in die <Datei> um
 
 */dev/fd/N → Dateidiskriptor N
@@ -36,15 +36,25 @@ Created Montag 18 April 2011
 								<programm1>
 
 **tee**
-**<programme1>** |**tee [-a] <Datei>|<programm2> **→  <programm1> leitet seine Eingabeargumente in <Datei>
-												 und nach <programm2> weiter
+**<programme1>** |**tee [-a] <Datei>|<programm2> **→  <programm1> leitet seine Eingabeargumente in <Datei> und nach <programm2> weiter
 **-a **→ an <Datei> anhängen
  
 **xargs **→ Ausgabe eines Programms als Argumente Zeilenweise weiterleiten
 	   → oft im zusammenhang mit find
+**-0 **→ Argumente werden durch das Null Zeichen und nicht durch Leerzeichen getrennt
+     → In zusammenhang mit **find -print0 **([[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:find]])
+**-a <Datei>  **→ Argumente aus <Datei> einlesen
+**-d <Delimiter> **→ den Trenner Setzen
+**-I** <Marker> → ersetze <Marker> mit der Liste der Argumente
+**-p **→ Nach jeder Operation um Erlaubnis fragen 
+**-r **→ Wenn Leerzeichen enthalten sind, wird das Programm nicht ausgeführt
 
-//Beispiel://
+//Beispiele://
 //jede mit find gefundene Datei in ein Archiv packen//
 //find / -name "*.bak" |xargs tar xvfz backup.tar.gz//
+
+//jede mit find gefundene .bak Datei in den Müll verschieben//
+// find . -name "*.bak" -print0 | xargs -0 -I {} mv {} /tmp/trash//
+// find . -name "*.bak" -print0 | xargs -0 -I xxx mv xxx /tmp/trash//
 
 __Hinweis: beachte die Wirkung von set -o noclobber __[[Linux Wissen:Shell:Bash:Optionen für die Bash]]

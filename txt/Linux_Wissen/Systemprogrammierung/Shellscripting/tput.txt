@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-16T14:52:05+02:00
+
+====== tput ======
+Created Samstag 16 Juli 2011
+
+**tput sgr0**
+→ Das Terminal zurücksetzen
+
+**tput cols|lines**
+→ ausgeben der Anzahl der Spalten | Zeilen des Terminals
+
+**tput longname**
+→ vollständiger Name des momentanen Terminals
+
+**tput cup N M**
+→ bewege den Cursor an die Stelle N M
+
+**tput setb {0-7}**
+→ Hintergrund des Terminals setzen
+0 	Schwarz
+1 	Blau
+2 	Grün
+3 	Gelb
+4 	Rot
+5 	Lila
+6 	Cyan
+7 	Grau 
+
+**tput setf {0-7}**
+→ Vordergrund des Terminals setzen
+0 	Schwarz
+1 	Blau
+2 	Grün
+3 	Gelb
+4 	Rot
+5 	Lila
+6 	Cyan
+7 	Grau 
+
+**tput bold**
+→ Fettdruck aktivieren
+
+**tput smud**
+→ Unterstreichen aktivieren
+
+**tput rmud**
+→ Unterstreichen deaktivieren
+
+**tput home**
+→ Cursor auf die linke obere Ecke setzen
+
+**tpud ed**
+→ lösche vom Beginn des Cursors bis zum Ende der Zeile
+

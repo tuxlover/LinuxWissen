@@ -18,3 +18,11 @@ Created Samstag 16 April 2011
 
 **mv <Quelle> <Ziel> **→ umbenennen von <Quelle> nach <Ziel>
 		                       → befinden sich Quellle und Ziel innerhalb des gleichen Verzeichnisses wird die Quelle in Ziel 
+
+**rename .<A> .<B> <Muster>**
+→ mehrfach Umbenennen von Dateien
+→ von <A> nach <B> auf <Datei(en)>
+→ dabei wird <A> durch <B> bei allen Dateien ersetz die Muser entsprechen
+
+//Beispiel//
+//rename .JPG .jpg *.JPEG//

@@ -12,6 +12,9 @@ Created Dienstag 26 April 2011
 **VAR= **
 →  Weist der Variablen den Wert NULL zu.
 
+**Array=$(a b c d)**
+→ Weist einem Array Variablen zu
+
 **unset VAR** →  löschen der Variablen VAR
 [[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]]
 
@@ -46,6 +49,7 @@ Created Dienstag 26 April 2011
 
 **${#VAR}** 
 →  evaluiert die Länge des Strings der Variablen **VAR**
+→ bei Arrays wird die Länge des Array, also die Anzahl der Einträge im Array evaluiert
 
 **${STRING#Expr}** 
 →  entfernt den //kürztmöglich// passenden Ausdruck von **Expr** von //vorne// beginnend von **STRING**

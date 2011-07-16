@@ -9,6 +9,7 @@ Created Mittwoch 27 April 2011
 → liest von der Standardeingabe und weist **VAR1 **bis **VARN **den übergebenen Wert zu
 **-a **→  weist mehrere Werte der Variable als Array zu
 **-e** →  benutzt readline, verhidnert hässliche Ausgaben beim benutzen der <Backspace> <entf> Taste
+**-d **→ einsetzen eines anderen Delimiters
 **-p ** **" Prompt" **→  defineire einen Eingabeprompt
 **-t <Seconds>** →  nach <Seconds> read mit einem exit > 0, falls keine Eingabe erfolgt ist
 **-s** →  den Input nicht auf dem Terminal ausgeben sondern nur den Wert in die Variablen einlesen

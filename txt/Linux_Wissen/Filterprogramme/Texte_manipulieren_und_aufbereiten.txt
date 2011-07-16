@@ -25,8 +25,13 @@ Created Montag 18 April 2011
 **-c **→ ersetzen der Zeichen die nicht in <s1> durch <s2>
 **-s **→ mehrere Zeichen <s1> durch ein einzelnes <s2> ersetzen
 
-//Beispiel://
-tr -s Ae Ä < text1 > text2
+//Beispiele://
+//Aus Ae mach Ä//
+//tr -s Ae Ä < text1 > text2//
+
+//Tabs in Leerzeichen umawandeln//
+//tr '\t'  '  ' < text1//
+ 
 
 __Hinweis: Für komplexere manipulationen empfiehlt sich __**sed**
 [[Linux Wissen:Systemprogrammierung:Sed]]

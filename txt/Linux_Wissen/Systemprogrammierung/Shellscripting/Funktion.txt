@@ -39,3 +39,5 @@ __Hinweis: Eine Bibliothek mit Shellfunktionen anlegen. __
 ++
 → Groß in Kleinbuchstaben konvertieren
 
+**export -f <Name>**
+→ exportieren einer Funktion <Name>

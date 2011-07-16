@@ -43,6 +43,26 @@ HOSTTYPE → identifiziert den Typ der Hardware auf dem die Bash ausgeführt wir
 IFS → Internal Filed Seperator (Interner Zeichentrenner, standard ist $)
           __Hinweis:__ **echo** $**IFS**|**cat** -**A** → gibt den Wert von IFS aus
 
+//Besipiel://
+//+++//
+//#!/bin/bash//
+//#passwd_line.sh//
+//#Description: Illustration of IFS//
+//line="root:x:0:0:root:/root:/bin/bash" //
+//oldIFS=$IFS; //
+//IFS=":" //
+//count=0; //
+//for item in $line; //
+//do //
+
+//[ $count -eq 0 ]  && user=$item; //
+//[ $count -eq 6 ]  && shell=$item; //
+//let count++ //
+//done; //
+//IFS=$oldIFS //
+//echo $user\'s shell is $shell;//
+//+++//
+
 LINENO → verweist auf die aktuelle Anzahl der Zeilen der Bash in einem Shellscript
              → verweist auf die aktuelle Anzahl der Zeilen der bash im Terminalemulator
 

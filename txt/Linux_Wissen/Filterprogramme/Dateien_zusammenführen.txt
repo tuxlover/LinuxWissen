@@ -9,10 +9,10 @@ Created Dienstag 19 April 2011
 
 **paste <Datei1> <Datei2> **→ Dateien Zeilenweise zusammenfügen
                                                  → dabei enthalten 2 Zeilen die jeweiligen Zeilen <der Datei1> und <Datei2>
-							//dies ist eine Zeile aus Datei1//
-							//dies ist eine Zeile aus Datei2//
-							//dies ist eine weitere Zeile aus Datei1//
-							//dies ist eine weitere Zeile aus Datei2//
+							//dies ist eine Zeile aus Datei1 dies ist eine Zeile aus Datei2//
+
+							//dies ist eine weitere Zeile aus Datei1 dies ist eine weitere Zeile aus Datei2//
+
 **-s** → Dateien Spaltenweise zusammenfügen
    //Dies ist eine Zeile aus Datei1 Dies ist eine Zeile aus Datei2//
    //dies ist eine weitere Zeile aus Datei1 dies ist eine weitere Zeile aus Datei2//

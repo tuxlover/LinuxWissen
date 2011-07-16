@@ -25,6 +25,10 @@ ARGUMENTE == Womit wird es gemacht?
 ===== Warten bis ein neuer Befehl ausgefügt wird =====
 **sleep N** → warte N Sekunden und tue nichts
                → kann verwendet werden um ein Script kurzfristig anzuhalten
+
+==== Anzeigen der Laufzeit eines Befehls ====
+**time <Befehl> **
+→ effektive, reale und systemzeit des verwendeten Befehls 
  
 
 ===== Mehrere Befehle =====

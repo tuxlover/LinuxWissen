@@ -84,7 +84,8 @@ __Hinweis: Bash rundet die Ergebnisse immer ab.__
 * der **test **Befehl ist ein Bash Buildin
 * Ein **if/then/else **Konstrukt testet ob der **exit**-Status eines Befehls gleich **0** ist, und falls 
 * Der Befehl **[ ] **ist ein Synonym für das **test **Buildin. 
-* Der Befehl **[[ ]] **ist ein Synonym für **test **Buildin. Mit **[[ ]]**können logische Verknüpfungen vorgenommen werden
+* **ist ein Synonym für **test **Buildin. Mit ** **können logische Verknüpfungen vorgenommen werden
+Der Befehl **  
 * In **(( ))** können arithmetische ausgewertet werden.
 [[Linux Wissen:Shell:Befehle]]
 [[Linux Wissen:Systemprogrammierung:Shellscripting:Test]]
@@ -113,6 +114,12 @@ __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 ===== read =====
 * liest Zeilen von StdIn
 [[Linux Wissen:Systemprogrammierung:Shellscripting:read]]
+
+==== tput ====
+* eigenstädndiges Programm zum Initialisieren eines Terminals oder Abfrage terminfo-Datenbank
+* zur Steuerung des Bildschirm
+* nutzt */etc/termcap
+[[Linux Wissen:Systemprogrammierung:Shellscripting:tput]]
 
 ===== Eine Menuauswahl mit select erstellen =====
 * Mit dem Shell Schlüsselwort **select **lassen sich einfache Auswahlmenus erstellen
