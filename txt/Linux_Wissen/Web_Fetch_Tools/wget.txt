@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-17T18:53:21+02:00
+
+====== wget ======
+Created Sonntag 17 Juli 2011
+
+* unterbrochene Downloads können zu einem späteren Zeitpunkt fortgesetzt werden
+* unterstützt die Protokolle FTP, HTTP HTTPS
+[[Linux Wissen:Netzwerke:Protokolle]]
+
+**wget <URI>|<URL>**
+→ läd eine Datei von der URI oder eine html Website von der URL herunter
+→ um Dateien komplett zum offline lesen herunterzuladen, muss **-p **verwendet werden
+**-c **→ abgebrochene Downloads von URL|URI wieder aufnehmen
+**-t N **→ abgebrochenen Downloads **N **mal wiederversuchen
+**--retry-confused **→ bei einem "connection refused" wird ein neuer Versuch gestartet
+**-p **→ läd zusätzlich zur Website CSS Stile, Bilder und andere zugehörige Dateien herunter
+**-k **→ die Links der Website wiederherstellen
+**-E **→ Scriptdateien (php, asp) in .html umwandeln
+
+
+=== Rekursive Optionen ===
+**-r** → Links rekursiv verfolgen
+**-l N** → die Rekursionstiefe auf N festlegen
+**-H **→ verfolge Links auf externen Websites

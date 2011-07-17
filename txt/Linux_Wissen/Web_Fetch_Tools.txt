@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-17T18:43:05+02:00
+
+====== Web Fetch Tools ======
+Created Sonntag 17 Juli 2011
+
+* Tools zum Herunterladen  und Abspeichern von Inhalten und Daten von URLs
+* Tools für das Erstellen von Backups von Domains und ganzer URLs
+* zur automatisierten Übertragung von Daten und ganzer Datenbäume
+* **wget**
+* **curl**
+[[+curl]]
+[[+wget]]

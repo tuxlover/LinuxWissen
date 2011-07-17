@@ -116,6 +116,30 @@ IFS → Internal Filed Seperator (Interner Zeichentrenner, standard ist $)<br>
 </p>
 
 <p>
+<em>Besipiel:</em><br>
+<em>+++</em><br>
+<em>#!/bin/bash</em><br>
+<em>#passwd_line.sh</em><br>
+<em>#Description: Illustration of IFS</em><br>
+<em>line="root:x:0:0:root:/root:/bin/bash" </em><br>
+<em>oldIFS=$IFS; </em><br>
+<em>IFS=":" </em><br>
+<em>count=0; </em><br>
+<em>for item in $line; </em><br>
+<em>do </em><br>
+</p>
+
+<p>
+<em>[ $count -eq 0 ]  &amp;&amp; user=$item; </em><br>
+<em>[ $count -eq 6 ]  &amp;&amp; shell=$item; </em><br>
+<em>let count++ </em><br>
+<em>done; </em><br>
+<em>IFS=$oldIFS </em><br>
+<em>echo $user\'s shell is $shell;</em><br>
+<em>+++</em><br>
+</p>
+
+<p>
 LINENO → verweist auf die aktuelle Anzahl der Zeilen der Bash in einem Shellscript<br>
              → verweist auf die aktuelle Anzahl der Zeilen der bash im Terminalemulator<br>
 </p>

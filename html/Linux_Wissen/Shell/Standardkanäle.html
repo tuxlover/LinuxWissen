@@ -91,10 +91,7 @@ Created Montag 18 April 2011<br>
 
 <p>
 <strong>tee</strong><br>
-<strong>&lt;programme1&gt;</strong> |<strong>tee [-a] &lt;Datei&gt;|&lt;programm2&gt; </strong>→  &lt;programm1&gt; leitet seine Eingabeargumente in &lt;Datei&gt;<br>
-<div style='padding-left: 360pt'>
- und nach &lt;programm2&gt; weiter<br>
-</div>
+<strong>&lt;programme1&gt;</strong> |<strong>tee [-a] &lt;Datei&gt;|&lt;programm2&gt; </strong>→  &lt;programm1&gt; leitet seine Eingabeargumente in &lt;Datei&gt; und nach &lt;programm2&gt; weiter<br>
 <strong>-a </strong>→ an &lt;Datei&gt; anhängen<br>
 </p>
  
@@ -103,12 +100,25 @@ Created Montag 18 April 2011<br>
 <div style='padding-left: 30pt'>
    → oft im zusammenhang mit find<br>
 </div>
+<strong>-0 </strong>→ Argumente werden durch das Null Zeichen und nicht durch Leerzeichen getrennt<br>
+     → In zusammenhang mit <strong>find -print0 </strong>(<a href="../Dateien_verwalten/Dateien_suchen_und_indizieren/find.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:find">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:find</a>)<br>
+<strong>-a &lt;Datei&gt;  </strong>→ Argumente aus &lt;Datei&gt; einlesen<br>
+<strong>-d &lt;Delimiter&gt; </strong>→ den Trenner Setzen<br>
+<strong>-I</strong> &lt;Marker&gt; → ersetze &lt;Marker&gt; mit der Liste der Argumente<br>
+<strong>-p </strong>→ Nach jeder Operation um Erlaubnis fragen <br>
+<strong>-r </strong>→ Wenn Leerzeichen enthalten sind, wird das Programm nicht ausgeführt<br>
 </p>
 
 <p>
-<em>Beispiel:</em><br>
+<em>Beispiele:</em><br>
 <em>jede mit find gefundene Datei in ein Archiv packen</em><br>
 <em>find / -name "*.bak" |xargs tar xvfz backup.tar.gz</em><br>
+</p>
+
+<p>
+<em>jede mit find gefundene .bak Datei in den Müll verschieben</em><br>
+<em> find . -name "*.bak" -print0 | xargs -0 -I {} mv {} /tmp/trash</em><br>
+<em> find . -name "*.bak" -print0 | xargs -0 -I xxx mv xxx /tmp/trash</em><br>
 </p>
 
 <p>

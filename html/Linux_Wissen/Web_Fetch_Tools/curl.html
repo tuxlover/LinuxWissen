@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./Befehle.html'>Prev</a> ]
+	[ <a href='../Web_Fetch_Tools.html'>Prev</a> ]
 
 			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='../Web_Fetch_Tools.html'>Next</a> ]
+	[ <a href='./wget.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,16 +39,23 @@
 
 <!-- Wiki content -->
 
-<h1>Set</h1>
+<h1>curl</h1>
 
-<p>
-Created Freitag 15 April 2011<br>
-</p>
+<li>unterstützt HTTP, HTTPS, FTP, FTPS, POP,SMTP, SMTPS, IMAP,IMAPS, LDAP, LDAPS, SCP, TFTP und weitere</li>
+<li>kann Dateien von StdIn verarbeiten</li>
+<li>kann Ausgabe nach StdOut schreiben</li>
+<li>eignet sich besser für die Verabreitung in Shellscripte als <strong>wget</strong></li>
 
-<p>
-<strong>:set number </strong>→ Nummerierung einschalten<br>
-<strong>:syntax on </strong> → Syntaxhighlighing einschalten<br>
-</p>
+
+
+<h4>Einzeiler</h4>
+<strong>curl -T &lt;Datei&gt;|- -u &lt;Username&gt;:&lt;Passwort&gt; ftp://&lt;Server&gt;/&lt;Verzeichnis&gt;/...</strong><br>
+→ läd &lt;Datei&gt; auf den ftp-&lt;Server&gt;<br>
+→ wird statt &lt;Datei&gt;, ein - angegeben, wird von StdIn <br>
+<br>
+<em>Beispiel:</em>
+<em>Ein Verzeichnis auf einen Backupserver absichert und dieses vorher komprimieren</em>
+<em>tar czf - &lt;dir&gt;/ | curl -T - -u &lt;Username&gt;:&lt;Passwort&gt; ftp://&lt;Server&gt;/&lt;Dir&gt;.tar.gz</em>
 
 
 <!-- End wiki content -->
@@ -57,7 +64,7 @@ Created Freitag 15 April 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:
+	Backlinks:		<a href='../Web_Fetch_Tools.html'>Linux Wissen:Web Fetch Tools</a></li>
 
 <!-- End Backlinks -->
 

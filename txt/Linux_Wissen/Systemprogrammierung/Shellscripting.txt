@@ -20,7 +20,7 @@ http://tldp.org/LDP/abs/html/
 **bash /Pfad/script.sh **→ ausführen einer Subshell ohne Ausführungsrechte
 **source Script | **. **Script **→ ausführen in der aktuellen Shell ohne erzeugen einer Subshell
 
-__Hinweis: Die Endung .sh ist nicht notwendig wird aber bein Schreiben von ShellScripten empfohlen.__
+__Hinweis: Die Endung .sh ist nicht notwendig wird aber beim Schreiben von ShellScripten empfohlen.__
 
 
 ===== Debuggen von Shellscripten =====
@@ -94,7 +94,8 @@ Der Befehl **
 * Eine Schleife ist ein Code Block der solange wiederholt wird, bis die Anweisung aufgrund eines Exit-Wertes beendet ist
 * **for **Schleife zur Iteration über eine Liste von Werten oder Dateien
 * **while **Schleife zur Iteration bis eine Aussage falsch oder wahr ist
-
+* **break, continue **zur Abbruchssteuerung von Schleifen
+* **seq **Programm um Zahlenintervalle definieren
 __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 [[Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen]]
 

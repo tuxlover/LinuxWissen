@@ -52,3 +52,10 @@ a(bc) → die Buchstabenfolge bc beliebig oft nach a
 **\[\[:xdigit:\]\]** → eine hexadezimale Ziffer 0 bis f
 
 (wort1|wort2) → wort1 oder wort2 nur **egrep **oder **grep -E**
+
+//Beispiele://
+//In einer html Datei nach E-Mail Adressen suchen//
+//$ egrep -o '[A-Za-z0-9.]+@[A-Za-z0-9.]+\.[a-zA-Z]{2,4}'  url_email.html//
+//>> slynux@slynux.com //
+	//test@yahoo.com //
+	//cool.hacks@gmail.com//

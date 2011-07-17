@@ -100,3 +100,13 @@ __Hinweis: Schleifen können Ein- und Ausgabeumleitungen in den Schleifenkopf ü
 →  <Befehle> ausführen, falls das Script eines der Signale SIGNAL1, SIGNAL2 geschickt bekommt
 →  die Signale 9 und 15 (SIGKILL, SIGSTOP) können nicht abgefangen werden
 
+=== seq ===
+* definiert ein Intervall von Zahlen mit einer optionalen Inkrementationsregel
+**seq <Beginn> [<Inkrement>|<Dekrement>] <Ende>**
+→ Wird kein <Inkrement>|<Dekrement> angegeben wird 1 verwendet
+**-s **→ definieren eines Strings für die Seperation einer Zahl
+**-f format=FORMAT **→ folgendes **printf** Format verwenden **(missing link printf)**
+
+//Beispiel://
+//Mit seq eine einfache Zahlenfolge definieren//
+//for i in $(seq -s "-->" 1 $((3*$i+1)) 100); do echo $i;done//

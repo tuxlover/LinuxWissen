@@ -41,122 +41,194 @@
 
 <h1>SQL</h1>
 
+<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+<p>
+<ul>
 <li>zur Abfrage und Manipulation relationaler Datenbanken</li>
 <li>Relationale Datenbanken bestehen aus einer|mehrerer zueinander logisch in Beziehung stehender Tabellen</li>
 <li>In Spaltenköpfe stehen Feldnamen die ein Attribut besschreiben</li>
 <li>Zellen enthalten eindeutig verifizierbare Werte</li>
 <li>Jede Zeile definiert einen Datensatz (Record) bestehend aus meherer zu einander in Beziehung stehenden Feldnamen, sowie deren Werte</li>
 <li>Tabellen (tables) enthalten dauerhaft gespeicherte Zeilen</li>
+</ul>
 <strong>sqlite3 → </strong>Dateienbasiert, Datenbnaken werden in Daten gelesen und geschrieben <br>
 <strong>mysql </strong>→ Server/Client basiert<br>
-<br>
-<a href="http://dev.mysql.com/doc/sakila/en/sakila.html" title="http://dev.mysql.com/doc/sakila/en/sakila.html">http://dev.mysql.com/doc/sakila/en/sakila.html</a> 
-<a href="./SQL/Mysql_Server.html" title="Linux Wissen:SQL:Mysql Server">Linux Wissen:SQL:Mysql Server</a>
+</p>
+
+<p>
+<a href="http://dev.mysql.com/doc/sakila/en/sakila.html" title="http://dev.mysql.com/doc/sakila/en/sakila.html">http://dev.mysql.com/doc/sakila/en/sakila.html</a> <br>
+<a href="./SQL/Mysql_Server.html" title="Linux Wissen:SQL:Mysql Server">Linux Wissen:SQL:Mysql Server</a><br>
+</p>
 
 <h5>Workflow Mysql einrichten</h5>
-<strong>(1) </strong>Installiern von <strong>mysql </strong>und <strong>mysql-client</strong>
-<strong>(2) chkconfig --add mysqld</strong>
-<strong>(3) /etc/init.d/mysql start</strong>
-<strong>(4) /usr/bin/mysql_secure_installation</strong>
+<p>
+<strong>(1) </strong>Installiern von <strong>mysql </strong>und <strong>mysql-client</strong><br>
+<strong>(2) chkconfig --add mysqld</strong><br>
+<strong>(3) /etc/init.d/mysql start</strong><br>
+<strong>(4) /usr/bin/mysql_secure_installation</strong><br>
 <strong>(5) </strong>Als rootbenutzer der Mysql Datenbank anmelden:<br>
-<strong>mysql -u root -p</strong>
+<strong>mysql -u root -p</strong><br>
 <strong>(6) </strong>eine erste Datenbank einrichten:<br>
 <strong>CREATE DATABASE &lt;Name&gt; CHARACTER SET &lt;Zeichensatz&gt;;</strong><br>
 → erstellt in mysql eine Datenbank &lt;Name&gt; basierend auf den &lt;Zeichensatz&gt; erstellen<br>
-<br>
+</p>
+
+<p>
 <strong>sqlite3 Datenbank.db</strong><br>
 → erstellen eine Datenbank in der Datei &lt;Datenbank.db&gt;<br>
-<br>
+</p>
+
 <h5>Schema</h5>
+<p>
+<ul>
 <li>Die Struktur der Datenbank inklusive der zulässigen Datenfelder und Datentypen </li>
 <li>auch complete logical View</li>
+</ul>
+</p>
 
 
 <h5>Domain</h5>
+<p>
+<ul>
 <li>der endliche Wertebereich für die zulässigen Datentypen eines Attributes</li>
+</ul>
+</p>
 
 <h5>Constraints</h5>
+<p>
+<ul>
 <li>Zeiger auf Schlüsselwerte (Primär Schlüssel, Fremdschlüssel)</li>
 <li>festlegen von Bedingungen die ein Wert erfüllen sollen</li>
 <li>verhindern das Eingeben nicht zulässiger Daten</li>
 <li>Festlegen eines Primäschlüssel <strong>(mysql)</strong></li>
-<a href="./SQL/Constraints.html" title="Linux Wissen:SQL:Constraints">Linux Wissen:SQL:Constraints</a>
+</ul>
+<a href="./SQL/Constraints.html" title="Linux Wissen:SQL:Constraints">Linux Wissen:SQL:Constraints</a><br>
+</p>
 
-<h5>Primärschlüssel</h5><br>
+<h5>Primärschlüssel</h5>
+<p>
 → ein <strong>eindeutiges Attribut </strong>zur Beschreibung einer Entität (Tabelle)<br>
 → Jede Tabelle hat genau einen Primärschlüssel<br>
+<ul>
 <li>darf nicht NULL sein </li>
 <li>keine Duplikate in der gleichen Tabelle </li>
 <li>Jede Tabelle hat genau einen Primärschlüssel</li>
 <li>Ein Attribut, dass eine Zeile <strong>endeutig</strong> Identifiziert</li>
 <li>es ist statisch und kann nicht verändert werden</li>
 <li>es können Primärschlüssel aus mehreren Tabellenattributen genutzt werden (<em>zusammengesetzter Primärschlüssel</em>)</li>
+</ul>
 → autoinkrementierend wird empfohlen durch AUTOINCREMENT<br>
-<br>
-<h5>Fremdschlüssel</h5><br>
+</p>
+
+<h5>Fremdschlüssel</h5>
+<p>
 → beschreibung von Beziehungen über Beziehungen zwischen <em>Entitäten</em> (Tabellen)<br>
+<ul>
 <li>bezeiht sich auf den Primärschlüssel einer anderen Relation</li>
 <li>verweist auf den Primärschlüssel einer Tabelle oder einer Relation</li>
 <li>ermöglicht die Vereinigung von Relationen</li>
 <li>muss nicht eindeutig sein</li>
+</ul>
 → ein Kunde in einer Datenbank kann mehrere Fremdschlüsselverweise haben, weil er mehrere Produkte gekauft hat<br>
-<br>
+</p>
+
 <h5>Views</h5>
+<p>
+<ul>
 <li>ein gespeicherter Query der aus einem oder mehreren Teiltabellen bestehen kann</li>
 <li>dynamische virtuelle Tabelle</li>
+</ul>
+</p>
 
+<p>
 <strong>CREATE VIEW &lt;Name&gt; AS &lt;Auswahl Anweisungen&gt;</strong><br>
 → erstellen eines Views<br>
-<a href="./SQL/Views.html" title="Linux Wissen:SQL:Views">Linux Wissen:SQL:Views</a>
+<a href="./SQL/Views.html" title="Linux Wissen:SQL:Views">Linux Wissen:SQL:Views</a><br>
+</p>
 
-<u>Hinweis: Beachte, dass Anweisungen immer mit </u><strong>;</strong><u>abgeschlossen werden.</u>
+<p>
+<u>Hinweis: Beachte, dass Anweisungen immer mit </u><strong>;</strong><u>abgeschlossen werden.</u><br>
+</p>
 
 <h2>Schema Anweisungen</h2>
-<a href="./SQL/Schemaanweisungen.html" title="+Schemaanweisungen">+Schemaanweisungen</a>
+<p>
+<a href="./SQL/Schemaanweisungen.html" title="+Schemaanweisungen">+Schemaanweisungen</a><br>
+</p>
 
 <h2>Datentypen</h2>
-<a href="./SQL/Datentypen.html" title="Linux Wissen:SQL:Datentypen">Linux Wissen:SQL:Datentypen</a>
+<p>
+<a href="./SQL/Datentypen.html" title="Linux Wissen:SQL:Datentypen">Linux Wissen:SQL:Datentypen</a><br>
+</p>
 
 <h2>Normalisierung</h2>
+<p>
+<ul>
 <li>trägt zur Perfomence und Wartbarkeit bei</li>
 <li>definiert eindeutige Objekte mit einzigartigen Attributen</li>
-<a href="./SQL/Normalisierung.html" title="Linux Wissen:SQL:Normalisierung">Linux Wissen:SQL:Normalisierung</a>
+</ul>
+<a href="./SQL/Normalisierung.html" title="Linux Wissen:SQL:Normalisierung">Linux Wissen:SQL:Normalisierung</a><br>
+</p>
 
 <h2>Intigritätsregeln</h2>
+<p>
+<ul>
 <li>Stellt sicher das ein Datensatz nicht die Konsistenz der Datenbank gefährdet</li>
 <li>verhindert das Fehlen von Feldern die obligatorisch ausgefüllt sein müssn </li>
-<a href="./SQL/Intigrit%C3%A4tsregeln.html" title="Linux Wissen:SQL:Intigritätsregeln">Linux Wissen:SQL:Intigritätsregeln</a>
+</ul>
+<a href="./SQL/Intigrit%C3%A4tsregeln.html" title="Linux Wissen:SQL:Intigritätsregeln">Linux Wissen:SQL:Intigritätsregeln</a><br>
+</p>
 
 <h2>Anweisungen</h2>
+<p>
+<ul>
 <li>können dazu genutzt werden, Daten aus einer Datenbank abzufragen</li>
 <li>können dazu genutzt werden, Daten in einer Datenbank zu ändern und neue Datensätze anzufügen</li>
 <li>zum Steuern der Datenbank</li>
 <li>Jede Anweisung besteht aus <strong>CREATE | ALTER | DROP </strong>Befehle die mit <strong>arithmetischen Operatoren, logischen </strong></li>
+</ul>
 <strong>Operatoren oder Vergleichsoperatoren </strong>verknüpft werden.<br>
-<a href="./SQL/Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen">Linux Wissen:SQL:Datenanweisungen</a>
+<a href="./SQL/Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen">Linux Wissen:SQL:Datenanweisungen</a><br>
+</p>
 
+<p>
 <strong>Verknüpfungsoperatoren → </strong>zur Verknüpfung von <br>
 <strong>Unterabfragen </strong>→ Schachtelung verschiedener SQL Ausdrücke<br>
 <strong>gespeicherte Prozeduren </strong>→ Wiederverwendbare Ausdrücke, die als Metadaten gespeichert werden (Views)<br>
-<a href="./SQL/Views.html" title="Linux Wissen:SQL:Views">Linux Wissen:SQL:Views</a>
-<a href="./SQL/Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen">Linux Wissen:SQL:Datenanweisungen</a>
- <a href="./SQL/Bedingungen.html" title="Linux Wissen:SQL:Bedingungen">Linux Wissen:SQL:Bedingungen</a>
+<a href="./SQL/Views.html" title="Linux Wissen:SQL:Views">Linux Wissen:SQL:Views</a><br>
+<a href="./SQL/Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen">Linux Wissen:SQL:Datenanweisungen</a><br>
+ <a href="./SQL/Bedingungen.html" title="Linux Wissen:SQL:Bedingungen">Linux Wissen:SQL:Bedingungen</a><br>
+</p>
 
 <h2>Abfragen verbinden</h2>
+<p>
+<ul>
 <li><strong>JOIN </strong></li>
 <li><strong>USING</strong></li>
 <li><strong>INNER JOIN</strong></li>
+</ul>
+</p>
 
 <h2>UML</h2>
+<p>
+<ul>
 <li>genutzt um Beziehungen zwischen einzelnen Tabellen Darzustellen</li>
 <li>dadurch wird ersichtlich welche <strong>Fremdschllüssel </strong> auf welche <strong>Primärschlüssel </strong> verweisen</li>
-<a href="./SQL/UML.html" title="Linux Wissen:SQL:UML">Linux Wissen:SQL:UML</a>
+</ul>
+<a href="./SQL/UML.html" title="Linux Wissen:SQL:UML">Linux Wissen:SQL:UML</a><br>
+</p>
 
 <h2>Indicies</h2>
+<p>
+<ul>
 <li>beschleunigen von Abfragen</li>
 <li>beschleunigung von Sortiervorgängen</li>
 <li>definieren von Maximal- und Minimalwerten</li>
-<a href="./SQL/Datenanweisungen/Indicies.html" title="Linux Wissen:SQL:Datenanweisungen:Indicies">Linux Wissen:SQL:Datenanweisungen:Indicies</a>
+</ul>
+<a href="./SQL/Datenanweisungen/Indicies.html" title="Linux Wissen:SQL:Datenanweisungen:Indicies">Linux Wissen:SQL:Datenanweisungen:Indicies</a><br>
+</p>
 
 
 <!-- End wiki content -->

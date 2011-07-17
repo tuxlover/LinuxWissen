@@ -17,6 +17,7 @@ http://www.catonmat.net/blog/awk-one-liners-explained-part-one
 [[Linux Wissen:Systemprogrammierung:Awk:Einzeiler]]
 
 **awk <Optionen> '/<Ausdruck>/ {<Anweisungen>}' <Datei>**
+**awk <Optionen> '/<Startpattern/,/<Endpattern>/' <Datei>**
 → Aufruf von **awk **aus der Kommandozeile
 → wird keine **<Datei> **angegeben liest awk von StdIn
 → ein awk Befehl besteht //immer //aus einer <Anweisung und //optional //aus einem <Ausdruck>

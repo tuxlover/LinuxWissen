@@ -46,6 +46,12 @@ Created Dienstag 26 April 2011
 →  Alle Werte von **VAR** bei der **m**-ten Postion beginnend der Länge **n**. 
 → Startet bei Index 0, 
 → m und n können auch Werte sein, die au Berechnungen entstehen
+//Beispiel://
+//string=abcdefghijklmnopqrstuvwxyz//
+//echo ${string:4}//
+//>> efghijklmnopqrstuvwxyz//
+//echo ${string:4:8}//
+//>> efghijkl//
 
 **${#VAR}** 
 →  evaluiert die Länge des Strings der Variablen **VAR**
