@@ -45,6 +45,6 @@ Created Dienstag 19 April 2011
 **(2)  **mit ** passwd root **neues Passwort setzen
 **(3) **neu starten
 
-__Hinweis:__ Sie sollten den **grub **durch ein Passsowort schützen und mögicherweise die Platten verschlüssenln. **(missing link)**
+__Hinweis:__ Sie sollten den **grub **durch ein Passsowort schützen und mögicherweise die Platten verschlüssenln.
 [[Linux Wissen:Booten:GRUB]]
 

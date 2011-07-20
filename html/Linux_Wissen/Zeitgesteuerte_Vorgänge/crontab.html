@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='../Web_Fetch_Tools.html'>Prev</a> ]
+	[ <a href='./atd.html'>Prev</a> ]
 
 			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='./wget.html'>Next</a> ]
+	[ <a href='../zzz_Undokumentiert.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,34 +39,20 @@
 
 <!-- Wiki content -->
 
-<h1>curl</h1>
+<h1>crontab</h1>
 
 <p>
-Created Sonntag 17 Juli 2011<br>
+Created Mittwoch 20 Juli 2011<br>
 </p>
 
 <p>
-<ul>
-<li>unterstützt HTTP, HTTPS, FTP, FTPS, POP,SMTP, SMTPS, IMAP,IMAPS, LDAP, LDAPS, SCP, TFTP und weitere</li>
-<li>kann Dateien von StdIn verarbeiten</li>
-<li>kann Ausgabe nach StdOut schreiben</li>
-<li>eignet sich besser für die Verabreitung in Shellscripte als <strong>wget</strong></li>
-<li>kann auch Dateien hochladen</li>
-</ul>
-</p>
-
-
-<h4>Einzeiler</h4>
-<p>
-<strong>curl -T &lt;Datei&gt;|- -u &lt;Username&gt;:&lt;Passwort&gt; ftp://&lt;Server&gt;/&lt;Verzeichnis&gt;/...</strong><br>
-→ läd &lt;Datei&gt; auf den ftp-&lt;Server&gt;<br>
-→ wird statt &lt;Datei&gt;, ein - angegeben, wird von StdIn <br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-<em>Ein Verzeichnis auf einen Backupserver absichert und dieses vorher komprimieren</em><br>
-<em>tar czf - &lt;dir&gt;/ | curl -T - -u &lt;Username&gt;:&lt;Passwort&gt; ftp:</em>&lt;Server&gt;/&lt;Dir&gt;.tar.gz//<br>
+<strong>crontab [-u &lt;User&gt;] [&lt;Datei&gt;]</strong><br>
+→ anlegen, verwalten und auflisten von cronjobs für den Nutzer &lt;User&gt;<br>
+→ wird <strong>-u &lt;User&gt; </strong>nicht mit angegeben, wird für der aktuelle Nutzer referenziert<br>
+→ wird <strong>&lt;Datei&gt; </strong>mit angegeben, wird diese als crontab initialisiert, kann nicht mit <strong>-e </strong>verwendet werden<br>
+<strong>-e </strong>→ die Crontab des aktuellen Benutzers editieren ( <a href="../FHS/var/spool/crontab.html" title="Linux Wissen:FHS:var:spool:crontab">Linux Wissen:FHS:var:spool:crontab</a>)<br>
+<strong>-l </strong>→ aktuelle Crontab des Nutzers nach StdOut schreiben<br>
+<strong>-r </strong>→ aktuelle Crontab des Nutzers löschen<br>
 </p>
 
 
@@ -76,7 +62,7 @@ Created Sonntag 17 Juli 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Web_Fetch_Tools.html'>Linux Wissen:Web Fetch Tools</a></li>
+	Backlinks:		<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../FHS/var/spool.html'>Linux Wissen:FHS:var:spool</a></li>		<a href='../Zeitgesteuerte_Vorg%C3%A4nge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a></li>
 
 <!-- End Backlinks -->
 

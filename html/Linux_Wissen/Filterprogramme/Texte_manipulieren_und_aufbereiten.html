@@ -41,11 +41,20 @@
 
 <h1>Texte manipulieren und aufbereiten</h1>
 
+<p>
+Created Montag 18 April 2011<br>
+</p>
+
+<p>
 <strong>expand</strong> → Tabs in Leerzeichen konvertieren<br>
-<br>
+</p>
+
+<p>
 <strong>unexpand </strong>→ Leerzeichen in Tabs konvertieren<br>
 <strong>-t N</strong> → N Leerzeichen bilden einen Tab, überstehende Leerzeichen werden nicht berücksichtigt<br>
-<br>
+</p>
+
+<p>
 <strong>cut </strong>→ beschneide eine Datei Spaltenweise<br>
 <strong>-c S,M-N </strong>→ schneide die Spalte S aus und zusätzlich die Spalten M-N, beliebig oft widerholbar, jede Spalte entspricht ein Zeichen<br>
 <strong>-d &lt;Trenner&gt; </strong>→ lege &lt;Trenner&gt; als Delimter fest<br>
@@ -55,32 +64,46 @@
 <div style='padding-left: 210pt'>
      → verweist auf die Variable $<strong>OUTPUT_DELIM_STRING </strong>falls gesetzt<br>
 </div>
+</p>
 
 
-<em>Beispiel:</em>
-<em>cut -d: -f1,1 /etc/passwd</em>
-<em>cut -d' '-f3 meinedatei </em>
+<p>
+<em>Beispiel:</em><br>
+<em>cut -d: -f1,1 /etc/passwd</em><br>
+<em>cut -d' '-f3 meinedatei </em><br>
+</p>
 
 
+<p>
 <strong>tr &lt;s1&gt; &lt;s2&gt; </strong>→ tauschen aller Zeichen &lt;s1&gt; durch &lt;s2&gt; in einem Datenstrom<br>
 <strong>-d &lt;s1&gt; </strong>→ löschen anstelle von austauschen der Zeichen &lt;s1&gt; <br>
 <strong>-c </strong>→ ersetzen der Zeichen die nicht in &lt;s1&gt; durch &lt;s2&gt;<br>
 <strong>-s </strong>→ mehrere Zeichen &lt;s1&gt; durch ein einzelnes &lt;s2&gt; ersetzen<br>
-<br>
-<em>Beispiele:</em>
-<em>Aus Ae mach Ä</em>
-<em>tr -s Ae Ä &lt; text1 &gt; text2</em>
+</p>
 
-<em>Tabs in Leerzeichen umawandeln</em>
-<em>tr '\t'  '  ' &lt; text1</em>
+<p>
+<em>Beispiele:</em><br>
+<em>Aus Ae mach Ä</em><br>
+<em>tr -s Ae Ä &lt; text1 &gt; text2</em><br>
+</p>
+
+<p>
+<em>Tabs in Leerzeichen umawandeln</em><br>
+<em>tr '\t'  '  ' &lt; text1</em><br>
+</p>
  
 
-<u>Hinweis: Für komplexere manipulationen empfiehlt sich </u><strong>sed</strong>
-<a href="../Systemprogrammierung/Sed.html" title="Linux Wissen:Systemprogrammierung:Sed">Linux Wissen:Systemprogrammierung:Sed</a>
+<p>
+<u>Hinweis: Für komplexere manipulationen empfiehlt sich </u><strong>sed</strong><br>
+<a href="../Systemprogrammierung/Sed.html" title="Linux Wissen:Systemprogrammierung:Sed">Linux Wissen:Systemprogrammierung:Sed</a><br>
+</p>
 
+<p>
 <strong>fmt &lt;Datei&gt; </strong>→ ohne zusätzliche Option bewirkt einen Zeilenumbruch nach 75 Zeichen<br>
 <strong>-w N</strong> → Zeilenumbruch nach N Zeichen bewirken<br>
-<br>
+</p>
+
+<p>
 <strong>pr &lt;Datei&gt; </strong>→ die &lt;Datei&gt; für den Drucker vorformatieren<br>
 <strong>-N </strong>→ ergibt eine Darstellung von N Zeichen<br>
 <strong>-h &lt;text&gt; </strong>→ auf jedem Seitenkopf steht &lt;text&gt;<br>
@@ -88,21 +111,25 @@
 <strong>-n </strong>→ vergibt jeder Zeile eine 5 Stellige Zeilennummer<br>
 <strong>-o N </strong>→ text um N Leerzeichen vom linken Rand einrücken<br>
 <strong>-d </strong>→ Nutzer doppelte Leerzeichen anstelle von einfachen<br>
-<br>
+</p>
+
+<p>
 <strong>nl &lt;Datei&gt; </strong>→ Die Zeilen von Datei durchnumerieren<br>
 <strong>-b a|t|p &lt;Ausdruck&gt; </strong>→ nummeriert a(lle)  nur nichtleere (-t) oder nur die auf die der &lt;Ausdruck&gt; passt (-t)<br>
 <strong>-i N</strong> → inkrement um N pro Zeile<br>
 <strong>-n ln|rn|rz|lz </strong>→ formatiere die Zeilennummerierung linksbündig|rechtsbündig|rechtsbündig mit führenden Nullen|linksbündig mit führenden Nullen  <br>
 <strong>-p </strong>→ ignoriere Seitenzeilenzahl, wird bei logischen Seiten nicht auf den Anfangswert zurückgesetzt<br>
 <strong>-v N </strong>→ beginne Nummerierung bei N<br>
-<br>
-<strong>rev &lt;Datei&gt; </strong>
+</p>
+
+<p>
+<strong>rev &lt;Datei&gt; </strong><br>
 <strong>echo $STRING|rev</strong><br>
 → Kehre die Reihenfolge der Buchstaben innerhalb jeder Zeile um<br>
 → Das Zeichen was am Anfang einer Zeile steht, steht nun am Ende und so weiter <br>
-<em>Besipiel:</em>
-<em>String auf Palindrom testen</em>
-<em>if [ $STRING == $(echo $STRING|rev) ]</em>
+<em>Besipiel:</em><br>
+<em>String auf Palindrom testen</em><br>
+<em>if [ $STRING == $(echo $STRING|rev) ]</em><br>
 <div style='padding-left: 30pt'>
 <em>then</em><br>
 </div>
@@ -115,7 +142,8 @@
 <div style='padding-left: 60pt'>
 <em>echo "$STRING is not a palindorm"</em><br>
 </div>
-<em>fi</em>
+<em>fi</em><br>
+</p>
 
 
 <!-- End wiki content -->

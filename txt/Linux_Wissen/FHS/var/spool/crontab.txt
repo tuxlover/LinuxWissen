@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-20T21:43:12+02:00
+
+====== crontab ======
+Created Mittwoch 20 Juli 2011
+
+++
+#Dies ist ein Kommantar
+#User an den eine Mail geschickt werden soll
+#falls MAILTO="" wird keine Systemmail gesendet
+MAILTO=<User>
+#Shell die für die Ausführung von Jobs verwendet wird
+SHELL=<SHELL>
+
+ * * * * * <Befehlskette> <Zeilentrennzeichen oder %>
+#Minuten (0-59) 
+#Stunden (0-23) 
+#Tag des Monats(1-31)
+#Monat des Jahres (1-12)
+#Tag der Woche (0-7), 0=7=Sonntag
+#!Wichtig!, falls mail verwendet wird, ist % als Zeilentrenner anzugeben  
+++
+
+== Angabe von Zeitintervallen ==
+**N **→ wird dem Felde gemäß zum Zeitpunkt N ausgeführt
+//Beispiel://
+//fahre den Rechner jeden Freitag um 16 Uhr herunter//
+ 0 16 * * 5 shutdown -h now % 
+**N-M **→ Befehl im Zeitbereich N-M periodisch ausführen
+//Beispiel://
+//Um 1 Uhr nachts Monatg bis Freitag eine Mail schicken//
+//Mit % wird eine neue Zeile eingeleitet//
+//0 1 * * 1-5 mail -s "Ab ins Bett" $USER%$USER, %%user go to bed %  //
+**N,M **→ Angabe von Zeitgrenzbereichen, wobei N die untere und M die obere Schranke ist
+**N/M **→ Angabe einer Schrittweite bei **N **beginnend der Schrittweite **M**
+//Beispiele://
+//führt das Script chkscript alle Zwei Stunden zur vollen Stunde aus//
+//0 */2 * * * /bin/sh -x /root/chckscript %//
+//führt das Script chkscript alle zwei Stunden im Minutentackt aus//
+// * */2 * * * /bin/sh -x /root/chkscript %//

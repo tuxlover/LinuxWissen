@@ -41,129 +41,108 @@
 
 <h1>etc</h1>
 
-<p>
-Created Dienstag 19 April 2011<br>
+<strong>/etc/at.allow </strong>→ Liste der Nutzer die at benutzen dürfen<br>
+*<strong>/etc/at.deny </strong>→ Liste der Nutzer die at nicht benutzen dürfen<br>
+→ .allow wird zuerst gelesen<br>
+<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a>
+<a href="../Zeitgesteuerte_Vorg%C3%A4nge/at.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:at">Linux Wissen:Zeitgesteuerte Vorgänge:at</a>
+
+
+<strong>*/etc/cron.allow </strong>→ Liste der Nutzer die cron benutzen dürfen<br>
+<strong>*/etc/cron.deny </strong>→ Liste der Nutzer die cron nicht benutzen dürfen<br>
+→ .allow wird zuerst gelesen<br>
+<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a>
+<a href="../Zeitgesteuerte_Vorg%C3%A4nge/crontab.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:crontab">Linux Wissen:Zeitgesteuerte Vorgänge:crontab</a>
+<strong>*/etc/crontab </strong><br>
+→ vom System auszuführende periodische Dienste<br>
+→ unter $$SUSE$$ ist hier ein Script eingetragen, welches dafür sorgt dass die anderen Systemordner systematische abgearbeitet werden<br>
+<strong>*/etc/cron.d </strong>→ alles was nicht täglich, wöchentlich, stündlch, monatlich oder wöschentlich vom System ausgeführt wird<br>
+<strong>*/etc/cron.daily </strong>→ Shellscripte die einmal täglich ausgeführt werden<br>
+<strong>*/etc/cron.hourly </strong>→ Shellscripte die einmal stündlich ausgeführt werden<br>
+<strong>*/etc/cron.monthly </strong>→ Shellscripte die einmal monatlich ausgeführt werden<br>
+<strong>*/etc/cron.weekly </strong>→ Shellscripte die einmal wöchentlich ausgeführt werden<br>
+<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
+<br>
 *<strong>/etc/fstab </strong>→ alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften<br>
 <a href="./etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a><br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/lilo.conf </strong>→ Konfiguratonsdatei für den Bootloader LILO<br>
 <a href="./etc/lilo.conf.html" title="Linux Wissen:FHS:etc:lilo.conf">Linux Wissen:FHS:etc:lilo.conf</a><br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/mtab </strong>→ alle momentan eingehängten Dateisysteme<br>
 *<strong>/etc/hosts </strong>→ Konfiguration der lokalen DNS Auflösung<br>
 *<strong>/etc/inittab </strong>→ Konfigurationsdatei für den Start von Linux <br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/init.d/rc.x </strong>→ Scripte die im Runlevel x ausgeführt werden<br>
 <div style='padding-left: 90pt'>
      → links aus dem Übergeordneten Elternverzeichnis *<strong>/etc/init.d/</strong> <br>
 </div>
-<a href="../Booten.html" title="Linux Wissen:Booten">Linux Wissen:Booten</a><br>
+<a href="../Booten.html" title="Linux Wissen:Booten">Linux Wissen:Booten</a>
 <a href="./etc/init.d%2B%2BScript.html" title="Linux Wissen:FHS:etc:init.d++Script">Linux Wissen:FHS:etc:init.d++Script</a><br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/ld.so.conf </strong>→ Konfigurationdatei für den dynamischen Linker<br>
 *<strong>/etc/ld.so.cache </strong>→ Cache für den dynamischen Linker<br>
  <a href="../Bibliotheken/dynamische_Bibliotheken.html" title="Linux Wissen:Bibliotheken:dynamische Bibliotheken">Linux Wissen:Bibliotheken:dynamische Bibliotheken</a><br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/issue </strong>→ Begrüßungstext der vor der Anmeldung angezeigt werden<br>
 *<strong>/etc/motd </strong>→ Begrüßungstext der nach der Anmeldung angezeigt werden<br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/modprobe.conf </strong>→ Liste der zu ladenden Module während des systmstarts<br>
 <div style='padding-left: 150pt'>
  → Konfiguration der zu ladentdeen module<br>
  → kann auch aufgeteilt sein in einzelne Dateien <strong>modprobe.d/</strong><br>
 → in <strong>modprobe.d/local.conf </strong>können eigenen Module eingetragen werden<br>
 </div>
-</p>
 
-<p>
 <strong>/etc/modules.conf </strong>→ Liste verwendeter Kernelmoduel (veraltet)<br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/nologin </strong>→ Wenn angelegt kann sich niemand ausser root am System anmelden<br>
                          → wird von <strong>PAM </strong>ausgewertet <strong>(missing link)</strong>           <br>
-</p>
-
-<p>
+<br>
 *<strong>/etc</strong>/<strong>passwd </strong>→ Nutzer inklusive Gruppenzugehörigkeit und Shell sind hier festgelegt <br>
 <a href="./etc/passwd.html" title="Linux Wissen:FHS:etc:passwd">Linux Wissen:FHS:etc:passwd</a><br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/shadow </strong>→ enthält verschlüsselte Passwörter und ihre Einstellungen<br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/skel/ </strong>→ Dateien die beim Anlegen eines neuen Nutzers in dessen Heimatverzeichnis kopiert werden<br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/group </strong>→ Gruppen und zugehröige GID und ihr angehörende Nutzer <br>
 <a href="./etc/group.html" title="Linux Wissen:FHS:etc:group">Linux Wissen:FHS:etc:group</a><br>
-</p>
-
-<p>
-*<strong>/etc/security/limits.conf</strong><br>
+<br>
+*<strong>/etc/security/limits.conf</strong>
 <a href="./etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf">Linux Wissen:FHS:etc:security++limits.conf</a><br>
-</p>
-
-<p>
-*<strong>/etc/foremost.conf </strong><br>
+<br>
+*<strong>/etc/foremost.conf </strong>
 <a href="./etc/foremost.conf.html" title="Linux Wissen:FHS:etc:foremost.conf">Linux Wissen:FHS:etc:foremost.conf</a><br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/udev/ </strong>→ Konfigurattion des Udev Daemons<br>
 <div style='padding-left: 60pt'>
 <strong>udev.conf </strong>→ globale Konfiguration (logging, loglevel)<br>
 <strong>rules.d/ </strong>→ Verzeichnis für Udev-Regeln die beim Start des Daemons gelesen werden<br>
 </div>
-</p>
-
-<p>
+<br>
 *<strong>/etc/apt/sources </strong>→ nur bei $Debian$, Liste von Bezugsquellen für das <strong>apt-get</strong> Paketmanagement<br>
-<a href="./etc/apt%2B%2Bsoruces.lst.html" title="Linux Wissen:FHS:etc:apt++soruces.lst">Linux Wissen:FHS:etc:apt++soruces.lst</a><br>
+<a href="./etc/apt%2B%2Bsoruces.lst.html" title="Linux Wissen:FHS:etc:apt++soruces.lst">Linux Wissen:FHS:etc:apt++soruces.lst</a>
 <a href="../Paketverwaltung/Debian/apt.html" title="Linux Wissen:Paketverwaltung:Debian:apt">Linux Wissen:Paketverwaltung:Debian:apt</a><br>
-</p>
-
-<p>
+<br>
 *<strong>/rpm/ </strong>→ Scripte und globale Macors die von der Paketverwaltung <strong>rpm </strong>benötigt werden<br>
 <div style='padding-left: 30pt'>
 <strong>macros </strong>→ Konfigurationsdatei für global verfügbare Macros<br>
 </div>
-</p>
 
-<p>
 <a href="../Paketverwaltung/Rpm.html" title="Linux Wissen:Paketverwaltung:Rpm">Linux Wissen:Paketverwaltung:Rpm</a><br>
 *<strong>/etc/yum/repos.d </strong>→ Konfigurationsdateien für einzelne Yum Repos<br>
 *<strong>/etc/yum.conf </strong>→ globale Konfigurationsdateien für yum <br>
 <a href="../Paketverwaltung/Rpm/yum.html" title="Linux Wissen:Paketverwaltung:Rpm:yum">Linux Wissen:Paketverwaltung:Rpm:yum</a><br>
-</p>
-
-<p>
+<br>
 *<strong>/etc/my.cnf </strong>→ Konfigurationsatei für den Mysql Server und den Mysql Clients<br>
-<a href="../SQL/Mysql_Server.html" title="Linux Wissen:SQL:Mysql Server">Linux Wissen:SQL:Mysql Server</a><br>
+<a href="../SQL/Mysql_Server.html" title="Linux Wissen:SQL:Mysql Server">Linux Wissen:SQL:Mysql Server</a>
 <a href="./etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
-</p>
-
-
-<p>
+<br>
+<br>
 *<strong>/etc/termcap</strong><br>
 → obsolete Datenbank die von <strong>tput </strong>benutzt wird<br>
-<a href="../Systemprogrammierung/Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a><br>
-</p>
+<a href="../Systemprogrammierung/Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a>
 
 
 <!-- End wiki content -->
@@ -172,7 +151,7 @@ Created Dienstag 19 April 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Bibliotheken/dynamische_Bibliotheken.html'>Linux Wissen:Bibliotheken:dynamische Bibliotheken</a></li>		<a href='../Paketverwaltung/Rpm.html'>Linux Wissen:Paketverwaltung:Rpm</a></li>		<a href='../Partitionen_und_Dateisysteme/Mounten.html'>Linux Wissen:Partitionen und Dateisysteme:Mounten</a></li>		<a href='../Booten/Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>		<a href='../Benutzer_und_Gruppen/Benutzerkonten_verwalten.html'>Linux Wissen:Benutzer und Gruppen:Benutzerkonten verwalten</a></li>
+	Backlinks:		<a href='../Bibliotheken/dynamische_Bibliotheken.html'>Linux Wissen:Bibliotheken:dynamische Bibliotheken</a></li>		<a href='../Paketverwaltung/Rpm.html'>Linux Wissen:Paketverwaltung:Rpm</a></li>		<a href='../Partitionen_und_Dateisysteme/Mounten.html'>Linux Wissen:Partitionen und Dateisysteme:Mounten</a></li>		<a href='../Booten/Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>		<a href='../Benutzer_und_Gruppen/Benutzerkonten_verwalten.html'>Linux Wissen:Benutzer und Gruppen:Benutzerkonten verwalten</a></li>		<a href='../Zeitgesteuerte_Vorg%C3%A4nge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a></li>
 
 <!-- End Backlinks -->
 

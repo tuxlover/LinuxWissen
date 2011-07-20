@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='../Web_Fetch_Tools.html'>Prev</a> ]
+	[ <a href='./at.html'>Prev</a> ]
 
 			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='./wget.html'>Next</a> ]
+	[ <a href='./crontab.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,35 +39,16 @@
 
 <!-- Wiki content -->
 
-<h1>curl</h1>
+<h1>atd</h1>
 
-<p>
-Created Sonntag 17 Juli 2011<br>
-</p>
+<li>der Daemon der für die Ausführung von <strong>at</strong>- und <strong>batch </strong>Jobs verantwortlich ist</li>
+<li>Jobs werden aus <em>*/var/spool/atjobs ausgelesen </em></li>
+<li>Ausgabe wird nach <em>*/var/spool/atspool </em>geschrieben und als Systemmail weitergeleitet <strong>(missing link mail)</strong></li>
 
-<p>
-<ul>
-<li>unterstützt HTTP, HTTPS, FTP, FTPS, POP,SMTP, SMTPS, IMAP,IMAPS, LDAP, LDAPS, SCP, TFTP und weitere</li>
-<li>kann Dateien von StdIn verarbeiten</li>
-<li>kann Ausgabe nach StdOut schreiben</li>
-<li>eignet sich besser für die Verabreitung in Shellscripte als <strong>wget</strong></li>
-<li>kann auch Dateien hochladen</li>
-</ul>
-</p>
-
-
-<h4>Einzeiler</h4>
-<p>
-<strong>curl -T &lt;Datei&gt;|- -u &lt;Username&gt;:&lt;Passwort&gt; ftp://&lt;Server&gt;/&lt;Verzeichnis&gt;/...</strong><br>
-→ läd &lt;Datei&gt; auf den ftp-&lt;Server&gt;<br>
-→ wird statt &lt;Datei&gt;, ein - angegeben, wird von StdIn <br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-<em>Ein Verzeichnis auf einen Backupserver absichert und dieses vorher komprimieren</em><br>
-<em>tar czf - &lt;dir&gt;/ | curl -T - -u &lt;Username&gt;:&lt;Passwort&gt; ftp:</em>&lt;Server&gt;/&lt;Dir&gt;.tar.gz//<br>
-</p>
+<strong>atd </strong>→ Der at Daemon<br>
+<strong>-b </strong>→ festlegen des Intervalls der einzelnen <strong>batch </strong>Jobs<br>
+<strong>-l </strong>→ festlegen des von <strong>batch </strong>verwendeten Grenzwertes<br>
+<strong>-d </strong>→ Fehlerausgabe nach StdtErr<br>
 
 
 <!-- End wiki content -->
@@ -76,7 +57,7 @@ Created Sonntag 17 Juli 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Web_Fetch_Tools.html'>Linux Wissen:Web Fetch Tools</a></li>
+	Backlinks:		<a href='../Zeitgesteuerte_Vorg%C3%A4nge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a></li>
 
 <!-- End Backlinks -->
 

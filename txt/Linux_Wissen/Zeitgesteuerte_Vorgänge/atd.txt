@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-20T20:59:24+02:00
+
+====== atd ======
+Created Mittwoch 20 Juli 2011
+
+* der Daemon der für die Ausführung von **at**- und **batch **Jobs verantwortlich ist
+* Jobs werden aus //*/var/spool/atjobs ausgelesen //
+* Ausgabe wird nach //*/var/spool/atspool //geschrieben und als Systemmail weitergeleitet **(missing link mail)**
+
+**atd **→ Der at Daemon
+**-b **→ festlegen des Intervalls der einzelnen **batch **Jobs
+**-l **→ festlegen des von **batch **verwendeten Grenzwertes
+**-d **→ Fehlerausgabe nach StdtErr

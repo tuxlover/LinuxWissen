@@ -48,4 +48,4 @@ wie killall
 **-p **→ mit PID anzeigen
 **-u **→ Besitzerwechsel anzeigen
 
-__Tipp benutzen Sie __**watch** **(missing link)**__ um  Prozesse permanent zu beobachten.__
+__Tipp benutzen Sie __**watch**__ um  Prozesse permanent zu beobachten.__

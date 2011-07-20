@@ -4,6 +4,29 @@ Creation-Date: 2011-04-19T02:00:50+02:00
 
 ====== etc ======
 Created Dienstag 19 April 2011
+
+***/etc/at.allow **→ Liste der Nutzer die at benutzen dürfen
+***/etc/at.deny **→ Liste der Nutzer die at nicht benutzen dürfen
+→ .allow wird zuerst gelesen
+[[Linux Wissen:Zeitgesteuerte Vorgänge]]
+[[Linux Wissen:Zeitgesteuerte Vorgänge:at]]
+
+
+***/etc/cron.allow **→ Liste der Nutzer die cron benutzen dürfen
+***/etc/cron.deny **→ Liste der Nutzer die cron nicht benutzen dürfen
+→ .allow wird zuerst gelesen
+[[Linux Wissen:Zeitgesteuerte Vorgänge]]
+[[Linux Wissen:Zeitgesteuerte Vorgänge:crontab]]
+***/etc/crontab **
+→ vom System auszuführende periodische Dienste
+→ unter $$SUSE$$ ist hier ein Script eingetragen, welches dafür sorgt dass die anderen Systemordner systematische abgearbeitet werden
+***/etc/cron.d **→ alles was nicht täglich, wöchentlich, stündlch, monatlich oder wöschentlich vom System ausgeführt wird
+***/etc/cron.daily **→ Shellscripte die einmal täglich ausgeführt werden
+***/etc/cron.hourly **→ Shellscripte die einmal stündlich ausgeführt werden
+***/etc/cron.monthly **→ Shellscripte die einmal monatlich ausgeführt werden
+***/etc/cron.weekly **→ Shellscripte die einmal wöchentlich ausgeführt werden
+[[Linux Wissen:Zeitgesteuerte Vorgänge]]
+
 ***/etc/fstab **→ alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften
 [[Linux Wissen:FHS:etc:fstab]]
 

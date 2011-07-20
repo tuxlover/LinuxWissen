@@ -5714,7 +5714,7 @@ __Zeitgesteuerte Jobkontrolle mit cron__
 			--> wird -u nicht angegeben, dann wird der aktuelle Nutzer benutzt
 			--> wird <Datei> angegeben, wird dies als crontab installiert, kann nicht mit -e verwendet werden		
 	
--e --> die aktuelle crontan editiren in $EDITOR
+-e --> die aktuelle crontab editiren in $EDITOR
 -l --> die aktuelle crontab für den Benutzer nach StdOut schreiben
 -r --> entferne die aktuelle crontab
 

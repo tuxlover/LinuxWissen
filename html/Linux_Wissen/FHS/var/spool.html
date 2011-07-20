@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='../Web_Fetch_Tools.html'>Prev</a> ]
+	[ <a href='../var.html'>Prev</a> ]
 
-			[ <a href='../../index.html'>Index</a> ]
+			[ <a href='../../../index.html'>Index</a> ]
 
-	[ <a href='./wget.html'>Next</a> ]
+	[ <a href='./spool/crontab.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,34 +39,32 @@
 
 <!-- Wiki content -->
 
-<h1>curl</h1>
+<h1>spool</h1>
 
 <p>
-Created Sonntag 17 Juli 2011<br>
+Created Mittwoch 20 Juli 2011<br>
 </p>
 
 <p>
 <ul>
-<li>unterstützt HTTP, HTTPS, FTP, FTPS, POP,SMTP, SMTPS, IMAP,IMAPS, LDAP, LDAPS, SCP, TFTP und weitere</li>
-<li>kann Dateien von StdIn verarbeiten</li>
-<li>kann Ausgabe nach StdOut schreiben</li>
-<li>eignet sich besser für die Verabreitung in Shellscripte als <strong>wget</strong></li>
-<li>kann auch Dateien hochladen</li>
+<li>Ablage von Jobs und Nutzer Cron-Aufträge</li>
 </ul>
 </p>
 
-
-<h4>Einzeiler</h4>
 <p>
-<strong>curl -T &lt;Datei&gt;|- -u &lt;Username&gt;:&lt;Passwort&gt; ftp://&lt;Server&gt;/&lt;Verzeichnis&gt;/...</strong><br>
-→ läd &lt;Datei&gt; auf den ftp-&lt;Server&gt;<br>
-→ wird statt &lt;Datei&gt;, ein - angegeben, wird von StdIn <br>
+*<strong>/var/spool/atjobs</strong><br>
+*<strong>/var/spool/atpool</strong><br>
+→ Ablage von Nutzer at-Jobs<br>
+<a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
+<a href="../../Zeitgesteuerte_Vorg%C3%A4nge/at.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:at">Linux Wissen:Zeitgesteuerte Vorgänge:at</a><br>
 </p>
 
 <p>
-<em>Beispiel:</em><br>
-<em>Ein Verzeichnis auf einen Backupserver absichert und dieses vorher komprimieren</em><br>
-<em>tar czf - &lt;dir&gt;/ | curl -T - -u &lt;Username&gt;:&lt;Passwort&gt; ftp:</em>&lt;Server&gt;/&lt;Dir&gt;.tar.gz//<br>
+*<strong>/var/spool/cron/</strong><br>
+→ Ablage von Nutzer cron-Jobs von <strong>crontab</strong><br>
+<a href="../../Zeitgesteuerte_Vorg%C3%A4nge/crontab.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:crontab">Linux Wissen:Zeitgesteuerte Vorgänge:crontab</a><br>
+<a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
+<a href="./spool/crontab.html" title="Linux Wissen:FHS:var:spool:crontab">Linux Wissen:FHS:var:spool:crontab</a><br>
 </p>
 
 
@@ -76,7 +74,7 @@ Created Sonntag 17 Juli 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Web_Fetch_Tools.html'>Linux Wissen:Web Fetch Tools</a></li>
+	Backlinks:
 
 <!-- End Backlinks -->
 

@@ -7,20 +7,37 @@ Created Sonntag 17 Juli 2011
 
 * unterbrochene Downloads können zu einem späteren Zeitpunkt fortgesetzt werden
 * unterstützt die Protokolle FTP, HTTP HTTPS
+* kann nur Dateien herunterladen
 [[Linux Wissen:Netzwerke:Protokolle]]
 
 **wget <URI>|<URL>**
 → läd eine Datei von der URI oder eine html Website von der URL herunter
 → um Dateien komplett zum offline lesen herunterzuladen, muss **-p **verwendet werden
-**-c **→ abgebrochene Downloads von URL|URI wieder aufnehmen
+**-c|--continue **→ abgebrochene Downloads von URL|URI wieder aufnehmen
 **-t N **→ abgebrochenen Downloads **N **mal wiederversuchen
 **--retry-confused **→ bei einem "connection refused" wird ein neuer Versuch gestartet
 **-p **→ läd zusätzlich zur Website CSS Stile, Bilder und andere zugehörige Dateien herunter
 **-k **→ die Links der Website wiederherstellen
 **-E **→ Scriptdateien (php, asp) in .html umwandeln
+**-Q Nm|k **→ die Größe des zu herunterladenden Materials auf N Megabyte|Kilobyte beschränken
+**-T | --timestamping **→ vergleicht den Zeitstempel einer bereits vorhandenen Datei
+				     → ist der Zeitstempel einer vorhandenen Datei älter wird die Datei aktualisiert
+			             → ist der Zeitstempel einer vorhandenen Datei neuer wird die Datei nicht aktualisiert
 
 
 === Rekursive Optionen ===
 **-r** → Links rekursiv verfolgen
-**-l N** → die Rekursionstiefe auf N festlegen
+**-l|--level N** → die Rekursionstiefe auf N festlegen
 **-H **→ verfolge Links auf externen Websites
+**--nd **→ verhindert das Herunderladen von einzelnen Unterverzeichnissen
+**-x |--force-directories **→ übernehmen der Verzeichnisstruktur vom Server
+**-nH **→ die Verzeichnissstruktur mit übernehmen, der Hostname wird aber nicht übernommen aus **http://meine-seite.de/bilder **wird **bilder**
+**-A **''→ eine Liste von akzeptierten Dateien, dabei wird die typische Dateiendung als Parameter übergeben''
+**-R **→ eine Liste von zurückzuweisenden Dateien, dabei wird die typische Dateiendung als Parameter übergeben
+**-L | --relative-links **→ nur relativen Links folgen
+
+=== Proxy Optionen ===
+**(missing link Proxies)**
+**-Y on|off || --proxy=on|off **→ herunterladen übber einen Proxy aktivieren
+**--proxy-user=<User> **→ <User> als anzumeldenden Nutzer wählen
+**--proxy-passwd=xxx **→ Passwort des Proxies

@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-20T20:10:39+02:00
+
+====== spool ======
+Created Mittwoch 20 Juli 2011
+
+* Ablage von Jobs und Nutzer Cron-Aufträge
+
+***/var/spool/atjobs**
+***/var/spool/atpool**
+→ Ablage von Nutzer at-Jobs
+[[Linux Wissen:Zeitgesteuerte Vorgänge]]
+[[Linux Wissen:Zeitgesteuerte Vorgänge:at]]
+
+***/var/spool/cron/**
+→ Ablage von Nutzer cron-Jobs von **crontab**
+[[Linux Wissen:Zeitgesteuerte Vorgänge:crontab]]
+[[Linux Wissen:Zeitgesteuerte Vorgänge]]
+[[Linux Wissen:FHS:var:spool:crontab]]

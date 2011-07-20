@@ -9,7 +9,7 @@ Created Sonntag 17 Juli 2011
 * kann Dateien von StdIn verarbeiten
 * kann Ausgabe nach StdOut schreiben
 * eignet sich besser für die Verabreitung in Shellscripte als **wget**
-
+* kann auch Dateien hochladen
 
 
 === Einzeiler ===

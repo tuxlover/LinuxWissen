@@ -21,4 +21,4 @@ __Hinweis: dies ist nützlich in Shellscripten wenn unglücklich vergebene Alias
 */etc/bash.bashrc → gloable Aliasse festlegen
 *~/.bashrc → vom Nutzer vergebene Aliasse
 
-      
+**\<Befehl> **→  wird <Befehl> als Aliasname genutzt, führe den eigentlichen <Befehl> aus

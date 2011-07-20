@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-20T19:58:45+02:00
+
+====== at ======
+Created Mittwoch 20 Juli 2011
+
+**at <HH:MM> <ZEITPUNKT>**
+→ einen Job für den angegebenen Zeitpunkt anlegen
+→ startet die at-Shell 
+→ **Strg-D **beendet die Shell und speichert den Job
+→ sendet eine E-Mail falls bei der Ausführung des Jobs Fehler auftreten
+→ Ausgabemail erfolgt an den Besitzer der Elternshell
+→ at wird in der Umgebung ausgefühhrt von der es ausgeführt wird (bash → bash-Umgebung, ksh → ksh-Umgebung)
+
+**-f <Datei> **
+→ lese den at-Job aus der entsprechenden Datei
+→ dabei enthält **at** einen oder mehrere Shellbefehl(e)
+**-l **→ ein Alias auf **atq**
+**-d|-r N **
+→ verweist auf **atrm **und löscht die entsprechenden Einträge 
+**-m **
+→ veranlasse das Schicken einer System E-Mail an den Nutzer auch wenn der Job erfolgreich war
+**-c N **→ ruft **cat **für den entsprechenden Job N auf ([[Linux Wissen:Filterprogramme:cat]])
+
+== <Time> ==
+**HH:MM tt.mm.jj|| HH:MM mm/tt/jj **
+→ exakte absolute Zeitangabe in //Stunde:Minute Tage.monate.jahre//
+**now **
+→ jetzt
+**midnight **
+→ um Mitternacht punkt 0:00 bzw. 24:00
+**noon**
+→ 12 Uhr Mittags
+**teatime**
+→ 16 Uhr
+**now + N minutes|hours|days**
+→ von jetzt an in N Minuten
+
+*/usr/share/doc/packages/at/timespec → weitere Zeitformatierungen
+
+**atrm N  **
+→ löschen des Jobs mit der Jobnummer N
+→ wie **at -d|-r N**
+
+**atq **
+→ auflisten der ausstehenden Jobs 
+→ wie **at -l**
+
+//Beispiele://
+//Einen einfachen at-Jobs erstellen//
+//echo "/usr/local/bin/script.sh"|at 22:00 //
+
+//Mit //**logger** //zu einem bestimmten Zeitpunkt eine Logdatei erstellen//
+//at +3 Minutes //
+//++//
+//>logger -f /var/log/messages "Zeit für einen Kaffe"//
+//>^D//
+//++ //
+
+== Ausgabeformat atq ==
++++++++++++++++++++++++++++++++++++++++++++++++
+<Jobnummer> 	<Datum der Ausführung>	<Auftragsklasse>	<Nutzer>
++++++++++++++++++++++++++++++++++++++++++++++++
+<Auftragsklasse>
+= → wird gerade Augeführt
+a-z → Priorität, je höher desto höher der nice Wert
+			→ batch →  b
+			→ at → a
+
+**batch [<TIME>]**
+→ wird vom atd ausgefühhrt
+→ einen Prozess in Abhängigkeit zur durchschnittlichen Systemlast (Standard <0.8%) durchführen
+→ wird <TIME> mit angebenen wird der Befehl erst frühestens nach Ablauf der Zeit abgerufne
+→ kennt die gleiche Optionen wie **at**

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='../spool.html'>Prev</a> ]
+
+			[ <a href='../../../../index.html'>Index</a> ]
+
+	[ <a href='../../../Filterprogramme.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>crontab</h1>
+
+<p>
+Created Mittwoch 20 Juli 2011<br>
+</p>
+
+<p>
+++<br>
+#Dies ist ein Kommantar<br>
+#User an den eine Mail geschickt werden soll<br>
+#falls MAILTO="" wird keine Systemmail gesendet<br>
+MAILTO=&lt;User&gt;<br>
+#Shell die für die Ausführung von Jobs verwendet wird<br>
+SHELL=&lt;SHELL&gt;<br>
+</p>
+
+<p>
+<ul>
+<li>* * * * &lt;Befehlskette&gt; &lt;Zeilentrennzeichen oder %&gt;</li>
+</ul>
+#Minuten (0-59) <br>
+#Stunden (0-23) <br>
+#Tag des Monats(1-31)<br>
+#Monat des Jahres (1-12)<br>
+#Tag der Woche (0-7), 0=7=Sonntag<br>
+#!Wichtig!, falls mail verwendet wird, ist % als Zeilentrenner anzugeben  <br>
+++<br>
+</p>
+
+<h5>Angabe von Zeitintervallen</h5>
+<p>
+<strong>N </strong>→ wird dem Felde gemäß zum Zeitpunkt N ausgeführt<br>
+<em>Beispiel:</em><br>
+<em>fahre den Rechner jeden Freitag um 16 Uhr herunter</em><br>
+ 0 16 * * 5 shutdown -h now % <br>
+<strong>N-M </strong>→ Befehl im Zeitbereich N-M periodisch ausführen<br>
+<em>Beispiel:</em><br>
+<em>Um 1 Uhr nachts Monatg bis Freitag eine Mail schicken</em><br>
+<em>Mit % wird eine neue Zeile eingeleitet</em><br>
+<em>0 1 * * 1-5 mail -s "Ab ins Bett" $USER%$USER, %%user go to bed %  </em><br>
+<strong>N,M </strong>→ Angabe von Zeitgrenzbereichen, wobei N die untere und M die obere Schranke ist<br>
+<strong>N/M </strong>→ Angabe einer Schrittweite bei <strong>N </strong>beginnend der Schrittweite <strong>M</strong><br>
+<em>Beispiele:</em><br>
+<em>führt das Script chkscript alle Zwei Stunden zur vollen Stunde aus</em><br>
+<em>0 */2 * * * /bin/sh -x /root/chckscript %</em><br>
+<em>führt das Script chkscript alle zwei Stunden im Minutentackt aus</em><br>
+<em> * */2 * * * /bin/sh -x /root/chkscript %</em><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../spool.html'>Linux Wissen:FHS:var:spool</a></li>		<a href='../../../Zeitgesteuerte_Vorg%C3%A4nge/crontab.html'>Linux Wissen:Zeitgesteuerte Vorgänge:crontab</a></li>		<a href='../../../Zeitgesteuerte_Vorg%C3%A4nge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-20T21:21:34+02:00
+
+====== crontab ======
+Created Mittwoch 20 Juli 2011
+
+**crontab [-u <User>] [<Datei>]**
+→ anlegen, verwalten und auflisten von cronjobs für den Nutzer <User>
+→ wird **-u <User> **nicht mit angegeben, wird für der aktuelle Nutzer referenziert
+→ wird **<Datei> **mit angegeben, wird diese als crontab initialisiert, kann nicht mit **-e **verwendet werden
+**-e **→ die Crontab des aktuellen Benutzers editieren ( [[Linux Wissen:FHS:var:spool:crontab]])
+**-l **→ aktuelle Crontab des Nutzers nach StdOut schreiben
+**-r **→ aktuelle Crontab des Nutzers löschen

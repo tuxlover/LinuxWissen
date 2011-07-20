@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Web_Fetch_Tools/wget.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Zeitgesteuerte_Vorg%C3%A4nge/at.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Zeitgesteuerte Vorgänge</h1>
+
+<li>Jobs und Aufgaben zu einem bestimmten Zeitpunkt einmalig oder periodisch ausführen</li>
+
+<h3>at</h3>
+<li>einen bestimmten Jobs zu einem bestimmten Zeitpunkt ausfüren</li>
+<li>Unter $$SUSE$$ muss die Grupper <em>trusted </em>dem entsprechenden Nutzer der at ausführen will zugeordnet sein</li>
+<li>Der at Daemon (atd) muss laufen um <strong>at </strong>gesteuerte Jobs ausführen zu können</li>
+<li>Aufträge werden in<em> */var/spool/atjobs </em>abgelegt</li>
+<a href="./Zeitgesteuerte_Vorg%C3%A4nge/at.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:at">Linux Wissen:Zeitgesteuerte Vorgänge:at</a>
+<a href="./Zeitgesteuerte_Vorg%C3%A4nge/atd.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:atd">Linux Wissen:Zeitgesteuerte Vorgänge:atd</a>
+
+<h5>Rechte</h5>
+<li>falls eine Datei */etc/at.allow dürfen nur Nutzer die in dieser Datei aufgelistet sind den <strong>atd</strong> benutzen dürfen</li>
+<li>falls eine Datei */etc/at.allow nicht existiert, aber eine Datei */etc/at.deny dann dürfen die Nutzer die in */etc/at.deny stehen den <strong>atd </strong>nicht benutzen</li>
+<li>existieren beide Datein */etc/at.allow, */etc/at.deny wird nur die Datei */etc/at.allow ausgewertet</li>
+<a href="./FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a>
+
+<h3>cron</h3>
+<li>wiederholtes Ausführen von zeitgesteuerten Jobs</li>
+<li>Der cron-Daemon muss laufen </li>
+<li>falls vor dem Cronbefehl kein - steht, wird der ausgeführte Cronjob vom Syslogd <strong>(missing link syslogd)</strong> protokolliert</li>
+<li>cronjobs werden entweder für den einzelnen Nutzer mit dem Befehl <strong>crontab</strong> verwaltet oder bei den System Cron-Jobs unter */etc direkt editiert</li>
+<a href="./Zeitgesteuerte_Vorg%C3%A4nge/crontab.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:crontab">Linux Wissen:Zeitgesteuerte Vorgänge:crontab</a>
+
+<h4>!Achtung!</h4><br>
+Es gibt verschiedene cron-Implementierungen<br>
+zum Beispiel <strong>annacron</strong> oder <strong>cronie</strong>
+
+<em>*/var/spool/cron/tabs $$SUSE$$</em>
+<em>*/var/spool/cron $$Fedora$$</em>
+<em>*/var/spool/cronatbs $$Debian$$ $$Ubuntu$$</em><br>
+→ Crontabs der Nutzer<br>
+<br>
+<br>
+*/etc/cron.d|cron.daily|cron.weekly|cron.hourly|cron.monthly<br>
+→ Shellscripte die vom System ausgeführt werden<br>
+<a href="./FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
+<br>
+Syntax einer Crontab:<br>
+<a href="./FHS/var/spool/crontab.html" title="Linux Wissen:FHS:var:spool:crontab">Linux Wissen:FHS:var:spool:crontab</a>
+
+<h5>Rechte</h5>
+<li>falls eine Datei */etc/cron.allow dürfen nur Nutzer die in dieser Datei aufgelistet sind den <strong>crond</strong> benutzen dürfen</li>
+<li>falls eine Datei */etc/cron.allow nicht existiert, aber eine Datei */etc/cron.deny dann dürfen die Nutzer die in */etc/cron.deny stehen den <strong>crond </strong>nicht benutzen</li>
+<li>existieren beide Datein */etc/cron.allow, */etc/cron.deny wird nur die Datei */etc/cron.allow ausgewertet</li>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='./FHS/etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='./FHS/var/spool.html'>Linux Wissen:FHS:var:spool</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>
