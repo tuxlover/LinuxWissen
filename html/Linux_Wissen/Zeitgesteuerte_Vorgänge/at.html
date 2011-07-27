@@ -41,6 +41,11 @@
 
 <h1>at</h1>
 
+<p>
+Created Mittwoch 20 Juli 2011<br>
+</p>
+
+<p>
 <strong>at &lt;HH:MM&gt; &lt;ZEITPUNKT&gt;</strong><br>
 → einen Job für den angegebenen Zeitpunkt anlegen<br>
 → startet die at-Shell <br>
@@ -48,20 +53,24 @@
 → sendet eine E-Mail falls bei der Ausführung des Jobs Fehler auftreten<br>
 → Ausgabemail erfolgt an den Besitzer der Elternshell<br>
 → at wird in der Umgebung ausgefühhrt von der es ausgeführt wird (bash → bash-Umgebung, ksh → ksh-Umgebung)<br>
-<br>
+</p>
+
+<p>
 <strong>-f &lt;Datei&gt; </strong><br>
 → lese den at-Job aus der entsprechenden Datei<br>
 → dabei enthält <strong>at</strong> einen oder mehrere Shellbefehl(e)<br>
-<strong>-l </strong>→ ein Alias auf <strong>atq</strong>
+<strong>-l </strong>→ ein Alias auf <strong>atq</strong><br>
 <strong>-d|-r N </strong><br>
 → verweist auf <strong>atrm </strong>und löscht die entsprechenden Einträge <br>
 <strong>-m </strong><br>
 → veranlasse das Schicken einer System E-Mail an den Nutzer auch wenn der Job erfolgreich war<br>
 <strong>-c N </strong>→ ruft <strong>cat </strong>für den entsprechenden Job N auf (<a href="../Filterprogramme/cat.html" title="Linux Wissen:Filterprogramme:cat">Linux Wissen:Filterprogramme:cat</a>)<br>
-<br>
+</p>
+
 <h5>&lt;Time&gt;</h5>
+<p>
 <strong>HH:MM tt.mm.jj|| HH:MM mm/tt/jj </strong><br>
-→ exakte absolute Zeitangabe in <em>Stunde:Minute Tage.monate.jahre</em>
+→ exakte absolute Zeitangabe in <em>Stunde:Minute Tage.monate.jahre</em><br>
 <strong>now </strong><br>
 → jetzt<br>
 <strong>midnight </strong><br>
@@ -72,29 +81,41 @@
 → 16 Uhr<br>
 <strong>now + N minutes|hours|days</strong><br>
 → von jetzt an in N Minuten<br>
-<br>
+</p>
+
+<p>
 */usr/share/doc/packages/at/timespec → weitere Zeitformatierungen<br>
-<br>
+</p>
+
+<p>
 <strong>atrm N  </strong><br>
 → löschen des Jobs mit der Jobnummer N<br>
-→ wie <strong>at -d|-r N</strong>
+→ wie <strong>at -d|-r N</strong><br>
+</p>
 
+<p>
 <strong>atq </strong><br>
 → auflisten der ausstehenden Jobs <br>
-→ wie <strong>at -l</strong>
+→ wie <strong>at -l</strong><br>
+</p>
 
-<em>Beispiele:</em>
-<em>Einen einfachen at-Jobs erstellen</em>
-<em>echo "/usr/local/bin/script.sh"|at 22:00 </em>
+<p>
+<em>Beispiele:</em><br>
+<em>Einen einfachen at-Jobs erstellen</em><br>
+<em>echo "/usr/local/bin/script.sh"|at 22:00 </em><br>
+</p>
 
-<em>Mit </em><strong>logger</strong> <em>zu einem bestimmten Zeitpunkt eine Logdatei erstellen</em>
-<em>at +3 Minutes </em>
-<em>++</em>
-<em>&gt;logger -f /var/log/messages "Zeit für einen Kaffe"</em>
-<em>&gt;^D</em>
-<em>++ </em>
+<p>
+<em>Mit </em><strong>logger</strong> <em>zu einem bestimmten Zeitpunkt eine Logdatei erstellen</em><br>
+<em>at +3 Minutes </em><br>
+<em>++</em><br>
+<em>&gt;logger -f /var/log/messages "Zeit für einen Kaffe"</em><br>
+<em>&gt;^D</em><br>
+<em>++ </em><br>
+</p>
 
-<h5>Ausgabeformat atq</h5><br>
+<h5>Ausgabeformat atq</h5>
+<p>
 +++++++++++++++++++++++++++++++++++++++++++++++<br>
 &lt;Jobnummer&gt; 	&lt;Datum der Ausführung&gt;	&lt;Auftragsklasse&gt;	&lt;Nutzer&gt;<br>
 +++++++++++++++++++++++++++++++++++++++++++++++<br>
@@ -105,12 +126,15 @@ a-z → Priorität, je höher desto höher der nice Wert<br>
 → batch →  b<br>
 → at → a<br>
 </div>
+</p>
 
+<p>
 <strong>batch [&lt;TIME&gt;]</strong><br>
 → wird vom atd ausgefühhrt<br>
 → einen Prozess in Abhängigkeit zur durchschnittlichen Systemlast (Standard &lt;0.8%) durchführen<br>
 → wird &lt;TIME&gt; mit angebenen wird der Befehl erst frühestens nach Ablauf der Zeit abgerufne<br>
-→ kennt die gleiche Optionen wie <strong>at</strong>
+→ kennt die gleiche Optionen wie <strong>at</strong><br>
+</p>
 
 
 <!-- End wiki content -->

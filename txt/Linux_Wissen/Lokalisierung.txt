@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-07-21T02:03:20+02:00
+
+====== Lokalisierung ======
+Created Donnerstag 21 Juli 2011
+
+* Anpassung eines internationalisierten Systems an einen Kulturkreis
+* Anpassung des Tastaturlayouts
+* Anpassung der verfügbaren Sprachen
+* Anpassung der Zeitzone
+
+==== ISO-IEC-8859 ====
+→ verfügbarer Zeichensatz
+→ länderspezifische Sonderzeichen
+[[Linux Wissen:Lokalisierung:ISO-IEC-8859]]
