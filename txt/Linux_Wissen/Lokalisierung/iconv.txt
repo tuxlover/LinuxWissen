@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-08-19T21:55:04+02:00
+
+====== iconv ======
+Created Freitag 19 August 2011
+
+* Programm um zwichen den verschiedenen Zeichenkodierungen zu konvertieren
+
+**iconv <Datei> **→ konvertiert zwischen verschiedenen Codesets in <Datei>
+				→ liest von <Datei> und schreibt nach StdOut
+
+**-c **→ überspringe  Zeichen, die in der Ausgabe ungültig sind und zeige sie nicht an
+**-f <Inputkodierung> **→ Identifiziere den Codeset der Eingabedatei
+**-t <Ausgabekodierung> **→ Die Ausgabekodierung festlegen
+**-o <Ausgabedatei> **→ festlegen der Ausgabedatei
+**-l **→ Ausgabe aller von iconv unterstützer Codesets
+
+**iconv -f <Inputcodierung> <Input> > <Output> **
+→ konvertiert die Datei <Input> unter der Annahme das <Inputcodierung> genutzt wurde in die aktuell gültige
+
+**iconv -f <Inputcodierung> -t <Zielcodierung> <Input> > <Output> **
+→ konvertiert die Datei <Input> unter der >Annahme das <Inputcodierung> genutzt wurde in die <Zielcodierung> um, und schreibt nach <Output>
+
+
+

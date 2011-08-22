@@ -4,3 +4,27 @@ Creation-Date: 2011-07-21T02:06:34+02:00
 
 ====== ISO-IEC-8859 ======
 Created Donnerstag 21 Juli 2011
+
+* Zeichensatz für die Darstellung von Buchstaben der einzelnen Sprachen
+* Zeichensatz wird in hexadzimalen, oktalen und dezimalen  Bits kodiert
+
+**man 7 latin1**
+
+ISO-8859-1	LATIN-1	vorwiegend Westeuropa (Dänisch, Deustch, Englisch, Niederländisch, Norwegisch, Portugiesisch, Spanisch, Schwedisch, Afrikaans, Swahillli Gälisch)
+ISO-8859-2	LATIN-2 	vorwiegend Mitteleuropa (Mitteleuropa, Bosnisch, Kroatisch, Polnisch, Tchechisch, Slowenisch)
+ISO-8859-3	LATIN-3	vorwiegend Südeuropa (Maltisch, Türckisch, Esperanto)
+ISO-8859-4 	LATIN-4	vorwiegend Nordeuropa (Estnisch, Lettich, Grönländisch, Sami)
+ISO-8859-5	LATIN/Cyrillic	vorwiegend slawisch
+ISO-8859-6	LATIN/Arabic	vorwiegend arabische Zeichen
+ISO-8859-7	LATIN/Greek	modernes Grichich
+ISO-8859-8	LATIN/Hebrew	modernes Hebräisch
+ISO-8859-9	LATIN-5		Türkisch
+ISO-8859-10	LATIN-6		Eine andere anordnung der Tastatur von LATIN-4
+ISO-8859-11	LATIN/Thai	Thai
+ISO-8859-12	LATIN/Devanagari	bisher nicht fertiggestellt
+ISO-8859-13	LATIN-7	erweiterung für LATIN-6 und LATIN-4
+ISO-8859-14	LATIN-8	keltisch
+ISO-8859-15	LATIN-9	erweitertes LATIN-1 um € und den französich gebräuchlichen Akzents
+ISO-8859-16	LATIN-10	(Albanisch, Italienisch, Polnisch, Kroatisch, Rumänisch, Slowenisch)
+
+ 			

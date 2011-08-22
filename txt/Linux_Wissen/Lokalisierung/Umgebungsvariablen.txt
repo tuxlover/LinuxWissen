@@ -1,0 +1,64 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-08-19T22:12:55+02:00
+
+====== Umgebungsvariablen ======
+Created Freitag 19 August 2011
+
+LANG
+→ betsteht aus einem Sprachencode (ISO 639) und den dazugehörigen Ländercode (ISO 3166)
+//Bsp: de_DE,de_AT,en_US,en_GB//
+→ wird nur von Programmen verwendet, die GNU-gettext verwenden
+→ zum überwiegenden Teil Shell und Shelltools
+→ erlaubt es mehrere Sprachen durch : getrennt anzugeben, um eine Preferenzliste anzugeben
+→ die erste Sprache, die von dem Programm mitgebracht wird, ist dann die gewählte
+
+LC_ALL
+→ überschreibt alle LC_* Variablen wie LC_MESSAGES, LC_CTYPE, LC_COLLATE, LC_MONETARRY, LC_NUMERIC, LC_TIME
+→ falls diese Variable gesetzt ist, werden alle anderen Werte ignoriert
+
+LC_ADRESS
+→ Formatierung von Adressen und Ortsangaben
+
+LC_COLLATE
+→ Zeichensortierung (**grep sort **) (Character Collation)
+→ kommt ä nach a oder nach z
+
+LC_CTYPE
+→ Zeichenklassifizierng und Groß und Kleinschreibung
+→ legt die Interpretation von Sequenzen von Bytes als Character fest
+→ **tolower() toupper() isalpah()**
+
+LC_MONETARRY
+→ Formatierung von Geldbeträgen 
+
+LC_MEASUREMENT
+→ Formatierung von Maßeinheiten
+
+LC_MESSAGES
+→ Nachrichten und Meldungen die ein Programm ausgibt inklusive kulturellen Konventionen
+
+LC_NAME
+→ Formatierung von Eigennamen
+
+LC_NUMERIC
+→ Formatierung von Zahlen Beispiel (0.1 oder 0,1)
+
+LC_PAPER
+→ Papierformat (US-Letter, A4)
+
+LC_TELEPHONE
+→ Formatierung von Telefonnummer (03077777, 030/7777, 030.7777 )
+
+LC_TIME
+→ Formatierung von Datums und Zeitangaben entsprechend der kulturellen Konventionen
+
+== Reihenfolge ==
+**LANG **→ (falls, LANG nicht gesetzt, aber eine der LC_* Variablen ) → **LC_* **→ (falls, LC_* nicht gestetzt) → **LC_ALL **→ (falls nicht gesetzt ) gilt der vom Programm vorgegeben Standardwert
+
+
+
+  
+
+
+   

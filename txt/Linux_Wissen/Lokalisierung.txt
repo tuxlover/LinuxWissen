@@ -10,7 +10,30 @@ Created Donnerstag 21 Juli 2011
 * Anpassung der verfügbaren Sprachen
 * Anpassung der Zeitzone
 
-==== ISO-IEC-8859 ====
+
+==== Zeichensatz ====
+
+=== ISO-IEC-8859 ===
+→ 8-Bit Länge
 → verfügbarer Zeichensatz
 → länderspezifische Sonderzeichen
 [[Linux Wissen:Lokalisierung:ISO-IEC-8859]]
+
+=== ISO 10646 ===
+chinesiche, japanische, mathematisch Formelzeichen
+→ Jedes Zeichen wird ein eindeutig durch die Relation Name ~ Codepunkt (U+xxxx) identifiziert, wobei jedes x eine Hexadezimale Zahl dargestellt
+
+=== UCS-2  ===
+→ implimenziert den doppelten Speicherpaltz
+
+=== UTF-8 ===
+→ rückwärtskompatibel mit ASCII und ISO-8859-1 
+
+=== konvertieren zwischen Zeichenkodierungen ===
+* Das Programm **iconv **kann verwendet werden um zwischen den verschiedenen Zeichenkodierungen zu kodieren
+[[Linux Wissen:Lokalisierung:iconv]]
+
+==== Lokalisierung ====
+* kann in der Shellumegbung festgelegt werden:  *~/.profile */etc/profile
+[[Linux Wissen:Lokalisierung:Umgebungsvariablen]]
+

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./ISO-IEC-8859.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='../Netzwerke.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Umgebungsvariablen</h1>
+
+<p>
+Created Freitag 19 August 2011<br>
+</p>
+
+<p>
+LANG<br>
+→ betsteht aus einem Sprachencode (ISO 639) und den dazugehörigen Ländercode (ISO 3166)<br>
+<em>Bsp: de_DE,de_AT,en_US,en_GB</em><br>
+→ wird nur von Programmen verwendet, die GNU-gettext verwenden<br>
+→ zum überwiegenden Teil Shell und Shelltools<br>
+→ erlaubt es mehrere Sprachen durch : getrennt anzugeben, um eine Preferenzliste anzugeben<br>
+→ die erste Sprache, die von dem Programm mitgebracht wird, ist dann die gewählte<br>
+</p>
+
+<p>
+LC_ALL<br>
+→ überschreibt alle LC_* Variablen wie LC_MESSAGES, LC_CTYPE, LC_COLLATE, LC_MONETARRY, LC_NUMERIC, LC_TIME<br>
+→ falls diese Variable gesetzt ist, werden alle anderen Werte ignoriert<br>
+</p>
+
+<p>
+LC_ADRESS<br>
+→ Formatierung von Adressen und Ortsangaben<br>
+</p>
+
+<p>
+LC_COLLATE<br>
+→ Zeichensortierung (<strong>grep sort </strong>) (Character Collation)<br>
+→ kommt ä nach a oder nach z<br>
+</p>
+
+<p>
+LC_CTYPE<br>
+→ Zeichenklassifizierng und Groß und Kleinschreibung<br>
+→ legt die Interpretation von Sequenzen von Bytes als Character fest<br>
+→ <strong>tolower() toupper() isalpah()</strong><br>
+</p>
+
+<p>
+LC_MONETARRY<br>
+→ Formatierung von Geldbeträgen <br>
+</p>
+
+<p>
+LC_MEASUREMENT<br>
+→ Formatierung von Maßeinheiten<br>
+</p>
+
+<p>
+LC_MESSAGES<br>
+→ Nachrichten und Meldungen die ein Programm ausgibt inklusive kulturellen Konventionen<br>
+</p>
+
+<p>
+LC_NAME<br>
+→ Formatierung von Eigennamen<br>
+</p>
+
+<p>
+LC_NUMERIC<br>
+→ Formatierung von Zahlen Beispiel (0.1 oder 0,1)<br>
+</p>
+
+<p>
+LC_PAPER<br>
+→ Papierformat (US-Letter, A4)<br>
+</p>
+
+<p>
+LC_TELEPHONE<br>
+→ Formatierung von Telefonnummer (03077777, 030/7777, 030.7777 )<br>
+</p>
+
+<p>
+LC_TIME<br>
+→ Formatierung von Datums und Zeitangaben entsprechend der kulturellen Konventionen<br>
+</p>
+
+<h5>Reihenfolge</h5>
+<p>
+<strong>LANG </strong>→ (falls, LANG nicht gesetzt, aber eine der LC_* Variablen ) → <strong>LC_* </strong>→ (falls, LC_* nicht gestetzt) → <strong>LC_ALL </strong>→ (falls nicht gesetzt ) gilt der vom Programm vorgegeben Standardwert<br>
+</p>
+
+
+
+  
+
+
+   
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Lokalisierung.html'>Linux Wissen:Lokalisierung</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>
