@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-14T19:48:41+02:00
+
+====== loadkeys ======
+Created Mittwoch 14 September 2011
+
+* zum laden einer Tastaturbelegung in den Kernel
+* kann nur von** root **ausgeführt werden
+* */usr/share/kbd/keymaps
+[[Linux Wissen:FHS:usr]]
+
+**loadkeys <Map>.gz **→ laden der Tastaturbelegung aus der Map.gz Datei
+**-d **→ laden der Standardtastaurbelegung
+**-m **→ Ausgeben der aktuellen Map Tabelle
+**-b **→ wie **-m **in maschinenlesbarer Form (kann in Shellscripten verwendet werden)

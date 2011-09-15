@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-10T12:49:09+02:00
+
+====== getopts ======
+Created Samstag 10 September 2011
+
+do_ssomething()
+{
+<FUNCTION>
+}
+
+//while getopts "abcd:e:" opt//
+//	do//
+//		case $opt in //
+//			a) 	do_something//
+			//;;//
+		//b) do_something mit option b//
+			//;;//
+		//...//
+		//d) do something mit option d//
+			//#option d benötigt ein Atrgument//
+			//#optionen die im getopts kopf einen : folgen benötigen ein Argument//
+			//#die Variable OPTARG enthält als Wert das letzte Argument, das von getopts geparsed wurde//
+			//#die Variable OPTIND ist der Index des nächsten ARGUMENTS der von optind geparsed wird//
+//		esac//
+//	done//
+//shift $(($OPTIND - 1))	//
+

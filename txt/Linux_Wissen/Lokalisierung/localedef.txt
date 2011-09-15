@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-14T18:44:29+02:00
+
+====== localedef ======
+Created Mittwoch 14 September 2011
+
+* das Programm **localedef **liest eine Zeichensatz und eine Eingabedatei, welche dann in eine von der// locale() //C-Funktion brauchbaren Format übersetzt.
+
+**localedef <Ausgabepfad> **→ kompillieren der von Definitionsdateien
+**-f <Charmap> **→ spezifizieren einer Charmapdatei für die Zeichensatzgebungfalls diese nicht unter dem Standardpfad zu finden ist 
+			→ bei $$SUSE$$ unter */usr/share/locale
+				[[Linux Wissen:FHS:usr]]
+**-i <Inputfile> **→ spezifizieren einer Eingabedatei die kompiliert werden soll
+
+
+//Beispiele://
+//localedef -f UTF-8 -i fi_FI .///
+//localedef -f UTF-8 -i fi_FI fi_FI.UTF-8 //
+
+__Hinweis: Welche Verzeichnisse von Localedef Standardmäßig verwendet werden kann mit __**localedef --help** __erfragt werden.__[[Linux Wissen:FHS:usr]]

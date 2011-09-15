@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Systemprogrammierung/Shellscripting/Variablen_zuweisen.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Systemzeit/date.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Systemzeit</h1>
+
+<p>
+Created Mittwoch 14 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>benötigt von Programmen für die Jobkontrolle</li>
+<li>Dateisystem erstellt Stamps für jede einzelne Datei (Accesstime, Changetime and Createtime)</li>
+<li>wichtig für die Auswertung von Logdateien</li>
+</ul>
+</p>
+
+<h5>Hardware Uhr</h5>
+<p>
+<ul>
+<li>verwaltet die Zeit während das System abgeschaltet ist bis zum Initialisieren der <em>Software Uhr </em> während des Bootvorganges</li>
+</ul>
+</p>
+
+<h5>Software Uhr</h5>
+<p>
+<ul>
+<li>wird während des Bootvorganges gesetzt </li>
+<li>der Wert für die Software Seitige Uhr ergibt sich aus den UTC (GMT) und der konfigurierten Zeitzone des Systems</li>
+</ul>
+</p>
+
+<h5>Zeitzone konfigurieren</h5>
+
+
+<h5>die Variable TZ</h5>
+<p>
+<ul>
+<li>kann gesetzt werden, um die Zeitzone kurzfristig zu ändern</li>
+<li>es benutzt dabei die mit <strong>tzselect </strong>definierbaren </li>
+</ul>
+<a href="./Systemzeit/tzselect.html" title="Linux Wissen:Systemzeit:tzselect">Linux Wissen:Systemzeit:tzselect</a><br>
+<ul>
+<li>hat auswirkungen auf den <strong>date </strong>Befehl</li>
+</ul>
+<a href="./Systemzeit/date.html" title="Linux Wissen:Systemzeit:date">Linux Wissen:Systemzeit:date</a><br>
+</p>
+
+<p>
+<em>Beispiel: </em><br>
+<em>export TZ=MEZ-1  → </em>Mitteleuropäische Zeit -1<br>
+<em>export TZ=ZULU+7 → </em>Zuluzeit +7 <br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

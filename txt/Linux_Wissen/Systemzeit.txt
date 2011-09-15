@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-14T20:06:55+02:00
+
+====== Systemzeit ======
+Created Mittwoch 14 September 2011
+
+* benötigt von Programmen für die Jobkontrolle
+* Dateisystem erstellt Stamps für jede einzelne Datei (Accesstime, Changetime and Createtime)
+* wichtig für die Auswertung von Logdateien
+
+== Hardware Uhr ==
+* verwaltet die Zeit während das System abgeschaltet ist bis zum Initialisieren der //Software Uhr // während des Bootvorganges
+
+== Software Uhr ==
+* wird während des Bootvorganges gesetzt 
+* der Wert für die Software Seitige Uhr ergibt sich aus den UTC (GMT) und der konfigurierten Zeitzone des Systems
+
+== Zeitzone konfigurieren ==
+
+
+== die Variable TZ ==
+* kann gesetzt werden, um die Zeitzone kurzfristig zu ändern
+* es benutzt dabei die mit **tzselect **definierbaren 
+[[Linux Wissen:Systemzeit:tzselect]]
+* hat auswirkungen auf den **date **Befehl
+[[Linux Wissen:Systemzeit:date]]
+
+//Beispiel: //
+//export TZ=MEZ-1  → //Mitteleuropäische Zeit -1
+//export TZ=ZULU+7 → //Zuluzeit +7 

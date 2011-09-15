@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-14T18:28:46+02:00
+
+====== locale ======
+Created Mittwoch 14 September 2011
+
+* mit dem Befehl **locale **lassen sich Lokalisierungsspezifische Informationen verwalten
+
+**locale [<LC_VAR>] **→ verwalten von Lokalisierungsspezifischen Informationen
+				→ wird eine spezille LC-Variable als Parameter übergen, so werden Informationen über diese LC_Variablen ausgegeben
+				→ wird __keine __spezielle LC_Variable als Parameter übergeben, so werden Informationen über alle derzeit gesetzten LC-Variablen ausgegeben
+
+**-a → **alle Verfügbaren Werte für die Lokalisierungsvariablen ausgeben
+**-k <LC_VAR> **→ zeigt die tatsächlichen Einstellungen für < LC_VAR> an
+
+__Hinweis: Beim Anmelden eines neuen Nutzers muss stets die Umgebung des Nutzers geladen sein. __
+[[Linux Wissen:root]]
+[[Linux Wissen:Sicherheit:sudo]]

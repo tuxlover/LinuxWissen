@@ -54,7 +54,14 @@ Created Montag 18 April 2011<br>
 </p>
 
 <p>
-<strong>find &lt;PFAD&gt; &lt;Optionen&gt; </strong>→ sucht im Pfad nach Dateien mit den durch Optionen festgelegten Eigenschaften<br>
+<strong>find &lt;PfadOptionen&gt; &lt;PFAD&gt; &lt;Optionen&gt; </strong>→ sucht im Pfad nach Dateien mit den durch Optionen festgelegten Eigenschaften<br>
+<strong>&lt;PfadOptionen&gt;:</strong><br>
+<strong>-L </strong>→ symbolischen Links folgen<br>
+<strong>-P </strong>→ symbolischen Links niemals folgen<br>
+</p>
+
+<p>
+<strong>&lt;Optionen&gt;:</strong><br>
 <strong>-name '&lt;Muster&gt;'</strong>→  sucht nach Dateinamen auf die &lt;Muster&gt; passt, <br>
 <a href="../../Shell/Wildcards.html" title="Linux Wissen:Shell:Wildcards">Linux Wissen:Shell:Wildcards</a> <br>
 <a href="./grep/Regul%C3%A4re_Ausdr%C3%BCcke.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke</a><br>
@@ -160,8 +167,8 @@ find . -type d |xargs du -ms |sort -g<br>
 <em>for f in $(find / -type l -printf "%p \n"); do test -h "$f" &amp;&amp; test -e "$f" || echo ""$f" broken";done</em><br>
 <em>find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"</em><br>
 <em>find / -type l -exec ls -L {} \;|grep "nicht möglich"</em><br>
+<em>find  -L / -xtype l -ls  | awk 'NF &gt; 12 {print $11}' | sort -u</em><br>
 </p>
-
 
 
 <!-- End wiki content -->

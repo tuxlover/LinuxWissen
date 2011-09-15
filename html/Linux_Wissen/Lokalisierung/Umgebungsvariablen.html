@@ -27,7 +27,7 @@
 
 <!-- Header -->
 
-	[ <a href='./ISO-IEC-8859.html'>Prev</a> ]
+	[ <a href='./localedef.html'>Prev</a> ]
 
 			[ <a href='../../index.html'>Index</a> ]
 
@@ -43,6 +43,10 @@
 
 <p>
 Created Freitag 19 August 2011<br>
+</p>
+
+<p>
+<strong>&lt;VAR&gt;= [language[_territory][.codeset][@modifier]]</strong><br>
 </p>
 
 <p>
@@ -124,12 +128,18 @@ LC_TIME<br>
 <strong>LANG </strong>→ (falls, LANG nicht gesetzt, aber eine der LC_* Variablen ) → <strong>LC_* </strong>→ (falls, LC_* nicht gestetzt) → <strong>LC_ALL </strong>→ (falls nicht gesetzt ) gilt der vom Programm vorgegeben Standardwert<br>
 </p>
 
+<h5>Der Wer C</h5>
+<p>
+<ul>
+<li>kann einer LC- oder LANG- Variablen immer vor dem Aufruf eines Programmes übergeben werden</li>
+<li>beschreibt den gültigen Standard den Programme verwenden, wenn sie keinerlei andere durch Variblen gesetzte Einstellungen finden oder keinerlei Voreinstellungen definiert sind</li>
+</ul>
+</p>
 
-
-  
-
-
-   
+<p>
+<u>Tipp:</u><br>
+<u>Für Scripte empfiehlt sich die Verwendung von </u><strong>LANG=C</strong> <u>um die Ausgabe zu vereinheitlichen.</u><br>
+</p>
 
 
 <!-- End wiki content -->

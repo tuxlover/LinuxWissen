@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./locale.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./Umgebungsvariablen.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>localedef</h1>
+
+<p>
+Created Mittwoch 14 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>das Programm <strong>localedef </strong>liest eine Zeichensatz und eine Eingabedatei, welche dann in eine von der<em> locale() </em>C-Funktion brauchbaren Format übersetzt.</li>
+</ul>
+</p>
+
+<p>
+<strong>localedef &lt;Ausgabepfad&gt; </strong>→ kompillieren der von Definitionsdateien<br>
+<strong>-f &lt;Charmap&gt; </strong>→ spezifizieren einer Charmapdatei für die Zeichensatzgebungfalls diese nicht unter dem Standardpfad zu finden ist <br>
+<div style='padding-left: 90pt'>
+→ bei $$SUSE$$ unter */usr/share/locale<br>
+</div>
+<div style='padding-left: 120pt'>
+<a href="../FHS/usr.html" title="Linux Wissen:FHS:usr">Linux Wissen:FHS:usr</a><br>
+</div>
+<strong>-i &lt;Inputfile&gt; </strong>→ spezifizieren einer Eingabedatei die kompiliert werden soll<br>
+</p>
+
+
+<p>
+<em>Beispiele:</em><br>
+<em>localedef -f UTF-8 -i fi_FI .</em>/<br>
+<em>localedef -f UTF-8 -i fi_FI fi_FI.UTF-8 </em><br>
+</p>
+
+<p>
+<u>Hinweis: Welche Verzeichnisse von Localedef Standardmäßig verwendet werden kann mit </u><strong>localedef --help</strong> <u>erfragt werden.</u><a href="../FHS/usr.html" title="Linux Wissen:FHS:usr">Linux Wissen:FHS:usr</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Lokalisierung.html'>Linux Wissen:Lokalisierung</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

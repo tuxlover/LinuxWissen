@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./getopts.html'>Prev</a> ]
+	[ <a href='./Funktion.html'>Prev</a> ]
 
 			[ <a href='../../../index.html'>Index</a> ]
 
-	[ <a href='./read.html'>Next</a> ]
+	[ <a href='./Here-Dokumente.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,25 +39,48 @@
 
 <!-- Wiki content -->
 
-<h1>Here-Dokumente</h1>
+<h1>getopts</h1>
 
 <p>
-Created Mittwoch 27 April 2011<br>
+Created Samstag 10 September 2011<br>
 </p>
 
 <p>
-<em>Beispiel:</em><br>
-++<br>
-<em>grep &lt;&lt; EOF --line-buffered -f - $fifo | while read LINE</em><br>
-<em>ALARM</em><br>
-<em>WARNING</em><br>
-<em>FAIL</em><br>
-<em>EOF</em><br>
-<em>        do</em><br>
-<em>                AKTION</em><br>
-<em>        done</em><br>
-++<br>
+do_ssomething()<br>
+{<br>
+&lt;FUNCTION&gt;<br>
+}<br>
 </p>
+
+<p>
+<em>while getopts "abcd:e:" opt</em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;do</em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case $opt in </em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a) 	do_something</em><br>
+<div style='padding-left: 90pt'>
+<em>;;</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<em>b) do_something mit option b</em><br>
+</div>
+<div style='padding-left: 90pt'>
+<em>;;</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<em>...</em><br>
+<em>d) do something mit option d</em><br>
+</div>
+<div style='padding-left: 90pt'>
+<em>#option d benötigt ein Atrgument</em><br>
+<em>#optionen die im getopts kopf einen : folgen benötigen ein Argument</em><br>
+<em>#die Variable OPTARG enthält als Wert das letzte Argument, das von getopts geparsed wurde</em><br>
+<em>#die Variable OPTIND ist der Index des nächsten ARGUMENTS der von optind geparsed wird</em><br>
+</div>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;esac</em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;done</em><br>
+<em>shift $(($OPTIND - 1))	</em><br>
+</p>
+
 
 
 <!-- End wiki content -->
