@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-17T00:14:28+02:00
+
+====== hwclock ======
+Created Samstag 17 September 2011
+
+**hwclock → ** Anzeigen und manipulieren der Hardware Uhr
+               → kann nur von root verwendet werden ([[Linux Wissen:root]])
+**-r |--show **→ anzeigen der aktuellen Zeit auf der Hardwareuhr
+**-s|--hctosys **→ abgleichen der Systemzeit mit der Hardwareuhr (**hctosys**)
+**--systohc **→ abgleichen der Hardwareuhr mit der aktuellen Systemzeit (**systohc**)
+**-c **→ Ausgeben der Uhrzeit auf der CMOS Uhr in UTC
+**--set --date="<DatumString>" **→ setzen der Hardwareuhr mittels Datumsstring
+				               → der Datumstring ist ein String der von **date **verstanden wird ( [[Linux Wissen:Systemzeit:date]] )
+				
+ 
+
+

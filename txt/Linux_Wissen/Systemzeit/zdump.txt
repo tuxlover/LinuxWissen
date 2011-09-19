@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-19T20:00:06+02:00
+
+====== zdump ======
+Created Montag 19 September 2011
+
+**zdump  <Zoneenname>... **→ die Zeitzonendateien in */usr/share/zoneinfo lesenq
+**-c → **die Ausgabe für diese  nach StdtOut unterdrücken
+
+
+== Trick: ==
+//Alle möglichen Uhrzeiten anzeigen//
+**find /usr/share/zoneinfo/ -type f -exec zdump {} \;**

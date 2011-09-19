@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-19T22:53:41+02:00
+
+====== ntp ======
+Created Montag 19 September 2011
+
+**ntpdate <Zeitserver> **→ einen einmaligen harten Zeitabgleich mit dem angegbenen Zeitserver durchführen
+				     → veraltet
+
+**ntptrace <Zeitserver> **→ Nachvolziehen der Zeitsynchronisation vom Server zum Client
+
+**ntpq → **Programm zum Abfragen und Synchronisieren eines Zeitservers
+**-p[n] **→ liste  von Peers abfragen 
+	 → falls **-n **verwendet wird, wird anstelle des Namens die IP-Adresse ausgeben
+**-i **→ lesen der Befehle //interaktiv// vom StdtIn
+
+__Interaktive Befehle:__
+**help|? [<Befehl>] → **Hilfe für den Interaktiven Modus
+                                  → falls <Befehl> angegeben wird und dieser existier, wird eine kurze Hilfe zum Befehl angeboten
+
+**delay N **→ einen Wert **N** in Millisekunden festlegen**, **der zu Zeitstempeln hinzugefügt wird.
+                 → falls **N **nicht angegeben wird, wird der aktuelle delay Wert ausgegeben 
+
+**host <Hostname> **→ festlegen eines Hostes, zu dem zukünfitge Anfragen geschickt werden
+
+**peers **→ wie **-p **im Nichtinteraktiven Modus
+
+**quit **→ beenden des Interaktiven Modus und rückkehr zur Elternshell
+
+
+**ntpd → **Steuerung des NTP Servers
+**-q **→ wie **ntpdate**, harter Zeitabgleich des System mit dem Server
+**-x **→ verlangt **-q, **den Zeitabgleich auch durchführen, falls die Zeit weniger als 128 Millisekunden abweicht
+**-c <Datei> **→ angeben einer alternativen Konfigurationsdatei
+**-f <Datei> **→ angeben einer alternativen Driftfile Datei, normalerweise ///var/lib/ntp/drift/ntp.drift//
+**-t <Key> **→ den Schlüssel zu den vertrauenswürdigen Schlüsseln in //*/etc/ntp.keys //hinzufügen

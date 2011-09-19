@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./security%2B%2Blimits.conf.html'>Prev</a> ]
+	[ <a href='./my.cnf.html'>Prev</a> ]
 
 			[ <a href='../../../index.html'>Index</a> ]
 
-	[ <a href='./sysconfig%2B%2Bclock.html'>Next</a> ]
+	[ <a href='./passwd.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,16 +39,29 @@
 
 <!-- Wiki content -->
 
-<h1>shadow</h1>
+<h1>ntp.conf</h1>
 
-<p>
-Created Samstag 23 April 2011<br>
-</p>
+<em>+++</em>
+<em># Abweichungen zur CMOS Zeit</em>
+<em>driftfile /var/lib/ntp/ntp.drift</em>
 
-<p>
-<em>&lt;Benutzername&gt;:&lt;Kennwort verschlüsselt&gt;:  ~&gt;</em><br>
-<em>&lt;Datum der letzten Änderung des Kennworts&gt;:&lt;Min&gt;:&lt;Max&gt;:&lt;Warnung&gt;:&lt;Frist&gt;:&lt;Sperre&gt;</em> <br>
-</p>
+<em># NTP-Server</em>
+<em>server ptbtime1.ptb.de</em>
+<em>server ptbtime2.ptb.de</em>
+
+<em># Zugriff durch NTP-Server gestatten</em>
+<em>restrict ptbtime1.ptb.de</em>
+<em>restrict ptbtime2.ptb.de</em>
+
+<em># Zugriff vom localhost gestatten (ntpq -p)</em>
+<em>restrict 127.0.0.1</em>
+
+<em># Zugriff aus dem internen Netz gestatten</em>
+<em>:restrict 192.168.1.0 mask 255.255.255.0</em>
+
+<em># allen anderen Rechnern Zugriff verwehren</em>
+<em>restrict default notrust nomodify nopeer</em>
+<em>+++</em>
 
 
 <!-- End wiki content -->
@@ -57,7 +70,7 @@ Created Samstag 23 April 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../../Benutzer_und_Gruppen/Konfigurationsdateien.html'>Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien</a></li>
+	Backlinks:		<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
 
 <!-- End Backlinks -->
 

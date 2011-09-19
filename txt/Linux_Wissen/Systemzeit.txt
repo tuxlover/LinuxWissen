@@ -9,23 +9,57 @@ Created Mittwoch 14 September 2011
 * Dateisystem erstellt Stamps für jede einzelne Datei (Accesstime, Changetime and Createtime)
 * wichtig für die Auswertung von Logdateien
 
-== Hardware Uhr ==
+=== Hardware Uhr ===
 * verwaltet die Zeit während das System abgeschaltet ist bis zum Initialisieren der //Software Uhr // während des Bootvorganges
+* **hwclock **zum Anzeigen der Hardwareuhr
+* **systohc **zum Abgleichen der Systemzeit mit der Hardwareuhr
+[[Linux Wissen:Systemzeit:hwclock]]
 
-== Software Uhr ==
+=== Software Uhr ===
 * wird während des Bootvorganges gesetzt 
 * der Wert für die Software Seitige Uhr ergibt sich aus den UTC (GMT) und der konfigurierten Zeitzone des Systems
+* **hctosys **zum Abgleichen der Hardwareuhr mit der Systemzeit
 
-== Zeitzone konfigurieren ==
+=== Zeitzone konfigurieren ===
+* in// */etc/timezone// wird die Zeitzone für das System festgelegt, diese kann mittels **zic -l <LOCALTIME> **aus */usr/share/zoneinfo/ erstellt werden
+* in //*/etc/sysconfig/clock// wird die Zeitzone für das System festgelegt $$SUSE$$, $$Fedorra$$
+* //*/etc/localtime// ist (falls vorhanden) ein symbolischer Link auf die Zeitzonendatei
+* //*/usr/share/zoneinfo/<Land>/<Zeitzone> //beinhaltet die Zeitzonendateien, diese können vom **zic **kopilliert und benutzt werden ( 
+[[Linux Wissen:FHS:etc:sysconfig++clock]] )
+[[Linux Wissen:FHS:etc]]
+[[Linux Wissen:Systemzeit:zdump]]
+[[Linux Wissen:Systemzeit:zic]]
 
-
-== die Variable TZ ==
+=== die Variable TZ ===
 * kann gesetzt werden, um die Zeitzone kurzfristig zu ändern
 * es benutzt dabei die mit **tzselect **definierbaren 
 [[Linux Wissen:Systemzeit:tzselect]]
-* hat auswirkungen auf den **date **Befehl
+* hat Auswirkungen auf den **date **Befehl
 [[Linux Wissen:Systemzeit:date]]
 
 //Beispiel: //
 //export TZ=MEZ-1  → //Mitteleuropäische Zeit -1
 //export TZ=ZULU+7 → //Zuluzeit +7 
+
+== Workflow Zeitzone konfigurieren ==
+**(1) tzslect **aufrufen und Region und Land wählen
+
+**(2) **Der von **tzselect **ausgegebene Wert kann als Wert für die Variable //TZ// oder in der entsprechenden Datei eingetragen werden 
+(//*/etc/timezone// oder //*/etc/sysconfig/clock//)
+
+=== Zeit synchronisieren mit NTP ===
+* NTP == Netwrok Time Protocol
+* kann zur Synchronisierung der lokalen Zeit mit einem zentralen Server eingerichtet werden
+* **service ntpd start || /etc/init.d/ntpd start **startet den ntpd
+* Konfiruation in// */etc/ntp.conf//
+* //var/lib/ntp/drift/ntp.drift //festgehalten
+Anweichungen vom ntp server  in Millisekunden wird /__pool.ntp.org __**→ **ist der Server Pool der ntp-Dienste bereitstellt
+weitere Informationen **man ntp **und **/usr/share/doc/packages/ntp-doc **bei installierter Dokumentation aus /usr/share/ntp-doc
+[[Linux Wissen:Systemzeit:ntp]]
+
+== Das Stratum ==
+* gibt an wie weit der Server von der nächsthöheren Time Synchronisation entfernt ist
+* Stratum 0→ der Server wird direkt mit der lokalen Zeit synchronisiert
+* Stratum 1 → der Server ist einen Hop vom Stratum 0 Server entfernt
+* Stratum 2 → der Server ist 1 Hop vom Stratum 1 Server und 2 Hops vom Stratum 0 Server entfernt
+__Hinweis: Eine direkte Synchronisation mit einem Stratum 0 Server wird nicht empfhohlen__

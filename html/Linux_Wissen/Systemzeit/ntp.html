@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./hwclock.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./tzselect.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>ntp</h1>
+
+<strong>ntpdate &lt;Zeitserver&gt; </strong>→ einen einmaligen harten Zeitabgleich mit dem angegbenen Zeitserver durchführen<br>
+<div style='padding-left: 120pt'>
+     → veraltet<br>
+</div>
+
+<strong>ntptrace &lt;Zeitserver&gt; </strong>→ Nachvolziehen der Zeitsynchronisation vom Server zum Client<br>
+<br>
+<strong>ntpq → </strong>Programm zum Abfragen und Synchronisieren eines Zeitservers<br>
+<strong>-p[n] </strong>→ liste  von Peers abfragen <br>
+<div style='padding-left: 30pt'>
+ → falls <strong>-n </strong>verwendet wird, wird anstelle des Namens die IP-Adresse ausgeben<br>
+</div>
+<strong>-i </strong>→ lesen der Befehle <em>interaktiv</em> vom StdtIn<br>
+<br>
+<u>Interaktive Befehle:</u>
+<strong>help|? [&lt;Befehl&gt;] → </strong>Hilfe für den Interaktiven Modus<br>
+                                  → falls &lt;Befehl&gt; angegeben wird und dieser existier, wird eine kurze Hilfe zum Befehl angeboten<br>
+<br>
+<strong>delay N </strong>→ einen Wert <strong>N</strong> in Millisekunden festlegen<strong>, </strong>der zu Zeitstempeln hinzugefügt wird.<br>
+                 → falls <strong>N </strong>nicht angegeben wird, wird der aktuelle delay Wert ausgegeben <br>
+<br>
+<strong>host &lt;Hostname&gt; </strong>→ festlegen eines Hostes, zu dem zukünfitge Anfragen geschickt werden<br>
+<br>
+<strong>peers </strong>→ wie <strong>-p </strong>im Nichtinteraktiven Modus<br>
+<br>
+<strong>quit </strong>→ beenden des Interaktiven Modus und rückkehr zur Elternshell<br>
+<br>
+<br>
+<strong>ntpd → </strong>Steuerung des NTP Servers<br>
+<strong>-q </strong>→ wie <strong>ntpdate</strong>, harter Zeitabgleich des System mit dem Server<br>
+<strong>-x </strong>→ verlangt <strong>-q, </strong>den Zeitabgleich auch durchführen, falls die Zeit weniger als 128 Millisekunden abweicht<br>
+<strong>-c &lt;Datei&gt; </strong>→ angeben einer alternativen Konfigurationsdatei<br>
+<strong>-f &lt;Datei&gt; </strong>→ angeben einer alternativen Driftfile Datei, normalerweise <em>/var/lib/ntp/drift/ntp.drift</em>
+<strong>-t &lt;Key&gt; </strong>→ den Schlüssel zu den vertrauenswürdigen Schlüsseln in <em>*/etc/ntp.keys </em>hinzufügen<br>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

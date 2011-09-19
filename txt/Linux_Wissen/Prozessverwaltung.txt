@@ -69,7 +69,7 @@ __Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vorde
 	                              +  Anzahl der zusätzliche aufgerufnenen Kindprozesse
                                       + eine Anzahl Bytes im Arbeitsspeicher
 			               + eine Anzahl an Zeit auf der CPU 
-* **ulimit**
+	* **ulimit**
 [[Linux Wissen:Prozessverwaltung:ulimit]]
 
 */etc/security/limits.conf

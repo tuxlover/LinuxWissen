@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./security%2B%2Blimits.conf.html'>Prev</a> ]
+	[ <a href='./zdump.html'>Prev</a> ]
 
-			[ <a href='../../../index.html'>Index</a> ]
+			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='./sysconfig%2B%2Bclock.html'>Next</a> ]
+	[ <a href='../Vim_Editor.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,16 +39,18 @@
 
 <!-- Wiki content -->
 
-<h1>shadow</h1>
+<h1>zic</h1>
 
-<p>
-Created Samstag 23 April 2011<br>
-</p>
+<li>zic ist der <em>timezone compiler </em>und ähnlich wie localdef für de Erstellung gültiger Zeitzonen  verantwortlich</li>
+<a href="../Lokalisierung/localedef.html" title="Linux Wissen:Lokalisierung:localedef">Linux Wissen:Lokalisierung:localedef</a>
 
-<p>
-<em>&lt;Benutzername&gt;:&lt;Kennwort verschlüsselt&gt;:  ~&gt;</em><br>
-<em>&lt;Datum der letzten Änderung des Kennworts&gt;:&lt;Min&gt;:&lt;Max&gt;:&lt;Warnung&gt;:&lt;Frist&gt;:&lt;Sperre&gt;</em> <br>
-</p>
+<strong>zic &lt;Dateiname&gt; </strong>→ liest aus den Dateien die als Parameter übergeben werden,typischerweise aus */<em>usr/share/zoneinfo</em>
+<div style='padding-left: 90pt'>
+      → wird als Dateiname <strong>- </strong>verwendet, liest <strong>zic </strong>vom StdIn<br>
+</div>
+<strong>-l → </strong>nutze die loakle Zeit als Zeitzone<br>
+<strong>-d &lt;DIR&gt; </strong>→ erstelle die konvertierte Datei im Angegbenen Verzeichnis &lt;DIR&gt;<br>
+<strong>-v </strong>→ teile mit wenn die Zeit von der in der<strong> time(2)</strong> Funktion abweicht<br>
 
 
 <!-- End wiki content -->
@@ -57,7 +59,7 @@ Created Samstag 23 April 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../../Benutzer_und_Gruppen/Konfigurationsdateien.html'>Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien</a></li>
+	Backlinks:		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
 
 <!-- End Backlinks -->
 

@@ -41,54 +41,64 @@
 
 <h1>Systemzeit</h1>
 
-<p>
-Created Mittwoch 14 September 2011<br>
-</p>
-
-<p>
-<ul>
 <li>benötigt von Programmen für die Jobkontrolle</li>
 <li>Dateisystem erstellt Stamps für jede einzelne Datei (Accesstime, Changetime and Createtime)</li>
 <li>wichtig für die Auswertung von Logdateien</li>
-</ul>
-</p>
 
-<h5>Hardware Uhr</h5>
-<p>
-<ul>
+<h4>Hardware Uhr</h4>
 <li>verwaltet die Zeit während das System abgeschaltet ist bis zum Initialisieren der <em>Software Uhr </em> während des Bootvorganges</li>
-</ul>
-</p>
+<li><strong>hwclock </strong>zum Anzeigen der Hardwareuhr</li>
+<li><strong>systohc </strong>zum Abgleichen der Systemzeit mit der Hardwareuhr</li>
+<a href="./Systemzeit/hwclock.html" title="Linux Wissen:Systemzeit:hwclock">Linux Wissen:Systemzeit:hwclock</a>
 
-<h5>Software Uhr</h5>
-<p>
-<ul>
+<h4>Software Uhr</h4>
 <li>wird während des Bootvorganges gesetzt </li>
 <li>der Wert für die Software Seitige Uhr ergibt sich aus den UTC (GMT) und der konfigurierten Zeitzone des Systems</li>
-</ul>
-</p>
+<li><strong>hctosys </strong>zum Abgleichen der Hardwareuhr mit der Systemzeit</li>
 
-<h5>Zeitzone konfigurieren</h5>
+<h4>Zeitzone konfigurieren</h4>
+<li>in<em> */etc/timezone</em> wird die Zeitzone für das System festgelegt, diese kann mittels <strong>zic -l &lt;LOCALTIME&gt; </strong>aus */usr/share/zoneinfo/ erstellt werden</li>
+<li>in <em>*/etc/sysconfig/clock</em> wird die Zeitzone für das System festgelegt $$SUSE$$, $$Fedorra$$</li>
+<li><em>*/etc/localtime</em> ist (falls vorhanden) ein symbolischer Link auf die Zeitzonendatei</li>
+<li><em>*/usr/share/zoneinfo/&lt;Land&gt;/&lt;Zeitzone&gt; </em>beinhaltet die Zeitzonendateien, diese können vom <strong>zic </strong>kopilliert und benutzt werden ( </li>
+<a href="./FHS/etc/sysconfig%2B%2Bclock.html" title="Linux Wissen:FHS:etc:sysconfig++clock">Linux Wissen:FHS:etc:sysconfig++clock</a> )<br>
+<a href="./FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a>
+<a href="./Systemzeit/zdump.html" title="Linux Wissen:Systemzeit:zdump">Linux Wissen:Systemzeit:zdump</a>
+<a href="./Systemzeit/zic.html" title="Linux Wissen:Systemzeit:zic">Linux Wissen:Systemzeit:zic</a>
 
-
-<h5>die Variable TZ</h5>
-<p>
-<ul>
+<h4>die Variable TZ</h4>
 <li>kann gesetzt werden, um die Zeitzone kurzfristig zu ändern</li>
 <li>es benutzt dabei die mit <strong>tzselect </strong>definierbaren </li>
-</ul>
-<a href="./Systemzeit/tzselect.html" title="Linux Wissen:Systemzeit:tzselect">Linux Wissen:Systemzeit:tzselect</a><br>
-<ul>
-<li>hat auswirkungen auf den <strong>date </strong>Befehl</li>
-</ul>
-<a href="./Systemzeit/date.html" title="Linux Wissen:Systemzeit:date">Linux Wissen:Systemzeit:date</a><br>
-</p>
+<a href="./Systemzeit/tzselect.html" title="Linux Wissen:Systemzeit:tzselect">Linux Wissen:Systemzeit:tzselect</a>
+<li>hat Auswirkungen auf den <strong>date </strong>Befehl</li>
+<a href="./Systemzeit/date.html" title="Linux Wissen:Systemzeit:date">Linux Wissen:Systemzeit:date</a>
 
-<p>
-<em>Beispiel: </em><br>
+<em>Beispiel: </em>
 <em>export TZ=MEZ-1  → </em>Mitteleuropäische Zeit -1<br>
 <em>export TZ=ZULU+7 → </em>Zuluzeit +7 <br>
-</p>
+<br>
+<h5>Workflow Zeitzone konfigurieren</h5>
+<strong>(1) tzslect </strong>aufrufen und Region und Land wählen<br>
+<br>
+<strong>(2) </strong>Der von <strong>tzselect </strong>ausgegebene Wert kann als Wert für die Variable <em>TZ</em> oder in der entsprechenden Datei eingetragen werden <br>
+(<em>*/etc/timezone</em> oder <em>*/etc/sysconfig/clock</em>)<br>
+<br>
+<h4>Zeit synchronisieren mit NTP</h4>
+<li>NTP == Netwrok Time Protocol</li>
+<li>kann zur Synchronisierung der lokalen Zeit mit einem zentralen Server eingerichtet werden</li>
+<li><strong>service ntpd start || /etc/init.d/ntpd start </strong>startet den ntpd</li>
+<li>Konfiruation in<em> */etc/ntp.conf</em></li>
+<li><em>var/lib/ntp/drift/ntp.drift </em>festgehalten</li>
+Anweichungen vom ntp server  in Millisekunden wird /<u>pool.ntp.org </u><strong>→ </strong>ist der Server Pool der ntp-Dienste bereitstellt<br>
+weitere Informationen <strong>man ntp </strong>und <strong>/usr/share/doc/packages/ntp-doc </strong>bei installierter Dokumentation aus /usr/share/ntp-doc<br>
+<a href="./Systemzeit/ntp.html" title="Linux Wissen:Systemzeit:ntp">Linux Wissen:Systemzeit:ntp</a>
+
+<h5>Das Stratum</h5>
+<li>gibt an wie weit der Server von der nächsthöheren Time Synchronisation entfernt ist</li>
+<li>Stratum 0→ der Server wird direkt mit der lokalen Zeit synchronisiert</li>
+<li>Stratum 1 → der Server ist einen Hop vom Stratum 0 Server entfernt</li>
+<li>Stratum 2 → der Server ist 1 Hop vom Stratum 1 Server und 2 Hops vom Stratum 0 Server entfernt</li>
+<u>Hinweis: Eine direkte Synchronisation mit einem Stratum 0 Server wird nicht empfhohlen</u>
 
 
 <!-- End wiki content -->
@@ -97,7 +107,7 @@ Created Mittwoch 14 September 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:
+	Backlinks:		<a href='./FHS/etc.html'>Linux Wissen:FHS:etc</a></li>
 
 <!-- End Backlinks -->
 

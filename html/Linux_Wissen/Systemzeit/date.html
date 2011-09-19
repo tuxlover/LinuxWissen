@@ -31,7 +31,7 @@
 
 			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='./tzselect.html'>Next</a> ]
+	[ <a href='./hwclock.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -45,6 +45,56 @@
 Created Mittwoch 14 September 2011<br>
 </p>
 
+<p>
+<ul>
+<li>gib das Datum im entsprechen festgelegten Format aus</li>
+<li>Zeit wird entsprechend der eingestellten <em>Zeitzone </em></li>
+</ul>
+</p>
+
+<p>
+<strong>date MMTThhmm [CCYY][.ss]</strong><br>
+→ setzen der Zeit auf  Monat:TagedesMonats:Stunde:Minute:Jahrhuntert:Jahr:Sekunde<br>
+<strong>-u </strong>→ in UTC<br>
+</p>
+
+<p>
+<strong>date +%&lt;Format&gt; →</strong>Ausgabe des Datums im festgelegten Format<br>
+<div style='padding-left: 30pt'>
+<strong>&lt;Format&gt;:</strong><br>
+</div>
+<div style='padding-left: 90pt'>
+<strong>%F </strong>→ das volle Datum in <strong>%Y-%m-%d</strong><br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 90pt'>
+<strong>%Y </strong>→ Jahr<br>
+<strong>%m → </strong>Monat<br>
+<strong>%H → </strong>Stunde<br>
+<strong>%M </strong>→ Minute<br>
+<strong>%S </strong>→ Sekunden<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 90pt'>
+<strong>%d </strong>→ Tag des Monats<br>
+<strong>%a|%A </strong>→ Wochentag<br>
+%V<strong> → </strong>Woche des Jahres beginned bei Monatag<br>
+<strong>%s </strong>→ Sekunden seit dem 01.01. 1970<br>
+</div>
+</p>
+
+<p>
+<strong>-d &lt;String&gt; </strong>→ die Zeit durch einen beschreibenden Sting anzeigen lassen <br>
+</p>
+
+<p>
+<strong>date --set --date="2010-18-11 18:03:13 +0100" </strong>→  explizites setzen des Datums und der Uhrzeit<br>
+</p>
+
 
 
 <!-- End wiki content -->
@@ -53,7 +103,7 @@ Created Mittwoch 14 September 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
+	Backlinks:		<a href='./hwclock.html'>Linux Wissen:Systemzeit:hwclock</a></li>		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
 
 <!-- End Backlinks -->
 

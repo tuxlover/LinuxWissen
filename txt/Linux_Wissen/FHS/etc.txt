@@ -42,9 +42,15 @@ Created Dienstag 19 April 2011
 [[Linux Wissen:Booten]]
 [[Linux Wissen:FHS:etc:init.d++Script]]
 
-***/etc/ld.so.conf **→ Konfigurationdatei für den dynamischen Linker
+***/etc/ld.so.conf **→ Konfigurationdati für den dynamischen Linker
 ***/etc/ld.so.cache **→ Cache für den dynamischen Linker
  [[Linux Wissen:Bibliotheken:dynamische Bibliotheken]]
+
+** */etc/localtime **→ konfigurieren der lokalen Zeitzone
+ ***/etc/timezone → **Zeitzone festlegen
+ ***/etc/ntp.conf **→ Konfigurieren des ntpd
+[[Linux Wissen:Systemzeit]]
+[[Linux Wissen:FHS:etc:ntp.conf]]
 
 ***/etc/issue **→ Begrüßungstext der vor der Anmeldung angezeigt werden
 ***/etc/motd **→ Begrüßungstext der nach der Anmeldung angezeigt werden

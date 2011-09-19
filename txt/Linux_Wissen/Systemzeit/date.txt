@@ -5,3 +5,29 @@ Creation-Date: 2011-09-14T20:26:16+02:00
 ====== date ======
 Created Mittwoch 14 September 2011
 
+* gib das Datum im entsprechen festgelegten Format aus
+* Zeit wird entsprechend der eingestellten //Zeitzone //
+
+**date MMTThhmm [CCYY][.ss]**
+→ setzen der Zeit auf  Monat:TagedesMonats:Stunde:Minute:Jahrhuntert:Jahr:Sekunde
+**-u **→ in UTC
+
+**date +%<Format> →**Ausgabe des Datums im festgelegten Format
+	**<Format>:**
+			**%F **→ das volle Datum in **%Y-%m-%d**
+
+			**%Y **→ Jahr
+			**%m → **Monat
+			**%H → **Stunde
+			**%M **→ Minute
+			**%S **→ Sekunden
+
+			**%d **→ Tag des Monats
+			**%a|%A **→ Wochentag
+			%V** → **Woche des Jahres beginned bei Monatag
+			**%s **→ Sekunden seit dem 01.01. 1970
+
+**-d <String> **→ die Zeit durch einen beschreibenden Sting anzeigen lassen 
+
+**date --set --date="2010-18-11 18:03:13 +0100" **→  explizites setzen des Datums und der Uhrzeit
+

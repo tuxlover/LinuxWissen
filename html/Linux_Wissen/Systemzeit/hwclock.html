@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./security%2B%2Blimits.conf.html'>Prev</a> ]
+	[ <a href='./date.html'>Prev</a> ]
 
-			[ <a href='../../../index.html'>Index</a> ]
+			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='./sysconfig%2B%2Bclock.html'>Next</a> ]
+	[ <a href='./ntp.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,16 +39,28 @@
 
 <!-- Wiki content -->
 
-<h1>shadow</h1>
+<h1>hwclock</h1>
 
 <p>
-Created Samstag 23 April 2011<br>
+Created Samstag 17 September 2011<br>
 </p>
 
 <p>
-<em>&lt;Benutzername&gt;:&lt;Kennwort verschlüsselt&gt;:  ~&gt;</em><br>
-<em>&lt;Datum der letzten Änderung des Kennworts&gt;:&lt;Min&gt;:&lt;Max&gt;:&lt;Warnung&gt;:&lt;Frist&gt;:&lt;Sperre&gt;</em> <br>
+<strong>hwclock → </strong> Anzeigen und manipulieren der Hardware Uhr<br>
+               → kann nur von root verwendet werden (<a href="../root.html" title="Linux Wissen:root">Linux Wissen:root</a>)<br>
+<strong>-r |--show </strong>→ anzeigen der aktuellen Zeit auf der Hardwareuhr<br>
+<strong>-s|--hctosys </strong>→ abgleichen der Systemzeit mit der Hardwareuhr (<strong>hctosys</strong>)<br>
+<strong>--systohc </strong>→ abgleichen der Hardwareuhr mit der aktuellen Systemzeit (<strong>systohc</strong>)<br>
+<strong>-c </strong>→ Ausgeben der Uhrzeit auf der CMOS Uhr in UTC<br>
+<strong>--set --date="&lt;DatumString&gt;" </strong>→ setzen der Hardwareuhr mittels Datumsstring<br>
+<div style='padding-left: 120pt'>
+               → der Datumstring ist ein String der von <strong>date </strong>verstanden wird ( <a href="./date.html" title="Linux Wissen:Systemzeit:date">Linux Wissen:Systemzeit:date</a> )<br>
+</div>
 </p>
+				
+ 
+
+
 
 
 <!-- End wiki content -->
@@ -57,7 +69,7 @@ Created Samstag 23 April 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../../Benutzer_und_Gruppen/Konfigurationsdateien.html'>Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien</a></li>
+	Backlinks:		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
 
 <!-- End Backlinks -->
 

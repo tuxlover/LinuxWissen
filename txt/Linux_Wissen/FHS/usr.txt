@@ -28,6 +28,14 @@ Created Dienstag 19 April 2011
 
 ***/usr/share/info **→ Info Pages
 
+***/usr/share/kbd/keymaps **→ Keyboard Map Files
+
+***/usr/share/locale/ → **Lokalisierungsdateien für die im System befindlichen Programme
+	**<LOC>/LC_MESSAGES → **Übersetzungen di e von den Programmen für die Notifikation an den Nutzer verwendet werden
+	**<LOC>/LC_TIME → **Zeiteinstellungen/ Zeitformate die von einem Program verwendet werden
+
+***/usr/share/zoneinfo **→ Zoninfo Dateien für die Zeitzonen
+
 ***/usr/src **→ Quellpakete
 		**/linux **→ link zu den linux kernel Quellen 
 		**/packages **→ Quellen und Specs für die Rpm Paketierung 

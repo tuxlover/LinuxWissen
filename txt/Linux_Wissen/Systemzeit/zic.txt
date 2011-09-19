@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-19T20:19:28+02:00
+
+====== zic ======
+Created Montag 19 September 2011
+
+* zic ist der //timezone compiler //und ähnlich wie localdef für de Erstellung gültiger Zeitzonen  verantwortlich
+[[Linux Wissen:Lokalisierung:localedef]]
+
+**zic <Dateiname> **→ liest aus den Dateien die als Parameter übergeben werden,typischerweise aus *///usr/share/zoneinfo//
+			      → wird als Dateiname **- **verwendet, liest **zic **vom StdIn
+**-l → **nutze die loakle Zeit als Zeitzone
+**-d <DIR> **→ erstelle die konvertierte Datei im Angegbenen Verzeichnis <DIR>
+**-v **→ teile mit wenn die Zeit von der in der** time(2)** Funktion abweicht

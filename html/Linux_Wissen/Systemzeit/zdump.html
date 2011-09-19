@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./security%2B%2Blimits.conf.html'>Prev</a> ]
+	[ <a href='./tzselect.html'>Prev</a> ]
 
-			[ <a href='../../../index.html'>Index</a> ]
+			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='./sysconfig%2B%2Bclock.html'>Next</a> ]
+	[ <a href='./zic.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,16 +39,15 @@
 
 <!-- Wiki content -->
 
-<h1>shadow</h1>
+<h1>zdump</h1>
 
-<p>
-Created Samstag 23 April 2011<br>
-</p>
-
-<p>
-<em>&lt;Benutzername&gt;:&lt;Kennwort verschlüsselt&gt;:  ~&gt;</em><br>
-<em>&lt;Datum der letzten Änderung des Kennworts&gt;:&lt;Min&gt;:&lt;Max&gt;:&lt;Warnung&gt;:&lt;Frist&gt;:&lt;Sperre&gt;</em> <br>
-</p>
+<strong>zdump  &lt;Zoneenname&gt;... </strong>→ die Zeitzonendateien in */usr/share/zoneinfo lesenq<br>
+<strong>-c → </strong>die Ausgabe für diese  nach StdtOut unterdrücken<br>
+<br>
+<br>
+<h5>Trick:</h5>
+<em>Alle möglichen Uhrzeiten anzeigen</em>
+<strong>find /usr/share/zoneinfo/ -type f -exec zdump {} \;</strong>
 
 
 <!-- End wiki content -->
@@ -57,7 +56,7 @@ Created Samstag 23 April 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../../Benutzer_und_Gruppen/Konfigurationsdateien.html'>Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien</a></li>
+	Backlinks:		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
 
 <!-- End Backlinks -->
 
