@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./ifup_und_ifdown.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./route.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>ip</h1>
+
+<p>
+Created Donnerstag 22 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>erlaubt das Anzeigen und Konfigurieren von Routen/Netzwerkschnittstellen/Tunnel</li>
+<li>erlaubt das Setzen von Routen</li>
+<li>erlaubt das konfigurieren von Netzwerkschnittstellen</li>
+<li>erlaubt das Verwalten von arp-Tabellen</li>
+<li>Setzen von Routing Policy Database Management</li>
+<li>IP-Tunnel konfigurieren</li>
+</ul>
+</p>
+
+<p>
+<strong>ip [&lt;Optionen&gt;] &lt;Object&gt; [&lt;Befehl&gt; Parameter] |help</strong><br>
+<strong>-V </strong>→ Versionsinformationen anezigen<br>
+-<strong>s &lt;Objekt&gt; </strong>→ ausführliche Informationen zum &lt;Objekt&gt;<br>
+<strong>-f &lt;inet4&gt;|&lt;inet6&gt; </strong>→ festlegen der Protokollfamilie <br>
+<strong>-o </strong>→ alle Angaben in einer Zeile (oneline)<br>
+<strong>-r </strong>→ Namensauflösung verwenden<br>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>&lt;Object&gt;</strong><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>link </strong>→ physikalische oder logische Netzwerkadresse<br>
+<strong>addr </strong>→ IPv4 oder IPv6 Adresse<br>
+<strong>neighbour </strong>→ Kernel arp Cache<br>
+<strong>route </strong>→ Routing Tabellen<br>
+<strong>rule </strong>→ Regeln in der Routing Tabelle<br>
+<strong>madress </strong>→ Multicast Adressen<br>
+<strong>mroute </strong>→ Multicast Routing Tabelle<br>
+<strong>tunnel </strong>→ IP in IP Tunnel<br>
+</div>
+</p>
+		
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>&lt;Befehl&gt;</strong><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>add </strong>→ hinzufügen von Objekten<br>
+<strong>delete </strong>→ entfernen on Objekten<br>
+<strong>show </strong>→ Anzeigen<br>
+<strong>set up </strong>→ anschalten<br>
+<strong>set down </strong>→ ausschalten<br>
+</div>
+</p>
+		
+<p>
+<em>Beispiele:</em><br>
+<strong>ip addr add local &lt;IP&gt;/&lt;CIDR&gt; dev &lt;ethN&gt; brd + [label &lt;ethN:r&gt;]</strong><br>
+→ Netzwerkkarte &lt;ethN&gt; die IP mit der entsprechenden Netzmaske zuweisen mit Broadcastadresse entsprechend der NetzID<br>
+→ Optional kann mit <strong>label </strong>noch ein Alias gesetzt werden<br>
+</p>
+
+<p>
+<strong>ip link set up dev &lt;ethN&gt;   → </strong>NIC &lt;ethN&gt; hochfahren<br>
+<strong>ip link set down dev &lt;ethN&gt; </strong>→ NIC &lt;ethN&gt; herunterafahren<br>
+</p>
+
+<p>
+<strong>ip a </strong>→ auflisten aller NICs<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Lokalisierung/Umgebungsvariablen.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./Networking/Protokolle.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Networking</h1>
+
+<h4>Netzwerke, Klassen und Ihre IP-Ranges</h4>
+<strong>Klasse			Netzanteil			Anzahl Netze		Anzahl-Hosts		Adressen</strong><br>
+ClassA			8 Bit				0-128				2^34 - 2				0.0.0.0 - 127.255.255.255<br>
+ClassB			16 Bit				16.384				65.534				128.0.0.0  - 191.255.255.255				<br>
+ClassC			24 Bit				2^21				254					 192.0.0.0 - 223.255.255.255<br>
+ClassD			-					-					-					224.0.0.0  - 239.255.255.255<br>
+ClassE			-					-					-					240.0.0.0  - 254.255.255.255<br>
+<br>
+<br>
+<h4>Privater IP-Adressbereich</h4><br>
+Class A 10.0.0.0 - 10.255.255.255<br>
+Class B 127.16.0.0 - 172.31.255.255<br>
+Class C 192.168.0.0 - 192.168.255.255<br>
+<br>
+<h4>Wichtige Ports</h4>
+<li>well known Ports: 0 - 1023</li>
+<li>registered Ports: 1024 - 49151</li>
+<li>private Ports: 49152 - 65535</li>
+<br>
+echo        		   	 Port 7          tcp/udp<br>
+netstat        		 	 Port 15         tcp<br>
+ftp            			 Port 20         tcp/udp<br>
+ftp            			 Port 21         tcp/udp<br>
+ssh             			Port 22         tcp/udp<br>
+telnet          			Port 23         tcp/udp<br>
+smtp           			Port 25         tcp/udp<br>
+dns             			Port 53         tcp/udp<br>
+http            			Port 80         tcp/udp<br>
+pop3            			Port 110        tcp/udp<br>
+nntp            			Port 119        tcp<br>
+netbios         		Port 137-139    tcp/udp<br>
+imap            			Port 143        tcp/udp<br>
+snmp            		Port 161        udp<br>
+ldap            			Port 389        tcp<br>
+https           			Port 443        tcp/udp<br>
+rsync           			Port 873        tcp/udp<br>
+ftps            			Port 990        tcp/udp<br>
+imaps           		Port 993        tcp/udp<br>
+pop3s           			Port 995        tcp/udp<br>
+irc             			Port 6668       udp<br>
+<br>
+<li><em>*/etc/services </em>mappt die Ports an den <strong>inetd (nicht initd) </strong>oder <strong>xinetd</strong> oder einen anderen vom <em>getserverbyname() </em>syscall verwendet</li>
+<a href="./FHS/etc/services.html" title="Linux Wissen:FHS:etc:services">Linux Wissen:FHS:etc:services</a>
+
+<u>Hinweis: Neu entwickelte Dienste können in /etc/services eingetragen werden</u>
+<u>Achtung: Die Well Known Ports (0-1023) können nur von root geöffnet werden.</u>
+
+<h4>Tools</h4>
+<li><strong>arp </strong>zum Maninpulieren und Überwachen des ARP-Caches im Kernelspace</li>
+<a href="./Networking/Protokolle/arp.html" title="Linux Wissen:Networking:Protokolle:arp">Linux Wissen:Networking:Protokolle:arp</a>
+<a href="./Networking/Tools/arp.html" title="Linux Wissen:Networking:Tools:arp">Linux Wissen:Networking:Tools:arp</a>
+<a href="./FHS/etc/ethers.html" title="Linux Wissen:FHS:etc:ethers">Linux Wissen:FHS:etc:ethers</a>
+<li><strong>ifconfig </strong>zum Verwalten von Hardwarenetzwerkschnittstellen</li>
+<li><strong>ip addr show (ip </strong>dass Schweizer Armeemesser<strong>)</strong></li>
+<a href="./Networking/Tools/ip.html" title="Linux Wissen:Networking:Tools:ip">Linux Wissen:Networking:Tools:ip</a>
+<a href="./Networking/Tools/ifconfig.html" title="Linux Wissen:Networking:Tools:ifconfig">Linux Wissen:Networking:Tools:ifconfig</a>
+<li><strong>route </strong>zum Konfigurieren und Anzeigen von Adress Routen</li>
+<a href="./Networking/Tools/route.html" title="Linux Wissen:Networking:Tools:route">Linux Wissen:Networking:Tools:route</a>
+<li><strong>ifup/ifdown </strong>zum hoch/herunterfahren von NICs</li>
+<li><strong>service network start|stop </strong>→ Starten |Anhalten des Netzwerkdienstes</li>
+<div style='padding-left: 180pt'>
+  → dabei wird die bisherige Konfiguration verworfen<br>
+</div>
+<li>$$SUSE$$ <strong>rcnetwork start|stop </strong>→ Starten |Anhalten des Netzwerkdienstes </li>
+<div style='padding-left: 210pt'>
+ → dabei wird die bisherige Konfiguration verworfen<br>
+</div>
+<a href="./Networking/Tools/ifup_und_ifdown.html" title="Linux Wissen:Networking:Tools:ifup und ifdown">Linux Wissen:Networking:Tools:ifup und ifdown</a>
+
+<h4>Netzwerkkarten und Treiber mit Udev konfigurieren</h4>
+<em>*/etc/udev/rules.d/70-persistent-net-rules </em>hält Informationen über die von <strong>udev </strong>gesteuerten Netzwerkkarten und wird erzeugt von <em>*/lib/udev/write_net_rules</em><br>
++++<br>
+<em>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:13:ce:b4:9f:57", ATTR{type}=="1", KERNEL=="eth*", NAME="eth1"</em><br>
++++<br>
+<a href="./FHS/etc/udev%2B%2Brules.d%2B%2B99-myrule.html" title="Linux Wissen:FHS:etc:udev++rules.d++99-myrule">Linux Wissen:FHS:etc:udev++rules.d++99-myrule</a>
+<a href="./FHS/etc/udev%2B%2Budev.conf.html" title="Linux Wissen:FHS:etc:udev++udev.conf">Linux Wissen:FHS:etc:udev++udev.conf</a>
+<a href="./Hardware_und_Systeminformationen.html" title="Linux Wissen:Hardware und Systeminformationen">Linux Wissen:Hardware und Systeminformationen</a>
+
+<h4>IP-Forwarding de|aktivieren</h4>
+<li><strong>echo 0|1 &gt; /proc/sys/net/ipv4/ip_forward </strong>→ deaktivieren|aktivieren von IP-Forwarding</li>
+<li>$$SUSE$$ <em>*/etc/sysconfig/sysctl </em>in der Variablen <em>IP-FORWARDING=yes|no </em>eintragen</li>
+<li>$$Debian$$ <em>*/etc/network/options </em>in der Variablen <em>ip_forward=yes|no  </em>eintragen</li>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

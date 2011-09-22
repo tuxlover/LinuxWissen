@@ -2,13 +2,13 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2011-07-17T18:53:21+02:00
 
-====== wget ======
+	''wget''
 Created Sonntag 17 Juli 2011
 
 * unterbrochene Downloads können zu einem späteren Zeitpunkt fortgesetzt werden
 * unterstützt die Protokolle FTP, HTTP HTTPS
 * kann nur Dateien herunterladen
-[[Linux Wissen:Netzwerke:Protokolle]]
+[[Linux Wissen:Networking:Protokolle]]
 
 **wget <URI>|<URL>**
 → läd eine Datei von der URI oder eine html Website von der URL herunter

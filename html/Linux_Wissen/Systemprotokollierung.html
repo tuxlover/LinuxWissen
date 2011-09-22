@@ -41,12 +41,23 @@
 
 <h1>Systemprotokollierung</h1>
 
+<p>
+Created Sonntag 24 April 2011<br>
+</p>
+
+<p>
+<ul>
 <li>Ausgeben und schreiben von Systemmeldungen</li>
 <li>zum Auswerten kritischer Fehler</li>
 <li>zum Aufspüren von Einbrüchen</li>
+</ul>
+</p>
 
 <h4>Wichtige Dateien</h4>
+<p>
+<ul>
 <li>jede Distribution hat diverse Unterschiede, wo welche Logeinträge standardmäßig vorgenommen werden</li>
+</ul>
 $$SUSE$$:<br>
 <div style='padding-left: 30pt'>
 <em>*/var/log/messages </em><strong>→ </strong>Protokollierung des Kernel Ring Buffers, <br>
@@ -54,15 +65,27 @@ $$SUSE$$:<br>
 <div style='padding-left: 90pt'>
               → Protokollierung des Bootprozesses<br>
 </div>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
-<br>
-*<em>/var/log/firewall </em>→ Protokollierung des SUSE Firewall<br>
-<br>
+*/<em>var/log/firewall </em>→ Protokollierung des SUSE Firewall<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>*/var/log/warn </em><strong>→ </strong>Warnungen des Systems oder vom System benutzte Programme, zum Beispiel warnungen der Gonme-Desktop Session<br>
-<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>*/var/log/NetworkManager </em><strong>→ </strong>Warnungen des Network Manager, sofern dieser benutz wird<br>
 </div>
-<br>
+</p>
+
+<p>
 $$Fedora$$:<br>
 <div style='padding-left: 30pt'>
 <em>*/var/log/messages </em><strong>→ </strong>Protokollierung des Kernel Ring Buffers<br>
@@ -70,61 +93,102 @@ $$Fedora$$:<br>
 <div style='padding-left: 120pt'>
        → Protokollierung des Bootprozesses<br>
 </div>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
-<br>
 <em>*/var/log/cron </em><strong>→ </strong>Protokollierung des Cron Daemons<br>
-<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>*/var/log/secure </em>→ Portokollierung von SELinux<br>
 </div>
 <div style='padding-left: 120pt'>
   → Protokollierung der Firewall<br>
 </div>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
-<br>
 <em>*/var/log/maillog </em>→ Protokollierung des Mailer Daemons (MDA,MTA)<br>
 (missing link MDA,MTA)<br>
 </div>
-<br>
+</p>
+
+<p>
 $$Debian$$, $$Ubuntu$$:<br>
 <div style='padding-left: 30pt'>
 <em>*/var/log/syslog → </em>Protokollierung der vom <strong>syslogd </strong>erzeugten Meldungen <br>
-<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>*/var/log/debug → </em>Fehlermeldungen von Programmen zum Debuggen<br>
-<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>*/var/log/messages </em><strong>→</strong> Protokollierung des Kernel Ring Buffers<br>
 </div>
+</p>
 
-<u>Hinweis: Auf Servern sollte /var auf eine andere Partition oder einen anderen Rechner ausgelagert werden.</u>
+<p>
+<u>Hinweis: Auf Servern sollte /var auf eine andere Partition oder einen anderen Rechner ausgelagert werden.</u><br>
+</p>
 
 <h4>Der Syslog Daemon</h4>
+<p>
+<ul>
 <li><strong>syslogd </strong>Daemon erhält seine Nachrichten über das Socket <em>*/dev/log</em></li>
 <li>wird über den <em>*/etc/syslog.conf </em>oder <em>*/etc/rsyslog.conf </em>konfiguriert</li>
-<a href="./FHS/etc/syslog.conf.html" title="Linux Wissen:FHS:etc:syslog.conf">Linux Wissen:FHS:etc:syslog.conf</a>
-<u>Hinweis: Nach dem editieren der Konfigurationsdatei muss der syslogd die Konfigurationsdatei neu lesen</u>
-<strong>kill -1 rsyslogd** bzw. **kill -1 syslogd → </strong>den <strong>syslogd </strong>zwingen sein Konfiguration neu zu lesen<br>
-<a href="./Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a>
+</ul>
+<a href="./FHS/etc/syslog.conf.html" title="Linux Wissen:FHS:etc:syslog.conf">Linux Wissen:FHS:etc:syslog.conf</a><br>
+<u>Hinweis: Nach dem editieren der Konfigurationsdatei muss der syslogd die Konfigurationsdatei neu lesen</u><br>
+<strong>kill -1 rsyslogd</strong> bzw. <strong>kill -1 syslogd → </strong>den <strong>syslogd </strong>zwingen sein Konfiguration neu zu lesen<br>
+<a href="./Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a><br>
+<ul>
 <li>das Programm <strong>logger </strong>kann dazu verwendet werden, Meldungen an den Syslog Daemoen zu senden</li>
-<a href="./Systemprotokollierung/logger.html" title="Linux Wissen:Systemprotokollierung:logger">Linux Wissen:Systemprotokollierung:logger</a>
+</ul>
+<a href="./Systemprotokollierung/logger.html" title="Linux Wissen:Systemprotokollierung:logger">Linux Wissen:Systemprotokollierung:logger</a><br>
+</p>
 
 <h4>Logdateien rotieren</h4>
+<p>
+<ul>
 <li><strong>logrotate</strong></li>
-<a href="./Systemprotokollierung/logrotate.html" title="Linux Wissen:Systemprotokollierung:logrotate">Linux Wissen:Systemprotokollierung:logrotate</a>
-<a href="./FHS/etc/logrotate.conf.html" title="Linux Wissen:FHS:etc:logrotate.conf">Linux Wissen:FHS:etc:logrotate.conf</a>
+</ul>
+<a href="./Systemprotokollierung/logrotate.html" title="Linux Wissen:Systemprotokollierung:logrotate">Linux Wissen:Systemprotokollierung:logrotate</a><br>
+<a href="./FHS/etc/logrotate.conf.html" title="Linux Wissen:FHS:etc:logrotate.conf">Linux Wissen:FHS:etc:logrotate.conf</a><br>
+</p>
 
 <h4>Fehler beim Booten analysieren</h4>
+<p>
+<ul>
 <li><strong>dmesg </strong> Kernel logging Informationen</li>
-<li><em>/proc/kmsg</em>  enthält die Nachrichten die vom Kernel ausgegeben werden</li>
+<li>/<em>proc/kmsg</em>  enthält die Nachrichten die vom Kernel ausgegeben werden</li>
 <li>Der Daemon <strong>klogd</strong> kümmert sich um die Weiterleitung an den Daemon <strong>syslogd&lt;</strong></li>
-<a href="./Systemprotokollierung/dmesg.html" title="Linux Wissen:Systemprotokollierung:dmesg">Linux Wissen:Systemprotokollierung:dmesg</a>
+</ul>
+<a href="./Systemprotokollierung/dmesg.html" title="Linux Wissen:Systemprotokollierung:dmesg">Linux Wissen:Systemprotokollierung:dmesg</a><br>
+</p>
 
+<p>
 <strong>dmesg|less</strong> --&gt; analysieren der kompletten Systemnachrichten auch die im frühen Bootstadium<br>
-<br>
-<u>Tricks:</u>
+</p>
+
+<p>
+<u>Tricks:</u><br>
 <strong>dmesg|grep fail</strong> --&gt; sucht nach Problemen<br>
 <strong>dmesg|grep "\&lt;E\:.*\&gt;"</strong> --&gt; nach E: was ein Indikator für Fehler sein kann<br>
-<br>
+</p>
+
 <h5>Logfiles interaktiv lesen</h5>
+<p>
 <strong>tail -f &lt;Logfile&gt;</strong> --&gt; zeigt die letzten 10 Zeilen von logfile und alle neu hinzukommenden<br>
+</p>
 
 
 <!-- End wiki content -->

@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T15:22:39+02:00
+
+====== route ======
+Created Donnerstag 22 September 2011
+
+* konfigurieren der Netzwerkroute
+
+== statisches Routing: ==
+Der Rechner folgt immer einer fest vorgegbenen Route
+
+== dynamisches Routing: ==
+Der Router komuniziert mit anderen in seiner unmittelbaren Umgebung befindlichen (minmal Hopps) Routern
+und kann so anhand vorgegebener Parameter den für sich günstigsten Weg heraussuchen. Erfordert die Installation
+von Routing Daemons wie **routed **oder **gated**
+
+**route add [-net|-host] <Ziel> [netmask <Netzmaske>] [gw <Gateway] [dev <Interface>]**
+→ hinzufügen einer Route
+
+**route del [-net|-host] <Ziel> [netmask <Netzmaske>] [gw <Gateway>] [dev <Interface>]**
+→ löschen einer Route 
+
+//Beispiele://
+**route add|del -net <IP-Adresse> netmask <Netzmaske> dev <ethN> **→ setzen|löschen einer Netzroute
+**route add|del -net <IP-Adresse> netmask <Netzmaske> gw <Ip-Adresse Gateway>** →  Setzen|löscchen einer Gateway Route
+**route add|del -host <Ip-Adresse> netmask dev <ethN>** →  Setzen|löschen einer Hostroute
+**route add default dev <ethN>** →  Setzen einer Default Gateway Route
+
+**route **→ Anzeigen der im Kernelspace verwalteten Routing Tabelle
+          → äquivalent zu **netstat -r[n]** 
+**-n **→ Numerische Adressen anzeigen
+
+//Beispielausgabe://
++++
+//>> Ziel            Router          Genmask         Flags Metric Ref    Use Iface//
+//192.168.128.0   *               255.255.255.0       U     1      0        0 eth0//
+//loopback        *               255.0.0.0           U     0      0        0      lo//
+//default         192.168.128.1   0.0.0.0             UG    0      0        0 eth0//
++++
+**<Ziel (Destination)> → **Zieladresse (Netzadresse, Satationsadresse, **standard **für alle Routen für die nichts anderes eingetragen wurde)
+<**Router (Gateway)> **→ Router für Paketweiterleitung, falls * werden Pakete nicht an andere Adressen weitergeleitet
+<**Genmask> **→ Netzmaske zur Zieladresse
+**<Flags>: **Beschreibung der  Route
+		**U **→ Route ist aktiv (up)
+		**G **→ Route ist Gateway
+		**H **→ Hostroute, Zieladresse bezeichnet einen einzelnen Rechner
+		**! → **diese Route wird vom Kernel zurückgewiesen
+**<Metric> **→ Anzahl Hopps
+**<Use> **→ Wie oft wurde die Route schon verwendet
+<**Iface>** → Das Interface an denen die Datagramme weitergeleitet werden
+
+    

@@ -1,0 +1,85 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T14:18:35+02:00
+
+====== Networking ======
+Created Donnerstag 22 September 2011
+
+=== Netzwerke, Klassen und Ihre IP-Ranges ===
+**Klasse			Netzanteil			Anzahl Netze		Anzahl-Hosts		Adressen**
+ClassA			8 Bit				0-128				2^34 - 2				0.0.0.0 - 127.255.255.255
+ClassB			16 Bit				16.384				65.534				128.0.0.0  - 191.255.255.255				
+ClassC			24 Bit				2^21				254					 192.0.0.0 - 223.255.255.255
+ClassD			-					-					-					224.0.0.0  - 239.255.255.255
+ClassE			-					-					-					240.0.0.0  - 254.255.255.255
+
+
+=== Privater IP-Adressbereich ===
+Class A 10.0.0.0 - 10.255.255.255
+Class B 127.16.0.0 - 172.31.255.255
+Class C 192.168.0.0 - 192.168.255.255
+
+=== Wichtige Ports ===
+* well known Ports: 0 - 1023
+* registered Ports: 1024 - 49151
+* private Ports: 49152 - 65535
+
+echo        		   	 Port 7          tcp/udp
+netstat        		 	 Port 15         tcp
+ftp            			 Port 20         tcp/udp
+ftp            			 Port 21         tcp/udp
+ssh             			Port 22         tcp/udp
+telnet          			Port 23         tcp/udp
+smtp           			Port 25         tcp/udp
+dns             			Port 53         tcp/udp
+http            			Port 80         tcp/udp
+pop3            			Port 110        tcp/udp
+nntp            			Port 119        tcp
+netbios         		Port 137-139    tcp/udp
+imap            			Port 143        tcp/udp
+snmp            		Port 161        udp
+ldap            			Port 389        tcp
+https           			Port 443        tcp/udp
+rsync           			Port 873        tcp/udp
+ftps            			Port 990        tcp/udp
+imaps           		Port 993        tcp/udp
+pop3s           			Port 995        tcp/udp
+irc             			Port 6668       udp
+
+* //*/etc/services //mappt die Ports an den **inetd (nicht initd) **oder **xinetd** oder einen anderen vom //getserverbyname() //syscall verwendet
+[[Linux Wissen:FHS:etc:services]]
+
+__Hinweis: Neu entwickelte Dienste können in /etc/services eingetragen werden__
+__Achtung: Die Well Known Ports (0-1023) können nur von root geöffnet werden.__
+
+=== Tools ===
+* **arp **zum Maninpulieren und Überwachen des ARP-Caches im Kernelspace
+[[Linux Wissen:Networking:Protokolle:arp]]
+[[Linux Wissen:Networking:Tools:arp]]
+[[Linux Wissen:FHS:etc:ethers]]
+* **ifconfig **zum Verwalten von Hardwarenetzwerkschnittstellen
+* **ip addr show (ip **dass Schweizer Armeemesser**)**
+[[Linux Wissen:Networking:Tools:ip]]
+[[Linux Wissen:Networking:Tools:ifconfig]]
+* **route **zum Konfigurieren und Anzeigen von Adress Routen
+[[Linux Wissen:Networking:Tools:route]]
+* **ifup/ifdown **zum hoch/herunterfahren von NICs
+* **service network start|stop **→ Starten |Anhalten des Netzwerkdienstes
+						  → dabei wird die bisherige Konfiguration verworfen
+* $$SUSE$$ **rcnetwork start|stop **→ Starten |Anhalten des Netzwerkdienstes 
+							 → dabei wird die bisherige Konfiguration verworfen
+[[Linux Wissen:Networking:Tools:ifup und ifdown]]
+
+=== Netzwerkkarten und Treiber mit Udev konfigurieren ===
+//*/etc/udev/rules.d/70-persistent-net-rules //hält Informationen über die von **udev **gesteuerten Netzwerkkarten und wird erzeugt von //*/lib/udev/write_net_rules//
++++
+//SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:13:ce:b4:9f:57", ATTR{type}=="1", KERNEL=="eth*", NAME="eth1"//
++++
+[[Linux Wissen:FHS:etc:udev++rules.d++99-myrule]]
+[[Linux Wissen:FHS:etc:udev++udev.conf]]
+[[Linux Wissen:Hardware und Systeminformationen]]
+
+=== IP-Forwarding de|aktivieren ===
+* **echo 0|1 > /proc/sys/net/ipv4/ip_forward **→ deaktivieren|aktivieren von IP-Forwarding
+* $$SUSE$$ //*/etc/sysconfig/sysctl //in der Variablen //IP-FORWARDING=yes|no //eintragen
+* $$Debian$$ //*/etc/network/options //in der Variablen //ip_forward=yes|no  //eintragen

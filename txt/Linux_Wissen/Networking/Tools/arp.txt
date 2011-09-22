@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T14:51:45+02:00
+
+====== arp ======
+Created Donnerstag 22 September 2011
+
+**arp **→ Ausgabe des Arpcaches aus //*/proc/net/arp//
+//Beispielausgabe://
+<Adress>		<Hwtype>		<Hwadress>		<Flag Mask>			<Iface>
+192.168.1.1		ether			00:19:cb:55:4e:34		C					eth1
+
+	**<Flag Mask>**
+			C → Complete
+			M → Permanent
+			P → Published
+
+**-a **→ Ausgabe im BSD-Format <Broadcast> at <MAC> <Hwtype> on <Iface>
+**-d|--delete <Hostname>|<IP-Adresse> **→ löschen von Rechner aus dem Arp-Cache
+**-s|--set <Hostname>|<IP-Adresse> **→ hinzufügen zum Arp-Cache
+**-f |--file [<Datei>] → **setzen des Arp Caches aus Datei, wird <Datei> nicht angegben wird //*/etc/ethers// verwendet
+[[Linux Wissen:FHS:etc:ethers]]
+
+**arpwatch **
+→ den Netzwerkverkehr auf gespoofte arp Pakete überwachen
+→ die Datei //*/var/lib/aprwatch/arp.dat //muss existieren
+→ Daemon zum Überwachen auf gefälchte arp-Pakete **arpwatchd**
+**-m <User> **→ Mail an den <User> schicken

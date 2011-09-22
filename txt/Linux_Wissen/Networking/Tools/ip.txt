@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T15:44:09+02:00
+
+====== ip ======
+Created Donnerstag 22 September 2011
+
+* erlaubt das Anzeigen und Konfigurieren von Routen/Netzwerkschnittstellen/Tunnel
+* erlaubt das Setzen von Routen
+* erlaubt das konfigurieren von Netzwerkschnittstellen
+* erlaubt das Verwalten von arp-Tabellen
+* Setzen von Routing Policy Database Management
+* IP-Tunnel konfigurieren
+
+**ip [<Optionen>] <Object> [<Befehl> Parameter] |help**
+**-V **→ Versionsinformationen anezigen
+-**s <Objekt> **→ ausführliche Informationen zum <Objekt>
+**-f <inet4>|<inet6> **→ festlegen der Protokollfamilie 
+**-o **→ alle Angaben in einer Zeile (oneline)
+**-r **→ Namensauflösung verwenden
+
+	**<Object>**
+		**link **→ physikalische oder logische Netzwerkadresse
+		**addr **→ IPv4 oder IPv6 Adresse
+		**neighbour **→ Kernel arp Cache
+		**route **→ Routing Tabellen
+		**rule **→ Regeln in der Routing Tabelle
+		**madress **→ Multicast Adressen
+		**mroute **→ Multicast Routing Tabelle
+		**tunnel **→ IP in IP Tunnel
+		
+
+	**<Befehl>**
+		**add **→ hinzufügen von Objekten
+		**delete **→ entfernen on Objekten
+		**show **→ Anzeigen
+		**set up **→ anschalten
+		**set down **→ ausschalten
+		
+//Beispiele://
+**ip addr add local <IP>/<CIDR> dev <ethN> brd + [label <ethN:r>]**
+→ Netzwerkkarte <ethN> die IP mit der entsprechenden Netzmaske zuweisen mit Broadcastadresse entsprechend der NetzID
+→ Optional kann mit **label **noch ein Alias gesetzt werden
+
+**ip link set up dev <ethN>   → **NIC <ethN> hochfahren
+**ip link set down dev <ethN> **→ NIC <ethN> herunterafahren
+
+**ip a **→ auflisten aller NICs

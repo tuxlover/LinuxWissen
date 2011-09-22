@@ -101,6 +101,11 @@ Created Dienstag 19 April 2011
 [[Linux Wissen:SQL:Mysql Server]]
 [[Linux Wissen:FHS:etc:my.cnf]]
 
+***/etc/services/ → **mappt Ports an den **inetd** bzw. **xinetd** bzw an den syscall //getserverbyname()//
+[[Linux Wissen:FHS:etc:services]]
+***/etc/ethers **→ Konfigurieren des Arp Caches
+[[Linux Wissen:FHS:etc:ethers]]
+
 ***/etc/syslog.conf **→ Konfiguration für den **syslogd **
 ***/etc/rsyslog.conf **→ Konfiguration für den neueren **syslogd **(rsyslog)
 [[Linux Wissen:Systemprotokollierung]]

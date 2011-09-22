@@ -1,0 +1,2170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./security%2B%2Blimits.conf.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./shadow.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>services</h1>
+
+<p>
+Created Donnerstag 22 September 2011<br>
+</p>
+
+<p>
+Auszug aus der /etc/services für die ersten 1023 Ports:<br>
++++<br>
+<em> Keyword         Decimal    Description                     References</em><br>
+<em># -------         -------    -----------                     ----------</em><br>
+<em>#                 0/tcp    Reserved</em><br>
+<em>#                 0/udp    Reserved</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#spr-itunes        0/tcp    # Shirt Pocket netTunes</em><br>
+<em>#spl-itunes        0/tcp    # Shirt Pocket launchTunes</em><br>
+<em>#                          David Nanian &lt;dnanian&amp;shirt-pocket.com&gt; 28 September 2007</em><br>
+<em>tcpmux            1/tcp    # TCP Port Service Multiplexer</em><br>
+<em>tcpmux            1/udp    # TCP Port Service Multiplexer</em><br>
+<em>#                          Mark Lottor &lt;MKL&amp;nisc.sri.com&gt;</em><br>
+<em>compressnet       2/tcp    # Management Utility</em><br>
+<em>compressnet       2/udp    # Management Utility</em><br>
+<em>compressnet       3/tcp    # Compression Process</em><br>
+<em>compressnet       3/udp    # Compression Process</em><br>
+<em>#                          Bernie Volz &lt;volz&amp;cisco.com&gt;</em><br>
+<em>#                 4/tcp    Unassigned</em><br>
+<em>#                 4/udp    Unassigned</em><br>
+<em>rje               5/tcp    # Remote Job Entry</em><br>
+<em>rje               5/udp    # Remote Job Entry</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#                 6/tcp    Unassigned</em><br>
+<em>#                 6/udp    Unassigned</em><br>
+<em>echo              7/tcp    # Echo</em><br>
+<em>echo              7/udp    # Echo</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#                 8/tcp    Unassigned</em><br>
+<em>#                 8/udp    Unassigned</em><br>
+<em>discard           9/tcp    # Discard </em><br>
+<em>discard           9/udp    # Discard </em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt; </em><br>
+<em>discard           9/sctp   # Discard  </em><br>
+<em>#                          IETF TSVWG</em><br>
+<em>#                          Randall Stewart &lt;rrs&amp;cisco.com&gt;</em><br>
+<em>#                          [RFC4960]</em><br>
+<em>discard           9/dccp   # Discard SC:DISC</em><br>
+<em>#                          IETF dccp WG, Eddie Kohler &lt;kohler&amp;cs.ucla.edu&gt;, [RFC4340]</em><br>
+<em>#                10/tcp    Unassigned</em><br>
+<em>#                10/udp    Unassigned</em><br>
+<em>systat           11/tcp    # Active Users</em><br>
+<em>systat           11/udp    # Active Users</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#                12/tcp    Unassigned</em><br>
+<em>#                12/udp    Unassigned</em><br>
+<em>daytime          13/tcp    # Daytime (RFC 867)</em><br>
+<em>daytime          13/udp    # Daytime (RFC 867)</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#                14/tcp    Unassigned</em><br>
+<em>#                14/udp    Unassigned</em><br>
+<em>#                15/tcp    Unassigned [was netstat]</em><br>
+<em>#                15/udp    Unassigned</em><br>
+<em>#                16/tcp    Unassigned</em><br>
+<em>#                16/udp    Unassigned</em><br>
+<em>qotd             17/tcp    # Quote of the Day</em><br>
+<em>qotd             17/udp    # Quote of the Day</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>msp              18/tcp    # Message Send Protocol</em><br>
+<em>msp              18/udp    # Message Send Protocol</em><br>
+<em>#                          Rina Nethaniel &lt;---none---&gt;</em><br>
+<em>chargen          19/tcp    # Character Generator</em><br>
+<em>chargen          19/udp    # Character Generator</em><br>
+<em>ftp-data         20/tcp    # File Transfer [Default Data]</em><br>
+<em>ftp-data         20/udp    # File Transfer [Default Data]</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>ftp-data         20/sctp   # FTP</em><br>
+<em>#                          IETF TSVWG</em><br>
+<em>#                          Randall Stewart &lt;rrs&amp;cisco.com&gt;</em><br>
+<em>#                          [RFC4960]</em><br>
+<em>ftp              21/tcp    # File Transfer [Control]</em><br>
+<em>ftp              21/udp    # File Transfer [Control]</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>ftp              21/sctp   # FTP</em><br>
+<em>#                          IETF TSVWG</em><br>
+<em>#                          Randall Stewart &lt;rrs&amp;cisco.com&gt;</em><br>
+<em>#                          [RFC4960]</em><br>
+<em>ssh              22/tcp    # SSH Remote Login Protocol</em><br>
+<em>ssh              22/udp    # SSH Remote Login Protocol</em><br>
+<em>#                          Tatu Ylonen &lt;ylo&amp;cs.hut.fi&gt;</em><br>
+<em>ssh              22/sctp   # SSH</em><br>
+<em>#                          IETF TSVWG</em><br>
+<em>#                          Randall Stewart &lt;rrs&amp;cisco.com&gt;</em><br>
+<em>#                          [RFC4960]</em><br>
+<em>telnet           23/tcp    # Telnet</em><br>
+<em>telnet           23/udp    # Telnet</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#                24/tcp    any private mail system</em><br>
+<em>#                24/udp    any private mail system</em><br>
+<em>#                          Rick Adams &lt;rick&amp;UUNET.UU.NET&gt;</em><br>
+<em>smtp             25/tcp    # Simple Mail Transfer</em><br>
+<em>smtp             25/udp    # Simple Mail Transfer</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#                26/tcp    Unassigned</em><br>
+<em>#                26/udp    Unassigned</em><br>
+<em>nsw-fe           27/tcp    # NSW User System FE</em><br>
+<em>nsw-fe           27/udp    # NSW User System FE</em><br>
+<em>#                          Robert Thomas &lt;BThomas&amp;F.BBN.COM&gt;</em><br>
+<em>#                28/tcp    Unassigned</em><br>
+<em>#                28/udp    Unassigned</em><br>
+<em>msg-icp          29/tcp    # MSG ICP</em><br>
+<em>msg-icp          29/udp    # MSG ICP</em><br>
+<em>#                          Robert Thomas &lt;BThomas&amp;F.BBN.COM&gt;</em><br>
+<em>#                30/tcp    Unassigned</em><br>
+<em>#                30/udp    Unassigned</em><br>
+<em>msg-auth         31/tcp    # MSG Authentication</em><br>
+<em>msg-auth         31/udp    # MSG Authentication</em><br>
+<em>#                          Robert Thomas &lt;BThomas&amp;F.BBN.COM&gt;</em><br>
+<em>#                32/tcp    Unassigned</em><br>
+<em>#                32/udp    Unassigned</em><br>
+<em>dsp              33/tcp    # Display Support Protocol</em><br>
+<em>dsp              33/udp    # Display Support Protocol</em><br>
+<em>#                          Ed Cain &lt;cain&amp;edn-unix.dca.mil&gt;</em><br>
+<em>#                34/tcp    Unassigned</em><br>
+<em>#                34/udp    Unassigned</em><br>
+<em>#                35/tcp    any private printer server</em><br>
+<em>#                35/udp    any private printer server</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#                36/tcp    Unassigned</em><br>
+<em>#                36/udp    Unassigned</em><br>
+<em>time             37/tcp    # Time</em><br>
+<em>time             37/udp    # Time</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>rap              38/tcp    # Route Access Protocol</em><br>
+<em>rap              38/udp    # Route Access Protocol</em><br>
+<em>#                          Robert Ullmann &lt;ariel&amp;world.std.com&gt;</em><br>
+<em>rlp              39/tcp    # Resource Location Protocol</em><br>
+<em>rlp              39/udp    # Resource Location Protocol</em><br>
+<em>#                          Mike Accetta &lt;MIKE.ACCETTA&amp;CMU-CS-A.EDU&gt;</em><br>
+<em>#                40/tcp    Unassigned</em><br>
+<em>#                40/udp    Unassigned</em><br>
+<em>graphics         41/tcp    # Graphics</em><br>
+<em>graphics         41/udp    # Graphics</em><br>
+<em>name             42/tcp    # Host Name Server</em><br>
+<em>name             42/udp    # Host Name Server</em><br>
+<em>nameserver       42/tcp    # Host Name Server</em><br>
+<em>nameserver       42/udp    # Host Name Server</em><br>
+<em>nicname          43/tcp whois    # Who Is</em><br>
+<em>nicname          43/udp whois    # Who Is</em><br>
+<em>mpm-flags        44/tcp    # MPM FLAGS Protocol</em><br>
+<em>mpm-flags        44/udp    # MPM FLAGS Protocol</em><br>
+<em>mpm              45/tcp    # Message Processing Module [recv]</em><br>
+<em>mpm              45/udp    # Message Processing Module [recv]</em><br>
+<em>mpm-snd          46/tcp    # MPM [default send]</em><br>
+<em>mpm-snd          46/udp    # MPM [default send]</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>ni-ftp           47/tcp    # NI FTP</em><br>
+<em>ni-ftp           47/udp    # NI FTP</em><br>
+<em>#                          Steve Kille &lt;S.Kille&amp;isode.com&gt;</em><br>
+<em>auditd           48/tcp    # Digital Audit Daemon</em><br>
+<em>auditd           48/udp    # Digital Audit Daemon</em><br>
+<em>#                          Larry Scott &lt;scott&amp;zk3.dec.com&gt;</em><br>
+<em>tacacs           49/tcp    # Login Host Protocol (TACACS)</em><br>
+<em>tacacs           49/udp    # Login Host Protocol (TACACS)</em><br>
+<em>#                          Pieter Ditmars &lt;pditmars&amp;BBN.COM&gt;</em><br>
+<em>re-mail-ck       50/tcp    # Remote Mail Checking Protocol</em><br>
+<em>re-mail-ck       50/udp    # Remote Mail Checking Protocol</em><br>
+<em>#                          Steve Dorner &lt;s-dorner&amp;UIUC.EDU&gt;</em><br>
+<em>la-maint         51/tcp    # IMP Logical Address Maintenance</em><br>
+<em>la-maint         51/udp    # IMP Logical Address Maintenance</em><br>
+<em>#                          Andy Malis &lt;malis_a&amp;timeplex.com&gt;</em><br>
+<em>xns-time         52/tcp    # XNS Time Protocol</em><br>
+<em>xns-time         52/udp    # XNS Time Protocol</em><br>
+<em>#                          Susie Armstrong &lt;Armstrong.wbst128@XEROX&gt;</em><br>
+<em>domain           53/tcp    # Domain Name Server</em><br>
+<em>domain           53/udp    # Domain Name Server</em><br>
+<em>#                          Paul Mockapetris &lt;PVM&amp;ISI.EDU&gt;</em><br>
+<em>xns-ch           54/tcp    # XNS Clearinghouse</em><br>
+<em>xns-ch           54/udp    # XNS Clearinghouse</em><br>
+<em>#                          Susie Armstrong &lt;Armstrong.wbst128@XEROX&gt;</em><br>
+<em>isi-gl           55/tcp    # ISI Graphics Language</em><br>
+<em>isi-gl           55/udp    # ISI Graphics Language</em><br>
+<em>xns-auth         56/tcp    # XNS Authentication</em><br>
+<em>xns-auth         56/udp    # XNS Authentication</em><br>
+<em>#                          Susie Armstrong &lt;Armstrong.wbst128@XEROX&gt;</em><br>
+<em>#                57/tcp    any private terminal access</em><br>
+<em>#                57/udp    any private terminal access</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>xns-mail         58/tcp    # XNS Mail</em><br>
+<em>xns-mail         58/udp    # XNS Mail</em><br>
+<em>#                          Susie Armstrong &lt;Armstrong.wbst128@XEROX&gt;</em><br>
+<em>#                59/tcp    any private file service</em><br>
+<em>#                59/udp    any private file service</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>#                60/tcp    Unassigned</em><br>
+<em>#                60/udp    Unassigned</em><br>
+<em>ni-mail          61/tcp    # NI MAIL</em><br>
+<em>ni-mail          61/udp    # NI MAIL</em><br>
+<em>#                          Steve Kille &lt;S.Kille&amp;isode.com&gt;</em><br>
+<em>acas             62/tcp    # ACA Services</em><br>
+<em>acas             62/udp    # ACA Services</em><br>
+<em>#                          E. Wald &lt;ewald&amp;via.enet.dec.com&gt;</em><br>
+<em>whois++          63/tcp    # whois++</em><br>
+<em>whois++          63/udp    # whois++</em><br>
+<em>#                          Rickard Schoultz &lt;schoultz&amp;sunet.se&gt;</em><br>
+<em>covia            64/tcp    # Communications Integrator (CI)</em><br>
+<em>covia            64/udp    # Communications Integrator (CI)</em><br>
+<em>#                          Dan Smith &lt;dan.smith&amp;den.galileo.com&gt;</em><br>
+<em>tacacs-ds        65/tcp    # TACACS-Database Service</em><br>
+<em>tacacs-ds        65/udp    # TACACS-Database Service</em><br>
+<em>#                          Kathy Huber &lt;khuber&amp;bbn.com&gt;</em><br>
+<em>sql*net          66/tcp    # Oracle SQL*NET</em><br>
+<em>sql*net          66/udp    # Oracle SQL*NET</em><br>
+<em>#                          Jack Haverty &lt;jhaverty&amp;ORACLE.COM&gt;</em><br>
+<em>bootps           67/tcp    # Bootstrap Protocol Server</em><br>
+<em>bootps           67/udp    # Bootstrap Protocol Server</em><br>
+<em>bootpc           68/tcp    # Bootstrap Protocol Client</em><br>
+<em>bootpc           68/udp    # Bootstrap Protocol Client</em><br>
+<em>#                          Bill Croft &lt;Croft&amp;SUMEX-AIM.STANFORD.EDU&gt;</em><br>
+<em>tftp             69/tcp    # Trivial File Transfer</em><br>
+<em>tftp             69/udp    # Trivial File Transfer</em><br>
+<em>#                          David Clark &lt;ddc&amp;LCS.MIT.EDU&gt;</em><br>
+<em>gopher           70/tcp    # Gopher</em><br>
+<em>gopher           70/udp    # Gopher</em><br>
+<em>#                          Mark McCahill &lt;mpm&amp;boombox.micro.umn.edu&gt;</em><br>
+<em>netrjs-1         71/tcp    # Remote Job Service</em><br>
+<em>netrjs-1         71/udp    # Remote Job Service</em><br>
+<em>netrjs-2         72/tcp    # Remote Job Service</em><br>
+<em>netrjs-2         72/udp    # Remote Job Service</em><br>
+<em>netrjs-3         73/tcp    # Remote Job Service</em><br>
+<em>netrjs-3         73/udp    # Remote Job Service</em><br>
+<em>netrjs-4         74/tcp    # Remote Job Service</em><br>
+<em>netrjs-4         74/udp    # Remote Job Service</em><br>
+<em>#                          Bob Braden &lt;Braden&amp;ISI.EDU&gt;</em><br>
+<em>#                75/tcp    any private dial out service</em><br>
+<em>#                75/udp    any private dial out service</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>deos             76/tcp    # Distributed External Object Store</em><br>
+<em>deos             76/udp    # Distributed External Object Store</em><br>
+<em>#                          Robert Ullmann &lt;ariel&amp;world.std.com&gt;</em><br>
+<em>#                77/tcp    any private RJE service</em><br>
+<em>#                77/udp    any private RJE service</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>vettcp           78/tcp    # vettcp</em><br>
+<em>vettcp           78/udp    # vettcp</em><br>
+<em>#                          Christopher Leong &lt;leong&amp;kolmod.mlo.dec.com&gt;</em><br>
+<em>finger           79/tcp    # Finger</em><br>
+<em>finger           79/udp    # Finger</em><br>
+<em>#                          David Zimmerman &lt;dpz&amp;RUTGERS.EDU&gt;</em><br>
+<em>http             80/tcp    # World Wide Web HTTP</em><br>
+<em>http             80/udp    # World Wide Web HTTP</em><br>
+<em>www              80/tcp    # World Wide Web HTTP</em><br>
+<em>www              80/udp    # World Wide Web HTTP</em><br>
+<em>www-http         80/tcp    # World Wide Web HTTP</em><br>
+<em>www-http         80/udp    # World Wide Web HTTP</em><br>
+<em>#                          Tim Berners-Lee &lt;timbl&amp;W3.org&gt;</em><br>
+<em>http             80/sctp   # HTTP</em><br>
+<em>#                          IETF TSVWG</em><br>
+<em>#                          Randall Stewart &lt;rrs&amp;cisco.com&gt;</em><br>
+<em>#                          [RFC4960]</em><br>
+<em>#                81        Unassigned (Removed on 2007-09-06)</em><br>
+<em>xfer             82/tcp    # XFER Utility</em><br>
+<em>xfer             82/udp    # XFER Utility</em><br>
+<em>#                          Thomas M. Smith &lt;Thomas.M.Smith&amp;lmco.com&gt;</em><br>
+<em>mit-ml-dev       83/tcp    # MIT ML Device</em><br>
+<em>mit-ml-dev       83/udp    # MIT ML Device</em><br>
+<em>#                          David Reed &lt;--none---&gt;</em><br>
+<em>ctf              84/tcp    # Common Trace Facility</em><br>
+<em>ctf              84/udp    # Common Trace Facility</em><br>
+<em>#                          Hugh Thomas &lt;thomas&amp;oils.enet.dec.com&gt;</em><br>
+<em>mit-ml-dev       85/tcp    # MIT ML Device</em><br>
+<em>mit-ml-dev       85/udp    # MIT ML Device</em><br>
+<em>#                          David Reed &lt;--none---&gt;</em><br>
+<em>mfcobol          86/tcp    # Micro Focus Cobol</em><br>
+<em>mfcobol          86/udp    # Micro Focus Cobol</em><br>
+<em>#                          Simon Edwards &lt;--none---&gt;</em><br>
+<em>#                87/tcp    any private terminal link</em><br>
+<em>#                87/udp    any private terminal link</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>kerberos         88/tcp    # Kerberos</em><br>
+<em>kerberos         88/udp    # Kerberos</em><br>
+<em>#                          B. Clifford Neuman &lt;bcn&amp;isi.edu&gt;</em><br>
+<em>su-mit-tg        89/tcp    # SU/MIT Telnet Gateway</em><br>
+<em>su-mit-tg        89/udp    # SU/MIT Telnet Gateway</em><br>
+<em>#                          Mark Crispin &lt;MRC&amp;PANDA.COM&gt;</em><br>
+<em>########### PORT 90 also being used unofficially by Pointcast #########</em><br>
+<em>dnsix            90/tcp    # DNSIX Securit Attribute Token Map</em><br>
+<em>dnsix            90/udp    # DNSIX Securit Attribute Token Map</em><br>
+<em>#                          Charles Watt &lt;watt&amp;sware.com&gt;</em><br>
+<em>mit-dov          91/tcp    # MIT Dover Spooler</em><br>
+<em>mit-dov          91/udp    # MIT Dover Spooler</em><br>
+<em>#                          Eliot Moss &lt;EBM&amp;XX.LCS.MIT.EDU&gt;</em><br>
+<em>npp              92/tcp    # Network Printing Protocol</em><br>
+<em>npp              92/udp    # Network Printing Protocol</em><br>
+<em>#                          Louis Mamakos &lt;louie&amp;sayshell.umd.edu&gt;</em><br>
+<em>dcp              93/tcp    # Device Control Protocol</em><br>
+<em>dcp              93/udp    # Device Control Protocol</em><br>
+<em>#                          Daniel Tappan &lt;Tappan&amp;BBN.COM&gt;</em><br>
+<em>objcall          94/tcp    # Tivoli Object Dispatcher</em><br>
+<em>objcall          94/udp    # Tivoli Object Dispatcher</em><br>
+<em>#                          Tom Bereiter &lt;--none---&gt;</em><br>
+<em>supdup           95/tcp    # SUPDUP</em><br>
+<em>supdup           95/udp    # SUPDUP</em><br>
+<em>#                          Mark Crispin &lt;MRC&amp;PANDA.COM&gt;</em><br>
+<em>dixie            96/tcp    # DIXIE Protocol Specification</em><br>
+<em>dixie            96/udp    # DIXIE Protocol Specification</em><br>
+<em>#                Tim Howes &lt;Tim.Howes&amp;terminator.cc.umich.edu&gt;</em><br>
+<em>swift-rvf        97/tcp    # Swift Remote Virtural File Protocol</em><br>
+<em>swift-rvf        97/udp    # Swift Remote Virtural File Protocol</em><br>
+<em>#                          Maurice R. Turcotte</em><br>
+<em>#                &lt;mailrus!uflorida!rm1!dnmrt%rmatl&amp;uunet.UU.NET&gt; </em><br>
+<em>tacnews          98/tcp    # TAC News</em><br>
+<em>tacnews          98/udp    # TAC News</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>metagram         99/tcp    # Metagram Relay</em><br>
+<em>metagram         99/udp    # Metagram Relay</em><br>
+<em>#                          Geoff Goodfellow &lt;Geoff&amp;FERNWOOD.MPK.CA.US&gt;</em><br>
+<em>newacct         100/tcp    # [unauthorized use]</em><br>
+<em>hostname        101/tcp    # NIC Host Name Server</em><br>
+<em>hostname        101/udp    # NIC Host Name Server</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>iso-tsap        102/tcp    # ISO-TSAP Class 0</em><br>
+<em>iso-tsap        102/udp    # ISO-TSAP Class 0</em><br>
+<em>#                          Marshall Rose &lt;mrose&amp;dbc.mtview.ca.us&gt;</em><br>
+<em>gppitnp         103/tcp    # Genesis Point-to-Point Trans Net</em><br>
+<em>gppitnp         103/udp    # Genesis Point-to-Point Trans Net</em><br>
+<em>acr-nema        104/tcp    # ACR-NEMA Digital Imag. &amp; Comm. 300</em><br>
+<em>acr-nema        104/udp    # ACR-NEMA Digital Imag. &amp; Comm. 300</em><br>
+<em>#                          Patrick McNamee &lt;--none---&gt;</em><br>
+<em>cso             105/tcp    # CCSO name server protocol</em><br>
+<em>cso             105/udp    # CCSO name server protocol</em><br>
+<em>#                          Martin Hamilton &lt;martin&amp;mrrl.lut.as.uk&gt;           </em><br>
+<em>csnet-ns        105/tcp    # Mailbox Name Nameserver</em><br>
+<em>csnet-ns        105/udp    # Mailbox Name Nameserver</em><br>
+<em>#                          Marvin Solomon &lt;solomon&amp;CS.WISC.EDU&gt;</em><br>
+<em>3com-tsmux      106/tcp    # 3COM-TSMUX</em><br>
+<em>3com-tsmux      106/udp    # 3COM-TSMUX</em><br>
+<em>#                          Jeremy Siegel &lt;jzs&amp;NSD.3Com.COM&gt;</em><br>
+<em>##########      106        Unauthorized use by insecure poppassd protocol</em><br>
+<em>rtelnet         107/tcp    # Remote Telnet Service</em><br>
+<em>rtelnet         107/udp    # Remote Telnet Service</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>snagas          108/tcp    # SNA Gateway Access Server</em><br>
+<em>snagas          108/udp    # SNA Gateway Access Server</em><br>
+<em>#                          Kevin Murphy &lt;murphy&amp;sevens.lkg.dec.com&gt;</em><br>
+<em>pop2            109/tcp    # Post Office Protocol - Version 2</em><br>
+<em>pop2            109/udp    # Post Office Protocol - Version 2</em><br>
+<em>#                          Joyce K. Reynolds &lt;jkrey&amp;isi.edu&gt;</em><br>
+<em>pop3            110/tcp    # Post Office Protocol - Version 3</em><br>
+<em>pop3            110/udp    # Post Office Protocol - Version 3</em><br>
+<em>#                          Marshall Rose &lt;mrose&amp;dbc.mtview.ca.us&gt;</em><br>
+<em>sunrpc          111/tcp    rpcbind # SUN Remote Procedure Call</em><br>
+<em>sunrpc          111/udp    rpcbind # SUN Remote Procedure Call</em><br>
+<em>#                          Chuck McManis &lt;cmcmanis&amp;freegate.net&gt;</em><br>
+<em>mcidas          112/tcp    # McIDAS Data Transmission Protocol</em><br>
+<em>mcidas          112/udp    # McIDAS Data Transmission Protocol</em><br>
+<em>#                          Glenn Davis &lt;support&amp;unidata.ucar.edu&gt;</em><br>
+<em>ident           113/tcp    # </em><br>
+<em>auth            113/tcp    # Authentication Service</em><br>
+<em>auth            113/udp    # Authentication Service</em><br>
+<em>#                          Mike St. Johns &lt;stjohns&amp;arpa.mil&gt;</em><br>
+<em>#               114        Deprecated June 2004</em><br>
+<em>sftp            115/tcp    # Simple File Transfer Protocol</em><br>
+<em>sftp            115/udp    # Simple File Transfer Protocol</em><br>
+<em>#                          Mark Lottor &lt;MKL&amp;nisc.sri.com&gt;</em><br>
+<em>ansanotify      116/tcp    # ANSA REX Notify</em><br>
+<em>ansanotify      116/udp    # ANSA REX Notify</em><br>
+<em>#                          Nicola J. Howarth &lt;njh&amp;ansa.co.uk&gt;</em><br>
+<em>uucp-path       117/tcp    # UUCP Path Service</em><br>
+<em>uucp-path       117/udp    # UUCP Path Service</em><br>
+<em>sqlserv         118/tcp    # SQL Services</em><br>
+<em>sqlserv         118/udp    # SQL Services</em><br>
+<em>#                          Larry Barnes &lt;barnes&amp;broke.enet.dec.com&gt;</em><br>
+<em>nntp            119/tcp    # Network News Transfer Protocol</em><br>
+<em>nntp            119/udp    # Network News Transfer Protocol</em><br>
+<em>#                          Phil Lapsley &lt;phil&amp;UCBARPA.BERKELEY.EDU&gt;</em><br>
+<em>cfdptkt         120/tcp    # CFDPTKT</em><br>
+<em>cfdptkt         120/udp    # CFDPTKT</em><br>
+<em>#                          John Ioannidis &lt;ji&amp;close.cs.columbia.ed&gt;</em><br>
+<em>erpc            121/tcp    # Encore Expedited Remote Pro.Call</em><br>
+<em>erpc            121/udp    # Encore Expedited Remote Pro.Call</em><br>
+<em>#                          Jack O'Neil &lt;---none---&gt;</em><br>
+<em>smakynet        122/tcp    # SMAKYNET</em><br>
+<em>smakynet        122/udp    # SMAKYNET</em><br>
+<em>#                          Pierre Arnaud &lt;pierre.arnaud&amp;iname.com&gt;</em><br>
+<em>ntp             123/tcp    # Network Time Protocol</em><br>
+<em>ntp             123/udp    # Network Time Protocol</em><br>
+<em>#                          Dave Mills &lt;Mills&amp;HUEY.UDEL.EDU&gt;</em><br>
+<em>ansatrader      124/tcp    # ANSA REX Trader</em><br>
+<em>ansatrader      124/udp    # ANSA REX Trader</em><br>
+<em>#                          Nicola J. Howarth &lt;njh&amp;ansa.co.uk&gt;</em><br>
+<em>locus-map       125/tcp    # Locus PC-Interface Net Map Ser</em><br>
+<em>locus-map       125/udp    # Locus PC-Interface Net Map Ser</em><br>
+<em>#                          Eric Peterson &lt;lcc.eric&amp;SEAS.UCLA.EDU&gt;</em><br>
+<em>nxedit		126/tcp    # NXEdit</em><br>
+<em>nxedit		126/udp    # NXEdit</em><br>
+<em>#			   Don Payette &lt;Don.Payette&amp;unisys.com&gt;</em><br>
+<em>###########Port 126 Previously assigned to application below#######</em><br>
+<em>#unitary         126/tcp    Unisys Unitary Login</em><br>
+<em>#unitary         126/udp    Unisys Unitary Login</em><br>
+<em>#                          &lt;feil&amp;kronos.nisd.cam.unisys.com&gt;</em><br>
+<em>###########Port 126 Previously assigned to application above#######</em><br>
+<em>locus-con       127/tcp    # Locus PC-Interface Conn Server</em><br>
+<em>locus-con       127/udp    # Locus PC-Interface Conn Server</em><br>
+<em>#                          Eric Peterson &lt;lcc.eric&amp;SEAS.UCLA.EDU&gt;</em><br>
+<em>gss-xlicen      128/tcp    # GSS X License Verification</em><br>
+<em>gss-xlicen      128/udp    # GSS X License Verification</em><br>
+<em>#                          John Light &lt;johnl&amp;gssc.gss.com&gt;</em><br>
+<em>pwdgen          129/tcp    # Password Generator Protocol</em><br>
+<em>pwdgen          129/udp    # Password Generator Protocol</em><br>
+<em>#                          Frank J. Wacho &lt;WANCHO&amp;WSMR-SIMTEL20.ARMY.MIL&gt;</em><br>
+<em>cisco-fna       130/tcp    # cisco FNATIVE</em><br>
+<em>cisco-fna       130/udp    # cisco FNATIVE</em><br>
+<em>cisco-tna       131/tcp    # cisco TNATIVE</em><br>
+<em>cisco-tna       131/udp    # cisco TNATIVE</em><br>
+<em>cisco-sys       132/tcp    # cisco SYSMAINT</em><br>
+<em>cisco-sys       132/udp    # cisco SYSMAINT</em><br>
+<em>statsrv         133/tcp    # Statistics Service</em><br>
+<em>statsrv         133/udp    # Statistics Service</em><br>
+<em>#                          Dave Mills &lt;Mills&amp;HUEY.UDEL.EDU&gt;</em><br>
+<em>ingres-net      134/tcp    # INGRES-NET Service</em><br>
+<em>ingres-net      134/udp    # INGRES-NET Service</em><br>
+<em>#                          Mike Berrow &lt;---none---&gt;</em><br>
+<em>epmap           135/tcp    # DCE endpoint resolution</em><br>
+<em>epmap           135/udp    # DCE endpoint resolution</em><br>
+<em>#                          Joe Pato &lt;pato&amp;apollo.hp.com&gt;</em><br>
+<em>profile         136/tcp    # PROFILE Naming System           </em><br>
+<em>profile         136/udp    # PROFILE Naming System           </em><br>
+<em>#                          Larry Peterson &lt;llp&amp;ARIZONA.EDU&gt;</em><br>
+<em>netbios-ns      137/tcp    # NETBIOS Name Service    </em><br>
+<em>netbios-ns      137/udp    # NETBIOS Name Service    </em><br>
+<em>netbios-dgm     138/tcp    # NETBIOS Datagram Service</em><br>
+<em>netbios-dgm     138/udp    # NETBIOS Datagram Service</em><br>
+<em>netbios-ssn     139/tcp    # NETBIOS Session Service</em><br>
+<em>netbios-ssn     139/udp    # NETBIOS Session Service</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>emfis-data      140/tcp    # EMFIS Data Service</em><br>
+<em>emfis-data      140/udp    # EMFIS Data Service</em><br>
+<em>emfis-cntl      141/tcp    # EMFIS Control Service</em><br>
+<em>emfis-cntl      141/udp    # EMFIS Control Service</em><br>
+<em>#                          Gerd Beling &lt;GBELING&amp;ISI.EDU&gt;</em><br>
+<em>bl-idm          142/tcp    # Britton-Lee IDM           </em><br>
+<em>bl-idm          142/udp    # Britton-Lee IDM           </em><br>
+<em>#                          Susie Snitzer &lt;---none---&gt;</em><br>
+<em>imap            143/tcp    # Internet Message Access Protocol</em><br>
+<em>imap            143/udp    # Internet Message Access Protocol</em><br>
+<em>#                          Mark Crispin &lt;MRC&amp;CAC.Washington.EDU&gt;</em><br>
+<em>uma 		144/tcp    # Universal Management Architecture</em><br>
+<em>uma		144/udp    # Universal Management Architecture</em><br>
+<em>#			   Jay Whitney &lt;jw&amp;powercenter.com&gt;</em><br>
+<em>uaac            145/tcp    # UAAC Protocol             </em><br>
+<em>uaac            145/udp    # UAAC Protocol             </em><br>
+<em>#                          David A. Gomberg &lt;gomberg&amp;GATEWAY.MITRE.ORG&gt;</em><br>
+<em>iso-tp0         146/tcp    # ISO-IP0</em><br>
+<em>iso-tp0         146/udp    # ISO-IP0</em><br>
+<em>iso-ip          147/tcp    # ISO-IP</em><br>
+<em>iso-ip          147/udp    # ISO-IP</em><br>
+<em>#                          Marshall Rose &lt;mrose&amp;dbc.mtview.ca.us&gt;</em><br>
+<em>jargon          148/tcp    # Jargon</em><br>
+<em>jargon          148/udp    # Jargon</em><br>
+<em>#			   Bill Weinman &lt;wew&amp;bearnet.com&gt;</em><br>
+<em>aed-512         149/tcp    # AED 512 Emulation Service           </em><br>
+<em>aed-512         149/udp    # AED 512 Emulation Service           </em><br>
+<em>#                          Albert G. Broscius &lt;broscius&amp;DSL.CIS.UPENN.EDU&gt;</em><br>
+<em>sql-net         150/tcp    # SQL-NET                    </em><br>
+<em>sql-net         150/udp    # SQL-NET                    </em><br>
+<em>#                          Martin Picard &lt;&lt;---none---&gt;</em><br>
+<em>hems            151/tcp    # HEMS                              </em><br>
+<em>hems            151/udp    # HEMS                              </em><br>
+<em>bftp            152/tcp    # Background File Transfer Program </em><br>
+<em>bftp            152/udp    # Background File Transfer Program </em><br>
+<em>#                          Annette DeSchon &lt;DESCHON&amp;ISI.EDU&gt;</em><br>
+<em>sgmp            153/tcp    # SGMP                    </em><br>
+<em>sgmp            153/udp    # SGMP                    </em><br>
+<em>#                          Marty Schoffstahl &lt;schoff&amp;NISC.NYSER.NET&gt;</em><br>
+<em>netsc-prod      154/tcp    # NETSC                             </em><br>
+<em>netsc-prod      154/udp    # NETSC                             </em><br>
+<em>netsc-dev       155/tcp    # NETSC                             </em><br>
+<em>netsc-dev       155/udp    # NETSC                             </em><br>
+<em>#                          Sergio Heker &lt;heker&amp;JVNCC.CSC.ORG&gt;</em><br>
+<em>sqlsrv          156/tcp    # SQL Service                  </em><br>
+<em>sqlsrv          156/udp    # SQL Service                  </em><br>
+<em>#                          Craig Rogers &lt;Rogers&amp;ISI.EDU&gt;</em><br>
+<em>knet-cmp        157/tcp    # KNET/VM Command/Message Protocol</em><br>
+<em>knet-cmp        157/udp    # KNET/VM Command/Message Protocol</em><br>
+<em>#                          Gary S. Malkin &lt;GMALKIN&amp;XYLOGICS.COM&gt;</em><br>
+<em>pcmail-srv      158/tcp    # PCMail Server                 </em><br>
+<em>pcmail-srv      158/udp    # PCMail Server                 </em><br>
+<em>#                          Mark L. Lambert &lt;markl&amp;PTT.LCS.MIT.EDU&gt;</em><br>
+<em>nss-routing     159/tcp    # NSS-Routing                  </em><br>
+<em>nss-routing     159/udp    # NSS-Routing                  </em><br>
+<em>#                          Yakov Rekhter &lt;Yakov&amp;IBM.COM&gt;</em><br>
+<em>sgmp-traps      160/tcp    # SGMP-TRAPS                </em><br>
+<em>sgmp-traps      160/udp    # SGMP-TRAPS                </em><br>
+<em>#                          Marty Schoffstahl &lt;schoff&amp;NISC.NYSER.NET&gt;</em><br>
+<em>snmp            161/tcp    # SNMP</em><br>
+<em>snmp            161/udp    # SNMP</em><br>
+<em>snmptrap        162/tcp    # SNMPTRAP</em><br>
+<em>snmptrap        162/udp    # SNMPTRAP</em><br>
+<em>#                          Marshall Rose &lt;mrose&amp;dbc.mtview.ca.us&gt;</em><br>
+<em>cmip-man        163/tcp    # CMIP/TCP Manager   </em><br>
+<em>cmip-man        163/udp    # CMIP/TCP Manager   </em><br>
+<em>cmip-agent      164/tcp    # CMIP/TCP Agent     </em><br>
+<em>cmip-agent      164/udp    # CMIP/TCP Agent     </em><br>
+<em>#                          Amatzia Ben-Artzi &lt;---none---&gt;</em><br>
+<em>xns-courier     165/tcp    # Xerox                          </em><br>
+<em>xns-courier     165/udp    # Xerox                          </em><br>
+<em>#                          Susie Armstrong &lt;Armstrong.wbst128&amp;XEROX.COM&gt;</em><br>
+<em>s-net           166/tcp    # Sirius Systems          </em><br>
+<em>s-net           166/udp    # Sirius Systems          </em><br>
+<em>#                          Brian Lloyd &lt;brian&amp;lloyd.com&gt;</em><br>
+<em>namp            167/tcp    # NAMP                    </em><br>
+<em>namp            167/udp    # NAMP                    </em><br>
+<em>#                          Marty Schoffstahl &lt;schoff&amp;NISC.NYSER.NET&gt;</em><br>
+<em>rsvd            168/tcp    # RSVD                              </em><br>
+<em>rsvd            168/udp    # RSVD                              </em><br>
+<em>#                          Neil Todd &lt;mcvax!ist.co.uk!neil&amp;UUNET.UU.NET&gt;</em><br>
+<em>send            169/tcp    # SEND                              </em><br>
+<em>send            169/udp    # SEND                              </em><br>
+<em>#                          William D. Wisner &lt;wisner&amp;HAYES.FAI.ALASKA.EDU&gt;</em><br>
+<em>print-srv       170/tcp    # Network PostScript              </em><br>
+<em>print-srv       170/udp    # Network PostScript              </em><br>
+<em>#                          Brian Reid &lt;reid&amp;DECWRL.DEC.COM&gt;</em><br>
+<em>multiplex       171/tcp    # Network Innovations Multiplex</em><br>
+<em>multiplex       171/udp    # Network Innovations Multiplex</em><br>
+<em>cl/1            172/tcp    # Network Innovations CL/1     </em><br>
+<em>cl/1            172/udp    # Network Innovations CL/1     </em><br>
+<em>#                          Kevin DeVault &lt;&lt;---none---&gt;</em><br>
+<em>xyplex-mux      173/tcp    # Xyplex                          </em><br>
+<em>xyplex-mux      173/udp    # Xyplex                          </em><br>
+<em>#                          Bob Stewart &lt;STEWART&amp;XYPLEX.COM&gt;</em><br>
+<em>mailq           174/tcp    # MAILQ                               </em><br>
+<em>mailq           174/udp    # MAILQ                               </em><br>
+<em>#                          Rayan Zachariassen &lt;rayan&amp;AI.TORONTO.EDU&gt;</em><br>
+<em>vmnet           175/tcp    # VMNET                                </em><br>
+<em>vmnet           175/udp    # VMNET  </em><br>
+<em>#                          Christopher Tengi &lt;tengi&amp;Princeton.EDU&gt;</em><br>
+<em>genrad-mux      176/tcp    # GENRAD-MUX                      </em><br>
+<em>genrad-mux      176/udp    # GENRAD-MUX                      </em><br>
+<em>#                          Ron Thornton &lt;thornton&amp;qm7501.genrad.com&gt;</em><br>
+<em>xdmcp           177/tcp    # X Display Manager Control Protocol  </em><br>
+<em>xdmcp           177/udp    # X Display Manager Control Protocol  </em><br>
+<em>#                          Robert W. Scheifler &lt;RWS&amp;XX.LCS.MIT.EDU&gt;</em><br>
+<em>nextstep        178/tcp    # NextStep Window Server     </em><br>
+<em>nextstep        178/udp    # NextStep Window Server     </em><br>
+<em>#                          Leo Hourvitz &lt;leo&amp;NEXT.COM&gt;</em><br>
+<em>bgp             179/tcp    # Border Gateway Protocol             </em><br>
+<em>bgp             179/udp    # Border Gateway Protocol             </em><br>
+<em>#                          Kirk Lougheed &lt;LOUGHEED&amp;MATHOM.CISCO.COM&gt;</em><br>
+<em>bgp             179/sctp   # BGP</em><br>
+<em>#                          IETF TSVWG</em><br>
+<em>#                          Randall Stewart &lt;rrs&amp;cisco.com&gt;</em><br>
+<em>#                          [RFC4960]</em><br>
+<em>ris             180/tcp    # Intergraph                         </em><br>
+<em>ris             180/udp    # Intergraph                         </em><br>
+<em>#                          Dave Buehmann &lt;ingr!daveb&amp;UUNET.UU.NET&gt;</em><br>
+<em>unify           181/tcp    # Unify                  </em><br>
+<em>unify           181/udp    # Unify                  </em><br>
+<em>#                          Mark Ainsley &lt;ianaportmaster&amp;unify.com&gt;</em><br>
+<em>audit           182/tcp    # Unisys Audit SITP                  </em><br>
+<em>audit           182/udp    # Unisys Audit SITP                  </em><br>
+<em>#                          Gil Greenbaum &lt;gcole&amp;nisd.cam.unisys.com&gt;</em><br>
+<em>ocbinder        183/tcp    # OCBinder                     </em><br>
+<em>ocbinder        183/udp    # OCBinder                     </em><br>
+<em>ocserver        184/tcp    # OCServer                     </em><br>
+<em>ocserver        184/udp    # OCServer                     </em><br>
+<em>#                          Jerrilynn Okamura &lt;--none---&gt;</em><br>
+<em>remote-kis      185/tcp    # Remote-KIS                        </em><br>
+<em>remote-kis      185/udp    # Remote-KIS                        </em><br>
+<em>kis             186/tcp    # KIS Protocol                      </em><br>
+<em>kis             186/udp    # KIS Protocol                      </em><br>
+<em>#                          Ralph Droms &lt;rdroms&amp;NRI.RESTON.VA.US&gt;</em><br>
+<em>aci             187/tcp    # Application Communication Interface</em><br>
+<em>aci             187/udp    # Application Communication Interface</em><br>
+<em>#                          Rick Carlos &lt;rick.ticipa.csc.ti.com&gt;</em><br>
+<em>mumps           188/tcp    # Plus Five's MUMPS            </em><br>
+<em>mumps           188/udp    # Plus Five's MUMPS            </em><br>
+<em>#                          Hokey Stenn &lt;hokey&amp;PLUS5.COM&gt;</em><br>
+<em>qft             189/tcp    # Queued File Transport        </em><br>
+<em>qft             189/udp    # Queued File Transport        </em><br>
+<em>#                          Wayne Schroeder &lt;schroeder&amp;SDS.SDSC.EDU&gt;</em><br>
+<em>gacp            190/tcp    # Gateway Access Control Protocol</em><br>
+<em>gacp            190/udp    # Gateway Access Control Protocol</em><br>
+<em>#                          C. Philip Wood &lt;cpw&amp;LANL.GOV&gt;</em><br>
+<em>prospero        191/tcp    # Prospero Directory Service      </em><br>
+<em>prospero        191/udp    # Prospero Directory Service      </em><br>
+<em>#                          B. Clifford Neuman &lt;bcn&amp;isi.edu&gt;</em><br>
+<em>osu-nms         192/tcp    # OSU Network Monitoring System       </em><br>
+<em>osu-nms         192/udp    # OSU Network Monitoring System       </em><br>
+<em>#                          Doug Karl &lt;KARL-D&amp;OSU-20.IRCC.OHIO-STATE.EDU&gt;</em><br>
+<em>srmp            193/tcp    # Spider Remote Monitoring Protocol </em><br>
+<em>srmp            193/udp    # Spider Remote Monitoring Protocol </em><br>
+<em>#                          Ted J. Socolofsky &lt;Teds&amp;SPIDER.CO.UK&gt;</em><br>
+<em>irc             194/tcp    # Internet Relay Chat Protocol        </em><br>
+<em>irc             194/udp    # Internet Relay Chat Protocol        </em><br>
+<em>#                          Jarkko Oikarinen &lt;jto&amp;TOLSUN.OULU.FI&gt;</em><br>
+<em>dn6-nlm-aud     195/tcp    # DNSIX Network Level Module Audit    </em><br>
+<em>dn6-nlm-aud     195/udp    # DNSIX Network Level Module Audit    </em><br>
+<em>dn6-smm-red     196/tcp    # DNSIX Session Mgt Module Audit Redir</em><br>
+<em>dn6-smm-red     196/udp    # DNSIX Session Mgt Module Audit Redir</em><br>
+<em>#                          Lawrence Lebahn &lt;DIA3&amp;PAXRV-NES.NAVY.MIL&gt;</em><br>
+<em>dls             197/tcp    # Directory Location Service        </em><br>
+<em>dls             197/udp    # Directory Location Service        </em><br>
+<em>dls-mon         198/tcp    # Directory Location Service Monitor</em><br>
+<em>dls-mon         198/udp    # Directory Location Service Monitor</em><br>
+<em>#                          Scott Bellew &lt;smb&amp;cs.purdue.edu&gt;</em><br>
+<em>smux            199/tcp    # SMUX</em><br>
+<em>smux            199/udp    # SMUX</em><br>
+<em>#                          Marshall Rose &lt;mrose&amp;dbc.mtview.ca.us&gt;</em><br>
+<em>src             200/tcp    # IBM System Resource Controller</em><br>
+<em>src             200/udp    # IBM System Resource Controller</em><br>
+<em>#                          Gerald McBrearty &lt;---none---&gt;</em><br>
+<em>at-rtmp         201/tcp    # AppleTalk Routing Maintenance       </em><br>
+<em>at-rtmp         201/udp    # AppleTalk Routing Maintenance       </em><br>
+<em>at-nbp          202/tcp    # AppleTalk Name Binding              </em><br>
+<em>at-nbp          202/udp    # AppleTalk Name Binding              </em><br>
+<em>at-3            203/tcp    # AppleTalk Unused                    </em><br>
+<em>at-3            203/udp    # AppleTalk Unused                    </em><br>
+<em>at-echo         204/tcp    # AppleTalk Echo                      </em><br>
+<em>at-echo         204/udp    # AppleTalk Echo                      </em><br>
+<em>at-5            205/tcp    # AppleTalk Unused                    </em><br>
+<em>at-5            205/udp    # AppleTalk Unused                    </em><br>
+<em>at-zis          206/tcp    # AppleTalk Zone Information          </em><br>
+<em>at-zis          206/udp    # AppleTalk Zone Information          </em><br>
+<em>at-7            207/tcp    # AppleTalk Unused                    </em><br>
+<em>at-7            207/udp    # AppleTalk Unused                    </em><br>
+<em>at-8            208/tcp    # AppleTalk Unused                    </em><br>
+<em>at-8            208/udp    # AppleTalk Unused                    </em><br>
+<em>#                          Rob Chandhok &lt;chandhok&amp;gnome.cs.cmu.edu&gt;</em><br>
+<em>qmtp            209/tcp    # The Quick Mail Transfer Protocol</em><br>
+<em>qmtp            209/udp    # The Quick Mail Transfer Protocol</em><br>
+<em>#                          Dan Bernstein &lt;djb&amp;silverton.berkeley.edu&gt;</em><br>
+<em>z39.50          210/tcp    # ANSI Z39.50</em><br>
+<em>z39.50          210/udp    # ANSI Z39.50</em><br>
+<em>#                          Mark H. Needleman &lt;markn&amp;sirsi.com&gt; </em><br>
+<em>914c/g          211/tcp    # Texas Instruments 914C/G Terminal</em><br>
+<em>914c/g          211/udp    # Texas Instruments 914C/G Terminal</em><br>
+<em>#                          Bill Harrell &lt;---none---&gt;</em><br>
+<em>anet            212/tcp    # ATEXSSTR   </em><br>
+<em>anet            212/udp    # ATEXSSTR   </em><br>
+<em>#                          Jim Taylor &lt;taylor&amp;heart.epps.kodak.com&gt;</em><br>
+<em>ipx             213/tcp    # IPX         	                      </em><br>
+<em>ipx             213/udp    # IPX                                </em><br>
+<em>#                          Don Provan &lt;donp&amp;xlnvax.novell.com&gt;</em><br>
+<em>vmpwscs         214/tcp    # VM PWSCS                         </em><br>
+<em>vmpwscs         214/udp    # VM PWSCS                         </em><br>
+<em>#                          Dan Shia &lt;dset!shia&amp;uunet.UU.NET&gt;</em><br>
+<em>softpc          215/tcp    # Insignia Solutions</em><br>
+<em>softpc          215/udp    # Insignia Solutions</em><br>
+<em>#                          Martyn Thomas &lt;---none---&gt;</em><br>
+<em>CAIlic          216/tcp    # Computer Associates Int'l License Server</em><br>
+<em>CAIlic          216/udp    # Computer Associates Int'l License Server</em><br>
+<em>#                          Chuck Spitz &lt;spich04&amp;cai.com&gt;</em><br>
+<em>dbase           217/tcp    # dBASE Unix</em><br>
+<em>dbase           217/udp    # dBASE Unix</em><br>
+<em>#                          Don Gibson</em><br>
+<em>#            &lt;sequent!aero!twinsun!ashtate.A-T.COM!dong&amp;uunet.UU.NET&gt; </em><br>
+<em>mpp             218/tcp    # Netix Message Posting Protocol</em><br>
+<em>mpp             218/udp    # Netix Message Posting Protocol</em><br>
+<em>#                          Shannon Yeh &lt;yeh&amp;netix.com&gt;</em><br>
+<em>uarps           219/tcp    # Unisys ARPs               </em><br>
+<em>uarps           219/udp    # Unisys ARPs               </em><br>
+<em>#                          Ashok Marwaha &lt;---none---&gt;</em><br>
+<em>imap3           220/tcp    # Interactive Mail Access Protocol v3</em><br>
+<em>imap3           220/udp    # Interactive Mail Access Protocol v3</em><br>
+<em>#                          James Rice &lt;RICE&amp;SUMEX-AIM.STANFORD.EDU&gt;</em><br>
+<em>fln-spx         221/tcp    # Berkeley rlogind with SPX auth   </em><br>
+<em>fln-spx         221/udp    # Berkeley rlogind with SPX auth   </em><br>
+<em>rsh-spx         222/tcp    # Berkeley rshd with SPX auth      </em><br>
+<em>rsh-spx         222/udp    # Berkeley rshd with SPX auth      </em><br>
+<em>cdc             223/tcp    # Certificate Distribution Center  </em><br>
+<em>cdc             223/udp    # Certificate Distribution Center  </em><br>
+<em>#               Kannan Alagappan &lt;kannan&amp;sejour.enet.dec.com&gt;</em><br>
+<em>########### Possible Conflict of Port 222 with "Masqdialer"##############</em><br>
+<em>### Contact for Masqdialer is Charles Wright &lt;cpwright&amp;villagenet.com&gt;###</em><br>
+<em>masqdialer	224/tcp    # masqdialer</em><br>
+<em>masqdialer	224/udp    # masqdialer</em><br>
+<em>#			   Charles Wright &lt;cpwright&amp;villagenet.com&gt;</em><br>
+<em>#               225-241    Reserved</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>direct          242/tcp    # Direct</em><br>
+<em>direct          242/udp    # Direct</em><br>
+<em>#                          Herb Sutter &lt;HerbS&amp;cntc.com&gt;</em><br>
+<em>sur-meas        243/tcp    # Survey Measurement          </em><br>
+<em>sur-meas        243/udp    # Survey Measurement          </em><br>
+<em>#                          Dave Clark &lt;ddc&amp;LCS.MIT.EDU&gt;</em><br>
+<em>inbusiness      244/tcp    # inbusiness</em><br>
+<em>inbusiness      244/udp    # inbusiness</em><br>
+<em>#			   Derrick Hisatake &lt;derrick.i.hisatake&amp;intel.com&gt;</em><br>
+<em>link            245/tcp    # LINK</em><br>
+<em>link            245/udp    # LINK</em><br>
+<em>dsp3270         246/tcp    # Display Systems Protocol        </em><br>
+<em>dsp3270         246/udp    # Display Systems Protocol        </em><br>
+<em>#                          Weldon J. Showalter &lt;Gamma&amp;MINTAKA.DCA.MIL&gt;</em><br>
+<em>subntbcst_tftp  247/tcp    # SUBNTBCST_TFTP</em><br>
+<em>subntbcst_tftp  247/udp    # SUBNTBCST_TFTP</em><br>
+<em>#			   John Fake &lt;fake&amp;us.ibm.com&gt;</em><br>
+<em>bhfhs		248/tcp    # bhfhs</em><br>
+<em>bhfhs		248/udp    # bhfhs</em><br>
+<em>#			   John Kelly &lt;johnk&amp;bellhow.com&gt;</em><br>
+<em>#               249-255    Reserved</em><br>
+<em>#                          Jon Postel &lt;postel&amp;isi.edu&gt;</em><br>
+<em>rap             256/tcp    # RAP</em><br>
+<em>rap             256/udp    # RAP</em><br>
+<em>#                          J.S. Greenfield &lt;greeny&amp;raleigh.ibm.com&gt;</em><br>
+<em>set             257/tcp    # Secure Electronic Transaction</em><br>
+<em>set             257/udp    # Secure Electronic Transaction</em><br>
+<em>#                          Donald Eastlake &lt;dee3&amp;torque.pothole.com&gt;</em><br>
+<em>#		258	   Unassigned (Removed 2006-09-13)</em><br>
+<em>esro-gen        259/tcp    # Efficient Short Remote Operations</em><br>
+<em>esro-gen        259/udp    # Efficient Short Remote Operations</em><br>
+<em>#                          Mohsen Banan &lt;mohsen&amp;rostam.neda.com&gt;</em><br>
+<em>openport        260/tcp    # Openport</em><br>
+<em>openport        260/udp    # Openport</em><br>
+<em>#                          John Marland &lt;jmarland&amp;dean.openport.com&gt;</em><br>
+<em>nsiiops 	261/tcp    # IIOP Name Service over TLS/SSL</em><br>
+<em>nsiiops		261/udp    # IIOP Name Service over TLS/SSL</em><br>
+<em>#                          Jeff Stewart &lt;jstewart&amp;netscape.com&gt;</em><br>
+<em>arcisdms	262/tcp    # Arcisdms</em><br>
+<em>arcisdms	262/udp	   # Arcisdms</em><br>
+<em>#			   Russell Crook (rmc&amp;sni.ca&gt;</em><br>
+<em>hdap		263/tcp    # HDAP</em><br>
+<em>hdap		263/udp    # HDAP</em><br>
+<em>#			   Troy Gau &lt;troy&amp;zyxel.com&gt;</em><br>
+<em>bgmp		264/tcp    # BGMP</em><br>
+<em>bgmp		264/udp    # BGMP</em><br>
+<em>#			   Dave Thaler &lt;thalerd&amp;eecs.umich.edu&gt;</em><br>
+<em>x-bone-ctl	265/tcp    # X-Bone CTL</em><br>
+<em>x-bone-ctl	265/udp    # X-Bone CTL</em><br>
+<em>#			   Joe Touch &lt;touch&amp;isi.edu&gt;</em><br>
+<em>sst             266/tcp    # SCSI on ST</em><br>
+<em>sst             266/udp    # SCSI on ST</em><br>
+<em>#                          Donald D. Woelz &lt;don&amp;genroco.com&gt;</em><br>
+<em>td-service      267/tcp    # Tobit David Service Layer</em><br>
+<em>td-service      267/udp    # Tobit David Service Layer</em><br>
+<em>td-replica      268/tcp    # Tobit David Replica</em><br>
+<em>td-replica      268/udp    # Tobit David Replica</em><br>
+<em>#                          Franz-Josef Leuders &lt;development&amp;tobit.com&gt;</em><br>
+<em>manet           269/tcp    # MANET Protocols</em><br>
+<em>manet           269/udp    # MANET Protocols                 [RFC-ietf-manet-iana-07.txt]</em><br>
+<em>#               270-279    Unassigned</em><br>
+<em>http-mgmt       280/tcp    # http-mgmt</em><br>
+<em>http-mgmt       280/udp    # http-mgmt</em><br>
+<em>#                          Adrian Pell</em><br>
+<em>#                          &lt;PELL_ADRIAN/HP-UnitedKingdom_om6&amp;hplb.hpl.hp.com&gt;</em><br>
+<em>personal-link   281/tcp	   # Personal Link</em><br>
+<em>personal-link	281/udp    # Personal Link</em><br>
+<em>#                          Dan Cummings &lt;doc&amp;cnr.com&gt;</em><br>
+<em>cableport-ax	282/tcp    # Cable Port A/X</em><br>
+<em>cableport-ax	282/udp    # Cable Port A/X</em><br>
+<em>#                          Craig Langfahl &lt;Craig_J_Langfahl&amp;ccm.ch.intel.com&gt;</em><br>
+<em>rescap          283/tcp    # rescap</em><br>
+<em>rescap          283/udp    # rescap</em><br>
+<em>#                          Paul Hoffman &lt;phoffman&amp;imc.org&gt;</em><br>
+<em>corerjd         284/tcp    # corerjd</em><br>
+<em>corerjd         284/udp    # corerjd</em><br>
+<em>#			               Chris Thornhill &lt;port_contact&amp;cjt.ca&gt;</em><br>
+<em>#               285        Unassigned  </em><br>
+<em>fxp            286/tcp     # FXP Communication</em><br>
+<em>fxp            286/udp     # FXP Communication</em><br>
+<em>#                          James Darnall &lt;james_r_darnall&amp;sbcglobal.net&gt;  </em><br>
+<em>k-block         287/tcp    # K-BLOCK</em><br>
+<em>k-block         287/udp    # K-BLOCK</em><br>
+<em>#                          Simon P Jackson &lt;jacko&amp;kring.co.uk&gt;    </em><br>
+<em>#               288-307    Unassigned</em><br>
+<em>novastorbakcup	308/tcp    # Novastor Backup</em><br>
+<em>novastorbakcup	308/udp    # Novastor Backup</em><br>
+<em>#			   Brian Dickman &lt;brian&amp;novastor.com&gt;</em><br>
+<em>entrusttime     309/tcp    # EntrustTime    </em><br>
+<em>entrusttime     309/udp    # EntrustTime    </em><br>
+<em>#                          Peter Whittaker &lt;pww&amp;entrust.com&gt;</em><br>
+<em>bhmds		310/tcp        # bhmds</em><br>
+<em>bhmds 		310/udp        # bhmds</em><br>
+<em>#			   John Kelly &lt;johnk&amp;bellhow.com&gt;</em><br>
+<em>asip-webadmin	311/tcp    # AppleShare IP WebAdmin</em><br>
+<em>asip-webadmin	311/udp    # AppleShare IP WebAdmin</em><br>
+<em>#			   Ann Huang &lt;annhuang&amp;apple.com&gt;</em><br>
+<em>vslmp		312/tcp    # VSLMP</em><br>
+<em>vslmp		312/udp    # VSLMP</em><br>
+<em>#			   Gerben Wierda &lt;Gerben_Wierda&amp;RnA.nl&gt;</em><br>
+<em>magenta-logic	313/tcp    # Magenta Logic</em><br>
+<em>magenta-logic	313/udp	   # Magenta Logic</em><br>
+<em>#			   Karl Rousseau &lt;kr&amp;netfusion.co.uk&gt;</em><br>
+<em>opalis-robot	314/tcp    # Opalis Robot</em><br>
+<em>opalis-robot	314/udp    # Opalis Robot</em><br>
+<em>#			   Laurent Domenech, Opalis &lt;ldomenech&amp;opalis.com&gt;</em><br>
+<em>dpsi		315/tcp    # DPSI</em><br>
+<em>dpsi		315/udp    # DPSI</em><br>
+<em>#			   Tony Scamurra &lt;Tony&amp;DesktopPaging.com&gt;</em><br>
+<em>decauth		316/tcp    # decAuth</em><br>
+<em>decauth		316/udp    # decAuth</em><br>
+<em>#			   Michael Agishtein &lt;misha&amp;unx.dec.com&gt;</em><br>
+<em>zannet		317/tcp    # Zannet</em><br>
+<em>zannet		317/udp    # Zannet</em><br>
+<em>#			   Zan Oliphant &lt;zan&amp;accessone.com&gt;</em><br>
+<em>pkix-timestamp	318/tcp    # PKIX TimeStamp</em><br>
+<em>pkix-timestamp	318/udp    # PKIX TimeStamp</em><br>
+<em>#			   Robert Zuccherato &lt;robert.zuccherato&amp;entrust.com&gt;</em><br>
+<em>ptp-event	319/tcp    # PTP Event</em><br>
+<em>ptp-event	319/udp    # PTP Event</em><br>
+<em>ptp-general	320/tcp    # PTP General</em><br>
+<em>ptp-general	320/udp    # PTP General</em><br>
+<em>#			   John Eidson &lt;eidson&amp;hpl.hp.com&gt;</em><br>
+<em>pip		321/tcp    # PIP</em><br>
+<em>pip		321/udp    # PIP</em><br>
+<em>#			   Gordon Mohr &lt;gojomo&amp;usa.net&gt;</em><br>
+<em>rtsps		322/tcp    # RTSPS</em><br>
+<em>rtsps		322/udp    # RTSPS</em><br>
+<em>#			   Anders Klemets &lt;anderskl&amp;microsoft.com&gt;</em><br>
+<em>#               323-332    Unassigned</em><br>
+<em>texar		333/tcp    # Texar Security Port</em><br>
+<em>texar		333/udp    # Texar Security Port</em><br>
+<em>#			   Eugen Bacic &lt;ebacic&amp;texar.com&gt;</em><br>
+<em>#		334-343    Unassigned</em><br>
+<em>pdap            344/tcp    # Prospero Data Access Protocol</em><br>
+<em>pdap            344/udp    # Prospero Data Access Protocol</em><br>
+<em>#                          B. Clifford Neuman &lt;bcn&amp;isi.edu&gt;</em><br>
+<em>pawserv         345/tcp    # Perf Analysis Workbench</em><br>
+<em>pawserv         345/udp    # Perf Analysis Workbench</em><br>
+<em>zserv           346/tcp    # Zebra server</em><br>
+<em>zserv           346/udp    # Zebra server</em><br>
+<em>fatserv         347/tcp    # Fatmen Server</em><br>
+<em>fatserv         347/udp    # Fatmen Server</em><br>
+<em>csi-sgwp        348/tcp    # Cabletron Management Protocol</em><br>
+<em>csi-sgwp        348/udp    # Cabletron Management Protocol</em><br>
+<em>mftp            349/tcp    # mftp</em><br>
+<em>mftp            349/udp    # mftp</em><br>
+<em>#                          Dave Feinleib &lt;davefe&amp;microsoft.com&gt;</em><br>
+<em>matip-type-a    350/tcp    # MATIP Type A</em><br>
+<em>matip-type-a	350/udp    # MATIP Type A</em><br>
+<em>matip-type-b    351/tcp    # MATIP Type B</em><br>
+<em>matip-type-b    351/udp    # MATIP Type B</em><br>
+<em>#			   Alain Robert &lt;arobert&amp;par.sita.int&gt;</em><br>
+<em># The following entry records an unassigned but widespread use</em><br>
+<em>bhoetty		351/tcp	   # bhoetty (added 5/21/97)</em><br>
+<em>bhoetty		351/udp    # bhoetty</em><br>
+<em>#			   John Kelly &lt;johnk&amp;bellhow.com&gt;</em><br>
+<em>dtag-ste-sb	352/tcp	   # DTAG (assigned long ago)</em><br>
+<em>dtag-ste-sb	352/udp	   # DTAG</em><br>
+<em>#			   Ruediger Wald &lt;wald&amp;ez-darmstadt.telekom.de&gt;</em><br>
+<em># The following entry records an unassigned but widespread use</em><br>
+<em>bhoedap4	352/tcp    # bhoedap4 (added 5/21/97)</em><br>
+<em>bhoedap4	352/udp    # bhoedap4</em><br>
+<em>#			   John Kelly &lt;johnk&amp;bellhow.com&gt;</em><br>
+<em>ndsauth		353/tcp    # NDSAUTH</em><br>
+<em>ndsauth		353/udp    # NDSAUTH</em><br>
+<em>#			   Jayakumar Ramalingam &lt;jayakumar&amp;novell.com&gt;</em><br>
+<em>bh611		354/tcp	   # bh611</em><br>
+<em>bh611		354/udp    # bh611</em><br>
+<em>#			   John Kelly &lt;johnk&amp;bellhow.com&gt;</em><br>
+<em>datex-asn	355/tcp	   # DATEX-ASN</em><br>
+<em>datex-asn	355/udp    # DATEX-ASN</em><br>
+<em>#			   Kenneth Vaughn &lt;kvaughn&amp;mail.viggen.com&gt;</em><br>
+<em>cloanto-net-1	356/tcp    # Cloanto Net 1</em><br>
+<em>cloanto-net-1	356/udp    # Cloanto Net 1</em><br>
+<em>#			   Michael Battilana &lt;mcb-iana&amp;cloanto.com&gt;</em><br>
+<em>bhevent		357/tcp	   # bhevent</em><br>
+<em>bhevent		357/udp    # bhevent</em><br>
+<em>#			   John Kelly &lt;johnk&amp;bellhow.com&gt;</em><br>
+<em>shrinkwrap	358/tcp    # Shrinkwrap</em><br>
+<em>shrinkwrap	358/udp    # Shrinkwrap</em><br>
+<em>#			   Bill Simpson &lt;wsimpson&amp;greendragon.com&gt;</em><br>
+<em>nsrmp	        359/tcp    # Network Security Risk Management Protocol</em><br>
+<em>nsrmp      	359/udp    # Network Security Risk Management Protocol</em><br>
+<em>#			   Eric Jacksch &lt;jacksch&amp;tenebris.ca&gt;</em><br>
+<em>scoi2odialog	360/tcp    # scoi2odialog</em><br>
+<em>scoi2odialog	360/udp    # scoi2odialog</em><br>
+<em>#			   Keith Petley &lt;keithp&amp;sco.COM&gt;</em><br>
+<em>semantix	361/tcp    # Semantix</em><br>
+<em>semantix	361/udp    # Semantix</em><br>
+<em>#		   	   Semantix &lt;xsSupport&amp;semantix.com&gt;</em><br>
+<em>srssend		362/tcp    # SRS Send</em><br>
+<em>srssend		362/udp    # SRS Send</em><br>
+<em>#			   Curt Mayer &lt;curt&amp;emergent.com&gt;</em><br>
+<em>rsvp_tunnel	363/tcp    # RSVP Tunnel</em><br>
+<em>rsvp_tunnel	363/udp    # RSVP Tunnel</em><br>
+<em>#			   Andreas Terzis &lt;terzis&amp;cs.ucla.edu&gt;</em><br>
+<em>aurora-cmgr	364/tcp    # Aurora CMGR</em><br>
+<em>aurora-cmgr	364/udp    # Aurora CMGR</em><br>
+<em>#			   Philip Budne &lt;budne&amp;auroratech.com&gt;</em><br>
+<em>dtk		365/tcp    # DTK</em><br>
+<em>dtk		365/udp    # DTK</em><br>
+<em>#			   Fred Cohen &lt;fc&amp;all.net&gt;</em><br>
+<em>odmr		366/tcp    # ODMR</em><br>
+<em>odmr		366/udp    # ODMR</em><br>
+<em>#			   Randall Gellens &lt;randy&amp;qualcomm.com&gt;</em><br>
+<em>mortgageware	367/tcp    # MortgageWare</em><br>
+<em>mortgageware	367/udp    # MortgageWare</em><br>
+<em>#			   Ole Hellevik &lt;oleh&amp;interlinq.com&gt;</em><br>
+<em>qbikgdp		368/tcp    # QbikGDP</em><br>
+<em>qbikgdp		368/udp    # QbikGDP</em><br>
+<em>#			   Adrien de Croy &lt;adrien&amp;qbik.com&gt;</em><br>
+<em>rpc2portmap	369/tcp    # rpc2portmap </em><br>
+<em>rpc2portmap	369/udp    # rpc2portmap</em><br>
+<em>codaauth2	370/tcp    # codaauth2</em><br>
+<em>codaauth2	370/udp    # codaauth2</em><br>
+<em>#			   Robert Watson &lt;robert&amp;cyrus.watson.org&gt;</em><br>
+<em>clearcase       371/tcp    # Clearcase</em><br>
+<em>clearcase       371/udp    # Clearcase</em><br>
+<em>#                          Dave LeBlang &lt;leglang&amp;atria.com&gt;</em><br>
+<em>ulistproc       372/tcp    # ListProcessor</em><br>
+<em>ulistproc       372/udp    # ListProcessor</em><br>
+<em>#                          Anastasios Kotsikonas &lt;tasos&amp;cs.bu.edu&gt;</em><br>
+<em>legent-1        373/tcp    # Legent Corporation</em><br>
+<em>legent-1        373/udp    # Legent Corporation</em><br>
+<em>legent-2        374/tcp    # Legent Corporation</em><br>
+<em>legent-2        374/udp    # Legent Corporation</em><br>
+<em>#                          Keith Boyce &lt;---none---&gt;</em><br>
+<em>hassle          375/tcp    # Hassle</em><br>
+<em>hassle          375/udp    # Hassle</em><br>
+<em>#                          Reinhard Doelz &lt;doelz&amp;comp.bioz.unibas.ch&gt;</em><br>
+<em>nip             376/tcp    # Amiga Envoy Network Inquiry Proto   </em><br>
+<em>nip             376/udp    # Amiga Envoy Network Inquiry Proto</em><br>
+<em>#                          Heinz Wrobel &lt;hwrobel&amp;gmx.de&gt;</em><br>
+<em>tnETOS          377/tcp    # NEC Corporation</em><br>
+<em>tnETOS          377/udp    # NEC Corporation</em><br>
+<em>dsETOS          378/tcp    # NEC Corporation</em><br>
+<em>dsETOS          378/udp    # NEC Corporation</em><br>
+<em>#                          Tomoo Fujita &lt;tf&amp;arc.bs1.fc.nec.co.jp&gt;</em><br>
+<em>is99c           379/tcp    # TIA/EIA/IS-99 modem client</em><br>
+<em>is99c           379/udp    # TIA/EIA/IS-99 modem client</em><br>
+<em>is99s           380/tcp    # TIA/EIA/IS-99 modem server</em><br>
+<em>is99s           380/udp    # TIA/EIA/IS-99 modem server</em><br>
+<em>#                          Frank Quick &lt;fquick&amp;qualcomm.com&gt;</em><br>
+<em>hp-collector    381/tcp    # hp performance data collector</em><br>
+<em>hp-collector    381/udp    # hp performance data collector</em><br>
+<em>hp-managed-node 382/tcp    # hp performance data managed node</em><br>
+<em>hp-managed-node 382/udp    # hp performance data managed node</em><br>
+<em>hp-alarm-mgr    383/tcp    # hp performance data alarm manager</em><br>
+<em>hp-alarm-mgr    383/udp    # hp performance data alarm manager</em><br>
+<em>#                          Frank Blakely &lt;frankb&amp;hpptc16.rose.hp.com&gt;</em><br>
+<em>arns            384/tcp    # A Remote Network Server System</em><br>
+<em>arns            384/udp    # A Remote Network Server System</em><br>
+<em>#                          David Hornsby &lt;djh&amp;munnari.OZ.AU&gt;</em><br>
+<em>ibm-app         385/tcp    # IBM Application</em><br>
+<em>ibm-app         385/udp    # IBM Application</em><br>
+<em>#                          Lisa Tomita &lt;---none---&gt;</em><br>
+<em>asa             386/tcp    # ASA Message Router Object Def.</em><br>
+<em>asa             386/udp    # ASA Message Router Object Def.</em><br>
+<em>#                          Steve Laitinen &lt;laitinen&amp;brutus.aa.ab.com&gt;</em><br>
+<em>aurp            387/tcp    # Appletalk Update-Based Routing Pro.</em><br>
+<em>aurp            387/udp    # Appletalk Update-Based Routing Pro.</em><br>
+<em>#                          Chris Ranch &lt;cranch&amp;novell.com&gt;</em><br>
+<em>unidata-ldm     388/tcp    # Unidata LDM  </em><br>
+<em>unidata-ldm     388/udp    # Unidata LDM </em><br>
+<em>#                          Glenn Davis &lt;support&amp;unidata.ucar.edu&gt;</em><br>
+<em>ldap            389/tcp    # Lightweight Directory Access Protocol</em><br>
+<em>ldap            389/udp    # Lightweight Directory Access Protocol</em><br>
+<em>#                          Tim Howes &lt;Tim.Howes&amp;terminator.cc.umich.edu&gt;</em><br>
+<em>uis             390/tcp    # UIS</em><br>
+<em>uis             390/udp    # UIS</em><br>
+<em>#                          Ed Barron &lt;---none---&gt; </em><br>
+<em>synotics-relay  391/tcp    # SynOptics SNMP Relay Port</em><br>
+<em>synotics-relay  391/udp    # SynOptics SNMP Relay Port</em><br>
+<em>synotics-broker 392/tcp    # SynOptics Port Broker Port</em><br>
+<em>synotics-broker 392/udp    # SynOptics Port Broker Port</em><br>
+<em>#                          Illan Raab &lt;iraab&amp;synoptics.com&gt;</em><br>
+<em>meta5           393/tcp    # Meta5</em><br>
+<em>meta5           393/udp    # Meta5</em><br>
+<em>#                          Jim Kanzler &lt;jim.kanzler&amp;meta5.com&gt;</em><br>
+<em>embl-ndt        394/tcp    # EMBL Nucleic Data Transfer</em><br>
+<em>embl-ndt        394/udp    # EMBL Nucleic Data Transfer</em><br>
+<em>#                          Peter Gad &lt;peter&amp;bmc.uu.se&gt;</em><br>
+<em>netcp           395/tcp    # NETscout Control Protocol</em><br>
+<em>netcp           395/udp    # NETscout Control Protocol</em><br>
+<em>#                          Anil Singhal &lt;---none---&gt;</em><br>
+<em>netware-ip      396/tcp    # Novell Netware over IP</em><br>
+<em>netware-ip      396/udp    # Novell Netware over IP</em><br>
+<em>mptn            397/tcp    # Multi Protocol Trans. Net.</em><br>
+<em>mptn            397/udp    # Multi Protocol Trans. Net.</em><br>
+<em>#                          Soumitra Sarkar &lt;sarkar&amp;vnet.ibm.com&gt;</em><br>
+<em>kryptolan       398/tcp    # Kryptolan</em><br>
+<em>kryptolan       398/udp    # Kryptolan</em><br>
+<em>#                          Peter de Laval &lt;pdl&amp;sectra.se&gt;</em><br>
+<em>iso-tsap-c2     399/tcp    # ISO Transport Class 2 Non-Control over TCP</em><br>
+<em>iso-tsap-c2     399/udp    # ISO Transport Class 2 Non-Control over UDP</em><br>
+<em>#                          Yanick Pouffary &lt;pouffary&amp;taec.enet.dec.com&gt;</em><br>
+<em>work-sol        400/tcp    # Workstation Solutions</em><br>
+<em>work-sol        400/udp    # Workstation Solutions</em><br>
+<em>#                          Jim Ward &lt;jimw&amp;worksta.com&gt;</em><br>
+<em>ups             401/tcp    # Uninterruptible Power Supply</em><br>
+<em>ups             401/udp    # Uninterruptible Power Supply</em><br>
+<em>#                          Charles Bennett &lt;chuck&amp;benatong.com&gt;</em><br>
+<em>genie           402/tcp    # Genie Protocol</em><br>
+<em>genie           402/udp    # Genie Protocol</em><br>
+<em>#                          Mark Hankin &lt;---none---&gt;</em><br>
+<em>decap           403/tcp    # decap</em><br>
+<em>decap           403/udp    # decap</em><br>
+<em>nced            404/tcp    # nced</em><br>
+<em>nced            404/udp    # nced</em><br>
+<em>ncld            405/tcp    # ncld</em><br>
+<em>ncld            405/udp    # ncld</em><br>
+<em>#                          Richard Jones &lt;---none---&gt;</em><br>
+<em>imsp            406/tcp    # Interactive Mail Support Protocol</em><br>
+<em>imsp            406/udp    # Interactive Mail Support Protocol</em><br>
+<em>#                          John Myers &lt;jgm+&amp;cmu.edu&gt;</em><br>
+<em>timbuktu        407/tcp    # Timbuktu</em><br>
+<em>timbuktu        407/udp    # Timbuktu</em><br>
+<em>#                          Marc Epard &lt;marc&amp;netopia.com&gt;</em><br>
+<em>prm-sm          408/tcp    # Prospero Resource Manager Sys. Man.</em><br>
+<em>prm-sm          408/udp    # Prospero Resource Manager Sys. Man.</em><br>
+<em>prm-nm          409/tcp    # Prospero Resource Manager Node Man.</em><br>
+<em>prm-nm          409/udp    # Prospero Resource Manager Node Man.</em><br>
+<em>#                          B. Clifford Neuman &lt;bcn&amp;isi.edu&gt;</em><br>
+<em>decladebug      410/tcp    # DECLadebug Remote Debug Protocol</em><br>
+<em>decladebug      410/udp    # DECLadebug Remote Debug Protocol</em><br>
+<em>#                          Anthony Berent &lt;anthony.berent&amp;reo.mts.dec.com&gt;</em><br>
+<em>rmt             411/tcp    # Remote MT Protocol</em><br>
+<em>rmt             411/udp    # Remote MT Protocol</em><br>
+<em>#                          Peter Eriksson &lt;pen&amp;lysator.liu.se&gt;</em><br>
+<em>synoptics-trap  412/tcp    # Trap Convention Port</em><br>
+<em>synoptics-trap  412/udp    # Trap Convention Port</em><br>
+<em>#                          Illan Raab &lt;iraab&amp;synoptics.com&gt;</em><br>
+<em>smsp            413/tcp    # Storage Management Services Protocol</em><br>
+<em>smsp            413/udp    # Storage Management Services Protocol</em><br>
+<em>#                          Murthy Srinivas &lt;murthy&amp;novell.com&gt;</em><br>
+<em>infoseek        414/tcp    # InfoSeek</em><br>
+<em>infoseek        414/udp    # InfoSeek</em><br>
+<em>#                          Steve Kirsch &lt;stk&amp;infoseek.com&gt;</em><br>
+<em>bnet            415/tcp    # BNet</em><br>
+<em>bnet            415/udp    # BNet</em><br>
+<em>#                          Jim Mertz &lt;JMertz+RV09&amp;rvdc.unisys.com&gt;</em><br>
+<em>silverplatter   416/tcp    # Silverplatter</em><br>
+<em>silverplatter   416/udp    # Silverplatter</em><br>
+<em>#                          Peter Ciuffetti &lt;petec&amp;silverplatter.com&gt;</em><br>
+<em>onmux           417/tcp    # Onmux</em><br>
+<em>onmux           417/udp    # Onmux</em><br>
+<em>#                          Stephen Hanna &lt;hanna&amp;world.std.com&gt;</em><br>
+<em>hyper-g         418/tcp    # Hyper-G</em><br>
+<em>hyper-g         418/udp    # Hyper-G</em><br>
+<em>#                          Frank Kappe &lt;fkappe&amp;iicm.tu-graz.ac.at&gt;</em><br>
+<em>ariel1          419/tcp    # Ariel 1</em><br>
+<em>ariel1          419/udp    # Ariel 1</em><br>
+<em>#                          Joel Karafin &lt;jkarafin&amp;infotrieve.com&gt;</em><br>
+<em>smpte           420/tcp    # SMPTE</em><br>
+<em>smpte           420/udp    # SMPTE</em><br>
+<em>#                          Si Becker &lt;71362.22&amp;CompuServe.COM&gt;</em><br>
+<em>ariel2          421/tcp    # Ariel 2</em><br>
+<em>ariel2          421/udp    # Ariel 2</em><br>
+<em>ariel3          422/tcp    # Ariel 3</em><br>
+<em>ariel3          422/udp    # Ariel 3 </em><br>
+<em>#                          Joel Karafin &lt;jkarafin&amp;infotrieve.com&gt;</em><br>
+<em>opc-job-start   423/tcp    # IBM Operations Planning and Control Start</em><br>
+<em>opc-job-start   423/udp    # IBM Operations Planning and Control Start</em><br>
+<em>opc-job-track   424/tcp    # IBM Operations Planning and Control Track</em><br>
+<em>opc-job-track   424/udp    # IBM Operations Planning and Control Track</em><br>
+<em>#                          Conny Larsson  &lt;cocke&amp;VNET.IBM.COM&gt;</em><br>
+<em>icad-el         425/tcp    # ICAD</em><br>
+<em>icad-el         425/udp    # ICAD</em><br>
+<em>#		           Larry Stone	&lt;lcs&amp;icad.com&gt;</em><br>
+<em>smartsdp        426/tcp    # smartsdp</em><br>
+<em>smartsdp        426/udp    # smartsdp</em><br>
+<em>#                          Marie-Pierre Belanger &lt;belanger_marie&amp;emc.com&gt;</em><br>
+<em>svrloc          427/tcp    # Server Location</em><br>
+<em>svrloc          427/udp    # Server Location</em><br>
+<em>#                          &lt;veizades&amp;ftp.com&gt;</em><br>
+<em>ocs_cmu         428/tcp    # OCS_CMU</em><br>
+<em>ocs_cmu         428/udp    # OCS_CMU</em><br>
+<em>ocs_amu         429/tcp    # OCS_AMU</em><br>
+<em>ocs_amu         429/udp    # OCS_AMU</em><br>
+<em>#                          Florence Wyman &lt;wyman&amp;peabody.plk.af.mil&gt;</em><br>
+<em>utmpsd          430/tcp    # UTMPSD</em><br>
+<em>utmpsd          430/udp    # UTMPSD</em><br>
+<em>utmpcd          431/tcp    # UTMPCD</em><br>
+<em>utmpcd          431/udp    # UTMPCD</em><br>
+<em>iasd            432/tcp    # IASD  </em><br>
+<em>iasd            432/udp    # IASD  </em><br>
+<em>#                          Nir Baroz &lt;nbaroz&amp;encore.com&gt;</em><br>
+<em>nnsp            433/tcp    # NNSP</em><br>
+<em>nnsp            433/udp    # NNSP</em><br>
+<em>#                          Rob Robertson &lt;rob&amp;gangrene.berkeley.edu&gt;</em><br>
+<em>mobileip-agent  434/tcp    # MobileIP-Agent</em><br>
+<em>mobileip-agent  434/udp    # MobileIP-Agent</em><br>
+<em>mobilip-mn      435/tcp    # MobilIP-MN</em><br>
+<em>mobilip-mn      435/udp    # MobilIP-MN</em><br>
+<em>#                          Kannan Alagappan &lt;kannan&amp;sejour.lkg.dec.com&gt;</em><br>
+<em>dna-cml         436/tcp    # DNA-CML   </em><br>
+<em>dna-cml         436/udp    # DNA-CML   </em><br>
+<em>#                          Dan Flowers &lt;flowers&amp;smaug.lkg.dec.com&gt;</em><br>
+<em>comscm          437/tcp    # comscm</em><br>
+<em>comscm          437/udp    # comscm</em><br>
+<em>#                          Jim Teague &lt;teague&amp;zso.dec.com&gt;</em><br>
+<em>dsfgw           438/tcp    # dsfgw</em><br>
+<em>dsfgw           438/udp    # dsfgw</em><br>
+<em>#                          Andy McKeen &lt;mckeen&amp;osf.org&gt;</em><br>
+<em>dasp            439/tcp    # dasp      Thomas Obermair</em><br>
+<em>dasp            439/udp    # dasp      tommy&amp;inlab.m.eunet.de</em><br>
+<em>#                          Thomas Obermair &lt;tommy&amp;inlab.m.eunet.de&gt;</em><br>
+<em>sgcp            440/tcp    # sgcp      </em><br>
+<em>sgcp            440/udp    # sgcp      </em><br>
+<em>#                          Marshall Rose &lt;mrose&amp;dbc.mtview.ca.us&gt;</em><br>
+<em>decvms-sysmgt   441/tcp    # decvms-sysmgt</em><br>
+<em>decvms-sysmgt   441/udp    # decvms-sysmgt</em><br>
+<em>#                          Lee Barton &lt;barton&amp;star.enet.dec.com&gt;</em><br>
+<em>cvc_hostd       442/tcp    # cvc_hostd</em><br>
+<em>cvc_hostd       442/udp    # cvc_hostd</em><br>
+<em>#                          Bill Davidson &lt;billd&amp;equalizer.cray.com&gt;</em><br>
+<em>https           443/tcp    # http protocol over TLS/SSL</em><br>
+<em>https           443/udp    # http protocol over TLS/SSL</em><br>
+<em>#                          Kipp E.B. Hickman &lt;kipp&amp;mcom.com&gt;</em><br>
+<em>https           443/sctp   # HTTPS</em><br>
+<em>#                          IETF TSVWG</em><br>
+<em>#                          Randall Stewart &lt;rrs&amp;cisco.com&gt;</em><br>
+<em>#                          [RFC4960]</em><br>
+<em>snpp            444/tcp    # Simple Network Paging Protocol</em><br>
+<em>snpp            444/udp    # Simple Network Paging Protocol</em><br>
+<em>#                          [RFC1568]</em><br>
+<em>microsoft-ds    445/tcp    # Microsoft-DS</em><br>
+<em>microsoft-ds    445/udp    # Microsoft-DS</em><br>
+<em>#                          Pradeep Bahl &lt;pradeepb&amp;microsoft.com&gt;</em><br>
+<em>ddm-rdb         446/tcp    # DDM-Remote Relational Database Access</em><br>
+<em>ddm-rdb         446/udp    # DDM-Remote Relational Database Access</em><br>
+<em>ddm-dfm         447/tcp    # DDM-Distributed File Management</em><br>
+<em>ddm-dfm         447/udp    # DDM-Distributed File Management</em><br>
+<em>#                          Steven Ritland &lt;srr&amp;us.ibm.com&gt;</em><br>
+<em>ddm-ssl         448/tcp    # DDM-Remote DB Access Using Secure Sockets</em><br>
+<em>ddm-ssl         448/udp    # DDM-Remote DB Access Using Secure Sockets</em><br>
+<em>#			               Steven Ritland &lt;srr&amp;us.ibm.com&gt;</em><br>
+<em>as-servermap    449/tcp    # AS Server Mapper</em><br>
+<em>as-servermap    449/udp    # AS Server Mapper</em><br>
+<em>#                          Barbara Foss &lt;BGFOSS&amp;rchvmv.vnet.ibm.com&gt;</em><br>
+<em>tserver         450/tcp    # Computer Supported Telecomunication Applications</em><br>
+<em>tserver         450/udp    # Computer Supported Telecomunication Applications</em><br>
+<em>#                          Harvey S. Schultz &lt;harvey&amp;acm.org&gt;</em><br>
+<em>sfs-smp-net     451/tcp    # Cray Network Semaphore server</em><br>
+<em>sfs-smp-net     451/udp    # Cray Network Semaphore server</em><br>
+<em>sfs-config	452/tcp    # Cray SFS config server</em><br>
+<em>sfs-config	452/udp    # Cray SFS config server</em><br>
+<em>#                          Walter Poxon &lt;wdp&amp;ironwood.cray.com&gt;</em><br>
+<em>creativeserver  453/tcp    # CreativeServer</em><br>
+<em>creativeserver  453/udp    # CreativeServer</em><br>
+<em>contentserver   454/tcp    # ContentServer</em><br>
+<em>contentserver   454/udp    # ContentServer</em><br>
+<em>creativepartnr  455/tcp    # CreativePartnr</em><br>
+<em>creativepartnr  455/udp    # CreativePartnr</em><br>
+<em>#                          Jesus Ortiz &lt;jesus_ortiz&amp;emotion.com&gt;</em><br>
+<em>macon-tcp       456/tcp    # macon-tcp</em><br>
+<em>macon-udp       456/udp    # macon-udp</em><br>
+<em>#                          Yoshinobu Inoue</em><br>
+<em>#                          &lt;shin&amp;hodaka.mfd.cs.fujitsu.co.jp&gt;</em><br>
+<em>scohelp         457/tcp    # scohelp</em><br>
+<em>scohelp         457/udp    # scohelp</em><br>
+<em>#                          Faith Zack &lt;faithz&amp;sco.com&gt;</em><br>
+<em>appleqtc        458/tcp    # apple quick time</em><br>
+<em>appleqtc        458/udp    # apple quick time</em><br>
+<em>#                          Murali Ranganathan </em><br>
+<em>#                          &lt;murali_ranganathan&amp;quickmail.apple.com&gt;</em><br>
+<em>ampr-rcmd       459/tcp    # ampr-rcmd              </em><br>
+<em>ampr-rcmd       459/udp    # ampr-rcmd              </em><br>
+<em>#                          Rob Janssen &lt;rob&amp;sys3.pe1chl.ampr.org&gt;</em><br>
+<em>skronk          460/tcp    # skronk</em><br>
+<em>skronk          460/udp    # skronk</em><br>
+<em>#                          Henry Strickland &lt;strick&amp;yak.net&gt;</em><br>
+<em>datasurfsrv     461/tcp    # DataRampSrv</em><br>
+<em>datasurfsrv     461/udp    # DataRampSrv</em><br>
+<em>datasurfsrvsec  462/tcp    # DataRampSrvSec</em><br>
+<em>datasurfsrvsec  462/udp    # DataRampSrvSec</em><br>
+<em>#                          Diane Downie &lt;downie&amp;jibe.MV.COM&gt;</em><br>
+<em>alpes           463/tcp    # alpes</em><br>
+<em>alpes           463/udp    # alpes</em><br>
+<em>#                          Alain Durand &lt;Alain.Durand&amp;imag.fr&gt;</em><br>
+<em>kpasswd         464/tcp    # kpasswd</em><br>
+<em>kpasswd         464/udp    # kpasswd</em><br>
+<em>#                          Theodore Ts'o &lt;tytso&amp;MIT.EDU&gt;</em><br>
+<em>urd             465/tcp    # URL Rendesvous Directory for SSM</em><br>
+<em>igmpv3lite      465/udp    # IGMP over UDP for SSM </em><br>
+<em>#                          Toerless Eckert &lt;eckert&amp;cisco.com&gt;</em><br>
+<em>digital-vrc     466/tcp    # digital-vrc</em><br>
+<em>digital-vrc     466/udp    # digital-vrc</em><br>
+<em>#                          Peter Higginson &lt;higginson&amp;mail.dec.com&gt;</em><br>
+<em>mylex-mapd      467/tcp    # mylex-mapd</em><br>
+<em>mylex-mapd      467/udp    # mylex-mapd</em><br>
+<em>#                          Gary Lewis &lt;GaryL&amp;hq.mylex.com&gt;</em><br>
+<em>photuris        468/tcp    # proturis</em><br>
+<em>photuris        468/udp    # proturis</em><br>
+<em>#                          Bill Simpson &lt;Bill.Simpson&amp;um.cc.umich.edu&gt;</em><br>
+<em>rcp             469/tcp    # Radio Control Protocol</em><br>
+<em>rcp             469/udp    # Radio Control Protocol</em><br>
+<em>#                          Jim Jennings +1-708-538-7241</em><br>
+<em>scx-proxy       470/tcp    # scx-proxy</em><br>
+<em>scx-proxy       470/udp    # scx-proxy</em><br>
+<em>#                          Scott Narveson &lt;sjn&amp;cray.com&gt;</em><br>
+<em>mondex          471/tcp    # Mondex</em><br>
+<em>mondex          471/udp    # Mondex</em><br>
+<em>#                          Bill Reding &lt;redingb&amp;nwdt.natwest.co.uk&gt;</em><br>
+<em>ljk-login       472/tcp    # ljk-login</em><br>
+<em>ljk-login       472/udp    # ljk-login</em><br>
+<em>#                          LJK Software, Cambridge, Massachusetts</em><br>
+<em>#                          &lt;support&amp;ljk.com&gt;</em><br>
+<em>hybrid-pop      473/tcp    # hybrid-pop</em><br>
+<em>hybrid-pop      473/udp    # hybrid-pop</em><br>
+<em>#                          Rami Rubin &lt;rami&amp;hybrid.com&gt;</em><br>
+<em>tn-tl-w1        474/tcp    # tn-tl-w1</em><br>
+<em>tn-tl-w2        474/udp    # tn-tl-w2</em><br>
+<em>#                          Ed Kress &lt;eskress&amp;thinknet.com&gt;</em><br>
+<em>tcpnethaspsrv   475/tcp    # tcpnethaspsrv</em><br>
+<em>tcpnethaspsrv   475/udp    # tcpnethaspsrv</em><br>
+<em>#                          Charlie Hava &lt;charlie&amp;aladdin.co.il&gt;</em><br>
+<em>tn-tl-fd1       476/tcp    # tn-tl-fd1</em><br>
+<em>tn-tl-fd1       476/udp    # tn-tl-fd1</em><br>
+<em>#                          Ed Kress &lt;eskress&amp;thinknet.com&gt;</em><br>
+<em>ss7ns           477/tcp    # ss7ns</em><br>
+<em>ss7ns           477/udp    # ss7ns</em><br>
+<em>#                          Jean-Michel URSCH &lt;ursch&amp;taec.enet.dec.com&gt;</em><br>
+<em>spsc            478/tcp    # spsc</em><br>
+<em>spsc            478/udp    # spsc</em><br>
+<em>#                          Mike Rieker &lt;mikea&amp;sp32.com&gt;</em><br>
+<em>iafserver       479/tcp    # iafserver</em><br>
+<em>iafserver       479/udp    # iafserver</em><br>
+<em>iafdbase        480/tcp    # iafdbase</em><br>
+<em>iafdbase        480/udp    # iafdbase</em><br>
+<em>#                          ricky&amp;solect.com &lt;Rick Yazwinski&gt;</em><br>
+<em>ph              481/tcp    # Ph service</em><br>
+<em>ph              481/udp    # Ph service</em><br>
+<em>#                          Roland Hedberg &lt;Roland.Hedberg&amp;umdac.umu.se&gt;</em><br>
+<em>bgs-nsi         482/tcp    # bgs-nsi</em><br>
+<em>bgs-nsi         482/udp    # bgs-nsi</em><br>
+<em>#                          Jon Saperia &lt;saperia&amp;bgs.com&gt;         </em><br>
+<em>ulpnet          483/tcp    # ulpnet</em><br>
+<em>ulpnet          483/udp    # ulpnet</em><br>
+<em>#                          Kevin Mooney &lt;kevinm&amp;bfs.unibol.com&gt;</em><br>
+<em>integra-sme     484/tcp    # Integra Software Management Environment</em><br>
+<em>integra-sme     484/udp    # Integra Software Management Environment</em><br>
+<em>#                          Randall Dow &lt;rand&amp;randix.m.isr.de&gt;</em><br>
+<em>powerburst      485/tcp    # Air Soft Power Burst</em><br>
+<em>powerburst      485/udp    # Air Soft Power Burst</em><br>
+<em>#                          &lt;gary&amp;airsoft.com&gt;</em><br>
+<em>avian           486/tcp    # avian</em><br>
+<em>avian           486/udp    # avian</em><br>
+<em>#                          Robert Ullmann </em><br>
+<em>#                          &lt;Robert_Ullmann/CAM/Lotus.LOTUS&amp;crd.lotus.com&gt;</em><br>
+<em>saft            487/tcp    # saft Simple Asynchronous File Transfer</em><br>
+<em>saft            487/udp    # saft Simple Asynchronous File Transfer</em><br>
+<em>#                          Ulli Horlacher &lt;framstag&amp;rus.uni-stuttgart.de&gt;</em><br>
+<em>gss-http        488/tcp    # gss-http</em><br>
+<em>gss-http        488/udp    # gss-http</em><br>
+<em>#                          Doug Rosenthal &lt;rosenthl&amp;krypton.einet.net&gt;</em><br>
+<em>nest-protocol   489/tcp    # nest-protocol</em><br>
+<em>nest-protocol   489/udp    # nest-protocol</em><br>
+<em>#                          Gilles Gameiro &lt;ggameiro&amp;birdland.com&gt;</em><br>
+<em>micom-pfs       490/tcp    # micom-pfs</em><br>
+<em>micom-pfs       490/udp    # micom-pfs</em><br>
+<em>#                          David Misunas &lt;DMisunas&amp;micom.com&gt;</em><br>
+<em>go-login        491/tcp    # go-login</em><br>
+<em>go-login        491/udp    # go-login</em><br>
+<em>#                          Troy Morrison &lt;troy&amp;graphon.com&gt;</em><br>
+<em>ticf-1          492/tcp    # Transport Independent Convergence for FNA</em><br>
+<em>ticf-1          492/udp    # Transport Independent Convergence for FNA</em><br>
+<em>ticf-2          493/tcp    # Transport Independent Convergence for FNA</em><br>
+<em>ticf-2          493/udp    # Transport Independent Convergence for FNA</em><br>
+<em>#                          Mamoru Ito &lt;Ito&amp;pcnet.ks.pfu.co.jp&gt;</em><br>
+<em>pov-ray         494/tcp    # POV-Ray</em><br>
+<em>pov-ray         494/udp    # POV-Ray</em><br>
+<em>#                          POV-Team Co-ordinator </em><br>
+<em>#                          &lt;iana-port.remove-spamguard&amp;povray.org&gt;</em><br>
+<em>intecourier     495/tcp    # intecourier</em><br>
+<em>intecourier     495/udp    # intecourier</em><br>
+<em>#                          Steve Favor &lt;sfavor&amp;tigger.intecom.com&gt;</em><br>
+<em>pim-rp-disc     496/tcp    # PIM-RP-DISC</em><br>
+<em>pim-rp-disc     496/udp    # PIM-RP-DISC</em><br>
+<em>#                          Dino Farinacci &lt;dino&amp;cisco.com&gt;</em><br>
+<em>dantz           497/tcp    # dantz</em><br>
+<em>dantz           497/udp    # dantz</em><br>
+<em>#                          Richard Zulch &lt;richard_zulch&amp;dantz.com&gt;</em><br>
+<em>siam            498/tcp    # siam</em><br>
+<em>siam            498/udp    # siam</em><br>
+<em>#                          Philippe Gilbert &lt;pgilbert&amp;cal.fr&gt;</em><br>
+<em>iso-ill         499/tcp    # ISO ILL Protocol</em><br>
+<em>iso-ill         499/udp    # ISO ILL Protocol</em><br>
+<em>#                          Mark H. Needleman &lt;markn&amp;sirsi.com&gt;</em><br>
+<em>isakmp          500/tcp    # isakmp</em><br>
+<em>isakmp          500/udp    # isakmp</em><br>
+<em>#                          Mark Schertler &lt;mjs&amp;tycho.ncsc.mil&gt;</em><br>
+<em>stmf            501/tcp    # STMF</em><br>
+<em>stmf            501/udp    # STMF</em><br>
+<em>#                          Alan Ungar &lt;aungar&amp;farradyne.com&gt;</em><br>
+<em>asa-appl-proto  502/tcp    # asa-appl-proto</em><br>
+<em>asa-appl-proto  502/udp    # asa-appl-proto</em><br>
+<em>#                          Dennis Dube &lt;ddube&amp;modicon.com&gt;</em><br>
+<em>intrinsa        503/tcp    # Intrinsa</em><br>
+<em>intrinsa        503/udp    # Intrinsa</em><br>
+<em>#                          Robert Ford &lt;robert&amp;intrinsa.com&gt;</em><br>
+<em>citadel         504/tcp    # citadel</em><br>
+<em>citadel         504/udp    # citadel</em><br>
+<em>#                          Art Cancro &lt;ajc&amp;uncensored.citadel.org&gt;</em><br>
+<em>mailbox-lm      505/tcp    # mailbox-lm</em><br>
+<em>mailbox-lm      505/udp    # mailbox-lm</em><br>
+<em>#                          Beverly Moody &lt;Beverly_Moody&amp;stercomm.com&gt;</em><br>
+<em>ohimsrv         506/tcp    # ohimsrv</em><br>
+<em>ohimsrv         506/udp    # ohimsrv</em><br>
+<em>#                          Scott Powell &lt;spowell&amp;openhorizon.com&gt;</em><br>
+<em>crs             507/tcp    # crs</em><br>
+<em>crs             507/udp    # crs</em><br>
+<em>#                          Brad Wright &lt;bradwr&amp;microsoft.com&gt;</em><br>
+<em>xvttp           508/tcp    # xvttp</em><br>
+<em>xvttp           508/udp    # xvttp</em><br>
+<em>#                          Keith J. Alphonso &lt;alphonso&amp;ncs-ssc.com&gt;</em><br>
+<em>snare           509/tcp    # snare</em><br>
+<em>snare           509/udp    # snare</em><br>
+<em>#                          Dennis Batchelder &lt;dennis&amp;capres.com&gt;</em><br>
+<em>fcp             510/tcp    # FirstClass Protocol</em><br>
+<em>fcp             510/udp    # FirstClass Protocol</em><br>
+<em>#                          Mike Marshburn &lt;paul&amp;softarc.com&gt;</em><br>
+<em>passgo          511/tcp    # PassGo</em><br>
+<em>passgo          511/udp    # PassGo</em><br>
+<em>#                          John Rainford &lt;jrainford&amp;passgo.com&gt;</em><br>
+<em>exec            512/tcp    # remote process execution;</em><br>
+<em>#                          authentication performed using</em><br>
+<em>#                          passwords and UNIX login names</em><br>
+<em>comsat          512/udp</em><br>
+<em>biff            512/udp    # used by mail system to notify users</em><br>
+<em>#                          of new mail received; currently</em><br>
+<em>#                          receives messages only from </em><br>
+<em>#                          processes on the same machine</em><br>
+<em>login           513/tcp    # remote login a la telnet;</em><br>
+<em>#                          automatic authentication performed</em><br>
+<em>#                          based on priviledged port numbers</em><br>
+<em>#                          and distributed data bases which</em><br>
+<em>#                          identify "authentication domains"</em><br>
+<em>who             513/udp    # maintains data bases showing who's</em><br>
+<em>#                          logged in to machines on a local </em><br>
+<em>#                          net and the load average of the</em><br>
+<em>#                          machine</em><br>
+<em>shell           514/tcp    # cmd</em><br>
+<em>#                          like exec, but automatic authentication </em><br>
+<em>#                          is performed as for login server</em><br>
+<em>syslog          514/udp</em><br>
+<em>printer         515/tcp    # spooler</em><br>
+<em>printer         515/udp    # spooler</em><br>
+<em>videotex        516/tcp    # videotex</em><br>
+<em>videotex        516/udp    # videotex</em><br>
+<em>#                          Daniel Mavrakis &lt;system&amp;venus.mctel.fr&gt;</em><br>
+<em>talk            517/tcp    # like tenex link, but across</em><br>
+<em>#                          machine - unfortunately, doesn't</em><br>
+<em>#                          use link protocol (this is actually</em><br>
+<em>#                          just a rendezvous port from which a</em><br>
+<em>#                          tcp connection is established)</em><br>
+<em>talk            517/udp    # like tenex link, but across</em><br>
+<em>#                          machine - unfortunately, doesn't</em><br>
+<em>#                          use link protocol (this is actually</em><br>
+<em>#                          just a rendezvous port from which a</em><br>
+<em>#                          tcp connection is established)</em><br>
+<em>ntalk           518/tcp</em><br>
+<em>ntalk           518/udp</em><br>
+<em>utime           519/tcp    # unixtime</em><br>
+<em>utime           519/udp    # unixtime</em><br>
+<em>efs             520/tcp    # extended file name server</em><br>
+<em>router          520/udp    # local routing process (on site);</em><br>
+<em>#                          uses variant of Xerox NS routing</em><br>
+<em>#                          information protocol - RIP</em><br>
+<em>ripng           521/tcp    # ripng</em><br>
+<em>ripng           521/udp    # ripng</em><br>
+<em>#                          Robert E. Minnear &lt;minnear&amp;ipsilon.com&gt;</em><br>
+<em>ulp             522/tcp    # ULP    </em><br>
+<em>ulp             522/udp    # ULP    </em><br>
+<em>#                          Max Morris &lt;maxm&amp;MICROSOFT.com&gt;</em><br>
+<em>ibm-db2         523/tcp    # IBM-DB2</em><br>
+<em>ibm-db2         523/udp    # IBM-DB2</em><br>
+<em>#                          Juliana Hsu &lt;jhsu&amp;ca.ibm.com&gt;</em><br>
+<em>ncp             524/tcp    # NCP</em><br>
+<em>ncp             524/udp    # NCP    </em><br>
+<em>#                          Don Provan &lt;donp&amp;sjf.novell.com&gt;</em><br>
+<em>timed  	        525/tcp    # timeserver</em><br>
+<em>timed           525/udp    # timeserver</em><br>
+<em>tempo	        526/tcp    # newdate</em><br>
+<em>tempo	        526/udp    # newdate</em><br>
+<em>#                          Unknown</em><br>
+<em>stx             527/tcp    # Stock IXChange</em><br>
+<em>stx             527/udp    # Stock IXChange</em><br>
+<em>custix          528/tcp    # Customer IXChange</em><br>
+<em>custix          528/udp    # Customer IXChange</em><br>
+<em>#                          Ferdi Ladeira &lt;ferdil&amp;fraxion.biz&gt; </em><br>
+<em>irc-serv        529/tcp    # IRC-SERV</em><br>
+<em>irc-serv        529/udp    # IRC-SERV</em><br>
+<em>#                          Brian Tackett &lt;cym&amp;acrux.net&gt;</em><br>
+<em>courier         530/tcp    # rpc</em><br>
+<em>courier         530/udp    # rpc</em><br>
+<em>conference      531/tcp    # chat</em><br>
+<em>conference      531/udp    # chat</em><br>
+<em>netnews         532/tcp    # readnews</em><br>
+<em>netnews         532/udp    # readnews</em><br>
+<em>netwall	        533/tcp    # for emergency broadcasts</em><br>
+<em>netwall	        533/udp    # for emergency broadcasts</em><br>
+<em>#                          Andreas Heidemann &lt;a.heidemann&amp;ais-gmbh.de&gt;</em><br>
+<em>windream	534/tcp    # windream Admin</em><br>
+<em>windream	534/udp    # windream Admin</em><br>
+<em>#			    Uwe Honermann &lt;u.honermann&amp;windream.com&gt;</em><br>
+<em>iiop            535/tcp    # iiop</em><br>
+<em>iiop            535/udp    # iiop</em><br>
+<em>#                          Jeff M.Michaud &lt;michaud&amp;zk3.dec.com&gt;</em><br>
+<em>opalis-rdv      536/tcp    # opalis-rdv</em><br>
+<em>opalis-rdv      536/udp    # opalis-rdv</em><br>
+<em>#                          Laurent Domenech &lt;ldomenech&amp;opalis.com&gt;</em><br>
+<em>nmsp            537/tcp    # Networked Media Streaming Protocol</em><br>
+<em>nmsp            537/udp    # Networked Media Streaming Protocol</em><br>
+<em>#                          Paul Santinelli Jr. &lt;psantinelli&amp;narrative.com&gt;</em><br>
+<em>gdomap          538/tcp    # gdomap</em><br>
+<em>gdomap          538/udp    # gdomap</em><br>
+<em>#                          Richard Frith-Macdonald &lt;richard&amp;brainstorm.co.uk&gt;</em><br>
+<em>apertus-ldp     539/tcp    # Apertus Technologies Load Determination</em><br>
+<em>apertus-ldp     539/udp    # Apertus Technologies Load Determination</em><br>
+<em>uucp	        540/tcp    # uucpd		</em><br>
+<em>uucp	        540/udp    # uucpd		</em><br>
+<em>uucp-rlogin     541/tcp    # uucp-rlogin  </em><br>
+<em>uucp-rlogin     541/udp    # uucp-rlogin</em><br>
+<em>#                          Stuart Lynne &lt;sl&amp;wimsey.com&gt;</em><br>
+<em>commerce        542/tcp    # commerce</em><br>
+<em>commerce        542/udp    # commerce</em><br>
+<em>#                          Randy Epstein &lt;repstein&amp;hostleasing.net&gt;</em><br>
+<em>klogin          543/tcp</em><br>
+<em>klogin          543/udp</em><br>
+<em>kshell 	        544/tcp    # krcmd</em><br>
+<em>kshell 	        544/udp    # krcmd</em><br>
+<em>appleqtcsrvr    545/tcp    # appleqtcsrvr</em><br>
+<em>appleqtcsrvr    545/udp    # appleqtcsrvr</em><br>
+<em>#                          Murali Ranganathan </em><br>
+<em>#                          &lt;Murali_Ranganathan&amp;quickmail.apple.com&gt;</em><br>
+<em>dhcpv6-client   546/tcp    # DHCPv6 Client</em><br>
+<em>dhcpv6-client   546/udp    # DHCPv6 Client</em><br>
+<em>dhcpv6-server   547/tcp    # DHCPv6 Server</em><br>
+<em>dhcpv6-server   547/udp    # DHCPv6 Server</em><br>
+<em>#                          Jim Bound &lt;bound&amp;zk3.dec.com&gt;</em><br>
+<em>afpovertcp      548/tcp    # AFP over TCP</em><br>
+<em>afpovertcp      548/udp    # AFP over TCP</em><br>
+<em>#                          Leland Wallace &lt;randall&amp;apple.com&gt;</em><br>
+<em>idfp            549/tcp    # IDFP</em><br>
+<em>idfp            549/udp    # IDFP</em><br>
+<em>#                          Ramana Kovi &lt;ramana&amp;kovi.com&gt;</em><br>
+<em>new-rwho        550/tcp    # new-who</em><br>
+<em>new-rwho        550/udp    # new-who</em><br>
+<em>cybercash       551/tcp    # cybercash</em><br>
+<em>cybercash       551/udp    # cybercash</em><br>
+<em>#                          Donald E. Eastlake 3rd &lt;dee&amp;cybercash.com&gt;</em><br>
+<em>devshr-nts      552/tcp    # DeviceShare</em><br>
+<em>devshr-nts      552/udp    # DeviceShare</em><br>
+<em>#                          Benjamin Rosenberg &lt;brosenberg&amp;advsyscon.com&gt;</em><br>
+<em>pirp            553/tcp    # pirp</em><br>
+<em>pirp            553/udp    # pirp</em><br>
+<em>#                          D. J. Bernstein &lt;djb&amp;silverton.berkeley.edu&gt;</em><br>
+<em>rtsp            554/tcp    # Real Time Streaming Protocol (RTSP)</em><br>
+<em>rtsp            554/udp    # Real Time Streaming Protocol (RTSP)</em><br>
+<em>#                          Rob Lanphier &lt;robla&amp;prognet.com&gt;</em><br>
+<em>dsf             555/tcp</em><br>
+<em>dsf             555/udp</em><br>
+<em>remotefs        556/tcp    # rfs server</em><br>
+<em>remotefs        556/udp    # rfs server</em><br>
+<em>openvms-sysipc  557/tcp    # openvms-sysipc</em><br>
+<em>openvms-sysipc  557/udp    # openvms-sysipc</em><br>
+<em>#                          Alan Potter &lt;potter&amp;movies.enet.dec.com&gt;</em><br>
+<em>sdnskmp         558/tcp    # SDNSKMP</em><br>
+<em>sdnskmp         558/udp    # SDNSKMP</em><br>
+<em>teedtap         559/tcp    # TEEDTAP</em><br>
+<em>teedtap         559/udp    # TEEDTAP</em><br>
+<em>#                          Charlie Limoges &lt;Charlie.Limoges&amp;GDC4S.com&gt;</em><br>
+<em>rmonitor        560/tcp    # rmonitord</em><br>
+<em>rmonitor        560/udp    # rmonitord</em><br>
+<em>monitor         561/tcp</em><br>
+<em>monitor         561/udp</em><br>
+<em>chshell         562/tcp    # chcmd</em><br>
+<em>chshell         562/udp    # chcmd</em><br>
+<em>nntps           563/tcp    # nntp protocol over TLS/SSL (was snntp)</em><br>
+<em>nntps           563/udp    # nntp protocol over TLS/SSL (was snntp)</em><br>
+<em>#                          Kipp E.B. Hickman &lt;kipp&amp;netscape.com&gt;</em><br>
+<em>9pfs            564/tcp    # plan 9 file service</em><br>
+<em>9pfs            564/udp    # plan 9 file service</em><br>
+<em>whoami          565/tcp    # whoami</em><br>
+<em>whoami          565/udp    # whoami</em><br>
+<em>streettalk      566/tcp    # streettalk</em><br>
+<em>streettalk      566/udp    # streettalk</em><br>
+<em>banyan-rpc      567/tcp    # banyan-rpc</em><br>
+<em>banyan-rpc      567/udp    # banyan-rpc</em><br>
+<em>#                          Tom Lemaire &lt;toml&amp;banyan.com&gt;</em><br>
+<em>ms-shuttle      568/tcp    # microsoft shuttle</em><br>
+<em>ms-shuttle      568/udp    # microsoft shuttle</em><br>
+<em>#                          Rudolph Balaz &lt;rudolphb&amp;microsoft.com&gt;</em><br>
+<em>ms-rome         569/tcp    # microsoft rome</em><br>
+<em>ms-rome         569/udp    # microsoft rome</em><br>
+<em>#                          Rudolph Balaz &lt;rudolphb&amp;microsoft.com&gt;</em><br>
+<em>meter           570/tcp    # demon</em><br>
+<em>meter           570/udp    # demon</em><br>
+<em>meter	        571/tcp    # udemon</em><br>
+<em>meter	        571/udp    # udemon</em><br>
+<em>sonar           572/tcp    # sonar</em><br>
+<em>sonar           572/udp    # sonar</em><br>
+<em>#                          Keith Moore &lt;moore&amp;cs.utk.edu&gt;</em><br>
+<em>banyan-vip      573/tcp    # banyan-vip</em><br>
+<em>banyan-vip      573/udp    # banyan-vip</em><br>
+<em>#                          Denis Leclerc &lt;DLeclerc&amp;banyan.com&gt;</em><br>
+<em>ftp-agent       574/tcp    # FTP Software Agent System</em><br>
+<em>ftp-agent       574/udp    # FTP Software Agent System</em><br>
+<em>#                          Michael S. Greenberg &lt;arnoff&amp;ftp.com&gt;</em><br>
+<em>vemmi           575/tcp    # VEMMI</em><br>
+<em>vemmi           575/udp    # VEMMI</em><br>
+<em>#                          Daniel Mavrakis &lt;mavrakis&amp;mctel.fr&gt;</em><br>
+<em>ipcd            576/tcp    # ipcd</em><br>
+<em>ipcd            576/udp    # ipcd</em><br>
+<em>vnas            577/tcp    # vnas</em><br>
+<em>vnas            577/udp    # vnas</em><br>
+<em>ipdd            578/tcp    # ipdd</em><br>
+<em>ipdd            578/udp    # ipdd</em><br>
+<em>#                          Jay Farhat &lt;jfarhat&amp;ipass.com&gt;</em><br>
+<em>decbsrv		579/tcp    # decbsrv</em><br>
+<em>decbsrv		579/udp    # decbsrv</em><br>
+<em>#			   Rudi Martin &lt;movies::martin"@movies.enet.dec.com&gt;</em><br>
+<em>sntp-heartbeat  580/tcp    # SNTP HEARTBEAT</em><br>
+<em>sntp-heartbeat  580/udp	   # SNTP HEARTBEAT</em><br>
+<em>#			   Louis Mamakos &lt;louie&amp;uu.net&gt;</em><br>
+<em>bdp		581/tcp    # Bundle Discovery Protocol</em><br>
+<em>bdp		581/udp	   # Bundle Discovery Protocol</em><br>
+<em>#			   Gary Malkin &lt;gmalkin&amp;xylogics.com&gt;</em><br>
+<em>scc-security    582/tcp    # SCC Security</em><br>
+<em>scc-security    582/udp	   # SCC Security</em><br>
+<em>#			   Prashant Dholakia &lt;prashant&amp;semaphorecom.com&gt;</em><br>
+<em>philips-vc	583/tcp    # Philips Video-Conferencing</em><br>
+<em>philips-vc	583/udp    # Philips Video-Conferencing</em><br>
+<em>#			   Janna Chang &lt;janna&amp;pmc.philips.com&gt;</em><br>
+<em>keyserver	584/tcp    # Key Server</em><br>
+<em>keyserver	584/udp	   # Key Server</em><br>
+<em>#			   Gary Howland &lt;gary&amp;systemics.com&gt;</em><br>
+<em>#		585	   De-registered (25 April 2006)</em><br>
+<em>#               Use of 585 is not recommended, use 993 instead</em><br>
+<em>password-chg 	586/tcp    # Password Change</em><br>
+<em>password-chg	586/udp	   # Password Change</em><br>
+<em>submission	587/tcp    # Submission</em><br>
+<em>submission	587/udp    # Submission</em><br>
+<em>#			   [RFC4409]</em><br>
+<em>cal		588/tcp    # CAL</em><br>
+<em>cal		588/udp    # CAL</em><br>
+<em>#			   Myron Hattig &lt;Myron_Hattig&amp;ccm.jf.intel.com&gt;</em><br>
+<em>eyelink		589/tcp    # EyeLink</em><br>
+<em>eyelink		589/udp	   # EyeLink</em><br>
+<em>#			   Dave Stampe &lt;dstampe&amp;psych.toronto.edu&gt;</em><br>
+<em>tns-cml		590/tcp    # TNS CML</em><br>
+<em>tns-cml		590/udp    # TNS CML</em><br>
+<em>#			   Jerome Albin &lt;albin&amp;taec.enet.dec.com&gt;</em><br>
+<em>http-alt	591/tcp    # FileMaker, Inc. - HTTP Alternate (see Port 80)</em><br>
+<em>http-alt	591/udp    # FileMaker, Inc. - HTTP Alternate (see Port 80)</em><br>
+<em>#			   Clay Maeckel &lt;clay_maeckel&amp;filemaker.com&gt;</em><br>
+<em>eudora-set	592/tcp    # Eudora Set</em><br>
+<em>eudora-set	592/udp	   # Eudora Set</em><br>
+<em>#			   Randall Gellens &lt;randy&amp;qualcomm.com&gt;</em><br>
+<em>http-rpc-epmap  593/tcp    # HTTP RPC Ep Map</em><br>
+<em>http-rpc-epmap  593/udp    # HTTP RPC Ep Map</em><br>
+<em>#			   Edward Reus &lt;edwardr&amp;microsoft.com&gt;</em><br>
+<em>tpip		594/tcp    # TPIP</em><br>
+<em>tpip		594/udp    # TPIP</em><br>
+<em>#			   Brad Spear &lt;spear&amp;platinum.com&gt;</em><br>
+<em>cab-protocol	595/tcp    # CAB Protocol</em><br>
+<em>cab-protocol	595/udp    # CAB Protocol</em><br>
+<em>#			   Winston Hetherington</em><br>
+<em>smsd            596/tcp    # SMSD</em><br>
+<em>smsd            596/udp    # SMSD</em><br>
+<em>#                          Wayne Barlow &lt;web&amp;unx.dec.com&gt;</em><br>
+<em>ptcnameservice	597/tcp    # PTC Name Service</em><br>
+<em>ptcnameservice	597/udp    # PTC Name Service</em><br>
+<em>#                          Yuri Machkasov &lt;yuri&amp;ptc.com&gt;</em><br>
+<em>sco-websrvrmg3	598/tcp    # SCO Web Server Manager 3</em><br>
+<em>sco-websrvrmg3	598/udp    # SCO Web Server Manager 3</em><br>
+<em>#                          Simon Baldwin &lt;simonb&amp;sco.com&gt;</em><br>
+<em>acp             599/tcp    # Aeolon Core Protocol</em><br>
+<em>acp             599/udp    # Aeolon Core Protocol</em><br>
+<em>#                          Michael Alyn Miller &lt;iana&amp;aeolon.com&gt;</em><br>
+<em>ipcserver       600/tcp    # Sun IPC server</em><br>
+<em>ipcserver       600/udp    # Sun IPC server</em><br>
+<em>#                          Bill Schiefelbein &lt;schief&amp;aspen.cray.com&gt;</em><br>
+<em>syslog-conn     601/tcp    # Reliable Syslog Service</em><br>
+<em>syslog-conn     601/udp    # Reliable Syslog Service</em><br>
+<em>#                          RFC 3195</em><br>
+<em>xmlrpc-beep     602/tcp    # XML-RPC over BEEP</em><br>
+<em>xmlrpc-beep     602/udp    # XML-RPC over BEEP</em><br>
+//#                          RFC3529 &lt;<a href="ftp://ftp.isi.edu/in-notes/rfc3529.txt" title="ftp://ftp.isi.edu/in-notes/rfc3529.txt">ftp://ftp.isi.edu/in-notes/rfc3529.txt</a>&gt; March 2003//<br>
+<em>idxp            603/tcp    # IDXP</em><br>
+<em>idxp            603/udp    # IDXP</em><br>
+<em>#                          RFC4767</em><br>
+<em>tunnel          604/tcp    # TUNNEL</em><br>
+<em>tunnel          604/udp    # TUNNEL</em><br>
+<em>#                          RFC3620</em><br>
+<em>soap-beep       605/tcp    # SOAP over BEEP</em><br>
+<em>soap-beep       605/udp    # SOAP over BEEP</em><br>
+//#                          RFC3288 &lt;<a href="ftp://ftp.isi.edu/in-notes/rfc3288.txt" title="ftp://ftp.isi.edu/in-notes/rfc3288.txt">ftp://ftp.isi.edu/in-notes/rfc3288.txt</a>&gt; April 2002//<br>
+<em>urm             606/tcp    # Cray Unified Resource Manager</em><br>
+<em>urm             606/udp    # Cray Unified Resource Manager</em><br>
+<em>nqs             607/tcp    # nqs</em><br>
+<em>nqs             607/udp    # nqs</em><br>
+<em>#                          Bill Schiefelbein &lt;schief&amp;aspen.cray.com&gt;</em><br>
+<em>sift-uft        608/tcp    # Sender-Initiated/Unsolicited File Transfer </em><br>
+<em>sift-uft        608/udp    # Sender-Initiated/Unsolicited File Transfer</em><br>
+<em>#                          Rick Troth &lt;troth&amp;rice.edu&gt;</em><br>
+<em>npmp-trap       609/tcp    # npmp-trap</em><br>
+<em>npmp-trap       609/udp    # npmp-trap</em><br>
+<em>npmp-local      610/tcp    # npmp-local</em><br>
+<em>npmp-local      610/udp    # npmp-local</em><br>
+<em>npmp-gui        611/tcp    # npmp-gui  </em><br>
+<em>npmp-gui        611/udp    # npmp-gui  </em><br>
+<em>#                          John Barnes &lt;jbarnes&amp;crl.com&gt;</em><br>
+<em>hmmp-ind	612/tcp    # HMMP Indication</em><br>
+<em>hmmp-ind	612/udp	   # HMMP Indication</em><br>
+<em>hmmp-op		613/tcp    # HMMP Operation</em><br>
+<em>hmmp-op		613/udp	   # HMMP Operation</em><br>
+<em>#			   Andrew Sinclair &lt;andrsin&amp;microsoft.com&gt;</em><br>
+<em>sshell		614/tcp    # SSLshell</em><br>
+<em>sshell   	614/udp	   # SSLshell</em><br>
+<em>#			   Simon J. Gerraty &lt;sjg&amp;quick.com.au&gt;</em><br>
+<em>sco-inetmgr	615/tcp	   # Internet Configuration Manager</em><br>
+<em>sco-inetmgr	615/udp    # Internet Configuration Manager</em><br>
+<em>sco-sysmgr	616/tcp    # SCO System Administration Server</em><br>
+<em>sco-sysmgr	616/udp    # SCO System Administration Server</em><br>
+<em>sco-dtmgr	617/tcp    # SCO Desktop Administration Server</em><br>
+<em>sco-dtmgr	617/udp    # SCO Desktop Administration Server</em><br>
+<em>#			   Christopher Durham &lt;chrisdu&amp;sco.com&gt;</em><br>
+<em>dei-icda	618/tcp    # DEI-ICDA</em><br>
+<em>dei-icda	618/udp    # DEI-ICDA</em><br>
+<em>#			   David Turner &lt;digital&amp;Quetico.tbaytel.net&gt;</em><br>
+<em>compaq-evm	619/tcp    # Compaq EVM</em><br>
+<em>compaq-evm	619/udp    # Compaq EVM</em><br>
+<em>#			   Jem Treadwell &lt;Jem.Treadwell&amp;compaq.com&gt;</em><br>
+<em>sco-websrvrmgr  620/tcp    # SCO WebServer Manager</em><br>
+<em>sco-websrvrmgr  620/udp    # SCO WebServer Manager</em><br>
+<em>#			   Christopher Durham &lt;chrisdu&amp;sco.com&gt;</em><br>
+<em>escp-ip		621/tcp    # ESCP</em><br>
+<em>escp-ip		621/udp    # ESCP</em><br>
+<em>#			   Lai Zit Seng &lt;lzs&amp;pobox.com&gt;</em><br>
+<em>collaborator	622/tcp    # Collaborator</em><br>
+<em>collaborator	622/udp	   # Collaborator</em><br>
+<em>#			   Johnson Davis &lt;johnsond&amp;opteamasoft.com&gt;</em><br>
+<em>oob-ws-http	623/tcp    # DMTF out-of-band web services management protocol</em><br>
+<em>#			   Jim Davis &lt;jim.davis&amp;wbemsolutions.com&gt; June 2007</em><br>
+<em>asf-rmcp        623/udp    # ASF Remote Management and Control Protocol</em><br>
+<em>#                          Carl First &lt;Carl.L.First&amp;intel.com&gt;</em><br>
+<em>cryptoadmin	624/tcp    # Crypto Admin</em><br>
+<em>cryptoadmin	624/udp    # Crypto Admin</em><br>
+<em>#			   Tony Walker &lt;tony&amp;cryptocard.com&gt;</em><br>
+<em>dec_dlm		625/tcp    # DEC DLM</em><br>
+<em>dec_dlm		625/udp    # DEC DLM</em><br>
+<em>#			   Rudi Martin &lt;Rudi.Martin&amp;edo.mts.dec.com&gt;</em><br>
+<em>asia		626/tcp    # ASIA</em><br>
+<em>asia		626/udp    # ASIA</em><br>
+<em>#			   Michael Dasenbrock &lt;dasenbro&amp;apple.com&gt;</em><br>
+<em>passgo-tivoli	627/tcp    # PassGo Tivoli</em><br>
+<em>passgo-tivoli	627/udp    # PassGo Tivoli</em><br>
+<em>#			   John Rainford &lt;john.rainford&amp;passgo.com&gt; </em><br>
+<em>qmqp		628/tcp    # QMQP</em><br>
+<em>qmqp		628/udp    # QMQP</em><br>
+<em>#			   Dan Bernstein &lt;djb&amp;cr.yp.to&gt;</em><br>
+<em>3com-amp3	629/tcp    # 3Com AMP3</em><br>
+<em>3com-amp3	629/udp    # 3Com AMP3</em><br>
+<em>#			   Prakash Banthia &lt;prakash_banthia&amp;3com.com&gt;</em><br>
+<em>rda		630/tcp    # RDA</em><br>
+<em>rda		630/udp    # RDA</em><br>
+<em>#			   John Hadjioannou &lt;john&amp;minster.co.uk&gt;</em><br>
+<em>ipp		631/tcp    # IPP (Internet Printing Protocol)</em><br>
+<em>ipp		631/udp    # IPP (Internet Printing Protocol)</em><br>
+<em>#			   Carl-Uno Manros &lt;manros&amp;cp10.es.xerox.com&gt;</em><br>
+<em>bmpp		632/tcp    # bmpp</em><br>
+<em>bmpp		632/udp    # bmpp</em><br>
+<em>#			   Troy Rollo &lt;troy&amp;kroll.corvu.com.au&gt;	</em><br>
+<em>servstat	633/tcp    # Service Status update (Sterling Software)</em><br>
+<em>servstat	633/udp    # Service Status update (Sterling Software)</em><br>
+<em>#                          Greg Rose &lt;Greg_Rose&amp;sydney.sterling.com&gt;</em><br>
+<em>ginad           634/tcp    # ginad</em><br>
+<em>ginad           634/udp    # ginad</em><br>
+<em>#                          Mark Crother &lt;mark&amp;eis.calstate.edu&gt;</em><br>
+<em>rlzdbase        635/tcp    # RLZ DBase</em><br>
+<em>rlzdbase        635/udp    # RLZ DBase</em><br>
+<em>#                          Michael Ginn &lt;ginn&amp;tyxar.com&gt;</em><br>
+<em>ldaps           636/tcp    # ldap protocol over TLS/SSL (was sldap)</em><br>
+<em>ldaps           636/udp    # ldap protocol over TLS/SSL (was sldap)</em><br>
+<em>#                          Pat Richard &lt;patr&amp;xcert.com&gt;</em><br>
+<em>lanserver       637/tcp    # lanserver</em><br>
+<em>lanserver       637/udp    # lanserver</em><br>
+<em>#                          Chris Larsson &lt;clarsson&amp;VNET.IBM.COM&gt;</em><br>
+<em>mcns-sec	638/tcp    # mcns-sec</em><br>
+<em>mcns-sec	638/udp    # mcns-sec</em><br>
+<em>#			   Kaz Ozawa &lt;k.ozawa&amp;cablelabs.com&gt;</em><br>
+<em>msdp		639/tcp    # MSDP</em><br>
+<em>msdp		639/udp    # MSDP</em><br>
+<em>#			   Dino Farinacci &lt;dino&amp;cisco.com&gt;</em><br>
+<em>entrust-sps	640/tcp    # entrust-sps</em><br>
+<em>entrust-sps	640/udp    # entrust-sps</em><br>
+<em>#			   Marek Buchler &lt;Marek.Buchler&amp;entrust.com&gt;</em><br>
+<em>repcmd		641/tcp    # repcmd</em><br>
+<em>repcmd		641/udp    # repcmd</em><br>
+<em>#			   Scott Dale &lt;scott&amp;Replicase.com&gt;</em><br>
+<em>esro-emsdp	642/tcp    # ESRO-EMSDP V1.3</em><br>
+<em>esro-emsdp	642/udp    # ESRO-EMSDP V1.3</em><br>
+<em>#			   Mohsen Banan &lt;mohsen&amp;neda.com&gt; </em><br>
+<em>sanity		643/tcp    # SANity</em><br>
+<em>sanity		643/udp    # SANity</em><br>
+<em>#			   Peter Viscarola &lt;PeterGV&amp;osr.com&gt;</em><br>
+<em>dwr		644/tcp    # dwr</em><br>
+<em>dwr		644/udp    # dwr</em><br>
+<em>#			   Bill Fenner &lt;fenner&amp;parc.xerox.com&gt;</em><br>
+<em>pssc		645/tcp    # PSSC</em><br>
+<em>pssc		645/udp    # PSSC</em><br>
+<em>#			   Egon Meier-Engelen &lt;egon.meier-engelen&amp;dlr.de&gt;</em><br>
+<em>ldp		646/tcp    # LDP</em><br>
+<em>ldp		646/udp    # LDP</em><br>
+<em>#			   Bob Thomas &lt;rhthomas&amp;cisco.com&gt;</em><br>
+<em>dhcp-failover   647/tcp    # DHCP Failover</em><br>
+<em>dhcp-failover   647/udp    # DHCP Failover</em><br>
+<em>#                          Bernard Volz &lt;volz&amp;cisco.com&gt; </em><br>
+<em>rrp             648/tcp    # Registry Registrar Protocol (RRP)</em><br>
+<em>rrp             648/udp    # Registry Registrar Protocol (RRP)</em><br>
+<em>#                          Scott Hollenbeck &lt;shollenb&amp;netsol.com&gt;	</em><br>
+<em>cadview-3d      649/tcp    # Cadview-3d - streaming 3d models over the internet</em><br>
+<em>cadview-3d      649/udp    # Cadview-3d - streaming 3d models over the internet</em><br>
+<em>#                          David Cooper &lt;david.cooper&amp;oracle.com&gt; </em><br>
+<em>obex		650/tcp    # OBEX</em><br>
+<em>obex		650/udp    # OBEX</em><br>
+<em>#			   Jeff Garbers &lt;FJG030&amp;email.mot.com&gt;</em><br>
+<em>ieee-mms	651/tcp    # IEEE MMS</em><br>
+<em>ieee-mms	651/udp    # IEEE MMS</em><br>
+<em>#			   Curtis Anderson &lt;canderson&amp;turbolinux.com&gt;</em><br>
+<em>hello-port	652/tcp    # HELLO_PORT</em><br>
+<em>hello-port	652/udp    # HELLO_PORT	</em><br>
+<em>#			   Patrick Cipiere &lt;Patrick.Cipiere&amp;UDcast.com&gt;</em><br>
+<em>repscmd		653/tcp    # RepCmd</em><br>
+<em>repscmd		653/udp    # RepCmd</em><br>
+<em>#			   Scott Dale &lt;scott&amp;tioga.com&gt;</em><br>
+<em>aodv		654/tcp	   # AODV</em><br>
+<em>aodv		654/udp	   # AODV</em><br>
+<em>#			   Charles Perkins &lt;cperkins&amp;eng.sun.com&gt;</em><br>
+<em>tinc		655/tcp    # TINC</em><br>
+<em>tinc		655/udp    # TINC</em><br>
+<em>#			   Ivo Timmermans &lt;itimmermans&amp;bigfoot.com&gt;</em><br>
+<em>spmp		656/tcp    # SPMP</em><br>
+<em>spmp		656/udp    # SPMP</em><br>
+<em>#			   Jakob Kaivo &lt;jkaivo&amp;nodomainname.net&gt;</em><br>
+<em>rmc		657/tcp    # RMC</em><br>
+<em>rmc		657/udp    # RMC</em><br>
+<em>#			   Michael Schmidt &lt;mmaass&amp;us.ibm.com&gt;</em><br>
+<em>tenfold		658/tcp    # TenFold</em><br>
+<em>tenfold		658/udp    # TenFold</em><br>
+<em>#			   Louis Olszyk &lt;lolszyk&amp;10fold.com&gt;</em><br>
+<em>#               659        Removed (2001-06-06)</em><br>
+<em>mac-srvr-admin  660/tcp    # MacOS Server Admin</em><br>
+<em>mac-srvr-admin  660/udp    # MacOS Server Admin</em><br>
+<em>#                          Forest Hill &lt;forest&amp;apple.com&gt;</em><br>
+<em>hap             661/tcp    # HAP</em><br>
+<em>hap             661/udp    # HAP</em><br>
+<em>#                          Igor Plotnikov &lt;igor&amp;uroam.com&gt;</em><br>
+<em>pftp            662/tcp    # PFTP</em><br>
+<em>pftp            662/udp    # PFTP</em><br>
+<em>#                          Ben Schluricke &lt;support&amp;pftp.de&gt;</em><br>
+<em>purenoise       663/tcp    # PureNoise</em><br>
+<em>purenoise       663/udp    # PureNoise</em><br>
+<em>#                          Sam Osa &lt;pristine&amp;mailcity.com&gt;</em><br>
+<em>oob-ws-https	664/tcp    # DMTF out-of-band secure web services management protocol</em><br>
+<em>#			    Jim Davis &lt;jim.davis&amp;wbemsolutions.com&gt; June 2007</em><br>
+<em>asf-secure-rmcp 664/udp    # ASF Secure Remote Management and Control Protocol</em><br>
+<em>#                          Carl First &lt;Carl.L.First&amp;intel.com&gt;</em><br>
+<em>sun-dr          665/tcp    # Sun DR</em><br>
+<em>sun-dr          665/udp    # Sun DR</em><br>
+<em>#                          Harinder Bhasin &lt;Harinder.Bhasin&amp;Sun.COM&gt;</em><br>
+<em>mdqs            666/tcp	# </em><br>
+<em>mdqs            666/udp	# </em><br>
+<em>doom            666/tcp    # doom Id Software</em><br>
+<em>doom            666/udp    # doom Id Software</em><br>
+<em>#                          &lt;ddt&amp;idcube.idsoftware.com&gt;</em><br>
+<em>disclose        667/tcp    # campaign contribution disclosures - SDR Technologies</em><br>
+<em>disclose        667/udp    # campaign contribution disclosures - SDR Technologies</em><br>
+<em>#                          Jim Dixon  &lt;jim&amp;lambda.com&gt;</em><br>
+<em>mecomm          668/tcp    # MeComm</em><br>
+<em>mecomm          668/udp    # MeComm</em><br>
+<em>meregister      669/tcp    # MeRegister</em><br>
+<em>meregister      669/udp    # MeRegister</em><br>
+<em>#                          Armin Sawusch &lt;armin&amp;esd1.esd.de&gt;</em><br>
+<em>vacdsm-sws      670/tcp    # VACDSM-SWS</em><br>
+<em>vacdsm-sws      670/udp    # VACDSM-SWS</em><br>
+<em>vacdsm-app      671/tcp    # VACDSM-APP</em><br>
+<em>vacdsm-app      671/udp    # VACDSM-APP</em><br>
+<em>vpps-qua        672/tcp    # VPPS-QUA</em><br>
+<em>vpps-qua        672/udp    # VPPS-QUA</em><br>
+<em>cimplex         673/tcp    # CIMPLEX</em><br>
+<em>cimplex         673/udp    # CIMPLEX</em><br>
+<em>#                          Ulysses G. Smith Jr. &lt;ugsmith&amp;cesi.com&gt;</em><br>
+<em>acap            674/tcp    # ACAP</em><br>
+<em>acap            674/udp	   # ACAP</em><br>
+<em>#                          Chris Newman &lt;chris.newman&amp;sun.com&gt;</em><br>
+<em>dctp		675/tcp    # DCTP</em><br>
+<em>dctp		675/udp    # DCTP</em><br>
+<em>#			   Andre Kramer &lt;Andre.Kramer&amp;ansa.co.uk&gt;</em><br>
+<em>vpps-via	676/tcp    # VPPS Via</em><br>
+<em>vpps-via	676/udp    # VPPS Via</em><br>
+<em>#			   Ulysses G. Smith Jr. &lt;ugsmith&amp;cesi.com&gt;</em><br>
+<em>vpp		677/tcp    # Virtual Presence Protocol </em><br>
+<em>vpp		677/udp    # Virtual Presence Protocol </em><br>
+<em>#			   Klaus Wolf &lt;wolf&amp;cobrow.com&gt;</em><br>
+<em>ggf-ncp		678/tcp    # GNU Generation Foundation NCP</em><br>
+<em>ggf-ncp		678/udp    # GNU Generation Foundation NCP</em><br>
+<em>#			   Noah Paul &lt;noahp&amp;altavista.net&gt;</em><br>
+<em>mrm             679/tcp    # MRM</em><br>
+<em>mrm             679/udp    # MRM</em><br>
+<em>#                          Liming Wei &lt;lwei&amp;cisco.com&gt;</em><br>
+<em>entrust-aaas	680/tcp    # entrust-aaas </em><br>
+<em>entrust-aaas	680/udp    # entrust-aaas </em><br>
+<em>entrust-aams	681/tcp    # entrust-aams</em><br>
+<em>entrust-aams	681/udp    # entrust-aams</em><br>
+<em>#                          Adrian Mancini &lt;adrian.mancini&amp;entrust.com&gt;</em><br>
+<em>xfr             682/tcp    # XFR</em><br>
+<em>xfr             682/udp    # XFR</em><br>
+<em>#                          Noah Paul &lt;noahp&amp;ultranet.com&gt;</em><br>
+<em>corba-iiop      683/tcp    # CORBA IIOP </em><br>
+<em>corba-iiop      683/udp    # CORBA IIOP </em><br>
+<em>corba-iiop-ssl	684/tcp    # CORBA IIOP SSL</em><br>
+<em>corba-iiop-ssl	684/udp    # CORBA IIOP SSL</em><br>
+<em>#                          Andrew Watson &lt;andrew&amp;omg.org&gt;</em><br>
+<em>mdc-portmapper	685/tcp    # MDC Port Mapper</em><br>
+<em>mdc-portmapper	685/udp    # MDC Port Mapper</em><br>
+<em>#                          Noah Paul &lt;noahp&amp;altavista.net&gt;</em><br>
+<em>hcp-wismar      686/tcp    # Hardware Control Protocol Wismar</em><br>
+<em>hcp-wismar      686/udp    # Hardware Control Protocol Wismar</em><br>
+<em>#                          David Merchant &lt;d.f.merchant&amp;livjm.ac.uk&gt;	</em><br>
+<em>asipregistry	687/tcp    # asipregistry</em><br>
+<em>asipregistry	687/udp    # asipregistry</em><br>
+<em>#                          Erik Sea &lt;sea&amp;apple.com&gt;</em><br>
+<em>realm-rusd      688/tcp    # ApplianceWare managment protocol</em><br>
+<em>realm-rusd      688/udp    # ApplianceWare managment protocol</em><br>
+<em>#                          Stacy Kenworthy &lt;skenworthy&amp;applianceware.com&gt;</em><br>
+<em>nmap            689/tcp    # NMAP</em><br>
+<em>nmap            689/udp    # NMAP</em><br>
+<em>#                          Peter Dennis Bartok &lt;peter&amp;novonyx.com&gt;</em><br>
+<em>vatp            690/tcp    # Velazquez Application Transfer Protocol</em><br>
+<em>vatp            690/udp    # Velazquez Application Transfer Protocol</em><br>
+<em>#                          Velneo &lt;velneo&amp;velneo.com&gt;</em><br>
+<em>msexch-routing	691/tcp    # MS Exchange Routing</em><br>
+<em>msexch-routing	691/udp    # MS Exchange Routing</em><br>
+<em>#                          David Lemson &lt;dlemson&amp;microsoft.com&gt;</em><br>
+<em>hyperwave-isp	692/tcp    # Hyperwave-ISP</em><br>
+<em>hyperwave-isp	692/udp    # Hyperwave-ISP</em><br>
+<em>#                          Gerald Mesaric &lt;gmesaric&amp;hyperwave.com&gt;</em><br>
+<em>connendp        693/tcp    # almanid Connection Endpoint</em><br>
+<em>connendp        693/udp    # almanid Connection Endpoint</em><br>
+<em>#                          Ronny Bremer &lt;rbremer&amp;almanid.com&gt;</em><br>
+<em>ha-cluster      694/tcp    # ha-cluster</em><br>
+<em>ha-cluster      694/udp    # ha-cluster</em><br>
+<em>#                          Alan Robertson &lt;alanr&amp;unix.sh&gt;</em><br>
+<em>ieee-mms-ssl    695/tcp    # IEEE-MMS-SSL</em><br>
+<em>ieee-mms-ssl    695/udp    # IEEE-MMS-SSL</em><br>
+<em>#                          Curtis Anderson &lt;ecanderson&amp;turbolinux.com&gt; </em><br>
+<em>rushd           696/tcp    # RUSHD</em><br>
+<em>rushd           696/udp    # RUSHD</em><br>
+<em>#                          Greg Ercolano &lt;erco&amp;netcom.com&gt;</em><br>
+<em>uuidgen         697/tcp    # UUIDGEN</em><br>
+<em>uuidgen         697/udp    # UUIDGEN</em><br>
+<em>#                          James Falkner &lt;james.falkner&amp;sun.com&gt;</em><br>
+<em>olsr            698/tcp    # OLSR</em><br>
+<em>olsr            698/udp    # OLSR</em><br>
+<em>#                          Thomas Clausen &lt;thomas.clausen&amp;inria.fr&gt;   </em><br>
+<em>accessnetwork   699/tcp    # Access Network</em><br>
+<em>accessnetwork   699/udp    # Access Network</em><br>
+<em>#                          Yingchun Xu &lt;Yingchun_Xu&amp;3com.com&gt;</em><br>
+<em>epp             700/tcp    # Extensible Provisioning Protocol</em><br>
+<em>epp             700/udp    # Extensible Provisioning Protocol</em><br>
+<em>#                          [RFC4934]</em><br>
+<em>lmp             701/tcp    # Link Management Protocol (LMP)</em><br>
+<em>lmp             701/udp    # Link Management Protocol (LMP)</em><br>
+<em>#                          [RFC4204]</em><br>
+<em>iris-beep       702/tcp    # IRIS over BEEP</em><br>
+<em>iris-beep       702/udp    # IRIS over BEEP</em><br>
+<em>#                          [RFC3983] </em><br>
+<em>#               703        Unassigned</em><br>
+<em>elcsd	        704/tcp    # errlog copy/server daemon</em><br>
+<em>elcsd	        704/udp    # errlog copy/server daemon</em><br>
+<em>agentx	        705/tcp    # AgentX</em><br>
+<em>agentx          705/udp    # AgentX</em><br>
+<em>#                          Bob Natale &lt;bob.natale&amp;appliedsnmp.com&gt;</em><br>
+<em>silc            706/tcp    # SILC</em><br>
+<em>silc            706/udp    # SILC</em><br>
+<em>#                          Pekka Riikonen &lt;priikone&amp;poseidon.pspt.fi&gt;	</em><br>
+<em>borland-dsj     707/tcp    # Borland DSJ</em><br>
+<em>borland-dsj     707/udp	   # Borland DSJ</em><br>
+<em>#                          Gerg Cole &lt;gcole&amp;corp.borland.com&gt;</em><br>
+<em>#               708        Unassigned</em><br>
+<em>entrust-kmsh    709/tcp    # Entrust Key Management Service Handler</em><br>
+<em>entrust-kmsh    709/udp    # Entrust Key Management Service Handler</em><br>
+<em>entrust-ash     710/tcp    # Entrust Administration Service Handler</em><br>
+<em>entrust-ash     710/udp    # Entrust Administration Service Handler</em><br>
+<em>#                          Peter Whittaker &lt;pww&amp;entrust.com&gt;</em><br>
+<em>cisco-tdp       711/tcp    # Cisco TDP</em><br>
+<em>cisco-tdp       711/udp    # Cisco TDP</em><br>
+<em>#                          Bruce Davie &lt;bsd&amp;cisco.com&gt;</em><br>
+<em>tbrpf           712/tcp    # TBRPF</em><br>
+<em>tbrpf           712/udp    # TBRPF</em><br>
+<em>#                          RFC3684</em><br>
+<em>iris-xpc	713/tcp    # IRIS over XPC </em><br>
+<em>iris-xpc	713/udp    # IRIS over XPC </em><br>
+<em>iris-xpcs	714/tcp    # IRIS over XPCS</em><br>
+<em>iris-xpcs	714/udp    # IRIS over XPCS</em><br>
+<em>#			   [RFC4992]</em><br>
+<em>iris-lwz	715/tcp    # IRIS-LWZ</em><br>
+<em>iris-lwz	715/udp    # IRIS-LWZ</em><br>
+<em>#			   [RFC4993]</em><br>
+<em>pana		716/udp    # PANA Messages</em><br>
+<em>#			   [RFC-ietf-pana-pana-18.txt]</em><br>
+<em>#               717-728    Unassigned</em><br>
+<em>netviewdm1      729/tcp    # IBM NetView DM/6000 Server/Client</em><br>
+<em>netviewdm1      729/udp    # IBM NetView DM/6000 Server/Client</em><br>
+<em>netviewdm2      730/tcp    # IBM NetView DM/6000 send/tcp</em><br>
+<em>netviewdm2      730/udp    # IBM NetView DM/6000 send/tcp</em><br>
+<em>netviewdm3      731/tcp    # IBM NetView DM/6000 receive/tcp</em><br>
+<em>netviewdm3      731/udp    # IBM NetView DM/6000 receive/tcp</em><br>
+<em>#                          Philippe Binet  (phbinet&amp;vnet.IBM.COM)</em><br>
+<em>#               732-740    Unassigned           </em><br>
+<em>netgw           741/tcp    # netGW</em><br>
+<em>netgw           741/udp    # netGW</em><br>
+<em>#                          Oliver Korfmacher (okorf&amp;netcs.com)</em><br>
+<em>netrcs          742/tcp    # Network based Rev. Cont. Sys.</em><br>
+<em>netrcs          742/udp    # Network based Rev. Cont. Sys.</em><br>
+<em>#                          Gordon C. Galligher &lt;gorpong&amp;ping.chi.il.us&gt;</em><br>
+<em>#               743        Unassigned</em><br>
+<em>flexlm          744/tcp    # Flexible License Manager</em><br>
+<em>flexlm          744/udp    # Flexible License Manager</em><br>
+<em>#                          Matt Christiano</em><br>
+//#                          &lt;<a href="mailto:globes@matt&oliveb.atc.olivetti.com" title="globes@matt&amp;oliveb.atc.olivetti.com">globes@matt&amp;oliveb.atc.olivetti.com</a>&gt; //<br>
+<em>#               745-746    Unassigned</em><br>
+<em>fujitsu-dev     747/tcp    # Fujitsu Device Control</em><br>
+<em>fujitsu-dev     747/udp    # Fujitsu Device Control</em><br>
+<em>ris-cm          748/tcp    # Russell Info Sci Calendar Manager</em><br>
+<em>ris-cm          748/udp    # Russell Info Sci Calendar Manager</em><br>
+<em>kerberos-adm    749/tcp    # kerberos administration</em><br>
+<em>kerberos-adm    749/udp    # kerberos administration</em><br>
+<em>rfile 	        750/tcp</em><br>
+<em>loadav          750/udp</em><br>
+<em>kerberos-iv     750/udp    # kerberos version iv</em><br>
+<em>#                          Martin Hamilton &lt;martin&amp;mrrl.lut.as.uk&gt;</em><br>
+<em>pump	        751/tcp</em><br>
+<em>pump	        751/udp</em><br>
+<em>qrh             752/tcp</em><br>
+<em>qrh             752/udp</em><br>
+<em>rrh    	        753/tcp</em><br>
+<em>rrh             753/udp</em><br>
+<em>tell	        754/tcp	   # send</em><br>
+<em>tell	        754/udp	   # send</em><br>
+<em>#                          Josyula R. Rao &lt;jrrao&amp;watson.ibm.com&gt;</em><br>
+<em>#               755-756    Unassigned</em><br>
+<em>nlogin	        758/tcp</em><br>
+<em>nlogin	        758/udp</em><br>
+<em>con             759/tcp</em><br>
+<em>con             759/udp</em><br>
+<em>ns              760/tcp</em><br>
+<em>ns              760/udp</em><br>
+<em>rxe             761/tcp</em><br>
+<em>rxe             761/udp</em><br>
+<em>quotad	        762/tcp</em><br>
+<em>quotad	        762/udp</em><br>
+<em>cycleserv       763/tcp</em><br>
+<em>cycleserv       763/udp</em><br>
+<em>omserv	        764/tcp</em><br>
+<em>omserv	        764/udp</em><br>
+<em>webster	        765/tcp</em><br>
+<em>webster	        765/udp</em><br>
+<em>#                          Josyula R. Rao &lt;jrrao&amp;watson.ibm.com&gt;</em><br>
+<em>#               766        Unassigned</em><br>
+<em>phonebook       767/tcp	   # phone</em><br>
+<em>phonebook       767/udp	   # phone</em><br>
+<em>#                          Josyula R. Rao &lt;jrrao&amp;watson.ibm.com&gt;</em><br>
+<em>#               768        Unassigned</em><br>
+<em>vid             769/tcp</em><br>
+<em>vid             769/udp</em><br>
+<em>cadlock         770/tcp</em><br>
+<em>cadlock         770/udp</em><br>
+<em>rtip 	        771/tcp</em><br>
+<em>rtip 	        771/udp</em><br>
+<em>cycleserv2      772/tcp</em><br>
+<em>cycleserv2      772/udp</em><br>
+<em>submit	        773/tcp</em><br>
+<em>notify	        773/udp</em><br>
+<em>rpasswd	        774/tcp</em><br>
+<em>acmaint_dbd     774/udp</em><br>
+<em>entomb	        775/tcp</em><br>
+<em>acmaint_transd	775/udp</em><br>
+<em>wpages          776/tcp</em><br>
+<em>wpages          776/udp</em><br>
+<em>#                          Josyula R. Rao &lt;jrrao&amp;watson.ibm.com&gt;</em><br>
+<em>multiling-http	777/tcp    # Multiling HTTP</em><br>
+<em>multiling-http	777/udp    # Multiling HTTP</em><br>
+<em>#                          Alejandro Bonet &lt;babel&amp;ctv.es&gt;</em><br>
+<em>#               778-779    Unassigned</em><br>
+<em>wpgs            780/tcp</em><br>
+<em>wpgs            780/udp</em><br>
+<em>#                          Josyula R. Rao &lt;jrrao&amp;watson.ibm.com&gt;</em><br>
+<em>#               781-785    Unassigned</em><br>
+<em>#               786        Unassigned (Removed 2002-05-08)</em><br>
+<em>#               787        Unassigned (Removed 2002-10-08)</em><br>
+<em>#               788-799    Unassigned</em><br>
+<em>mdbs_daemon	800/tcp	# </em><br>
+<em>mdbs_daemon	800/udp	# </em><br>
+<em>device		801/tcp</em><br>
+<em>device		801/udp</em><br>
+<em>#		802-809    Unassigned</em><br>
+<em>fcp-udp		810/tcp    # FCP</em><br>
+<em>fcp-udp		810/udp    # FCP Datagram</em><br>
+<em>#			   Paul Whittemore &lt;paul&amp;softarc.com&gt;</em><br>
+<em>#		811-827    Unassigned</em><br>
+<em>itm-mcell-s	828/tcp    # itm-mcell-s</em><br>
+<em>itm-mcell-s	828/udp    # itm-mcell-s</em><br>
+<em>#			   Portnoy Boxman &lt;portnoy_boxman&amp;bmc.com&gt;</em><br>
+<em>pkix-3-ca-ra	829/tcp    # PKIX-3 CA/RA</em><br>
+<em>pkix-3-ca-ra    829/udp    # PKIX-3 CA/RA</em><br>
+<em>#			   Carlisle Adams &lt;Cadams&amp;entrust.com&gt;</em><br>
+<em>netconf-ssh     830/tcp    # NETCONF over SSH</em><br>
+<em>netconf-ssh     830/udp    # NETCONF over SSH</em><br>
+<em>#                          [RFC4742]</em><br>
+<em>netconf-beep    831/tcp    # NETCONF over BEEP </em><br>
+<em>netconf-beep    831/udp    # NETCONF over BEEP</em><br>
+<em>#                          [RFC4744]</em><br>
+<em>netconfsoaphttp 832/tcp    # NETCONF for SOAP over HTTPS</em><br>
+<em>netconfsoaphttp 832/udp    # NETCONF for SOAP over HTTPS</em><br>
+<em>#                          [RFC4743]</em><br>
+<em>netconfsoapbeep 833/tcp    # NETCONF for SOAP over BEEP</em><br>
+<em>netconfsoapbeep 833/udp    # NETCONF for SOAP over BEEP</em><br>
+<em>#                          [RFC4743]</em><br>
+<em>#               834-846    Unassigned</em><br>
+<em>dhcp-failover2  847/tcp    # dhcp-failover 2</em><br>
+<em>dhcp-failover2  847/udp    # dhcp-failover 2</em><br>
+<em>#                          Bernard Volz &lt;volz&amp;cisco.com&gt; </em><br>
+<em>gdoi            848/tcp    # GDOI</em><br>
+<em>gdoi            848/udp    # GDOI</em><br>
+<em>#                          [RFC3547]</em><br>
+<em>#               849-859    Unassigned</em><br>
+<em>iscsi           860/tcp    # iSCSI</em><br>
+<em>iscsi           860/udp    # iSCSI</em><br>
+<em>#                          RFC3720</em><br>
+<em>owamp-control   861/tcp    # OWAMP-Control</em><br>
+<em>owamp-control   861/udp    # OWAMP-Control</em><br>
+<em>#                          [RFC4656]</em><br>
+<em>#               862-872    Unassigned</em><br>
+<em>rsync           873/tcp    # rsync</em><br>
+<em>rsync           873/udp    # rsync</em><br>
+<em>#                          Andrew Tridgell &lt;tridge&amp;samba.anu.edu.au&gt;</em><br>
+<em>#               874-885    Unassigned</em><br>
+<em>iclcnet-locate  886/tcp    # ICL coNETion locate server</em><br>
+<em>iclcnet-locate  886/udp    # ICL coNETion locate server</em><br>
+<em>#                          Bob Lyon &lt;bl&amp;oasis.icl.co.uk&gt;</em><br>
+<em>iclcnet_svinfo  887/tcp    # ICL coNETion server info</em><br>
+<em>iclcnet_svinfo  887/udp    # ICL coNETion server info</em><br>
+<em>#                          Bob Lyon &lt;bl&amp;oasis.icl.co.uk&gt;</em><br>
+<em>accessbuilder   888/tcp    # AccessBuilder</em><br>
+<em>accessbuilder   888/udp    # AccessBuilder</em><br>
+<em>#                          Steve Sweeney &lt;Steven_Sweeney&amp;3mail.3com.com&gt;</em><br>
+<em># The following entry records an unassigned but widespread use</em><br>
+<em>cddbp           888/tcp    # CD Database Protocol</em><br>
+<em>#                          Steve Scherf &lt;steve&amp;moonsoft.com&gt;</em><br>
+<em>#</em><br>
+<em>#		889-899    Unassigned</em><br>
+<em>omginitialrefs  900/tcp    # OMG Initial Refs</em><br>
+<em>omginitialrefs  900/udp    # OMG Initial Refs</em><br>
+<em>#			   Christian Callsen &lt;Christian.Callsen&amp;eng.sun.com&gt;</em><br>
+<em>swat            901/tcp    # CONFLICT, not official assigned!</em><br>
+<em>smpnameres      901/tcp    # SMPNAMERES</em><br>
+<em>smpnameres      901/udp    # SMPNAMERES</em><br>
+<em>#                          Leif Ekblad &lt;leif&amp;rdos.net&gt;</em><br>
+<em>ideafarm-door   902/tcp    # self documenting Telnet Door</em><br>
+<em>ideafarm-door   902/udp    # self documenting Door: send 0x00 for info</em><br>
+<em>ideafarm-panic  903/tcp    # self documenting Telnet Panic Door</em><br>
+<em>ideafarm-panic  903/udp    # self documenting Panic Door: send 0x00 for info</em><br>
+<em>#                          Wo'o Ideafarm &lt;c74a39f7.9ad6f42c&amp;ideafarm.com&gt; </em><br>
+<em>#               904-909    Unassigned</em><br>
+<em>kink            910/tcp    # Kerberized Internet Negotiation of Keys (KINK) </em><br>
+<em>kink            910/udp    # Kerberized Internet Negotiation of Keys (KINK)</em><br>
+<em>#                          [RFC4430]  </em><br>
+<em>xact-backup     911/tcp    # xact-backup</em><br>
+<em>xact-backup     911/udp    # xact-backup</em><br>
+<em>#                          Bill Carroll &lt;billc&amp;xactlabs.com&gt;</em><br>
+<em>apex-mesh       912/tcp    # APEX relay-relay service</em><br>
+<em>apex-mesh       912/udp    # APEX relay-relay service</em><br>
+<em>apex-edge       913/tcp    # APEX endpoint-relay service</em><br>
+<em>apex-edge       913/udp    # APEX endpoint-relay service    </em><br>
+<em>#                          [RFC3340]</em><br>
+<em>#               914-988    Unassigned</em><br>
+<em>ftps-data	989/tcp    # ftp protocol, data, over TLS/SSL</em><br>
+<em>ftps-data	989/udp    # ftp protocol, data, over TLS/SSL</em><br>
+<em>ftps		990/tcp    # ftp protocol, control, over TLS/SSL</em><br>
+<em>ftps		990/udp    # ftp protocol, control, over TLS/SSL</em><br>
+<em>#			   Christopher Allen &lt;ChristopherA&amp;consensus.com&gt;</em><br>
+<em>nas		991/tcp    # Netnews Administration System</em><br>
+<em>nas		991/udp    # Netnews Administration System</em><br>
+<em>#			   Vera Heinau &lt;heinau&amp;fu-berlin.de&gt;</em><br>
+<em>#			   Heiko Schlichting &lt;heiko&amp;fu-berlin.de&gt;</em><br>
+<em>telnets		992/tcp    # telnet protocol over TLS/SSL</em><br>
+<em>telnets		992/udp    # telnet protocol over TLS/SSL</em><br>
+<em>imaps		993/tcp    # imap4 protocol over TLS/SSL</em><br>
+<em>imaps		993/udp    # imap4 protocol over TLS/SSL</em><br>
+<em>ircs		994/tcp    # irc protocol over TLS/SSL</em><br>
+<em>ircs		994/udp    # irc protocol over TLS/SSL</em><br>
+<em>#			   Christopher Allen &lt;ChristopherA&amp;consensus.com&gt;</em><br>
+<em>pop3s           995/tcp    # pop3 protocol over TLS/SSL (was spop3)</em><br>
+<em>pop3s           995/udp    # pop3 protocol over TLS/SSL (was spop3)</em><br>
+<em>#                          Gordon Mangione &lt;gordm&amp;microsoft.com&gt;</em><br>
+<em>vsinet          996/tcp    # vsinet</em><br>
+<em>vsinet          996/udp    # vsinet</em><br>
+<em>#                          Rob Juergens &lt;robj&amp;vsi.com&gt;</em><br>
+<em>maitrd		997/tcp</em><br>
+<em>maitrd		997/udp</em><br>
+<em>busboy		998/tcp</em><br>
+<em>puparp		998/udp</em><br>
+<em>garcon		999/tcp</em><br>
+<em>applix		999/udp	   # Applix ac</em><br>
+<em>puprouter	999/tcp</em><br>
+<em>puprouter	999/udp</em><br>
+<em>cadlock2	1000/tcp</em><br>
+<em>cadlock2	1000/udp</em><br>
+<em>#               1001-1009  Unassigned</em><br>
+<em>#		1008/udp   Possibly used by Sun Solaris????</em><br>
+<em>surf		1010/tcp   # surf</em><br>
+<em>surf		1010/udp   # surf</em><br>
+<em>#			   Joseph Geer &lt;jgeer&amp;peapod.com&gt;	 </em><br>
+<em>#		1011-1020  Reserved</em><br>
+<em>exp1            1021/tcp   # RFC3692-style Experiment 1 (*)    [RFC4727]</em><br>
+<em>exp1            1021/udp   # RFC3692-style Experiment 1 (*)    [RFC4727]</em><br>
+<em>exp2            1022/tcp   # RFC3692-style Experiment 2 (*)    [RFC4727]</em><br>
+<em>exp2            1022/udp   # RFC3692-style Experiment 2 (*)    [RFC4727]</em><br>
+<em>#               1023/tcp   Reserved</em><br>
+<em># 	        1023/udp   Reserved</em><br>
++++<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

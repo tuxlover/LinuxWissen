@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='../Systemprotokollierung.html'>Prev</a> ]
+	[ <a href='./ifconfig.html'>Prev</a> ]
 
-			[ <a href='../../index.html'>Index</a> ]
+			[ <a href='../../../index.html'>Index</a> ]
 
-	[ <a href='./logger.html'>Next</a> ]
+	[ <a href='./ip.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,7 +39,7 @@
 
 <!-- Wiki content -->
 
-<h1>dmesg</h1>
+<h1>ifup und ifdown</h1>
 
 <p>
 Created Donnerstag 22 September 2011<br>
@@ -47,24 +47,18 @@ Created Donnerstag 22 September 2011<br>
 
 <p>
 <ul>
-<li>ausgeben und kontrollieren des Kernel Ring Buffers</li>
+<li><strong>ifdown </strong>und <strong>ifup </strong>werden sind Anthrgonisten</li>
+<li>wird verwendet um das Netzwerkinterface herunter - bzw. hochzufahren</li>
 </ul>
 </p>
 
-
 <p>
-<strong>dmesg </strong>→ Kernel Ring Buffer manipulieren und anzeigen<br>
-<strong>-c </strong>→ reinigen des Kernel Ring Buffes nach dem anzeigen<br>
-<strong>-r → </strong>zusätzliche Ausgabe der Log Level Prefixe<br>
-<strong>-s &lt;Buffsize&gt; </strong>→ nutze diese Buffergröße für den Kernel Ring Buffer<br>
-<strong>-n N </strong>→ Angeben welche Loglevel von dmesg fortan angezeigt werden soll (0-7)<br>
+<strong>ifup [&lt;ethN&gt;] | ifdown &lt;ethN&gt;</strong><br>
+ → Das Netzwerkinterface kurzfrisitg an bzw ausschalten<br>
+→ schaltet das Interface wirklich ab, es kann dann auch nicht mehr von <strong>ifconfig </strong>oder <strong>ip</strong> gesehen werden<br>
+<strong>-a </strong>→ $$Debian$$, alle abschalten<br>
 </p>
 
-
-<p>
-<u>Hinweis: </u><br>
-<strong>dmesg &gt; boot.mesg </strong>→ Protokolierung des Bootvorgangs <br>
-</p>
 
 
 <!-- End wiki content -->
@@ -73,7 +67,7 @@ Created Donnerstag 22 September 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../FHS/var.html'>Linux Wissen:FHS:var</a></li>		<a href='../Systemprotokollierung.html'>Linux Wissen:Systemprotokollierung</a></li>
+	Backlinks:		<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
 
 <!-- End Backlinks -->
 

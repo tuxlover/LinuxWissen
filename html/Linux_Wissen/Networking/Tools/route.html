@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./ip.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='../../Paketverwaltung.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>route</h1>
+
+<p>
+Created Donnerstag 22 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>konfigurieren der Netzwerkroute</li>
+</ul>
+</p>
+
+<h5>statisches Routing:</h5>
+<p>
+Der Rechner folgt immer einer fest vorgegbenen Route<br>
+</p>
+
+<h5>dynamisches Routing:</h5>
+<p>
+Der Router komuniziert mit anderen in seiner unmittelbaren Umgebung befindlichen (minmal Hopps) Routern<br>
+und kann so anhand vorgegebener Parameter den für sich günstigsten Weg heraussuchen. Erfordert die Installation<br>
+von Routing Daemons wie <strong>routed </strong>oder <strong>gated</strong><br>
+</p>
+
+<p>
+<strong>route add [-net|-host] &lt;Ziel&gt; [netmask &lt;Netzmaske&gt;] [gw &lt;Gateway] [dev &lt;Interface&gt;]</strong><br>
+→ hinzufügen einer Route<br>
+</p>
+
+<p>
+<strong>route del [-net|-host] &lt;Ziel&gt; [netmask &lt;Netzmaske&gt;] [gw &lt;Gateway&gt;] [dev &lt;Interface&gt;]</strong><br>
+→ löschen einer Route <br>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
+<strong>route add|del -net &lt;IP-Adresse&gt; netmask &lt;Netzmaske&gt; dev &lt;ethN&gt; </strong>→ setzen|löschen einer Netzroute<br>
+<strong>route add|del -net &lt;IP-Adresse&gt; netmask &lt;Netzmaske&gt; gw &lt;Ip-Adresse Gateway&gt;</strong> →  Setzen|löscchen einer Gateway Route<br>
+<strong>route add|del -host &lt;Ip-Adresse&gt; netmask dev &lt;ethN&gt;</strong> →  Setzen|löschen einer Hostroute<br>
+<strong>route add default dev &lt;ethN&gt;</strong> →  Setzen einer Default Gateway Route<br>
+</p>
+
+<p>
+<strong>route </strong>→ Anzeigen der im Kernelspace verwalteten Routing Tabelle<br>
+          → äquivalent zu <strong>netstat -r[n]</strong> <br>
+<strong>-n </strong>→ Numerische Adressen anzeigen<br>
+</p>
+
+<p>
+<em>Beispielausgabe:</em><br>
++++<br>
+<em>&gt;&gt; Ziel            Router          Genmask         Flags Metric Ref    Use Iface</em><br>
+<em>192.168.128.0   *               255.255.255.0       U     1      0        0 eth0</em><br>
+<em>loopback        *               255.0.0.0           U     0      0        0      lo</em><br>
+<em>default         192.168.128.1   0.0.0.0             UG    0      0        0 eth0</em><br>
++++<br>
+<strong>&lt;Ziel (Destination)&gt; → </strong>Zieladresse (Netzadresse, Satationsadresse, <strong>standard </strong>für alle Routen für die nichts anderes eingetragen wurde)<br>
+&lt;<strong>Router (Gateway)&gt; </strong>→ Router für Paketweiterleitung, falls * werden Pakete nicht an andere Adressen weitergeleitet<br>
+&lt;<strong>Genmask&gt; </strong>→ Netzmaske zur Zieladresse<br>
+<strong>&lt;Flags&gt;: </strong>Beschreibung der  Route<br>
+<div style='padding-left: 60pt'>
+<strong>U </strong>→ Route ist aktiv (up)<br>
+<strong>G </strong>→ Route ist Gateway<br>
+<strong>H </strong>→ Hostroute, Zieladresse bezeichnet einen einzelnen Rechner<br>
+<strong>! → </strong>diese Route wird vom Kernel zurückgewiesen<br>
+</div>
+<strong>&lt;Metric&gt; </strong>→ Anzahl Hopps<br>
+<strong>&lt;Use&gt; </strong>→ Wie oft wurde die Route schon verwendet<br>
+&lt;<strong>Iface&gt;</strong> → Das Interface an denen die Datagramme weitergeleitet werden<br>
+</p>
+
+    
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>
