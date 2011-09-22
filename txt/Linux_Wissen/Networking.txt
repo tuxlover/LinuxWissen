@@ -5,6 +5,9 @@ Creation-Date: 2011-09-22T14:18:35+02:00
 ====== Networking ======
 Created Donnerstag 22 September 2011
 
+=== Grundlagen ===
+[[Linux Wissen:Networking:Grundlagen]]
+
 === Netzwerke, Klassen und Ihre IP-Ranges ===
 **Klasse			Netzanteil			Anzahl Netze		Anzahl-Hosts		Adressen**
 ClassA			8 Bit				0-128				2^34 - 2				0.0.0.0 - 127.255.255.255
@@ -82,4 +85,4 @@ __Achtung: Die Well Known Ports (0-1023) können nur von root geöffnet werden._
 === IP-Forwarding de|aktivieren ===
 * **echo 0|1 > /proc/sys/net/ipv4/ip_forward **→ deaktivieren|aktivieren von IP-Forwarding
 * $$SUSE$$ //*/etc/sysconfig/sysctl //in der Variablen //IP-FORWARDING=yes|no //eintragen
-* $$Debian$$ //*/etc/network/options //in der Variablen //ip_forward=yes|no  //eintragen
+* $$Debian$$ //*/etc/network/options //in der Variablen //ip_forward=yes|no  //eintragen 
