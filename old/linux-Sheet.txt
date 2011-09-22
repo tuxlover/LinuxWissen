@@ -5913,6 +5913,129 @@ __Wichtige Verzeichnisse__
 \\ /usr/share/locale \\
 
 
+__Zeitzone einstellen__
+\\ /etc/timezone \\ --> beinhaltet die Zeitzone die bei der Intsallation festagelegt wurde
+
+\\ /etc/sysconfig/clock \\ --> beinhaltet die Zeitzone die bei der Installation festgelegt wurde $$SUSE$$ $$Fedora$$
+
+\\ /etc/localtime \\ --> ist ein symbolischer link auf die Datei \\ /etc/timezone \\ 
+
+\\ /usr/share/zoneinfo/<COUNTRY>/<TIME_ZONE> \\ --> beinhaltet in Unterordner die entsprechenden Zeitzonen
+			
+__Die Variable TZ__
++ kann gesetzt werden um die Zeitzone kurzfrisitg zu setzen
++ Beschreibung von Zeitzonen
+
+**export TZ=MEZ-1** --> Mitteleuropäische Zeit - 1 Stunde
+**export TZ=Zulu+7** --> Zulu-Zeit + 7 Stunden
+
++ affektiert **date**
+
+**tzselect** --> auswählen der Zeitzone
+	     --> Gibt einen gültigen String aus, der in der Variable TZ gesetzt werden kann
+
+1) **tzselect**
+
+2) >> <TIMEZONE>
+
+3) **export TZ=<TIMEZONE>**
+
+**zdump <TIMEZONE>** --> gibt Informationen über die <TIMEZONE> (Uhrzeit, Datum, Formatierung) aus
+
+**zdump /etc/timezzone** --> liest die Datei und gibt sie auf dem Bildschrim aus ebenso kann damit dementsprchend
+			     der link \\ /etc/localtime \\ gelesen werden
+
+
+!!! Wird eine Zeitzone gesetzt die das System nicht kennt, wird CET verwendet. !!!
+
+__Datum und Uhrzeit verwalten__
+TZ --> Umgebungsvaribale die auf die aktuelle Zeitzone verweist 
+
+\\ /usr/share/zoneinfo \\
+
+**date MMTThhmm [CCYY] [.ss]**
+--> setzt das Datum auf Monat:TagedesMonats:Stunde:Minute:Jahrhuntert:Jahr:Sekunde
+-u --> UTC
+
+**date +%Format**
+--> gibt das Datum im entsprechenden Fomrat aus
+%F Volles Datum. %Y-%m-%d
+%Y Jahr
+%m Monat
+%H Stunde
+%M Miunte
+%S Sekunden
+%d Tag des Monats
+
+TRICK: Mit **date** die Zeit seit 01.01.1970 berechnen
+**date -d "UTC 1970-01-01" <Unix-Seconds> seconds | <Unix-days> days**
+
+**date --set --date="2010-18-11 18:03:13 +0100" --> explizites setzen des Datums und der Uhrzeit
+
+__Zeit Synchroniesieren mit ntp__
++Das Network Time Protocoll kann zur Zeitsynchronisierung eingesetzt werden
++Dazu wird der **ntpd** gefragt 
+
+**service ntpd start** || **/etc/init.d/ntpd start** --> startet den ntp Server
+
+\\ /etc/ntp.conf \\ --> Konfigurationsdatei für den ntpd oder andere Zeitsynchronisationsdämonen die ntp sprechen
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Abweichungen zur CMOS Zeit
+driftfile /var/lib/ntp/ntp.drift
+ 
+# NTP-Server
+server ptbtime1.ptb.de
+server ptbtime2.ptb.de
+ 
+# Zugriff durch NTP-Server gestatten
+restrict ptbtime1.ptb.de
+restrict ptbtime2.ptb.de
+ 
+# Zugriff vom localhost gestatten (ntpq -p)
+restrict 127.0.0.1
+ 
+# Zugriff aus dem internen Netz gestatten
+restrict 192.168.1.0 mask 255.255.255.0
+ 
+# allen anderen Rechnern Zugriff verwehren
+restrict default notrust nomodify nopeer
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+pool.ntp.org --> Server Pool die Ntp Dienste bereit stellen
+
+
+**ntpdate <Zeitserver>** --> Einen einmaligen (harten) Zeitabgleich
+			 --> veraltet
+
+**ntptrace <Zeitserver** --> Nachvollziehen einer Zeitsynchronisation
+			 --> Zurückverfolgen der Zeitsynchronisation vom Server zum Client
+
+**ntpq** --> Porgramm zum Abfragen des ntp Servers
+
+-p --> die Liste von Peers Abfragen
+
+-i --> Zeigt einen Prompt und liest von der Standardeingabe
+-n --> Zeigt die IP-Adresse anstelle des Namens des Zeitservers an
+
+**sntp** --> simple time protocol verwalten
+-a --> (adjust) zeit manuell einstellen
+-v --> Verbose
+
+__Anzeigen und setzen der Hardwareuhr mit **hwclock**__
+
+**hwclock** --> anzeigen und einstellen der Hardwareuhr
+	    --> kann nur von root ausgeführt werden da dazu auf einen Interrupt zugegriffen werden muss
+
+-r | --show --> anzeigen der aktuellenb Zeit auf der Hardwareuhr
+
+-s | --hctosys --> setzen der Sytemzeit von der Hardwarezeit
+
+--systohc --> setzen der Hardwarezeit aus der Systemzeit
+
+-u --> die CMOS-Uhr in UTC
+
+--set --date="<Datumsstring>" --> setzen der Uhrzeit mittels Datumsstring
+
 ===X11===
 + stellt die grafische Betriebsumgebung zur Verfügung
 + Im Gegensatz zum Windowskernel ist das grafische System nicht Teil des Kernels bei Linux Systemen
@@ -5938,7 +6061,7 @@ __Verwalten von Xhosts__
 
 **xhost +nis:user@host** --> aktivieren des Nutzers user auf Host via NIS Protokoll
 <Family>
-NIS, Kerberos, Ipv4, Ipv6
+NIS, Kerberos, Ipv4, Ipv6,Si
 
 
 !! Vorsicht:
@@ -5969,7 +6092,7 @@ DISPLAY --> Umgebungsvariable zum Setzen des Displaynamnes
 
 >> :1.0 --> Server 2, Bildschirm 1 (tty8)
 
->> :0.1 -> Server 1, Bildschirm 2 (tty7) impliziert zwei Harwaremonitore oder Virtuelle Bildscirme
+>> :0.1 --> Server 1, Bildschirm 2 (tty7) impliziert zwei Harwaremonitore oder Virtuelle Bildscirme
 
 !!! X-Client-Programme verwenden meistens die Option -display um ein gülitges Display anzugeben !!!
 
@@ -6004,7 +6127,7 @@ __X-Server über einen Displaymanager starten__
 
 \\ /etc/X11/kdm \\ | \\ /etc/kdm \\ --> Konfigurationsdateien für KDM **kcontrol**
 
-\\ /etc/X11/xdm \\ | \\ /etc/gdm \\ --> Konfigurationsdateien für den GDM **gdmconfig**
+\\ /etc/X11/gdm \\ | \\ /etc/gdm \\ --> Konfigurationsdateien für den GDM **gdmconfig**
 
 \\ /etc/X11/twm \\ | \\ /etc/twm \\ --> Konfigurationsdateien für den TWM (Tiny Windows Manager) LXDE 
 
@@ -7229,131 +7352,7 @@ disabled --> nur in defaults Abschnitt der \\ /ect/xinetd.conf \\
 
 **itox < /etc/inetd.conf > /etc/xinetd.conf** --> konvertieren der Einträge in inetd.conf in xinetd.conf
 
-===Einrichten der Systemzeit===
 
-__Anzeigen und setzen der Hardwareuhr mit **hwclock**__
-
-**hwclock** --> anzeigen und einstellen der Hardwareuhr
-	    --> kann nur von root ausgeführt werden da dazu auf einen Interrupt zugegriffen werden muss
-
--r | --show --> anzeigen der aktuellenb Zeit auf der Hardwareuhr
-
--s | --hctosys --> setzen der Sytemzeit von der Hardwarezeit
-
---systohc --> setzen der Hardwarezeit aus der Systemzeit
-
--u --> die CMOS-Uhr in UTC
-
---set --date="<Datumsstring>" --> setzen der Uhrzeit mittels Datumsstring
-
-__Zeitzone einstellen__
-\\ /etc/timezone \\ --> beinhaltet die Zeitzone die bei der Intsallation festagelegt wurde
-
-\\ /etc/sysconfig/clock \\ --> beinhaltet die Zeitzone die bei der Installation festgelegt wurde $$SUSE$$ $$Fedora$$
-
-\\ /etc/localtime \\ --> ist ein symbolischer link auf die Datei \\ /etc/timezone \\ 
-
-\\ /usr/share/zoneinfo/<COUNTRY>/<TIME_ZONE> \\ --> beinhaltet in Unterordner die entsprechenden Zeitzonen
-			
-__Die Variable TZ__
-+ kann gesetzt werden um die Zeitzone kurzfrisitg zu setzen
-+ Beschreibung von Zeitzonen
-
-**export TZ=MEZ-1** --> Mitteleuropäische Zeit - 1 Stunde
-**export TZ=Zulu+7** --> Zulu-Zeit + 7 Stunden
-
-+ affektiert **date**
-
-**tzselect** --> auswählen der Zeitzone
-	     --> Gibt einen gültigen String aus, der in der Variable TZ gesetzt werden kann
-
-1) **tzselect**
-
-2) >> <TIMEZONE>
-
-3) **export TZ=<TIMEZONE>**
-
-**zdump <TIMEZONE>** --> gibt Informationen über die <TIMEZONE> (Uhrzeit, Datum, Formatierung) aus
-
-**zdump /etc/timezzone** --> liest die Datei und gibt sie auf dem Bildschrim aus ebenso kann damit dementsprchend
-			     der link \\ /etc/localtime \\ gelesen werden
-
-
-!!! Wird eine Zeitzone gesetzt die das System nicht kennt, wird CET verwendet. !!!
-
-__Datum und Uhrzeit verwalten__
-TZ --> Umgebungsvaribale die auf die aktuelle Zeitzone verweist 
-
-\\ /usr/share/zoneinfo \\
-
-**date MMTThhmm [CCYY] [.ss]**
---> setzt das Datum auf Monat:TagedesMonats:Stunde:Minute:Jahrhuntert:Jahr:Sekunde
--u --> UTC
-
-**date +%Format**
---> gibt das Datum im entsprechenden Fomrat aus
-%F Volles Datum. %Y-%m-%d
-%Y Jahr
-%m Monat
-%H Stunde
-%M Miunte
-%S Sekunden
-%m Monat
-%d Tag des Monats
-
-TRICK: Mit **date** die Zeit seit 01.01.1970 berechnen
-**date -d "UTC 1970-01-01" <Unix-Seconds> seconds | <Unix-days> days**
-
-**date --set --date="2010-18-11 18:03:13 +0100" --> explizites setzen des Datums und der Uhrzeit
-
-__Zeit Synchroniesieren mit ntp__
-+Das Network Time Protocoll kann zur Zeitsynchronisierung eingesetzt werden
-+Dazu wird der **ntpd** gefragt 
-
-**service ntpd start** || **/etc/init.d/ntpd start** --> startet den ntp Server
-
-\\ /etc/ntp.conf \\ --> Konfigurationsdatei für den ntpd oder andere Zeitsynchronisationsdämonen die ntp sprechen
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# Abweichungen zur CMOS Zeit
-driftfile /var/lib/ntp/ntp.drift
- 
-# NTP-Server
-server ptbtime1.ptb.de
-server ptbtime2.ptb.de
- 
-# Zugriff durch NTP-Server gestatten
-restrict ptbtime1.ptb.de
-restrict ptbtime2.ptb.de
- 
-# Zugriff vom localhost gestatten (ntpq -p)
-restrict 127.0.0.1
- 
-# Zugriff aus dem internen Netz gestatten
-restrict 192.168.1.0 mask 255.255.255.0
- 
-# allen anderen Rechnern Zugriff verwehren
-restrict default notrust nomodify nopeer
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-pool.ntp.org --> Server Pool die Ntp Dienste bereit stellen
-
-
-**ntpdate <Zeitserver>** --> Einen einmaligen (harten) Zeitabgleich
-			 --> veraltet
-
-**ntptrace <Zeitserver** --> Nachvollziehen einer Zeitsynchronisation
-			 --> Zurückverfolgen der Zeitsynchronisation vom Server zum Client
-
-**ntpq** --> Porgramm zum Abfragen des ntp Servers
-
--p --> die Liste von Peers Abfragen
-
--i --> Zeigt einen Prompt und liest von der Standardeingabe
--n --> Zeigt die IP-Adresse anstelle des Namens des Zeitservers an
-
-**sntp** --> simple time protocol verwalten
--a --> (adjust) zeit manuell einstellen
--v --> Verbose
 
 ===Drucken und Druckserver===
 + \\ /dev/lpX \\ --> Gerätedatei die auf den Drucker verweist
@@ -12760,9 +12759,6 @@ options {
 	+ \\ /var/cache/bind als / für named behandeln
 	+ kann den rest des Dateisystems nicht finden
 	+ \\ /etc, /dev /lib/ /sbin /usr/sbin, /var/run \\ müssen Teil des chroots sein
-	+ \\ /dev/null \\ wird im Jail benötigt **mknod -m 666 /var/cache/bind/dev/null c 1 3**
-	+ Password und Gruppendatei werden benötigt **cp -p /etc/{passwd, group, shadow} /var/cache/bind/etc/**
-	+ ld.so.cache wird benötig **cp -p /etc/ld.so.cache /var/lib/bind/etc/ && cp -p /etc/localtime /var/lib/bind/etc/**
 	+ Das neue lib verzeichnis muss alle libs enthalten die named benötigt **ldd /usr/sbin/named**
 									       **cp ^^^ /var/lib/bind/lib/**
 	+ Die Konfigurationsdatie muss im Chroot Jail /etc/ vorhanden sein
