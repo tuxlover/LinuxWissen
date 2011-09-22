@@ -6,9 +6,10 @@ Creation-Date: 2011-04-19T03:51:30+02:00
 Created Dienstag 19 April 2011
 
 ***/var/log/ **→ Logdateien
-		**messages **→ Logdatei des Kernel Ring buffers **dmesg **(**missing link**)
-		***/mysql/ **→ mysql Logdateien nach Datum sortiert für den mysql Server Daemon
-		[[Linux Wissen:SQL:Mysql Server]]
+		**messages **→ Logdatei des Kernel Ring buffers ( 
+[[Linux Wissen:Systemprotokollierung:dmesg]] )
+***/mysql/ **→ mysql Logdateien nach Datum sortiert für den mysql Server Daemon
+[[Linux Wissen:SQL:Mysql Server]]
 
 ***/var/spool/mail **→ Systemmails
 ***/var/spool/mqueue **→ Mails die noch nicht abegschickt wurden **( missing link )**

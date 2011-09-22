@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T13:29:34+02:00
+
+====== logrotate ======
+Created Donnerstag 22 September 2011
+
+* überwacht Größe und Alter im System befindlicher Logdateien
+* bei Gelegenheit können entsprechende Kriterien gekürzt, archiviert  oder gelöscht werden
+* Zum Platzsparen (damit Logdateien nicht irgendwann die Platte des Systems zumüllen)
+* **logrotate **wird einmal täglich vom **cron **gestartet bei $$SUSE$$ //*/etc/cron.daily/logrotate//
+* **logrotate **wird in */etc/logrotate.conf und //*/etc/logrotate.d //konfiguriert
+[[Linux Wissen:FHS:etc:logrotate.conf]]
+
+
+**logrotate **→ rotiert, senden und komprimiert Systemlogs
+**-f **→ erzwingen des Rotieren von Logfiles
+    → __dies ist immer notwendig wenn Logfiles von Hand gelöscht wurden__
+**-m <Befehl> **→ diesen <Befehl> beim mailen verwenden
+**-s <Status Datei> **→ eine andere Statusdatei verwenden
+**-v [d] **→ verbose , falls **-d **verwendet wird, debugging modus
+

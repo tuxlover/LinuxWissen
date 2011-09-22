@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T13:37:25+02:00
+
+====== logrotate.conf ======
+Created Donnerstag 22 September 2011
+
++++
+//# sample logrotate configuration file//
+//       compress #alte Logfiles in gz format kmprimieren und rotieren//
+
+//       /var/log/messages { #Alles was zwischen diesen Pfad und den "{" "}" steht, wird für diese Logdatei behandelt//
+	//rotate 5  #Logfiles werden 5 Mal rotiert bevor sie gelöscht werden//
+           
+//           weekly #Logfiles werden rotiert, wenn der aktuelle Wochentag kleiner ist als der Wochentag der letzten Rotation oder wenn eine Woche vergangen ist//
+//           postrotate #Alles zwischen //**"**//postrotate//**" **//und "endscript" wird nach einer Rotatin von /bin/sh ausgeführt//
+//               /usr/bin/killall -HUP syslogd//
+//           endscript//
+//       }//
+
+//       "/var/log/httpd/access.log" /var/log/httpd/error.log {//
+//           rotate 5//
+//           mail www@my.org #wenn eine Logdatei  gelöscht wird an diese Adresse eine Nachricht senden//
+//           size 100k        #Logdateien werden rotiert wenn sie Größer als diese Größe werden//
+//           sharedscripts #Dieses Script einmalig für alle ausführen, statt einzeln die "postroate" Scripte auszuführen//
+//           postrotate//
+//               /usr/bin/killall -HUP httpd//
+//           endscript//
+//       }//
+
+//       /var/log/news/* {//
+//           monthly #respektive zu weekly//
+//           rotate 2 //
+//           olddir /var/log/news/old #alte Logs werden hier rotiert//
+//           missingok #falls das Logfile nicht existiert, gehe weiter//
+//           postrotate//
+//               kill -HUP `cat /var/run/inn.pid`//
+//           endscript//
+//           nocompress #nicht komprimieren//
+//       }//
++++
+

@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./udev%2B%2Budev.conf.html'>Prev</a> ]
+	[ <a href='../Systemprotokollierung.html'>Prev</a> ]
 
-			[ <a href='../../../index.html'>Index</a> ]
+			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='./Xorg.conf.html'>Next</a> ]
+	[ <a href='./logger.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,42 +39,20 @@
 
 <!-- Wiki content -->
 
-<h1>X11++xdm</h1>
+<h1>dmesg</h1>
 
-<p>
-Created Mittwoch 21 September 2011<br>
-</p>
+<li>ausgeben und kontrollieren des Kernel Ring Buffers</li>
 
-<p>
-<strong> */etc/X11/xdm/</strong><br>
-<div style='padding-left: 120pt'>
-<strong>Xresources </strong>→ Einstellungen für Logo (Direktive →  xlogin*logoFileName: ) und Begrüßung (Direktive → xlogin*greeting: )<br>
-</div>
-</p>
-				
-<p>
-<div style='padding-left: 120pt'>
-<strong>Xsetup  → </strong>Shellscript zum Festlegen von zusätzlich zu startenden Programmen<br>
-</div>
-</p>
 
-				
-<p>
-<div style='padding-left: 120pt'>
-<strong>Xservers → </strong>enthält die Einstellungen für das Starten des lokalen X-Servers<br>
-++<br>
-<em>:0 local /usr/bin/X -nolisten tcp -br vt7</em><br>
-++<br>
-</div>
-</p>
-				
-<p>
-<div style='padding-left: 120pt'>
-<strong>Xsessions → </strong>Konfigurationsscript für die erste vom Server zu startende Session<br>
-</div>
-</p>
-				
-
+<strong>dmesg </strong>→ Kernel Ring Buffer manipulieren und anzeigen<br>
+<strong>-c </strong>→ reinigen des Kernel Ring Buffes nach dem anzeigen<br>
+<strong>-r → </strong>zusätzliche Ausgabe der Log Level Prefixe<br>
+<strong>-s &lt;Buffsize&gt; </strong>→ nutze diese Buffergröße für den Kernel Ring Buffer<br>
+<strong>-n N </strong>→ Angeben welche Loglevel von dmesg fortan angezeigt werden soll (0-7)<br>
+<br>
+<br>
+<u>Hinweis: </u>
+<strong>dmesg &gt; boot.mesg </strong>→ Protokolierung des Bootvorgangs 
 
 
 <!-- End wiki content -->
@@ -83,7 +61,7 @@ Created Mittwoch 21 September 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../../X11.html'>Linux Wissen:X11</a></li>		<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
+	Backlinks:		<a href='../FHS/var.html'>Linux Wissen:FHS:var</a></li>		<a href='../Systemprotokollierung.html'>Linux Wissen:Systemprotokollierung</a></li>
 
 <!-- End Backlinks -->
 

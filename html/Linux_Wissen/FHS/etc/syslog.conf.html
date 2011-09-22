@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./sysconfig%2B%2Bclock.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='./udev%2B%2Brules.d%2B%2B99-myrule.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>syslog.conf</h1>
+
+<p>
+Created Donnerstag 22 September 2011<br>
+</p>
+
+<p>
+<strong>Aufbau einer /etc/syslog.conf Datei:</strong><br>
++++<br>
+<em>#&lt;Kategorie&gt;.&lt;Priorität&gt;[;Kategorie.Priorität&gt;]  &lt;Ziel&gt;</em><br>
+# <em>* ist ein Platzhalter für alle</em><br>
+</p>
+
+<p>
+<em>##Beispiele:</em><br>
+<em>kern.warn;*.err;authpriv.none /dev/tty10</em><br>
+<em>kern.warn;*.err;authpriv.none |/dev/xconsole</em><br>
+<em>*.emerg                         *</em><br>
+<em>*.=warn;*.=err                -/var/log/warn</em><br>
+<em>+++</em><br>
+<strong>&lt;Kategorie&gt;</strong><br>
+<div style='padding-left: 30pt'>
+<em>authpriv </em><strong>→ </strong>vertrauliche Meldungen der Sicherheitsdienste<br>
+<em>cron </em>→ Meldungen von cron und at<br>
+<em>daemon</em> → Meldungen von Daemon ohne eigene Kategorie<br>
+<em>ftp</em> → Meldungen des <strong>fdpd </strong>Daemon<br>
+<em>kern </em>→ Systemmeldungen des Betriebsystems<br>
+<em>lpr </em>→ Meldungen des Druckersystems<br>
+<em>mail </em>→ Meldungen des Mailsystems<br>
+<em>news </em>→ Meldungen des Usenet News Systems<br>
+<em>syslog </em>→ Meldungen die der <strong>syslogd</strong> selber Produziert<br>
+<em>user</em> → Meldungen die mit Benutzern zu tun haben<br>
+<em>uucp </em>→ Meldungen des UUCP-Systems<br>
+<em>localR (0&lt;=R&lt;=7) → </em>frei verwendtbar für eigene Scripten und Programme<br>
+</div>
+</p>
+	
+<p>
+<strong>&lt;Priorität&gt;</strong><br>
+<div style='padding-left: 30pt'>
+<em>none </em><strong>→ </strong>keiner, alle Nachrichten einer Herkunftskategorie ausschließen<br>
+<em>debug </em>→ Mitteilungen innerer Programmzustände, Fehlermeldungen von Programmen auf dem Userlevel<br>
+<em>info </em>→ Protokollierung des normalen Betriebsgeschehen<br>
+<em>notice </em>→ bemerkenswerte Situation im normalen Betrieb<br>
+<em>warn </em>→ nicht gravierende Warnungen, die aber nicht zum normalen Betriebsgeschehen gehören<br>
+<em>err</em> → Fehlermeldungen<br>
+<em>crit </em>→ kritische Fehlermeldungen<br>
+<em>alert </em>→ alamierende Nachrichten, die sofortiges eingreifen unbedingt erfordern (Platte ausgefallen)<br>
+<em>emrg </em>→ Nachrichten vor dem Absturz<br>
+</div>
+</p>
+	
+<p>
+<strong>&lt;Ziel&gt;</strong><br>
+<ul>
+<li>Datei meist in /<em>var/log</em></li>
+<li>named Pipe FIFO <strong>| FIFO </strong>(zum Beispiel /dev/xconsole)</li>
+<li>im internen Netz an eine andere IP-Adresse weitergeben (@Zieladresse)</li>
+</ul>
+<div style='padding-left: 30pt'>
+→ kritische Systemzustände werden an einen anderen Rechner weitergeleitet<br>
+→ Einspruchsspuren können nicht komprometiert werden<br>
+→ auf dem Zielrechner muss der <strong>syslogd </strong><em>mit der Option </em><strong>-r </strong>gestartet werden<br>
+</div>
+<div style='padding-left: 60pt'>
+$$SUSE$$ in der Variablen <em>SYSLOGD_PARAMS </em>in der Datei <em>*/etc/sysconfig/syslogd</em><br>
+$$Debian$$ in der Variablen <em>RSYSLOGD_OPTIONS </em>in der Datei /<em>etc/init.d/rsyslogd</em><br>
+</div>
+</p>
+
+<p>
+<u>Hinweis: Nach dem editieren der Konfigurationsdatei muss der syslogd die Konfigurationsdatei neu lesen</u><br>
+<strong>kill -1 rsyslogd</strong> bzw. <strong>kill -1 syslogd → </strong>den <strong>syslogd </strong>zwingen sein Konfiguration neu zu lesen<br>
+</p>
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../../Systemprotokollierung/logger.html'>Linux Wissen:Systemprotokollierung:logger</a></li>		<a href='../../Systemprotokollierung.html'>Linux Wissen:Systemprotokollierung</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

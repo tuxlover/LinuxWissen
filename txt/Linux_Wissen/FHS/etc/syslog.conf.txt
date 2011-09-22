@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T12:51:33+02:00
+
+====== syslog.conf ======
+Created Donnerstag 22 September 2011
+
+**Aufbau einer /etc/syslog.conf Datei:**
++++
+//#<Kategorie>.<Priorität>[;Kategorie.Priorität>]  <Ziel>//
+# //* ist ein Platzhalter für alle//
+
+//##Beispiele://
+//kern.warn;*.err;authpriv.none /dev/tty10//
+//kern.warn;*.err;authpriv.none |/dev/xconsole//
+//*.emerg                         *//
+//*.=warn;*.=err                -/var/log/warn//
+//+++//
+**<Kategorie>**
+	//authpriv //**→ **vertrauliche Meldungen der Sicherheitsdienste
+	//cron //→ Meldungen von cron und at
+	//daemon// → Meldungen von Daemon ohne eigene Kategorie
+	//ftp// → Meldungen des **fdpd **Daemon
+	//kern //→ Systemmeldungen des Betriebsystems
+	//lpr //→ Meldungen des Druckersystems
+	//mail //→ Meldungen des Mailsystems
+	//news //→ Meldungen des Usenet News Systems
+	//syslog //→ Meldungen die der **syslogd** selber Produziert
+	//user// → Meldungen die mit Benutzern zu tun haben
+	//uucp //→ Meldungen des UUCP-Systems
+	//localR (0<=R<=7) → //frei verwendtbar für eigene Scripten und Programme
+	
+**<Priorität>**
+	//none //**→ **keiner, alle Nachrichten einer Herkunftskategorie ausschließen
+	//debug //→ Mitteilungen innerer Programmzustände, Fehlermeldungen von Programmen auf dem Userlevel
+	//info //→ Protokollierung des normalen Betriebsgeschehen
+	//notice //→ bemerkenswerte Situation im normalen Betrieb
+	//warn //→ nicht gravierende Warnungen, die aber nicht zum normalen Betriebsgeschehen gehören
+	//err// → Fehlermeldungen
+	//crit //→ kritische Fehlermeldungen
+	//alert //→ alamierende Nachrichten, die sofortiges eingreifen unbedingt erfordern (Platte ausgefallen)
+	//emrg //→ Nachrichten vor dem Absturz
+	
+**<Ziel>**
+* Datei meist in ///var/log//
+* named Pipe FIFO **| FIFO **(zum Beispiel /dev/xconsole)
+* im internen Netz an eine andere IP-Adresse weitergeben (@Zieladresse)
+	→ kritische Systemzustände werden an einen anderen Rechner weitergeleitet
+	→ Einspruchsspuren können nicht komprometiert werden
+	→ auf dem Zielrechner muss der **syslogd **//mit der Option //**-r **gestartet werden
+		$$SUSE$$ in der Variablen //SYSLOGD_PARAMS //in der Datei //*/etc/sysconfig/syslogd//
+		$$Debian$$ in der Variablen //RSYSLOGD_OPTIONS //in der Datei ///etc/init.d/rsyslogd//
+
+__Hinweis: Nach dem editieren der Konfigurationsdatei muss der syslogd die Konfigurationsdatei neu lesen__
+**kill -1 rsyslogd** bzw. **kill -1 syslogd → **den **syslogd **zwingen sein Konfiguration neu zu lesen
+
+

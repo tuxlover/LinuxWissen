@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T00:42:43+02:00
+
+====== dmesg ======
+Created Donnerstag 22 September 2011
+
+* ausgeben und kontrollieren des Kernel Ring Buffers
+
+
+**dmesg **→ Kernel Ring Buffer manipulieren und anzeigen
+**-c **→ reinigen des Kernel Ring Buffes nach dem anzeigen
+**-r → **zusätzliche Ausgabe der Log Level Prefixe
+**-s <Buffsize> **→ nutze diese Buffergröße für den Kernel Ring Buffer
+**-n N **→ Angeben welche Loglevel von dmesg fortan angezeigt werden soll (0-7)
+
+
+__Hinweis: __
+**dmesg > boot.mesg **→ Protokolierung des Bootvorgangs 

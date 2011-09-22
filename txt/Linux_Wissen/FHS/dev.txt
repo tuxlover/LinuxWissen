@@ -27,3 +27,6 @@ Created Dienstag 19 April 2011
 
 ***/dev/shm **→ Shared Memroy des tmpfs
 [[Linux Wissen:FHS:dev:shm]]
+
+***/dev/log** → Socket für den Syslog Daemon
+[[Linux Wissen:Systemprotokollierung]]

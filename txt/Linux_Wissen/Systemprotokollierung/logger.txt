@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T13:20:36+02:00
+
+====== logger ======
+Created Donnerstag 22 September 2011
+
+* Systemmeldungen an den Syslog Daemon senden
+
+**logger **<Nachricht> → <Nachricht> an den **syslogd **Daemon des Systems senden
+**-i **→ loggen der Prozess Id
+**-s **//→ //loggen nach StdErr und zum Protokoll Daemon
+**-t <Label> **→ ein <Label> setzen
+**-p <Kategorie.Priorität> **→ Kategorie und Priorität festlegen
+**-f <Datei> **→ den Logger zwingen das Protokoll ausserdem in <Datei> zu schreiben
+**-u <Socket> **→ den Syslogd dazu zwingen das Protokoll in den angegeben <Socket> zu schreiben
+
+__Hinweis: Valide Kategorien und Prioritäten sind die selben die auch bei der Konfigurationsdatei des Syslogd zulässig sind.__
+[[Linux Wissen:FHS:etc:syslog.conf]]

@@ -101,6 +101,13 @@ Created Dienstag 19 April 2011
 [[Linux Wissen:SQL:Mysql Server]]
 [[Linux Wissen:FHS:etc:my.cnf]]
 
+***/etc/syslog.conf **→ Konfiguration für den **syslogd **
+***/etc/rsyslog.conf **→ Konfiguration für den neueren **syslogd **(rsyslog)
+[[Linux Wissen:Systemprotokollierung]]
+__Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
+
+***/etc/logrotate.conf **→ Konfiguration des Logrotierungsdinestes
+[[Linux Wissen:FHS:etc:logrotate.conf]]
 
 ***/etc/termcap**
 → obsolete Datenbank die von **tput **benutzt wird

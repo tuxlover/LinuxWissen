@@ -23,6 +23,8 @@ Created Donnerstag 21 April 2011
 [ ] git push -u origin master
 [ ] pydoc <suchbegriff>
 [ ] printf
+[ ] aide
+[ ] logsurfer
 
 === cool hacks ===
 +++

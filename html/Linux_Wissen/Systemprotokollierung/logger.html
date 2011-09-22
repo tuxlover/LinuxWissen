@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./dmesg.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./logrotate.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>logger</h1>
+
+<p>
+Created Donnerstag 22 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Systemmeldungen an den Syslog Daemon senden</li>
+</ul>
+</p>
+
+<p>
+<strong>logger </strong>&lt;Nachricht&gt; → &lt;Nachricht&gt; an den <strong>syslogd </strong>Daemon des Systems senden<br>
+<strong>-i </strong>→ loggen der Prozess Id<br>
+<strong>-s </strong><em>→ </em>loggen nach StdErr und zum Protokoll Daemon<br>
+<strong>-t &lt;Label&gt; </strong>→ ein &lt;Label&gt; setzen<br>
+<strong>-p &lt;Kategorie.Priorität&gt; </strong>→ Kategorie und Priorität festlegen<br>
+<strong>-f &lt;Datei&gt; </strong>→ den Logger zwingen das Protokoll ausserdem in &lt;Datei&gt; zu schreiben<br>
+<strong>-u &lt;Socket&gt; </strong>→ den Syslogd dazu zwingen das Protokoll in den angegeben &lt;Socket&gt; zu schreiben<br>
+</p>
+
+<p>
+<u>Hinweis: Valide Kategorien und Prioritäten sind die selben die auch bei der Konfigurationsdatei des Syslogd zulässig sind.</u><br>
+<a href="../FHS/etc/syslog.conf.html" title="Linux Wissen:FHS:etc:syslog.conf">Linux Wissen:FHS:etc:syslog.conf</a><br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../Systemprotokollierung.html'>Linux Wissen:Systemprotokollierung</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>
