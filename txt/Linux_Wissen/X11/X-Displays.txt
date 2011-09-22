@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-21T17:12:00+02:00
+
+====== X-Displays ======
+Created Mittwoch 21 September 2011
+
+
+**<strg>-<alt>-[<F1> - <F12> ] **→  Umschalten zwischen den einzelenen ttys und somit zwischen mehreren Bildschirmen
+
+* Die Bezeichnung eines X-Display aus der Umgebungsvariable //DISPLAY//
+
+DISPLAY=[<Rechner>]:<Nummer des X-Servers>[.Subdisplay]
+		<Rechner> kann IP-Adresse oder Hostname des Rechners sein
+		
+* Werden von einem X-Server mehrere Monitore angesteuert, so sind die Monitore
+als Subdisplay konfiguriert, die wiederrum durchnummeriert werden
+
+//Beispiel://
+DISPLAY= localhost:2.0
+DISPLAY=remotepc:0.0
+
+
+>> :0.0 →  Server 1, Bildschirm 1 (tty7)
+>> :1.0 →  Server 2, Bildschirm 1 (tty8)
+>> :0.1 →  Server 1, Bildschirm 2 (tty7) impliziert zwei Harwaremonitore oder Virtuelle Bildscirme
+
+__Hinweis: X-Client-Programme verwenden meistens die Option -display um ein gülitges Display anzugeben.__

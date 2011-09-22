@@ -24,6 +24,8 @@ Created Dienstag 19 April 2011
 ***/usr/share/doc** → Dokumentation
 		              → Unter $$SUSE$$ findet man zusätzliche Documentaion unter **/usr/share/doc/packages**
 
+***/usr/share/fonts **→ Fonts für den X-Server
+
 ***/usr/share/man **→ Manual Pages
 
 ***/usr/share/info **→ Info Pages

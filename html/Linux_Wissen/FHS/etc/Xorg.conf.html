@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./X11%2B%2Bxdm.html'>Prev</a> ]
+
+			[ <a href='../../../index.html'>Index</a> ]
+
+	[ <a href='../lib.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>Xorg.conf</h1>
+
+<p>
+Created Mittwoch 21 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Unterteilung in Sektionen</li>
+<li>jede Sektion wird mit <u> Section "NAME"</u> eingeleitet</li>
+<li><u>EndSection</u> teilt dem X-Server mit, dass die Section beendet ist</li>
+<li>Identifier ist ein Label der von der Section ServerLayout aufgerufen wird</li>
+</ul>
+</p>
+
+<p>
++++<br>
+<em>Section "Modules"</em><br>
+<em>        Load "glx"                      #Die von X zu ladenden Module</em><br>
+<em>        Load "freetype"                 #Stellen Treiber und Spezielle Features zur Verfügung</em><br>
+<em>EndSection</em><br>
+</p>
+
+<p>
+<em>Section "Input Device"</em><br>
+<em>        Identifier "Keyboard"           #Die von X verwendete Tastatur</em><br>
+<em>        Driver "kbd"                    #Treiber, Standardlayout, Model, Verhalten der Tastatur</em><br>
+<em>        Option "XkbModel" "pc105"       #Model</em><br>
+<em>        Option "XkbLayout" "de"         #Layout für die Tastatur</em><br>
+<em>        Option "AutoRepeat" "500 200"   #automatische Wiederholung falls Taste wird gehalten in Sekunden wie oft</em><br>
+<em>EndSection</em><br>
+</p>
+
+
+<p>
+<em>Section "Input Device"</em><br>
+<em>        Identifier "Mouse"              #Die von X verwendetet Maus ist das zweite Inputgerät</em><br>
+<em>        Driver "mouse"                  #Der verwendete Treiber</em><br>
+<em>        Option "Protocol" "IMPS/2"      #Das verwendetet Protokoll mit der die Mouse und der X-Server kommunizieren</em><br>
+<em>        Option "Device" "/dev/input/mice" #Das Device File</em><br>
+<em>        Option "Emulate3Buttons" "no"   #Auf "yes" setzen falls man durch herunterdrücken beider Tasten die Maus emul. will</em><br>
+<em>        Option "ZAxisMapping" "4 5"     #mapp das Scrollen der Maus auf die virtuellen Tasten 4 und 5</em><br>
+<em>EndSection</em><br>
+</p>
+
+<p>
+<em>Section "Monitor"                       #Die Monitor Section</em><br>
+<em>    Identifier "Monitor0"               #Identifier für ServerLayout</em><br>
+<em>    ModelName "VisionMaster Pro 450"    #Name des Monitors</em><br>
+<em>    HorizSync 27.0-115.0                #Horizontale Synchronisationsrate (Handbuch des Monitors)</em><br>
+<em>    VertRefresh 50.0-160.0              #Vertiakle Synchronisationsrate (Handbuch des Monitors)</em><br>
+<div style='padding-left: 180pt'>
+<em>    # My custom 1360x1024 mode</em><br>
+</div>
+<em>    Modeline "1360x1024" 197.8 \        #Auflösung des Monitors</em><br>
+<em>              1360 1370 1480 1752 \</em><br>
+<em>              1024 1031 1046 1072 -HSync -VSync</em><br>
+<em>EndSection</em><br>
+</p>
+
+<p>
+<em>Section "Device"</em><br>
+<em>    Identifier "Videocard0"             #Identifier für die Grafikkarte</em><br>
+<em>    Driver       "nv"                   #Der verwendete Treiber</em><br>
+<em>    VendorName "nVidia"                 #Der Hersteller der Karte</em><br>
+<em>    BoardName    "GeForce 8900gs"       #Name der Karte</em><br>
+<em>    VideoRam     512M                   #Verfügbarer Ram</em><br>
+<em>EndSection</em><br>
+</p>
+
+<p>
+<em>Section "Screen"                        #Kombination von Monitor und Grafikkarte, Zweck: zur Konfiguration mehrerer Mon</em><br>
+<em>    Identifier "Screen0"                #Der erste von X angesprochene Bildschirm</em><br>
+<em>    Device     "Videocard0"             #Über Videocard0 Geforce 8900gs</em><br>
+<em>    Monitor    "Monitor0"               #auf Monitor0 VisionMaster Pro 450</em><br>
+<em>    DefaultDepth 24                     #Mit Farbtiefe 24</em><br>
+<em>    SubSection "Display"                #Untersection zum Festlegen verschiedener Displays</em><br>
+<em>        Depth     24</em><br>
+<em>        Modes    "1024x768" "1024x600" "800x600" "640x480" #Reihenfolge der zu Probierenden Auflösung bie 24 bit Farbtiefe</em><br>
+<em>    EndSubSection</em><br>
+<em>    SubSection "Display"</em><br>
+<em>        Depth      8</em><br>
+<em>        Modes     "1024x768" "800x600" "640x480" #Reihenfolge der zu probierenden Auflösung bei 8 bit Farbtiefe</em><br>
+<em>    EndSubSection</em><br>
+<em>EndSection</em><br>
+</p>
+
+<p>
+<em>Section "ServerLayout"</em><br>
+<em>    Identifier     "single head configuration"</em><br>
+<em>    Screen         "Screen0" 0 0                #Der Screen auf dem X-Client gestartet wird, auf X-Server 1 Display 1</em><br>
+<em>    InputDevice    "Mouse0" "CorePointer"       #Starten der ersten und einzigen Maus</em><br>
+<em>    InputDevice    "Keyboard0" "CoreKeyboard"   #Starten der ersten und einzigen Tastatur</em><br>
+<em>EndSection</em><br>
+</p>
+
+<p>
+<em>Section "Files"                                 #Definieren von X Fonts</em><br>
+<em>        FontPath "/usr/share/fonts/100dpi:unscaled"</em><br>
+<em>        FontPath "/usr/share/fonts/Type1"</em><br>
+<em>        FontPath "/usr/share/fonts/truetype"</em><br>
+<em>        FontPath "/usr/share/fonts/URW"</em><br>
+<em>        FontPath "/usr/share/fonts/Speedo"</em><br>
+<em>        FontPath "/usr/share/fonts/100dpi"</em><br>
+<em>EndSection</em><br>
++++<br>
+__Nividia kommt mit einem eigenen Konfigarationstool <strong>nvidia-settings</strong> und kann nicht über Xorg konfiguriert werden__<br>
+</p>
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../../X11.html'>Linux Wissen:X11</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

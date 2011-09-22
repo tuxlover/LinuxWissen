@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./zdump.html'>Prev</a> ]
+	[ <a href='../X11.html'>Prev</a> ]
 
 			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='../Vim_Editor.html'>Next</a> ]
+	[ <a href='./xauth.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,27 +39,52 @@
 
 <!-- Wiki content -->
 
-<h1>zic</h1>
+<h1>X-Displays</h1>
 
 <p>
-Created Montag 19 September 2011<br>
+Created Mittwoch 21 September 2011<br>
+</p>
+
+
+<p>
+<strong>&lt;strg&gt;-&lt;alt&gt;-[&lt;F1&gt; - &lt;F12&gt; ] </strong>→  Umschalten zwischen den einzelenen ttys und somit zwischen mehreren Bildschirmen<br>
 </p>
 
 <p>
 <ul>
-<li>zic ist der <em>timezone compiler </em>und ähnlich wie localdef für de Erstellung gültiger Zeitzonen  verantwortlich</li>
+<li>Die Bezeichnung eines X-Display aus der Umgebungsvariable <em>DISPLAY</em></li>
 </ul>
-<a href="../Lokalisierung/localedef.html" title="Linux Wissen:Lokalisierung:localedef">Linux Wissen:Lokalisierung:localedef</a><br>
 </p>
 
 <p>
-<strong>zic &lt;Dateiname&gt; </strong>→ liest aus den Dateien die als Parameter übergeben werden,typischerweise aus */<em>usr/share/zoneinfo</em><br>
-<div style='padding-left: 90pt'>
-      → wird als Dateiname <strong>- </strong>verwendet, liest <strong>zic </strong>vom StdIn<br>
+DISPLAY=[&lt;Rechner&gt;]:&lt;Nummer des X-Servers&gt;[.Subdisplay]<br>
+<div style='padding-left: 60pt'>
+&lt;Rechner&gt; kann IP-Adresse oder Hostname des Rechners sein<br>
 </div>
-<strong>-l → </strong>nutze die loakle Zeit als Zeitzone<br>
-<strong>-d &lt;DIR&gt; </strong>→ erstelle die konvertierte Datei im Angegbenen Verzeichnis &lt;DIR&gt;<br>
-<strong>-v </strong>→ teile mit wenn die Zeit von der in der<strong> time(2)</strong> Funktion abweicht<br>
+</p>
+		
+<p>
+<ul>
+<li>Werden von einem X-Server mehrere Monitore angesteuert, so sind die Monitore</li>
+</ul>
+als Subdisplay konfiguriert, die wiederrum durchnummeriert werden<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+DISPLAY= localhost:2.0<br>
+DISPLAY=remotepc:0.0<br>
+</p>
+
+
+<p>
+&gt;&gt; :0.0 →  Server 1, Bildschirm 1 (tty7)<br>
+&gt;&gt; :1.0 →  Server 2, Bildschirm 1 (tty8)<br>
+&gt;&gt; :0.1 →  Server 1, Bildschirm 2 (tty7) impliziert zwei Harwaremonitore oder Virtuelle Bildscirme<br>
+</p>
+
+<p>
+<u>Hinweis: X-Client-Programme verwenden meistens die Option -display um ein gülitges Display anzugeben.</u><br>
 </p>
 
 
@@ -69,7 +94,7 @@ Created Montag 19 September 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
+	Backlinks:		<a href='../X11.html'>Linux Wissen:X11</a></li>
 
 <!-- End Backlinks -->
 

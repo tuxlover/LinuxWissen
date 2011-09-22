@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./Web_Fetch_Tools/wget.html'>Prev</a> ]
+
+			[ <a href='../index.html'>Index</a> ]
+
+	[ <a href='./X11/X-Displays.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>X11</h1>
+
+<li>stellt die grafische Betriebsumgebung zur Verfügung</li>
+<li>Im Gegensatz zum Windowskernel ist das grafische System nicht Teil des Kernels bei LInux/Unix Betriebsystemen</li>
+<li>Xorg (X11R7 X11R6) und XFree86 (X11R5) sind Implementierungen des X11 Systems</li>
+<li>Accessellartet X ist eine kommerzielle Implementierung des X-Servers</li>
+<li>wesentliche Unterschiede gibt es zwischen X11R6 und X11R7 in der Verwaltung der Konfigurationsdateien</li>
+<li>X11 ist ein Client-Server System</li>
+<li>X11 Protokoll bietet eine Methode zur Übertragung grafischer Grundoperationen</li>
+<li>X-Server stellt Schnittstellen und Eingabegeräte zur Verfügung, die mit den Clients kommunizieren können</li>
+<li>X-Clients-Anwenderprogramme schicken X-Server Grundbefehle über das X11 Protokoll Steuerungsbefehle</li>
+<li>X-Server schickt Ereignisse an die X-Clients zurück</li>
+<li>X-Server und X-Clients können dabei auf verschiedenen Rechnern laufen und über Netzwerk kommunizieren</li>
+<li>X-Server sendet seine Ereignisse auf tty7 bis tty12 (bei $SUSE$ ist tty10 für die Ausgabe von Kernelmedlungen reserviert)</li>
+
+<h4>Verwalten von Xhosts</h4>
+<li><strong>xhost </strong>zum Verwalten von Zugangsbeschränkungen</li>
+<a href="./X11/xhost.html" title="Linux Wissen:X11:xhost">Linux Wissen:X11:xhost</a>
+<li><strong>xauth </strong>zum Verwalten des vom X-Server vergebenen MAGIC-COOKIE </li>
+<a href="./X11/xauth.html" title="Linux Wissen:X11:xauth">Linux Wissen:X11:xauth</a>
+<a href="./X11/X-Displays.html" title="Linux Wissen:X11:X-Displays">Linux Wissen:X11:X-Displays</a>
+
+<h4>Fenstermanager</h4>
+<li>X-Clients öffnenn Fenster über die Sie mit dem X-Server kommunizieren </li>
+<li>Hierrarchie von Fenstern beginnt beim <em>Toplevel Window</em></li>
+<li>Diese Aufgabe wurde vom Fenstermanager übernommen</li>
+<a href="./X11/X-Displays.html" title="Linux Wissen:X11:X-Displays">Linux Wissen:X11:X-Displays</a>
+
+<h5>Anforderungen:</h5>
+<li>mind 12 MB RAM</li>
+<li>mind 800 x 600 VGA Grafikkarte</li>
+<li>eine Tastenmaus mit mind. 2 Tasten. Die dritte kann durch herunterdrücken beider Tasten emuliert werden</li>
+
+<h5>Wieviel Video RAM benötigen meine Einstellungen</h5>
+<li>R=(x*y*bpp)/8.388.608</li>
+<u>Beispiel: (1024*768*24/8.388.608)=2,25 MB Pro X Anwendung </u>
+
+<h4>X-Server über einen Displaymanager starten</h4>
+<a href="./FHS/etc/X11%2B%2Bxdm.html" title="FHS:etc:X11++xdm">FHS:etc:X11++xdm</a>
+<a href="./FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
+*<strong>~/.xsessions</strong> → Konfigurationsdatei für Nutzerspezifische Einstellungen beim Starten einer Client-Server Session <br>
+<strong>~/.xsession-errors </strong>→ Fehlerlog für die X-Session des aktuellen Nutzers<br>
+<br>
+<h4>Starten der grafischen Oberfläche </h4>
+<li>das Zusammenspiel zwischen X-Server und X-Clients bezeichnet eine X-Session</li>
+Bild: Starten einer X-Session<br>
+<img src="../X-starten.png" alt="">
+
+<em>Beispiel:</em>
+<strong>sudo startx -- :1 </strong>→ mal schnell eine X11 Session als root starten <br>
+<br>
+<h4>Konfiguration von X Resourcen</h4>
+<li>Einstellungen die der X-Server speichert und von diesem bereitgestellt werden</li>
+<li>werden bei Bedarf vom X-Clients abgeholt und ausgewertet</li>
+<a href="./X11/xrdb.html" title="Linux Wissen:X11:xrdb">Linux Wissen:X11:xrdb</a>
+<li>*<strong> /etc/X11/apps-default/&lt;Name&gt; </strong>→ stellt X Resourcen für das Programm &lt;Name&gt; zur Verfügung</li>
+<div style='padding-left: 210pt'>
+        → Systemweite Einstellungen für diese Resource festlegen<br>
+</div>
+
+
+<h4>Konfigurieren der Tatstatur</h4>
+<li>*<strong>/etc/X11/Xmodmap |*~/.Xmodmap </strong>→ Konfigurieren des Tastaurlayouts für den X-Server</li>
+
+<h4>Konfigurieren von Fonts</h4>
+<li>Setup erfolgt entweder über die Konfigurationsdatei in der <u>Section "Files"</u> oder durch die Konfigruation eines zentralen Font-Servers</li>
+<li>Verezichnisse: <em>*/usr/share/fonts, */usr/share/X11/fonts, */opt/fonts, */usr/local/fonts</em></li>
+<li>Endungen: .pfa, .pfb</li>
+<a href="./X11/xset.html" title="Linux Wissen:X11:xset">Linux Wissen:X11:xset</a>
+
+<h4>Informationen über X</h4>
+<strong>xwinfinfo → </strong>zeigt Informationen über Auflösung und Farbtiefe des X-Clients<br>
+<strong>-root </strong>→ Informatioen für das root-Window anzeigen<br>
+<strong>-display </strong>→ Informationen für diesen X-Server<br>
+<br>
+<strong>xdpyinfo </strong>
+<strong>→ </strong>Zeigt Informationen über den X-Server<br>
+→  Ermittele die Fähigkeiten eines Servers<br>
+→ damit lässt sich Auswerten welche Einstellungen vom X-Server unterstützt werden<br>
+<br>
+<h4>Virtuelle Bildschirme mit Xnest erstellen</h4>
+<li>ermöglicht es zum Beispiel kde/gnome parallel laufen zu lassen</li>
+<li><strong>Xnest &lt;Display&gt; </strong>→ eine neue Xsession in der bereits bestehenden einbinden, die Session wird in einem Extrafenster gestartet</li>
+<div style='padding-left: 30pt'>
+<em>Beispiel:</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>Xnest :1 </strong><br>
+<strong>export DISPLAY=:1; icewm  --replace --display=:1</strong><br>
+→ starten des icewm innerhalb einer bestehenden Session<br>
+</div>
+
+
+<h5>Workflow: Konfigurieren des X-Servers</h5>
+<u>Achtung: Nividia kommt mit einem eigenen Konfigarationstool **nvidia-settings** und kann nicht über Xorg konfiguriert werden.</u>
+<strong>(1) init 3 </strong>oder <strong>/etc/init.d/xdm stop </strong>ausführen, um die aktuelle X-Session anzuhalten<br>
+<strong>(2) </strong>Mit dem Befehl <strong>Xorg -configure  </strong>einer Konfigurationsdatei <em>/root/xorg.conf.new</em>
+<strong>(3) </strong>Anpassen der Konfigurationsdatei<br>
+<strong>(4) </strong>Testen der Konfigurations mittels <strong>Xorg -configure /root/xorg.conf.new </strong>testen<br>
+<strong>(5) </strong>verschieben der Datei <strong>mv /root/xorg.conf.new /etc/X11/xorg.conf</strong>
+<strong>(6) </strong>neustarten des Xservers mittels <strong>init 5 </strong>oder <strong>/etc/ini.d/xdm start</strong> 
+<a href="./FHS/etc/Xorg.conf.html" title="Linux Wissen:FHS:etc:Xorg.conf">Linux Wissen:FHS:etc:Xorg.conf</a>
+<a href="./X11/xset.html" title="Linux Wissen:X11:xset">Linux Wissen:X11:xset</a>
+
+<h5>Workflow: X Clients nutzen</h5>
+<strong>(1)</strong> Login und Start X<br>
+<strong>(2) xhost +&lt;Remote-Host&gt;</strong>
+<strong>(3) </strong>Via ssh auf &lt;Remote-Host&gt; einloggen<br>
+<strong>(4)</strong> auf dem &lt;Remote-Host&gt; <strong>export DISPLAY=&lt;Client&gt;:0.0</strong>
+<strong>(5)</strong> Starten des Programms<br>
+<strong>(6)</strong> <strong>xhost -&lt;Remote-Host&gt;</strong> um die Sicherheit des Systems zu Gewährleisten/ude
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

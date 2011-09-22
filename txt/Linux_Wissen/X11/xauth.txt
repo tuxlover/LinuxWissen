@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-20T18:04:05+02:00
+
+====== xauth ======
+Created Dienstag 20 September 2011
+
+* ermöglicht Verwaltung einer Authentifizierung am X-Server über einen// MIT-MAGiC-COOKIE-1//
+* Verbesserung von **xhost **
+* Die Cookies für verschiedene Displays werden in //*~/.Xauthority //des Servers abgelegt **(xauth -v)**
+* die Variable //Xauthority //definiert den Ort für die Xauthority datei
+* Wird benötigt um auf entfernten Rechnern über SSH einen X-Client zu starten
+
+__Hinweis: Das Xauthority File darf nur für den Benutzer lesbar oder schreibbar sein. (-rw- --- ---)__
+[[Linux Wissen:Dateien verwalten:Zugriffsrechte]]
+[[Linux Wissen:Benutzer und Gruppen]]
+
+**xauth [<Befehle>...] [Argumente ...] **
+→ zum editieren und anzeigen von Authentifizierungsinformationen des X-Servers
+→ Befehle können interaktiv in der **xauth-Befehlszeile** eingegben werden oder in Scripten verarbeitet
+[[Linux Wissen:Systemprogrammierung:Shellscripting]]
+**-f <Authfile> **→ ein vom Standard abweichendes Authoriserungs File mit Magic-Cookie übergeb
+**-v **→ verbose
+**-q **→ keine Rückmeldungen
+
+	**<Befehle>:**
+			**add <Displayname> <Protokollname> <HexKey> **
+			//Beispiel://
+			**xauth localhost/unix:0  MIT-MAGIC-COOKIE-1  44c9568a21bb91c20be23fc731cd7766**
+
+			→ hinzufügen eines Eintrages , dabei wird Displayname nach der in der  Umgebungsvariable //DISPLAY //verwendete Konvention veregben 
+
+			**info **→ allgemeine Informationen über die Authentifizierung von xauth auf diesem Server
+			**list **→ auflisten der MAGIC-OOKIES
+
+
+

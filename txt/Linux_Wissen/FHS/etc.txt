@@ -105,3 +105,21 @@ Created Dienstag 19 April 2011
 ***/etc/termcap**
 → obsolete Datenbank die von **tput **benutzt wird
 [[Linux Wissen:Systemprogrammierung:Shellscripting:tput]]
+
+***/etc/X11 → **Einstellungen für den X-Server
+	***/etc/X11/xdm → **Einstellungen und Resources für den X-Displaymanager
+					[[Linux Wissen:FHS:etc:X11++xdm]]
+	***/etc/X11/kdm | */etc/kdm **→ Konfigurationsdatei für kdm **kcontrol**
+	***/etc/X11/gdm | */etc/gdm** → Konfigurationsdatei für den gdm **gdmconfig**
+	***/etc/X11/twm | */etc/twm **→ Konfigurationsdatei für den TWM (Tiny Windows Manager) des LXDE
+	*** /etc/X11/apps-default/<Name> **→ stellt X Resourcen für das Programm <Name> zur Verfügung
+							        → Systemweite Einstellungen für diese Resource festlegen
+	***/etc/X11/Xmodmap |*~/.Xmodmap **→ Konfigurieren des Tastaurlayouts für den X-Server
+
+***/etc/X11/xorg.conf →** Konfigurationsdatei für X11 bis X11R6
+***/etc/X11/xorg.conf.d → **Konfigurationsdateien im X11R6 Stil aufgesplittet nach Section und Device
+***/etc/X11/Xsession.d → **Konfigurationsdateien für X11 ab X11R7
+			           → enthält eine Reihe von Scripten die beim Starten einer X-Session ausgeführt werden
+[[Linux Wissen:FHS:etc:Xorg.conf]]
+
+	

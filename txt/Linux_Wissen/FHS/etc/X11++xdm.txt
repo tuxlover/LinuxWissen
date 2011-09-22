@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-21T17:28:06+02:00
+
+====== X11++xdm ======
+Created Mittwoch 21 September 2011
+
+** */etc/X11/xdm/**
+				**Xresources **→ Einstellungen für Logo (Direktive →  xlogin*logoFileName: ) und Begrüßung (Direktive → xlogin*greeting: )
+				
+				**Xsetup  → **Shellscript zum Festlegen von zusätzlich zu startenden Programmen
+
+				
+				**Xservers → **enthält die Einstellungen für das Starten des lokalen X-Servers
+				++
+				//:0 local /usr/bin/X -nolisten tcp -br vt7//
+				++
+				
+				**Xsessions → **Konfigurationsscript für die erste vom Server zu startende Session
+				
+

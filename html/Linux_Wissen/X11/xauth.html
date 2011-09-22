@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./X-Displays.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./xhost.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>xauth</h1>
+
+<p>
+Created Dienstag 20 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>ermöglicht Verwaltung einer Authentifizierung am X-Server über einen<em> MIT-MAGiC-COOKIE-1</em></li>
+<li>Verbesserung von <strong>xhost </strong></li>
+<li>Die Cookies für verschiedene Displays werden in <em>*~/.Xauthority </em>des Servers abgelegt <strong>(xauth -v)</strong></li>
+<li>die Variable <em>Xauthority </em>definiert den Ort für die Xauthority datei</li>
+<li>Wird benötigt um auf entfernten Rechnern über SSH einen X-Client zu starten</li>
+</ul>
+</p>
+
+<p>
+<u>Hinweis: Das Xauthority File darf nur für den Benutzer lesbar oder schreibbar sein. (-rw- --- ---)</u><br>
+<a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
+<a href="../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a><br>
+</p>
+
+<p>
+<strong>xauth [&lt;Befehle&gt;...] [Argumente ...] </strong><br>
+→ zum editieren und anzeigen von Authentifizierungsinformationen des X-Servers<br>
+→ Befehle können interaktiv in der <strong>xauth-Befehlszeile</strong> eingegben werden oder in Scripten verarbeitet<br>
+<a href="../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting">Linux Wissen:Systemprogrammierung:Shellscripting</a><br>
+<strong>-f &lt;Authfile&gt; </strong>→ ein vom Standard abweichendes Authoriserungs File mit Magic-Cookie übergeb<br>
+<strong>-v </strong>→ verbose<br>
+<strong>-q </strong>→ keine Rückmeldungen<br>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>&lt;Befehle&gt;:</strong><br>
+</div>
+<div style='padding-left: 90pt'>
+<strong>add &lt;Displayname&gt; &lt;Protokollname&gt; &lt;HexKey&gt; </strong><br>
+<em>Beispiel:</em><br>
+<strong>xauth localhost/unix:0  MIT-MAGIC-COOKIE-1  44c9568a21bb91c20be23fc731cd7766</strong><br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 90pt'>
+→ hinzufügen eines Eintrages , dabei wird Displayname nach der in der  Umgebungsvariable <em>DISPLAY </em>verwendete Konvention veregben <br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 90pt'>
+<strong>info </strong>→ allgemeine Informationen über die Authentifizierung von xauth auf diesem Server<br>
+<strong>list </strong>→ auflisten der MAGIC-OOKIES<br>
+</div>
+</p>
+
+
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../X11.html'>Linux Wissen:X11</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

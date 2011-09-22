@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-21T23:55:39+02:00
+
+====== Accessabillity ======
+Created Mittwoch 21 September 2011
+* Linux für Menschen mit Behinderungen zugänglich machen
+
+**klebenede Tasten (stickey keys)**
+→ Wird die <Strg>- Taste einmal gedrückt, wird sie als gedrückt gehalten interpreteirt
+→ Wird die <Strg>-Taste ein weiteres mal gedrückt wird sie als gelöst interpretiert
+
+**langsame Tasten (slow keys)**
+→ ignorieren von Tastendrücken innehalb eines zeitlich festgelegten Intervalls
+
+**zurückschnellende Tasten (bounce keys)**
+→ überzählige Tastendrücke derselben Taste werden ignoriert
+
+**Wiederholungstasten (repeat keys)**
+→ sollen festhaltene Tasten wiederholt oder nur einmal ausgegeben werden
+
+**Maustasten (mouse keys)**
+→ gestattet die Steuerung eines Mauszeigers über den Nummernblock
+
+**visuelle Keyboards **
+→ Bildschirmtastatur die mit er Maus gesteuert werden kann
+* **gok**
+* **xkbd**

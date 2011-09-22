@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./zdump.html'>Prev</a> ]
+	[ <a href='./xrdb.html'>Prev</a> ]
 
 			[ <a href='../../index.html'>Index</a> ]
 
-	[ <a href='../Vim_Editor.html'>Next</a> ]
+	[ <a href='../Zeitgesteuerte_Vorg%C3%A4nge.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,28 +39,37 @@
 
 <!-- Wiki content -->
 
-<h1>zic</h1>
+<h1>xset</h1>
 
 <p>
-Created Montag 19 September 2011<br>
+Created Mittwoch 21 September 2011<br>
 </p>
 
 <p>
 <ul>
-<li>zic ist der <em>timezone compiler </em>und ähnlich wie localdef für de Erstellung gültiger Zeitzonen  verantwortlich</li>
+<li>Setzen von Nutzereinstellungen</li>
 </ul>
-<a href="../Lokalisierung/localedef.html" title="Linux Wissen:Lokalisierung:localedef">Linux Wissen:Lokalisierung:localedef</a><br>
 </p>
 
 <p>
-<strong>zic &lt;Dateiname&gt; </strong>→ liest aus den Dateien die als Parameter übergeben werden,typischerweise aus */<em>usr/share/zoneinfo</em><br>
-<div style='padding-left: 90pt'>
-      → wird als Dateiname <strong>- </strong>verwendet, liest <strong>zic </strong>vom StdIn<br>
-</div>
-<strong>-l → </strong>nutze die loakle Zeit als Zeitzone<br>
-<strong>-d &lt;DIR&gt; </strong>→ erstelle die konvertierte Datei im Angegbenen Verzeichnis &lt;DIR&gt;<br>
-<strong>-v </strong>→ teile mit wenn die Zeit von der in der<strong> time(2)</strong> Funktion abweicht<br>
+<strong>xset [-display] &lt;DISPLAY&gt;</strong><br>
+<strong>b </strong>→ setzen der Bell (Dauer, Pitch, Volume on off)<br>
+<strong>fb=&lt;Path&gt; </strong>→ setzen des Font-Pfades<br>
+<strong>led </strong>→ setzen und einstellen der Keyboard LEDs<br>
+<strong>s </strong>→ Einstellungen für den Screensaver<br>
+<strong>p </strong>→ kontrolliert den Pixel Farbwert<br>
+<strong>q  </strong>→ Anzeigen der aktuellen Einstellungen<br>
 </p>
+
+<p>
+<em>Beispiel:</em><br>
+<strong> xset -display :0 q</strong> → Anzeigen der Einstellungen für Display :0<br>
+<strong>xset fp+ &lt;FONTPATH&gt;</strong> →  Anhängen von &lt;FONTPATH&gt;<br>
+<strong>xset +fp &lt;FONTPATH&gt;</strong> →  Vorne Anstellen von &lt;FONTPATH&gt;<br>
+<strong>xset fp rehash</strong> →  neu Einlesen der Font Konfiguration<br>
+</p>
+
+
 
 
 <!-- End wiki content -->
@@ -69,7 +78,7 @@ Created Montag 19 September 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
+	Backlinks:		<a href='../X11.html'>Linux Wissen:X11</a></li>
 
 <!-- End Backlinks -->
 

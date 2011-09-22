@@ -27,11 +27,11 @@
 
 <!-- Header -->
 
-	[ <a href='./zdump.html'>Prev</a> ]
+	[ <a href='./udev%2B%2Budev.conf.html'>Prev</a> ]
 
-			[ <a href='../../index.html'>Index</a> ]
+			[ <a href='../../../index.html'>Index</a> ]
 
-	[ <a href='../Vim_Editor.html'>Next</a> ]
+	[ <a href='./Xorg.conf.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -39,28 +39,42 @@
 
 <!-- Wiki content -->
 
-<h1>zic</h1>
+<h1>X11++xdm</h1>
 
 <p>
-Created Montag 19 September 2011<br>
+Created Mittwoch 21 September 2011<br>
 </p>
 
 <p>
-<ul>
-<li>zic ist der <em>timezone compiler </em>und ähnlich wie localdef für de Erstellung gültiger Zeitzonen  verantwortlich</li>
-</ul>
-<a href="../Lokalisierung/localedef.html" title="Linux Wissen:Lokalisierung:localedef">Linux Wissen:Lokalisierung:localedef</a><br>
-</p>
-
-<p>
-<strong>zic &lt;Dateiname&gt; </strong>→ liest aus den Dateien die als Parameter übergeben werden,typischerweise aus */<em>usr/share/zoneinfo</em><br>
-<div style='padding-left: 90pt'>
-      → wird als Dateiname <strong>- </strong>verwendet, liest <strong>zic </strong>vom StdIn<br>
+<strong> */etc/X11/xdm/</strong><br>
+<div style='padding-left: 120pt'>
+<strong>Xresources </strong>→ Einstellungen für Logo (Direktive →  xlogin*logoFileName: ) und Begrüßung (Direktive → xlogin*greeting: )<br>
 </div>
-<strong>-l → </strong>nutze die loakle Zeit als Zeitzone<br>
-<strong>-d &lt;DIR&gt; </strong>→ erstelle die konvertierte Datei im Angegbenen Verzeichnis &lt;DIR&gt;<br>
-<strong>-v </strong>→ teile mit wenn die Zeit von der in der<strong> time(2)</strong> Funktion abweicht<br>
 </p>
+				
+<p>
+<div style='padding-left: 120pt'>
+<strong>Xsetup  → </strong>Shellscript zum Festlegen von zusätzlich zu startenden Programmen<br>
+</div>
+</p>
+
+				
+<p>
+<div style='padding-left: 120pt'>
+<strong>Xservers → </strong>enthält die Einstellungen für das Starten des lokalen X-Servers<br>
+++<br>
+<em>:0 local /usr/bin/X -nolisten tcp -br vt7</em><br>
+++<br>
+</div>
+</p>
+				
+<p>
+<div style='padding-left: 120pt'>
+<strong>Xsessions → </strong>Konfigurationsscript für die erste vom Server zu startende Session<br>
+</div>
+</p>
+				
+
 
 
 <!-- End wiki content -->
@@ -69,7 +83,7 @@ Created Montag 19 September 2011<br>
 
 <!-- Backlinks -->
 
-	Backlinks:		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>
+	Backlinks:		<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>		<a href='../../X11.html'>Linux Wissen:X11</a></li>
 
 <!-- End Backlinks -->
 

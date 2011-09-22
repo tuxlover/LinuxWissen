@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-21T17:57:42+02:00
+
+====== xrdb ======
+Created Mittwoch 21 September 2011
+
+* Tool zum Verwalten der X-Resourcen
+* wird von //*/.xsessions //aufgerufen und lädt meist mittles **xrdb /etc/X11/Xresources** die entsprechende Resourcen in den X-Server
+* die meisten X-Clients benutzen den Resourcenmanager und Screen Nutzer Einstellungen (Farbe, Fonts)
+
+**xrdb [<Datei.conf>] **→ setzen und abfragen der Einstelungen des Resourcen Managers
+**-all **→ alle Operationen werden auf die Einstellugen des Recourcen Managers und den Screen spezifischen Screen Resources auf jeden Screen des Display
+**-global **→ Operation soll nur auf für die vom Resourcen Manager unabhängigen Einstellungne ausgeführt
+**-merge **→ mergeing der spezifisch übergebenen Optionen
+**-remove **→ eine Einstellungen vom Server entfernen
+**-edit  <Datei>  [-backup]**→ die spezifsichen Optionen in der Datei edediteren, falls eine|meherer Direktive|n bereits bestanden, werden sie neu geschrieben und ersetzt
+					→ falls **-backup **verwendet wird, generiere ein Backup der zu editierenden Datei 
+**-help **→ kurze Hilfe
+**-display <Display> **→ X-Server der genutzt werden soll, falls zum Beispiel mehrere Bildschirme verwendet werden 
+                              → wiederspricht **-all** 
+ 

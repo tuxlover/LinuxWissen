@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title></title>
+		<meta name='Generator' content='Zim 0.52'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-decoration: underline;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+		</style>
+	</head>
+	<body>
+
+<!-- Header -->
+
+	[ <a href='./xauth.html'>Prev</a> ]
+
+			[ <a href='../../index.html'>Index</a> ]
+
+	[ <a href='./xrdb.html'>Next</a> ]
+
+<!-- End Header -->
+
+<hr />
+
+<!-- Wiki content -->
+
+<h1>xhost</h1>
+
+<p>
+Created Dienstag 20 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Zugangsbeschärnkungen für Nutzer die Verbindungen zum X-Server aufbauen dürfen</li>
+<li>Zugangsbeschränkungen für Hosts die Verbindungen zum X-Server aufbauen dürfen</li>
+</ul>
+</p>
+
+<p>
+<strong>xhost +|- [&lt;Family&gt;][:&lt;Hostname&gt;][:&lt;Nutzer&gt;] </strong>→ Verwalten von X11 Client/ Hostbeschränkungen<br>
+<div style='padding-left: 300pt'>
+→ falls keine Argumente angegeben werden, gibt xhost aus ob Zugangsbeschränkungen eingerichtet sind und für wen sie gelten<br>
+</div>
+</p>
+										
+<p>
+<div style='padding-left: 30pt'>
+<strong>&lt;Family&gt;:</strong><br>
+</div>
+<div style='padding-left: 90pt'>
+NIS → Secure RPC Netzwerk Name<br>
+Krb → Kerberos v5  <br>
+Inet → Ipv4 Netz Host<br>
+Inet6 → Ipv6 Netz Host<br>
+Si → Server Interpreted<br>
+</div>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
+<strong>xhost +</strong> →  aktivieren aller Nutzer | deaktivieren der Zugangsbeschränkung<br>
+<strong>xhost</strong> -  →  deaktiveren aller Nutzer | aktivieren der Zugangsbeschränkung für X-Host<br>
+<strong>xhost -SI:localhost:root  </strong>→  deaktivieren des Zugangs für root<br>
+<strong>xhost +nis:user@host</strong> →   aktivieren des Nutzers user auf Host via NIS Protokoll<br>
+</p>
+
+<p>
+<u>Hinweis: Falls root der Zugang zum X-Server entzogen wird, muss der XServer mit anderen Rechten laufen. </u><br>
+<u>zum Beispiel </u><em>nobody</em><br>
+</p>
+
+
+
+<!-- End wiki content -->
+
+<hr />
+
+<!-- Backlinks -->
+
+	Backlinks:		<a href='../X11.html'>Linux Wissen:X11</a></li>
+
+<!-- End Backlinks -->
+
+	</body>
+
+</html>

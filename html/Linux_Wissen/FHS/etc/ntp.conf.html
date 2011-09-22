@@ -41,27 +41,40 @@
 
 <h1>ntp.conf</h1>
 
-<em>+++</em>
-<em># Abweichungen zur CMOS Zeit</em>
-<em>driftfile /var/lib/ntp/ntp.drift</em>
+<p>
+Created Montag 19 September 2011<br>
+<em>+++</em><br>
+<em># Abweichungen zur CMOS Zeit</em><br>
+<em>driftfile /var/lib/ntp/ntp.drift</em><br>
+</p>
 
-<em># NTP-Server</em>
-<em>server ptbtime1.ptb.de</em>
-<em>server ptbtime2.ptb.de</em>
+<p>
+<em># NTP-Server</em><br>
+<em>server ptbtime1.ptb.de</em><br>
+<em>server ptbtime2.ptb.de</em><br>
+</p>
 
-<em># Zugriff durch NTP-Server gestatten</em>
-<em>restrict ptbtime1.ptb.de</em>
-<em>restrict ptbtime2.ptb.de</em>
+<p>
+<em># Zugriff durch NTP-Server gestatten</em><br>
+<em>restrict ptbtime1.ptb.de</em><br>
+<em>restrict ptbtime2.ptb.de</em><br>
+</p>
 
-<em># Zugriff vom localhost gestatten (ntpq -p)</em>
-<em>restrict 127.0.0.1</em>
+<p>
+<em># Zugriff vom localhost gestatten (ntpq -p)</em><br>
+<em>restrict 127.0.0.1</em><br>
+</p>
 
-<em># Zugriff aus dem internen Netz gestatten</em>
-<em>:restrict 192.168.1.0 mask 255.255.255.0</em>
+<p>
+<em># Zugriff aus dem internen Netz gestatten</em><br>
+<em>:restrict 192.168.1.0 mask 255.255.255.0</em><br>
+</p>
 
-<em># allen anderen Rechnern Zugriff verwehren</em>
-<em>restrict default notrust nomodify nopeer</em>
-<em>+++</em>
+<p>
+<em># allen anderen Rechnern Zugriff verwehren</em><br>
+<em>restrict default notrust nomodify nopeer</em><br>
+<em>+++</em><br>
+</p>
 
 
 <!-- End wiki content -->

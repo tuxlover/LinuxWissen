@@ -5,8 +5,11 @@ Creation-Date: 2011-04-24T00:49:23+02:00
 ====== Logging und Fehleranalyse ======
 Created Sonntag 24 April 2011
 
-**(unfertige Seite)**
-__Fehler beim Booten analysieren__
+* Ausgeben und schreiben von Systemmeldungen
+* zum Auswerten kritischer Fehler
+* zum Aufspüren von Einbrüchen
+
+=== Fehler beim Booten analysieren ===
 **dmesg <Optionen>** --> Kernel logging Informationen
 -c --> den Rinbuffer leeren
 
@@ -16,5 +19,5 @@ Tricks:
 **dmesg|grep fail** --> sucht nach Problemen
 **dmesg|grep "\<E\:.*\>"** --> nach E: was ein Indikator für Fehler sein kann
 
-___Logfiles interaktiv lesen__
+=== Logfiles interaktiv lesen ===
 **tail -f <Logfile>** --> zeigt die letzten 10 Zeilen von logfile und alle neu hinzukommenden

@@ -31,7 +31,7 @@
 
 			[ <a href='../index.html'>Index</a> ]
 
-	[ <a href='./Lokalisierung.html'>Next</a> ]
+	[ <a href='./Logging_und_Fehleranalyse/dmesg.html'>Next</a> ]
 
 <!-- End Header -->
 
@@ -41,31 +41,22 @@
 
 <h1>Logging und Fehleranalyse</h1>
 
-<p>
-Created Sonntag 24 April 2011<br>
-</p>
+<li>Ausgeben und schreiben von Systemmeldungen</li>
+<li>zum Auswerten kritischer Fehler</li>
+<li>zum Aufspüren von Einbrüchen</li>
 
-<p>
-<strong>(unfertige Seite)</strong><br>
-<u>Fehler beim Booten analysieren</u><br>
+<h4>Fehler beim Booten analysieren</h4>
 <strong>dmesg &lt;Optionen&gt;</strong> --&gt; Kernel logging Informationen<br>
 -c --&gt; den Rinbuffer leeren<br>
-</p>
-
-<p>
+<br>
 <strong>dmesg|less</strong> --&gt; analysieren der kompletten Systemnachrichten auch die im frühen Bootstadium<br>
-</p>
-
-<p>
+<br>
 Tricks:<br>
 <strong>dmesg|grep fail</strong> --&gt; sucht nach Problemen<br>
 <strong>dmesg|grep "\&lt;E\:.*\&gt;"</strong> --&gt; nach E: was ein Indikator für Fehler sein kann<br>
-</p>
-
-<p>
-_<u>Logfiles interaktiv lesen</u><br>
+<br>
+<h4>Logfiles interaktiv lesen</h4>
 <strong>tail -f &lt;Logfile&gt;</strong> --&gt; zeigt die letzten 10 Zeilen von logfile und alle neu hinzukommenden<br>
-</p>
 
 
 <!-- End wiki content -->

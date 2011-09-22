@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-21T23:19:01+02:00
+
+====== xset ======
+Created Mittwoch 21 September 2011
+
+* Setzen von Nutzereinstellungen
+
+**xset [-display] <DISPLAY>**
+**b **→ setzen der Bell (Dauer, Pitch, Volume on off)
+**fb=<Path> **→ setzen des Font-Pfades
+**led **→ setzen und einstellen der Keyboard LEDs
+**s **→ Einstellungen für den Screensaver
+**p **→ kontrolliert den Pixel Farbwert
+**q  **→ Anzeigen der aktuellen Einstellungen
+
+//Beispiel://
+** xset -display :0 q** → Anzeigen der Einstellungen für Display :0
+**xset fp+ <FONTPATH>** →  Anhängen von <FONTPATH>
+**xset +fp <FONTPATH>** →  Vorne Anstellen von <FONTPATH>
+**xset fp rehash** →  neu Einlesen der Font Konfiguration
+
+

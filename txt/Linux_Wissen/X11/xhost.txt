@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-20T10:43:14+02:00
+
+====== xhost ======
+Created Dienstag 20 September 2011
+
+* Zugangsbeschärnkungen für Nutzer die Verbindungen zum X-Server aufbauen dürfen
+* Zugangsbeschränkungen für Hosts die Verbindungen zum X-Server aufbauen dürfen
+
+**xhost +|- [<Family>][:<Hostname>][:<Nutzer>] **→ Verwalten von X11 Client/ Hostbeschränkungen
+										→ falls keine Argumente angegeben werden, gibt xhost aus ob Zugangsbeschränkungen eingerichtet sind und für wen sie gelten
+										
+	**<Family>:**
+			NIS → Secure RPC Netzwerk Name
+			Krb → Kerberos v5  
+			Inet → Ipv4 Netz Host
+			Inet6 → Ipv6 Netz Host
+			Si → Server Interpreted
+
+//Beispiele://
+**xhost +** →  aktivieren aller Nutzer | deaktivieren der Zugangsbeschränkung
+**xhost** -  →  deaktiveren aller Nutzer | aktivieren der Zugangsbeschränkung für X-Host
+**xhost -SI:localhost:root  **→  deaktivieren des Zugangs für root
+**xhost +nis:user@host** →   aktivieren des Nutzers user auf Host via NIS Protokoll
+
+__Hinweis: Falls root der Zugang zum X-Server entzogen wird, muss der XServer mit anderen Rechten laufen. __
+__zum Beispiel __//nobody//
+

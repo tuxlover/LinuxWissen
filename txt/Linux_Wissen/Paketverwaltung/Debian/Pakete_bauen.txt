@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2011-04-25T23:19:47+02:00
 
-====== Pakete bauen ======
+====== /Pakete bauen ======
 Created Montag 25 April 2011
 
 * Vorteile einer Paketverwaltung lassen sich nur bei konsequenter Nutzung nutzen.
