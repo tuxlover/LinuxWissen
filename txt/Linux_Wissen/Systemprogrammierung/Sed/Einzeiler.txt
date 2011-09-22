@@ -33,7 +33,7 @@ Created Donnerstag 28 April 2011
 
 === Nummerierung ===
 **sed = <Datei> |sed 'N;s/\n/\t'**
-→ Nummeriere alle Dateien Linksbündig
+→ Nummeriere alle Zeilen Linksbündig
 
 ** sed = <Datei> | sed 'N; s/^/     /; s/ *\(.\{6,\}\)\n/\1  /'**
 → nummeriere alle Zeilen rechtsbündig in linker Spalte

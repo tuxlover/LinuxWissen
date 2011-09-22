@@ -122,6 +122,10 @@ __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 * nutzt */etc/termcap
 [[Linux Wissen:Systemprogrammierung:Shellscripting:tput]]
 
+==== Script mit Optionen steuern ====
+* Mit dem Buildin **getopts **''lassen sich Optionen in einem Script imlementieren''
+[[Linux Wissen:Systemprogrammierung:Shellscripting:getopts]]
+
 ===== Eine Menuauswahl mit select erstellen =====
 * Mit dem Shell Schlüsselwort **select **lassen sich einfache Auswahlmenus erstellen
 [[Linux Wissen:Systemprogrammierung:Shellscripting:select]]

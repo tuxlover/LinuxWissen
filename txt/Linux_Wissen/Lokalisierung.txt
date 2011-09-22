@@ -23,7 +23,7 @@ Created Donnerstag 21 Juli 2011
 chinesiche, japanische, mathematisch Formelzeichen
 → Jedes Zeichen wird ein eindeutig durch die Relation Name ~ Codepunkt (U+xxxx) identifiziert, wobei jedes x eine Hexadezimale Zahl dargestellt
 
-=== UCS-2  ===
+=== UCS-2 ===
 → implimenziert den doppelten Speicherpaltz
 
 === UTF-8 ===
@@ -34,6 +34,17 @@ chinesiche, japanische, mathematisch Formelzeichen
 [[Linux Wissen:Lokalisierung:iconv]]
 
 ==== Lokalisierung ====
+* Die Lokalisierung wird aus der //Sprache des Nutzers //__(language)__//, // des //Landes //__(territory)__ und vereinzelte Informationen die auf dieses Land zutreffen können (Währung, Sortierung etc,)
 * kann in der Shellumegbung festgelegt werden:  *~/.profile */etc/profile
+* **<VAR>= [language[_territory][.codeset][@modifier]]**
 [[Linux Wissen:Lokalisierung:Umgebungsvariablen]]
+[[Linux Wissen:Lokalisierung:locale]]
+* ***/usr/share/locale **enthält die Lokalisierungsdateien für die einzelnen Programme
+[[Linux Wissen:FHS:usr]]
+* mit dem Befehl **localedef **können weitere Lokaliserungsdateien erzeugt werden
+[[Linux Wissen:Lokalisierung:localedef]]
+* mit **loadkeys **können verschiedene Tastatur-Mapfiles geladen werden
+[[Linux Wissen:Lokalisierung:loadkeys]]
+
+
 

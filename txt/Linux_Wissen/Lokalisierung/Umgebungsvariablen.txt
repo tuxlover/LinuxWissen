@@ -5,6 +5,8 @@ Creation-Date: 2011-08-19T22:12:55+02:00
 ====== Umgebungsvariablen ======
 Created Freitag 19 August 2011
 
+**<VAR>= [language[_territory][.codeset][@modifier]]**
+
 LANG
 → betsteht aus einem Sprachencode (ISO 639) und den dazugehörigen Ländercode (ISO 3166)
 //Bsp: de_DE,de_AT,en_US,en_GB//
@@ -56,9 +58,9 @@ LC_TIME
 == Reihenfolge ==
 **LANG **→ (falls, LANG nicht gesetzt, aber eine der LC_* Variablen ) → **LC_* **→ (falls, LC_* nicht gestetzt) → **LC_ALL **→ (falls nicht gesetzt ) gilt der vom Programm vorgegeben Standardwert
 
+== Der Wer C  ==
+* kann einer LC- oder LANG- Variablen immer vor dem Aufruf eines Programmes übergeben werden
+* beschreibt den gültigen Standard den Programme verwenden, wenn sie keinerlei andere durch Variblen gesetzte Einstellungen finden oder keinerlei Voreinstellungen definiert sind
 
-
-  
-
-
-   
+__Tipp:__
+__Für Scripte empfiehlt sich die Verwendung von __**LANG=C** __um die Ausgabe zu vereinheitlichen.__

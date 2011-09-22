@@ -9,7 +9,12 @@ Created Montag 18 April 2011
 * Aufspüren von Dateien und Verzeichnissen aufgrund gewisser Eigenschaften
 * Verarbeiten von Dateien die entsprechende Eigenschaften haben mit **-exec **(zum Beispiel ändern falscher Berechtigungen) 
 
-**find <PFAD> <Optionen> **→ sucht im Pfad nach Dateien mit den durch Optionen festgelegten Eigenschaften
+**find <PfadOptionen> <PFAD> <Optionen> **→ sucht im Pfad nach Dateien mit den durch Optionen festgelegten Eigenschaften
+**<PfadOptionen>:**
+**-L **→ symbolischen Links folgen
+**-P **→ symbolischen Links niemals folgen
+
+**<Optionen>:**
 **-name '<Muster>'**→  sucht nach Dateinamen auf die <Muster> passt, 
 [[Linux Wissen:Shell:Wildcards]] 
 [[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke]]
@@ -79,4 +84,4 @@ __finde defekte symbolische Links__
 //for f in $(find / -type l -printf "%p \n"); do test -h "$f" && test -e "$f" || echo ""$f" broken";done//
 //find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"//
 //find / -type l -exec ls -L {} \;|grep "nicht möglich"//
-
+//find  -L / -xtype l -ls  | awk 'NF > 12 {print $11}' | sort -u//
