@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T15:43:27+02:00
+
+====== cups-lpd ======
+Created Freitag 23 September 2011
+
+**cups-lpd **→ der CUPS kompatible **lpd**
+		→ wird über //*/etc/xintd.conf  //bzw. über //*/etc/inetd.conf  //konfiguriert
+			[[Linux Wissen:FHS:etc:inetd.conf]]
+			[[Linux Wissen:FHS:etc:xinetd.conf]]
+**-n **→ kein DNS reverse Lookup des Clients
+**-o **<name>=<Wert> → zusätzliche Optionen für den Drucker  siehe **man cups-lpd**
+ 

@@ -18,3 +18,7 @@ Created Mittwoch 20 Juli 2011
 [[Linux Wissen:Zeitgesteuerte Vorgänge:crontab]]
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 [[Linux Wissen:FHS:var:spool:crontab]]
+
+***/var/spool/ldp**
+→ die Druckerwarteschleife des **lpd**
+[[Linux Wissen:Drucken]]

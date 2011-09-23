@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T15:05:48+02:00
+
+====== Drucken ======
+Created Freitag 23 September 2011
+
+* //*/dev/lpX //ist die Geräteatei, die auf die entsprechenden Drucker verweist
+* Jeder Druckauftrag der an einen Drucker gesendet wird, ist ein Job und wird mit einer eindeutigen Nummer bei 1 beginnend durchnummeriert
+* Jobs können in Klassen aufgeteil werden, jede Klasse kann einem oder mehrere Jobs zugewiesen werden
+
+=== Spooler ===
+SPOOL == Simultaneous Peripherial Operation On Line
+* sorgt dafür, dass Dateien für den Drucker aufgearbeitet, in die Warteschleife gestellt werden und dann an den Drucker zur Jobverarbeitung geschickt werden
+* Nach der Verarbeitung des Jobs wird der Job aus der Warteschleife gelöscht
+
+=== Der Line Printer Daemon ===
+* **lpd**
+* BSD-Überbleibsl, durch CUPS weitgehend abgelöst
+* ansteuern von lokalen (parallel|seriell) angeschlossenen Druckern
+* //*/etc/pritncap //**→ **definiert die auf einem Rechner zur Verfügung gestellten Warteschlangen und Drucker
+* //*/var/spool/lpd //→ die Druckerwarteschlange
+[[FHS:var:spool]]
+
+=== CUPS (Common Unix Printing System) ===
+* ist zum älteren **lpd **100% kompatibel bietet aber einfachere und erweiterte Funktionalitäten (**cups-lpd)**
+* basiert auf dem// IPP (Internet Printing Protocol), RFC 1179//
+* wird über HTTP transsportiert und bietet daher SSl Extensions, Proxy-Fähigkeit, Benutzerauthentifizierung
+* CUPS bietet einen eigenen zu BSD kompatiplen lpd, den cups-lpd
+* CUPS wird durch einen HTTP-Server (CUPS Scheduler) realisert
+	* sprcht IPP
+	* stellt Dokumentation bereit
+	* unter http://localhost:631 anprechbar 
+* //*/usr/share/cups/model //enthält die .ppd Druckerbeschreibungsdateien
+* **cups-lpd**
+[[+cups-lpd]]
+
+== Befehle zum Drucken ==
+* **cat <Datei> > /dev/lpX **→ die Datei wird direkt an das Gerät //*/dev/lpX// gesendet
+	                              → setzt allerdings eine Formatierung vorraus, die der Drucker versteht (ASCII, UTF-8)
+					        [[Lokalisierung]]
+					→ kein Programm oder User kann gleichzeitig drucken
+					→ überschreibt den **cupsd **
+					→ sollte für Hardwarediagnose verwendet werden
+* **lpr **ist der Line Printer Nutzerbefehl
+[[+lpr]]

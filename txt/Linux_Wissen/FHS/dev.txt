@@ -30,3 +30,5 @@ Created Dienstag 19 April 2011
 
 ***/dev/log** → Socket für den Syslog Daemon
 [[Linux Wissen:Systemprotokollierung]]
+
+***/dev/lpX **→ Gerätedatei die auf den Drucker verweist

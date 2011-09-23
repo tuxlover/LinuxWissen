@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>lpr</title>
+		<meta name='Generator' content='Zim 0.53'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									lpr</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../Drucken.html" title="Drucken">Drucken</a></li>
+<ul>
+<li><a href="./cups-lpd.html" title="cups-lpd">cups-lpd</a></li>
+<li><strong>lpr</strong></li>
+</ul>
+<li><a href="../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../Networking.html" title="Networking">Networking</a></li>
+<li><a href="../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../root.html" title="root">root</a></li>
+<li><a href="../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../X11.html" title="X11">X11</a></li>
+<li><a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<li>abeitet wie ein Filterprogramm (</li>
+<a href="../Paketverwaltung.html" title="Linux Wissen:Paketverwaltung">Linux Wissen:Paketverwaltung</a>) mit Pipes und Dateiumleitung zusammen<br>
+<br>
+<strong>lpr &lt;Datei&gt; </strong>→ eine Datei an den Drucker senden<br>
+<strong>-H &lt;Server&gt;:&lt;Port&gt; </strong>→ einen anderen Druckerserver spezifizieren<br>
+<strong>-E </strong>→ Verschlüsselung explizit verlangen<br>
+<strong>-C|-J|-T &lt;Name&gt; </strong>→ setzen eines Jobnamesn<br>
+<strong>-# N </strong>→ N Anzahl Kopien  erstellen<br>
+<strong>-h </strong>→ keine Banner drucken<br>
+<strong>-l </strong>→ Datei ohne der in <em>*/usr/share/cups/model </em>festgelegten Formatierung drucken<br>
+<strong>-o &lt;Druckoption&gt; </strong>→ angeben einer Druckoption, <strong>man lp</strong> zeigt alle möglichen Druckoptionen<br>
+<strong>-r </strong>→ nachdem die Datei ausgedruckt wurde, wird sie gelöscht<br>
+<strong>-m </strong>→ eine Mail an den Nutzer senden,sobald der Druckauftrag abgeschlossen ist<br>
+<strong>-P&lt;</strong>Printer&gt; <strong>→ </strong>einen Drucker explizit für den Auftrag angeben<br>
+<br>
+<strong>lp &lt;Datei&gt; </strong>→ zu System V kompatibler Druckbefehl<br>
+<div style='padding-left: 30pt'>
+         → wird von CUPS simmuliert um Rückwärstkompatibilität zu gewährleisten<br>
+</div>
+<strong>-h &lt;Server&gt;:&lt;Port&gt; </strong>→ einen alternativen Druckerserver spezifizieren<br>
+<strong>-E </strong>→ Verschlüsselung explizit verlangen<br>
+<strong>-t "&lt;Jobname&gt;" </strong>→ setzen eines Jobnamens<br>
+<strong>-n N </strong>→ N Anzahl Kopieen erstellen<br>
+<strong>-d &lt;Printer&gt; </strong>→ einen Drucker &lt;Printer&gt; für den Auftrag explizit angeben   <br>
+<br>
+<h5>Einige Parameter für dei Verwendung mit -o</h5>
+<strong>media=&lt;typ&gt; </strong> → Papiergröße<br>
+<div style='padding-left: 60pt'>
+       → gültige Werte sind zum Beispiel A4, USLetter<br>
+</div>
+<div style='padding-left: 90pt'>
+→ genaue Werte für den Drucler ergeben sich aus den .ppd Dateien in <em>*/usr/share/cups/model</em><br>
+</div>
+
+<strong>landscape </strong>→ drucken im Querformat<br>
+<br>
+<strong>sides={one|two-sided-short-edge|two-sided-long-edge}</strong> → beidseitig, querformat, hochformat<br>
+<br>
+<strong>page-ranges=&lt;Liste&gt; → </strong>Angabe eines bestimmten Bereichs von Seiten die gedruckt werden sollen<br>
+<div style='padding-left: 120pt'>
+   → N|N,M|N-M und Kombinationen dieser Schreibweise sind zulässig<br>
+</div>
+   
+<strong>page-set={odd|even} </strong>→ drucke nur gerade|ungerade<br>
+<br>
+:<br>
+<br>
+<h5>Umgebungsvariablen:</h5>
+<em>PRINTER  → </em>Umgebungsvariable die falls gestzt, den primär zu verwendeten Druker spezifiziert<br>
+<br>
+<em>Beispiele:</em>
+<strong>pr -l50 handbuch.txt|lpr </strong><br>
+→ Die Ausgabe von handbuch.txt wird durch eine Pipe an den Drucker geschickt<br>
+<br>
+<strong>diff &lt;datei1&gt; &lt;datei2&gt;|lpr</strong>
+
+<strong>lpr -#3 -Plaser Datei.txt</strong><br>
+→ die Datei Datei.txt 3 mal auf dem Drucker <strong>laser</strong> drucker<br>
+<br>
+<strong>lpr -o sides=two-sides-long-edge manual.pdf</strong><br>
+→ Angabe einer Druckerformatierung<br>
+<br>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../Drucken.html'>Linux Wissen:Drucken</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

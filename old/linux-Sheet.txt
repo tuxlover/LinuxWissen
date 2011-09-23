@@ -7453,7 +7453,7 @@ Beispiele:
 
 -n N --> N Anzahl der Kopien 
 
--d <Printer> --> einen Drucker <Printer fpr den Auftrag angeben
+-d <Printer> --> einen Drucker <Printer für den Auftrag angeben
 
 Einige Parameter bei -o:
 media=<typ> --> Papiergröße 
@@ -7462,7 +7462,7 @@ media=<typ> --> Papiergröße
 
 landscape --> drucken in Querformat
 
-sides={one,two-sided-short-edge,two-sided-long-edge} --> beidseitg formatiertes Drucken, querformat, hochformat
+sides={one,two-sided-short-edge,two-sided-long-edge} --> beidseitig formatiertes Drucken, querformat, hochformat
 
 page-ranges=<liste> --> Angabe eines bestimmten Brecihs von Seiten die gedurckt werden soll, erlaubt ist
 			N
@@ -7651,7 +7651,7 @@ Beispiel:
 Beispiel:
 **/usr/sbin/lpinfo -m|grep LaserJet_4000** --> Anzeigen aller für den LaserJet 4000 verfügbaren ppd Dateien
 
-===Dies Secure Shell ssh===
+===Die Secure Shell ssh===
 + Netzwerkprotokoll der TCP/IP Familie
 + Datenübertragung mit sicherer Authentifizierung und Verschlüsselung
 + interaktive Anmeldevorgänge
