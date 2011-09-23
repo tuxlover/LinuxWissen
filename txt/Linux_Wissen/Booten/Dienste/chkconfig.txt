@@ -47,9 +47,14 @@ $$Redhad$$|$$Fedora$$|$$SUSE$$
 **checkconfig <Dienst> off**
 → <Dienst> wird ab dem nächsten Bootvorgang deaktiviert
 
+**chkconfig <Dienst> xinetd**
+→ einen Xinetd Dienst konfigurieren
+[[Linux Wissen:Networking]]
+
 == Konfiguration speichern und wiederherstellen ==
 **checkconfig -A > runlevels.save **→ die aktuelle Konfiguration speichern
 **checkconfig -s < runlevels.save** → die Konfiguration aus der Datei runlevels.save wiederherstellen
+**-e → **einen Dienst interaktiv bearbeiten
 — 
 
 — 

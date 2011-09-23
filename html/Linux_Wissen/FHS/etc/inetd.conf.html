@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>inetd.conf</title>
+		<meta name='Generator' content='Zim 0.53'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									inetd.conf</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../FHS.html" title="FHS">FHS</a></li>
+<ul>
+<li><a href="../bin.html" title="bin">bin</a></li>
+<li><a href="../boot.html" title="boot">boot</a></li>
+<li><a href="../dev.html" title="dev">dev</a></li>
+<li><a href="../etc.html" title="etc">etc</a></li>
+<ul>
+<li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
+<li><a href="./ethers.html" title="ethers">ethers</a></li>
+<li><a href="./foremost.conf.html" title="foremost.conf">foremost.conf</a></li>
+<li><a href="./fstab.html" title="fstab">fstab</a></li>
+<li><a href="./group.html" title="group">group</a></li>
+<li><a href="./hosts.html" title="hosts">hosts</a></li>
+<li><a href="./hosts.allow.html" title="hosts.allow">hosts.allow</a></li>
+<li><a href="./hosts.deny.html" title="hosts.deny">hosts.deny</a></li>
+<li><strong>inetd.conf</strong></li>
+<li><a href="./init.d%2B%2BScript.html" title="init.d++Script">init.d++Script</a></li>
+<li><a href="./inittab.html" title="inittab">inittab</a></li>
+<li><a href="./lilo.conf.html" title="lilo.conf">lilo.conf</a></li>
+<li><a href="./logrotate.conf.html" title="logrotate.conf">logrotate.conf</a></li>
+<li><a href="./modprobe.conf.html" title="modprobe.conf">modprobe.conf</a></li>
+<li><a href="./my.cnf.html" title="my.cnf">my.cnf</a></li>
+<li><a href="./nsswitch.conf.html" title="nsswitch.conf">nsswitch.conf</a></li>
+<li><a href="./ntp.conf.html" title="ntp.conf">ntp.conf</a></li>
+<li><a href="./passwd.html" title="passwd">passwd</a></li>
+<li><a href="./protocols.html" title="protocols">protocols</a></li>
+<li><a href="./resolv.conf.html" title="resolv.conf">resolv.conf</a></li>
+<li><a href="./security%2B%2Blimits.conf.html" title="security++limits.conf">security++limits.conf</a></li>
+<li><a href="./services.html" title="services">services</a></li>
+<li><a href="./shadow.html" title="shadow">shadow</a></li>
+<li><a href="./sysconfig%2B%2Bclock.html" title="sysconfig++clock">sysconfig++clock</a></li>
+<li><a href="./syslog.conf.html" title="syslog.conf">syslog.conf</a></li>
+<li><a href="./udev%2B%2Brules.d%2B%2B99-myrule.html" title="udev++rules.d++99-myrule">udev++rules.d++99-myrule</a></li>
+<li><a href="./udev%2B%2Budev.conf.html" title="udev++udev.conf">udev++udev.conf</a></li>
+<li><a href="./X11%2B%2Bxdm.html" title="X11++xdm">X11++xdm</a></li>
+<li><a href="./xinetd.conf.html" title="xinetd.conf">xinetd.conf</a></li>
+<li><a href="./Xorg.conf.html" title="Xorg.conf">Xorg.conf</a></li>
+</ul>
+<li><a href="../lib.html" title="lib">lib</a></li>
+<li><a href="../proc.html" title="proc">proc</a></li>
+<li><a href="../sbin.html" title="sbin">sbin</a></li>
+<li><a href="../sys.html" title="sys">sys</a></li>
+<li><a href="../usr.html" title="usr">usr</a></li>
+<li><a href="../var.html" title="var">var</a></li>
+</ul>
+<li><a href="../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../Networking.html" title="Networking">Networking</a></li>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../root.html" title="root">root</a></li>
+<li><a href="../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../X11.html" title="X11">X11</a></li>
+<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Freitag 23 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Konfigurationsdatei des <strong>inetd </strong>Internet Daemons</li>
+<li>nach Konfiguration des Daemons muss dieser mit SIGHUP Signal dazu veranlasst werden seine Konfiguration neu einzulesen</li>
+</ul>
+(<strong>killall -1 inetd, service inetd reload|restart</strong>) <br>
+<a href="../../Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a><br>
+<a href="../../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a><br>
+<ul>
+<li>die Dienste werden zusätzlich von der Datei */etc/services gemappt</li>
+</ul>
+<a href="./services.html" title="services">services</a><br>
+</p>
+
+<p>
++++<br>
+<em>#&lt;Dienstname&gt;    &lt;Sockettyp&gt;     &lt;Protokoll&gt;     &lt;Parallelität&gt;  &lt;User&gt;  &lt;Kommando mit Pfadangabe&gt; &lt;Argumente&gt;</em><br>
+<em>ntalk           dgram           udp             wait            root            /usr/sbin/tcpd     in.talkd</em><br>
+<em>ftp             stream          tcp             nowait          root            /usr/sbin/tcpd     in.ftpd</em><br>
++++<br>
+<ul>
+<li>Direktiven werden in Spaltenform eingetragen</li>
+<li>jede Spalte in der hier aufgeführten Reihenfolge entspricht einer Direktive:</li>
+</ul>
+</p>
+
+<p>
+<em>&lt;Dienstname&gt;</em><br>
+→ identifiziert den Dienst durch Angabe der Portnummer oder des Dienstnamens<br>
+→ Bei Angabe des Namens muss dieser in der Datei <em>*/etc/services </em>definiert sein<br>
+</p>
+
+<p>
+<em>&lt;Sockettyp&gt;</em><br>
+→ beschreibt den Dienst des geöffneten Sockets<br>
+→ mögliche Werte sind:<br>
+<div style='padding-left: 120pt'>
+<em>dgram </em><strong>→ </strong>verbingsloser Socket für UDP<br>
+<em>raw </em>→ ICMP, IGMP inklusive Header<br>
+<em>stream </em><strong>→ </strong>verbingunsorientierter Socket wird von TCP genutzt<br>
+<em>rdm </em><strong>→ </strong><em>reliable delivered message</em> , zuverlässiges Datagramm Layer der Pakete auch unsortiert aufnimmt<br>
+<em>seqpacket </em>→ sequentieller, verlässlicher in zwei Richting Verbindungsorientiert<br>
+</div>
+</p>
+
+<p>
+<em>&lt;Protokoll&gt;</em><br>
+→ verwendetes Protokoll der den Dienst anspricht <br>
+→ Portokollnamen müssen in <em>*/etc/protocols</em> definiert sein  (<a href="./protocols.html" title="protocols">protocols</a>)<br>
+</p>
+ 
+<p>
+<em>&lt;Parallelität&gt; </em><br>
+→ bezieht sich nur auf UDP muss aber immer mit angegeben werden<br>
+→ mögliche Werte sind:<br>
+<div style='padding-left: 120pt'>
+<em>wait </em>→ neue Anforderungen werden erst entgegengenommen wenn UDP seinen Dienst beendet hat<br>
+<em>nowait </em><strong>→ </strong>unverzüglich auf neue Anfragen reagieren<br>
+<em>nowait.N</em> → Angabe von maximal N gleichzeitigen Anforderungen<br>
+</div>
+</p>
+
+<p>
+<em>&lt;User&gt; </em><br>
+→ Name des Benutzers in dessen Auftrag der Dienst gestartet werden soll<br>
+</p>
+
+<p>
+<em>&lt;Kommando mit Pfadangabe&gt;</em><br>
+→ vollständiger Befehl inklusiver absuluter Pfadangabe<br>
+</p>
+
+<p>
+<em>&lt;Argumente&gt;</em><br>
+→ Angabe zusätzlicher Optionen zum auszuführenden Kommando <br>
+→ Angabe zusätzlicher Argumente zum auszuführenden Kommando<br>
+</p>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='./hosts.allow.html'>Linux Wissen:FHS:etc:hosts.allow</a></li>						<a href='./hosts.deny.html'>Linux Wissen:FHS:etc:hosts.deny</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Networking.html'>Linux Wissen:Networking</a></li>						<a href='./xinetd.conf.html'>Linux Wissen:FHS:etc:xinetd.conf</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

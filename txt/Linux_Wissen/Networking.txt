@@ -73,6 +73,46 @@ __Achtung: Die Well Known Ports (0-1023) können nur von root geöffnet werden._
 							 → dabei wird die bisherige Konfiguration verworfen
 [[Linux Wissen:Networking:Tools:ifup und ifdown]]
 
+=== Fehlerbehebung und Analyse ===
+* **ping **testet die Erreichbarkeit eines Hosts | mehrerer Hosts
+[[+Tools:ping]]
+* **traceroute **ermöglicht eine Rückverfolgung der Route
+[[+Tools:traceroute]]
+* **tracepath **zum aufspüren von asymmetrischen Antwortverhalten
+[[+Tools:tracepath]]
+* **netstat **zum überprüfen von Diensten und offenen Sockets
+[[+Tools:netstat]]
+* **nmap **zum Scannen von offenen Ports und Ziel Hosts
+* **zenmap **als grafisches Frontend
+[[+Tools:nmap]]
+* **nslookup |host|dig ** zum durchfürhen von DNS-Lookups
+[[+Tools:DNS-Lookup]]
+* **telnet **zur unverschlüsselten Übertragung von Datenpaketen
+[[+Tools:telnet]]
+* **tcpdump|wireshark **um den Netzwerkverkehr zu überwachen
+[[+Tools:tcpdump]]
+* **iptraf **und **iftop **könen für die Interaktive überwachung von Netzwerkverkehr genutzt werden
+
+=== Die Internetdaemonen inetd und xinetd ===
+* **inetd **lauscht auf bestimmten Ports und startet den auf diesen Port gemappten Dienst
+	* es wird nur ein Daemon benötigt der auf bestimmten Ports lauscht
+	* spart UTTCMS
+	* spart RAM
+	* //*/etc/inetd.conf (//[[FHS:etc:inetd.conf]])
+* **xinetd **vereintlicht die Konfiguration von **inetd **und **tcpd **
+	* die Konfiguration befindet sich entweder für jeden Dienst einzeln in //*/etc/xinetd.d/mydienst.conf//
+	* oder in //*/etc/xinetd.conf (//[[FHS:etc:xinetd.conf]])
+[[+xinetd]]
+
+=== TCP-Wrapper verwenden ===
+* Dienst zur Steuerung Zugangsbeschränkungen für bestimmte Dienste
+* erfolgt ein Zugriffsversuch auf einen Dienst, startet der **inetd **den **tcpd**
+* prüft ob ein Rechner berechtigt ist, einen bestimmten Dienst auszuführen
+* //*/etc/hosts.allow //ist die Konfigurationsdatei für explizit erlaubte Dienste
+[[FHS:etc:hosts.allow]]
+* //*/etc/hosts.deny //ist die Konfigurationsdatei für explizit verbotene Dienste
+[[FHS:etc:hosts.deny]]
+
 === Netzwerkkarten und Treiber mit Udev konfigurieren ===
 //*/etc/udev/rules.d/70-persistent-net-rules //hält Informationen über die von **udev **gesteuerten Netzwerkkarten und wird erzeugt von //*/lib/udev/write_net_rules//
 +++
@@ -86,3 +126,9 @@ __Achtung: Die Well Known Ports (0-1023) können nur von root geöffnet werden._
 * **echo 0|1 > /proc/sys/net/ipv4/ip_forward **→ deaktivieren|aktivieren von IP-Forwarding
 * $$SUSE$$ //*/etc/sysconfig/sysctl //in der Variablen //IP-FORWARDING=yes|no //eintragen
 * $$Debian$$ //*/etc/network/options //in der Variablen //ip_forward=yes|no  //eintragen 
+
+=== Dienste ===
+* DHCP zur dynamischen Zuweisung von Netzwerkparameter an die Hosts
+[[+Dienste:DHCP]]
+* DNS zur lokalen und globalen Namensauflösung
+[[+Dienste:DNS]]

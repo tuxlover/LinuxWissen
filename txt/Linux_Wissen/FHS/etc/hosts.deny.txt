@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T12:47:54+02:00
+
+====== hosts.deny ======
+Created Freitag 23 September 2011
+
+* explizit verbotener Dienst wird immer als zweites vom Paar */etc/hosts.allow und //*/etc/hosts.deny //angeschaut
+* befindet sich nur die Datei ///etc/host.deny //wird nur diese ausgewertet
+* Dienst wird für diesen Rechner verboten
+* Die Dienste für die die Regeln gelten sollen, müssen in der //*/etc/inetd.conf//  fesgelegt werden 
+[[inetd.conf]]
+
+__Hinweis: !!! Ist keine der beiden Dateien vorhanden gelten beide Dateien als leer und es dürfen alle alles !!!__
+__!!! Der Zugriff wird dann Protokolliert !!!__
+
+* weitere Hinweise befinden sich in der Beschreibung [[hosts.allow]]
+
+//weitere Beispiele://
++++
+//ALL : ALL : twist (safe_finger -l @%h|usr/sbin/mail -s %d %h root ) &//
++++
+→ und verweigert allen die nicht explizit erlaubt wurden den Zugriff
+→ Anschließend wird **safe_finger** auf dem Client gestarte und versucht herauszufinde  wer auf den Rechner zugriffen hat und eine Mail an root geschickt
+→ dabei wird eine Subschell () genutzt
+
++++
+//in.ftpd  : ALL : twist /bin/echo 421 FTP not allowed from %h: DENY//
++++
+→ der ftpd wird für alle verboten, es wird eine Nachricht an den Client und ein Errorcode gesendet
+
++++
+//ALL : .example.com EXCEPT private.example.com deny//
++++
+→ alle Dienste werden verboten, ausser die von der Domaine private.example.com kommen
+
+__Hinweis: Benutzen Sie __**tcpdchk **__um die Korrektheit dieser Dateien zu überprüfen.__
+[[Linux Wissen:Networking:Tools:tcpdchk]]

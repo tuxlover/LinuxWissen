@@ -1,0 +1,118 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T13:50:49+02:00
+
+====== xinetd.conf ======
+Created Freitag 23 September 2011
+
+__Hinweis: nach dem Bearbeiten oder Neuerstellen einer Konfigurationsdatei muus__
+__der Dienst mittles __**killall -1 xinetd **__oder __**service  xinetd restart **__seine Konfiguration neu einlesen.__
+[[Linux Wissen:Prozessverwaltung:kill]]
+
+Aufbau der xinetd.conf:
++++
+//#Kommentar zum Beispiel Name des Dienstes//
+//defaults//
+//        {//
+//                <Attribut> <Operator>   <Parameter> [<Parameter> ...]//
+//        }//
+
+//service <Dienst>//
+//        {//
+//                <Attribut> <Operator>   <Parameter> [<Parameter> ...]//
+
+//        }//
++++
+
+//defaults{}//
+→  Einstellungen die für alle Dienste gelten
+→ wenn es mehrere Konfigurationsdateien gibt, steht diese Direktive in //*/etc/xinetd.conf //
+
+//service <Dienste>{}//
+→ Einstellungen für den entsprechen Dienst
+→ es gelten alle in {} gesetzten Attribute und Parameter für diesen Dienst
+
+//<Attribut>//
+	→ abhängig vom konfigurierten Dienst
+	→ Attribute die den Dienst näher beschreiben und Restriktionen und Optionen für diesen erhalten:
+		//type //
+			//INTERNAL //**→ **dieser Dienst wird durch den xinetd intern zur Verfügung gestellt
+			//UNLISTED //→ dieser Dienst ist nicht in der //*/etc/services //verzeichnet
+			//RPC //→ es handelt sich um einen RPC-Dienst
+		//socket_type//
+			//stream,dgram,raw,seqpacket (//
+[[inetd.conf]])
+		//protocol//
+			→ der definierte Wert muss in //*/etc/protocols //stehen (
+[[protocols]])
+		//wait//
+			//yes //→ Dienst wird nur einmal gestartet, wartet auf das Ende des Dienstes bevor ein neuer Prozess gestartet wird
+			//no //→ Dienst darf mehrmals aufgerufen werden (multi threated)
+		//user//
+			→ gibt den Nutzer an, mit dessen Rechten der Dienst gestartet wird (
+[[Linux Wissen:Benutzer und Gruppen]])
+		//instamces//
+			→ impliziert //wait=no //und sollte immer konfiguriert werden, wenn //wait=no// verwendet wird
+			→ Maximal gleichzeitig erlaubte Dienst
+
+		//server //
+			→ Absoluter Pfad zum Server
+		//server_args//
+			→ Argumente und Optionen die dem Server Programm mit übergeben werden
+		//interface//
+			→ NIC auf dem der Dienst kommuniziert
+	→ Attribute die das Logging steuern:
+		//log_on_success//
+			//USERID //→ vermerkt die Benutzer ID
+			//HOST // → Adresse des entfernten Hosts
+			//PID //→ Protokolliert die PID des Servers
+			//DURUTATION //→ die Dauer die dieser Dienst gelaufen ist
+			//EXIT //→ exit Status des Servers
+		//log_on_failure//
+			//USERID //→ vermerkt die Benutzer-ID
+			//HOST //→ Adresse des entfernten Hosts
+			//ATTEMPT //→ protokolliert erfolglose Anmeldeversuche, die an den Dienst gesendet wurden
+			//RECORD //→ vermerkt die Verbindungsversuche, die vom entfernten Server entgegengenommen wurde
+			                   → nicht überall implementiert
+	→ Attribute die die Zugriffskontrolle steuern
+		//only_from → //Liste von Hosts denen es erlaubt ist, eine Verbindung zum Dienst herzustellen
+	                       → 172.16.12.5 definiert einen bestimmten Host 137.42.0.0 alle Hosts deren IP mit 137.42 beginnen
+                               → 0.0.0.0 definiert alle bekannten Hosts
+	                       → einen Netzwerknamen der in der Datei //*/etc/networks // definiert ist   
+	                       → einen Adressbereich wird wie folgt definiert: a//a//.b.c.{1,3,45}
+			        → einen Hostnamen der in der *///etc/hosts// steht  
+			        → IP-Adresse mit einer dazugehörigen Netzmaske in CIDR 187.43.212.128/24 
+		//no_access //→ Liste von Hosts, denen der Zugriff grundsätzlich nicht gestattet ist
+				→ Beschreibeung der Hosts erfolggt wie bei //only_from//
+		//access_times → //Tageszeit zu dem ein bestimmter Dienst verfügbar ist
+				    → <hh>:<mm>-<hh>:<mm>
+		//disable//
+			yes → Dienst ist grunsätzlich deaktiviert
+			//no → //Dinest ist grundsätzlich aktiviert 
+			→ kann gesetzt werden um einen Dienst kruzfristig zu stoppen und den Zugriff darauf zu verwehren
+		//disabled //
+			→ nur in defaults Abschnitt der //*/ect/xinetd.conf//
+			→ ngabe einer Liste von Diensten die beim Start des xinetd nicht aktiviert werden
+
+<Operator>
+	    →  = Zuweisung eines Wertes
+           →  += Hinzufügen eines Wertes
+           →  -= Entfernen eines Wertes
+
+//Beispiel://
++++
+//# default: off//
+//# description: An echo server. This is the tcp version.//
+
+//service echo//
+//{//
+//        type            = INTERNAL//
+//        id              = echo-stream//
+//        socket_type     = stream//
+//        protocol        = tcp//
+//        user            = root//
+//        wait            = no//
+//        disable         = yes//
+//        FLAGS           = IPv6 IPv4//
+//}//
++++

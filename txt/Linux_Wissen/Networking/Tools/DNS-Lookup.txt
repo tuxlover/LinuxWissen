@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T02:16:31+02:00
+
+====== DNS-Lookup ======
+Created Freitag 23 September 2011
+
+* zum Testen von DNS
+
+**nslookup <URL> | <IP>**
+→ auflösen von Adressen und IP-Adressen
+→ testen von DNS vorwärts- und rückwärtsauflösung
+→ durchführen von DNS Lookups 
+
+**host <URL>|<IP> **→ durchführen von DNS Lookups
+**-C **→ zeige SOA Records
+**-v|-d **→ verbose
+**-l **→ gibt NS Records, PTR und A Records wieder
+**-4|-6 **→ benutze IPv4 oder IPv6
+**-s **→ falls ein ServFail geliefert wird, breche die Ausgabe an dieser Stelle ab
+**-t <mx>|<soa>|<a>|<ns>  **→ den Record bestimmen
+ 
+**dig <URL> |-x <IP> <Record Typ>  ** 
+→ durchführen von DNS Lookups
+→ detaillierte Ausgabe
+**-x **→ Reverslookup verpflichtende Option
+**-4|-6 **→ benutze IPv4 oder IPv6
+
+[[Networking:Dienste:DNS]]

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T00:47:20+02:00
+
+====== ping ======
+Created Freitag 23 September 2011
+
+**ping <URL> | <IP-Adresse> **→ testet die Erreichbarkeit 
+					     → sendet einen ICMP echo Reply ([[Networking:Protokolle]])
+
+**-a **→ akustischer Ping
+**-c N **→ Die Anzahl N der zu sendenden ICMP Pakete festlegen
+**-b **→ Eine Broadcast Adresse pingen
+**-f **→ Ping Flooding
+**-i N**→ Intervall N in Sekunden zwischen den einzelenen pings festlegen
+**-s N **→ die Größe N in Bytes pro ICMP-Paket
+**-I → **Ein Interface anpingen
+**-l N **→ es werden N Pakete auf einmal gesendet ohne auf einen Reply zu warten, ist N > 3 muss der Ping als root geschickt werden
+	   [[Linux Wissen:root]]

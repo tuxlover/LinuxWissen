@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T10:50:17+02:00
+
+====== resolv.conf ======
+Created Freitag 23 September 2011
+* Konfigrationsdatei für den lokalen Resolver
+
++++
+//nameserver 192.168.10.1//
+//nameserver 192.168.0.99//
+
+//search foo.example.com bar.example.com example.com//
+//sortlist 172.16.0.0 10.10.19.10//
+//options rotate//
++++
+**Direktiven:**
+//nameserver//
+→ IP-Adrssen der einzelnen Namserver die vom Resolver befragt werden
+→ Die Nameserver werden in der gelisteteten Reihenfolge befragt, maximal dürfen 3 eingetragen sein
+→ ist die Datei nicht vorhanden oder enthält keine Einträge wird der lokale Host //*/etc/hosts //befragt
+ [[hosts]]
+→ eine reine Resolver Datei enthält keine Einträge die auf den lokalen Host verweist
+
+//domain://
+→ definiert den Standarddomainnamen
+→ der Resolver hängt den Standarddomainnamen an den Hostnamen an, der keinen Punkt enthält
+→ domainname: wird an den domainnamen angehängt <domainname>.foo.com
+
+//search://
+→ Reihe von Domainnamen die vom Resolver durchsucht werden, wenn ein aufgerufener Hostname keinen Punkt enthält
+→ search: wird vom Resolver angehängt <search>.foo.com
+→ <search> und <domain> schließen einander aus. Der erste Eintrag gewinnt
+
+//sortlist Netzwerk/CIDR://
+→ Adressen die vom sortlist Befehl aufgelöst werden, werden bevorzugt behandelt
+→ werden mehrere Adressen empfangen, werden diese vom Resolver so umsortiert, dass diese zuerst durhcprobiert werden
+→ kann genutzt werden, um Adressen im eigenen Netzwerk zu bevorzugen
+
+//options <Option> ... //
+		 //debug// //→ //Debugging Modus Fehler werden nach StdtOut geschrieben
+		//timeout:n// **→ **setzen des TimeOuts für den Resolver
+		//attempts:n// **→ **wie oft soll die Anfrage wiederholt werden
+		//rotate// → verteile die Last gleichmäßig auf die eingetragenen Nameserver, frage nciht einzeln ab
+		//no-check-names// → deaktiviert Internet Host Table Specification
+		//inet6// → benutze IpV6
+		//ndots:n// → die maximale Anzahl erlaubter Punkte im Domainanmen
+		 
+
+

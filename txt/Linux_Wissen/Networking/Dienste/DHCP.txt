@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T02:25:19+02:00
+
+====== DHCP ======
+Created Freitag 23 September 2011
+
+* //Dynamic Host Configuration Protocol//
+* Netzparameter werden zentral von einem Server vergeben
+* IP-Adresse, default Router, mehrere DNS-Server usw. werden auf einen entfernten Server eingerichtet und von dort vergeben
+
+=== Clienseitige Kongiguration ===
+$$Debian$$ $$Ubuntu$$
+//*/etc/network/interfaces //
+→ eintagen von "//iface <ethN> inet dhcp//" um DHCP zu verwenden
+→ eintragen von "//iface <ethN> inet static//" wenn DHCP nicht verwendet werden soll
+
+$$SUSE$$
+//*/etc/sysconfig/network//
+→ eintragen von "//BOOTPROTO='dhcp'  //" um DHCP zu verwenden
+→ eintragen von "//BOOTPROTP=// 'static' " um DHC nicht zu verwenden
+
+  

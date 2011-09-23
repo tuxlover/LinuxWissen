@@ -6447,7 +6447,7 @@ __Protokollierung des Systemkerns__
 
 __Netzwerk Klassen und Ihre IP-Ranges__
 Klasse		Netzanteil	Anzahl Netze	Anzahl Hosts	Adressen
-Class A		8 Bit		128-126		2^34 - 2	0.0.0.0 - 127.255.255.255.255
+Class A		8 Bit		128-126		2^34 - 2	0.0.0.0 - 127.255.255.255
 
 Class B		16 Bit		16.384		65.534		128.0.0.0 - 191.255.255.255
 
@@ -6620,7 +6620,7 @@ $$Debian$$ \\ /etc/network/options \\ ip_forward=yes eintragen
 __Netzwerkkonfiguration mit ip__
 + erlaubt das Anzeigen von 
 + erlaubt das setzen von Routen
-+ erlaubt das Konfigurieren vn Netzwerkschnittstellen
++ erlaubt das Konfigurieren von Netzwerkschnittstellen
 + erlaubt das Verwalten von arp Tabellen
 + Setzen von Routing Policy Database Management
 + Ip Tunnel konfiguration
@@ -6729,7 +6729,7 @@ search:    --> Reihe von Domainanmen die vom Resolver durchsucht werden ein Host
 
 sortlist:  --> Adressen die vom sortlist Befehl aufgelöst werden, werden bevorzugt behandelt
 	   --> werden meherer Adressen empfangen, werden diese vom Resolver so umsortiert, so dass 
-	       diese zuerst sortiert werden
+	       diese zuerst durchprobiert werden
 	   --> kann genztzt werden, um Adressen in einem gemeinsamen Netzwerk zu bevorzugen
 
 options: <Options>
@@ -6847,11 +6847,11 @@ benutzt erst DNS und dann \\ /etc/hosts \\
 				   --> bestimmt die Pfad-MTU 
 				   --> spürt asysmmetrische Antwortverhalten auf
 
->> 
+>>
 1?: [LOCALHOST]                              pmtu 1500
-  	1:  dust.inr.ac.ru                   0.411ms
-        2:  dust.inr.ac.ru        asymm  1   0.390ms pmtu 1480
-        2:  3ffe:2400:0:109::2               463.514ms reached
+        1:  dr.anh.ec.de                   0.411ms
+        2:  dr.anh.ec.de        asymm  1   0.390ms pmtu 1480
+        2:  7ffe:1334:1:20d::2               463.514ms reached
             Resume: pmtu 1480 hops 2 back 2
 
 #TTL #Network Hop #MTU
@@ -6875,7 +6875,7 @@ __Dienste und offene Sockets überprüfen__
 
 -u udp Verbindungn anzeigen
 
-**nestat -tulpen**
+**netstat -tulpen**
 >>Proto Recv-Q 	Send-Q 	"Local Adress"	"Foreign Adress" State Benutzer Inode PID/Programm Name
 
 Proto --> Das benutzte Protokoll (tcp, udp, raw) das vom Socket benutzt wird
@@ -7090,7 +7090,7 @@ __inetd__
 
 \\ /etc/inetd.conf \\ --> Konfigurationsdatei des inetd
 		      --> nach Konfiguration des Daemons muss dieser mit SIGHUP Signal dazu veranlasst werden
-			  Konfiguration neu einzulesen **kill -1 inetd** **service inetd restart**
+			  Konfiguration neu einzulesen **killall -1 inetd** **service inetd restart**
 Beispiel
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 <Dienstname>	<Sockettyp>	<Protokoll>	<Parallelität>	<User>	<Kommando mit Pfadangabe> <Argumente>
@@ -7236,7 +7236,7 @@ ALL : .example.com EXCEPT private.example.com deny
 
 __xinetd__
 + vereint tcp wrapper und inetd
-+ aufteilen einzelner Dateien im Ordnder \\ /etc/xinetd.d \\ oder in \\ /etc/xinetd.conf \\
++ aufteilen einzelner Dateien im Ordner \\ /etc/xinetd.d \\ oder in \\ /etc/xinetd.conf \\
 + eigene Protokollierung 
 
 Aufbau einer xinetd.conf
@@ -7254,7 +7254,7 @@ service <Dienst>
 	}
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-default --> Einstellungen die für alle Dienste grundsätzlich gelten
+defaults--> Einstellungen die für alle Dienste grundsätzlich gelten
 	--> wenn es mehere Konfigurationsdateien gibt steht dieser Wert meistens in \\ /etc/xinetd.conf \\
 
 service <Dienst> --> Einstellungen für den service <Dienst> 
@@ -7336,7 +7336,7 @@ disable --> Verhindert das Starten des Dienstes
 disabled --> nur in defaults Abschnitt der \\ /ect/xinetd.conf \\
 	 --> Angabe einer Liste von Diensten die beim Start des xinetd nicht aktiviert werden
 
-**service xinetd** --> Starten des xinetd als Systemdienst
+**service xinetd start** --> Starten des xinetd als Systemdienst
 
 **xinetd** --> einmaliges manuelles Starten des xinetd \\ /usr/sbin/xinetd \\
 -syslog <Kategorie> --> Protokollnachrichten werden an den Syslog bzw. rsyslog daemon gesendet

@@ -105,6 +105,26 @@ Created Dienstag 19 April 2011
 [[Linux Wissen:FHS:etc:services]]
 ***/etc/ethers **→ Konfigurieren des Arp Caches
 [[Linux Wissen:FHS:etc:ethers]]
+***/etc/resolv.conf **→ Einstellungen für die lokale Namensauflösung
+***/etc/hosts **→ lokale Auflösung von Rechnernamen auf IP-Adressen ist eine Tabellenförmige Datei die IP-Adressen ihren Hosts zuweist
+[[+hosts]]
+***/etc/nsswich.conf **→ festlegen der Reihenfolge in der Abfragen durchgeführt werden 
+			          → NIS Datenbanken (missing link NIS)
+[[Linux Wissen:Networking:Dienste:DNS]]
+[[+nsswitch.conf]]
+
+***/etc/inetd.conf **→ Konfigurieren des Internet Daemin **inetd**
+[[+inetd.conf]]
+***/etc/xinetd.conf || /etc/xinetd.d **→ Konfigurieren des xinetd
+[[+xinetd.conf]]
+
+***/etc/protocols **→ mappen von Protokollnummern auf ihr Protokoll
+[[+protocols]]
+
+***/etc/hosts.allow **→ explizit vom TCP Wrapper **tcpd **erlaubte Dienste
+[[+hosts.allow]]
+***/etc/hosts.deny **→ explizit vom TCP Wrapper **tcpd **nicht zulässige Dienste
+[[+hosts.deny]]
 
 ***/etc/syslog.conf **→ Konfiguration für den **syslogd **
 ***/etc/rsyslog.conf **→ Konfiguration für den neueren **syslogd **(rsyslog)

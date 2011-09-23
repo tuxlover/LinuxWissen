@@ -21,4 +21,4 @@ Created Sonntag 24 April 2011
 //        root=/dev/hda9       #Verweis auf das / Verzeichnis//
 //        append=""            #Kernelparamter übergeben//
 ++
-
+[[Linux Wissen:Booten:LILO]]

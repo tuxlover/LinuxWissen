@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T00:58:25+02:00
+
+====== traceroute ======
+Created Freitag 23 September 2011
+
+**traceroute <URL> | <IP-Adresse> **→ schickt UDP Pakete mit einem TTLE (Time to life exceed)
+							 → ermöglicht eine Rückverfolgung er Route
+
+**-6|-4 **→ setzen auf IPv4 oder IPv6 
+
+**-f N **→ mit welcher TTL soll gestartet werden
+
+**-i <ethN> **→ Angabe des NIC durch welches die UDP-Pakete geschickt werden sollen
+               → Standard ist die Benutzung des Gerätes, welches in der Routing Tabelle eingetragen ist
+
+**-m N **→ Anzahl der Hopps
+        → Standard ist 30
+
+**-n **→ IP-Adressen nicht Hostnamen auflösen, beschleunigt den **traceroute **Vorgang
+
+**-p M **→ festlegen eines anderen Ports
+	→ Standard ist Port 80
+
+**-I **→ Nutze ICMP anstelle von UDP
+
+**-T **→ Nutze TCP anstelle von UDP
+
+**-w <Sekunden> **→ <Sekunden> warten bevor das nächste Paket gesendet wird
+
+**-V **→ Versionsnummer abfragen
+
+ 

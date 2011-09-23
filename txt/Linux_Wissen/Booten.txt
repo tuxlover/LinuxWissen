@@ -14,7 +14,7 @@ Der MBR besteht im wesentlichen aus 512 Bytes
 ===== Bootloader =====
 Aufgabe des Bootloaders ist es einen Kernel zu finden und in den RAM zu laden, sowie die Verwaltung mehrerer Betriebsysteme.
 * LILO
-[[Linux Wissen:Booten:LILO]]
+[[+LILO]]
 * GRUB
 [[Linux Wissen:Booten:GRUB]]
 
@@ -75,7 +75,7 @@ __Hinweis: Wegen init=/bin/sh sollte immer ein Grub Passwort vergeben werden.__
 
 **(10) **Verlassen des chroot und syncen der Platte **sync && exit**
 
-=== System V und der Init Prozess  ===
+=== System V und der Init Prozess ===
 * **/sbin/init mit PID 1**
 * **runlevel**
 * über einen //Runlevel// wird der Zustand in dem sich ein System befindet definiert

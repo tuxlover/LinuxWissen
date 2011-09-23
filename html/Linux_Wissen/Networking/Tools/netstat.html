@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>netstat</title>
+		<meta name='Generator' content='Zim 0.53'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									netstat</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../Networking.html" title="Networking">Networking</a></li>
+<ul>
+<li><a href="../Dienste.html" title="Dienste">Dienste</a></li>
+<li><a href="../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
+<li><a href="../Protokolle.html" title="Protokolle">Protokolle</a></li>
+<li><a href="../Tools.html" title="Tools">Tools</a></li>
+<ul>
+<li><a href="./arp.html" title="arp">arp</a></li>
+<li><a href="./DNS-Lookup.html" title="DNS-Lookup">DNS-Lookup</a></li>
+<li><a href="./ifconfig.html" title="ifconfig">ifconfig</a></li>
+<li><a href="./ifup_und_ifdown.html" title="ifup und ifdown">ifup und ifdown</a></li>
+<li><a href="./ip.html" title="ip">ip</a></li>
+<li><strong>netstat</strong></li>
+<li><a href="./nmap.html" title="nmap">nmap</a></li>
+<li><a href="./ping.html" title="ping">ping</a></li>
+<li><a href="./route.html" title="route">route</a></li>
+<li><a href="./tcpdchk.html" title="tcpdchk">tcpdchk</a></li>
+<li><a href="./tcpdump.html" title="tcpdump">tcpdump</a></li>
+<li><a href="./telnet.html" title="telnet">telnet</a></li>
+<li><a href="./tracepath.html" title="tracepath">tracepath</a></li>
+<li><a href="./traceroute.html" title="traceroute">traceroute</a></li>
+</ul>
+<li><a href="../xinetd.html" title="xinetd">xinetd</a></li>
+</ul>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../root.html" title="root">root</a></li>
+<li><a href="../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../X11.html" title="X11">X11</a></li>
+<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Freitag 23 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Dienste und offene Sockets überprüfen</li>
+</ul>
+</p>
+
+<p>
+<strong>netstat </strong>→ Statistiken und Informationen über das Netzwerk abfragen<br>
+<div style='padding-left: 60pt'>
+→ ohne Optionen zeigt <strong>netstat </strong>Informationen über den Zustand von offenen Sockets an<br>
+→ alle Adressfamilien ohne Optionen<br>
+→ <strong>lsof </strong>kann ebenfalls offene Sockets prüfen (missing link)<br>
+</div>
+</p>
+
+<p>
+<strong>-a </strong>→ alle Sockets einschließlich der auf Verbindung wartenden Server Sockets<br>
+<strong>-e </strong>→ zusätzliche Informationen über die User ID <br>
+<strong>-l </strong>→ lauschende Sockets<br>
+<strong>-n </strong>→ keine Namensauflösung verwenden<br>
+<strong>-p </strong>→ PID und Porgrammname des betreffenden Prozesses anzeigen<br>
+<strong>-t </strong>→ tcp Verbindungen anzeigen<br>
+<strong>-u </strong>→ udp Verbindungen anezigen<br>
+</p>
+
+<p>
+<em>Beispielausgabe:</em><br>
++++<br>
+<strong>netstat -patune</strong><br>
+<strong>netstat -tulpen</strong><br>
+<em>&gt;&gt; Proto Recv-Q  Send-Q  "Local Adress"  "Foreign Adress" State Benutzer Inode PID/Programm Name</em><br>
+</p>
+
+<p>
+<strong>&lt;Proto&gt;</strong> → Das benutzte Protokoll (tcp, udp, raw), dass vom Socket benutzt wird <br>
+<strong>&lt;Recv-Q&gt; </strong>→ Die Anzahl der empfangenen aber (noch) nicht vom Programm abgeholten Bytes auf diesem Socket<br>
+<strong>&lt;Send-Q&gt; </strong>→ Diese Anzahl der versendeten Bytes, die von der Gegenstelle noch nicht bestäigt wurden<br>
+<strong>&lt;Local Adress&gt; </strong>→ Lokale Adresse und Portnummer des Sockets, * bedeutet hier alle<br>
+<strong>&lt;Forein Adress&gt; </strong>→ Ziel Adresse und Portnummer des Ziels des Sockets, * bedeut hier alle<br>
+<strong>&lt;State&gt; </strong>→ <em>ESTABLISHED, SYN_SENT, SYN_RECV, FIN_WAIT{1,2}, TIME_WAIT, CLOSE, CLOSE_WAIT, LISTEN</em><br>
+<strong>&lt;Benutzer&gt; </strong>→ UID des Nutzers<br>
+<strong>&lt;Inode&gt; </strong>→ Inode des Sockets<br>
+</p>
+
+
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

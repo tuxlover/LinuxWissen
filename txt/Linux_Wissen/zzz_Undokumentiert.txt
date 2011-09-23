@@ -25,6 +25,11 @@ Created Donnerstag 21 April 2011
 [ ] printf
 [ ] aide
 [ ] logsurfer
+[ ] lsof
+[ ] rlogin
+[ ] snort
+[ ] netconfig
+[ ] IGMP
 
 === cool hacks ===
 +++

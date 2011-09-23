@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>telnet</title>
+		<meta name='Generator' content='Zim 0.53'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									telnet</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../Networking.html" title="Networking">Networking</a></li>
+<ul>
+<li><a href="../Dienste.html" title="Dienste">Dienste</a></li>
+<li><a href="../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
+<li><a href="../Protokolle.html" title="Protokolle">Protokolle</a></li>
+<li><a href="../Tools.html" title="Tools">Tools</a></li>
+<ul>
+<li><a href="./arp.html" title="arp">arp</a></li>
+<li><a href="./DNS-Lookup.html" title="DNS-Lookup">DNS-Lookup</a></li>
+<li><a href="./ifconfig.html" title="ifconfig">ifconfig</a></li>
+<li><a href="./ifup_und_ifdown.html" title="ifup und ifdown">ifup und ifdown</a></li>
+<li><a href="./ip.html" title="ip">ip</a></li>
+<li><a href="./netstat.html" title="netstat">netstat</a></li>
+<li><a href="./nmap.html" title="nmap">nmap</a></li>
+<li><a href="./ping.html" title="ping">ping</a></li>
+<li><a href="./route.html" title="route">route</a></li>
+<li><a href="./tcpdchk.html" title="tcpdchk">tcpdchk</a></li>
+<li><a href="./tcpdump.html" title="tcpdump">tcpdump</a></li>
+<li><strong>telnet</strong></li>
+<li><a href="./tracepath.html" title="tracepath">tracepath</a></li>
+<li><a href="./traceroute.html" title="traceroute">traceroute</a></li>
+</ul>
+<li><a href="../xinetd.html" title="xinetd">xinetd</a></li>
+</ul>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../root.html" title="root">root</a></li>
+<li><a href="../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../X11.html" title="X11">X11</a></li>
+<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Freitag 23 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>telnet Befehl kann genutzt werden, um mit anderen Hosts zu kommunizieren und so spezifische Protokolle zu testen</li>
+<li>telnet kann interaktiv im sog. Befehlsmodus oder nichtinteraktiv benutzt werden </li>
+<li>kann genutzt werden, um bestimmte nicht verschlüsselte Protokolle nachzuahmen, zum Beispiel das SMTP Protokoll</li>
+</ul>
+<a href="../Protokolle.html" title="Networking:Protokolle">Networking:Protokolle</a><br>
+(missing link Mail)<br>
+</p>
+
+<p>
+<strong>telnet [&lt;Adresse&gt;|&lt;Host&gt;] [&lt;Port&gt;]</strong> → Aufbau einer Telnetverbindung zu einer Portnummer des Dienstes<br>
+<div style='padding-left: 90pt'>
+                                   → Kontaktaufnahme mit einem TCP Port der Gegenstelle<br>
+</div>
+<div style='padding-left: 180pt'>
+             → <u>Datenübertragung findet unverschlüsselt statt</u><br>
+</div>
+<div style='padding-left: 210pt'>
+      → wird die Angabe des Ports weggelassen, so verwendet <strong>telnet </strong> den Standardport <em>23</em><br>
+</div>
+<div style='padding-left: 180pt'>
+             →  wird sogar ohne Hostargument aufgerufen, wird eine interaktive Sitzung gestartet<br>
+</div>
+</p>
+
+<p>
+<strong>-a </strong>→ automatisches Anmelden auf der Gegenseite, dabei werden für den Login die Umgebungsvariable <em>USER </em>genutzt<br>
+<strong>-l </strong>→ öffne eine lokale Session auf der Gegenseite, impliziert <strong>-a</strong><br>
+<strong>-e &lt;Escchar&gt; </strong>→ Setzen des Escape Zeichens<br>
+ <strong>-n &lt;Tracefile&gt; </strong>→ öffnene einer Datei &lt;Tracefile&gt; für das Aufzeichnen der Verbindung<br>
+<strong>-r </strong>→ Interface ähnlich zu <strong>rlogin </strong>öffnen, Escapecharacter ist dann ~<br>
+<strong>-x </strong>→ Aktivieren der Verschlüsselung, falls möglich<br>
+</p>
+
+<p>
+<strong>&lt;Befehle&gt;:</strong><br>
+<div style='padding-left: 30pt'>
+<strong>close|logout|quit </strong>→ schließen der Telnetsitzung<br>
+<strong>environ </strong>→ setzen einer Umgenungsvariable<br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>define &lt;VAR&gt; &lt;Wert&gt; </strong>→ setzen einer Umgebungsvariable &lt;VAR&gt; mit dem Wert &lt;Wert&gt;<br>
+<strong>undefine &lt;VAR&gt; → </strong>löschen einer Umgebungsvariablen<br>
+<strong>export &lt;VAR&gt; </strong>→ exportieren einer Umgebungsvaribalen<br>
+<strong>unexport &lt;VAR&gt; </strong>→ markieren einer Variablen nicht exportiert zu werden<br>
+<strong>list </strong>→ Auflisten der Umgeungsvaribalen<br>
+</div>
+</p>
+		 
+<p>
+<div style='padding-left: 30pt'>
+<strong>open Host [-l &lt;user&gt;] [[-] [&lt;port&gt;] </strong>→ öffnen einer Verbindung zum Host auf dem entsprechenden Port<br>
+<strong> send </strong><br>
+</div>
+<div style='padding-left: 90pt'>
+<strong>abort </strong>→ sendet eine ABORT SEQUENZE Befehl<br>
+<strong>ao </strong>→ senden des ABORT Output, um die Remote Ausgabe zurück zum Terminal des Benutzers zu leiten und die Ausgabe anzuhalten<br>
+<strong>ayt</strong> → Fragt Are You There, zu welchem das Remote System Antworten kann oder nicht<br>
+<strong>brk </strong>→ Senden des BREAK Signals<br>
+<strong>ec </strong>→ Senden des Erase Characters<br>
+<strong>el </strong>→ Senden von Erase Line<br>
+<strong>eof </strong>→ Senden von End Of File<br>
+<strong>eor </strong>→ Senden von End of Record<br>
+<strong>escape </strong>→ Senden des aktuellen Escape Zeichens<br>
+<strong>ga </strong>→ Senden von Go Ahead<br>
+<strong>getstatus </strong>→ Rückgeben des Status des Remote<br>
+<strong>ip </strong>→ Interrupt Process unterbricht den aktuellen Prozess auf der Remote Verbindung<br>
+<strong>nop </strong>→ Senden eines NO OP an die Remote Stelle<br>
+<strong>susp </strong>→ Senden des Suspend Process (Anhalten des aktuellen Proezess)<br>
+<strong>synch </strong>→ Synchornisieren mit der Remotstelle, dabei wird alles vorher (aber noch nicht gelesene) verworfen<br>
+<strong>do cmd|? </strong>→ Senden eines Befehls, wenn ? verwendet wird, wird eine Liste von bekannten Befehlen zurückgegeben<br>
+<strong>dont cmd|?</strong>→ <strong>→ </strong>Senden einer Dont Befehlssequenz, ? kann verwendet werden um eine Liste bekannter Befehle auszugeben<br>
+ <strong>wont </strong>|<strong>will cmd |?</strong> → Senden einer Wont|Will Befehls Sequenz; ? kann verwendet werden um eine Liste   bekannter Befehle auszugeben<br>
+</div>
+</p>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

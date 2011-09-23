@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T01:15:07+02:00
+
+====== netstat ======
+Created Freitag 23 September 2011
+
+* Dienste und offene Sockets überprüfen
+
+**netstat **→ Statistiken und Informationen über das Netzwerk abfragen
+		→ ohne Optionen zeigt **netstat **Informationen über den Zustand von offenen Sockets an
+		→ alle Adressfamilien ohne Optionen
+		→ **lsof **kann ebenfalls offene Sockets prüfen (missing link)
+
+**-a **→ alle Sockets einschließlich der auf Verbindung wartenden Server Sockets
+**-e **→ zusätzliche Informationen über die User ID 
+**-l **→ lauschende Sockets
+**-n **→ keine Namensauflösung verwenden
+**-p **→ PID und Porgrammname des betreffenden Prozesses anzeigen
+**-t **→ tcp Verbindungen anzeigen
+**-u **→ udp Verbindungen anezigen
+
+//Beispielausgabe://
++++
+**netstat -patune**
+**netstat -tulpen**
+//>> Proto Recv-Q  Send-Q  "Local Adress"  "Foreign Adress" State Benutzer Inode PID/Programm Name//
+
+**<Proto>** → Das benutzte Protokoll (tcp, udp, raw), dass vom Socket benutzt wird 
+**<Recv-Q> **→ Die Anzahl der empfangenen aber (noch) nicht vom Programm abgeholten Bytes auf diesem Socket
+**<Send-Q> **→ Diese Anzahl der versendeten Bytes, die von der Gegenstelle noch nicht bestäigt wurden
+**<Local Adress> **→ Lokale Adresse und Portnummer des Sockets, * bedeutet hier alle
+**<Forein Adress> **→ Ziel Adresse und Portnummer des Ziels des Sockets, * bedeut hier alle
+**<State> **→ //ESTABLISHED, SYN_SENT, SYN_RECV, FIN_WAIT{1,2}, TIME_WAIT, CLOSE, CLOSE_WAIT, LISTEN//
+**<Benutzer> **→ UID des Nutzers
+**<Inode> **→ Inode des Sockets
+
+

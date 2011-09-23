@@ -1,0 +1,55 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T02:37:34+02:00
+
+====== telnet ======
+Created Freitag 23 September 2011
+
+* telnet Befehl kann genutzt werden, um mit anderen Hosts zu kommunizieren und so spezifische Protokolle zu testen
+* telnet kann interaktiv im sog. Befehlsmodus oder nichtinteraktiv benutzt werden 
+* kann genutzt werden, um bestimmte nicht verschlüsselte Protokolle nachzuahmen, zum Beispiel das SMTP Protokoll
+[[Networking:Protokolle]]
+(missing link Mail)
+
+**telnet [<Adresse>|<Host>] [<Port>]** → Aufbau einer Telnetverbindung zu einer Portnummer des Dienstes
+			                                   → Kontaktaufnahme mit einem TCP Port der Gegenstelle
+						             → __Datenübertragung findet unverschlüsselt statt__
+							      → wird die Angabe des Ports weggelassen, so verwendet **telnet ** den Standardport //23//
+						             →  wird sogar ohne Hostargument aufgerufen, wird eine interaktive Sitzung gestartet
+
+**-a **→ automatisches Anmelden auf der Gegenseite, dabei werden für den Login die Umgebungsvariable //USER //genutzt
+**-l **→ öffne eine lokale Session auf der Gegenseite, impliziert **-a**
+**-e <Escchar> **→ Setzen des Escape Zeichens
+ **-n <Tracefile> **→ öffnene einer Datei <Tracefile> für das Aufzeichnen der Verbindung
+**-r **→ Interface ähnlich zu **rlogin **öffnen, Escapecharacter ist dann ~
+**-x **→ Aktivieren der Verschlüsselung, falls möglich
+
+**<Befehle>:**
+	**close|logout|quit **→ schließen der Telnetsitzung
+	**environ **→ setzen einer Umgenungsvariable
+		**define <VAR> <Wert> **→ setzen einer Umgebungsvariable <VAR> mit dem Wert <Wert>
+		**undefine <VAR> → **löschen einer Umgebungsvariablen
+		**export <VAR> **→ exportieren einer Umgebungsvaribalen
+		**unexport <VAR> **→ markieren einer Variablen nicht exportiert zu werden
+		**list **→ Auflisten der Umgeungsvaribalen
+		 
+	**open Host [-l <user>] [[-] [<port>] **→ öffnen einer Verbindung zum Host auf dem entsprechenden Port
+	** send **
+			**abort **→ sendet eine ABORT SEQUENZE Befehl
+			**ao **→ senden des ABORT Output, um die Remote Ausgabe zurück zum Terminal des Benutzers zu leiten und die Ausgabe anzuhalten
+			**ayt** → Fragt Are You There, zu welchem das Remote System Antworten kann oder nicht
+			**brk **→ Senden des BREAK Signals
+			**ec **→ Senden des Erase Characters
+			**el **→ Senden von Erase Line
+			**eof **→ Senden von End Of File
+			**eor **→ Senden von End of Record
+			**escape **→ Senden des aktuellen Escape Zeichens
+			**ga **→ Senden von Go Ahead
+			**getstatus **→ Rückgeben des Status des Remote
+			**ip **→ Interrupt Process unterbricht den aktuellen Prozess auf der Remote Verbindung
+			**nop **→ Senden eines NO OP an die Remote Stelle
+			**susp **→ Senden des Suspend Process (Anhalten des aktuellen Proezess)
+			**synch **→ Synchornisieren mit der Remotstelle, dabei wird alles vorher (aber noch nicht gelesene) verworfen
+			**do cmd|? **→ Senden eines Befehls, wenn ? verwendet wird, wird eine Liste von bekannten Befehlen zurückgegeben
+			**dont cmd|?**→ **→ **Senden einer Dont Befehlssequenz, ? kann verwendet werden um eine Liste bekannter Befehle auszugeben
+			 **wont **|**will cmd |?** → Senden einer Wont|Will Befehls Sequenz; ? kann verwendet werden um eine Liste   bekannter Befehle auszugeben

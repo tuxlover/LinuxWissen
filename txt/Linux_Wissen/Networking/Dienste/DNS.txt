@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T02:25:12+02:00
+
+====== DNS ======
+Created Freitag 23 September 2011
+
+* //Domain Name Service//
+* Zuweisen von Namen zu IP-Adressen
+
+=== Clientseitige Konfiguration ===
+* die Clientseitige Konfiguration wird in //*/etc/resolv.conf //vorgenommen
+[[Linux Wissen:FHS:etc:resolv.conf]]
+* die Datei für die lokale Namensauflösung ist //*/etc/hosts//
+[[Linux Wissen:FHS:etc:hosts]]
+* mit **netconfig update -f **erhält man eine neue Liste vom DHCP Server
+* **dnsmasq **ist ein kleiner DHCP und DNS Caching only Server
+[[DHCP]]
+[[+dnsmasq]]
+* in der Datei //*/etc/nsswicth.conf //wird die Reihenfolge der Abfragen festgelegt
+[[Linux Wissen:FHS:etc:nsswitch.conf]]

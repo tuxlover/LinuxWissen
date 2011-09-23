@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T14:47:27+02:00
+
+====== xinetd ======
+Created Freitag 23 September 2011
+
+**service xinetd start|stop|reload|status** → Starten und steuern des xinetd als Systemdienst
+[[Linux Wissen:Booten:Dienste]]
+
+**xinetd **→ einmaliges manuelles Starten des **xinetd **//*/usr/bin/xinetd//
+**-syslog <Kategorie>.<Priorität> **→ Portokollnachrichten werden an den **syslogd **weitergereicht
+[[Linux Wissen:Systemprotokollierung]]
+**-filelog <Dateiname>  **→ Alle Protokollnachrichten werden in diese Datei eingetragen
+-**inetd_ompat** →  liest neben der xinetd.conf auch die Konfiguration des inetd die inetd.conf
+
+
+**itox **→ Tool zum konvertieren der Einträge des **inetd **zu Einträgen in **xinedt**
+//Beispiel://
+**itox < /etc/inetd.conf > /etc/xinetd.conf**

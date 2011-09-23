@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T01:09:42+02:00
+
+====== tracepath ======
+Created Freitag 23 September 2011
+
+**tracepath <URL> | <IP-Adresse> **
+→ Userlevel Programm
+→ bestimmt die Pfad-MTU
+→ spürt asymmetrische Antwortverhalten auf
+
+//Beispielausgabe://
++++
+>>
+1?: [LOCALHOST]                              pmtu 1500
+        1:  dr.anh.ec.de                   0.411ms
+        2:  dr.anh.ec.de        asymm  1   0.390ms pmtu 1480
+        2:  7ffe:1334:1:20d::2               463.514ms reached
+            Resume: pmtu 1480 hops 2 back 2
+
+#TTL #Network Hop #MTU
++++
+

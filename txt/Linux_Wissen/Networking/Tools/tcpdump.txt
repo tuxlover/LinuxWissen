@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T10:25:50+02:00
+
+====== tcpdump ======
+Created Freitag 23 September 2011
+
+* Netzwerkkarte wird in den Promiscuous Mode geschaltet und erlaubt nun das Lesen von Paketen
+* benötigt root Rechte
+
+**tcpdump -i <ethN>|-D **→ Auf der NIC ethN auf Netzwerkverkehr lauschen
+		                   → wird dagegen -D verwendet, wird eine Liste von NICs ausgegeben auf denen tcpdump lauschen kann
+		                   → wird ohne weitere Optionen nach StdOut schreiben
+		                         **→ **wird anstelle von -i, **any **benutzt, wird auf jeder verfügbaren Netzwerkschnittstelle gelauscht
+**-A **→ Darstellung jedes Paketes ohne Link Layer Level Overhead
+**-c N **→ nach N Paketen wird das Programm angehalten
+**-n **→ Abschalten der Portauflösung und Namensauflösung
+**-L **→ Auflisten bekannter Link Layer Optionen
+**-w <Datei> **→ die Ausgabe in eine Datei schreiben
+**-r <Datei> **→ lesen den Dump aus einer Datei und schreibe sie nach StdtOut
+**-t **→ benutze keine Zeitstempel
+**-tt **→ benutze Zeitstempel
+**-ttt **→ Ein delta zwischen jedem gesendet und empfangenen Paket ausgeben **-tttt|-tttttt **geben noch mehr Informationen
+**-v|-vv|-vvv** → erhöhe die Gesprächigkeit
+**-Z <UID> <GID> **→ Angabe eines Nutzers der den tcpdump durchführt
+
+//Beispiel://
+**tcpdump -c 3-n any **
+→ fängt 3 Pakete ab, dabei horscht es auf jeder verfügbaren Schnittstelle und verwendet keine Namensauflösung oder Portnummerndarstellung
+

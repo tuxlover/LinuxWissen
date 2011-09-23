@@ -1,0 +1,82 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T01:31:05+02:00
+
+====== nmap ======
+Created Freitag 23 September 2011
+
+* Portscanner der nach offenen Ports in einem bestimmten IP-Adressbereichs sucht
+* zur Analyse von Netzwerken
+* ohne Option werden die 1000 am häufigsten Ports gescannt
+* IP-Adressbereich kann durch die CIDR Notation eingeschrängt werden (/0 alle Adressen, /32 nur den Host)
+
+== Scan Algorithmen (Auswahl) ==
+* UDP-TCP Connects
+* TCP Syn Scans
+* Ftp Bounce
+* Reverse Ident
+* FIN Scans
+* ACK Schleifen
+* X-MAS
+* SYN Schleifen
+* NullScan
+
+== Port Zustände ==
+**>> offen **→ ein Programm horcht auf diesem Port und ist bereit TCP/UDP Pakete entgegenzunehmen
+**>> geschlossen** → Port ist erreichbar, er empfängt und antwortet auf **nmap **Testpakete
+**>> gefiltert **→ Port ist nicht zugänglich, **nmap **kann nicht feststellen ob ein Port offen oder geschlossen ist
+**>> ungefiltert **→ Port ist zugänglich, **nmap **kann nicht feststellen ob ein Port offen oder geschlossen ist, nur von ACK-Scan geliefert
+**>> offen|gefiltert **→ der Port ist entweder offen oder gefiltert
+**>> geschlossen|gefiltert **→ der Port ist entweder geschlossen oder gefiltert
+
+**nmap [255].[255].[255].[255][/32]|scanme.org  **→ IP-Adresse oder Host Scannen
+**-sL **→ durchfürhen eines List Scans
+	* auflisten der Host ohne Pakete an Zielhosts zu senden
+	* Auflösung von Hostnamen
+	* Liste der IP-Adressen
+	* nicht mit OS-Detection oder Portscanning kombinierbar
+**-sP **→ durchführen eines Ping Scans
+	* ermitteln der aktiv am Netzwerk teilnehmenden Hosts
+	* sendet ein ICMP echo Request und ein TCP ACK an Port 80
+	* nicht mit OS-Detection aktiviert, kann aber genutzt werden
+**-sS **→ Stealth Scan durchführen
+	* führt keinen kompletten Handshake druch
+	* halboffener Scan
+	* es wird ein SYN Paket an den Zielport geschickt und ein SYN/ACK empfangen, danach wird die Verbindung mit einem RESET Paket geschlossen
+	* funktioniert nur mit Unixoiden TCP Scans
+**-sF **→ Stealt FIN Scan
+	* Übertragung eines FIN Datagramms an den Port, alle geschlossenen Ports müssen mit RST antworten
+	* sehr zeitaufwendig
+**-sX **→ Stealth X-Mas Scans
+	* sendet eine TCP-Verbindung URG , FIN und PUSH zum Zielport
+	* ein bestehendes Datagramm wird verworfen (URG) und es wird sofort auf die Antwort auf dem Zielhost mittels PUSH geschickt
+	* root-Rechte ( 
+[[Linux Wissen:root]]) sind erforderlich, weil neue Sockets erstellt werden müssen
+**-p [U:N]|[T:N]|N **→ einen bestimmten Port N scannen
+				* UDP [U:N]
+				* TCP [T:N]
+				* Portbereiche können so [-N], [M-], [M-N] angegeben werden
+				* __die [] sind notwendig__
+**-F **→ sehr schnell, beschränkt das Portscannen auf die 100 wichtigsten Ports
+**-r **→ ohne Randomisierung, scanne sequentiell
+**-iL <Datei> **→ eine Liste mit Hosts durch <Datei>  angeben, die gescannt werden soll
+**-PN** → No Ping (Ping deaktivieren)
+**-PR **→ Scannen mittels ARP Request eines lokalen Netzwerkes
+**--exclude <host1>...<hostN> **→ Hosts vom Scannen ausschließen
+**-excludefile <Datei> **→ Eine Liste von Host in <Datei> angeben, die beim Scannen ausgeschlossen werden
+**--tracetoute **→ durchführen eines traceroutings nach dem Scan
+**-n **→ keine DNS Auflösung
+**-R <Ziele> **→ DNS Auflösung für <Ziele>
+**-O **→ OS-Detection
+**-A **→ Erkennung von Diensten und Details zu diesen
+** --systm-dns **→ DNS Auflösung des scannendden Systems verwenden
+**--dns-severs <SERVER> **→ der folgende Server wird für den DNS reverse Lookup genutzt
+**--scanflags **→ festlegen Benutzerdefinierter TCP-Scans
+
+== Wichtige Dateien ==
+//*/usr/share/nmap/nmap-services //**→ **von **nmap **definierte Portnamen, die bei der Ausgabe von **-p **berücksichtigt werden
+						    → **nmap **nutzt diese Datei um bestimmte Ports wieder in Namen aufzulösen
+
+//*/usr/share/nmap-service-probes //**→** Metainformationen für das Parsen verschiedener Dienste nach Detailierten Angaben
+
+**zenmap** → grafisches Forntend für **nmap**

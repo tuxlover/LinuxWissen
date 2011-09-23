@@ -1,0 +1,72 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T12:47:25+02:00
+
+====== hosts.allow ======
+Created Freitag 23 September 2011
+
+* explizit erlaubte Dienste
+* die erste Datei vom Paar ///etc/hosts.allow /etc/hosts.deny //die angeschaut wird
+* Dienst wird für diesen Rechner gestatet
+* wird ein Dienst hier erlaubt wird nicht weiter in ///etc/hosts.deny //geprüft ob es Einschränkungen für den Dienst gibt
+* wird vom **tcpd **und vom **xinetd** ausgewertet
+* Die Dienste für die die Regeln gelten sollen, müssen in der //*/etc/inetd.conf//  fesgelegt werden 
+[[inetd.conf]]
+
+__Hinweis: !!! Ist keine der beiden Dateien vorhanden gelten beide Dateien als leer und es dürfen alle alles !!!__
+__!!! Der Zugriff wird dann Protokolliert !!!__
+
+__Hinweis: Benutzen Sie __**tcpdchk **__um die Korrektheit dieser Dateien zu überprüfen.__
+[[Linux Wissen:Networking:Tools:tcpdchk]]
+
+BeispielSkelleteon für //*/etc/hosts.allow //und ///etc/hosts.deny//
++++
+//<Dienstliste> : <Hosts> : <weitere Einträge> [:<Option1>] [:<Option2> [:<shell-befehl>]//
++++
+* Jede Direktive ist in einer Tabelle in Spalten durch : zu trennen
+
+//<Diensteliste>//
+→ durch Kommata getrennte Liste von Diensten die in *///etc/inetd.conf //spezifiziert wurde ([[inetd.conf]])
+→ das Schlüsselwort //ALL //bezeichnet alle bekannten Dienste
+
+//<Optionen>//
+→ im Makefile muss PROCESS_OPTIONS kompilliert wurden sein
+	//allow //→ gewährt den angeforderten Dienst und muss am Ende einer Regel auftauchen
+	//deny //**→ **verweigert den angeforderten Dienst uns muss am Ende einer Regel auftauchen
+	//spawn <Shellbefehl> //→ führt den angegebenen <Shellbefehl> anstelle des angeforderten Dienstes aus
+	//keepalive //→ sendet eine keepalive-Nachricht an den entsprechenden Host, falls keine Nachricht kommt, wird der Dienst abgebroch
+	//linger N //**→ **gibt an wie lange nach Verbindungsende versucht wird Dateien weiter zu übertragen
+	//banners <Pfad> //**→ **sendet die unter <Pfad> führende Datei als Nachricht
+	//nice N //→ setzen des Nicewertes für den Netzwerkdienstes ( 
+[[Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren]] )
+	//user <benutzer>.<gruppen> //→ festlegen des vom  Netzwerkdienst zu nutzende Nutzers.Gruppe
+	//setenv <Variable> <Wert> //→ setzen einer Umgebungsvariablen
+	//twist //→ Programm das statt des angeforderten Dienstes aufgerufen wird und beim **Client** ausgeführt wird 
+
+//<Shell-Befehl>//
+→ falls die Option //spawn //verwendet wird
+→ folgende vordefinierte Variablen existieren:
+	                  %a →  IP-Adresse Client
+		        %A →  IP-Adresse Server
+		        %c →  Alle verfügbaren Client Informationen einschließlich des Benutzernamens
+		        %d →  Prozessname des Netzwerkdaemons
+		        %h →  Hostname des Clients
+		        %H →  Hostname des Servers
+		        %n →  wie %h steht Hostname nicht zur Verfügung wird UNKNOWN gesetzt, steht auch IP-Adresse PARANOID
+		        %N →  Hostnae des Servers
+		        %p →  PID des Netzwerkdaemons
+		        %s →  Alle verfügbaren Server Informationen einschließlich des Benutzernamens
+		        %u →  Clientbenutzername bzw UNKNOWN falls nicht verfügbar
+		        %% →  %
+		
+		
+
+//weitere Beispiele://
+[[hosts.deny]]
++++
+//in.telnetd@172.16.2.2 : allow//
++++
+→ der Dienst telnet wird nur vomn der Adresse 172.16.2.2 aus zugelassen
+
+
+

@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T11:47:31+02:00
+
+====== inetd.conf ======
+Created Freitag 23 September 2011
+
+* Konfigurationsdatei des **inetd **Internet Daemons
+* nach Konfiguration des Daemons muss dieser mit SIGHUP Signal dazu veranlasst werden seine Konfiguration neu einzulesen
+(**killall -1 inetd, service inetd reload|restart**) 
+[[Linux Wissen:Prozessverwaltung:kill]]
+[[Linux Wissen:Booten:Dienste]]
+* die Dienste werden zusätzlich von der Datei */etc/services gemappt
+[[services]]
+
++++
+//#<Dienstname>    <Sockettyp>     <Protokoll>     <Parallelität>  <User>  <Kommando mit Pfadangabe> <Argumente>//
+//ntalk           dgram           udp             wait            root            /usr/sbin/tcpd     in.talkd//
+//ftp             stream          tcp             nowait          root            /usr/sbin/tcpd     in.ftpd//
++++
+* Direktiven werden in Spaltenform eingetragen
+* jede Spalte in der hier aufgeführten Reihenfolge entspricht einer Direktive:
+
+//<Dienstname>//
+→ identifiziert den Dienst durch Angabe der Portnummer oder des Dienstnamens
+→ Bei Angabe des Namens muss dieser in der Datei //*/etc/services //definiert sein
+
+//<Sockettyp>//
+→ beschreibt den Dienst des geöffneten Sockets
+→ mögliche Werte sind:
+				//dgram //**→ **verbingsloser Socket für UDP
+				//raw //→ ICMP, IGMP inklusive Header
+				//stream //**→ **verbingunsorientierter Socket wird von TCP genutzt
+				//rdm //**→ **//reliable delivered message// , zuverlässiges Datagramm Layer der Pakete auch unsortiert aufnimmt
+				//seqpacket //→ sequentieller, verlässlicher in zwei Richting Verbindungsorientiert
+
+//<Protokoll>//
+→ verwendetes Protokoll der den Dienst anspricht 
+→ Portokollnamen müssen in //*/etc/protocols// definiert sein  ([[protocols]])
+ 
+//<Parallelität> //
+→ bezieht sich nur auf UDP muss aber immer mit angegeben werden
+→ mögliche Werte sind:
+				//wait //→ neue Anforderungen werden erst entgegengenommen wenn UDP seinen Dienst beendet hat
+				//nowait //**→ **unverzüglich auf neue Anfragen reagieren
+				//nowait.N// → Angabe von maximal N gleichzeitigen Anforderungen
+
+//<User> //
+→ Name des Benutzers in dessen Auftrag der Dienst gestartet werden soll
+
+//<Kommando mit Pfadangabe>//
+→ vollständiger Befehl inklusiver absuluter Pfadangabe
+
+//<Argumente>//
+→ Angabe zusätzlicher Optionen zum auszuführenden Kommando 
+→ Angabe zusätzlicher Argumente zum auszuführenden Kommando
