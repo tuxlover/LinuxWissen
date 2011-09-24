@@ -56,7 +56,11 @@
 <li><a href="../Drucken.html" title="Drucken">Drucken</a></li>
 <ul>
 <li><a href="./cups-lpd.html" title="cups-lpd">cups-lpd</a></li>
+<li><a href="./lpoptions.html" title="lpoptions">lpoptions</a></li>
+<li><a href="./lpq.html" title="lpq">lpq</a></li>
 <li><strong>lpr</strong></li>
+<li><a href="./lprm.html" title="lprm">lprm</a></li>
+<li><a href="./lpstat.html" title="lpstat">lpstat</a></li>
 </ul>
 <li><a href="../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
 <li><a href="../FHS.html" title="FHS">FHS</a></li>
@@ -86,9 +90,18 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>abeitet wie ein Filterprogramm (</li>
+				<p>
+Created Freitag 23 September 2011<br>
+</p>
+
+<p>
+<ul>
+<li>abeitet wie ein Filterprogramm (</li>
+</ul>
 <a href="../Paketverwaltung.html" title="Linux Wissen:Paketverwaltung">Linux Wissen:Paketverwaltung</a>) mit Pipes und Dateiumleitung zusammen<br>
-<br>
+</p>
+
+<p>
 <strong>lpr &lt;Datei&gt; </strong>→ eine Datei an den Drucker senden<br>
 <strong>-H &lt;Server&gt;:&lt;Port&gt; </strong>→ einen anderen Druckerserver spezifizieren<br>
 <strong>-E </strong>→ Verschlüsselung explizit verlangen<br>
@@ -100,7 +113,9 @@
 <strong>-r </strong>→ nachdem die Datei ausgedruckt wurde, wird sie gelöscht<br>
 <strong>-m </strong>→ eine Mail an den Nutzer senden,sobald der Druckauftrag abgeschlossen ist<br>
 <strong>-P&lt;</strong>Printer&gt; <strong>→ </strong>einen Drucker explizit für den Auftrag angeben<br>
-<br>
+</p>
+
+<p>
 <strong>lp &lt;Datei&gt; </strong>→ zu System V kompatibler Druckbefehl<br>
 <div style='padding-left: 30pt'>
          → wird von CUPS simmuliert um Rückwärstkompatibilität zu gewährleisten<br>
@@ -110,8 +125,10 @@
 <strong>-t "&lt;Jobname&gt;" </strong>→ setzen eines Jobnamens<br>
 <strong>-n N </strong>→ N Anzahl Kopieen erstellen<br>
 <strong>-d &lt;Printer&gt; </strong>→ einen Drucker &lt;Printer&gt; für den Auftrag explizit angeben   <br>
-<br>
+</p>
+
 <h5>Einige Parameter für dei Verwendung mit -o</h5>
+<p>
 <strong>media=&lt;typ&gt; </strong> → Papiergröße<br>
 <div style='padding-left: 60pt'>
        → gültige Werte sind zum Beispiel A4, USLetter<br>
@@ -119,35 +136,81 @@
 <div style='padding-left: 90pt'>
 → genaue Werte für den Drucler ergeben sich aus den .ppd Dateien in <em>*/usr/share/cups/model</em><br>
 </div>
+</p>
 
+<p>
 <strong>landscape </strong>→ drucken im Querformat<br>
-<br>
+</p>
+
+<p>
 <strong>sides={one|two-sided-short-edge|two-sided-long-edge}</strong> → beidseitig, querformat, hochformat<br>
-<br>
+</p>
+
+<p>
 <strong>page-ranges=&lt;Liste&gt; → </strong>Angabe eines bestimmten Bereichs von Seiten die gedruckt werden sollen<br>
 <div style='padding-left: 120pt'>
    → N|N,M|N-M und Kombinationen dieser Schreibweise sind zulässig<br>
 </div>
+</p>
    
+<p>
 <strong>page-set={odd|even} </strong>→ drucke nur gerade|ungerade<br>
-<br>
-:<br>
-<br>
+</p>
+
+<p>
+<strong>outputorder={normal|reverse} </strong>→ in normaler|rückwewrtiger Reihenfolge beim Drucker ausgeben<br>
+</p>
+
+<p>
+<strong>number-up={n1,...,nn}</strong> → druckt die Seiten n1 bis nn auf eine Seite verkleinert<br>
+</p>
+
+<p>
+<strong>page-border={none|single|single-thick|double|double-thick} </strong>→ Option setzt mehrfavchdruk vorraus und gibt Rahmendicke von<br>
+<div style='padding-left: 240pt'>
+                                                               none (keinen) bis double-thick (extra dicker rand)<br>
+</div>
+</p>
+
+<p>
+<strong>number-up-layout={btrl,btrlr, lrbt, lrtb, rltb,tblr,tbrl} </strong>→ Anordnung der Seiten<br>
+<div style='padding-left: 360pt'>
+b=bottom<br>
+top=top<br>
+r=right<br>
+l=left<br>
+</div>
+</p>
+
+<p>
+<strong>prettyprint </strong>→ Kopfzeile mit Seitennummer und Auftragsname <br>
+                   → Syntaxhervorhebung bei Porgrammiersprachen<br>
+</p>
+
 <h5>Umgebungsvariablen:</h5>
+<p>
 <em>PRINTER  → </em>Umgebungsvariable die falls gestzt, den primär zu verwendeten Druker spezifiziert<br>
-<br>
-<em>Beispiele:</em>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
 <strong>pr -l50 handbuch.txt|lpr </strong><br>
 → Die Ausgabe von handbuch.txt wird durch eine Pipe an den Drucker geschickt<br>
-<br>
-<strong>diff &lt;datei1&gt; &lt;datei2&gt;|lpr</strong>
+</p>
 
+<p>
+<strong>diff &lt;datei1&gt; &lt;datei2&gt;|lpr</strong><br>
+</p>
+
+<p>
 <strong>lpr -#3 -Plaser Datei.txt</strong><br>
 → die Datei Datei.txt 3 mal auf dem Drucker <strong>laser</strong> drucker<br>
-<br>
+</p>
+
+<p>
 <strong>lpr -o sides=two-sides-long-edge manual.pdf</strong><br>
 → Angabe einer Druckerformatierung<br>
-<br>
+</p>
 
 
 			<!-- End wiki content -->

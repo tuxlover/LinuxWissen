@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T23:57:04+02:00
+
+====== lpstat ======
+Created Freitag 23 September 2011
+
+**lpstat **→ CUPS Statusinformationen abfragen
+**-E **→ Verschlüsselung bei der Kommunikation mit dem Server verlangen
+**-R **→ zeigt die Rangliste von Druckjobs
+**-a **→ zeigt ob die Warteschlangen Aufträge akzeptieren
+**-c **→ Druckerklassen und dazugehörige Drucker anzeigen
+**-d **→ Auflistung des aktuellen Standarddrucker
+**-o **→ zeigt den Inhalt der Warteschlangen an
+**-p **→ zeigt die Druckerwarteschlangen an
+**-r **→ zeigt an ob der Scheduler läuft
+**-t **→ Äquivalent zu **-rdcvapo**
+**-u **→ Nutzerspezifische Informationen für die Printerqueue anzeigen
+
+ 

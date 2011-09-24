@@ -42,7 +42,21 @@ Created Freitag 23 September 2011
    
 **page-set={odd|even} **→ drucke nur gerade|ungerade
 
-:
+**outputorder={normal|reverse} **→ in normaler|rückwewrtiger Reihenfolge beim Drucker ausgeben
+
+**number-up={n1,...,nn}** → druckt die Seiten n1 bis nn auf eine Seite verkleinert
+
+**page-border={none|single|single-thick|double|double-thick} **→ Option setzt mehrfavchdruk vorraus und gibt Rahmendicke von
+								                                                               none (keinen) bis double-thick (extra dicker rand)
+
+**number-up-layout={btrl,btrlr, lrbt, lrtb, rltb,tblr,tbrl} **→ Anordnung der Seiten
+												b=bottom
+												top=top
+												r=right
+												l=left
+
+**prettyprint **→ Kopfzeile mit Seitennummer und Auftragsname 
+                   → Syntaxhervorhebung bei Porgrammiersprachen
 
 == Umgebungsvariablen: ==
 //PRINTER  → //Umgebungsvariable die falls gestzt, den primär zu verwendeten Druker spezifiziert
@@ -58,4 +72,3 @@ Created Freitag 23 September 2011
 
 **lpr -o sides=two-sides-long-edge manual.pdf**
 → Angabe einer Druckerformatierung
-

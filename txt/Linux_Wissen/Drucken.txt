@@ -35,6 +35,7 @@ SPOOL == Simultaneous Peripherial Operation On Line
 * **cups-lpd**
 [[+cups-lpd]]
 
+
 == Befehle zum Drucken ==
 * **cat <Datei> > /dev/lpX **→ die Datei wird direkt an das Gerät //*/dev/lpX// gesendet
 	                              → setzt allerdings eine Formatierung vorraus, die der Drucker versteht (ASCII, UTF-8)
@@ -44,3 +45,11 @@ SPOOL == Simultaneous Peripherial Operation On Line
 					→ sollte für Hardwarediagnose verwendet werden
 * **lpr **ist der Line Printer Nutzerbefehl
 [[+lpr]]
+* **lpoptions **zum Anlegen und Verwalten der Standardoptionen für einen Benutzer
+[[+lpoptions]]
+* **lpq **für das Einsehen der Druckerwarteschlange (Queue)
+[[+lpq]]
+* **lpstat **zum Anzeigen von CUPS Statusmeldungen
+[[+lpstat]]
+* **lprm **zum stornieren von Druckaufträgen
+[[+lprm]]

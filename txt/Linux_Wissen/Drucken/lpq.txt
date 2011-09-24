@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-23T23:53:53+02:00
+
+====== lpq ======
+Created Freitag 23 September 2011
+
+**lpq **→ Inhalt der Standardwarteschlange auflisten
+**-E **→ Verschlüsselung bei der Kommunikation mit dem Server verlangen
+**-P <Printer> **→ Angabe eines Druckers <Printer>
+**-l **→ zusätzliche Informationen zum  Drucker
+**-h <Server>:<Port> **→ einen alternativen Server ansprechen
+
+
+ 

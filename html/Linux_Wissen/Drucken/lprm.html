@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>cups-lpd</title>
+		<title>lprm</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									cups-lpd</h1>
+									lprm</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -55,11 +55,11 @@
 <li><a href="../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
 <li><a href="../Drucken.html" title="Drucken">Drucken</a></li>
 <ul>
-<li><strong>cups-lpd</strong></li>
+<li><a href="./cups-lpd.html" title="cups-lpd">cups-lpd</a></li>
 <li><a href="./lpoptions.html" title="lpoptions">lpoptions</a></li>
 <li><a href="./lpq.html" title="lpq">lpq</a></li>
 <li><a href="./lpr.html" title="lpr">lpr</a></li>
-<li><a href="./lprm.html" title="lprm">lprm</a></li>
+<li><strong>lprm</strong></li>
 <li><a href="./lpstat.html" title="lpstat">lpstat</a></li>
 </ul>
 <li><a href="../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
@@ -91,22 +91,16 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Freitag 23 September 2011<br>
+Created Samstag 24 September 2011<br>
 </p>
 
 <p>
-<strong>cups-lpd </strong>→ der CUPS kompatible <strong>lpd</strong><br>
-<div style='padding-left: 60pt'>
-→ wird über <em>*/etc/xintd.conf  </em>bzw. über <em>*/etc/inetd.conf  </em>konfiguriert<br>
+<strong>lprm </strong>→ storniert den letzten Druckauftrag<br>
+<div style='padding-left: 30pt'>
+ → kann nur Aufträge stornieren die noch nicht an den Drucker gesendet wurden<br>
 </div>
-<div style='padding-left: 90pt'>
-<a href="../FHS/etc/inetd.conf.html" title="Linux Wissen:FHS:etc:inetd.conf">Linux Wissen:FHS:etc:inetd.conf</a><br>
-<a href="../FHS/etc/xinetd.conf.html" title="Linux Wissen:FHS:etc:xinetd.conf">Linux Wissen:FHS:etc:xinetd.conf</a><br>
-</div>
-<strong>-n </strong>→ kein DNS reverse Lookup des Clients<br>
-<strong>-o </strong>&lt;name&gt;=&lt;Wert&gt; → zusätzliche Optionen für den Drucker  siehe <strong>man cups-lpd</strong><br>
 </p>
- 
+
 
 
 			<!-- End wiki content -->
