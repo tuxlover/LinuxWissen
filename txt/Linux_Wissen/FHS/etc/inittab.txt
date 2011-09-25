@@ -24,7 +24,6 @@ Created Sonntag 24 April 2011
                                                                                          
 //#Ctr-Alt-Del                                                                            //
 //#Was passiert wenn man Strg-Alt-Entf drückt                                             //
-
 //ca:ctraltdel:/bin/true                                                                  //
                                                                                          
 //# Terminals                                                                             //

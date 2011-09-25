@@ -84,4 +84,4 @@ Created Mittwoch 21 September 2011
 //        FontPath "/usr/share/fonts/100dpi"//
 //EndSection//
 +++
-__Nividia kommt mit einem eigenen Konfigarationstool **nvidia-settings** und kann nicht über Xorg konfiguriert werden__
+____Nividia kommt mit einem eigenen Konfigarationstool nvidia-settings und kann nicht über Xorg konfiguriert werden____

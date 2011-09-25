@@ -7492,7 +7492,7 @@ prettyprint --> Kopfzeile mit Seitennummer und Auftragsnamen
 
 __Anzeigen der Standardoptionen__
 **lpoptions** --> Anzeigen und bearbeiten der Standardoptionen des Druckers
-	      --> wenn ohne Optione aufgerufen werden nur die festeglegten Standardoptionen aufgerufen
+	      --> wenn ohne Optionen aufgerufen werden nur die festeglegten Standardoptionen aufgerufen
 	
 -r --> entfernen der Standardoptionen
 
@@ -7546,7 +7546,7 @@ __löschen von Druckeraufträgen aus der Queue__
 -a all --> Storniert alle Jobs in der Druckerwarteschlange
 
 Beispiele:
-**lprm 333** --> löschen des Jibs mit der Auftragsnummer 333
+**lprm 333** --> löschen des Jobs mit der Auftragsnummer 333
 
 **lprm -** --> löscht alle Druckaufträge zu denen man als Nutzer die Berechtigung hat
 
@@ -7571,9 +7571,9 @@ __CUPS einrichten__
 \\ /etc/hosts.lpd \\ --> Eine Liste von Hosts die über diesen DruckerServer mit Druckern kommunizieren dürfen
 
 \\ /etc/cups/mime.types \\ --> Bestimmung des Datentyps der gedruckt werden soll
-			   --> Informationen die zur Umwandlung von Formatten in druckbares Format enthält
+			   --> Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden
 
-\\ /etc/classes.conf \\ --> Konfigurationsdatein für jede Klasse von Druckern
+\\ /etc/cups/classes.conf \\ --> Konfigurationsdatein für jede Klasse von Druckern
 
 \\ /etc/cups/mime.convs \\ --> Bestimmung der Filterprogramme zur Umwandlung verschiedener Formate
 

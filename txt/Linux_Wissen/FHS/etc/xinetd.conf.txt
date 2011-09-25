@@ -40,17 +40,17 @@ Aufbau der xinetd.conf:
 			//UNLISTED //→ dieser Dienst ist nicht in der //*/etc/services //verzeichnet
 			//RPC //→ es handelt sich um einen RPC-Dienst
 		//socket_type//
-			//stream,dgram,raw,seqpacket (//
-[[inetd.conf]])
+			//stream,dgram,raw,seqpacket (//[[inetd.conf]])
+
 		//protocol//
-			→ der definierte Wert muss in //*/etc/protocols //stehen (
-[[protocols]])
+			→ der definierte Wert muss in //*/etc/protocols //stehen ([[protocols]])
+
 		//wait//
 			//yes //→ Dienst wird nur einmal gestartet, wartet auf das Ende des Dienstes bevor ein neuer Prozess gestartet wird
 			//no //→ Dienst darf mehrmals aufgerufen werden (multi threated)
 		//user//
-			→ gibt den Nutzer an, mit dessen Rechten der Dienst gestartet wird (
-[[Linux Wissen:Benutzer und Gruppen]])
+			→ gibt den Nutzer an, mit dessen Rechten der Dienst gestartet wird ([[Linux Wissen:Benutzer und Gruppen]])
+
 		//instamces//
 			→ impliziert //wait=no //und sollte immer konfiguriert werden, wenn //wait=no// verwendet wird
 			→ Maximal gleichzeitig erlaubte Dienst

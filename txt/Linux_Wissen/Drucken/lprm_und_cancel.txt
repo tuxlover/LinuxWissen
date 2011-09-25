@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-24T00:30:50+02:00
+
+====== lprm und cancel ======
+Created Samstag 24 September 2011
+
+**lprm **→ storniert den letzten Druckauftrag
+	 → kann nur Aufträge stornieren die noch nicht an den Drucker gesendet wurden
+**-E** → Verschlüsselung zum Server verlangen
+**-P <Drucker> **→ Angabe eines Jobs für diesen <Drucker>
+
+//Beispiele://
+**lprm 333 **→ löschen des Jobs mit der Auftragsnummer 333
+**lprm - **→ löscht alle Druckaufträge zu denen man als angemeldeter Benutzer die Berchtigung hat
+[[Linux Wissen:Benutzer und Gruppen]]
+
+**cancel <Ziel> **→ System V kompatibel
+	              → storniert die Jobs mit der Auftragsnummer in der Warteschlange
+ 
+**  -a **→ alle Jobs zu den man als angemeldeter Benutzer die Berechtigung hat aus der Schlange löschen
+**-u <User> → **nur den Job des Nutzers <User> löschen

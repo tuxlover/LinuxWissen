@@ -59,7 +59,7 @@
 <li><a href="./Drucken/lpoptions.html" title="lpoptions">lpoptions</a></li>
 <li><a href="./Drucken/lpq.html" title="lpq">lpq</a></li>
 <li><a href="./Drucken/lpr.html" title="lpr">lpr</a></li>
-<li><a href="./Drucken/lprm.html" title="lprm">lprm</a></li>
+<li><a href="./Drucken/lprm_und_cancel.html" title="lprm und cancel">lprm und cancel</a></li>
 <li><a href="./Drucken/lpstat.html" title="lpstat">lpstat</a></li>
 </ul>
 <li><a href="./Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
@@ -90,64 +90,40 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Freitag 23 September 2011<br>
-</p>
-
-<p>
-<ul>
-<li><em>*/dev/lpX </em>ist die Geräteatei, die auf die entsprechenden Drucker verweist</li>
+				<li><em>*/dev/lpX </em>ist die Geräteatei, die auf die entsprechenden Drucker verweist</li>
 <li>Jeder Druckauftrag der an einen Drucker gesendet wird, ist ein Job und wird mit einer eindeutigen Nummer bei 1 beginnend durchnummeriert</li>
 <li>Jobs können in Klassen aufgeteil werden, jede Klasse kann einem oder mehrere Jobs zugewiesen werden</li>
-</ul>
-</p>
+<a href="http://localhost:631/help" title="http://localhost:631/help">http://localhost:631/help</a>
 
-<h4>Spooler</h4>
-<p>
+<h4>Spooler</h4><br>
 SPOOL == Simultaneous Peripherial Operation On Line<br>
-<ul>
 <li>sorgt dafür, dass Dateien für den Drucker aufgearbeitet, in die Warteschleife gestellt werden und dann an den Drucker zur Jobverarbeitung geschickt werden</li>
 <li>Nach der Verarbeitung des Jobs wird der Job aus der Warteschleife gelöscht</li>
-</ul>
-</p>
 
 <h4>Der Line Printer Daemon</h4>
-<p>
-<ul>
 <li><strong>lpd</strong></li>
 <li>BSD-Überbleibsl, durch CUPS weitgehend abgelöst</li>
 <li>ansteuern von lokalen (parallel|seriell) angeschlossenen Druckern</li>
 <li><em>*/etc/pritncap </em><strong>→ </strong>definiert die auf einem Rechner zur Verfügung gestellten Warteschlangen und Drucker</li>
 <li><em>*/var/spool/lpd </em>→ die Druckerwarteschlange</li>
-</ul>
-<a href="./FHS/var/spool.html" title="FHS:var:spool">FHS:var:spool</a><br>
-</p>
+<a href="./FHS/var/spool.html" title="FHS:var:spool">FHS:var:spool</a>
 
 <h4>CUPS (Common Unix Printing System)</h4>
-<p>
-<ul>
 <li>ist zum älteren <strong>lpd </strong>100% kompatibel bietet aber einfachere und erweiterte Funktionalitäten (<strong>cups-lpd)</strong></li>
 <li>basiert auf dem<em> IPP (Internet Printing Protocol), RFC 1179</em></li>
 <li>wird über HTTP transsportiert und bietet daher SSl Extensions, Proxy-Fähigkeit, Benutzerauthentifizierung</li>
 <li>CUPS bietet einen eigenen zu BSD kompatiplen lpd, den cups-lpd</li>
 <li>CUPS wird durch einen HTTP-Server (CUPS Scheduler) realisert</li>
-<ul>
 <li>sprcht IPP</li>
 <li>stellt Dokumentation bereit</li>
 <li>unter <a href="http://localhost:631" title="http://localhost:631">http://localhost:631</a> anprechbar </li>
-</ul>
 <li><em>*/usr/share/cups/model </em>enthält die .ppd Druckerbeschreibungsdateien</li>
 <li><strong>cups-lpd</strong></li>
-</ul>
-<a href="./Drucken/cups-lpd.html" title="+cups-lpd">+cups-lpd</a><br>
-</p>
+<a href="./Drucken/cups-lpd.html" title="+cups-lpd">+cups-lpd</a>
 
 
-<h5>Befehle zum Drucken</h5>
-<p>
-<ul>
+<h5>Client Befehle zum Drucken</h5>
 <li><strong>cat &lt;Datei&gt; &gt; /dev/lpX </strong>→ die Datei wird direkt an das Gerät <em>*/dev/lpX</em> gesendet</li>
-</ul>
 <div style='padding-left: 30pt'>
                               → setzt allerdings eine Formatierung vorraus, die der Drucker versteht (ASCII, UTF-8)<br>
 </div>
@@ -157,27 +133,38 @@ SPOOL == Simultaneous Peripherial Operation On Line<br>
 → überschreibt den <strong>cupsd </strong><br>
 → sollte für Hardwarediagnose verwendet werden<br>
 </div>
-<ul>
 <li><strong>lpr </strong>ist der Line Printer Nutzerbefehl</li>
-</ul>
-<a href="./Drucken/lpr.html" title="+lpr">+lpr</a><br>
-<ul>
+<a href="./Drucken/lpr.html" title="+lpr">+lpr</a>
 <li><strong>lpoptions </strong>zum Anlegen und Verwalten der Standardoptionen für einen Benutzer</li>
-</ul>
-<a href="./Drucken/lpoptions.html" title="+lpoptions">+lpoptions</a><br>
-<ul>
+<a href="./Drucken/lpoptions.html" title="+lpoptions">+lpoptions</a>
 <li><strong>lpq </strong>für das Einsehen der Druckerwarteschlange (Queue)</li>
-</ul>
-<a href="./Drucken/lpq.html" title="+lpq">+lpq</a><br>
-<ul>
+<a href="./Drucken/lpq.html" title="+lpq">+lpq</a>
 <li><strong>lpstat </strong>zum Anzeigen von CUPS Statusmeldungen</li>
-</ul>
-<a href="./Drucken/lpstat.html" title="+lpstat">+lpstat</a><br>
-<ul>
-<li><strong>lprm </strong>zum stornieren von Druckaufträgen</li>
-</ul>
-<a href="./Drucken/lprm.html" title="+lprm">+lprm</a><br>
-</p>
+<a href="./Drucken/lpstat.html" title="+lpstat">+lpstat</a>
+<li><strong>lprm |cancel </strong>zum stornieren von Druckaufträgen</li>
+<a href="./Drucken/lprm_und_cancel.html" title="+lprm und cancel">+lprm und cancel</a>
+
+
+<h5>Kontorllieren eines Druckerservers</h5><br>
+• <strong>enable &lt;Printer&gt;|disable &lt;Printer&gt; </strong>zum einschalten |ausschalten der aktuellen Queue im  Drucker|Druckerklasse<br>
+<li><strong>-c </strong>→ Anhalten und löschen</li>
+• <strong> accept &lt;Printer&gt;|reject &lt;Printer&gt; </strong>einen neuen Druckauftrag in der aktuellen Queue akzeptieren|ablehnen  <br>
+<div style='padding-left: 30pt'>
+<strong>-r </strong>→ einen Grund angeben<br>
+</div>
+<li><strong>lppasswd </strong>→ ändern des Passwortes es muss die Direktive <em>AuthType </em>auf <em>Digest</em> in <em>*/etc/cupsd.conf </em>gesetzt sein</li>
+<li><strong>lpc (line printer control) </strong>zum Steuern diverser Druckoptionen</li>
+
+<h5>Cups einrichten</h5>
+<li>*/etc/hosts.lpd → eine Liste von Hosts, die über diesen Druckerserver mit dem Drucker kommunizieren dürfen</li>
+<a href="./FHS/etc/hosts.lpd.html" title="FHS:etc:hosts.lpd">FHS:etc:hosts.lpd</a>
+<li><em>*/etc/cups/mime.types → </em>Bestimmung des Datentyps der gedruckt wird</li>
+<li><em>*/etc/cups/classes.conf </em>→ definieren von  verschiedenen lokalen Drucker Klassen</li>
+<a href="./FHS/etc/cups/cups%2B%2Bclasses.conf.html" title="FHS:etc:cups:cups++classes.conf">FHS:etc:cups:cups++classes.conf</a>
+<em>*/etc/cups/mime.convs</em> → Bestimmung der Filterprogramme zur Umwandlung verschiedener Format <br>
+<br>
+<br>
+<a href="./FHS/etc.html" title="FHS:etc">FHS:etc</a>
 
 
 			<!-- End wiki content -->
@@ -185,7 +172,7 @@ SPOOL == Simultaneous Peripherial Operation On Line<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='./FHS/var/spool.html'>Linux Wissen:FHS:var:spool</a></li>
+				Backlinks:						<a href='./FHS/var/spool.html'>Linux Wissen:FHS:var:spool</a></li>						<a href='./FHS/etc.html'>Linux Wissen:FHS:etc</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

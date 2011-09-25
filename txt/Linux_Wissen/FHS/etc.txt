@@ -154,4 +154,12 @@ __Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
 			           → enthält eine Reihe von Scripten die beim Starten einer X-Session ausgeführt werden
 [[Linux Wissen:FHS:etc:Xorg.conf]]
 
-	
+***/etc/hosts.lpd **→  Eine Liste von Hosts die über diesen DruckerServer mit Druckern kommunizieren dürfen
+	[[+hosts.lpd]]
+***/etc/cups/mime.types **→  Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden
+					→ Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden
+					→ wie wird zum Beispiel ein Pdf behandelt
+***/etc/cups/classes.conf **→ definieren von  verschiedenen lokalen Drucker Klassen
+[[+cups:cups++classes.conf]]
+
+[[Linux Wissen:Drucken]]

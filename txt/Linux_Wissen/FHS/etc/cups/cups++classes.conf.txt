@@ -1,0 +1,76 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-25T23:55:28+02:00
+
+====== cups++classes.conf ======
+Created Sonntag 25 September 2011
+
+//*/etc/cups/classes.conf//
++++
+//<DefaultClass Default>//
+//Accepting no//
+//...//
+//</Default>//
+
+//<Class Students>//
+//Info	"Druckerklasse fuer Personal" //
+//JobSheets	none//
+//Localtion 	MT3345//
+//Printer		Aloede//
+//Printer		Samsung//
+//Shared 		yes//
+
+//Accepting	yes//
+//OpPolicy	default//
+
+//QuotaPeriod 2592000//
+//PageLimit	150//
+
+//AllowUser	Fred//
+//AllowUser	@Students//
+//AllowUser	@Profs//
+//DenyUser 	Hans//
+//DenyUser	@Gast//
+//</Class>//
++++
+* alle Direktiven können auch mit dem **lpadmin **Tool gesetzt werden
+* Die Eigenschaften einer Klasse werden zwischen //<Class Name>// und //</Class>// definiert
+* die //Default Class //definiert die Klasse von Nutzern die in keiner anderen Klasse definiert sind
+* In den folgenden Direktiven werden dann die Eigenschaften der Klasse beschrieben:
+	//Accepting → //dieser Drucker akzeptiert Jobs
+			→ wird auch durch **accept Students **initialisert
+		//yes|no//
+	
+	//AllowUser //→ diese Nutzer dürfen diesen Drucker Nutzer
+			→ @ definiert eine Gruppe
+	
+	//DenyUser// → diese Nutzer dürfen diesen Drucker niemals nutzen
+	
+	//Info// → Direktvie muss innerhalb jeder Klassendefinition erfolgen
+		→ beschreibt die Klasse genauer
+
+	//JobsSheets //→ Standart Banner Seite
+			→ Direktive muss definiert sein
+		//none // → keine 
+		//classifiied → //Eine Banner Seite mit dem Label "Classified"
+		//standard //→ Eine leere Seite
+
+	//Location //→ definiert die Location des Druckers
+	
+	//OpPolicy //→ Alle Policies die in //*/etc/cupsd.conf //definier sind
+	
+	//PageLimit <N> //→ Alle Nutzer dieser Klasse dürfen nicht mehr als N Seiten  innerhalb einer QuotaPeriod verbrauchen
+	
+	//Printer// → diese Drucker gehören zu dieser Klasse
+
+	//QuotaPeriod → //definiert die Länge einer Quota Periode für die das //PageLimit// gilt
+		//86400 //→ pro Tag
+		//604800 //→ pro Woche
+		//2592000 → //pro Monat
+		31536000 → pro Jahr
+	
+	//Shared //→ wird dieser Drucker von mehereren Hosts über diesen Server angesteuert
+		//yes|no//
+
+
+	//StateMessage //→ Status Meldung ausgeben

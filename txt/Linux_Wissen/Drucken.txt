@@ -8,6 +8,7 @@ Created Freitag 23 September 2011
 * //*/dev/lpX //ist die Geräteatei, die auf die entsprechenden Drucker verweist
 * Jeder Druckauftrag der an einen Drucker gesendet wird, ist ein Job und wird mit einer eindeutigen Nummer bei 1 beginnend durchnummeriert
 * Jobs können in Klassen aufgeteil werden, jede Klasse kann einem oder mehrere Jobs zugewiesen werden
+http://localhost:631/help
 
 === Spooler ===
 SPOOL == Simultaneous Peripherial Operation On Line
@@ -36,7 +37,7 @@ SPOOL == Simultaneous Peripherial Operation On Line
 [[+cups-lpd]]
 
 
-== Befehle zum Drucken ==
+== Client Befehle zum Drucken ==
 * **cat <Datei> > /dev/lpX **→ die Datei wird direkt an das Gerät //*/dev/lpX// gesendet
 	                              → setzt allerdings eine Formatierung vorraus, die der Drucker versteht (ASCII, UTF-8)
 					        [[Lokalisierung]]
@@ -51,5 +52,25 @@ SPOOL == Simultaneous Peripherial Operation On Line
 [[+lpq]]
 * **lpstat **zum Anzeigen von CUPS Statusmeldungen
 [[+lpstat]]
-* **lprm **zum stornieren von Druckaufträgen
-[[+lprm]]
+* **lprm |cancel **zum stornieren von Druckaufträgen
+[[+lprm und cancel]]
+
+
+== Kontorllieren eines Druckerservers ==
+• **enable <Printer>|disable <Printer> **zum einschalten |ausschalten der aktuellen Queue im  Drucker|Druckerklasse
+	* **-c **→ Anhalten und löschen
+• ** accept <Printer>|reject <Printer> **einen neuen Druckauftrag in der aktuellen Queue akzeptieren|ablehnen  
+	**-r **→ einen Grund angeben
+* **lppasswd **→ ändern des Passwortes es muss die Direktive //AuthType //auf //Digest// in //*/etc/cupsd.conf //gesetzt sein
+* **lpc (line printer control) **zum Steuern diverser Druckoptionen
+
+== Cups einrichten ==
+* */etc/hosts.lpd → eine Liste von Hosts, die über diesen Druckerserver mit dem Drucker kommunizieren dürfen
+[[FHS:etc:hosts.lpd]]
+* //*/etc/cups/mime.types → //Bestimmung des Datentyps der gedruckt wird
+* //*/etc/cups/classes.conf //→ definieren von  verschiedenen lokalen Drucker Klassen
+[[FHS:etc:cups:cups++classes.conf]]
+//*/etc/cups/mime.convs// → Bestimmung der Filterprogramme zur Umwandlung verschiedener Format 
+
+
+[[FHS:etc]]
