@@ -131,38 +131,53 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<em>*/etc/cups/classes.conf</em><br>
+				<p>
+Created Sonntag 25 September 2011<br>
+</p>
+
+<p>
+<em>*/etc/cups/classes.conf</em><br>
 +++<br>
-<em>&lt;DefaultClass Default&gt;</em>
-<em>Accepting no</em>
-<em>...</em>
-<em>&lt;/Default&gt;</em>
+<em>&lt;DefaultClass Default&gt;</em><br>
+<em>Accepting no</em><br>
+<em>...</em><br>
+<em>&lt;/Default&gt;</em><br>
+</p>
 
-<em>&lt;Class Students&gt;</em>
-<em>Info	"Druckerklasse fuer Personal" </em>
-<em>JobSheets	none</em>
-<em>Localtion 	MT3345</em>
-<em>Printer		Aloede</em>
-<em>Printer		Samsung</em>
-<em>Shared 		yes</em>
+<p>
+<em>&lt;Class Students&gt;</em><br>
+<em>Info	"Druckerklasse fuer Personal" </em><br>
+<em>JobSheets	none</em><br>
+<em>Localtion 	MT3345</em><br>
+<em>Printer		Aloede</em><br>
+<em>Printer		Samsung</em><br>
+<em>Shared 		yes</em><br>
+</p>
 
-<em>Accepting	yes</em>
-<em>OpPolicy	default</em>
+<p>
+<em>Accepting	yes</em><br>
+<em>OpPolicy	default</em><br>
+</p>
 
-<em>QuotaPeriod 2592000</em>
-<em>PageLimit	150</em>
+<p>
+<em>QuotaPeriod 2592000</em><br>
+<em>PageLimit	150</em><br>
+</p>
 
-<em>AllowUser	Fred</em>
-<em>AllowUser	@Students</em>
-<em>AllowUser	@Profs</em>
-<em>DenyUser 	Hans</em>
-<em>DenyUser	@Gast</em>
+<p>
+<em>AllowUser	Fred</em><br>
+<em>AllowUser	@Students</em><br>
+<em>AllowUser	@Profs</em><br>
+<em>DenyUser 	Hans</em><br>
+<em>DenyUser	@Gast</em><br>
 <em>&lt;/Class&gt;</em><br>
 +++<br>
+<ul>
 <li>alle Direktiven können auch mit dem <strong>lpadmin </strong>Tool gesetzt werden</li>
 <li>Die Eigenschaften einer Klasse werden zwischen <em>&lt;Class Name&gt;</em> und <em>&lt;/Class&gt;</em> definiert</li>
 <li>die <em>Default Class </em>definiert die Klasse von Nutzern die in keiner anderen Klasse definiert sind</li>
 <li>In den folgenden Direktiven werden dann die Eigenschaften der Klasse beschrieben:</li>
+</ul>
 <div style='padding-left: 30pt'>
 <em>Accepting → </em>dieser Drucker akzeptiert Jobs<br>
 </div>
@@ -172,23 +187,33 @@
 <div style='padding-left: 60pt'>
 <em>yes|no</em><br>
 </div>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
-<br>
 <em>AllowUser </em>→ diese Nutzer dürfen diesen Drucker Nutzer<br>
 </div>
 <div style='padding-left: 90pt'>
 → @ definiert eine Gruppe<br>
 </div>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
-<br>
 <em>DenyUser</em> → diese Nutzer dürfen diesen Drucker niemals nutzen<br>
-<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>Info</em> → Direktvie muss innerhalb jeder Klassendefinition erfolgen<br>
 </div>
 <div style='padding-left: 60pt'>
 → beschreibt die Klasse genauer<br>
 </div>
+</p>
 
+<p>
 <div style='padding-left: 30pt'>
 <em>JobsSheets </em>→ Standart Banner Seite<br>
 </div>
@@ -200,17 +225,33 @@
 <em>classifiied → </em>Eine Banner Seite mit dem Label "Classified"<br>
 <em>standard </em>→ Eine leere Seite<br>
 </div>
+</p>
 
+<p>
 <div style='padding-left: 30pt'>
-<em>Location </em>→ definiert die Location des Druckers<br>
-<br>
+<em>Location </em>→ definiert den Standort des Druckers<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>OpPolicy </em>→ Alle Policies die in <em>*/etc/cupsd.conf </em>definier sind<br>
-<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>PageLimit &lt;N&gt; </em>→ Alle Nutzer dieser Klasse dürfen nicht mehr als N Seiten  innerhalb einer QuotaPeriod verbrauchen<br>
-<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <em>Printer</em> → diese Drucker gehören zu dieser Klasse<br>
 </div>
+</p>
 
+<p>
 <div style='padding-left: 30pt'>
 <em>QuotaPeriod → </em>definiert die Länge einer Quota Periode für die das <em>PageLimit</em> gilt<br>
 </div>
@@ -220,17 +261,23 @@
 <em>2592000 → </em>pro Monat<br>
 31536000 → pro Jahr<br>
 </div>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
-<br>
 <em>Shared </em>→ wird dieser Drucker von mehereren Hosts über diesen Server angesteuert<br>
 </div>
 <div style='padding-left: 60pt'>
-<em>yes|no</em></div>
+<em>yes|no</em><br>
+</div>
+</p>
 
 
+<p>
 <div style='padding-left: 30pt'>
 <em>StateMessage </em>→ Status Meldung ausgeben<br>
 </div>
+</p>
 
 
 			<!-- End wiki content -->

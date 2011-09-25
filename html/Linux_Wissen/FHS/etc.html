@@ -128,17 +128,24 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<strong>/etc/at.allow </strong>→ Liste der Nutzer die at benutzen dürfen<br>
+				<p>
+Created Dienstag 19 April 2011<br>
+</p>
+
+<p>
+*<strong>/etc/at.allow </strong>→ Liste der Nutzer die at benutzen dürfen<br>
 *<strong>/etc/at.deny </strong>→ Liste der Nutzer die at nicht benutzen dürfen<br>
 → .allow wird zuerst gelesen<br>
-<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a>
+<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
 <a href="../Zeitgesteuerte_Vorg%C3%A4nge/at.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:at">Linux Wissen:Zeitgesteuerte Vorgänge:at</a><br>
-<br>
-<br>
+</p>
+
+
+<p>
 *<strong>/etc/cron.allow </strong>→ Liste der Nutzer die cron benutzen dürfen<br>
 *<strong>/etc/cron.deny </strong>→ Liste der Nutzer die cron nicht benutzen dürfen<br>
 → .allow wird zuerst gelesen<br>
-<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a>
+<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
 <a href="../Zeitgesteuerte_Vorg%C3%A4nge/crontab.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:crontab">Linux Wissen:Zeitgesteuerte Vorgänge:crontab</a><br>
 *<strong>/etc/crontab </strong><br>
 → vom System auszuführende periodische Dienste<br>
@@ -149,90 +156,134 @@
 *<strong>/etc/cron.monthly </strong>→ Shellscripte die einmal monatlich ausgeführt werden<br>
 *<strong>/etc/cron.weekly </strong>→ Shellscripte die einmal wöchentlich ausgeführt werden<br>
 <a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/fstab </strong>→ alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften<br>
 <a href="./etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/lilo.conf </strong>→ Konfiguratonsdatei für den Bootloader LILO<br>
 <a href="./etc/lilo.conf.html" title="Linux Wissen:FHS:etc:lilo.conf">Linux Wissen:FHS:etc:lilo.conf</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/mtab </strong>→ alle momentan eingehängten Dateisysteme<br>
 *<strong>/etc/hosts </strong>→ Konfiguration der lokalen DNS Auflösung<br>
 *<strong>/etc/inittab </strong>→ Konfigurationsdatei für den Start von Linux <br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/init.d/rc.x </strong>→ Scripte die im Runlevel x ausgeführt werden<br>
 <div style='padding-left: 90pt'>
      → links aus dem Übergeordneten Elternverzeichnis *<strong>/etc/init.d/</strong> <br>
 </div>
-<a href="../Booten.html" title="Linux Wissen:Booten">Linux Wissen:Booten</a>
+<a href="../Booten.html" title="Linux Wissen:Booten">Linux Wissen:Booten</a><br>
 <a href="./etc/init.d%2B%2BScript.html" title="Linux Wissen:FHS:etc:init.d++Script">Linux Wissen:FHS:etc:init.d++Script</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/ld.so.conf </strong>→ Konfigurationdati für den dynamischen Linker<br>
 *<strong>/etc/ld.so.cache </strong>→ Cache für den dynamischen Linker<br>
- <a href="../Bibliotheken/dynamische_Bibliotheken.html" title="Linux Wissen:Bibliotheken:dynamische Bibliotheken">Linux Wissen:Bibliotheken:dynamische Bibliotheken</a>
+ <a href="../Bibliotheken/dynamische_Bibliotheken.html" title="Linux Wissen:Bibliotheken:dynamische Bibliotheken">Linux Wissen:Bibliotheken:dynamische Bibliotheken</a><br>
+</p>
 
+<p>
 <strong> */etc/localtime </strong>→ konfigurieren der lokalen Zeitzone<br>
  *<strong>/etc/timezone → </strong>Zeitzone festlegen<br>
  *<strong>/etc/ntp.conf </strong>→ Konfigurieren des ntpd<br>
-<a href="../Systemzeit.html" title="Linux Wissen:Systemzeit">Linux Wissen:Systemzeit</a>
+<a href="../Systemzeit.html" title="Linux Wissen:Systemzeit">Linux Wissen:Systemzeit</a><br>
 <a href="./etc/ntp.conf.html" title="Linux Wissen:FHS:etc:ntp.conf">Linux Wissen:FHS:etc:ntp.conf</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/issue </strong>→ Begrüßungstext der vor der Anmeldung angezeigt werden<br>
 *<strong>/etc/motd </strong>→ Begrüßungstext der nach der Anmeldung angezeigt werden<br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/modprobe.conf </strong>→ Liste der zu ladenden Module während des systmstarts<br>
 <div style='padding-left: 150pt'>
  → Konfiguration der zu ladentdeen module<br>
  → kann auch aufgeteilt sein in einzelne Dateien <strong>modprobe.d/</strong><br>
 → in <strong>modprobe.d/local.conf </strong>können eigenen Module eingetragen werden<br>
 </div>
+</p>
 
+<p>
 <strong>/etc/modules.conf </strong>→ Liste verwendeter Kernelmoduel (veraltet)<br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/nologin </strong>→ Wenn angelegt kann sich niemand ausser root am System anmelden<br>
                          → wird von <strong>PAM </strong>ausgewertet <strong>(missing link)</strong>           <br>
-<br>
+</p>
+
+<p>
 *<strong>/etc</strong>/<strong>passwd </strong>→ Nutzer inklusive Gruppenzugehörigkeit und Shell sind hier festgelegt <br>
 <a href="./etc/passwd.html" title="Linux Wissen:FHS:etc:passwd">Linux Wissen:FHS:etc:passwd</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/shadow </strong>→ enthält verschlüsselte Passwörter und ihre Einstellungen<br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/skel/ </strong>→ Dateien die beim Anlegen eines neuen Nutzers in dessen Heimatverzeichnis kopiert werden<br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/group </strong>→ Gruppen und zugehröige GID und ihr angehörende Nutzer <br>
 <a href="./etc/group.html" title="Linux Wissen:FHS:etc:group">Linux Wissen:FHS:etc:group</a><br>
-<br>
-*<strong>/etc/security/limits.conf</strong>
+</p>
+
+<p>
+*<strong>/etc/security/limits.conf</strong><br>
 <a href="./etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf">Linux Wissen:FHS:etc:security++limits.conf</a><br>
-<br>
-*<strong>/etc/foremost.conf </strong>
+</p>
+
+<p>
+*<strong>/etc/foremost.conf </strong><br>
 <a href="./etc/foremost.conf.html" title="Linux Wissen:FHS:etc:foremost.conf">Linux Wissen:FHS:etc:foremost.conf</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/udev/ </strong>→ Konfigurattion des Udev Daemons<br>
 <div style='padding-left: 60pt'>
 <strong>udev.conf </strong>→ globale Konfiguration (logging, loglevel)<br>
 <strong>rules.d/ </strong>→ Verzeichnis für Udev-Regeln die beim Start des Daemons gelesen werden<br>
 </div>
-<br>
+</p>
+
+<p>
 *<strong>/etc/apt/sources </strong>→ nur bei $Debian$, Liste von Bezugsquellen für das <strong>apt-get</strong> Paketmanagement<br>
-<a href="./etc/apt%2B%2Bsoruces.lst.html" title="Linux Wissen:FHS:etc:apt++soruces.lst">Linux Wissen:FHS:etc:apt++soruces.lst</a>
+<a href="./etc/apt%2B%2Bsoruces.lst.html" title="Linux Wissen:FHS:etc:apt++soruces.lst">Linux Wissen:FHS:etc:apt++soruces.lst</a><br>
 <a href="../Paketverwaltung/Debian/apt.html" title="Linux Wissen:Paketverwaltung:Debian:apt">Linux Wissen:Paketverwaltung:Debian:apt</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/rpm/ </strong>→ Scripte und globale Macors die von der Paketverwaltung <strong>rpm </strong>benötigt werden<br>
 <div style='padding-left: 30pt'>
 <strong>macros </strong>→ Konfigurationsdatei für global verfügbare Macros<br>
 </div>
+</p>
 
+<p>
 <a href="../Paketverwaltung/Rpm.html" title="Linux Wissen:Paketverwaltung:Rpm">Linux Wissen:Paketverwaltung:Rpm</a><br>
 *<strong>/etc/yum/repos.d </strong>→ Konfigurationsdateien für einzelne Yum Repos<br>
 *<strong>/etc/yum.conf </strong>→ globale Konfigurationsdateien für yum <br>
 <a href="../Paketverwaltung/Rpm/yum.html" title="Linux Wissen:Paketverwaltung:Rpm:yum">Linux Wissen:Paketverwaltung:Rpm:yum</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/my.cnf </strong>→ Konfigurationsatei für den Mysql Server und den Mysql Clients<br>
-<a href="../SQL/Mysql_Server.html" title="Linux Wissen:SQL:Mysql Server">Linux Wissen:SQL:Mysql Server</a>
+<a href="../SQL/Mysql_Server.html" title="Linux Wissen:SQL:Mysql Server">Linux Wissen:SQL:Mysql Server</a><br>
 <a href="./etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
-<br>
-*<strong>/etc/services/ → </strong>mappt Ports an den <strong>inetd</strong> bzw. <strong>xinetd</strong> bzw an den syscall <em>getserverbyname()</em>
+</p>
+
+<p>
+*<strong>/etc/services/ → </strong>mappt Ports an den <strong>inetd</strong> bzw. <strong>xinetd</strong> bzw an den syscall <em>getserverbyname()</em><br>
 <a href="./etc/services.html" title="Linux Wissen:FHS:etc:services">Linux Wissen:FHS:etc:services</a><br>
 *<strong>/etc/ethers </strong>→ Konfigurieren des Arp Caches<br>
 <a href="./etc/ethers.html" title="Linux Wissen:FHS:etc:ethers">Linux Wissen:FHS:etc:ethers</a><br>
@@ -243,34 +294,48 @@
 <div style='padding-left: 90pt'>
           → NIS Datenbanken (missing link NIS)<br>
 </div>
-<a href="../Networking/Dienste/DNS.html" title="Linux Wissen:Networking:Dienste:DNS">Linux Wissen:Networking:Dienste:DNS</a>
+<a href="../Networking/Dienste/DNS.html" title="Linux Wissen:Networking:Dienste:DNS">Linux Wissen:Networking:Dienste:DNS</a><br>
 <a href="./etc/nsswitch.conf.html" title="+nsswitch.conf">+nsswitch.conf</a><br>
-<br>
-*<strong>/etc/inetd.conf </strong>→ Konfigurieren des Internet Daemin <strong>inetd</strong>
+</p>
+
+<p>
+*<strong>/etc/inetd.conf </strong>→ Konfigurieren des Internet Daemin <strong>inetd</strong><br>
 <a href="./etc/inetd.conf.html" title="+inetd.conf">+inetd.conf</a><br>
 *<strong>/etc/xinetd.conf || /etc/xinetd.d </strong>→ Konfigurieren des xinetd<br>
 <a href="./etc/xinetd.conf.html" title="+xinetd.conf">+xinetd.conf</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/protocols </strong>→ mappen von Protokollnummern auf ihr Protokoll<br>
 <a href="./etc/protocols.html" title="+protocols">+protocols</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/hosts.allow </strong>→ explizit vom TCP Wrapper <strong>tcpd </strong>erlaubte Dienste<br>
 <a href="./etc/hosts.allow.html" title="+hosts.allow">+hosts.allow</a><br>
 *<strong>/etc/hosts.deny </strong>→ explizit vom TCP Wrapper <strong>tcpd </strong>nicht zulässige Dienste<br>
 <a href="./etc/hosts.deny.html" title="+hosts.deny">+hosts.deny</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/syslog.conf </strong>→ Konfiguration für den <strong>syslogd </strong><br>
 *<strong>/etc/rsyslog.conf </strong>→ Konfiguration für den neueren <strong>syslogd </strong>(rsyslog)<br>
-<a href="../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a>
+<a href="../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a><br>
 <u>Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.</u><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/logrotate.conf </strong>→ Konfiguration des Logrotierungsdinestes<br>
 <a href="./etc/logrotate.conf.html" title="Linux Wissen:FHS:etc:logrotate.conf">Linux Wissen:FHS:etc:logrotate.conf</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/termcap</strong><br>
 → obsolete Datenbank die von <strong>tput </strong>benutzt wird<br>
 <a href="../Systemprogrammierung/Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/X11 → </strong>Einstellungen für den X-Server<br>
 <div style='padding-left: 30pt'>
 *<strong>/etc/X11/xdm → </strong>Einstellungen und Resources für den X-Displaymanager<br>
@@ -290,7 +355,9 @@
 <div style='padding-left: 30pt'>
 *<strong>/etc/X11/Xmodmap |*~/.Xmodmap </strong>→ Konfigurieren des Tastaurlayouts für den X-Server<br>
 </div>
-<br>
+</p>
+
+<p>
 *<strong>/etc/X11/xorg.conf →</strong> Konfigurationsdatei für X11 bis X11R6<br>
 *<strong>/etc/X11/xorg.conf.d → </strong>Konfigurationsdateien im X11R6 Stil aufgesplittet nach Section und Device<br>
 *<strong>/etc/X11/Xsession.d → </strong>Konfigurationsdateien für X11 ab X11R7<br>
@@ -298,20 +365,25 @@
            → enthält eine Reihe von Scripten die beim Starten einer X-Session ausgeführt werden<br>
 </div>
 <a href="./etc/Xorg.conf.html" title="Linux Wissen:FHS:etc:Xorg.conf">Linux Wissen:FHS:etc:Xorg.conf</a><br>
-<br>
+</p>
+
+<p>
 *<strong>/etc/hosts.lpd </strong>→  Eine Liste von Hosts die über diesen DruckerServer mit Druckern kommunizieren dürfen<br>
 <div style='padding-left: 30pt'>
 <a href="./etc/hosts.lpd.html" title="+hosts.lpd">+hosts.lpd</a><br>
 </div>
-<strong>*/etc/cups/mime.types </strong>→  Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden<br>
+*<strong>/etc/cups/mime.types </strong>→  Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden<br>
 <div style='padding-left: 150pt'>
 → Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden<br>
 → wie wird zum Beispiel ein Pdf behandelt<br>
 </div>
-<strong>*/etc/cups/classes.conf </strong>→ definieren von  verschiedenen lokalen Drucker Klassen<br>
-<a href="./etc/cups/cups%2B%2Bclasses.conf.html" title="+cups:cups++classes.conf">+cups:cups++classes.conf</a>
+*<strong>/etc/cups/classes.conf </strong>→ definieren von  verschiedenen lokalen Drucker Klassen<br>
+<a href="./etc/cups/cups%2B%2Bclasses.conf.html" title="+cups:cups++classes.conf">+cups:cups++classes.conf</a><br>
+</p>
 
-<a href="../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a>
+<p>
+<a href="../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a><br>
+</p>
 
 
 			<!-- End wiki content -->
