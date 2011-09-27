@@ -134,49 +134,70 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<em>*/etc/cups/cupsd.conf</em>
+				<p>
+Created Dienstag 27 September 2011<br>
+</p>
+
+<p>
+<em>*/etc/cups/cupsd.conf</em><br>
+<ul>
 <li>Konfigurationsdatei des Druckerserver </li>
 <li>nach dem Editieren dieser Dateien muss der Drucker-Server mit <strong>service cups restart </strong>neu gestartet werden </li>
+</ul>
 <a href="../../../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a><br>
 +++<br>
-<em>LogLevel				warn</em>
-<em>SystemGroup			sys root</em>
-<em>Listen					localhost:631</em>
-<em>Listen					/var/run/cups/cups.sock</em>
+<em>LogLevel				warn</em><br>
+<em>SystemGroup			sys root</em><br>
+<em>Listen					localhost:631</em><br>
+<em>Listen					/var/run/cups/cups.sock</em><br>
+</p>
 
 
-<em>Browsing				on</em>
-<em>BrowseOrder			allow,deny</em>
-<em>BrowseAllow			from all</em>
-<em>BrowseProtocols		cups smb</em>
-<em>BrowseLocalProtocols 	cups</em>
+<p>
+<em>Browsing				on</em><br>
+<em>BrowseOrder			allow,deny</em><br>
+<em>BrowseAllow			from all</em><br>
+<em>BrowseProtocols		cups smb</em><br>
+<em>BrowseLocalProtocols 	cups</em><br>
+</p>
 
-<em>DefaultAuthType		 Basic</em>
+<p>
+<em>DefaultAuthType		 Basic</em><br>
+</p>
 
-<em>&lt;Location /printers&gt;</em>
-<em>        Order Deny,Allow</em>
-<em>        Deny from all</em>
-<em>        Allow from 127.0.0.1</em>
-<em>        Allow from 192.168.123.0/24</em>
-<em>&lt;/Location&gt;</em>
+<p>
+<em>&lt;Location /printers&gt;</em><br>
+<em>        Order Deny,Allow</em><br>
+<em>        Deny from all</em><br>
+<em>        Allow from 127.0.0.1</em><br>
+<em>        Allow from 192.168.123.0/24</em><br>
+<em>&lt;/Location&gt;</em><br>
+</p>
 
-<em>&lt;Location /printers/newlp&gt;</em>
-<em>        Order allow,deny</em>
-<em>        Allow from 127.0.0.1</em>
-<em>        Allow from 192.168.123.0/24</em>
-<em>        Deny from 192.168.123.45</em>
-<em>        &lt;/Location&gt;</em>
+<p>
+<em>&lt;Location /printers/newlp&gt;</em><br>
+<em>        Order allow,deny</em><br>
+<em>        Allow from 127.0.0.1</em><br>
+<em>        Allow from 192.168.123.0/24</em><br>
+<em>        Deny from 192.168.123.45</em><br>
+<em>        &lt;/Location&gt;</em><br>
+</p>
 
-<em>&lt;Policy default&gt;</em>
-<em>  &lt;Limit Create-Job Print-Job Print-URI Validate-Job&gt;</em>
-<em>    Order deny,allow</em>
-<em>  &lt;/Limit&gt;</em>
-<em>&lt;/Policy&gt;</em>
+<p>
+<em>&lt;Policy default&gt;</em><br>
+<em>  &lt;Limit Create-Job Print-Job Print-URI Validate-Job&gt;</em><br>
+<em>    Order deny,allow</em><br>
+<em>  &lt;/Limit&gt;</em><br>
+<em>&lt;/Policy&gt;</em><br>
+</p>
 
+<p>
 <em>DefaultPolicy 		default</em><br>
 +++<br>
+<ul>
 <li>Diese Datei kann auch über das Cups Web Interface<em> localhost:631  </em>editiert werden</li>
 <li>Innerhalb einer &lt;<em>Location  Name&gt; &lt;/Location&gt; Klasse</em> können Eigenschaften für die spezifizierte HTTP- oder andere Resource festgelegt werden</li>
+</ul>
 <div style='padding-left: 30pt'>
 <em>Order	→ </em>spezifizieren der Standard Zugriffskontrolle<br>
 </div>
@@ -184,8 +205,10 @@
 <em>allow,deny</em> → verweigere Zugriffe, danach prüfe den <em>Allow </em>Direktive und dann die <em>Deny </em>Direktive<br>
 <em>deny,allow </em>→ erlaube Zugriffe, danache prüfe die <em>Deny</em>  Direktive und dann die <em>Allow</em> Direktive	 <br>
 </div>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
-<br>
 <em>Allow |Deny</em> → angeben eines Hostnamens, einer IP-Adresse oder Netzwerkes, denen es erlaubt|verboten ist denen der Zugriff zum Cups Server gestattet ist<br>
 </div>
 <div style='padding-left: 60pt'>
@@ -196,17 +219,30 @@
 <em>from 192.128.1.0/255.255.255.0</em><br>
 <em>from 192.128.1.*</em><br>
 <em>from 6D4E:1234:D76F9:2987:FF23</em><br>
-<em>from *.firma.site</em></div>
+<em>from *.firma.site</em><br>
+</div>
+</p>
 
+<p>
 <div style='padding-left: 60pt'>
 <em>from @LOCAL</em><br>
 </div>
+</p>
 
+<p>
+<ul>
 <li>Innerhalb einer <em>&lt;Policy Name&gt; &lt;/Policy&gt; Klasse </em> können IPP ZugangsbeschränkungsLimits festgelegt werden</li>
+<ul>
 <li>innerhalb einer <em>&lt;Limit Name&gt; &lt;/Limit&gt; </em>können verschiedenen Limit-Subklassen definiert werden  </li>
 <li>(mehr steht in der CUPS Online Hilfe <a href="http://localhost:631/help/" title="http://localhost:631/help/">http://localhost:631/help/</a> )</li>
+</ul>
+</ul>
+</p>
 
+<p>
+<ul>
 <li>weitere Direktiven:</li>
+</ul>
 <div style='padding-left: 30pt'>
 <em>ErrorLog </em>→ wo sollen Fehler geloggt<br>
 </div>
@@ -215,9 +251,12 @@
 </div>
 <div style='padding-left: 60pt'>
 <em>Path</em> → Pfad zur Logdatei <br>
-<em>syslog </em>→ an den Syslog Daemon senden (</div>
+<em>syslog </em>→ an den Syslog Daemon senden (<br>
+</div>
 <a href="../../../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a>)<br>
-<br>
+</p>
+
+<p>
 <div style='padding-left: 30pt'>
 <em>LogLevel → </em>Log-Level-Tiefe für das <em>ErrorLog</em><br>
 </div>
@@ -227,20 +266,31 @@
 <div style='padding-left: 60pt'>
 <em>none|emerg|alert|cirt|error|warn|notice|info|debug|debug2</em><br>
 </div>
+</p>
 
+<p>
 <div style='padding-left: 30pt'>
 <em>SystemGroup </em>→ Spezifizieren der Systemadministartionsgruppe der es erlaubt ist, sich am cups Daemon zu authentifiezieren<br>
-<br>
-<em>Listen </em>→ angeben einer Netzwerkadresse oder eines Ports oder Sockets auf dem es dem Cups Daemon erlaubt ist auf Verbindungen zu horchen</div>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>Listen </em>→ angeben einer Netzwerkadresse oder eines Ports oder Sockets auf dem es dem Cups Daemon erlaubt ist auf Verbindungen zu horchen<br>
+</div>
+</p>
 
 
+<p>
 <div style='padding-left: 30pt'>
 <em>Browsing </em>→ diese Direktive kontorlliert ob der Drucker im Dateimanager sichtbar ist<br>
 </div>
 <div style='padding-left: 60pt'>
 <em>on|off</em><br>
-<br>
 </div>
+</p>
+		
+<p>
 <div style='padding-left: 30pt'>
 <em>BrowseDeny|BrowseAllow </em>→ spezifizieren des Netzwerkes oder Systems von dem Browsing Pakete verboten|erlaubt sind<br>
 </div>
@@ -252,20 +302,27 @@
 <em>from none</em><br>
 <em>from 192.128.1.11</em><br>
 <em>from 192.128.1.0/24</em><br>
-<em>from *.firma.site</em></div>
+<em>from *.firma.site</em><br>
+</div>
+</p>
 
+<p>
 <div style='padding-left: 60pt'>
 <em>from @LOCAL</em><br>
 </div>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
-<br>
 <em>BrowseOrder</em> → steuert die allow, deny Reihenfolge<br>
 </div>
 <div style='padding-left: 60pt'>
 <em>allow,deny </em>→ standardmäßige alle Browse Anfragen verbieten, dann überprüfe <em>BrowseAllow </em>und <em>BrowseDeny </em>Direktive<br>
 <em>deny,allow</em> → standardmäßig alle erlauben, dann überprüfe <em>BrowsDeny </em>und dann <em>BrowseAllow</em> Direktive<br>
 </div>
+</p>
 
+<p>
 <div style='padding-left: 30pt'>
 <em>BrowseProtocols </em>→ angeben des genutzten Protocolls, für das Druckerbrowsing im Dateibrowser<br>
 </div>
@@ -278,20 +335,27 @@
 <div style='padding-left: 60pt'>
 <em>all|none|cups|dnssd|ldap|lpd|slp|smb</em><br>
 </div>
+</p>
 
+<p>
 <div style='padding-left: 30pt'>
 <em>DefautltAuthType </em>→ Type der IPP Authentifizierung die einen Nutzernamen erfordern<br>
 </div>
 <div style='padding-left: 60pt'>
 <em>Basic|BasicDigist|Digest|Negotiate</em><br>
 </div>
+</p>
 
+<p>
 <div style='padding-left: 30pt'>
 <em>DefaultPolicy </em>→ welche Policy soll gelten, wenn für diesen Drucker bisher keine Policy gefunden wurde<br>
-<br>
 </div>
+</p>
+	
+<p>
 weiter Direktiven werden in der Hilfe <a href="http://localhost:631/help/ref-cupsd-conf.html" title="http://localhost:631/help/ref-cupsd-conf.html">http://localhost:631/help/ref-cupsd-conf.html</a> beschrieben<br>
-<br>
+</p>
+
 
 
 			<!-- End wiki content -->
