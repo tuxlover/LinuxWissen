@@ -5,3 +5,6 @@ Creation-Date: 2011-09-25T23:55:15+02:00
 ====== cups ======
 Created Sonntag 25 September 2011
 
+[[+cups++classes.conf]]
+[[+cups++cupsd.conf]]
+[[+cups++printers.conf]]

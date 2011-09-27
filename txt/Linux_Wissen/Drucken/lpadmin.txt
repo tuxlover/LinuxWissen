@@ -1,0 +1,34 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-27T19:18:53+02:00
+
+====== lpadmin ======
+Created Dienstag 27 September 2011
+
+* Administrationstool zum Konfigurieren des Drucker Servers auf der Kommandozeile
+* die entsprechenden Einträge könen auch in den Konfigurationsdateien //*/etc/cups/cupsd.conf, */etc/classes.conf //und //*/etc/cups/printers.conf//
+[[Linux Wissen:FHS:etc:cups]]
+
+**lpadmin → **Admonistartion von Druckerklassen und Drucker
+**-p <Name> **→ Name der neuen Warteschlange setzen
+**-E **→ die Warteschlange für Aufträge freischalten, wie **enable**
+**-v <Anschluss> → **setzen der Anschluss URI (Anschlussdiskriptor) und Art des Druckers
+			//<Anschluss>= <Anschlussdiscriptor:/dev/lpX>, //siehe **lpinfo -v**
+**-m **→ spezifiziert die PPD Datei die genutzt werden soll
+**-D **→ (Description), Angabe einer näheren Beschreibug dees Druckers
+**-L **→ (Location), Angeben eines Standortes
+**-d <Printer> **→ spezifizieren eines Standarddruckers
+**-c <Klasse> **→ Drucker zu einer Klasse hinzufügen
+**-r <Klasse> **→ Drucker von einer Klasse entfernen
+**-x <Drucker> **→ löschen eines nicht mehr benötigten Druckers
+**-o <Option>** → weitere Optionen hinzufügen ([[lpr]])
+
+//Beispiele://
+**lpadmin -p LaserJet4000 -E -v socket://192.168.128.31 -m laserjed4000.ppd **
+→ hinzufügen und aktivieren eines Druckers der über das Netzerk über die IP-Adresse 192.168.128.31 angesprochen werden kann
+**lpadmin -p LaserJet4000 -u allow:all**
+→ allen den Zugriff auf den Drucker LaserJet400 erlauben
+**lpadmin -p LaserJet4000 -u deny:peter,paul**
+ → Den Nutzern Peter,Paul das Drucken auf den Drucker LaserJet4000 verbieten
+
+ 

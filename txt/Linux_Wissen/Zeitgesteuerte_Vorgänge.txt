@@ -12,8 +12,8 @@ Created Mittwoch 20 Juli 2011
 * Unter $$SUSE$$ muss die Grupper //trusted //dem entsprechenden Nutzer der at ausführen will zugeordnet sein
 * Der at Daemon (atd) muss laufen um **at **gesteuerte Jobs ausführen zu können
 * Aufträge werden in// */var/spool/atjobs //abgelegt
-[[Linux Wissen:Zeitgesteuerte Vorgänge:at]]
-[[Linux Wissen:Zeitgesteuerte Vorgänge:atd]]
+[[+at]]
+[[+atd]]
 
 == Rechte ==
 * falls eine Datei */etc/at.allow dürfen nur Nutzer die in dieser Datei aufgelistet sind den **atd** benutzen dürfen
@@ -26,7 +26,7 @@ Created Mittwoch 20 Juli 2011
 * Der cron-Daemon muss laufen 
 * falls vor dem Cronbefehl kein - steht, wird der ausgeführte Cronjob vom Syslogd **(missing link syslogd)** protokolliert
 * cronjobs werden entweder für den einzelnen Nutzer mit dem Befehl **crontab** verwaltet oder bei den System Cron-Jobs unter */etc direkt editiert
-[[Linux Wissen:Zeitgesteuerte Vorgänge:crontab]]
+[[+crontab]]
 
 === !Achtung! ===
 Es gibt verschiedene cron-Implementierungen

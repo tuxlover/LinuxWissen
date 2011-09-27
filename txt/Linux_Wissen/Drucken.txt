@@ -32,8 +32,9 @@ SPOOL == Simultaneous Peripherial Operation On Line
 	* sprcht IPP
 	* stellt Dokumentation bereit
 	* unter http://localhost:631 anprechbar 
-* //*/usr/share/cups/model //enthält die .ppd Druckerbeschreibungsdateien (
-[[FHS:usr:usr++share++cups++model]])
+* //*/usr/share/cups/model //enthält die .ppd Druckerbeschreibungsdateien ([[FHS:usr:usr++share++cups++model]])
+* //*/var/log/cups/access_log // → Loggen von Zugriffen auf den Cups Drucker Server
+* ///var/log/cups/error_log// → Loggen von Fehlern des Cups Drucker Servers 
 * **cups-lpd**
 [[+cups-lpd]]
 
@@ -57,13 +58,21 @@ SPOOL == Simultaneous Peripherial Operation On Line
 [[+lprm und cancel]]
 
 
-== Kontorllieren eines Druckerservers ==
+== Kontorllieren eines CUPS Druckerservers ==
 * **enable <Printer>|disable <Printer> **zum einschalten |ausschalten der aktuellen Queue im  Drucker|Druckerklasse
 	* **-c **→ Anhalten und löschen
 * **accept <Printer>|reject <Printer> **einen neuen Druckauftrag in der aktuellen Queue akzeptieren|ablehnen  
 	**-r **→ einen Grund angeben
 * **lppasswd **→ ändern des Passwortes es muss die Direktive //AuthType //auf //Digest// in //*/etc/cupsd.conf //gesetzt sein
 * **lpc (line printer control) **zum Steuern diverser Druckoptionen
+* **lpinfo **zum Anzeigen von Informationen von (nicht zwingend) installierten Druckergeräten
+	* **-v **→ verfügbare Anschlusstypen
+	* **-m **→ verfügbare PPD Dateien
+	* **-l **→ Statusinformationen über momentan installierte Drucker
+__Trick: Anzeigen aller PPD Dateien für einen  bestimmten Drucker: __**lpinfo -m|grep <Model>**
+
+* **lpadmin **Tool zum Administrieren des Cups Servers
+[[+lpadmin]]
 
 == Cups Konfiguartionsdateien ==
 http://localhost:631
@@ -79,5 +88,4 @@ http://localhost:631
  [[FHS:usr:usr++share++cups++model]]
 //*/etc/cups//cupsd.conf //→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)
 [[FHS:etc:cups:cups++cupsd.conf]]
-
 [[FHS:etc]]

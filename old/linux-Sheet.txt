@@ -7639,7 +7639,7 @@ Beispiel:
 
 **lpadmin -p LaserJet4000 -u allow:all** --> allen den Zugriff auf den Drucker Laserjet4000 erlauben
 
-**lpadmin -p LaserJet4000 -u deny:peter,paul --> Den Nutzern Peter,Paul das Drucken auf den Drucker LaserJet4000 verbieten
+**lpadmin -p LaserJet4000 -u deny:peter,paul** --> Den Nutzern Peter,Paul das Drucken auf den Drucker LaserJet4000 verbieten
 
 **lpinfo** --> Liste der unterstützen (nicht zwingend instllierten) Druckergeräte
 -v --> verfügbare Anschlusstypen aufzeigen die mit **lpadmin -v** angegeben werden können 

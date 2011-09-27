@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>DNS</title>
+		<title>SSH</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									DNS</h1>
+									SSH</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -65,11 +65,8 @@
 <li><a href="../Dienste.html" title="Dienste">Dienste</a></li>
 <ul>
 <li><a href="./DHCP.html" title="DHCP">DHCP</a></li>
-<li><strong>DNS</strong></li>
-<ul>
-<li><a href="./DNS/dnsmasq.html" title="dnsmasq">dnsmasq</a></li>
-</ul>
-<li><a href="./SSH.html" title="SSH">SSH</a></li>
+<li><a href="./DNS.html" title="DNS">DNS</a></li>
+<li><strong>SSH</strong></li>
 </ul>
 <li><a href="../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
 <li><a href="../Protokolle.html" title="Protokolle">Protokolle</a></li>
@@ -98,37 +95,9 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Freitag 23 September 2011<br>
+Created Dienstag 27 September 2011<br>
 </p>
 
-<p>
-<ul>
-<li><em>Domain Name Service</em></li>
-<li>Zuweisen von Namen zu IP-Adressen</li>
-</ul>
-</p>
-
-<h4>Clientseitige Konfiguration</h4>
-<p>
-<ul>
-<li>die Clientseitige Konfiguration wird in <em>*/etc/resolv.conf </em>vorgenommen</li>
-</ul>
-<a href="../../FHS/etc/resolv.conf.html" title="Linux Wissen:FHS:etc:resolv.conf">Linux Wissen:FHS:etc:resolv.conf</a><br>
-<ul>
-<li>die Datei für die lokale Namensauflösung ist <em>*/etc/hosts</em></li>
-</ul>
-<a href="../../FHS/etc/hosts.html" title="Linux Wissen:FHS:etc:hosts">Linux Wissen:FHS:etc:hosts</a><br>
-<ul>
-<li>mit <strong>netconfig update -f </strong>erhält man eine neue Liste vom DHCP Server</li>
-<li><strong>dnsmasq </strong>ist ein kleiner DHCP und DNS Caching only Server</li>
-</ul>
-<a href="./DHCP.html" title="DHCP">DHCP</a><br>
-<a href="./DNS/dnsmasq.html" title="+dnsmasq">+dnsmasq</a><br>
-<ul>
-<li>in der Datei <em>*/etc/nsswicth.conf </em>wird die Reihenfolge der Abfragen festgelegt</li>
-</ul>
-<a href="../../FHS/etc/nsswitch.conf.html" title="Linux Wissen:FHS:etc:nsswitch.conf">Linux Wissen:FHS:etc:nsswitch.conf</a><br>
-</p>
 
 
 			<!-- End wiki content -->
@@ -136,7 +105,7 @@ Created Freitag 23 September 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Tools/DNS-Lookup.html'>Linux Wissen:Networking:Tools:DNS-Lookup</a></li>						<a href='../../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
+				Backlinks:						<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

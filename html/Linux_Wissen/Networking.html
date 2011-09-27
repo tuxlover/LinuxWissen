@@ -89,43 +89,28 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Donnerstag 22 September 2011<br>
-</p>
-
-<h4>Grundlagen</h4>
-<p>
-<a href="./Networking/Grundlagen.html" title="Linux Wissen:Networking:Grundlagen">Linux Wissen:Networking:Grundlagen</a><br>
-</p>
+				<h4>Grundlagen</h4>
+<a href="./Networking/Grundlagen.html" title="Linux Wissen:Networking:Grundlagen">Linux Wissen:Networking:Grundlagen</a>
 
 <h4>Netzwerke, Klassen und Ihre IP-Ranges</h4>
-<p>
 <strong>Klasse			Netzanteil			Anzahl Netze		Anzahl-Hosts		Adressen</strong><br>
 ClassA			8 Bit				0-128				2^34 - 2				0.0.0.0 - 127.255.255.255<br>
 ClassB			16 Bit				16.384				65.534				128.0.0.0  - 191.255.255.255				<br>
 ClassC			24 Bit				2^21				254					 192.0.0.0 - 223.255.255.255<br>
 ClassD			-					-					-					224.0.0.0  - 239.255.255.255<br>
 ClassE			-					-					-					240.0.0.0  - 254.255.255.255<br>
-</p>
-
-
-<h4>Privater IP-Adressbereich</h4>
-<p>
+<br>
+<br>
+<h4>Privater IP-Adressbereich</h4><br>
 Class A 10.0.0.0 - 10.255.255.255<br>
 Class B 127.16.0.0 - 172.31.255.255<br>
 Class C 192.168.0.0 - 192.168.255.255<br>
-</p>
-
+<br>
 <h4>Wichtige Ports</h4>
-<p>
-<ul>
 <li>well known Ports: 0 - 1023</li>
 <li>registered Ports: 1024 - 49151</li>
 <li>private Ports: 49152 - 65535</li>
-</ul>
-</p>
-
-<p>
+<br>
 echo        		   	 Port 7          tcp/udp<br>
 netstat        		 	 Port 15         tcp<br>
 ftp            			 Port 20         tcp/udp<br>
@@ -147,159 +132,96 @@ ftps            			Port 990        tcp/udp<br>
 imaps           		Port 993        tcp/udp<br>
 pop3s           			Port 995        tcp/udp<br>
 irc             			Port 6668       udp<br>
-</p>
-
-<p>
-<ul>
+<br>
 <li><em>*/etc/services </em>mappt die Ports an den <strong>inetd (nicht initd) </strong>oder <strong>xinetd</strong> oder einen anderen vom <em>getserverbyname() </em>syscall verwendet</li>
-</ul>
-<a href="./FHS/etc/services.html" title="Linux Wissen:FHS:etc:services">Linux Wissen:FHS:etc:services</a><br>
-</p>
+<a href="./FHS/etc/services.html" title="Linux Wissen:FHS:etc:services">Linux Wissen:FHS:etc:services</a>
 
-<p>
-<u>Hinweis: Neu entwickelte Dienste können in /etc/services eingetragen werden</u><br>
-<u>Achtung: Die Well Known Ports (0-1023) können nur von root geöffnet werden.</u><br>
-</p>
+<u>Hinweis: Neu entwickelte Dienste können in /etc/services eingetragen werden</u>
+<u>Achtung: Die Well Known Ports (0-1023) können nur von root geöffnet werden.</u>
 
 <h4>Tools</h4>
-<p>
-<ul>
 <li><strong>arp </strong>zum Maninpulieren und Überwachen des ARP-Caches im Kernelspace</li>
-</ul>
-<a href="./Networking/Protokolle/arp.html" title="Linux Wissen:Networking:Protokolle:arp">Linux Wissen:Networking:Protokolle:arp</a><br>
-<a href="./Networking/Tools/arp.html" title="Linux Wissen:Networking:Tools:arp">Linux Wissen:Networking:Tools:arp</a><br>
-<a href="./FHS/etc/ethers.html" title="Linux Wissen:FHS:etc:ethers">Linux Wissen:FHS:etc:ethers</a><br>
-<ul>
+<a href="./Networking/Protokolle/arp.html" title="Linux Wissen:Networking:Protokolle:arp">Linux Wissen:Networking:Protokolle:arp</a>
+<a href="./Networking/Tools/arp.html" title="Linux Wissen:Networking:Tools:arp">Linux Wissen:Networking:Tools:arp</a>
+<a href="./FHS/etc/ethers.html" title="Linux Wissen:FHS:etc:ethers">Linux Wissen:FHS:etc:ethers</a>
 <li><strong>ifconfig </strong>zum Verwalten von Hardwarenetzwerkschnittstellen</li>
 <li><strong>ip addr show (ip </strong>dass Schweizer Armeemesser<strong>)</strong></li>
-</ul>
-<a href="./Networking/Tools/ip.html" title="Linux Wissen:Networking:Tools:ip">Linux Wissen:Networking:Tools:ip</a><br>
-<a href="./Networking/Tools/ifconfig.html" title="Linux Wissen:Networking:Tools:ifconfig">Linux Wissen:Networking:Tools:ifconfig</a><br>
-<ul>
+<a href="./Networking/Tools/ip.html" title="Linux Wissen:Networking:Tools:ip">Linux Wissen:Networking:Tools:ip</a>
+<a href="./Networking/Tools/ifconfig.html" title="Linux Wissen:Networking:Tools:ifconfig">Linux Wissen:Networking:Tools:ifconfig</a>
 <li><strong>route </strong>zum Konfigurieren und Anzeigen von Adress Routen</li>
-</ul>
-<a href="./Networking/Tools/route.html" title="Linux Wissen:Networking:Tools:route">Linux Wissen:Networking:Tools:route</a><br>
-<ul>
+<a href="./Networking/Tools/route.html" title="Linux Wissen:Networking:Tools:route">Linux Wissen:Networking:Tools:route</a>
 <li><strong>ifup/ifdown </strong>zum hoch/herunterfahren von NICs</li>
 <li><strong>service network start|stop </strong>→ Starten |Anhalten des Netzwerkdienstes</li>
-</ul>
 <div style='padding-left: 180pt'>
   → dabei wird die bisherige Konfiguration verworfen<br>
 </div>
-<ul>
 <li>$$SUSE$$ <strong>rcnetwork start|stop </strong>→ Starten |Anhalten des Netzwerkdienstes </li>
-</ul>
 <div style='padding-left: 210pt'>
  → dabei wird die bisherige Konfiguration verworfen<br>
 </div>
-<a href="./Networking/Tools/ifup_und_ifdown.html" title="Linux Wissen:Networking:Tools:ifup und ifdown">Linux Wissen:Networking:Tools:ifup und ifdown</a><br>
-</p>
+<a href="./Networking/Tools/ifup_und_ifdown.html" title="Linux Wissen:Networking:Tools:ifup und ifdown">Linux Wissen:Networking:Tools:ifup und ifdown</a>
 
 <h4>Fehlerbehebung und Analyse</h4>
-<p>
-<ul>
 <li><strong>ping </strong>testet die Erreichbarkeit eines Hosts | mehrerer Hosts</li>
-</ul>
-<a href="./Networking/Tools/ping.html" title="+Tools:ping">+Tools:ping</a><br>
-<ul>
+<a href="./Networking/Tools/ping.html" title="+Tools:ping">+Tools:ping</a>
 <li><strong>traceroute </strong>ermöglicht eine Rückverfolgung der Route</li>
-</ul>
-<a href="./Networking/Tools/traceroute.html" title="+Tools:traceroute">+Tools:traceroute</a><br>
-<ul>
+<a href="./Networking/Tools/traceroute.html" title="+Tools:traceroute">+Tools:traceroute</a>
 <li><strong>tracepath </strong>zum aufspüren von asymmetrischen Antwortverhalten</li>
-</ul>
-<a href="./Networking/Tools/tracepath.html" title="+Tools:tracepath">+Tools:tracepath</a><br>
-<ul>
+<a href="./Networking/Tools/tracepath.html" title="+Tools:tracepath">+Tools:tracepath</a>
 <li><strong>netstat </strong>zum überprüfen von Diensten und offenen Sockets</li>
-</ul>
-<a href="./Networking/Tools/netstat.html" title="+Tools:netstat">+Tools:netstat</a><br>
-<ul>
+<a href="./Networking/Tools/netstat.html" title="+Tools:netstat">+Tools:netstat</a>
 <li><strong>nmap </strong>zum Scannen von offenen Ports und Ziel Hosts</li>
 <li><strong>zenmap </strong>als grafisches Frontend</li>
-</ul>
-<a href="./Networking/Tools/nmap.html" title="+Tools:nmap">+Tools:nmap</a><br>
-<ul>
+<a href="./Networking/Tools/nmap.html" title="+Tools:nmap">+Tools:nmap</a>
 <li><strong>nslookup |host|dig </strong> zum durchfürhen von DNS-Lookups</li>
-</ul>
-<a href="./Networking/Tools/DNS-Lookup.html" title="+Tools:DNS-Lookup">+Tools:DNS-Lookup</a><br>
-<ul>
+<a href="./Networking/Tools/DNS-Lookup.html" title="+Tools:DNS-Lookup">+Tools:DNS-Lookup</a>
 <li><strong>telnet </strong>zur unverschlüsselten Übertragung von Datenpaketen</li>
-</ul>
-<a href="./Networking/Tools/telnet.html" title="+Tools:telnet">+Tools:telnet</a><br>
-<ul>
+<a href="./Networking/Tools/telnet.html" title="+Tools:telnet">+Tools:telnet</a>
 <li><strong>tcpdump|wireshark </strong>um den Netzwerkverkehr zu überwachen</li>
-</ul>
-<a href="./Networking/Tools/tcpdump.html" title="+Tools:tcpdump">+Tools:tcpdump</a><br>
-<ul>
+<a href="./Networking/Tools/tcpdump.html" title="+Tools:tcpdump">+Tools:tcpdump</a>
 <li><strong>iptraf </strong>und <strong>iftop </strong>könen für die Interaktive überwachung von Netzwerkverkehr genutzt werden</li>
-</ul>
-</p>
 
 <h4>Die Internetdaemonen inetd und xinetd</h4>
-<p>
-<ul>
 <li><strong>inetd </strong>lauscht auf bestimmten Ports und startet den auf diesen Port gemappten Dienst</li>
-<ul>
 <li>es wird nur ein Daemon benötigt der auf bestimmten Ports lauscht</li>
 <li>spart UTTCMS</li>
 <li>spart RAM</li>
 <li><em>*/etc/inetd.conf (</em><a href="./FHS/etc/inetd.conf.html" title="FHS:etc:inetd.conf">FHS:etc:inetd.conf</a>)</li>
-</ul>
 <li><strong>xinetd </strong>vereintlicht die Konfiguration von <strong>inetd </strong>und <strong>tcpd </strong></li>
-<ul>
 <li>die Konfiguration befindet sich entweder für jeden Dienst einzeln in <em>*/etc/xinetd.d/mydienst.conf</em></li>
 <li>oder in <em>*/etc/xinetd.conf (</em><a href="./FHS/etc/xinetd.conf.html" title="FHS:etc:xinetd.conf">FHS:etc:xinetd.conf</a>)</li>
-</ul>
-</ul>
-<a href="./Networking/xinetd.html" title="+xinetd">+xinetd</a><br>
-</p>
+<a href="./Networking/xinetd.html" title="+xinetd">+xinetd</a>
 
 <h4>TCP-Wrapper verwenden</h4>
-<p>
-<ul>
 <li>Dienst zur Steuerung Zugangsbeschränkungen für bestimmte Dienste</li>
 <li>erfolgt ein Zugriffsversuch auf einen Dienst, startet der <strong>inetd </strong>den <strong>tcpd</strong></li>
 <li>prüft ob ein Rechner berechtigt ist, einen bestimmten Dienst auszuführen</li>
 <li><em>*/etc/hosts.allow </em>ist die Konfigurationsdatei für explizit erlaubte Dienste</li>
-</ul>
-<a href="./FHS/etc/hosts.allow.html" title="FHS:etc:hosts.allow">FHS:etc:hosts.allow</a><br>
-<ul>
+<a href="./FHS/etc/hosts.allow.html" title="FHS:etc:hosts.allow">FHS:etc:hosts.allow</a>
 <li><em>*/etc/hosts.deny </em>ist die Konfigurationsdatei für explizit verbotene Dienste</li>
-</ul>
-<a href="./FHS/etc/hosts.deny.html" title="FHS:etc:hosts.deny">FHS:etc:hosts.deny</a><br>
-</p>
+<a href="./FHS/etc/hosts.deny.html" title="FHS:etc:hosts.deny">FHS:etc:hosts.deny</a>
 
 <h4>Netzwerkkarten und Treiber mit Udev konfigurieren</h4>
-<p>
 <em>*/etc/udev/rules.d/70-persistent-net-rules </em>hält Informationen über die von <strong>udev </strong>gesteuerten Netzwerkkarten und wird erzeugt von <em>*/lib/udev/write_net_rules</em><br>
 +++<br>
 <em>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:13:ce:b4:9f:57", ATTR{type}=="1", KERNEL=="eth*", NAME="eth1"</em><br>
 +++<br>
-<a href="./FHS/etc/udev%2B%2Brules.d%2B%2B99-myrule.html" title="Linux Wissen:FHS:etc:udev++rules.d++99-myrule">Linux Wissen:FHS:etc:udev++rules.d++99-myrule</a><br>
-<a href="./FHS/etc/udev%2B%2Budev.conf.html" title="Linux Wissen:FHS:etc:udev++udev.conf">Linux Wissen:FHS:etc:udev++udev.conf</a><br>
-<a href="./Hardware_und_Systeminformationen.html" title="Linux Wissen:Hardware und Systeminformationen">Linux Wissen:Hardware und Systeminformationen</a><br>
-</p>
+<a href="./FHS/etc/udev%2B%2Brules.d%2B%2B99-myrule.html" title="Linux Wissen:FHS:etc:udev++rules.d++99-myrule">Linux Wissen:FHS:etc:udev++rules.d++99-myrule</a>
+<a href="./FHS/etc/udev%2B%2Budev.conf.html" title="Linux Wissen:FHS:etc:udev++udev.conf">Linux Wissen:FHS:etc:udev++udev.conf</a>
+<a href="./Hardware_und_Systeminformationen.html" title="Linux Wissen:Hardware und Systeminformationen">Linux Wissen:Hardware und Systeminformationen</a>
 
 <h4>IP-Forwarding de|aktivieren</h4>
-<p>
-<ul>
 <li><strong>echo 0|1 &gt; /proc/sys/net/ipv4/ip_forward </strong>→ deaktivieren|aktivieren von IP-Forwarding</li>
 <li>$$SUSE$$ <em>*/etc/sysconfig/sysctl </em>in der Variablen <em>IP-FORWARDING=yes|no </em>eintragen</li>
 <li>$$Debian$$ <em>*/etc/network/options </em>in der Variablen <em>ip_forward=yes|no  </em>eintragen </li>
-</ul>
-</p>
 
 <h4>Dienste</h4>
-<p>
-<ul>
+<li>SSH zum Tunneln und sicheren verschlüsselten Zugang auf entfernete Hosts/Servers</li>
+<li><a href="./Networking/Dienste/SSH.html" title="+Dienste:SSH">+Dienste:SSH</a></li>
 <li>DHCP zur dynamischen Zuweisung von Netzwerkparameter an die Hosts</li>
-</ul>
-<a href="./Networking/Dienste/DHCP.html" title="+Dienste:DHCP">+Dienste:DHCP</a><br>
-<ul>
+<a href="./Networking/Dienste/DHCP.html" title="+Dienste:DHCP">+Dienste:DHCP</a>
 <li>DNS zur lokalen und globalen Namensauflösung</li>
-</ul>
-<a href="./Networking/Dienste/DNS.html" title="+Dienste:DNS">+Dienste:DNS</a><br>
-</p>
+<a href="./Networking/Dienste/DNS.html" title="+Dienste:DNS">+Dienste:DNS</a>
 
 
 			<!-- End wiki content -->

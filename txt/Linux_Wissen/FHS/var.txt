@@ -11,12 +11,16 @@ Created Dienstag 19 April 2011
 ***/mysql/ **→ mysql Logdateien nach Datum sortiert für den mysql Server Daemon
 [[Linux Wissen:SQL:Mysql Server]]
 
+***/var/log/cups/access_log ** → Loggen von Zugriffen auf den Cups Drucker Server
+***/var/log/cups/error_log **→ Loggen von Fehlern des Cups Drucker Servers 
+[[Linux Wissen:Drucken]]
+
 ***/var/spool/mail **→ Systemmails
 ***/var/spool/mqueue **→ Mails die noch nicht abegschickt wurden **( missing link )**
 
-***/var/spool/cups **→ wartende Druckaufträge **(missing link)**
+***/var/spool/cups **→ wartende Druckaufträge **(**[[Linux Wissen:Drucken]])
 
-***/var/spool/cron **→ Cronjobs von Nutzern **(missing link)**
+***/var/spool/cron **→ Cronjobs von Nutzern **(**[[Linux Wissen:Zeitgesteuerte Vorgänge]]**)**
 
 ***/var/lib/ **→ temporäre Datenbanken die von anderen Programmen benötigt werden
 		**clamav/ **→ Virendefinition für clamav

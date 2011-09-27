@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>crontab</title>
+		<title>lpadmin</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									crontab</h1>
+									lpadmin</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -54,6 +54,15 @@
 <li><a href="../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
 <li><a href="../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
 <li><a href="../Drucken.html" title="Drucken">Drucken</a></li>
+<ul>
+<li><a href="./cups-lpd.html" title="cups-lpd">cups-lpd</a></li>
+<li><strong>lpadmin</strong></li>
+<li><a href="./lpoptions.html" title="lpoptions">lpoptions</a></li>
+<li><a href="./lpq.html" title="lpq">lpq</a></li>
+<li><a href="./lpr.html" title="lpr">lpr</a></li>
+<li><a href="./lprm_und_cancel.html" title="lprm und cancel">lprm und cancel</a></li>
+<li><a href="./lpstat.html" title="lpstat">lpstat</a></li>
+</ul>
 <li><a href="../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
 <li><a href="../FHS.html" title="FHS">FHS</a></li>
 <li><a href="../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
@@ -75,11 +84,6 @@
 <li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
 <li><a href="../X11.html" title="X11">X11</a></li>
 <li><a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
-<ul>
-<li><a href="./at.html" title="at">at</a></li>
-<li><a href="./atd.html" title="atd">atd</a></li>
-<li><strong>crontab</strong></li>
-</ul>
 <li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
 </ul>
 </ul>
@@ -88,18 +92,46 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Mittwoch 20 Juli 2011<br>
+Created Dienstag 27 September 2011<br>
 </p>
 
 <p>
-<strong>crontab [-u &lt;User&gt;] [&lt;Datei&gt;]</strong><br>
-→ anlegen, verwalten und auflisten von cronjobs für den Nutzer &lt;User&gt;<br>
-→ wird <strong>-u &lt;User&gt; </strong>nicht mit angegeben, wird für der aktuelle Nutzer referenziert<br>
-→ wird <strong>&lt;Datei&gt; </strong>mit angegeben, wird diese als crontab initialisiert, kann nicht mit <strong>-e </strong>verwendet werden<br>
-<strong>-e </strong>→ die Crontab des aktuellen Benutzers editieren ( <a href="../FHS/var/spool/crontab.html" title="Linux Wissen:FHS:var:spool:crontab">Linux Wissen:FHS:var:spool:crontab</a>)<br>
-<strong>-l </strong>→ aktuelle Crontab des Nutzers nach StdOut schreiben<br>
-<strong>-r </strong>→ aktuelle Crontab des Nutzers löschen<br>
+<ul>
+<li>Administrationstool zum Konfigurieren des Drucker Servers auf der Kommandozeile</li>
+<li>die entsprechenden Einträge könen auch in den Konfigurationsdateien <em>*/etc/cups/cupsd.conf, */etc/classes.conf </em>und <em>*/etc/cups/printers.conf</em></li>
+</ul>
+<a href="../FHS/etc/cups.html" title="Linux Wissen:FHS:etc:cups">Linux Wissen:FHS:etc:cups</a><br>
 </p>
+
+<p>
+<strong>lpadmin → </strong>Admonistartion von Druckerklassen und Drucker<br>
+<strong>-p &lt;Name&gt; </strong>→ Name der neuen Warteschlange setzen<br>
+<strong>-E </strong>→ die Warteschlange für Aufträge freischalten, wie <strong>enable</strong><br>
+<strong>-v &lt;Anschluss&gt; → </strong>setzen der Anschluss URI (Anschlussdiskriptor) und Art des Druckers<br>
+<div style='padding-left: 90pt'>
+<em>&lt;Anschluss&gt;= &lt;Anschlussdiscriptor:/dev/lpX&gt;, </em>siehe <strong>lpinfo -v</strong><br>
+</div>
+<strong>-m </strong>→ spezifiziert die PPD Datei die genutzt werden soll<br>
+<strong>-D </strong>→ (Description), Angabe einer näheren Beschreibug dees Druckers<br>
+<strong>-L </strong>→ (Location), Angeben eines Standortes<br>
+<strong>-d &lt;Printer&gt; </strong>→ spezifizieren eines Standarddruckers<br>
+<strong>-c &lt;Klasse&gt; </strong>→ Drucker zu einer Klasse hinzufügen<br>
+<strong>-r &lt;Klasse&gt; </strong>→ Drucker von einer Klasse entfernen<br>
+<strong>-x &lt;Drucker&gt; </strong>→ löschen eines nicht mehr benötigten Druckers<br>
+<strong>-o &lt;Option&gt;</strong> → weitere Optionen hinzufügen (<a href="./lpr.html" title="lpr">lpr</a>)<br>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
+**lpadmin -p LaserJet4000 -E -v <a href="socket://192.168.128.31" title="socket://192.168.128.31">socket://192.168.128.31</a> -m laserjed4000.ppd **<br>
+→ hinzufügen und aktivieren eines Druckers der über das Netzerk über die IP-Adresse 192.168.128.31 angesprochen werden kann<br>
+<strong>lpadmin -p LaserJet4000 -u allow:all</strong><br>
+→ allen den Zugriff auf den Drucker LaserJet400 erlauben<br>
+<strong>lpadmin -p LaserJet4000 -u deny:peter,paul</strong><br>
+ → Den Nutzern Peter,Paul das Drucken auf den Drucker LaserJet4000 verbieten<br>
+</p>
+
+ 
 
 
 			<!-- End wiki content -->
@@ -107,7 +139,7 @@ Created Mittwoch 20 Juli 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../FHS/var/spool.html'>Linux Wissen:FHS:var:spool</a></li>						<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../Zeitgesteuerte_Vorg%C3%A4nge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a></li>
+				Backlinks:						<a href='../Drucken.html'>Linux Wissen:Drucken</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>
