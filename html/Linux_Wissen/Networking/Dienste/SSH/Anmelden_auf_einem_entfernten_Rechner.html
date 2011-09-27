@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Anmelden auf einem entfernten Rechner</title>
+		<meta name='Generator' content='Zim 0.53'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									Anmelden auf einem entfernten Rechner</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../../Networking.html" title="Networking">Networking</a></li>
+<ul>
+<li><a href="../../Dienste.html" title="Dienste">Dienste</a></li>
+<ul>
+<li><a href="../DHCP.html" title="DHCP">DHCP</a></li>
+<li><a href="../DNS.html" title="DNS">DNS</a></li>
+<li><a href="../SSH.html" title="SSH">SSH</a></li>
+<ul>
+<li><strong>Anmelden auf einem entfernten Rechner</strong></li>
+</ul>
+</ul>
+<li><a href="../../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
+<li><a href="../../Protokolle.html" title="Protokolle">Protokolle</a></li>
+<li><a href="../../Tools.html" title="Tools">Tools</a></li>
+<li><a href="../../xinetd.html" title="xinetd">xinetd</a></li>
+</ul>
+<li><a href="../../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../../root.html" title="root">root</a></li>
+<li><a href="../../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../../X11.html" title="X11">X11</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<strong>ssh  -l &lt;User&gt; &lt;Host&gt;</strong>
+<strong>ssh  </strong> <strong>[&lt;User&gt;@]&lt;Host&gt; </strong><em>→ </em>Anmelden als Nutzer &lt;User&gt; am &lt;Host&gt;<br>
+<div style='padding-left: 90pt'>
+              → wird &lt;User&gt; nicht verwendet, wird davon ausgegangen, dass die Nutzer Lokal und Remote übereinstimmen <br>
+</div>
+<div style='padding-left: 150pt'>
+→ <u>Achtung: UIDs können durchaus unterschiedlich sein</u><br>
+</div>
+<strong>ssh &lt;User&gt; &lt;Pfad/zum/Befehl&gt; </strong>→ wird &lt;Befehl&gt; angehängt wird dieser auf der Remote Seite ausgeführt<br>
+<strong>-4|-6 </strong>→ IPv4|IPv6 bei der Übertragung verwenden<br>
+<strong>-o </strong>→ eine Option (siehe <strong>man 5 ssh_config</strong>) beim Anmelden übergeben<br>
+<strong>-X </strong>→ X Session Programme ausführen (aktiviert X Forwarding)<br>
+-<strong>Y </strong>→ Trusted X Session Programme ausführen (aktiviert vertrauenswürdiges X Forwarding)<br>
+<strong>exit|&lt;Strg&gt;-D</strong> → Verbindung zum Server schließen<br>
+<br>
+<u>Achtung: Nur das Überprüfen des Hostskeys gewährleistet dass keiner die Verbindung belausch (Man in the Middle).</u>
+<strong>ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key</strong>
+
+ <em>*~/.ssh/knonw_hosts </em>→ öffentliche Schlüssel die vom Nutzer akzeptiert werden und denen der Nutzer vertraut<br>
+<em>*/etc/ssh/ssh_known_hosts </em>→ Systemweite Liste der bekannten HostKeys die  von diesem Rechner akzeptiert werden und denen vertraut wird<br>
+<a href="../../../FHS/etc/ssh/ssh%2B%2Bssh_known_hosts.html" title="Linux Wissen:FHS:etc:ssh:ssh++ssh known hosts">Linux Wissen:FHS:etc:ssh:ssh++ssh known hosts</a>
+
+<u>Trick: Einen Befehl auf mehereren PCs ausführen:</u><br>
++++<br>
+<em>#!/bin/bash</em>
+<em>REMOTES=(Magrathea Erde Erotikon6)</em>
+<em>for machine in ${REMOTES[*]}</em>
+<div style='padding-left: 30pt'>
+<em>do</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<em>ssh $machine &lt;Befehl&gt;</em><br>
+</div>
+<div style='padding-left: 30pt'>
+<em>done</em><br>
+</div>
++++ <br>
+<br>
+<br>
+<h4>SSH-Agents</h4>
+<li>es wird ein Blob von Bits erzeugt (Schlüssel) der den SSH-Nutzer eindeutig verifziert</li>
+
+<h5>Workflow über den SSH-Agent authentifizieren</h5>
+<strong>(1) </strong>Erzeugen des SSH-Public-Keys auf dem Lokalen Host<br>
+<br>
+<strong>(2) </strong>Kopieren des Public-Keys auf den Remote Computer (der den SSH Server anbietet)<br>
+<br>
+<strong>(3) </strong>Aufrufen des SSH-Agents auf dem lokalen Host<br>
+<br>
+<strong>(4) </strong>Auswählen der/des verwendeten Schlüssel<br>
+<br>
+<strong>(5)</strong> Laden des Schlüssel in das <strong>ssh-add </strong>Programm<br>
+<br>
+<h4>Konfigurationsdateien</h4>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../SSH.html'>Linux Wissen:Networking:Dienste:SSH</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

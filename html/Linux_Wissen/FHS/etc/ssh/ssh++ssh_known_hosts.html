@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>cups++printers.conf</title>
+		<title>ssh++ssh known hosts</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									cups++printers.conf</h1>
+									ssh++ssh known hosts</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -64,11 +64,6 @@
 <ul>
 <li><a href="../apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="../cups.html" title="cups">cups</a></li>
-<ul>
-<li><a href="./cups%2B%2Bclasses.conf.html" title="cups++classes.conf">cups++classes.conf</a></li>
-<li><a href="./cups%2B%2Bcupsd.conf.html" title="cups++cupsd.conf">cups++cupsd.conf</a></li>
-<li><strong>cups++printers.conf</strong></li>
-</ul>
 <li><a href="../ethers.html" title="ethers">ethers</a></li>
 <li><a href="../foremost.conf.html" title="foremost.conf">foremost.conf</a></li>
 <li><a href="../fstab.html" title="fstab">fstab</a></li>
@@ -93,6 +88,9 @@
 <li><a href="../services.html" title="services">services</a></li>
 <li><a href="../shadow.html" title="shadow">shadow</a></li>
 <li><a href="../ssh.html" title="ssh">ssh</a></li>
+<ul>
+<li><strong>ssh++ssh known hosts</strong></li>
+</ul>
 <li><a href="../sysconfig%2B%2Bclock.html" title="sysconfig++clock">sysconfig++clock</a></li>
 <li><a href="../syslog.conf.html" title="syslog.conf">syslog.conf</a></li>
 <li><a href="../udev%2B%2Brules.d%2B%2B99-myrule.html" title="udev++rules.d++99-myrule">udev++rules.d++99-myrule</a></li>
@@ -138,182 +136,6 @@
 Created Dienstag 27 September 2011<br>
 </p>
 
-<p>
-<em>*/etc/cups/printers.conf</em><br>
-<a href="../../../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a><br>
-<em>+++</em><br>
-<em>&lt;DefaultPrinter Hades&gt;</em><br>
-<em>Procduct	"(PostScript level 1 Printer)"</em><br>
-<em>Accpeting 	yes</em><br>
-<em>AllowUser 	Peter</em><br>
-//DeviceURI 	<a href="socket://foo.bar.com:9100//" title="socket://foo.bar.com:9100//">socket://foo.bar.com:9100//</a><br>
-<em>ErrorPolicy	abort-job</em><br>
-<em>Location	MTU88</em><br>
-...<br>
-<em>&lt;/Printer&gt;</em><br>
-</p>
-
-<p>
-<em>&lt;Printer Hera&gt;</em><br>
-<em>...</em><br>
-<em>&lt;/Printer&gt;</em><br>
-<em>+++</em><br>
-<ul>
-<li>alle Direktiven können auch mit dem <strong>lpadmin </strong>Tool gesetzt werden</li>
-<li>Die Eigenschaften eines Druckers  werden zwischen <em>&lt;Printer Name&gt;</em> und <em>&lt;/Printer&gt;</em> definiert</li>
-<li>die <em>Default Printer </em>definiert die Klasse von Nutzern die in keiner anderen Klasse definiert sind</li>
-<li>In den folgenden Direktiven werden dann die Eigenschaften der Klasse beschrieben:</li>
-</ul>
-<div style='padding-left: 30pt'>
-<em>Accepting </em>→ dieser Drucker akzeptiert Jobs (<strong>accept|reject</strong>)<br>
-</div>
-<div style='padding-left: 60pt'>
-<em>yes|no</em> <br>
-</div>
-</p>
-		
-<p>
-<div style='padding-left: 30pt'>
-<em>AllowUser </em>→ diese Nutzer dürfen diesen Drucker nutzen<br>
-</div>
-<div style='padding-left: 90pt'>
-→ @ definiert eine Gruppe<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>DenyUser </em>→ diese Nutzer dürfen diesen Drucker niemals verwenden<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>DeviceURI</em> → die URI des Gerätes<br>
-</div>
-</p>
-
-<p>
-<div style='padding-left: 30pt'>
-<em>ErrorPolicy </em>→ was soll passieren, wenn ein Backend nicht in der Lage war einen Job an den Drucker zu senden<br>
-</div>
-<div style='padding-left: 60pt'>
-<em>abort-job </em> → diesen Job abbrechen und mit dem nächsten Job in der Queue fortfahren<br>
-<em>retry-current-job → </em>versuche den aktuellen Job sofort noch einmal zu senden<br>
-<em>retry-job </em>→ den Job nach <strong>N</strong> Sekunden wiederholen<br>
-</div>
-<div style='padding-left: 90pt'>
-       → der Wert <strong>N </strong>wird in der Direktive <em>JobRetryInterval  </em>in <em>*/etc/cups/cupsd.conf</em>  festgestellt (<br>
-</div>
-<a href="./cups%2B%2Bcupsd.conf.html" title="cups++cupsd.conf">cups++cupsd.conf</a>)<br>
-<div style='padding-left: 60pt'>
-<em>stop-printer </em>→ Den Drucker anhalten und den Job für später in der Queue behalten<br>
-</div>
-</p>
-		
-<p>
-<div style='padding-left: 30pt'>
-<em>Filter</em> → ein FIlterprogramm definieren wie in einer PPD-Datei (<br>
-</div>
-<a href="../../usr/usr%2B%2Bshare%2B%2Bcups%2B%2Bmodel.html" title="FHS:usr:usr++share++cups++model">FHS:usr:usr++share++cups++model</a>)<br>
-</p>
-
-<p>
-<em>Info </em>→ beschreibt den Drucker genauer<br>
-</p>
-
-<p>
-<em>JobSheets → Standart Banner Seite</em><br>
-<div style='padding-left: 90pt'>
-<em>→ Direktive muss definiert sein</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>none </em> → keine <br>
-<em>classifiied → </em>Eine Banner Seite mit dem Label "Classified"<br>
-<em>standard </em>→ Eine leere Seite<br>
-</div>
-</p>
-
-<p>
-<div style='padding-left: 30pt'>
-<em>KLimit </em>→ setzen des Limits in Kilobyte für Quotas<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>Location </em>→ Standort des Druckers<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>OpPolicy </em>→ setzen der IPP Operation mit der angegebenen Ziel, muss in der <em>Policy </em>Section in der <em>*/etc/cups/cupsd.conf</em><br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>Option </em>→ zusätzliche Optionen für diesen Drucker definieren <strong>(man lp)</strong><br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>PageLimit &lt;N&gt; </em>→ Alle Nutzer dieser Klasse dürfen nicht mehr als N Seiten  innerhalb einer QuotaPeriod verbrauchen<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>PortMonitor → </em>setzen des binären Komminikationsprogramms <br>
-</div>
-<div style='padding-left: 60pt'>
-<em>bcp </em><strong>→ </strong>dekodieren PostScript Druckerdata durch Adobe Binary Control Protocol<br>
-<em>none  → </em>standard, keinen Port Monitor verwenden<br>
-<em>tbcp </em>→ dekodieren der  PostScript Druckerdata durch Adobe Tagged Binary Control Protocol<br>
-</div>
-</p>
-		
-<p>
-<div style='padding-left: 30pt'>
-<em>PreFiler → </em>definieren eines Vorwilter Programms<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>Product </em>→ Der "<u>Product"</u> String aus der PPD Datei des Druckers<br>
-</div>
-</p>
-
-<p>
-<div style='padding-left: 30pt'>
-<em>QuotaPeriod </em>→ <em>→ </em>definiert die Länge einer Quota Periode für die das <em>PageLimit</em> gilt<br>
-</div>
-<div style='padding-left: 60pt'>
-<em>86400 </em>→ pro Tag<br>
-<em>604800 </em>→ pro Woche<br>
-<em>2592000 → </em>pro Monat<br>
-31536000 → pro Jahr<br>
-</div>
-</p>
-
-<p>
-<div style='padding-left: 30pt'>
-<em>Shared </em>→ wird dieser Drucker von mehereren Hosts über diesen Server angesteuert<br>
-</div>
-<div style='padding-left: 60pt'>
-<em>yes|no</em><br>
-</div>
-</p>
-
-
-<p>
-<div style='padding-left: 30pt'>
-<em>StateMessage </em>→ Status Meldung, die  ausgegeben wird<br>
-</div>
-</p>
 
 
 			<!-- End wiki content -->
@@ -321,7 +143,7 @@ Created Dienstag 27 September 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../cups.html'>Linux Wissen:FHS:etc:cups</a></li>						<a href='../../../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='../ssh.html'>Linux Wissen:FHS:etc:ssh</a></li>						<a href='../../../Networking/Dienste/SSH/Anmelden_auf_einem_entfernten_Rechner.html'>Linux Wissen:Networking:Dienste:SSH:Anmelden auf einem entfernten Rechner</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

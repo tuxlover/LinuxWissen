@@ -7840,7 +7840,7 @@ Workflow:
 (3) in \\ /etc/ssh/ssh_config \\ "PasswordAuthentification no" und "PubkeyAuthentification yes" stellen
     erfolgt die Authentifizierung nur noch über Schlüsselpaare
 
-__Benutzen dess ssh Agents__
+__Benutzen des ssh Agents__
 **ssh-add** --> starten des ssh-Agents und hinzufügen des Passworts
 -l --> Auflisten der momentan vom Agent bekannten keys
 

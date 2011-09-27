@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-27T20:45:55+02:00
+
+====== Shell ======
+Created Dienstag 27 September 2011
+
+[[+Arten der Shell]]
+[[+Aufrufen der Shell]]
+[[+Bash]]
+[[+Befehle]]
+[[+Jobkontrolle]]
+[[+Shells und Subshells beenden]]
+[[+Standardkanäle]]
+[[+Wildcards]]

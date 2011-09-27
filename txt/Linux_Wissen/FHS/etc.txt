@@ -167,5 +167,6 @@ __Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
 [[usr:usr++share++cups++model]]
 ***/etc/cups//cupsd.conf **→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)
 [[+cups:cups++cupsd.conf]]
-
 [[Linux Wissen:Drucken]]
+
+***/etc/ssh **→ Dateien für das Cleintseitige und Serverseitige Konfigurieren von SSH

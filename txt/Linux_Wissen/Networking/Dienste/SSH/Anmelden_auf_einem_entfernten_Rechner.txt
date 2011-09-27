@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-27T20:09:53+02:00
+
+====== Anmelden auf einem entfernten Rechner ======
+Created Dienstag 27 September 2011
+
+**ssh  -l <User> <Host>**
+**ssh  ** **[<User>@]<Host> **//→ //Anmelden als Nutzer <User> am <Host>
+			              → wird <User> nicht verwendet, wird davon ausgegangen, dass die Nutzer Lokal und Remote übereinstimmen 
+					→ __Achtung: UIDs können durchaus unterschiedlich sein__
+**ssh <User> <Pfad/zum/Befehl> **→ wird <Befehl> angehängt wird dieser auf der Remote Seite ausgeführt
+**-4|-6 **→ IPv4|IPv6 bei der Übertragung verwenden
+**-o **→ eine Option (siehe **man 5 ssh_config**) beim Anmelden übergeben
+**-X **→ X Session Programme ausführen (aktiviert X Forwarding)
+-**Y **→ Trusted X Session Programme ausführen (aktiviert vertrauenswürdiges X Forwarding)
+**exit|<Strg>-D** → Verbindung zum Server schließen
+
+__Achtung: Nur das Überprüfen des Hostskeys gewährleistet dass keiner die Verbindung belausch (Man in the Middle).__
+**ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key**
+
+ //*~/.ssh/knonw_hosts //→ öffentliche Schlüssel die vom Nutzer akzeptiert werden und denen der Nutzer vertraut
+//*/etc/ssh/ssh_known_hosts //→ Systemweite Liste der bekannten HostKeys die  von diesem Rechner akzeptiert werden und denen vertraut wird
+[[Linux Wissen:FHS:etc:ssh:ssh++ssh known hosts]]
+
+__Trick: Einen Befehl auf mehereren PCs ausführen:__
++++
+//#!/bin/bash//
+//REMOTES=(Magrathea Erde Erotikon6)//
+//for machine in ${REMOTES[*]}//
+	//do//
+		//ssh $machine <Befehl>//
+	//done//
++++ 
+
+
+=== SSH-Agents ===
+* es wird ein Blob von Bits erzeugt (Schlüssel) der den SSH-Nutzer eindeutig verifziert
+
+== Workflow über den SSH-Agent authentifizieren ==
+**(1) **Erzeugen des SSH-Public-Keys auf dem Lokalen Host
+
+**(2) **Kopieren des Public-Keys auf den Remote Computer (der den SSH Server anbietet)
+
+**(3) **Aufrufen des SSH-Agents auf dem lokalen Host
+
+**(4) **Auswählen der/des verwendeten Schlüssel
+
+**(5)** Laden des Schlüssel in das **ssh-add **Programm
+
+=== Konfigurationsdateien ===
