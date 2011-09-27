@@ -1,0 +1,115 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-27T14:19:07+02:00
+
+====== cups++cupsd.conf ======
+Created Dienstag 27 September 2011
+
+//*/etc/cups/cupsd.conf//
+* Konfigurationsdatei des Druckerserver 
+* nach dem Editieren dieser Dateien muss der Drucker-Server mit **service cups restart **neu gestartet werden 
+[[Linux Wissen:Drucken]]
++++
+//LogLevel				warn//
+//SystemGroup			sys root//
+//Listen					localhost:631//
+//Listen					/var/run/cups/cups.sock//
+
+
+//Browsing				on//
+//BrowseOrder			allow,deny//
+//BrowseAllow			from all//
+//BrowseProtocols		cups smb//
+//BrowseLocalProtocols 	cups//
+
+//DefaultAuthType		 Basic//
+
+//<Location /printers>//
+//        Order Deny,Allow//
+//        Deny from all//
+//        Allow from 127.0.0.1//
+//        Allow from 192.168.123.0/24//
+//</Location>//
+
+//<Location /printers/newlp>//
+//        Order allow,deny//
+//        Allow from 127.0.0.1//
+//        Allow from 192.168.123.0/24//
+//        Deny from 192.168.123.45//
+//        </Location>//
+
+//<Policy default>//
+//  <Limit Create-Job Print-Job Print-URI Validate-Job>//
+//    Order deny,allow//
+//  </Limit>//
+//</Policy>//
+
+//DefaultPolicy 		default//
++++
+* Diese Datei kann auch über das Cups Web Interface// localhost:631  //editiert werden
+* Innerhalb einer <//Location  Name> </Location> Klasse// können Eigenschaften für die spezifizierte HTTP- oder andere Resource festgelegt werden
+	//Order	→ //spezifizieren der Standard Zugriffskontrolle
+		//allow,deny// → verweigere Zugriffe, danach prüfe den //Allow //Direktive und dann die //Deny //Direktive
+		//deny,allow //→ erlaube Zugriffe, danache prüfe die //Deny//  Direktive und dann die //Allow// Direktive	 
+	
+	//Allow |Deny// → angeben eines Hostnamens, einer IP-Adresse oder Netzwerkes, denen es erlaubt|verboten ist denen der Zugriff zum Cups Server gestattet ist
+		//from all//
+		//from none//
+		//from 192.128.1.11//
+		//from 192.128.1.0/24//
+		//from 192.128.1.0/255.255.255.0//
+		//from 192.128.1.*//
+		//from 6D4E:1234:D76F9:2987:FF23//
+		//from *.firma.site//
+
+		//from @LOCAL//
+
+* Innerhalb einer //<Policy Name> </Policy> Klasse // können IPP ZugangsbeschränkungsLimits festgelegt werden
+	* innerhalb einer //<Limit Name> </Limit> //können verschiedenen Limit-Subklassen definiert werden  
+	* (mehr steht in der CUPS Online Hilfe http://localhost:631/help/ )
+
+* weitere Direktiven:
+	//ErrorLog //→ wo sollen Fehler geloggt
+			→ Standard ist //*/var/log/cups/error_log//
+		//Path// → Pfad zur Logdatei 
+		//syslog //→ an den Syslog Daemon senden (
+[[Linux Wissen:Systemprotokollierung]])
+
+	//LogLevel → //Log-Level-Tiefe für das //ErrorLog//
+			→ Standrard ist warn
+		//none|emerg|alert|cirt|error|warn|notice|info|debug|debug2//
+
+	//SystemGroup //→ Spezifizieren der Systemadministartionsgruppe der es erlaubt ist, sich am cups Daemon zu authentifiezieren
+	
+	//Listen //→ angeben einer Netzwerkadresse oder eines Ports oder Sockets auf dem es dem Cups Daemon erlaubt ist auf Verbindungen zu horchen
+
+
+	//Browsing //→ diese Direktive kontorlliert ob der Drucker im Dateimanager sichtbar ist
+		//on|off//
+		
+	//BrowseDeny|BrowseAllow //→ spezifizieren des Netzwerkes oder Systems von dem Browsing Pakete verboten|erlaubt sind
+						  //→ //es sollte ausserdem die Direktive //BrowseOrder// definiert sein
+		//from all//
+		//from none//
+		//from 192.128.1.11//
+		//from 192.128.1.0/24//
+		//from *.firma.site//
+
+		//from @LOCAL//
+	
+	//BrowseOrder// → steuert die allow, deny Reihenfolge
+		//allow,deny //→ standardmäßige alle Browse Anfragen verbieten, dann überprüfe //BrowseAllow //und //BrowseDeny //Direktive
+		//deny,allow// → standardmäßig alle erlauben, dann überprüfe //BrowsDeny //und dann //BrowseAllow// Direktive
+
+	//BrowseProtocols //→ angeben des genutzten Protocolls, für das Druckerbrowsing im Dateibrowser
+		                       → diese Direktive muss geändert werden, wenn zum Beispiel //LDAP (missing link) //oder //Samba //(missing Link) verwendet wird
+					→ meherere Protokolle können durch Leerzeichen angegegeben werden
+		//all|none|cups|dnssd|ldap|lpd|slp|smb//
+
+	//DefautltAuthType //→ Type der IPP Authentifizierung die einen Nutzernamen erfordern
+		//Basic|BasicDigist|Digest|Negotiate//
+
+	//DefaultPolicy //→ welche Policy soll gelten, wenn für diesen Drucker bisher keine Policy gefunden wurde
+	
+weiter Direktiven werden in der Hilfe http://localhost:631/help/ref-cupsd-conf.html beschrieben
+

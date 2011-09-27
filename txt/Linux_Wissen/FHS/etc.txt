@@ -161,5 +161,11 @@ __Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
 					→ wie wird zum Beispiel ein Pdf behandelt
 ***/etc/cups/classes.conf **→ definieren von  verschiedenen lokalen Drucker Klassen
 [[+cups:cups++classes.conf]]
+***/etc/cups/printers.conf **//→ //enthält die Konfiguration für die einzelnen Drucker
+[[+cups:cups++printers.conf]]
+***/etc/cups/ppd **→ hierher wird für jeden konfigurierten Drucker eine **ppd **Datei aus dem Verzeichnis //*/usr/share/cups/model // kopiert
+[[usr:usr++share++cups++model]]
+***/etc/cups//cupsd.conf **→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)
+[[+cups:cups++cupsd.conf]]
 
 [[Linux Wissen:Drucken]]

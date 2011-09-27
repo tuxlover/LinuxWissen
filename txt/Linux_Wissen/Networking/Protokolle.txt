@@ -8,6 +8,7 @@ Created Montag 18 Juli 2011
 * ARP [[Linux Wissen:Networking:Protokolle:arp]]
 * HTTP
 * HTTPS
+* IPP
 * SSH
 * FTP
 * POP

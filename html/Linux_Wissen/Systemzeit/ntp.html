@@ -142,6 +142,7 @@ Created Montag 19 September 2011<br>
 <strong>ntpd → </strong>Steuerung des NTP Servers<br>
 <strong>-q </strong>→ wie <strong>ntpdate</strong>, harter Zeitabgleich des System mit dem Server<br>
 <strong>-x </strong>→ verlangt <strong>-q, </strong>den Zeitabgleich auch durchführen, falls die Zeit weniger als 128 Millisekunden abweicht<br>
+<strong>-g </strong>→ verlangt den Zeitabgleich auch dann, wenn die Zeit mehr als 1000 Sekunden abweicht<br>
 <strong>-c &lt;Datei&gt; </strong>→ angeben einer alternativen Konfigurationsdatei<br>
 <strong>-f &lt;Datei&gt; </strong>→ angeben einer alternativen Driftfile Datei, normalerweise /<em>var/lib/ntp/drift/ntp.drift</em><br>
 <strong>-t &lt;Key&gt; </strong>→ den Schlüssel zu den vertrauenswürdigen Schlüsseln in <em>*/etc/ntp.keys </em>hinzufügen<br>

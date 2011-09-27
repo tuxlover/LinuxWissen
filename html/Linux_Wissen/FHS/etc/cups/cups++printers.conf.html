@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>cups++classes.conf</title>
+		<title>cups++printers.conf</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									cups++classes.conf</h1>
+									cups++printers.conf</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -65,9 +65,9 @@
 <li><a href="../apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="../cups.html" title="cups">cups</a></li>
 <ul>
-<li><strong>cups++classes.conf</strong></li>
+<li><a href="./cups%2B%2Bclasses.conf.html" title="cups++classes.conf">cups++classes.conf</a></li>
 <li><a href="./cups%2B%2Bcupsd.conf.html" title="cups++cupsd.conf">cups++cupsd.conf</a></li>
-<li><a href="./cups%2B%2Bprinters.conf.html" title="cups++printers.conf">cups++printers.conf</a></li>
+<li><strong>cups++printers.conf</strong></li>
 </ul>
 <li><a href="../ethers.html" title="ethers">ethers</a></li>
 <li><a href="../foremost.conf.html" title="foremost.conf">foremost.conf</a></li>
@@ -133,130 +133,105 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Sonntag 25 September 2011<br>
-</p>
+				<em>*/etc/cups/printers.conf</em>
+<a href="../../../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a>
+<em>+++</em>
+<em>&lt;DefaultPrinter Hades&gt;</em>
+<em>Procduct	"(PostScript level 1 Printer)"</em>
+<em>Accpeting 	yes</em>
+<em>AllowUser 	Peter</em>
+<em>DeviceURI 	socket://foo.bar.com:9100</em>
+<em>ErrorPolicy	abort-job</em>
+<em>Location	MTU88</em><br>
+...<br>
+<em>&lt;/Printer&gt;</em>
 
-<p>
-<em>*/etc/cups/classes.conf</em><br>
-<a href="../../../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a><br>
-+++<br>
-<em>&lt;DefaultClass Default&gt;</em><br>
-<em>Accepting no</em><br>
-<em>...</em><br>
-<em>&lt;/Default&gt;</em><br>
-</p>
-
-<p>
-<em>&lt;Class Students&gt;</em><br>
-<em>Info	"Druckerklasse fuer Personal" </em><br>
-<em>JobSheets	none</em><br>
-<em>Localtion 	MT3345</em><br>
-<em>Printer		Aloede</em><br>
-<em>Printer		Samsung</em><br>
-<em>Shared 		yes</em><br>
-</p>
-
-<p>
-<em>Accepting	yes</em><br>
-<em>OpPolicy	default</em><br>
-</p>
-
-<p>
-<em>QuotaPeriod 2592000</em><br>
-<em>PageLimit	150</em><br>
-</p>
-
-<p>
-<em>AllowUser	Fred</em><br>
-<em>AllowUser	@Students</em><br>
-<em>AllowUser	@Profs</em><br>
-<em>DenyUser 	Hans</em><br>
-<em>DenyUser	@Gast</em><br>
-<em>&lt;/Class&gt;</em><br>
-+++<br>
-<ul>
+<em>&lt;Printer Hera&gt;</em>
+<em>...</em>
+<em>&lt;/Printer&gt;</em>
+<em>+++</em>
 <li>alle Direktiven können auch mit dem <strong>lpadmin </strong>Tool gesetzt werden</li>
-<li>Die Eigenschaften einer Klasse werden zwischen <em>&lt;Class Name&gt;</em> und <em>&lt;/Class&gt;</em> definiert</li>
-<li>die <em>Default Class </em>definiert die Klasse von Nutzern die in keiner anderen Klasse definiert sind</li>
+<li>Die Eigenschaften eines Druckers  werden zwischen <em>&lt;Printer Name&gt;</em> und <em>&lt;/Printer&gt;</em> definiert</li>
+<li>die <em>Default Printer </em>definiert die Klasse von Nutzern die in keiner anderen Klasse definiert sind</li>
 <li>In den folgenden Direktiven werden dann die Eigenschaften der Klasse beschrieben:</li>
-</ul>
 <div style='padding-left: 30pt'>
-<em>Accepting → </em>dieser Drucker akzeptiert Jobs<br>
-</div>
-<div style='padding-left: 90pt'>
-→ wird auch durch <strong>accept Students </strong>initialisert<br>
+<em>Accepting </em>→ dieser Drucker akzeptiert Jobs (<strong>accept|reject</strong>)<br>
 </div>
 <div style='padding-left: 60pt'>
-<em>yes|no</em><br>
+<em>yes|no</em> <br>
+<br>
 </div>
-</p>
-	
-<p>
 <div style='padding-left: 30pt'>
-<em>AllowUser </em>→ diese Nutzer dürfen diesen Drucker Nutzer<br>
+<em>AllowUser </em>→ diese Nutzer dürfen diesen Drucker nutzen<br>
 </div>
 <div style='padding-left: 90pt'>
 → @ definiert eine Gruppe<br>
 </div>
-</p>
-	
-<p>
 <div style='padding-left: 30pt'>
-<em>DenyUser</em> → diese Nutzer dürfen diesen Drucker niemals nutzen<br>
+<br>
+<em>DenyUser </em>→ diese Nutzer dürfen diesen Drucker niemals verwenden<br>
+<br>
+<em>DeviceURI</em> → die URI des Gerätes<br>
 </div>
-</p>
-	
-<p>
+
 <div style='padding-left: 30pt'>
-<em>Info</em> → Direktvie muss innerhalb jeder Klassendefinition erfolgen<br>
+<em>ErrorPolicy </em>→ was soll passieren, wenn ein Backend nicht in der Lage war einen Job an den Drucker zu senden<br>
 </div>
 <div style='padding-left: 60pt'>
-→ beschreibt die Klasse genauer<br>
-</div>
-</p>
-
-<p>
-<div style='padding-left: 30pt'>
-<em>JobsSheets </em>→ Standart Banner Seite<br>
+<em>abort-job </em> → diesen Job abbrechen und mit dem nächsten Job in der Queue fortfahren<br>
+<em>retry-current-job → </em>versuche den aktuellen Job sofort noch einmal zu senden<br>
+<em>retry-job </em>→ den Job nach <strong>N</strong> Sekunden wiederholen<br>
 </div>
 <div style='padding-left: 90pt'>
-→ Direktive muss definiert sein<br>
+       → der Wert <strong>N </strong>wird in der Direktive <em>JobRetryInterval  </em>in <em>*/etc/cups/cupsd.conf</em>  festgestellt (</div>
+<a href="./cups%2B%2Bcupsd.conf.html" title="cups++cupsd.conf">cups++cupsd.conf</a>)<br>
+<div style='padding-left: 60pt'>
+<em>stop-printer </em>→ Den Drucker anhalten und den Job für später in der Queue behalten<br>
+<br>
+</div>
+<div style='padding-left: 30pt'>
+<em>Filter</em> → ein FIlterprogramm definieren wie in einer PPD-Datei (</div>
+<a href="../../usr/usr%2B%2Bshare%2B%2Bcups%2B%2Bmodel.html" title="FHS:usr:usr++share++cups++model">FHS:usr:usr++share++cups++model</a>)<br>
+<br>
+<em>Info </em>→ beschreibt den Drucker genauer<br>
+<br>
+<em>JobSheets → Standart Banner Seite</em>
+<div style='padding-left: 90pt'>
+<em>→ Direktive muss definiert sein</em><br>
 </div>
 <div style='padding-left: 60pt'>
 <em>none </em> → keine <br>
 <em>classifiied → </em>Eine Banner Seite mit dem Label "Classified"<br>
 <em>standard </em>→ Eine leere Seite<br>
 </div>
-</p>
 
-<p>
 <div style='padding-left: 30pt'>
-<em>Location </em>→ definiert den Standort des Druckers<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>OpPolicy </em>→ Alle Policies die in <em>*/etc/cupsd.conf </em>definier sind<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
+<em>KLimit </em>→ setzen des Limits in Kilobyte für Quotas<br>
+<br>
+<em>Location </em>→ Standort des Druckers<br>
+<br>
+<em>OpPolicy </em>→ setzen der IPP Operation mit der angegebenen Ziel, muss in der <em>Policy </em>Section in der <em>*/etc/cups/cupsd.conf</em><br>
+<br>
+<em>Option </em>→ zusätzliche Optionen für diesen Drucker definieren <strong>(man lp)</strong><br>
+<br>
 <em>PageLimit &lt;N&gt; </em>→ Alle Nutzer dieser Klasse dürfen nicht mehr als N Seiten  innerhalb einer QuotaPeriod verbrauchen<br>
+<br>
+<em>PortMonitor → </em>setzen des binären Komminikationsprogramms <br>
 </div>
-</p>
-	
-<p>
+<div style='padding-left: 60pt'>
+<em>bcp </em><strong>→ </strong>dekodieren PostScript Druckerdata durch Adobe Binary Control Protocol<br>
+<em>none  → </em>standard, keinen Port Monitor verwenden<br>
+<em>tbcp </em>→ dekodieren der  PostScript Druckerdata durch Adobe Tagged Binary Control Protocol<br>
+<br>
+</div>
 <div style='padding-left: 30pt'>
-<em>Printer</em> → diese Drucker gehören zu dieser Klasse<br>
+<em>PreFiler → </em>definieren eines Vorwilter Programms<br>
+<br>
+<em>Product </em>→ Der "<u>Product"</u> String aus der PPD Datei des Druckers<br>
 </div>
-</p>
 
-<p>
 <div style='padding-left: 30pt'>
-<em>QuotaPeriod → </em>definiert die Länge einer Quota Periode für die das <em>PageLimit</em> gilt<br>
+<em>QuotaPeriod </em>→ <em>→ </em>definiert die Länge einer Quota Periode für die das <em>PageLimit</em> gilt<br>
 </div>
 <div style='padding-left: 60pt'>
 <em>86400 </em>→ pro Tag<br>
@@ -264,23 +239,17 @@ Created Sonntag 25 September 2011<br>
 <em>2592000 → </em>pro Monat<br>
 31536000 → pro Jahr<br>
 </div>
-</p>
-	
-<p>
+
 <div style='padding-left: 30pt'>
 <em>Shared </em>→ wird dieser Drucker von mehereren Hosts über diesen Server angesteuert<br>
 </div>
 <div style='padding-left: 60pt'>
 <em>yes|no</em><br>
 </div>
-</p>
 
 
-<p>
 <div style='padding-left: 30pt'>
-<em>StateMessage </em>→ Status Meldung, die ausgegeben wird<br>
-</div>
-</p>
+<em>StateMessage </em>→ Status Meldung, die  ausgegeben wird</div>
 
 
 			<!-- End wiki content -->

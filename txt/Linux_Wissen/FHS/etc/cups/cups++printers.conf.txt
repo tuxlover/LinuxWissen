@@ -1,0 +1,87 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-27T13:30:22+02:00
+
+====== cups++printers.conf ======
+Created Dienstag 27 September 2011
+
+//*/etc/cups/printers.conf//
+[[Linux Wissen:Drucken]]
+//+++//
+//<DefaultPrinter Hades>//
+//Procduct	"(PostScript level 1 Printer)"//
+//Accpeting 	yes//
+//AllowUser 	Peter//
+//DeviceURI 	socket://foo.bar.com:9100//
+//ErrorPolicy	abort-job//
+//Location	MTU88//
+...
+//</Printer>//
+
+//<Printer Hera>//
+//...//
+//</Printer>//
+//+++//
+* alle Direktiven können auch mit dem **lpadmin **Tool gesetzt werden
+* Die Eigenschaften eines Druckers  werden zwischen //<Printer Name>// und //</Printer>// definiert
+* die //Default Printer //definiert die Klasse von Nutzern die in keiner anderen Klasse definiert sind
+* In den folgenden Direktiven werden dann die Eigenschaften der Klasse beschrieben:
+	//Accepting //→ dieser Drucker akzeptiert Jobs (**accept|reject**)
+		//yes|no// 
+		
+	//AllowUser //→ diese Nutzer dürfen diesen Drucker nutzen
+			→ @ definiert eine Gruppe
+	
+	//DenyUser //→ diese Nutzer dürfen diesen Drucker niemals verwenden
+	
+	//DeviceURI// → die URI des Gerätes
+
+	//ErrorPolicy //→ was soll passieren, wenn ein Backend nicht in der Lage war einen Job an den Drucker zu senden
+		//abort-job // → diesen Job abbrechen und mit dem nächsten Job in der Queue fortfahren
+		//retry-current-job → //versuche den aktuellen Job sofort noch einmal zu senden
+		//retry-job //→ den Job nach **N** Sekunden wiederholen
+			       → der Wert **N **wird in der Direktive //JobRetryInterval  //in //*/etc/cups/cupsd.conf//  festgestellt (
+[[cups++cupsd.conf]])
+		//stop-printer //→ Den Drucker anhalten und den Job für später in der Queue behalten
+		
+	//Filter// → ein FIlterprogramm definieren wie in einer PPD-Datei (
+[[FHS:usr:usr++share++cups++model]])
+
+//Info //→ beschreibt den Drucker genauer
+
+//JobSheets → Standart Banner Seite//
+			//→ Direktive muss definiert sein//
+		//none // → keine 
+		//classifiied → //Eine Banner Seite mit dem Label "Classified"
+		//standard //→ Eine leere Seite
+
+	//KLimit //→ setzen des Limits in Kilobyte für Quotas
+	
+	//Location //→ Standort des Druckers
+	
+	//OpPolicy //→ setzen der IPP Operation mit der angegebenen Ziel, muss in der //Policy //Section in der //*/etc/cups/cupsd.conf//
+	
+	//Option //→ zusätzliche Optionen für diesen Drucker definieren **(man lp)**
+	
+	//PageLimit <N> //→ Alle Nutzer dieser Klasse dürfen nicht mehr als N Seiten  innerhalb einer QuotaPeriod verbrauchen
+	
+	//PortMonitor → //setzen des binären Komminikationsprogramms 
+		//bcp //**→ **dekodieren PostScript Druckerdata durch Adobe Binary Control Protocol
+		//none  → //standard, keinen Port Monitor verwenden
+		//tbcp //→ dekodieren der  PostScript Druckerdata durch Adobe Tagged Binary Control Protocol
+		
+	//PreFiler → //definieren eines Vorwilter Programms
+	
+	//Product //→ Der "__Product"__ String aus der PPD Datei des Druckers
+
+	//QuotaPeriod //→ //→ //definiert die Länge einer Quota Periode für die das //PageLimit// gilt
+		//86400 //→ pro Tag
+		//604800 //→ pro Woche
+		//2592000 → //pro Monat
+		31536000 → pro Jahr
+
+	//Shared //→ wird dieser Drucker von mehereren Hosts über diesen Server angesteuert
+		//yes|no//
+
+
+	//StateMessage //→ Status Meldung, die  ausgegeben wird

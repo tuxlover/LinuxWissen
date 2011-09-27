@@ -32,6 +32,7 @@ __Interaktive Befehle:__
 **ntpd → **Steuerung des NTP Servers
 **-q **→ wie **ntpdate**, harter Zeitabgleich des System mit dem Server
 **-x **→ verlangt **-q, **den Zeitabgleich auch durchführen, falls die Zeit weniger als 128 Millisekunden abweicht
+**-g **→ verlangt den Zeitabgleich auch dann, wenn die Zeit mehr als 1000 Sekunden abweicht
 **-c <Datei> **→ angeben einer alternativen Konfigurationsdatei
 **-f <Datei> **→ angeben einer alternativen Driftfile Datei, normalerweise ///var/lib/ntp/drift/ntp.drift//
 **-t <Key> **→ den Schlüssel zu den vertrauenswürdigen Schlüsseln in //*/etc/ntp.keys //hinzufügen

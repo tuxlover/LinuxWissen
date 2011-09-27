@@ -20,6 +20,9 @@ Created Dienstag 19 April 2011
 
 ***/usr/share **→ von der Rechnerarchitektur unabhängige Dateien
 	**pci.ids **→ Datenbank bekannter Geräte IDs für PCI Controler
+	
+***/usr/share/cups/model **→ die PPD Dateien die einen Drucker näher beschreiber 
+[[+usr++share++cups++model]]
 
 ***/usr/share/doc** → Dokumentation
 		              → Unter $$SUSE$$ findet man zusätzliche Documentaion unter **/usr/share/doc/packages**

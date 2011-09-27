@@ -6,6 +6,7 @@ Creation-Date: 2011-09-25T23:55:28+02:00
 Created Sonntag 25 September 2011
 
 //*/etc/cups/classes.conf//
+[[Linux Wissen:Drucken]]
 +++
 //<DefaultClass Default>//
 //Accepting no//
@@ -55,7 +56,7 @@ Created Sonntag 25 September 2011
 		//classifiied → //Eine Banner Seite mit dem Label "Classified"
 		//standard //→ Eine leere Seite
 
-	//Location //→ definiert die Location des Druckers
+	//Location //→ definiert den Standort des Druckers
 	
 	//OpPolicy //→ Alle Policies die in //*/etc/cupsd.conf //definier sind
 	
@@ -73,4 +74,4 @@ Created Sonntag 25 September 2011
 		//yes|no//
 
 
-	//StateMessage //→ Status Meldung ausgeben
+	//StateMessage //→ Status Meldung, die ausgegeben wird

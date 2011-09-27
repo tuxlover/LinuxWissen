@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>cups++classes.conf</title>
+		<title>cups++cupsd.conf</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									cups++classes.conf</h1>
+									cups++cupsd.conf</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -65,8 +65,8 @@
 <li><a href="../apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="../cups.html" title="cups">cups</a></li>
 <ul>
-<li><strong>cups++classes.conf</strong></li>
-<li><a href="./cups%2B%2Bcupsd.conf.html" title="cups++cupsd.conf">cups++cupsd.conf</a></li>
+<li><a href="./cups%2B%2Bclasses.conf.html" title="cups++classes.conf">cups++classes.conf</a></li>
+<li><strong>cups++cupsd.conf</strong></li>
 <li><a href="./cups%2B%2Bprinters.conf.html" title="cups++printers.conf">cups++printers.conf</a></li>
 </ul>
 <li><a href="../ethers.html" title="ethers">ethers</a></li>
@@ -133,154 +133,164 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Sonntag 25 September 2011<br>
-</p>
-
-<p>
-<em>*/etc/cups/classes.conf</em><br>
+				<em>*/etc/cups/cupsd.conf</em>
+<li>Konfigurationsdatei des Druckerserver </li>
+<li>nach dem Editieren dieser Dateien muss der Drucker-Server mit <strong>service cups restart </strong>neu gestartet werden </li>
 <a href="../../../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a><br>
 +++<br>
-<em>&lt;DefaultClass Default&gt;</em><br>
-<em>Accepting no</em><br>
-<em>...</em><br>
-<em>&lt;/Default&gt;</em><br>
-</p>
+<em>LogLevel				warn</em>
+<em>SystemGroup			sys root</em>
+<em>Listen					localhost:631</em>
+<em>Listen					/var/run/cups/cups.sock</em>
 
-<p>
-<em>&lt;Class Students&gt;</em><br>
-<em>Info	"Druckerklasse fuer Personal" </em><br>
-<em>JobSheets	none</em><br>
-<em>Localtion 	MT3345</em><br>
-<em>Printer		Aloede</em><br>
-<em>Printer		Samsung</em><br>
-<em>Shared 		yes</em><br>
-</p>
 
-<p>
-<em>Accepting	yes</em><br>
-<em>OpPolicy	default</em><br>
-</p>
+<em>Browsing				on</em>
+<em>BrowseOrder			allow,deny</em>
+<em>BrowseAllow			from all</em>
+<em>BrowseProtocols		cups smb</em>
+<em>BrowseLocalProtocols 	cups</em>
 
-<p>
-<em>QuotaPeriod 2592000</em><br>
-<em>PageLimit	150</em><br>
-</p>
+<em>DefaultAuthType		 Basic</em>
 
-<p>
-<em>AllowUser	Fred</em><br>
-<em>AllowUser	@Students</em><br>
-<em>AllowUser	@Profs</em><br>
-<em>DenyUser 	Hans</em><br>
-<em>DenyUser	@Gast</em><br>
-<em>&lt;/Class&gt;</em><br>
+<em>&lt;Location /printers&gt;</em>
+<em>        Order Deny,Allow</em>
+<em>        Deny from all</em>
+<em>        Allow from 127.0.0.1</em>
+<em>        Allow from 192.168.123.0/24</em>
+<em>&lt;/Location&gt;</em>
+
+<em>&lt;Location /printers/newlp&gt;</em>
+<em>        Order allow,deny</em>
+<em>        Allow from 127.0.0.1</em>
+<em>        Allow from 192.168.123.0/24</em>
+<em>        Deny from 192.168.123.45</em>
+<em>        &lt;/Location&gt;</em>
+
+<em>&lt;Policy default&gt;</em>
+<em>  &lt;Limit Create-Job Print-Job Print-URI Validate-Job&gt;</em>
+<em>    Order deny,allow</em>
+<em>  &lt;/Limit&gt;</em>
+<em>&lt;/Policy&gt;</em>
+
+<em>DefaultPolicy 		default</em><br>
 +++<br>
-<ul>
-<li>alle Direktiven können auch mit dem <strong>lpadmin </strong>Tool gesetzt werden</li>
-<li>Die Eigenschaften einer Klasse werden zwischen <em>&lt;Class Name&gt;</em> und <em>&lt;/Class&gt;</em> definiert</li>
-<li>die <em>Default Class </em>definiert die Klasse von Nutzern die in keiner anderen Klasse definiert sind</li>
-<li>In den folgenden Direktiven werden dann die Eigenschaften der Klasse beschrieben:</li>
-</ul>
+<li>Diese Datei kann auch über das Cups Web Interface<em> localhost:631  </em>editiert werden</li>
+<li>Innerhalb einer &lt;<em>Location  Name&gt; &lt;/Location&gt; Klasse</em> können Eigenschaften für die spezifizierte HTTP- oder andere Resource festgelegt werden</li>
 <div style='padding-left: 30pt'>
-<em>Accepting → </em>dieser Drucker akzeptiert Jobs<br>
+<em>Order	→ </em>spezifizieren der Standard Zugriffskontrolle<br>
+</div>
+<div style='padding-left: 60pt'>
+<em>allow,deny</em> → verweigere Zugriffe, danach prüfe den <em>Allow </em>Direktive und dann die <em>Deny </em>Direktive<br>
+<em>deny,allow </em>→ erlaube Zugriffe, danache prüfe die <em>Deny</em>  Direktive und dann die <em>Allow</em> Direktive	 <br>
+</div>
+<div style='padding-left: 30pt'>
+<br>
+<em>Allow |Deny</em> → angeben eines Hostnamens, einer IP-Adresse oder Netzwerkes, denen es erlaubt|verboten ist denen der Zugriff zum Cups Server gestattet ist<br>
+</div>
+<div style='padding-left: 60pt'>
+<em>from all</em><br>
+<em>from none</em><br>
+<em>from 192.128.1.11</em><br>
+<em>from 192.128.1.0/24</em><br>
+<em>from 192.128.1.0/255.255.255.0</em><br>
+<em>from 192.128.1.*</em><br>
+<em>from 6D4E:1234:D76F9:2987:FF23</em><br>
+<em>from *.firma.site</em></div>
+
+<div style='padding-left: 60pt'>
+<em>from @LOCAL</em><br>
+</div>
+
+<li>Innerhalb einer <em>&lt;Policy Name&gt; &lt;/Policy&gt; Klasse </em> können IPP ZugangsbeschränkungsLimits festgelegt werden</li>
+<li>innerhalb einer <em>&lt;Limit Name&gt; &lt;/Limit&gt; </em>können verschiedenen Limit-Subklassen definiert werden  </li>
+<li>(mehr steht in der CUPS Online Hilfe <a href="http://localhost:631/help/" title="http://localhost:631/help/">http://localhost:631/help/</a> )</li>
+
+<li>weitere Direktiven:</li>
+<div style='padding-left: 30pt'>
+<em>ErrorLog </em>→ wo sollen Fehler geloggt<br>
 </div>
 <div style='padding-left: 90pt'>
-→ wird auch durch <strong>accept Students </strong>initialisert<br>
+→ Standard ist <em>*/var/log/cups/error_log</em><br>
 </div>
 <div style='padding-left: 60pt'>
-<em>yes|no</em><br>
-</div>
-</p>
-	
-<p>
+<em>Path</em> → Pfad zur Logdatei <br>
+<em>syslog </em>→ an den Syslog Daemon senden (</div>
+<a href="../../../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a>)<br>
+<br>
 <div style='padding-left: 30pt'>
-<em>AllowUser </em>→ diese Nutzer dürfen diesen Drucker Nutzer<br>
+<em>LogLevel → </em>Log-Level-Tiefe für das <em>ErrorLog</em><br>
 </div>
 <div style='padding-left: 90pt'>
-→ @ definiert eine Gruppe<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>DenyUser</em> → diese Nutzer dürfen diesen Drucker niemals nutzen<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>Info</em> → Direktvie muss innerhalb jeder Klassendefinition erfolgen<br>
+→ Standrard ist warn<br>
 </div>
 <div style='padding-left: 60pt'>
-→ beschreibt die Klasse genauer<br>
+<em>none|emerg|alert|cirt|error|warn|notice|info|debug|debug2</em><br>
 </div>
-</p>
 
-<p>
 <div style='padding-left: 30pt'>
-<em>JobsSheets </em>→ Standart Banner Seite<br>
-</div>
-<div style='padding-left: 90pt'>
-→ Direktive muss definiert sein<br>
+<em>SystemGroup </em>→ Spezifizieren der Systemadministartionsgruppe der es erlaubt ist, sich am cups Daemon zu authentifiezieren<br>
+<br>
+<em>Listen </em>→ angeben einer Netzwerkadresse oder eines Ports oder Sockets auf dem es dem Cups Daemon erlaubt ist auf Verbindungen zu horchen</div>
+
+
+<div style='padding-left: 30pt'>
+<em>Browsing </em>→ diese Direktive kontorlliert ob der Drucker im Dateimanager sichtbar ist<br>
 </div>
 <div style='padding-left: 60pt'>
-<em>none </em> → keine <br>
-<em>classifiied → </em>Eine Banner Seite mit dem Label "Classified"<br>
-<em>standard </em>→ Eine leere Seite<br>
+<em>on|off</em><br>
+<br>
 </div>
-</p>
-
-<p>
 <div style='padding-left: 30pt'>
-<em>Location </em>→ definiert den Standort des Druckers<br>
+<em>BrowseDeny|BrowseAllow </em>→ spezifizieren des Netzwerkes oder Systems von dem Browsing Pakete verboten|erlaubt sind<br>
 </div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>OpPolicy </em>→ Alle Policies die in <em>*/etc/cupsd.conf </em>definier sind<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>PageLimit &lt;N&gt; </em>→ Alle Nutzer dieser Klasse dürfen nicht mehr als N Seiten  innerhalb einer QuotaPeriod verbrauchen<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>Printer</em> → diese Drucker gehören zu dieser Klasse<br>
-</div>
-</p>
-
-<p>
-<div style='padding-left: 30pt'>
-<em>QuotaPeriod → </em>definiert die Länge einer Quota Periode für die das <em>PageLimit</em> gilt<br>
+<div style='padding-left: 180pt'>
+  <em>→ </em>es sollte ausserdem die Direktive <em>BrowseOrder</em> definiert sein<br>
 </div>
 <div style='padding-left: 60pt'>
-<em>86400 </em>→ pro Tag<br>
-<em>604800 </em>→ pro Woche<br>
-<em>2592000 → </em>pro Monat<br>
-31536000 → pro Jahr<br>
+<em>from all</em><br>
+<em>from none</em><br>
+<em>from 192.128.1.11</em><br>
+<em>from 192.128.1.0/24</em><br>
+<em>from *.firma.site</em></div>
+
+<div style='padding-left: 60pt'>
+<em>from @LOCAL</em><br>
 </div>
-</p>
-	
-<p>
 <div style='padding-left: 30pt'>
-<em>Shared </em>→ wird dieser Drucker von mehereren Hosts über diesen Server angesteuert<br>
+<br>
+<em>BrowseOrder</em> → steuert die allow, deny Reihenfolge<br>
 </div>
 <div style='padding-left: 60pt'>
-<em>yes|no</em><br>
+<em>allow,deny </em>→ standardmäßige alle Browse Anfragen verbieten, dann überprüfe <em>BrowseAllow </em>und <em>BrowseDeny </em>Direktive<br>
+<em>deny,allow</em> → standardmäßig alle erlauben, dann überprüfe <em>BrowsDeny </em>und dann <em>BrowseAllow</em> Direktive<br>
 </div>
-</p>
 
-
-<p>
 <div style='padding-left: 30pt'>
-<em>StateMessage </em>→ Status Meldung, die ausgegeben wird<br>
+<em>BrowseProtocols </em>→ angeben des genutzten Protocolls, für das Druckerbrowsing im Dateibrowser<br>
 </div>
-</p>
+<div style='padding-left: 60pt'>
+                       → diese Direktive muss geändert werden, wenn zum Beispiel <em>LDAP (missing link) </em>oder <em>Samba </em>(missing Link) verwendet wird<br>
+</div>
+<div style='padding-left: 150pt'>
+→ meherere Protokolle können durch Leerzeichen angegegeben werden<br>
+</div>
+<div style='padding-left: 60pt'>
+<em>all|none|cups|dnssd|ldap|lpd|slp|smb</em><br>
+</div>
+
+<div style='padding-left: 30pt'>
+<em>DefautltAuthType </em>→ Type der IPP Authentifizierung die einen Nutzernamen erfordern<br>
+</div>
+<div style='padding-left: 60pt'>
+<em>Basic|BasicDigist|Digest|Negotiate</em><br>
+</div>
+
+<div style='padding-left: 30pt'>
+<em>DefaultPolicy </em>→ welche Policy soll gelten, wenn für diesen Drucker bisher keine Policy gefunden wurde<br>
+<br>
+</div>
+weiter Direktiven werden in der Hilfe <a href="http://localhost:631/help/ref-cupsd-conf.html" title="http://localhost:631/help/ref-cupsd-conf.html">http://localhost:631/help/ref-cupsd-conf.html</a> beschrieben<br>
+<br>
 
 
 			<!-- End wiki content -->
@@ -288,7 +298,7 @@ Created Sonntag 25 September 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='./cups%2B%2Bprinters.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a></li>						<a href='../../../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../../etc.html'>Linux Wissen:FHS:etc</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

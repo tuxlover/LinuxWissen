@@ -43,3 +43,5 @@ Created Donnerstag 21 April 2011
 //test@yahoo.com //
 //cool.hacks@gmail.com//
 //+++//
+
+**ffmpeg -i eingangsvideo.flv ausgangsvideo.avi  → **flv in avi
