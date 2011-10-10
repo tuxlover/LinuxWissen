@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-10T14:11:58+02:00
+
+====== Arrays ======
+Created Montag 10 Oktober 2011
+
+* Eine Liste von Werten in einer Variablen speichern ([[Variablen zuweisen]])
+* Mit **declare -a ARRAY **wird ein leeres ARRAY inintialisiert
+* ein vollständiges Array wird durch **ARRAY=(Wert1 Wert2 Wer3 ...)** erzeugt
+* einzelene Werte können im nachhinein durch **ARRAY[N]=Wert **zugewiesen werden, dadurch können auch Lücken entstehen
+
+${**ARRAY[@]} **→ Zugriff auf ein Array, wie //"Wert1" "Wert2" "Wert3"//
+**${ARRAY[*]} → **Zugriff auf ein Array wie "//Wert1<IFS>WER2<IFS> ..."//, wobei IFS die Internal Field Seperator Variable ist 
+([[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]])
+**${!ARRAY[@]}|${!ARRAY[*]}** → Zugriff auf die einzelen Indizies des Arrays
+
+=== Operationen auf Arrays ===
+* die üblichen Operationen wie auf Variablen sind möglich
+[[Variablen zuweisen]]
+
+//Beispiele://
+//Array=(eins zwei drei vier fünf)//
+//echo ${Array[@]:2} //
+//>> drei vier fünf//
+//echo ${Array[@]:1:2}//
+//>> zwei drei//
+//echo ${Array[@]#v*r}//
+//>> eins zwei drei fünf//
+//echo ${Array[@]//d*ei/XY}//
+//>> eins zwei XY vier fünf//
+//echo ${#Array[@]}//
+//>> 5//

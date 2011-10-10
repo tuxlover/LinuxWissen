@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>getopts</title>
+		<title>Arrays</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									getopts</h1>
+									Arrays</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -78,11 +78,11 @@
 <li><a href="../Sed.html" title="Sed">Sed</a></li>
 <li><a href="../Shellscripting.html" title="Shellscripting">Shellscripting</a></li>
 <ul>
-<li><a href="./Arrays.html" title="Arrays">Arrays</a></li>
+<li><strong>Arrays</strong></li>
 <li><a href="./dialog.html" title="dialog">dialog</a></li>
 <li><a href="./Exit_Status.html" title="Exit Status">Exit Status</a></li>
 <li><a href="./Funktion.html" title="Funktion">Funktion</a></li>
-<li><strong>getopts</strong></li>
+<li><a href="./getopts.html" title="getopts">getopts</a></li>
 <li><a href="./Here-Dokumente.html" title="Here-Dokumente">Here-Dokumente</a></li>
 <li><a href="./read.html" title="read">read</a></li>
 <li><a href="./Rezepte.html" title="Rezepte">Rezepte</a></li>
@@ -106,46 +106,32 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Samstag 10 September 2011<br>
-</p>
+				<li>Eine Liste von Werten in einer Variablen speichern (<a href="./Variablen_zuweisen.html" title="Variablen zuweisen">Variablen zuweisen</a>)</li>
+<li>Mit <strong>declare -a ARRAY </strong>wird ein leeres ARRAY inintialisiert</li>
+<li>ein vollständiges Array wird durch <strong>ARRAY=(Wert1 Wert2 Wer3 ...)</strong> erzeugt</li>
+<li>einzelene Werte können im nachhinein durch <strong>ARRAY[N]=Wert </strong>zugewiesen werden, dadurch können auch Lücken entstehen</li>
+<br>
+${<strong>ARRAY[@]} </strong>→ Zugriff auf ein Array, wie <em>"Wert1" "Wert2" "Wert3"</em>
+<strong>${ARRAY[*]} → </strong>Zugriff auf ein Array wie "<em>Wert1&lt;IFS&gt;WER2&lt;IFS&gt; ..."</em>, wobei IFS die Internal Field Seperator Variable ist <br>
+(<a href="../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a>)<br>
+<strong>${!ARRAY[@]}|${!ARRAY[*]}</strong> → Zugriff auf die einzelen Indizies des Arrays<br>
+<br>
+<h4>Operationen auf Arrays</h4>
+<li>die üblichen Operationen wie auf Variablen sind möglich</li>
+<a href="./Variablen_zuweisen.html" title="Variablen zuweisen">Variablen zuweisen</a>
 
-<p>
-do_ssomething()<br>
-{<br>
-&lt;FUNCTION&gt;<br>
-}<br>
-</p>
-
-<p>
-<em>while getopts "abcd:e:" opt</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;do</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case $opt in </em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a) 	do_something</em><br>
-<div style='padding-left: 90pt'>
-<em>;;</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>b) do_something mit option b</em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>;;</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>...</em><br>
-<em>d) do something mit option d</em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>#option d benötigt ein Atrgument</em><br>
-<em>#optionen die im getopts kopf einen : folgen benötigen ein Argument</em><br>
-<em>#die Variable OPTARG enthält als Wert das letzte Argument, das von getopts geparsed wurde</em><br>
-<em>#die Variable OPTIND ist der Index des nächsten ARGUMENTS der von optind geparsed wird</em><br>
-</div>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;esac</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;done</em><br>
-<em>shift $(($OPTIND - 1))	</em><br>
-</p>
-
+<em>Beispiele:</em>
+<em>Array=(eins zwei drei vier fünf)</em>
+<em>echo ${Array[@]:2} </em>
+<em>&gt;&gt; drei vier fünf</em>
+<em>echo ${Array[@]:1:2}</em>
+<em>&gt;&gt; zwei drei</em>
+<em>echo ${Array[@]#v*r}</em>
+<em>&gt;&gt; eins zwei drei fünf</em>
+<em>echo ${Array[@]//d*ei/XY}</em>
+<em>&gt;&gt; eins zwei XY vier fünf</em>
+<em>echo ${#Array[@]}</em>
+<em>&gt;&gt; 5</em>
 
 
 			<!-- End wiki content -->
@@ -153,7 +139,7 @@ do_ssomething()<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
+				Backlinks:
 			<!-- End Backlinks -->
 			</div>
 		</div>

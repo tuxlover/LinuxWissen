@@ -18,6 +18,7 @@ __Hinweis: Misserfolg meint hier auch, wenn zum Beispiel die Programme __**find*
 
 __Hinweis: Shellscripte sollten immer mit __**exit 0 **__verlassen werden, wenn sie korrekt beendet wurden.__
 
-__Hinweis: Rückgabewerte > 127 lassen geben das Signal an, welches an diese geschickt wurde, und wodurch sie beendet wurden. Beispiel Rückgabewert von 136 lässt auf SIGNAL 9 schließen__
+__Hinweis: Rückgabewerte > 127 geben das Signal an, welches an diese geschickt wurde, und wodurch sie beendet wurden. Beispiel Rückgabewert von 136 lässt auf SIGNAL 9 schließen__
+**RÜCKGABEWERT - 127=<SIGNAL>**
 
 **echo $?** →  liefert den letzten Rückgabewert

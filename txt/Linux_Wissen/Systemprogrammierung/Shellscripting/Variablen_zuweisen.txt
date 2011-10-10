@@ -12,7 +12,7 @@ Created Dienstag 26 April 2011
 **VAR= **
 →  Weist der Variablen den Wert NULL zu.
 
-**Array=$(a b c d)**
+**Array=(a b c d)**
 → Weist einem Array Variablen zu
 
 **unset VAR** →  löschen der Variablen VAR

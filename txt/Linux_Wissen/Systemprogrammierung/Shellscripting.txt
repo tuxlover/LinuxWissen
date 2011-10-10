@@ -99,6 +99,11 @@ Der Befehl **
 __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 [[Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen]]
 
+===== Arrays =====
+* Eine Liste von Werten die nacheinander verarbeitet werden kann
+* **ARRAY=(Wer1 Wert2 Wert3 ...)**
+* **${ARRAY[@]}; ${ARRAY[*]}**
+
 ===== Funktionen definieren und verwenden =====
 * Unterprogramme im aktuellen Shellscript die einen **return **Wert liefern können
 * Häufig verwendete Programmschnipsel nur einmal implementiert zu werden
