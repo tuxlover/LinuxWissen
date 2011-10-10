@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-09T07:28:12+02:00
+
+====== Would you rather like ======
+Created Sonntag 09 Oktober 2011
+
+//#Manchmal kann es nötig sein, dem Nutzer eine Ja/Nein Frage zu stellen//
+//#und bei drücken einer bestimmten Taste eine Aktion auszuführen//
+
+//would_you()//
+//{//
+//echo "Was wollen sie tun?"//
+//echo "Ein Backup erstellen (C)"//
+//echo "Ein bestehendes Backup zurücksetzen(R)"//
+
+//read -e -n 1 -p "Taste r oder c drücken!" ANSWER//
+//${ANSWER:="n"}//
+
+//if [ "$ANSWER" == "c"  ]//
+	//then//
+		//create_backup//
+//elif [ $ANSWER == "r" ]//
+	//then//
+		//restore//
+	//else//
+		//echo "ungültige taste gedrückt"//
+		//exit 1//
+//fi//
+//}//

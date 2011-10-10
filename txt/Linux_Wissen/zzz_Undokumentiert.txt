@@ -30,6 +30,7 @@ Created Donnerstag 21 April 2011
 [ ] snort
 [ ] netconfig
 [ ] IGMP
+[ ] filter und muster für rsync
 
 === cool hacks ===
 +++

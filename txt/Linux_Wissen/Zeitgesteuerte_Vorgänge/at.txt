@@ -26,6 +26,7 @@ Created Mittwoch 20 Juli 2011
 == <Time> ==
 **HH:MM tt.mm.jj|| HH:MM mm/tt/jj **
 → exakte absolute Zeitangabe in //Stunde:Minute Tage.monate.jahre//
+→ 12 Uhr nachts ist immer 00
 **now **
 → jetzt
 **midnight **

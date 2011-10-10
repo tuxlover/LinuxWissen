@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Variablen zuweisen</title>
+		<title>Rezepte</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Variablen zuweisen</h1>
+									Rezepte</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -84,12 +84,25 @@
 <li><a href="./getopts.html" title="getopts">getopts</a></li>
 <li><a href="./Here-Dokumente.html" title="Here-Dokumente">Here-Dokumente</a></li>
 <li><a href="./read.html" title="read">read</a></li>
-<li><a href="./Rezepte.html" title="Rezepte">Rezepte</a></li>
+<li><strong>Rezepte</strong></li>
+<ul>
+<li><a href="./Rezepte/Am_I__Root.html" title="Am I  Root">Am I  Root</a></li>
+<li><a href="./Rezepte/Check_files.html" title="Check files">Check files</a></li>
+<li><a href="./Rezepte/Count_down.html" title="Count down">Count down</a></li>
+<li><a href="./Rezepte/Fortschrittsbalken.html" title="Fortschrittsbalken">Fortschrittsbalken</a></li>
+<li><a href="./Rezepte/Have_we_Argruments.html" title="Have we Argruments">Have we Argruments</a></li>
+<li><a href="./Rezepte/Is_this_Programm_installed.html" title="Is this Programm installed">Is this Programm installed</a></li>
+<li><a href="./Rezepte/On_Battery.html" title="On Battery">On Battery</a></li>
+<li><a href="./Rezepte/Please_Enter.html" title="Please Enter">Please Enter</a></li>
+<li><a href="./Rezepte/Rc-Script.html" title="Rc-Script">Rc-Script</a></li>
+<li><a href="./Rezepte/Taken_User.html" title="Taken User">Taken User</a></li>
+<li><a href="./Rezepte/Would_you_rather_like.html" title="Would you rather like">Would you rather like</a></li>
+</ul>
 <li><a href="./Schleifen.html" title="Schleifen">Schleifen</a></li>
 <li><a href="./select.html" title="select">select</a></li>
 <li><a href="./Test.html" title="Test">Test</a></li>
 <li><a href="./tput.html" title="tput">tput</a></li>
-<li><strong>Variablen zuweisen</strong></li>
+<li><a href="./Variablen_zuweisen.html" title="Variablen zuweisen">Variablen zuweisen</a></li>
 </ul>
 </ul>
 <li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
@@ -106,116 +119,11 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Dienstag 26 April 2011<br>
+Created Sonntag 09 Oktober 2011<br>
 </p>
 
-<p>
-<strong>VAR=val </strong><br>
-→  weist der Variblen <strong>VAR</strong> den Wert<strong> val</strong> zu. <br>
-→ Falls die Variable einen Anderen Wert bereits hatte wird der alte Wert überschrieben.<br>
-</p>
 
-<p>
-<strong>VAR= </strong><br>
-→  Weist der Variablen den Wert NULL zu.<br>
-</p>
 
-<p>
-<strong>Array=$(a b c d)</strong><br>
-→ Weist einem Array Variablen zu<br>
-</p>
-
-<p>
-<strong>unset VAR</strong> →  löschen der Variablen VAR<br>
-<a href="../../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a><br>
-</p>
-
-<p>
-<strong>VAR[n]=val </strong><br>
-→  Weist dem <strong>n</strong>-ten Element des Arrays <strong>VAR </strong>den Wert <strong>val </strong>zu. <br>
-→ Falls dieser bereits belegt war wird VAR mir einem neuen Wert überschrieben.<br>
-</p>
-
-<p>
-<strong>VAR=$(Befehl)</strong> oder <strong>VAR=`Befehl`</strong> <br>
-→  Weist die Ausgabe von <strong>Befehl</strong> (Einzelenes Kommando oder Befehlskette) der Variablen <strong>VAR </strong>zu.<br>
-</p>
-
-<p>
-<strong>${VAR:=val}</strong> <br>
-→  Die Variable <strong>VAR</strong> erhält den Wert <strong>val</strong> wenn <strong>VAR</strong> nicht gesetzt oder leer war.<br>
-</p>
-
-<p>
-<strong>${VAR=val}</strong> <br>
-→  Die Variable <strong>VAR</strong> erhält den Wert <strong>val</strong> falls die Variable undefiniert war. <br>
-→  Der Wert NULL bleibt erhalten.<br>
-</p>
-
-<p>
-<strong>${VAR:-val}</strong> <br>
-→  Nur der Ausdruck von <strong>VAR</strong> wird durch <strong>val</strong> ersetzt. <br>
-→ Der alte Wert bleibt aber erhalten.<br>
-</p>
-
-<p>
-<strong>${VAR:?&lt;Fehlermeldung&gt;}</strong> <br>
-→  Ist <strong>VAR</strong> leer oder undefiniert wird <strong>&lt;Fehlermeldung&gt;</strong> ausgegeben<br>
-</p>
-
-<p>
-<strong>VAR1=${!VAR2}</strong> <br>
-→  der Wert von <strong>VAR2 </strong>wird <strong>VAR1</strong> zugewiesen<br>
-</p>
-
-<p>
-<strong>${VAR:m:n}</strong><br>
-→  Alle Werte von <strong>VAR</strong> bei der <strong>m</strong>-ten Postion beginnend der Länge <strong>n</strong>. <br>
-→ Startet bei Index 0, <br>
-→ m und n können auch Werte sein, die au Berechnungen entstehen<br>
-<em>Beispiel:</em><br>
-<em>string=abcdefghijklmnopqrstuvwxyz</em><br>
-<em>echo ${string:4}</em><br>
-<em>&gt;&gt; efghijklmnopqrstuvwxyz</em><br>
-<em>echo ${string:4:8}</em><br>
-<em>&gt;&gt; efghijkl</em><br>
-</p>
-
-<p>
-<strong>${#VAR}</strong> <br>
-→  evaluiert die Länge des Strings der Variablen <strong>VAR</strong><br>
-→ bei Arrays wird die Länge des Array, also die Anzahl der Einträge im Array evaluiert<br>
-</p>
-
-<p>
-<strong>${STRING#Expr}</strong> <br>
-→  entfernt den <em>kürztmöglich</em> passenden Ausdruck von <strong>Expr</strong> von <em>vorne</em> beginnend von <strong>STRING</strong><br>
-</p>
-
-<p>
-<strong>${STRING##Expr}</strong> <br>
-→  entfernt den <em>längstmöglichen</em> passenden Ausdruck von <strong>Expr</strong> von <em>vorne</em> beginnend von <strong>STRING</strong><br>
-</p>
-
-<p>
-<strong>${STRING%Expr}</strong> <br>
-→  entfernt den <em>kürztmöglichen</em> Ausdruck von <strong>Expr</strong> von <em>hinten</em> beginnend von <strong>STRING</strong><br>
-</p>
-
-<p>
-<strong>${STRING%%Expr} </strong><br>
-→  entfernt den <em>längstmöglichen</em> Ausdruck von <strong>Expr</strong> von <em>hinten</em> beginnend von <strong>STRING</strong><br>
-</p>
-
-<p>
-<strong>${STRING/Expr/&lt;Ersetzung&gt;} </strong><br>
-→  der Ausdruck <strong>Expr</strong> in <strong>STRING</strong>  wird durch <strong>&lt;Ersetzung&gt;</strong> ersetzt<br>
-</p>
-
-<p>
-<strong>${STRING//Expr//&lt;Ersetzung&gt;}</strong> <br>
-→  alle Ausdrücke die auf <strong>Expr</strong> passen werden in <strong>STRING</strong> durch <strong>&lt;Ersetzung&gt;</strong> ersetzt<br>
-</p>
 
 
 			<!-- End wiki content -->
@@ -223,7 +131,7 @@ Created Dienstag 26 April 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
+				Backlinks:
 			<!-- End Backlinks -->
 			</div>
 		</div>

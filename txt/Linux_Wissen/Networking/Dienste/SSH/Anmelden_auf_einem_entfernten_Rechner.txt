@@ -5,8 +5,7 @@ Creation-Date: 2011-09-27T20:09:53+02:00
 ====== Anmelden auf einem entfernten Rechner ======
 Created Dienstag 27 September 2011
 
-**ssh  -l <User> <Host>**
-**ssh  ** **[<User>@]<Host> **//→ //Anmelden als Nutzer <User> am <Host>
+**ssh  -l <User> <Host>|ssh  ** **[<User>@]<Host> **//→ //Anmelden als Nutzer <User> am <Host>
 			              → wird <User> nicht verwendet, wird davon ausgegangen, dass die Nutzer Lokal und Remote übereinstimmen 
 					→ __Achtung: UIDs können durchaus unterschiedlich sein__
 **ssh <User> <Pfad/zum/Befehl> **→ wird <Befehl> angehängt wird dieser auf der Remote Seite ausgeführt

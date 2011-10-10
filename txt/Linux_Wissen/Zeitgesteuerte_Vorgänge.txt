@@ -26,6 +26,7 @@ Created Mittwoch 20 Juli 2011
 * Der cron-Daemon muss laufen 
 * falls vor dem Cronbefehl kein - steht, wird der ausgeführte Cronjob vom Syslogd **(missing link syslogd)** protokolliert
 * cronjobs werden entweder für den einzelnen Nutzer mit dem Befehl **crontab** verwaltet oder bei den System Cron-Jobs unter */etc direkt editiert
+* wird eine crontab in //*/etc/cron.d/ //angelegt, so handelt es sich um eine systemcrontab und der nutzer muss hnter den Zeitmarken (* * * * * ) angegeben werden
 [[+crontab]]
 
 === !Achtung! ===

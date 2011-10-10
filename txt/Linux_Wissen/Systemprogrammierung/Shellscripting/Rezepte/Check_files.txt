@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-10T00:29:28+02:00
+
+====== Check files ======
+Created Montag 10 Oktober 2011
+
+//check_files()//
+//{//
+//FILES=$(ls *)//
+
+//for i in ${FILES[@]}//
+	//do//
+		//#Prefix einer Datei überprüfen//
+		//if [ ! ${i/#\/pref*} ]//
+			//then//
+				//echo "MATCH $i"//
+		//fi//
+		
+		//#Suffix einer Datei überprüfen//
+		//if [  ${i##*. } != "suf" ]//
+			//then//
+				//echo "MATCH $i" //
+		//fi//
+	//done//
+//}//

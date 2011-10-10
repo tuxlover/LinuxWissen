@@ -20,4 +20,7 @@ Created Samstag 16 April 2011
 **-l **→ kopiere symbolische Links als Links
 **-s **→ no-space-splitting
  
+
+=== Filter und Muster  ===
+
   

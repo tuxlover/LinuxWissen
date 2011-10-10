@@ -70,10 +70,10 @@ __Hinweis: Schleifen können Ein- und Ausgabeumleitungen in den Schleifenkopf ü
 * Das logische Gegenteil der **while**-Schleife
 
 === Dekrement und Inkrement ===
-**$((j+=1))** 
+**j=$((j+=1))** 
 →  inkrementiert j auf 1
 
-**$((j-=1))** 
+**i=$((j-=1))** 
 →  dekrementiert j um 1
 
 

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-10T00:25:41+02:00
+
+====== Have we Argruments ======
+Created Montag 10 Oktober 2011
+
+have_arguements()
+{
+if [ -z  "$1" ]
+	then
+		echo "Usage: $(basename $0) Argument "
+fi 
+}

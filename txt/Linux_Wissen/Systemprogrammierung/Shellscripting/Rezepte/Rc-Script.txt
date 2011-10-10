@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-10T00:02:58+02:00
+
+====== Rc-Script ======
+Created Montag 10 Oktober 2011
+
+//This startscript should be used as an example//
+//### BEGIN INIT INFO//
+//# Provides:          daemon//
+//# Required-Start:    $earlysyslog//
+//# Required-Stop:     $networ//
+//# Default-Start:     3 5//
+//# Default-Stop:      0 6//
+//# Short-Description: Selbsterstellter Service//
+//# Description:       Lange Beschreibung//
+//### END INIT INFO//
+
+//start_daemon()//
+//{//
+//....//
+//}//
+
+//stop_daemon()//
+//{//
+//....//
+//}//
+
+//case "$1" in//
+//	"start") start_daemon//
+//	;;//
+//	"stop") stop_daemon//
+//	;;//
+//	"status") ps  -A|grep daemon && echo "running" || echo "unused"//
+//	;;//
+//	"restart") start_daemon && stop_daemon//
+//	;;//
+//	"reload") killall -1 daemon//
+//	;;//
+//esac//
