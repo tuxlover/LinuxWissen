@@ -154,3 +154,5 @@ __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 [[+Rezepte:Check files]] (Überpfüfen ob eine Datei entsprechenden Suffixes oder Prefixes hat)
 [[+Rezepte:Count down]] (Herunterzählen)
 [[+Rezepte:Fortschrittsbalken]] (Ein Fortschrittsbalken in einer Schleife)
+[[+Rezepte:Create conf]] (Erstellen einer Xml Konfigurationsdatei)
+[[+Rezepte:Integer Test]] (Testen ob ein Parameter ein Integer ist)

@@ -106,32 +106,48 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>Eine Liste von Werten in einer Variablen speichern (<a href="./Variablen_zuweisen.html" title="Variablen zuweisen">Variablen zuweisen</a>)</li>
+				<p>
+Created Montag 10 Oktober 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Eine Liste von Werten in einer Variablen speichern (<a href="./Variablen_zuweisen.html" title="Variablen zuweisen">Variablen zuweisen</a>)</li>
 <li>Mit <strong>declare -a ARRAY </strong>wird ein leeres ARRAY inintialisiert</li>
 <li>ein vollständiges Array wird durch <strong>ARRAY=(Wert1 Wert2 Wer3 ...)</strong> erzeugt</li>
 <li>einzelene Werte können im nachhinein durch <strong>ARRAY[N]=Wert </strong>zugewiesen werden, dadurch können auch Lücken entstehen</li>
-<br>
-${<strong>ARRAY[@]} </strong>→ Zugriff auf ein Array, wie <em>"Wert1" "Wert2" "Wert3"</em>
+</ul>
+</p>
+
+<p>
+${<strong>ARRAY[@]} </strong>→ Zugriff auf ein Array, wie <em>"Wert1" "Wert2" "Wert3"</em><br>
 <strong>${ARRAY[*]} → </strong>Zugriff auf ein Array wie "<em>Wert1&lt;IFS&gt;WER2&lt;IFS&gt; ..."</em>, wobei IFS die Internal Field Seperator Variable ist <br>
 (<a href="../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a>)<br>
 <strong>${!ARRAY[@]}|${!ARRAY[*]}</strong> → Zugriff auf die einzelen Indizies des Arrays<br>
-<br>
-<h4>Operationen auf Arrays</h4>
-<li>die üblichen Operationen wie auf Variablen sind möglich</li>
-<a href="./Variablen_zuweisen.html" title="Variablen zuweisen">Variablen zuweisen</a>
+</p>
 
-<em>Beispiele:</em>
-<em>Array=(eins zwei drei vier fünf)</em>
-<em>echo ${Array[@]:2} </em>
-<em>&gt;&gt; drei vier fünf</em>
-<em>echo ${Array[@]:1:2}</em>
-<em>&gt;&gt; zwei drei</em>
-<em>echo ${Array[@]#v*r}</em>
-<em>&gt;&gt; eins zwei drei fünf</em>
-<em>echo ${Array[@]//d*ei/XY}</em>
-<em>&gt;&gt; eins zwei XY vier fünf</em>
-<em>echo ${#Array[@]}</em>
-<em>&gt;&gt; 5</em>
+<h4>Operationen auf Arrays</h4>
+<p>
+<ul>
+<li>die üblichen Operationen wie auf Variablen sind möglich</li>
+</ul>
+<a href="./Variablen_zuweisen.html" title="Variablen zuweisen">Variablen zuweisen</a><br>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
+<em>Array=(eins zwei drei vier fünf)</em><br>
+<em>echo ${Array[@]:2} </em><br>
+<em>&gt;&gt; drei vier fünf</em><br>
+<em>echo ${Array[@]:1:2}</em><br>
+<em>&gt;&gt; zwei drei</em><br>
+<em>echo ${Array[@]#v*r}</em><br>
+<em>&gt;&gt; eins zwei drei fünf</em><br>
+<em>echo ${Array[@]</em>d*ei/XY}//<br>
+<em>&gt;&gt; eins zwei XY vier fünf</em><br>
+<em>echo ${#Array[@]}</em><br>
+<em>&gt;&gt; 5</em><br>
+</p>
 
 
 			<!-- End wiki content -->

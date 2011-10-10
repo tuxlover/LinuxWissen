@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-10T15:35:12+02:00
+
+====== Create conf ======
+Created Montag 10 Oktober 2011
+
+#Dieses Beispiel zeigt wie man eine xml Datei erzeugen kann
+//create_conf() //
+//{//
+//echo "Starting please be patient"//
+//RPMS=$(rpm -qa)//
+
+
+
+
+//echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" >> $DOC_NAME.xml//
+//echo "<syscontent>" >> $DOC_NAME.xml//
+//echo -e "\t <ident>" >> $DOC_NAME.xml//
+//echo -e "\t\t <name></name>" >> $DOC_NAME.xml//
+//echo -e "\t\t <version epoch=\"0\"/>" >> $DOC_NAME.xml//
+//echo -e "\t\t <description></description>" >> $DOC_NAME.xml//
+//echo -e "\t\t <created>1234667821</created>" >> $DOC_NAME.xml #unixtimestamp may be generatet by timestamp//
+//echo -e "\t </ident>" >> $DOC_NAME.xml//
+//echo -e "\t <onsys>" >> $DOC_NAME.xml//
+
+//for i in $RPMS//
+
+//        do//
+//                NAME=$(echo $(rpm -q $i --qf %{NAME}))//
+//                VERSION=$(echo $(rpm -q $i --qf %{VERSION}))//
+//                RELEASE=$(echo $(rpm -q $i --qf %{RELEASE}))//
+//                ARCH=$(echo $(rpm -q $i --qf %{ARCH}))//
+//                echo -e "\t\t <entry kind=\"package\" name=\"$NAME\" epoch=\"0\" ver=\"$VERSION\" rel=\"$RELEASE\" arch=\"$ARCH\"/>" >> $DOC_NAME.xml//
+//        done//
+
+//echo -e "\t </onsys>" >> $DOC_NAME.xml//
+//echo "</syscontent>" >> $DOC_NAME.xml//
+//}//

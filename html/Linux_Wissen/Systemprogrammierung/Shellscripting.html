@@ -106,247 +106,144 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Dienstag 26 April 2011<br>
-</p>
-
-<p>
-<a href="http://tldp.org/LDP/abs/html/" title="http://tldp.org/LDP/abs/html/">http://tldp.org/LDP/abs/html/</a><br>
-</p>
+				<a href="http://tldp.org/LDP/abs/html/" title="http://tldp.org/LDP/abs/html/">http://tldp.org/LDP/abs/html/</a>
 
 <h2>Shell Scripte ausführen</h2>
-<p>
-<ul>
 <li>Shell Scripte beginnen immer mit #!/bin/bash (dem SheBang teilt mit welcher Interpreter verwendet werden soll)</li>
 <li>muss die Rechte <strong>x </strong>und <strong>r </strong>besitzen</li>
 <li>Mehrere Befehle können in eine Datei geschrieben und verarbeitet werden</li>
-</ul>
-<a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
-<ul>
+<a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a>
 <li>Shellscripte die sich in $PATH befinden können durch Angabe des Namnes wie ein Programm ausgeführt werden</li>
-</ul>
-<a href="../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a><br>
-<ul>
+<a href="../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a>
 <li>Shellscripte ausserhalb von $PATH:</li>
-</ul>
-</p>
 
-<p>
 <strong>./PFAD/script.sh </strong>→ ausführen auf einer Subshell mit expliziter Pfadangabe <br>
 <strong>bash /Pfad/script.sh </strong>→ ausführen einer Subshell ohne Ausführungsrechte<br>
 <strong>source Script | </strong>. <strong>Script </strong>→ ausführen in der aktuellen Shell ohne erzeugen einer Subshell<br>
-</p>
-
-<p>
-<u>Hinweis: Die Endung .sh ist nicht notwendig wird aber beim Schreiben von ShellScripten empfohlen.</u><br>
-</p>
+<br>
+<u>Hinweis: Die Endung .sh ist nicht notwendig wird aber beim Schreiben von ShellScripten empfohlen.</u>
 
 
 <h2>Debuggen von Shellscripten</h2>
-<p>
-<ul>
 <li>Aufrufen von <strong>-x </strong>aktiviert das Tracing</li>
-</ul>
 <strong>set -x </strong>→ dauerhaftes Tracing in der aktuellen Shell aktivieren<br>
 <strong>sh -x &lt;Script.sh&gt; </strong>→ Shellscript mit Tracing aufrufen<br>
- <a href="../Shell/Bash/Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash">Linux Wissen:Shell:Bash:Optionen für die Bash</a><br>
-</p>
+ <a href="../Shell/Bash/Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash">Linux Wissen:Shell:Bash:Optionen für die Bash</a>
 
-<p>
 <u>Hinweis: Innerhalb eines Shellscript das Tracing nur für einen Block aktivieren:</u><br>
 ++<br>
-<em>sh -x </em><br>
-<em>...</em><br>
+<em>sh -x </em>
+<em>...</em>
 <em>CodeBlock</em><br>
 ...<br>
 <em>sh +x</em><br>
 ++<br>
-</p>
-
-<p>
-<ul>
+<br>
 <li>Aufrufen von <strong>-v </strong>aktiviert verbosity, die Shell zeigt alle Befehle an, die durch das Script aufgerufen werden</li>
-</ul>
-<strong>sh -v &lt;Script.sh&gt;</strong><br>
-</p>
+<strong>sh -v &lt;Script.sh&gt;</strong>
 
-<p>
-<ul>
 <li>Aufrufen von <strong>-u </strong>warnt vor undefinierten Variablen</li>
-</ul>
-<strong>sh -u &lt;Script.sh&gt;</strong><br>
-</p>
+<strong>sh -u &lt;Script.sh&gt;</strong>
 
-<p>
-<ul>
 <li>Aufruf von echo vor einem Kommando dass eine Substitution enthält gibt alle Substitutionen und Expansionen aus ohne den Befehl tatsächlich auszuführen</li>
-</ul>
-</p>
 
 <h2>Variablen</h2>
-<p>
-<ul>
 <li>Variablen können Rückgabewerte, Programmausgaben oder Werte von Berechnungen enthalten.</li>
 <li>Die Bash kann diese weiter verarbeiten|auswerten.</li>
 <li>Können Zeichenketten, Zahlen, oder Felder (Arrays) sein, generell gibt es in Bash aber keiner Typitisierung</li>
-</ul>
-<a href="./Shellscripting/Variablen_zuweisen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen">Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen</a><br>
-</p>
+<a href="./Shellscripting/Variablen_zuweisen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen">Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen</a>
 
 <h2>Arithmetik</h2>
-<p>
-<ul>
 <li>einfache arithmetische Ausdrücke werden durch <strong>$((Berechnung)) </strong>beschrieben und ausgewertet.</li>
 <li>Shellscripting eigent sich nicht für das Lösen komplexer Mathematischer Algorithmen.</li>
-</ul>
-</p>
 
 <h4>Addition</h4>
-<p>
-<strong>$((a+b))</strong><br>
-</p>
+<strong>$((a+b))</strong>
 
 <h4>Multiplikation</h4>
-<p>
-<strong>$((a*b))</strong><br>
-</p>
+<strong>$((a*b))</strong>
 
 <h4>Division</h4>
-<p>
-<strong>$((a/b))</strong><br>
-</p>
+<strong>$((a/b))</strong>
 
 <h4>Modulo</h4>
-<p>
-<strong>$((a%b))</strong><br>
-</p>
+<strong>$((a%b))</strong>
 
 <h4>Potenz</h4>
-<p>
 <strong>$((a</strong>b))**<br>
-</p>
-
-<p>
-<u>Hinweis: Bash rundet die Ergebnisse immer ab.</u><br>
-</p>
+<br>
+<u>Hinweis: Bash rundet die Ergebnisse immer ab.</u>
 
 <h2>Exit Status</h2>
-<p>
-<ul>
 <li>Programme und Funktionen haben immer einen Rückgabewert der über Erfolg oder Misserfolg informiert</li>
 <li>Anhand des Exit-Status kann ein Fehler meist genauer diagnostiziert werden</li>
 <li>Wird von einem Kindprozess an die aktuelle Shell übergeben</li>
 <li>Der Befehl <strong>exit </strong>beendet ein Script und gibt einen Wert an den Vaterprozess des Scriptes weiter.</li>
-</ul>
-<a href="./Shellscripting/Exit_Status.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status">Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a><br>
-</p>
+<a href="./Shellscripting/Exit_Status.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status">Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a>
 
 <h2>Test</h2>
-<p>
-<ul>
 <li>der <strong>test </strong>Befehl ist ein Bash Buildin</li>
 <li>Ein <strong>if/then/else </strong>Konstrukt testet ob der <strong>exit</strong>-Status eines Befehls gleich <strong>0</strong> ist, und falls </li>
 <li>Der Befehl <strong>[ ] </strong>ist ein Synonym für das <strong>test </strong>Buildin. </li>
 <li><strong>ist ein Synonym für </strong>test <strong>Buildin. Mit </strong> **können logische Verknüpfungen vorgenommen werden</li>
-</ul>
 Der Befehl **  <br>
-<ul>
 <li>In <strong>(( ))</strong> können arithmetische ausgewertet werden.</li>
-</ul>
-<a href="../Shell/Befehle.html" title="Linux Wissen:Shell:Befehle">Linux Wissen:Shell:Befehle</a><br>
-<a href="./Shellscripting/Test.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Test">Linux Wissen:Systemprogrammierung:Shellscripting:Test</a><br>
-</p>
+<a href="../Shell/Befehle.html" title="Linux Wissen:Shell:Befehle">Linux Wissen:Shell:Befehle</a>
+<a href="./Shellscripting/Test.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Test">Linux Wissen:Systemprogrammierung:Shellscripting:Test</a>
 
 <h2>Schleifen</h2>
-<p>
-<ul>
 <li>Eine Schleife ist ein Code Block der solange wiederholt wird, bis die Anweisung aufgrund eines Exit-Wertes beendet ist</li>
 <li><strong>for </strong>Schleife zur Iteration über eine Liste von Werten oder Dateien</li>
 <li><strong>while </strong>Schleife zur Iteration bis eine Aussage falsch oder wahr ist</li>
 <li><strong>break, continue </strong>zur Abbruchssteuerung von Schleifen</li>
 <li><strong>seq </strong>Programm um Zahlenintervalle definieren</li>
-</ul>
-<u>Hinweis: Für die Turingvollständigkeit reicht die while Schleife.</u><br>
-<a href="./Shellscripting/Schleifen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen">Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen</a><br>
-</p>
+<u>Hinweis: Für die Turingvollständigkeit reicht die while Schleife.</u>
+<a href="./Shellscripting/Schleifen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen">Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen</a>
 
 <h2>Arrays</h2>
-<p>
-<ul>
 <li>Eine Liste von Werten die nacheinander verarbeitet werden kann</li>
 <li><strong>ARRAY=(Wer1 Wert2 Wert3 ...)</strong></li>
 <li><strong>${ARRAY[@]}; ${ARRAY[*]}</strong></li>
-</ul>
-</p>
 
 <h2>Funktionen definieren und verwenden</h2>
-<p>
-<ul>
 <li>Unterprogramme im aktuellen Shellscript die einen <strong>return </strong>Wert liefern können</li>
 <li>Häufig verwendete Programmschnipsel nur einmal implementiert zu werden</li>
 <li>schaffen Übersichtlichkeit und lesbarkeit</li>
 <li>Positionsparameter innerhalb der Funktion entsprechen denen der Funktion und nicht der des eigentlichen Scripts</li>
-</ul>
- <a href="./Shellscripting/Funktion.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Funktion">Linux Wissen:Systemprogrammierung:Shellscripting:Funktion</a><br>
-</p>
+ <a href="./Shellscripting/Funktion.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Funktion">Linux Wissen:Systemprogrammierung:Shellscripting:Funktion</a>
 
 <h2>Here-Dokumente</h2>
-<p>
-<ul>
 <li>bietet einen Codeblock der mit einem Kommando anschließend eingelesen und verarbeitet werden kann</li>
 <li>der Codeblock wird mit einem Schlüsselwort beendet, welches vorher festgelegt wird. meist <em>EOF </em>oder <em>EOL</em></li>
 <li>dem lesenden &lt;Befehl&gt; wird mittels <strong>&lt;Befel&gt; &lt;&lt; &lt;Schlüsselwort&gt;</strong>  das &lt;Schlüsselwort zum Ende des lesens mitgeteilt</li>
-</ul>
-<a href="./Shellscripting/Here-Dokumente.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente">Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente</a><br>
-</p>
+<a href="./Shellscripting/Here-Dokumente.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente">Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente</a>
 
 <h2>read</h2>
-<p>
-<ul>
 <li>liest Zeilen von StdIn</li>
-</ul>
-<a href="./Shellscripting/read.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:read">Linux Wissen:Systemprogrammierung:Shellscripting:read</a><br>
-</p>
+<a href="./Shellscripting/read.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:read">Linux Wissen:Systemprogrammierung:Shellscripting:read</a>
 
 <h3>tput</h3>
-<p>
-<ul>
 <li>eigenstädndiges Programm zum Initialisieren eines Terminals oder Abfrage terminfo-Datenbank</li>
 <li>zur Steuerung des Bildschirm</li>
 <li>nutzt */etc/termcap</li>
-</ul>
-<a href="./Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a><br>
-</p>
+<a href="./Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a>
 
 <h3>Script mit Optionen steuern</h3>
-<p>
-<ul>
 <li>Mit dem Buildin <strong>getopts </strong><code>lassen sich Optionen in einem Script imlementieren</code></li>
-</ul>
-<a href="./Shellscripting/getopts.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:getopts">Linux Wissen:Systemprogrammierung:Shellscripting:getopts</a><br>
-</p>
+<a href="./Shellscripting/getopts.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:getopts">Linux Wissen:Systemprogrammierung:Shellscripting:getopts</a>
 
 <h2>Eine Menuauswahl mit select erstellen</h2>
-<p>
-<ul>
 <li>Mit dem Shell Schlüsselwort <strong>select </strong>lassen sich einfache Auswahlmenus erstellen</li>
-</ul>
-<a href="./Shellscripting/select.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:select">Linux Wissen:Systemprogrammierung:Shellscripting:select</a><br>
-</p>
+<a href="./Shellscripting/select.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:select">Linux Wissen:Systemprogrammierung:Shellscripting:select</a>
 
 <h2>dialog</h2>
-<p>
-<ul>
 <li>Mit <strong>dialog </strong>lassen sich komolexere Menus erstellen</li>
 <li>es verwendet ncurses und Umleitungsoperatoren</li>
 <li><strong>kdialog</strong></li>
 <li><strong>zenity</strong></li>
-</ul>
-<a href="./Shellscripting/dialog.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:dialog">Linux Wissen:Systemprogrammierung:Shellscripting:dialog</a><br>
-</p>
+<a href="./Shellscripting/dialog.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:dialog">Linux Wissen:Systemprogrammierung:Shellscripting:dialog</a>
 
 <h2>Rezepte</h2>
-<p>
 <a href="./Shellscripting/Rezepte/Am_I__Root.html" title="+Rezepte:Am I  Root">+Rezepte:Am I  Root</a> (Überprüfen ob der Auführende über Rootrechte verfügt)<br>
 <a href="./Shellscripting/Rezepte/Taken_User.html" title="+Rezepte:Taken User">+Rezepte:Taken User</a> (Überprüfen ob ein Nutzername schon exisitert)<br>
 <a href="./Shellscripting/Rezepte/Please_Enter.html" title="+Rezepte:Please Enter">+Rezepte:Please Enter</a> (Nutzer Zwingen eine Eingabe zu tätigen)<br>
@@ -358,7 +255,8 @@ Der Befehl **  <br>
 <a href="./Shellscripting/Rezepte/Check_files.html" title="+Rezepte:Check files">+Rezepte:Check files</a> (Überpfüfen ob eine Datei entsprechenden Suffixes oder Prefixes hat)<br>
 <a href="./Shellscripting/Rezepte/Count_down.html" title="+Rezepte:Count down">+Rezepte:Count down</a> (Herunterzählen)<br>
 <a href="./Shellscripting/Rezepte/Fortschrittsbalken.html" title="+Rezepte:Fortschrittsbalken">+Rezepte:Fortschrittsbalken</a> (Ein Fortschrittsbalken in einer Schleife)<br>
-</p>
+<a href="./Shellscripting/Rezepte/Create_conf.html" title="+Rezepte:Create conf">+Rezepte:Create conf</a> (Erstellen einer Xml Konfigurationsdatei)<br>
+<a href="./Shellscripting/Rezepte/Integer_Test.html" title="+Rezepte:Integer Test">+Rezepte:Integer Test</a> (Testen ob ein Parameter ein Integer ist)
 
 
 			<!-- End wiki content -->

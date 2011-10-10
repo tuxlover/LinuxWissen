@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>On Battery</title>
+		<title>Integer Test</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									On Battery</h1>
+									Integer Test</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -93,9 +93,9 @@
 <li><a href="./Create_conf.html" title="Create conf">Create conf</a></li>
 <li><a href="./Fortschrittsbalken.html" title="Fortschrittsbalken">Fortschrittsbalken</a></li>
 <li><a href="./Have_we_Argruments.html" title="Have we Argruments">Have we Argruments</a></li>
-<li><a href="./Integer_Test.html" title="Integer Test">Integer Test</a></li>
+<li><strong>Integer Test</strong></li>
 <li><a href="./Is_this_Programm_installed.html" title="Is this Programm installed">Is this Programm installed</a></li>
-<li><strong>On Battery</strong></li>
+<li><a href="./On_Battery.html" title="On Battery">On Battery</a></li>
 <li><a href="./Please_Enter.html" title="Please Enter">Please Enter</a></li>
 <li><a href="./Rc-Script.html" title="Rc-Script">Rc-Script</a></li>
 <li><a href="./Rezepte.html" title="Rezepte">Rezepte</a></li>
@@ -123,41 +123,23 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 09 Oktober 2011<br>
+Created Montag 10 Oktober 2011<br>
 </p>
 
 <p>
-<em>#Manchmal ist es sinnvoll zu überprüfen ob der Computer Battery betrieben läuft</em><br>
-<em>is_on_bat()</em><br>
+<em>#diese Funktion tetstet ob ein übergebener Parameter ein Integer ist</em><br>
+<em>integer_test()</em><br>
 <em>{</em><br>
-<em>if  [ -d /proc/acpi/battery ]</em><br>
+<em>int=$1</em><br>
+<em>if [ ! $(echo "$int" | grep -E "^[0-9]+$") ]</em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;then</em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "$int is not an integer"</em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit 1</em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;else</em><br>
 <div style='padding-left: 30pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>#pipefail wird fehler zuurückgeben wenn ein Programm in der Pipe exit Status &gt;0 zurückgibt</em><br>
-<em>set -o pipefile</em><br>
-<em>HAS_POWER=$(grep -r charging /proc/acpi/battery|tail -1|cut -d: -f3 || echo "no")</em><br>
-<em>set +o pipefail</em><br>
-</div>
-</p>
-		
-<p>
-<div style='padding-left: 60pt'>
-<em>if [ $HAS_POWER == "discharging" ] </em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>echo "Ihr Laptop ist nicht an einer stabilen Stromversorgung angeschlossen"</em><br>
-<em>exit 1</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>fi</em><br>
+<em>&nbsp;&nbsp;&nbsp;&nbsp;echo "$int is an integer."</em><br>
 </div>
 <em>fi</em><br>
-<em>return 0 </em><br>
 <em>}</em><br>
 </p>
 

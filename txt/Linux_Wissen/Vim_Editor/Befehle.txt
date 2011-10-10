@@ -51,4 +51,6 @@ Created Freitag 15 April 2011
 **:s/alt/neu** **<Enter>** → einmal Wort alt durch das Wort neu in der aktuellen Zeile ersetzen
 **:s/alt/neu/g **→ alle Wörter alt duch das Wort neu in der aktuellen Zeile ersetzen
 **:%s/alt/neu/gc** → alle Wörter alt duch das Wort neu in gesamten Text ersetzen und dabei um Bestätigung fragen
+
+**:Sex → **den S Explorer aufrufen
   

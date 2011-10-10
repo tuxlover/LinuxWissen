@@ -6,4 +6,16 @@ Creation-Date: 2011-10-09T07:04:45+02:00
 Created Sonntag 09 Oktober 2011
 
 
-
+[[+Rezepte:Am I  Root]] (Überprüfen ob der Auführende über Rootrechte verfügt)
+[[+Rezepte:Taken User]] (Überprüfen ob ein Nutzername schon exisitert)
+[[+Rezepte:Please Enter]] (Nutzer Zwingen eine Eingabe zu tätigen)
+[[+Rezepte:Would you rather like]] (Nutzer vor einer Entscheidungsfrage stellen)
+[[+Rezepte:Is this Programm installed]] (Testet ob ein Programm installiert ist)
+[[+Rezepte:On Battery]] (Testet ob der Computer batteriebetrieben läuft)
+[[+Rezepte:Rc-Script]] (Ein Skelletorn für das Bauen eines Rc Scripts)
+[[+Rezepte:Have we Argruments]] (Überprüfen ob Argumente übergeben wurden)
+[[+Rezepte:Check files]] (Überpfüfen ob eine Datei entsprechenden Suffixes oder Prefixes hat)
+[[+Rezepte:Count down]] (Herunterzählen)
+[[+Rezepte:Fortschrittsbalken]] (Ein Fortschrittsbalken in einer Schleife)
+[[+Rezepte:Create conf]] (Erstellen einer Xml Konfigurationsdatei)
+[[+Rezepte:Integer Test]] (Testen ob ein Parameter ein Integer ist)
