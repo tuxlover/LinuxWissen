@@ -24,7 +24,7 @@ Created Montag 18 April 2011
 //cut -d' '-f3 meinedatei //
 
 
-**tr <s1> <s2> **→ tauschen aller Zeichen <s1> durch <s2> in einem Datenstrom
+**tr <s1> <s2> < <Inputfile> > <Outputfile> **→ tauschen aller Zeichen <s1> durch <s2> in einem Datenstrom
 **-d <s1> **→ löschen anstelle von austauschen der Zeichen <s1> 
 **-c **→ ersetzen der Zeichen die nicht in <s1> durch <s2>
 **-s **→ mehrere Zeichen <s1> durch ein einzelnes <s2> ersetzen

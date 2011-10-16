@@ -31,7 +31,7 @@ Created Freitag 15 April 2011
 [[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]]
 
 ===== Überprüfen ob ein Kommando ein Buildin oder ein externer Befehl ist =====
-**type <Befehlsname> **→ gibt an ob ein Befehl ein Buildin oder ein externer Befehl ist
+**type <Befehlsname> **→ gibt an ob ein Befehl ein Buildin, Alias  oder ein externer Befehl ist
                                         → mögliche Rückgabewerte: hashed, Pfad/zu/bin, is Shell buildin, is aliased to ...
 
 ===== Hashing =====

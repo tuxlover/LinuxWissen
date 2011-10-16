@@ -6,9 +6,9 @@ Creation-Date: 2011-04-19T15:53:51+02:00
 Created Dienstag 19 April 2011
 
 ===== Rechte Oktal =====
-r = 4
-w = 2
-x = 1
+r = 4 → lesen
+w = 2 → schreiben
+x = 1  → ausführen/öffnen von Verzeichnissen
 
 Bei regulären Dateien:
 t = 1ugo  → Sticky Bit

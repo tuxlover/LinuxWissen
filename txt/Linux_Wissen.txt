@@ -11,7 +11,7 @@ neuer als die Textversion. Derzeit befindet sie sich aber noch in Bearbeitung.
 Jedes Kapitel (ehemals eingleitet durch ===) wird in Unterkapitel (ehemals __) eingeteilt.
 
 Befehle werden **fett** hervorgehoben.
-Beispielkonfiguratione werden so
+Beispielkonfigurationen werden so
 
 ++++
 //kursiv//
@@ -37,4 +37,5 @@ Aufzählungen und Fakten werden durch
 
 Verweise werden nun innerhalb des Wikis gelinkt und sind so schneller auffindbar.
 
-In zzz Undokumentiert werden Programme nur gelistet die im Wiki erwähnt wurden aber bisher nicht Dokumentiert sind
+In zzz Undokumentiert werden Programme nur gelistet die im Wiki erwähnt wurden aber bisher nicht Dokumentiert sind oder in Zukunft noch dokumentiert werden.
+

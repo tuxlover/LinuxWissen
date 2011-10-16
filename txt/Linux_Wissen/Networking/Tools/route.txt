@@ -15,7 +15,7 @@ Der Router komuniziert mit anderen in seiner unmittelbaren Umgebung befindlichen
 und kann so anhand vorgegebener Parameter den für sich günstigsten Weg heraussuchen. Erfordert die Installation
 von Routing Daemons wie **routed **oder **gated**
 
-**route add [-net|-host] <Ziel> [netmask <Netzmaske>] [gw <Gateway] [reject] [dev <Interface>]**
+**route add [-net|-host] <Ziel> [netmask <Netzmaske>] [gw <Gateway> [reject] [dev <Interface>]**
 → hinzufügen einer Route
 → wird reject Schlüsselwort benutzt, wird eine Blokade an dieser Stelle eingerichtet
 

@@ -8,6 +8,8 @@ Created Dienstag 19 April 2011
 * Linux/Unix teilt Zugriffsrechte in User Groups und Others (Rest der Welt) ein
 * jeder Teilnehmen ist einer primären Gruppe und mehren sekundären Gruppe zugeordnet
 * Jede Datei hat entsprechend Rechte zugewiesen für User Groups und Others (Rest der Welt)
+* Siehe auch 
+[[Dateien verwalten:Zugriffsrechte]]
 
 ===== Nachrichten an alle Benutzer senden =====
 **wall [<Datei>] **→ schickt eine Nachricht an alle Nutzer von StdIn

@@ -103,166 +103,99 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Freitag 15 April 2011<br>
-</p>
-
-<p>
-BASH → Pfad zur Binärdatei der aktuellen Shell<br>
-</p>
-
-<p>
-BASH_SUBSHELL → Indikator für die Tiefe der Subshellverschachtlelung, 0 bedeutet keine Subshell, 1 in der ersten Subshell 					 usw. <br>
-</p>
-
-<p>
-BASHPID → PID der aktuell aufgerufenen Bash Shell<br>
-</p>
-
-<p>
-BASH_VERSION → Version der aktuellen bash<br>
-</p>
-
-<p>
-DIRSTACK → Der Wert des Verezeichnis Stack ( <a href="../../../Dateien_verwalten/Durch_Verzeichnisse_bewegen.html" title="Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen">Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen</a> )<br>
-</p>
-
-<p>
+				<a href="../../../Dateien_verwalten/Durch_Verzeichnisse_bewegen.html" title="Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen">Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen</a> )<br>
+<br>
 EDITOR → Der Standardeditor (vi, vim, emacs, pico, nano)<br>
-</p>
-
-<p>
+<br>
 EUID → effektive UID<br>
-</p>
-
-<p>
+<br>
 FUNCNAME → Name der aktuell aufgerufenen Funktion<br>
                    →  <u>Hinweis</u>: function () {echo FUNCNAME}; function<br>
 <a href="../../../Systemprogrammierung/Shellscripting/Funktion.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Funktion">Linux Wissen:Systemprogrammierung:Shellscripting:Funktion</a><br>
-</p>
-
-<p>
+<br>
 GROUPS → Gruppenzugehörigkeit des momentanen Benutzers<br>
-</p>
-
-<p>
+<br>
 ----<br>
 HISTFILE → Umgebungsvariable die auf die Datei verweist in der bash seine history ablegt<br>
-</p>
-
-<p>
+<br>
 HISTSIZE → Größe der in der History gemerkten Befehle<br>
-</p>
-
-<p>
+<br>
 HISTFILESIZE → Größe der in der Datei bash seine history anlegt <br>
+<br>
+HISTIGNORE → Eine durch : getrennte Liste von Befehlen oder Mustern die nicht in der History auftauchen sollen<br>
+<em>Besipiel:</em>
+<em>HISTIGNORE="su *":"sudo *"</em><br>
+<br>
+HISTTIMEFORMAT → Eine date Konforme formatierung die benutzt wird um zusätzlich anzuzeigen, wann welcher Befehl ausgegegen wurde<br>
+<a href="../../../Systemzeit/date.html" title="Linux Wissen:Systemzeit:date">Linux Wissen:Systemzeit:date</a>
+<em>Beisspiel:</em>
+<em>HISTTIMEFORMAT="%F-%M-%S --&gt;"</em><br>
 ----<br>
  <a href="../History.html" title="Linux Wissen:Shell:Bash:History">Linux Wissen:Shell:Bash:History</a><br>
-</p>
-
-<p>
+<br>
 HOME → Heimatverzeichnis des momentanen Benutzers<br>
-</p>
-
-<p>
+<br>
 HOSTNAME → Name des Hostes des aktuellen Systems <br>
-</p>
-
-<p>
+<br>
 HOSTTYPE → identifiziert den Typ der Hardware auf dem die Bash ausgeführt wird<br>
-</p>
-
-<p>
+<br>
 IFS → Internal Filed Seperator (Interner Zeichentrenner, standard ist $)<br>
           <u>Hinweis:</u> <strong>echo</strong> $<strong>IFS</strong>|<strong>cat</strong> -<strong>A</strong> → gibt den Wert von IFS aus<br>
-</p>
+<br>
+<em>Besipiel:</em>
+<em>+++</em>
+<em>#!/bin/bash</em>
+<em>#passwd_line.sh</em>
+<em>#Description: Illustration of IFS</em>
+<em>line="root:x:0:0:root:/root:/bin/bash" </em>
+<em>oldIFS=$IFS; </em>
+<em>IFS=":" </em>
+<em>count=0; </em>
+<em>for item in $line; </em>
+<em>do </em>
 
-<p>
-<em>Besipiel:</em><br>
+<em>[ $count -eq 0 ]  &amp;&amp; user=$item; </em>
+<em>[ $count -eq 6 ]  &amp;&amp; shell=$item; </em>
+<em>let count++ </em>
+<em>done; </em>
+<em>IFS=$oldIFS </em>
+<em>echo $user\'s shell is $shell;</em>
 <em>+++</em><br>
-<em>#!/bin/bash</em><br>
-<em>#passwd_line.sh</em><br>
-<em>#Description: Illustration of IFS</em><br>
-<em>line="root:x:0:0:root:/root:/bin/bash" </em><br>
-<em>oldIFS=$IFS; </em><br>
-<em>IFS=":" </em><br>
-<em>count=0; </em><br>
-<em>for item in $line; </em><br>
-<em>do </em><br>
-</p>
-
-<p>
-<em>[ $count -eq 0 ]  &amp;&amp; user=$item; </em><br>
-<em>[ $count -eq 6 ]  &amp;&amp; shell=$item; </em><br>
-<em>let count++ </em><br>
-<em>done; </em><br>
-<em>IFS=$oldIFS </em><br>
-<em>echo $user\'s shell is $shell;</em><br>
-<em>+++</em><br>
-</p>
-
-<p>
+<br>
 LINENO → verweist auf die aktuelle Anzahl der Zeilen der Bash in einem Shellscript<br>
              → verweist auf die aktuelle Anzahl der Zeilen der bash im Terminalemulator<br>
-</p>
-
-<p>
+<br>
 OLDPWD → zuletzt in der aktuellen Shell/Subshell aufgerufenes Verzeichnis<br>
-</p>
-
-<p>
+<br>
 OSTYPE → Typ des Betriebssystems<br>
-</p>
-
-<p>
+<br>
 PATH → Pfade durch : getrennt in der in der Shell nach ausführbaren Dateien gesucht wird<br>
          → <em>Bsp: /usr/lib/mpi/gcc/openmpi/bin:/home/l1zard/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/usr/lib/jvm/jre/bin:/usr/lib/mit/bin:/usr/lib/mit/sbin</em><br>
-</p>
-
-<p>
+<br>
 PIPESTATUS → exit Status der letzten fg Pipe<br>
-</p>
-
-<p>
+<br>
 PPID → Prozessid des Elternprozess der Shell<br>
         → In einer Subshell ist es PID der abhängigen Elternshell<br>
         → in Shellscripten die PID der Shell in der das Script gestartet wurde<br>
-</p>
-
-<p>
+<br>
 PROMPT_COMMAND → ist diese Varibale gestzte kann sie einen Befehlt enthalten der vor dem Setzen des Prompts PS1<br>
                                      ausgeführt wird<br>
-</p>
-
-<p>
+<br>
 PS1 → erstes Promptzeichen<br>
-</p>
-
-<p>
+<br>
 PS2 → zweites Promptzeichen<br>
-</p>
-
-<p>
+<br>
 PS3 → Drittes Promptzeichen. Wird angezeigt wenn in einer <strong>select  </strong>Schleife genutzt<br>
 <a href="../../../Systemprogrammierung/Shellscripting/select.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:select">Linux Wissen:Systemprogrammierung:Shellscripting:select</a><br>
-</p>
-
-<p>
+<br>
 PS4 → viertes Promptzeichen. Wird angezeigt wen <strong>set -x </strong>verwendet wird <br>
 <a href="../Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash">Linux Wissen:Shell:Bash:Optionen für die Bash</a><br>
-</p>
-
-<p>
+<br>
 SECONDS → Anzahl der Sekunden die eine Shell | Shellscript gelaufen ist  <br>
-</p>
-
-<p>
+<br>
 SHLVL → gibt die Tiefe der Verschachtelung der Shell an<br>
-</p>
-
-<p>
+<br>
 UID → UID des Nutzers der die Shell | das Script zuletzt aufgerufen hat<br>
-</p>
 
 
 			<!-- End wiki content -->
