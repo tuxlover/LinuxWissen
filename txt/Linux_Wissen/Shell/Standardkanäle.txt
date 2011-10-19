@@ -12,10 +12,18 @@ Created Montag 18 April 2011
 **3,...** → weiter Dateidiskriptoren
 
 ===== Umleitungsoperatoren =====
-**> **→ Umlenkung von Standardausgabe
-**>> **→ Umlenkung der Standardausgabe, dabei anhängen nicht überschreiben
-**2> **→ Umlenken von StdErr 
-**&> **→ Umlenken von StdtOut und StdErr 
+**> Datei.txt **→ Umlenkung von Standardausgabe
+**>> Datei.txt  **→ Umlenkung der Standardausgabe, dabei anhängen nicht überschreiben
+**2> Datei.txt **→ Umlenken von StdErr 
+**&> Datei.txt**→ Umlenken von StdtOut und StdErr 
+**< Datei.txt **→ StdIn wird von Datei.txt eingelesen
+**>|Datei.txt → **erzwingt die Umleitung, auch wenn noclobber als Option in Bash gesetzt wurde ( [[Bash:Optionen für die Bash]])
+**>N|Datei.txt **→ erzwingt die Umleitung auch wenn noclobber als Option in Bash gesetzt wurde
+**<< EOF **→ Label für Here Dokumente
+**N>&{M} **→ anhängen der Ausgabe von Diskriptor N an StdOut oder an Diskriptor M
+**N<&{M} **→ anhängen der Ausgabe der Eingabe von Diskriptor M and StdtOut oder an Diskriptor N
+**{N}<&- **→ StdIn oder Eingabe von Diskriptor N schließen
+**{N}>&-** → StdOut oder Ausgabe von Diskriptor N schließen
 
 **:> <Datei> **→ dasselbe wie **cat /dev/null > <Datei>**
 **<Befehl> > <Datei> **→ Ausgabe in Datei umlenken
@@ -25,6 +33,8 @@ Created Montag 18 April 2011
 ** <Befehl> >> <Datei> **→ Ausgabe an <Datei> anhängen
 **<Befehl> < <Datei> **→ Programm liest eingabe aus <Datei>
 **<Befehl> 3&1 1> output 2>&3** → Standardausgabe wird in die Datei output gelenkt und der Inhalt von Datei output in die Standardfehlerausgabe
+**{  <Befehl1> <Befehl2> ... <BefehlN> } > <Output.txt> **→ Die Augabe der Befhele in {} an <Outout.txt> senden
+__Hinweis: zwischen den { }  muss ein Leerzeichen sehen__
 
 === Achtung!: ===
 <Befehl> 2>&1 > <Datei> leitet __nicht__ in die <Datei> um

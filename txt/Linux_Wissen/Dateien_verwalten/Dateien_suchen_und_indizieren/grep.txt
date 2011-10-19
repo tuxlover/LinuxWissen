@@ -14,6 +14,7 @@ Created Montag 18 April 2011
 **-c **→ nur die Anzahl der auf das Suchmuster passenden Dateien ausgeben
 **-i **→ ignoriere Groß- und Kleinschreibung
 **-n **→ in welcher Zeile wurde der Ausdruck gefunden
+**-l **→ Ausgeben der Dateien ohne den passenden String auszugebenzg
 **-A N** → gebe N Zeilen vor passenden Muster und das Muster selber aus
 **-B N **→ gebe N Zeilen nach passenden Muster und das Muster selber aus
 **-C N **→ gebe N Zeilen zwischen passenden Muster aus

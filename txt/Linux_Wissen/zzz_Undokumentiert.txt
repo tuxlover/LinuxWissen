@@ -22,7 +22,6 @@ Created Donnerstag 21 April 2011
 [ ] sar
 [ ] git push -u origin master
 [ ] pydoc <suchbegriff>
-[ ] printf
 [ ] aide
 [ ] logsurfer
 [ ] lsof
@@ -31,6 +30,7 @@ Created Donnerstag 21 April 2011
 [ ] netconfig
 [ ] IGMP
 [ ] filter und muster für rsync
+[ ] mkisofs
 
 === cool hacks ===
 +++

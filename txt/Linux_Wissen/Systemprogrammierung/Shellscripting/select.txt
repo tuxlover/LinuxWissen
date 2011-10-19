@@ -8,22 +8,26 @@ Created Mittwoch 27 April 2011
 * **select **präsentiert eine Auswahl mit einer Zahl
 * Wird Zahl eingegeben, wird <Befehlsliste> für die auswahl  ausgeführt
 * **select **muss mit einer **break **oder **continue **Anweisung beendet werden
+* Antworten werden in der **REPLY** Variablen abgelegt
+* Die Ausgabe wird nach StdErr (!!!) geschrieben
 
-++
+//++//
 //select <VARIABLE> in [Liste der Möglichen Antworten]//
 //        do//
 //                <Befehlsliste>//
 //        done//
-++
+//++//
 
 //Beispiel://
-++
+//++//
 //PS3="Choose: "//
 //select i in a b c quit//
 // do //
 // [ $i = "quit" ]  && exit 0//
-// echo "You chose $i"//
+// echo "You chose $REPLY) $i"//
+//break//
 //done//
-++
+//++//
 → solange nicht quit eingegeben wird, wird immer wieder gefragt
 
+__Hinweis: Es muss immer eine Möglichkeit geben das Programm zu beenden.  Vergessen sie nicht __**break** __zu verwenden.__

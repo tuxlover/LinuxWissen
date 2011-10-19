@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-18T02:01:07+02:00
+
+====== AreWeInteractive ======
+Created Dienstag 18 Oktober 2011
+
+//are_we_interactive()//
+//{//
+//case "$-" in//
+	//*i*) #Aktion für interaktive Shell//
+	//;;//
+	//*) #Aktion für nichtinteraktive Shell//
+//esac//
+//}//

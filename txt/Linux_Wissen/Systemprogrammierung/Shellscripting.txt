@@ -128,7 +128,7 @@ __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 [[Linux Wissen:Systemprogrammierung:Shellscripting:tput]]
 
 ==== Script mit Optionen steuern ====
-* Mit dem Buildin **getopts **''lassen sich Optionen in einem Script imlementieren''
+* Mit dem Buildin **getopts **''lassen sich Optionen in einem Script implementieren''
 [[Linux Wissen:Systemprogrammierung:Shellscripting:getopts]]
 
 ===== Eine Menuauswahl mit select erstellen =====
@@ -143,7 +143,7 @@ __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 [[Linux Wissen:Systemprogrammierung:Shellscripting:dialog]]
 
 ===== Rezepte =====
-[[+Rezepte:Am I  Root]] (Überprüfen ob der Auführende über Rootrechte verfügt)
+[[+Rezepte:Am I  Root]] (Überprüfen ob der Ausführende über Rootrechte verfügt)
 [[+Rezepte:Taken User]] (Überprüfen ob ein Nutzername schon exisitert)
 [[+Rezepte:Please Enter]] (Nutzer Zwingen eine Eingabe zu tätigen)
 [[+Rezepte:Would you rather like]] (Nutzer vor einer Entscheidungsfrage stellen)
@@ -156,3 +156,6 @@ __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 [[+Rezepte:Fortschrittsbalken]] (Ein Fortschrittsbalken in einer Schleife)
 [[+Rezepte:Create conf]] (Erstellen einer Xml Konfigurationsdatei)
 [[+Rezepte:Integer Test]] (Testen ob ein Parameter ein Integer ist)
+[[+Rezepte:AreWeInteractive]] (Testen ob die bash interaktiv läuft oder nicht und entsprechende zuweisung von Anweisungen)
+[[+Rezepte:SelectYourWeapon]] (Eine Auswahltliste erstellen)
+[[+Rezepte:Daemon]] (Ein Script als Daemon laufen lassen)

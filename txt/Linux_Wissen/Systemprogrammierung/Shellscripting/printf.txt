@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-18T03:10:43+02:00
+
+====== printf ======
+Created Dienstag 18 Oktober 2011
+
+* Formatierung der Ausgabe
+* Verbesserung zum **echo **Buildin
+
+**printf  <FormatString> <Parameter>**
+
+	**<FormatString>**
+		**\" **→ Doppelte Anführungszeichen
+		**\a **→ Alarm
+		** \b **→ Backspace
+
+		**\n **→ New Line
+		**\r **→ Cariage Return
+		**\t **→ Horizontaler Tab
+		**\v → **Vertikaler Tab
+		
+		
+		

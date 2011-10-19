@@ -27,5 +27,9 @@ Created Donnerstag 21 April 2011
 **ulimit -S -u 100 **→ weiches Maximum von 100 Prozessen
 **ulimit -H -v 50000 **→ nicht mehr als 50 MB virtuellen Speicher verwenden
 
+//Beispiel://
+//Coredump ausschalten//
+//ulimit -H -c 0 - -//
+
 */etc/security/limits.conf
 [[Linux Wissen:FHS:etc:security++limits.conf]]

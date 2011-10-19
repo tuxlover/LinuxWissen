@@ -84,6 +84,7 @@
 <li><a href="./Funktion.html" title="Funktion">Funktion</a></li>
 <li><a href="./getopts.html" title="getopts">getopts</a></li>
 <li><a href="./Here-Dokumente.html" title="Here-Dokumente">Here-Dokumente</a></li>
+<li><a href="./printf.html" title="printf">printf</a></li>
 <li><a href="./read.html" title="read">read</a></li>
 <li><a href="./Rezepte.html" title="Rezepte">Rezepte</a></li>
 <li><a href="./Schleifen.html" title="Schleifen">Schleifen</a></li>
@@ -111,7 +112,41 @@ Created Dienstag 26 April 2011<br>
 </p>
 
 <p>
-<strong>test [ ]   (( ))</strong><br>
+**test [ ]   (( )) <a href="" title=" "> </a>**<br>
+</p>
+
+<h2>Pattern Matching</h2>
+<p>
+<ul>
+<li>Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, benutzt man die neueren <a href="" title=" "> </a> und der passende Ausdruck wird <strong>ohne </strong>"" angegeben</li>
+</ul>
+<em>Beispiel:</em><br>
+//if <a href="" title=" ${FILE} == *.tar.gz "> ${FILE} == *.tar.gz </a>//<br>
+<div style='padding-left: 30pt'>
+<em>then</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<em>tar xvfz $FILE</em><br>
+</div>
+<em>fi</em><br>
+</p>
+
+<p>
+<ul>
+<li>erweitertes Patternmatching kann aktivert werden indem man <strong>shopt -s </strong>benutzt, damit wir das sogenannte Globbing eingeschaltet</li>
+</ul>
+@( ... ) Nur ein einzelnes Vorkommen<br>
+*( ... ) Null oder mehr Vorkommen<br>
++( ... ) Ein oder mehr Vorkommen<br>
+?( ... ) Null oder ein Vorkommen<br>
+!( ... ) keine dieser Ausdrücke<br>
+</p>
+
+<h2>Reguläre Ausdrücke</h2>
+<p>
+<ul>
+<li>Der Vergelichsoperator für reguläre Ausdrücke ist <strong>=~ (siehe unten)</strong></li>
+</ul>
 </p>
 
 <h2>Arithmetische Tests</h2>
@@ -266,6 +301,11 @@ Created Dienstag 26 April 2011<br>
 <strong>test ALPHA != OMEGA</strong><br>
  →  0 falls ALPHA der Zeichenkette OMEGA nicht entspricht<br>
  →  1 sonst<br>
+</p>
+
+<p>
+<strong>test $ALPHA =~ &lt;Ausdruck&gt;</strong><br>
+→ entspcht $ALPHA dem angegebenen regulären Ausdruck<br>
 </p>
 
 <h2>Dateioperatoren Tests</h2>
@@ -426,7 +466,7 @@ Created Dienstag 26 April 2011<br>
 <h4>If Konstrukt mit logischer Bedingungsverknüpfung</h4>
 <p>
 ++<br>
-**if <a href="" title=""></a>**<br>
+<strong>if &lt;Ausdruck&gt;</strong><br>
 <strong>        then</strong><br>
 <strong>                &lt;Test gab Exitstatus 0 zurück&gt;</strong><br>
 <strong>        else</strong><br>

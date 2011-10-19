@@ -84,6 +84,7 @@
 <li><a href="./Funktion.html" title="Funktion">Funktion</a></li>
 <li><a href="./getopts.html" title="getopts">getopts</a></li>
 <li><a href="./Here-Dokumente.html" title="Here-Dokumente">Here-Dokumente</a></li>
+<li><a href="./printf.html" title="printf">printf</a></li>
 <li><a href="./read.html" title="read">read</a></li>
 <li><a href="./Rezepte.html" title="Rezepte">Rezepte</a></li>
 <li><strong>Schleifen</strong></li>
@@ -162,6 +163,8 @@ for f in *<br>
 <em>        done     </em><br>
 ++ <br>
 </p>
+
+
 
 <h4>while-Schleife</h4>
 <p>
@@ -251,6 +254,8 @@ for f in *<br>
 <p>
 <ul>
 <li>definiert ein Intervall von Zahlen mit einer optionalen Inkrementationsregel</li>
+<li>Es können auch Fließkommazahlen für die Beginn, Endpunkte und als Dekrement bzw. Inkrement genutzt werden</li>
+<li>Es können arithmetische Regeln für das Dekrement Inkrement genutzt werden</li>
 </ul>
 <strong>seq &lt;Beginn&gt; [&lt;Inkrement&gt;|&lt;Dekrement&gt;] &lt;Ende&gt;</strong><br>
 → Wird kein &lt;Inkrement&gt;|&lt;Dekrement&gt; angegeben wird 1 verwendet<br>
@@ -258,10 +263,16 @@ for f in *<br>
 <strong>-f format=FORMAT </strong>→ folgendes <strong>printf</strong> Format verwenden <strong>(missing link printf)</strong><br>
 </p>
 
+
 <p>
-<em>Beispiel:</em><br>
+<em>Beispiele:</em><br>
 <em>Mit seq eine einfache Zahlenfolge definieren</em><br>
 <em>for i in $(seq -s "--&gt;" 1 $((3*$i+1)) 100); do echo $i;done</em><br>
+</p>
+
+<p>
+<em>Gleitkommazahlenfolge</em><br>
+<em>for i in $(seq -s "--&gt;" 0 0.1 2.0);do echo $i; done</em><br>
 </p>
 
 

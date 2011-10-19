@@ -9,6 +9,7 @@ Created Samstag 16 April 2011
 
 **mkdir <DIR> **→ Das Verzeichnis <DIR> anlegen
 **-p **→ erstelle auch Elternverzeichnis falls diese noch nicht existieren
+**-m **→ setzen der Berechtugungen für dieses Verzeichnis
 
 **rmdir <DIR> **→ das leere Verzeichnis <DIR> löschen
 **-p **→ lösche auch leere Ahnenverzeichnisse

@@ -23,6 +23,7 @@ do_ssomething()
 			//#optionen die im getopts kopf einen : folgen benötigen ein Argument//
 			//#die Variable OPTARG enthält als Wert das letzte Argument, das von getopts geparsed wurde//
 			//#die Variable OPTIND ist der Index des nächsten ARGUMENTS der von optind geparsed wird//
+			//#die Variable OPTERR enthält den Standardfehler falls eine falsche Option angegben wurde//
 //		esac//
 //	done//
 //shift $(($OPTIND - 1))	//

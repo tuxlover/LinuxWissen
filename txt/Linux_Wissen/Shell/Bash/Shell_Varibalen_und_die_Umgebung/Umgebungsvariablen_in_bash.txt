@@ -90,6 +90,8 @@ PPID → Prozessid des Elternprozess der Shell
 
 PROMPT_COMMAND → ist diese Varibale gestzte kann sie einen Befehlt enthalten der vor dem Setzen des Prompts PS1
                                      ausgeführt wird
+//Beispiel: //
+//PROMPT_COMMAND='history -a; history -n'//
 
 PS1 → erstes Promptzeichen
 

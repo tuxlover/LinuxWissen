@@ -41,3 +41,7 @@ __Hinweis: Eine Bibliothek mit Shellfunktionen anlegen. __
 
 **export -f <Name>**
 → exportieren einer Funktion <Name>
+
+**local VAR=<Wert>**
+→ erstellen einer Variablen die nur innerhalb dieser Funktion gesehen wird
+→ Diese Variable ist nur sichtbar für die Funktion und alle Ihre Kindprozesse

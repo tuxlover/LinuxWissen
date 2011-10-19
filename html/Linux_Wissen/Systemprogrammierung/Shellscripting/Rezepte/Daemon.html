@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Rc-Script</title>
+		<title>Daemon</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Rc-Script</h1>
+									Daemon</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -93,14 +93,14 @@
 <li><a href="./Check_files.html" title="Check files">Check files</a></li>
 <li><a href="./Count_down.html" title="Count down">Count down</a></li>
 <li><a href="./Create_conf.html" title="Create conf">Create conf</a></li>
-<li><a href="./Daemon.html" title="Daemon">Daemon</a></li>
+<li><strong>Daemon</strong></li>
 <li><a href="./Fortschrittsbalken.html" title="Fortschrittsbalken">Fortschrittsbalken</a></li>
 <li><a href="./Have_we_Argruments.html" title="Have we Argruments">Have we Argruments</a></li>
 <li><a href="./Integer_Test.html" title="Integer Test">Integer Test</a></li>
 <li><a href="./Is_this_Programm_installed.html" title="Is this Programm installed">Is this Programm installed</a></li>
 <li><a href="./On_Battery.html" title="On Battery">On Battery</a></li>
 <li><a href="./Please_Enter.html" title="Please Enter">Please Enter</a></li>
-<li><strong>Rc-Script</strong></li>
+<li><a href="./Rc-Script.html" title="Rc-Script">Rc-Script</a></li>
 <li><a href="./SelectYourWeapon.html" title="SelectYourWeapon">SelectYourWeapon</a></li>
 <li><a href="./Taken_User.html" title="Taken User">Taken User</a></li>
 <li><a href="./Would_you_rather_like.html" title="Would you rather like">Would you rather like</a></li>
@@ -126,49 +126,79 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Montag 10 Oktober 2011<br>
+Created Dienstag 18 Oktober 2011<br>
 </p>
 
 <p>
-<em>This startscript should be used as an example</em><br>
-<em>### BEGIN INIT INFO</em><br>
-<em># Provides:          daemon</em><br>
-<em># Required-Start:    $earlysyslog</em><br>
-<em># Required-Stop:     $networ</em><br>
-<em># Default-Start:     3 5</em><br>
-<em># Default-Stop:      0 6</em><br>
-<em># Short-Description: Selbsterstellter Service</em><br>
-<em># Description:       Lange Beschreibung</em><br>
-<em>### END INIT INFO</em><br>
+<ul>
+<li>Manchmal will man ein Script als Damon laufen lassen</li>
+</ul>
 </p>
 
 <p>
-<em>start_daemon()</em><br>
-<em>{</em><br>
-<em>....</em><br>
+<strong>nohup Daemon.sh 0&lt;&amp;- 1&gt;/dev/null 2&gt;&amp;1 &amp;</strong><br>
+<strong>nohup Daemon.sh &gt;&gt;/var/log/daemon.log &amp; 2&gt;&amp;1 &lt;&amp;- &amp;</strong><br>
+</p>
+
+<p>
+<ul>
+<li>nohup sagt dem Script dass es beim Schließen oder Abmelden der aktuellen Sitzung weiterlaufen soll</li>
+<li>StdOut und StdErr werden entweder nach /dev/null oder ein Logfile (/var/log/daemon.log) geschickt</li>
+<li>Der Diskriptor für StdIn wird geschlossen (0&lt;&amp;-|&lt;&amp;-)</li>
+<li>als letztes wird das Programm als eigenständiger Kindprozess geforked, dieses geschieht mittels &amp; </li>
+</ul>
+<a href="../../../Shell/Standardkan%C3%A4le.html" title="Linux Wissen:Shell:Standardkanäle">Linux Wissen:Shell:Standardkanäle</a><br>
+</p>
+
+<p>
+++<br>
+<em># redirect tty fds to /dev/null</em><br>
+<em>redirect-std() {</em><br>
+//    <a href="" title=" -t 0 "> -t 0 </a> &amp;&amp; exec &lt;/dev/null//<br>
+//    <a href="" title=" -t 1 "> -t 1 </a> &amp;&amp; exec &gt;/dev/null//<br>
+//    <a href="" title=" -t 2 "> -t 2 </a> &amp;&amp; exec 2&gt;/dev/null//<br>
 <em>}</em><br>
 </p>
-
+ 
 <p>
-<em>stop_daemon()</em><br>
-<em>{</em><br>
-<em>....</em><br>
+<em># close all non-std* fds</em><br>
+<em>close-fds() {</em><br>
+<em>    eval exec {3..255}\&gt;\&amp;-</em><br>
 <em>}</em><br>
 </p>
-
+ 
 <p>
-<em>case "$1" in</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"start") start_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"stop") stop_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"status") ps  -A|grep daemon &amp;&amp; echo "running" || echo "unused"</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"restart") start_daemon &amp;&amp; stop_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"reload") killall -1 daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>esac</em><br>
+<em># full daemonization of external command with setsid</em><br>
+<em>daemonize() {</em><br>
+<em>    (                   # 1. fork</em><br>
+<em>        redirect-std    # 2.1. redirect stdin/stdout/stderr before setsid</em><br>
+<em>        cd /            # 3. ensure cwd isn't a mounted fs</em><br>
+<em>        # umask 0       # 4. umask (leave this to caller)</em><br>
+<em>        close-fds       # 5. close unneeded fds</em><br>
+<em>        exec setsid "$@"</em><br>
+<em>    ) &amp;</em><br>
+<em>}</em><br>
+</p>
+ 
+<p>
+<em># daemonize without setsid, keeps the child in the jobs table</em><br>
+<em>daemonize-job() {</em><br>
+<em>    (                   # 1. fork</em><br>
+<em>        redirect-std    # 2.2.1. redirect stdin/stdout/stderr</em><br>
+<em>        trap '' 1 2     # 2.2.2. guard against HUP and INT (in child)</em><br>
+<em>        cd /            # 3. ensure cwd isn't a mounted fs</em><br>
+<em>        # umask 0       # 4. umask (leave this to caller)</em><br>
+<em>        close-fds       # 5. close unneeded fds</em><br>
+//        if <a href="" title=" $(type -t &quot;$1&quot;) != file "> $(type -t "$1") != file </a>; then//<br>
+<em>            "$@"</em><br>
+<em>        else</em><br>
+<em>            exec "$@"</em><br>
+<em>        fi</em><br>
+<em>    ) &amp;</em><br>
+<em>    disown -h $!       # 2.2.3. guard against HUP (in parent)</em><br>
+<em>}</em><br>
+++<br>
+→ falls man das Script von vornherein als Daemon anlegen will<br>
 </p>
 
 
@@ -177,7 +207,7 @@ Created Montag 10 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../../../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-19T01:46:44+02:00
+
+====== rbash ======
+Created Mittwoch 19 Oktober 2011
+
+* ist das gleiche wie **bash -r** und kann beim vergeben eines Nutzers als Standardshell gesetzt werden
+[[Linux Wissen:Benutzer und Gruppen:Benutzerkonten verwalten]]
+//useradd -m -s /usr/bin/rbash -d /home/eingesperrt -g gast gast//
+
+* Wechseln innerhalb des Arbeitsverzeichnis in andere Verzeichnisse ist nicht möglich
+* Umleiten von Standardkanälen ist nicht erlaubt
+* Den folgenden Umgebungsvariablenn können keine Werte hinzugefügt oder deren Werte verändert werden
+	//SHELL, PATH, ENV, BASH_ENV//
+* Befehle die mit einem / anfangen dürfe nicht mehr ausgeführt werden
+* das **exec** Buildin darf nicht mehr verwendet werden
+* Importieren von Funktionen ist verboten
+* Ausführen von Programmen die vom **command **buildin aufgerufen werden dürfen -p nicht mehr ausführen
+* ausführen des **enable **Buildin ist verboten
+* abschalten des Restricted Shell modus mit **+r** ist nicht mehr erlaubt
+__Hinweis: Wenn in bash durch set +r diese Option gesetzt wurde, kann die Shell nur noch beendet werden__

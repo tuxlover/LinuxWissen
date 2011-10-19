@@ -50,6 +50,7 @@ __Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vorde
 * **killall**
 * **nohup**
 [[Linux Wissen:Prozessverwaltung:kill]]
+[[Systemprogrammierung:Shellscripting:Rezepte:Daemon]]
 
 ===== Prozessprioritäten =====
 * jeder Prozess wird mit einem nice Wert gestartet

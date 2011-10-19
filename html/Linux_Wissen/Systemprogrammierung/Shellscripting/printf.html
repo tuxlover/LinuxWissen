@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>select</title>
+		<title>printf</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									select</h1>
+									printf</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -84,11 +84,11 @@
 <li><a href="./Funktion.html" title="Funktion">Funktion</a></li>
 <li><a href="./getopts.html" title="getopts">getopts</a></li>
 <li><a href="./Here-Dokumente.html" title="Here-Dokumente">Here-Dokumente</a></li>
-<li><a href="./printf.html" title="printf">printf</a></li>
+<li><strong>printf</strong></li>
 <li><a href="./read.html" title="read">read</a></li>
 <li><a href="./Rezepte.html" title="Rezepte">Rezepte</a></li>
 <li><a href="./Schleifen.html" title="Schleifen">Schleifen</a></li>
-<li><strong>select</strong></li>
+<li><a href="./select.html" title="select">select</a></li>
 <li><a href="./Test.html" title="Test">Test</a></li>
 <li><a href="./tput.html" title="tput">tput</a></li>
 <li><a href="./Variablen_zuweisen.html" title="Variablen zuweisen">Variablen zuweisen</a></li>
@@ -108,45 +108,42 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Mittwoch 27 April 2011<br>
+Created Dienstag 18 Oktober 2011<br>
 </p>
 
 <p>
 <ul>
-<li><strong>select </strong>präsentiert eine Auswahl mit einer Zahl</li>
-<li>Wird Zahl eingegeben, wird &lt;Befehlsliste&gt; für die auswahl  ausgeführt</li>
-<li><strong>select </strong>muss mit einer <strong>break </strong>oder <strong>continue </strong>Anweisung beendet werden</li>
-<li>Antworten werden in der <strong>REPLY</strong> Variablen abgelegt</li>
-<li>Die Ausgabe wird nach StdErr (!!!) geschrieben</li>
+<li>Formatierung der Ausgabe</li>
+<li>Verbesserung zum <strong>echo </strong>Buildin</li>
 </ul>
 </p>
 
 <p>
-<em>++</em><br>
-<em>select &lt;VARIABLE&gt; in [Liste der Möglichen Antworten]</em><br>
-<em>        do</em><br>
-<em>                &lt;Befehlsliste&gt;</em><br>
-<em>        done</em><br>
-<em>++</em><br>
+<strong>printf  &lt;FormatString&gt; &lt;Parameter&gt;</strong><br>
 </p>
 
 <p>
-<em>Beispiel:</em><br>
-<em>++</em><br>
-<em>PS3="Choose: "</em><br>
-<em>select i in a b c quit</em><br>
-<em> do </em><br>
-<em> [ $i = "quit" ]  &amp;&amp; exit 0</em><br>
-<em> echo "You chose $REPLY) $i"</em><br>
-<em>break</em><br>
-<em>done</em><br>
-<em>++</em><br>
-→ solange nicht quit eingegeben wird, wird immer wieder gefragt<br>
+<div style='padding-left: 30pt'>
+<strong>&lt;FormatString&gt;</strong><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>\" </strong>→ Doppelte Anführungszeichen<br>
+<strong>\a </strong>→ Alarm<br>
+<strong> \b </strong>→ Backspace<br>
+</div>
 </p>
 
 <p>
-<u>Hinweis: Es muss immer eine Möglichkeit geben das Programm zu beenden.  Vergessen sie nicht </u><strong>break</strong> <u>zu verwenden.</u><br>
+<div style='padding-left: 60pt'>
+<strong>\n </strong>→ New Line<br>
+<strong>\r </strong>→ Cariage Return<br>
+<strong>\t </strong>→ Horizontaler Tab<br>
+<strong>\v → </strong>Vertikaler Tab<br>
+</div>
 </p>
+		
+		
+		
 
 
 			<!-- End wiki content -->
@@ -154,7 +151,7 @@ Created Mittwoch 27 April 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html'>Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a></li>
+				Backlinks:
 			<!-- End Backlinks -->
 			</div>
 		</div>

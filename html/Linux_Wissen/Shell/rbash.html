@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>kill</title>
+		<title>rbash</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									kill</h1>
+									rbash</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -64,17 +64,19 @@
 <li><a href="../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
 <li><a href="../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
 <li><a href="../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
-<ul>
-<li><strong>kill</strong></li>
-<li><a href="./Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste">Magic Sys-Abf Taste</a></li>
-<li><a href="./Nice_Werte_kontrollieren.html" title="Nice Werte kontrollieren">Nice Werte kontrollieren</a></li>
-<li><a href="./ps.html" title="ps">ps</a></li>
-<li><a href="./strace.html" title="strace">strace</a></li>
-<li><a href="./top.html" title="top">top</a></li>
-<li><a href="./ulimit.html" title="ulimit">ulimit</a></li>
-</ul>
 <li><a href="../root.html" title="root">root</a></li>
 <li><a href="../Shell.html" title="Shell">Shell</a></li>
+<ul>
+<li><a href="./Arten_der_Shell.html" title="Arten der Shell">Arten der Shell</a></li>
+<li><a href="./Aufrufen_der_Shell.html" title="Aufrufen der Shell">Aufrufen der Shell</a></li>
+<li><a href="./Bash.html" title="Bash">Bash</a></li>
+<li><a href="./Befehle.html" title="Befehle">Befehle</a></li>
+<li><a href="./Jobkontrolle.html" title="Jobkontrolle">Jobkontrolle</a></li>
+<li><strong>rbash</strong></li>
+<li><a href="./Shells_und_Subshells_beenden.html" title="Shells und Subshells beenden">Shells und Subshells beenden</a></li>
+<li><a href="./Standardkan%C3%A4le.html" title="Standardkanäle">Standardkanäle</a></li>
+<li><a href="./Wildcards.html" title="Wildcards">Wildcards</a></li>
+</ul>
 <li><a href="../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
 <li><a href="../SQL.html" title="SQL">SQL</a></li>
 <li><a href="../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
@@ -92,59 +94,36 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Donnerstag 21 April 2011<br>
+Created Mittwoch 19 Oktober 2011<br>
 </p>
 
 <p>
-<strong>kill -&lt;SIGNR&gt;| &lt;SIGNAL&gt; %&lt;JOBNR&gt; | &lt;PID&gt;</strong> → sendet &lt;SIGNAL&gt; an Prozess mit der &lt;PID&gt; oder &lt;JOBNR&gt;<br>
+<ul>
+<li>ist das gleiche wie <strong>bash -r</strong> und kann beim vergeben eines Nutzers als Standardshell gesetzt werden</li>
+</ul>
+<a href="../Benutzer_und_Gruppen/Benutzerkonten_verwalten.html" title="Linux Wissen:Benutzer und Gruppen:Benutzerkonten verwalten">Linux Wissen:Benutzer und Gruppen:Benutzerkonten verwalten</a><br>
+<em>useradd -m -s /usr/bin/rbash -d /home/eingesperrt -g gast gast</em><br>
 </p>
 
 <p>
-Hinweis: kill -l listet alle die Signale auf über die Linux mit Prozessen kommunizieren kann<br>
-</p>
-
-<p>
-<em>&lt;SIGNAL&gt;	&lt;SIGNR&gt;	Beschreibung</em><br>
-SIGHUP		1			hangup: beende alle Prozesse die Kindprozesse der aktuellen Shell sind<br>
-SIGINT		2			interrupt: &lt;Strg+c&gt; den Prozess unterbrechen<br>
-SIGKILL		9			kill: beende Prozess ohne Rückfrage, offene Dateien werden nicht geschlossen<br>
-SIGTREM		15			terminate: beende Prozess,offene Dateien werden vorher geschlosseen<br>
-SIGCONT		18			continue: setze einen mit SIGSTOP angehaltenen Prozess fort<br>
-SIGTSTP		20			terminal stop: entspricht &lt;Strg+z&gt;<br>
-</p>
-
-<p>
-<em>&lt;PID&gt;</em><br>
-PID &gt; 0 → sende das &lt;SIGNAL&gt; an den Prozess mit der angegbenen PID<br>
-PID = 0 → sende das &lt;SIGNAL&gt; an alle Prozesse der gleichen Prozessgruppe wie der gesendete<br>
-PID &lt; -1 → sende das &lt;SIGNAL&gt; an die Prozessgruppe dessen Identifizierungsgruppe zur entsprechenden &lt;PID&gt; <br>
-<div style='padding-left: 60pt'>
-  gehören<br>
+<ul>
+<li>Wechseln innerhalb des Arbeitsverzeichnis in andere Verzeichnisse ist nicht möglich</li>
+<li>Umleiten von Standardkanälen ist nicht erlaubt</li>
+<li>Den folgenden Umgebungsvariablenn können keine Werte hinzugefügt oder deren Werte verändert werden</li>
+</ul>
+<div style='padding-left: 30pt'>
+<em>SHELL, PATH, ENV, BASH_ENV</em><br>
 </div>
-PID == -1 → sende das &lt;SIGNAL&gt; an alle Prozesse die dem aktuellen Benutzer gehören<br>
+<ul>
+<li>Befehle die mit einem / anfangen dürfe nicht mehr ausgeführt werden</li>
+<li>das <strong>exec</strong> Buildin darf nicht mehr verwendet werden</li>
+<li>Importieren von Funktionen ist verboten</li>
+<li>Ausführen von Programmen die vom <strong>command </strong>buildin aufgerufen werden dürfen -p nicht mehr ausführen</li>
+<li>ausführen des <strong>enable </strong>Buildin ist verboten</li>
+<li>abschalten des Restricted Shell modus mit <strong>+r</strong> ist nicht mehr erlaubt</li>
+</ul>
+<u>Hinweis: Wenn in bash durch set +r diese Option gesetzt wurde, kann die Shell nur noch beendet werden</u><br>
 </p>
-
-<p>
-<strong>killall &lt;SIGNAL&gt; &lt;NAME&gt; </strong>→ sende &lt;SIGNAL&gt; an alle Prozesse mit &lt;Name&gt;<br>
-<strong>-i </strong>→ frage vor durchführung nach<br>
-</p>
-
-<h4>Achtung:</h4>
-<p>
-<u>Unter BSD verwendet man killall um alle Prozesse zu beenden.</u><br>
-</p>
-
-<p>
-<u>Hinweis: </u>Es gilt<u> "exit Status" -128 = &lt;SIGNR&gt;</u><br>
-<a href="../Systemprogrammierung/Shellscripting/Exit_Status.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status">Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a><br>
-</p>
-
-<p>
-<strong>nohup &lt;Befehl&gt; </strong>→ &lt;Befehl&gt; wird auch nach dem beenden des Elternprozesses weiterausgeführt<br>
-                               → normalerweise wird dieser &lt;Befehl&gt; dann direkter Kindprozess des init Prozesses<br>
-                               → kann einen Zombie erzeugen<br>
-</p>
- 
 
 
 			<!-- End wiki content -->
@@ -152,7 +131,7 @@ PID == -1 → sende das &lt;SIGNAL&gt; an alle Prozesse die dem aktuellen Benutz
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Systemprotokollierung.html'>Linux Wissen:Systemprotokollierung</a></li>						<a href='../Shell/Jobkontrolle.html'>Linux Wissen:Shell:Jobkontrolle</a></li>						<a href='./ps.html'>Linux Wissen:Prozessverwaltung:ps</a></li>						<a href='./Magic_Sys-Abf_Taste.html'>Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste</a></li>						<a href='../Booten/Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>						<a href='../Booten/Init.html'>Linux Wissen:Booten:Init</a></li>						<a href='../FHS/etc/inetd.conf.html'>Linux Wissen:FHS:etc:inetd.conf</a></li>						<a href='../FHS/etc/xinetd.conf.html'>Linux Wissen:FHS:etc:xinetd.conf</a></li>						<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>
+				Backlinks:
 			<!-- End Backlinks -->
 			</div>
 		</div>

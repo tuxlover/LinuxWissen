@@ -72,6 +72,7 @@
 <li><a href="./Bash.html" title="Bash">Bash</a></li>
 <li><a href="./Befehle.html" title="Befehle">Befehle</a></li>
 <li><a href="./Jobkontrolle.html" title="Jobkontrolle">Jobkontrolle</a></li>
+<li><a href="./rbash.html" title="rbash">rbash</a></li>
 <li><a href="./Shells_und_Subshells_beenden.html" title="Shells und Subshells beenden">Shells und Subshells beenden</a></li>
 <li><strong>Standardkanäle</strong></li>
 <li><a href="./Wildcards.html" title="Wildcards">Wildcards</a></li>
@@ -106,10 +107,18 @@ Created Montag 18 April 2011<br>
 
 <h2>Umleitungsoperatoren</h2>
 <p>
-<strong>&gt; </strong>→ Umlenkung von Standardausgabe<br>
-<strong>&gt;&gt; </strong>→ Umlenkung der Standardausgabe, dabei anhängen nicht überschreiben<br>
-<strong>2&gt; </strong>→ Umlenken von StdErr <br>
-<strong>&amp;&gt; </strong>→ Umlenken von StdtOut und StdErr <br>
+<strong>&gt; Datei.txt </strong>→ Umlenkung von Standardausgabe<br>
+<strong>&gt;&gt; Datei.txt  </strong>→ Umlenkung der Standardausgabe, dabei anhängen nicht überschreiben<br>
+<strong>2&gt; Datei.txt </strong>→ Umlenken von StdErr <br>
+<strong>&amp;&gt; Datei.txt</strong>→ Umlenken von StdtOut und StdErr <br>
+<strong>&lt; Datei.txt </strong>→ StdIn wird von Datei.txt eingelesen<br>
+<strong>&gt;|Datei.txt → </strong>erzwingt die Umleitung, auch wenn noclobber als Option in Bash gesetzt wurde ( <a href="./Bash/Optionen_f%C3%BCr_die_Bash.html" title="Bash:Optionen für die Bash">Bash:Optionen für die Bash</a>)<br>
+<strong>&gt;N|Datei.txt </strong>→ erzwingt die Umleitung auch wenn noclobber als Option in Bash gesetzt wurde<br>
+<strong>&lt;&lt; EOF </strong>→ Label für Here Dokumente<br>
+<strong>N&gt;&amp;{M} </strong>→ anhängen der Ausgabe von Diskriptor N an StdOut oder an Diskriptor M<br>
+<strong>N&lt;&amp;{M} </strong>→ anhängen der Ausgabe der Eingabe von Diskriptor M and StdtOut oder an Diskriptor N<br>
+<strong>{N}&lt;&amp;- </strong>→ StdIn oder Eingabe von Diskriptor N schließen<br>
+<strong>{N}&gt;&amp;-</strong> → StdOut oder Ausgabe von Diskriptor N schließen<br>
 </p>
 
 <p>
@@ -121,6 +130,8 @@ Created Montag 18 April 2011<br>
 <strong> &lt;Befehl&gt; &gt;&gt; &lt;Datei&gt; </strong>→ Ausgabe an &lt;Datei&gt; anhängen<br>
 <strong>&lt;Befehl&gt; &lt; &lt;Datei&gt; </strong>→ Programm liest eingabe aus &lt;Datei&gt;<br>
 <strong>&lt;Befehl&gt; 3&amp;1 1&gt; output 2&gt;&amp;3</strong> → Standardausgabe wird in die Datei output gelenkt und der Inhalt von Datei output in die Standardfehlerausgabe<br>
+<strong>{  &lt;Befehl1&gt; &lt;Befehl2&gt; ... &lt;BefehlN&gt; } &gt; &lt;Output.txt&gt; </strong>→ Die Augabe der Befhele in {} an &lt;Outout.txt&gt; senden<br>
+<u>Hinweis: zwischen den { }  muss ein Leerzeichen sehen</u><br>
 </p>
 
 <h4>Achtung!:</h4>
@@ -182,7 +193,7 @@ Created Montag 18 April 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a></li>						<a href='../Dateien_verwalten/Dateien_betrachten.html'>Linux Wissen:Dateien verwalten:Dateien betrachten</a></li>						<a href='../Shell.html'>Linux Wissen:Shell</a></li>						<a href='../Dateien_verwalten/Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>
+				Backlinks:						<a href='../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a></li>						<a href='../Dateien_verwalten/Dateien_betrachten.html'>Linux Wissen:Dateien verwalten:Dateien betrachten</a></li>						<a href='../Shell.html'>Linux Wissen:Shell</a></li>						<a href='../Dateien_verwalten/Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>						<a href='../Systemprogrammierung/Shellscripting/Rezepte/Daemon.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte:Daemon</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

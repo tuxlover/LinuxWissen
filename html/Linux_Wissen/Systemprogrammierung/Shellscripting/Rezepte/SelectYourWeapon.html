@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Rc-Script</title>
+		<title>SelectYourWeapon</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Rc-Script</h1>
+									SelectYourWeapon</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -100,8 +100,8 @@
 <li><a href="./Is_this_Programm_installed.html" title="Is this Programm installed">Is this Programm installed</a></li>
 <li><a href="./On_Battery.html" title="On Battery">On Battery</a></li>
 <li><a href="./Please_Enter.html" title="Please Enter">Please Enter</a></li>
-<li><strong>Rc-Script</strong></li>
-<li><a href="./SelectYourWeapon.html" title="SelectYourWeapon">SelectYourWeapon</a></li>
+<li><a href="./Rc-Script.html" title="Rc-Script">Rc-Script</a></li>
+<li><strong>SelectYourWeapon</strong></li>
 <li><a href="./Taken_User.html" title="Taken User">Taken User</a></li>
 <li><a href="./Would_you_rather_like.html" title="Would you rather like">Would you rather like</a></li>
 </ul>
@@ -126,49 +126,62 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Montag 10 Oktober 2011<br>
+Created Dienstag 18 Oktober 2011<br>
 </p>
 
 <p>
-<em>This startscript should be used as an example</em><br>
-<em>### BEGIN INIT INFO</em><br>
-<em># Provides:          daemon</em><br>
-<em># Required-Start:    $earlysyslog</em><br>
-<em># Required-Stop:     $networ</em><br>
-<em># Default-Start:     3 5</em><br>
-<em># Default-Stop:      0 6</em><br>
-<em># Short-Description: Selbsterstellter Service</em><br>
-<em># Description:       Lange Beschreibung</em><br>
-<em>### END INIT INFO</em><br>
-</p>
-
-<p>
-<em>start_daemon()</em><br>
+<em>selcect_your_weapon()</em><br>
 <em>{</em><br>
-<em>....</em><br>
-<em>}</em><br>
+<em>WEAPON="done $(cat /etc/shells)"</em><br>
+<em>PS3="Welche Shell soll verwendet werden?"</em><br>
 </p>
 
 <p>
-<em>stop_daemon()</em><br>
-<em>{</em><br>
-<em>....</em><br>
+<em>until  [ "$shell" == "done"  ]</em><br>
+<div style='padding-left: 30pt'>
+<em>do</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<em>echo "Wählen Sie Ihre Shell"</em><br>
+<em>select shell in $WEAPON</em><br>
+</div>
+<div style='padding-left: 90pt'>
+<em>do</em><br>
+</div>
+<div style='padding-left: 120pt'>
+<em>if [ "$shell" == "done"  ]</em><br>
+</div>
+<div style='padding-left: 150pt'>
+<em>echo "finished"</em><br>
+<em>break</em><br>
+</div>
+<div style='padding-left: 120pt'>
+<em>elif [ !  -z "$shell"  ]</em><br>
+</div>
+<div style='padding-left: 150pt'>
+<em>then</em><br>
+</div>
+<div style='padding-left: 180pt'>
+<em>echo "Use the Shel l$REPLY )l $shell in future"</em><br>
+<em>chsh $shell</em><br>
+<em>break</em><br>
+</div>
+<div style='padding-left: 120pt'>
+<em>else </em><br>
+</div>
+<div style='padding-left: 150pt'>
+<em>echo "Not a correct selection."</em><br>
+</div>
+<div style='padding-left: 120pt'>
+<em>fi</em><br>
+</div>
+<div style='padding-left: 90pt'>
+<em>done</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<em>done</em><br>
+</div>
 <em>}</em><br>
-</p>
-
-<p>
-<em>case "$1" in</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"start") start_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"stop") stop_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"status") ps  -A|grep daemon &amp;&amp; echo "running" || echo "unused"</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"restart") start_daemon &amp;&amp; stop_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"reload") killall -1 daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>esac</em><br>
 </p>
 
 

@@ -5,7 +5,25 @@ Creation-Date: 2011-04-26T21:56:57+02:00
 ====== Test ======
 Created Dienstag 26 April 2011
 
-**test [ ]   (( ))**
+**test [ ]   (( )) [[ ]]**
+
+===== Pattern Matching =====
+• Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, benutzt man die neueren [[ ]] und der passende Ausdruck wird **ohne **"" angegeben
+//Beispiel://
+//if [[ ${FILE} == *.tar.gz ]]//
+	//then//
+		//tar xvfz $FILE//
+//fi//
+
+* erweitertes Patternmatching kann aktivert werden indem man **shopt -s **benutzt, damit wir das sogenannte Globbing eingeschaltet
+@( ... ) Nur ein einzelnes Vorkommen
+*( ... ) Null oder mehr Vorkommen
++( ... ) Ein oder mehr Vorkommen
+?( ... ) Null oder ein Vorkommen
+!( ... ) keine dieser Ausdrücke
+
+===== Reguläre Ausdrücke =====
+* Der Vergelichsoperator für reguläre Ausdrücke ist **=~ (siehe unten)**
 
 ===== Arithmetische Tests =====
 **test "$x" **
@@ -106,6 +124,9 @@ Created Dienstag 26 April 2011
 **test ALPHA != OMEGA**
  →  0 falls ALPHA der Zeichenkette OMEGA nicht entspricht
  →  1 sonst
+
+**test $ALPHA =~ <Ausdruck>**
+→ entspcht $ALPHA dem angegebenen regulären Ausdruck
 
 ===== Dateioperatoren Tests =====
 **test -[a|e|f|s|d|b|c|p|h|L|S|t|r|w|x|g|u|k|O|G|N] <Datei>** →  überprüft die Eigenschaft von Datei
@@ -218,7 +239,7 @@ Created Dienstag 26 April 2011
 
 === If Konstrukt mit logischer Bedingungsverknüpfung ===
 ++
-**if [[ Bedinung1 || Bedinggung2 && Bedingung3 ]]**
+**if <Ausdruck>**
 **        then**
 **                <Test gab Exitstatus 0 zurück>**
 **        else**
