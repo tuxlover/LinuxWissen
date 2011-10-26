@@ -15,3 +15,8 @@ Created Dienstag 19 April 2011
 **-j **→ mit bz2 komprimieren|dekomprimieren
 **-P **→ entferne keine / bei absoluten Pfaden
 **-C <Pfad> **→ beim entpacken ein anderen <Pfad> angeben 
+
+//Beispiele://
+//tar xvfz MeinBeispiel.tar.gz//
+//tar xvfj MeinBeispiel.tar.bz2//
+//tar tvf Mein Beispiel.tar//

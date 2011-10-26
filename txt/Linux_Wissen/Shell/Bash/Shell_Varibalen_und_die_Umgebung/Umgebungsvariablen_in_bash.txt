@@ -108,3 +108,5 @@ SECONDS → Anzahl der Sekunden die eine Shell | Shellscript gelaufen ist
 SHLVL → gibt die Tiefe der Verschachtelung der Shell an
 
 UID → UID des Nutzers der die Shell | das Script zuletzt aufgerufen hat
+
+SHELLOPTS → Array dass die Optionen angibt mit der Bash momentan läuft [[Bash:Optionen für die Bash]]

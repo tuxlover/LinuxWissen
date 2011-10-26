@@ -24,4 +24,4 @@ Created Freitag 15 April 2011
 		
 __Hinweis: Verwenden von -x und -o noexec zum debuggen von Scripts__
  
-  
+  __Hinweis: Mit __**echo $SHELLOPTS** kann man die Optionen anzeigen lassen mit der Bash momentan läuft.

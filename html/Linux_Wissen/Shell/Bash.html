@@ -100,90 +100,55 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Freitag 15 April 2011<br>
-</p>
-
-<h2>Reihenfolge in der nach .profile gesucht wird:</h2>
-<p>
+				<h2>Reihenfolge in der nach .profile gesucht wird:</h2><br>
 */etc/profile → *~/.bash_profile →  *~/.bash_login  → *~/.profile<br>
-</p>
-
-<p>
+<br>
 *~/.profile | */etc/profile → Einstellungen für Nutzer | Global für bash als Login Shell<br>
                                        → festlegen von   <strong>umask ( </strong><a href="../Dateien_verwalten/Zugriffsrechte/Umask.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask">Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask</a> )<br>
                                        → festlegen der Umgebungsvariablen und der Tastaturbelegung<br>
-</p>
-
-<p>
+<br>
 *~/.bashrc | */etc/bash.bashrc → bashspezifische Konfigurationseinstellungen für Nutzer | Global<br>
                                                  → setzen von Aliassen, Programmen und Funktionen die beim aufrufen der Shell<br>
                                                      ausgeführt werden soll.<br>
-</p>
-
-<p>
+<br>
 *~/.bash_logout → Befehle und Variablen und Funktionen die beim Abmelden aus bash ausgeführt werden sollen<br>
-</p>
-
+<br>
 <h2>Buildins</h2>
-<p>
-<ul>
 <li>Befehle die von der Shell selbst zur Verfügung gestellt werden</li>
 <li>werden immer von der Shell asugeführt</li>
-</ul>
 ----<br>
 <strong>clear </strong>→ löschen des angezeigten Bildschirminhalts, wie strg+l<br>
 ----<br>
-<a href="./Bash/Emacs_Modus.html" title="Linux Wissen:Shell:Bash:Emacs Modus">Linux Wissen:Shell:Bash:Emacs Modus</a><br>
-</p>
+<a href="./Bash/Emacs_Modus.html" title="Linux Wissen:Shell:Bash:Emacs Modus">Linux Wissen:Shell:Bash:Emacs Modus</a>
 
 <h2>Extern ausführbare Befehle</h2>
-<p>
-<ul>
 <li>Shell startet diese Programme durch Aufrufen ihres Namens aus PATH </li>
-</ul>
-<a href="./Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a><br>
-</p>
+<a href="./Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a>
 
 <h2>Überprüfen ob ein Kommando ein Buildin oder ein externer Befehl ist</h2>
-<p>
 <strong>type &lt;Befehlsname&gt; </strong>→ gibt an ob ein Befehl ein Buildin, Alias  oder ein externer Befehl ist<br>
                                         → mögliche Rückgabewerte: hashed, Pfad/zu/bin, is Shell buildin, is aliased to ...<br>
-</p>
-
+<strong>-a </strong>→ gibt alle passenden aus<br>
+<br>
 <h2>Hashing</h2>
-<p>
-<ul>
 <li>Abspeichern der bereits aufgerufenen Programme in einem Cache</li>
-</ul>
 <strong>hash </strong>→ anzeigen der gehashten Befehle<br>
 <strong>-r </strong>→ löschen des Hashcaches<br>
-</p>
-
+<br>
 <h2>Sonderzeichen</h2>
-<p>
-<ul>
 <li>Zeichen die für die Shell eine Sonderinterpretation haben müssen mindestens durch \ maskiert werden</li>
 <li>$&amp;(){}[]*?!&lt;&gt;"';\</li>
-</ul>
-</p>
 
 <h2>Maskieren</h2>
-<p>
 <strong>"mein text" </strong>→ "" maskiert Leerzeichen und Steuerzeichen aber keine Sonderzeichen<br>
 <strong>'mein $text' </strong>→ '' maskiert Steuerzeichen und Sonderzeichen <br>
 <strong>mein\ text </strong>→ maskiert ein einzelnes Steuerzeichen oder Sonderzeichen<br>
-</p>
-
-<p>
-<u>Hinweis: Um das \ Zeichen muss man es So \\ doppelt maskieren.</u><br>
-<u>Hinweis: mkdir "verzeichnis 22" erzeugt ein Verzeichnis mit Namen: verzeichnis 22</u><br>
-</p>
+<br>
+<u>Hinweis: Um das \ Zeichen muss man es So \\ doppelt maskieren.</u>
+<u>Hinweis: mkdir "verzeichnis 22" erzeugt ein Verzeichnis mit Namen: verzeichnis 22</u>
 
 <h2>Subshell einen Befehl mitgeben</h2>
-<p>
-<strong>bash -c &lt;Befehl&gt;</strong><br>
-</p>
+<strong>bash -c &lt;Befehl&gt;</strong>
 
 
 			<!-- End wiki content -->

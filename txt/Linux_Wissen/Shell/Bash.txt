@@ -33,6 +33,7 @@ Created Freitag 15 April 2011
 ===== Überprüfen ob ein Kommando ein Buildin oder ein externer Befehl ist =====
 **type <Befehlsname> **→ gibt an ob ein Befehl ein Buildin, Alias  oder ein externer Befehl ist
                                         → mögliche Rückgabewerte: hashed, Pfad/zu/bin, is Shell buildin, is aliased to ...
+**-a **→ gibt alle passenden aus
 
 ===== Hashing =====
 * Abspeichern der bereits aufgerufenen Programme in einem Cache

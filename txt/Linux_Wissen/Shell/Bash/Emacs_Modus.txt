@@ -22,7 +22,7 @@ Created Freitag 15 April 2011
 
 === Strg+r ===
 → Liste der zuletzt aufgerufenen Befehle inkrementell durchsuchen 
-                   mehrmaliger Aufrug der Tastenkombination durchsucht die history 
+                   mehrmaliger Aufruf der Tastenkombination durchsucht die history 
                    nach allen passenden Suchmustern
 
 === Strg+s ===

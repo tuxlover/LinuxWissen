@@ -170,3 +170,5 @@ __Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
 [[Linux Wissen:Drucken]]
 
 ***/etc/ssh **→ Dateien für das Cleintseitige und Serverseitige Konfigurieren von SSH
+
+***/etc/smb.conf **→ Samba Konfigurationsdatei

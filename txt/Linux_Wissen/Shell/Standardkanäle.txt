@@ -67,4 +67,5 @@ __Hinweis: zwischen den { }  muss ein Leerzeichen sehen__
 // find . -name "*.bak" -print0 | xargs -0 -I {} mv {} /tmp/trash//
 // find . -name "*.bak" -print0 | xargs -0 -I xxx mv xxx /tmp/trash//
 
-__Hinweis: beachte die Wirkung von set -o noclobber __[[Linux Wissen:Shell:Bash:Optionen für die Bash]]
+__Hinweis: beachte die Wirkung von set -o noclobber __
+[[Linux Wissen:Shell:Bash:Optionen für die Bash]]
