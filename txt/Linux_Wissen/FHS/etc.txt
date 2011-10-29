@@ -30,6 +30,9 @@ Created Dienstag 19 April 2011
 ***/etc/fstab **→ alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften
 [[Linux Wissen:FHS:etc:fstab]]
 
+***/etc/gitconfig **→ globale Konfigurationsdatei für Git
+[[+gitconfig]]
+
 ***/etc/lilo.conf **→ Konfiguratonsdatei für den Bootloader LILO
 [[Linux Wissen:FHS:etc:lilo.conf]]
 

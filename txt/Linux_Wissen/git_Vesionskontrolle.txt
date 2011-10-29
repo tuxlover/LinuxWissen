@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-29T15:34:57+02:00
+
+====== git Vesionskontrolle ======
+Created Samstag 29 Oktober 2011
+
+* erstellt Snapshots von Dateien und ihren Zuständen
+* Änderungen werden in Snapshots in einer Datenbank in sogenannten //Commits// gespeichert
+* jeder Snapshot (//Commit//) enthält nur die Dateien die geändert wurden, nicht geänderte Dateien werden nur gelinkt
+* Jede Datei wird in blobs mit einer SHA-1 Checksumme gespeichert und jede Veränderung in Git ist durch ihre Checksumme adressierbar
+
+==== 3 Stages ====
+//commited//** → **Veränderung wurde sicher in der Git Datenbank gespeichert
+modified → eine oder mehrere Veränderung wurde nicht in der Git Datenbank gespeichert und sind nicht von Git erfasst
+//staged// → eine oder mehere Veränderungen wurden von Git erfassst jedoch nicht in der Datenbank //commited//
+
+{{../../git_3stages.png}}
+
+
+===== Setup =====
+//*/etc/gitconfig // → globale Konfigurationsdatei für git
+//*~/.gitconfig// → nutzerspezifische Konfigurationen für git

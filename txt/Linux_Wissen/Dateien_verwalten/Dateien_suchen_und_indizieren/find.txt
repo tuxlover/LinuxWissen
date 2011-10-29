@@ -32,6 +32,8 @@ Created Montag 18 April 2011
 **-user|-group <Name> **→ nach Dateien suchen die dem Nutzer <Name> bzw. der Gruppe <Name> gehören
 **-size +|-<b|c|k|M|G> **→ suche nach Dateien mit mindest so groß wie|kleiner als in 512-byte blocks|bites|kilobites|	
 					      Megabites|Gigabites
+**-perm **→ Suchen nach Berechtigunen, es können Okatale Werte und Symbolische Werte als Argument übergeben werden
+**-executable **→ suchen nach Ausführbaren Dateien
 **-atime|-amin **→ Zugriffszeit in Tagen|Minuten
 **-mtime|mmin **→ Änderungszeit in Tagen|Minuten
 **-ctime|-cmin **→ letzte Änderung in Tagen|Minuten

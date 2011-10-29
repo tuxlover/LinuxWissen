@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-10-29T16:18:39+02:00
+
+====== gitconfig ======
+Created Samstag 29 Oktober 2011
+
++++
+//[user]//
+//    name = John Doe//
+//    email = john@doe.com//
+
+//[github]//
+name = John Doe
+email = johnny@project.org
+
+//[alias]//
+//    ci = commit -a//
+//    co = checkout//
+//    st = status -a//
+//    praise = blame//
+
+//[apply]//
+//    whitespace = strip//
+
+//[diff]//
+     tool = rdiff
+//    color = auto//
+//    rename = copy//
+
+//[pager]//
+//    color = true//
+
+//[status]//
+//    color = auto//
++++
+
+//[user] //
+//→ //globales festlegen von Nutzerinformationen die in jede Git Datenbank eingetragen werden
