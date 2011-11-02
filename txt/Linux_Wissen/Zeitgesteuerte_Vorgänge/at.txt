@@ -50,14 +50,17 @@ Created Mittwoch 20 Juli 2011
 
 //Beispiele://
 //Einen einfachen at-Jobs erstellen//
-//echo "/usr/local/bin/script.sh"|at 22:00 //
+''echo "/usr/local/bin/script.sh"|at 22:00 ''
 
 //Mit //**logger** //zu einem bestimmten Zeitpunkt eine Logdatei erstellen//
-//at +3 Minutes //
-//++//
-//>logger -f /var/log/messages "Zeit für einen Kaffe"//
-//>^D//
-//++ //
+'''
+at +3 Minutes 
+++
+>logger -f /var/log/messages "Zeit für einen Kaffe"
+>^D
+'''
+
+    ''++ ''
 
 == Ausgabeformat atq ==
 +++++++++++++++++++++++++++++++++++++++++++++++

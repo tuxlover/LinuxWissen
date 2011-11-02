@@ -6,34 +6,37 @@ Creation-Date: 2011-04-21T23:40:58+02:00
 Created Donnerstag 21 April 2011
 
 +++
-//#!/bin/bash//
+'''
+#!/bin/bash
 
-//double_swap()//
-//{//
-//SWAP_PART=$(tail -1 /proc/swaps | awk '{print $1}')//
+double_swap()
+{
+SWAP_PART=$(tail -1 /proc/swaps | awk '{print $1}')
 
-//dd if="$SWAP_PART" of=/swapfile//
-//swapon /swapfile//
+dd if="$SWAP_PART" of=/swapfile
+swapon /swapfile
 
-//return $?//
-//}//
+return $?
+}
 
 
-//remove_swapfile()//
-//{//
-//if [-f /swapfile ]//
-//        then//
-//                swapoff /swapfile//
-//                rm swapfile//
-//fi//
-//return $?//
-//}//
+remove_swapfile()
+{
+if [-f /swapfile ]
+        then
+                swapoff /swapfile
+                rm swapfile
+fi
+return $?
+}
 
-//case $1 in//
-//        on) double_swap || echo "failed"//
-//        ;;//
-//        off) remove_swapfile || echo "failed"//
-//esac//
+case $1 in
+        on) double_swap || echo "failed"
+        ;;
+        off) remove_swapfile || echo "failed"
+esac
 
-//exit 0//
+exit 0
+'''
+
 +++

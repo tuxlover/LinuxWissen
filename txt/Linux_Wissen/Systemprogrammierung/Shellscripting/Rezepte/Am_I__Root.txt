@@ -5,14 +5,24 @@ Creation-Date: 2011-10-09T07:05:08+02:00
 ====== Am I  Root ======
 Created Sonntag 09 Oktober 2011
 
-//#Überprüfen ob die richtigen Rechte vorhanden sind//
-//check_root()//
-//{//
-//if [ $UID -ne  0 ]//
-	//then//
-		//echo "Der Nutzer $USER verfügt nicht über die nötigen Rechte."//
-		//echo "medlen sie sich als root an."//
-	//else//
-		//echo "Sie sind root"//
-//fi//
-//}//
+'''
+#Überprüfen ob die richtigen Rechte vorhanden sind
+check_root()
+{
+if [ $UID -ne  0 ]
+'''
+	'''
+	then
+	'''
+		'''
+		echo "Der Nutzer $USER verfügt nicht über die nötigen Rechte."
+		echo "medlen sie sich als root an."
+		'''
+	'''
+	else
+	'''
+		'''
+		echo "Sie sind root"
+		fi
+		}
+		'''

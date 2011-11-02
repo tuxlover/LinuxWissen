@@ -134,13 +134,18 @@ Created Mittwoch 27 April 2011<br>
 <p>
 <em>Beispiel:</em><br>
 <em>++</em><br>
-<em>PS3="Choose: "</em><br>
-<em>select i in a b c quit</em><br>
-<em> do </em><br>
-<em> [ $i = "quit" ]  &amp;&amp; exit 0</em><br>
-<em> echo "You chose $REPLY) $i"</em><br>
-<em>break</em><br>
-<em>done</em><br>
+</p>
+<pre>
+PS3="Choose: "
+select i in a b c quit
+ do 
+ [ $i = "quit" ]  &amp;&amp; exit 0
+ echo "You chose $REPLY) $i"
+break
+done
+</pre>
+
+<p>
 <em>++</em><br>
 → solange nicht quit eingegeben wird, wird immer wieder gefragt<br>
 </p>
@@ -155,7 +160,7 @@ Created Mittwoch 27 April 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html'>Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a></li>
+				Backlinks:						<a href='../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html'>Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a></li>						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -5,27 +5,55 @@ Creation-Date: 2011-10-18T04:19:46+02:00
 ====== SelectYourWeapon ======
 Created Dienstag 18 Oktober 2011
 
-//selcect_your_weapon()//
-//{//
-//WEAPON="done $(cat /etc/shells)"//
-//PS3="Welche Shell soll verwendet werden?"//
+'''
+selcect_your_weapon()
+{
+WEAPON="done $(cat /etc/shells)"
+PS3="Welche Shell soll verwendet werden?"
 
-//until  [ "$shell" == "done"  ]//
-	//do//
-		//echo "Wählen Sie Ihre Shell"//
-		//select shell in $WEAPON//
-			//do//
-				//if [ "$shell" == "done"  ]//
-					//echo "finished"//
-					//break//
-				//elif [ !  -z "$shell"  ]//
-					//then//
-						//echo "Use the Shel l$REPLY )l $shell in future"//
-						//chsh $shell//
-						//break//
-				//else //
-					//echo "Not a correct selection."//
-				//fi//
-			//done//
-		//done//
-//}//
+until  [ "$shell" == "done"  ]
+'''
+	'''
+	do
+	'''
+		'''
+		echo "Wählen Sie Ihre Shell"
+		select shell in $WEAPON
+		'''
+			'''
+			do
+			'''
+				'''
+				if [ "$shell" == "done"  ]
+				'''
+					'''
+					echo "finished"
+					break
+					'''
+				'''
+				elif [ !  -z "$shell"  ]
+				'''
+					'''
+					then
+					'''
+						'''
+						echo "Use the Shel l$REPLY )l $shell in future"
+						chsh $shell
+						break
+						'''
+				'''
+				else 
+				'''
+					'''
+					echo "Not a correct selection."
+					'''
+				'''
+				fi
+				'''
+			'''
+			done
+			'''
+		'''
+		done
+		}
+		'''

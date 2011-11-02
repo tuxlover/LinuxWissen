@@ -22,10 +22,10 @@ davor und dahinter anfügt
 → paarweise Adressierung
 → Pattern Space
 //Beispiele://
-**sed  -e 's/^\<A.*\>/ /g' testfile **
+''sed  -e 's/^\<A.*\>/ /g' testfile ''
 → entfernt in allen Zeilen die mit einem A Beginnen das erste Wort
 
-**sed 's/[a-z]*/(&)' Datei**
+''sed 's/[a-z]*/(&)' Datei''
 → schließt jeden durch den Ausdruck [a-z]* gefundenen Muster in Klammern
 
 **G**
@@ -54,8 +54,8 @@ davor und dahinter anfügt
 Dies können durch die Ziffern \N im Holdspace und /N im Output Stream adressiert werden.
 
 //Beispiele://
-**sed 's/\(Muser1\) \(Muster2\)/\2 \1/'**
+''sed 's/\(Muser1\) \(Muster2\)/\2 \1/'''
 → vertauscht das erste Vorkommen von Muster1 mit dem von Muster2
 
-**sed 's/Muster/String/2g'**
+''sed 's/Muster/String/2g'''
 → nur jedes 2-te Vorkommen von Muster durch String ersetzen

@@ -31,11 +31,14 @@ __Hinweis: Die Endung .sh ist nicht notwendig wird aber beim Schreiben von Shell
 
 __Hinweis: Innerhalb eines Shellscript das Tracing nur für einen Block aktivieren:__
 ++
-//sh -x //
-//...//
-//CodeBlock//
+'''
+sh -x 
 ...
-//sh +x//
+CodeBlock
+...
+sh +x
+'''
+
 ++
 
 * Aufrufen von **-v **aktiviert verbosity, die Shell zeigt alle Befehle an, die durch das Script aufgerufen werden

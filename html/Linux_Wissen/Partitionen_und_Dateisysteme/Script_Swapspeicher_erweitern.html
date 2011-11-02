@@ -101,48 +101,41 @@ Created Donnerstag 21 April 2011<br>
 
 <p>
 +++<br>
-<em>#!/bin/bash</em><br>
 </p>
+<pre>
+#!/bin/bash
+
+double_swap()
+{
+SWAP_PART=$(tail -1 /proc/swaps | awk '{print $1}')
+
+dd if="$SWAP_PART" of=/swapfile
+swapon /swapfile
+
+return $?
+}
+
+
+remove_swapfile()
+{
+if [-f /swapfile ]
+        then
+                swapoff /swapfile
+                rm swapfile
+fi
+return $?
+}
+
+case $1 in
+        on) double_swap || echo "failed"
+        ;;
+        off) remove_swapfile || echo "failed"
+esac
+
+exit 0
+</pre>
 
 <p>
-<em>double_swap()</em><br>
-<em>{</em><br>
-<em>SWAP_PART=$(tail -1 /proc/swaps | awk '{print $1}')</em><br>
-</p>
-
-<p>
-<em>dd if="$SWAP_PART" of=/swapfile</em><br>
-<em>swapon /swapfile</em><br>
-</p>
-
-<p>
-<em>return $?</em><br>
-<em>}</em><br>
-</p>
-
-
-<p>
-<em>remove_swapfile()</em><br>
-<em>{</em><br>
-<em>if [-f /swapfile ]</em><br>
-<em>        then</em><br>
-<em>                swapoff /swapfile</em><br>
-<em>                rm swapfile</em><br>
-<em>fi</em><br>
-<em>return $?</em><br>
-<em>}</em><br>
-</p>
-
-<p>
-<em>case $1 in</em><br>
-<em>        on) double_swap || echo "failed"</em><br>
-<em>        ;;</em><br>
-<em>        off) remove_swapfile || echo "failed"</em><br>
-<em>esac</em><br>
-</p>
-
-<p>
-<em>exit 0</em><br>
 +++<br>
 </p>
 

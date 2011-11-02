@@ -130,40 +130,38 @@
 Created Sonntag 09 Oktober 2011<br>
 </p>
 
-<p>
-<em>#Manchmal ist es sinnvoll zu überprüfen ob der Computer Battery betrieben läuft</em><br>
-<em>is_on_bat()</em><br>
-<em>{</em><br>
-<em>if  [ -d /proc/acpi/battery ]</em><br>
-<div style='padding-left: 30pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>#pipefail wird fehler zuurückgeben wenn ein Programm in der Pipe exit Status &gt;0 zurückgibt</em><br>
-<em>set -o pipefile</em><br>
-<em>HAS_POWER=$(grep -r charging /proc/acpi/battery|tail -1|cut -d: -f3 || echo "no")</em><br>
-<em>set +o pipefail</em><br>
-</div>
-</p>
+<pre>
+#Manchmal ist es sinnvoll zu überprüfen ob der Computer Battery betrieben läuft
+is_on_bat()
+{
+if  [ -d /proc/acpi/battery ]
+</pre>
+<pre style='padding-left: 30pt'>
+then
+</pre>
+<pre style='padding-left: 60pt'>
+#pipefail wird fehler zuurückgeben wenn ein Programm in der Pipe exit Status &gt;0 zurückgibt
+set -o pipefile
+HAS_POWER=$(grep -r charging /proc/acpi/battery|tail -1|cut -d: -f3 || echo "no")
+set +o pipefail
 		
-<p>
-<div style='padding-left: 60pt'>
-<em>if [ $HAS_POWER == "discharging" ] </em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>echo "Ihr Laptop ist nicht an einer stabilen Stromversorgung angeschlossen"</em><br>
-<em>exit 1</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>fi</em><br>
-</div>
-<em>fi</em><br>
-<em>return 0 </em><br>
-<em>}</em><br>
-</p>
+</pre>
+<pre style='padding-left: 60pt'>
+if [ $HAS_POWER == "discharging" ] 
+</pre>
+<pre style='padding-left: 90pt'>
+then
+</pre>
+<pre style='padding-left: 120pt'>
+echo "Ihr Laptop ist nicht an einer stabilen Stromversorgung angeschlossen"
+exit 1
+</pre>
+<pre style='padding-left: 60pt'>
+fi
+fi
+return 0 
+}
+</pre>
 
 
 			<!-- End wiki content -->
@@ -171,7 +169,7 @@ Created Sonntag 09 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

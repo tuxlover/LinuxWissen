@@ -130,18 +130,18 @@
 Created Dienstag 18 Oktober 2011<br>
 </p>
 
-<p>
-<em>are_we_interactive()</em><br>
-<em>{</em><br>
-<em>case "$-" in</em><br>
-<div style='padding-left: 30pt'>
-<em>*i*) #Aktion für interaktive Shell</em><br>
-<em>;;</em><br>
-<em>*) #Aktion für nichtinteraktive Shell</em><br>
-</div>
-<em>esac</em><br>
-<em>}</em><br>
-</p>
+<pre>
+are_we_interactive()
+{
+case "$-" in
+</pre>
+<pre style='padding-left: 30pt'>
+*i*) #Aktion für interaktive Shell
+;;
+*) #Aktion für nichtinteraktive Shell
+esac
+}
+</pre>
 
 
 			<!-- End wiki content -->
@@ -149,7 +149,7 @@ Created Dienstag 18 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

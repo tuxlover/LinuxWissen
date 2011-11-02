@@ -16,8 +16,13 @@ Created Freitag 10 Juni 2011
 → benutze <Spalte1>,... für die Indizierung
 
 //Beispiel://
-//CREATE INDEX idx_person//
-	//ON person (Name,Vorname);//
+'''
+CREATE INDEX idx_person
+'''
+	'''
+	ON person (Name,Vorname);
+	'''
+
 
 **DROP INDEX <indexname>;**
 → löschen eines Index <indexname>

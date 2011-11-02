@@ -22,8 +22,8 @@ Created Freitag 23 September 2011
 
 //Beispielausgabe://
 +++
-**netstat -patune**
-**netstat -tulpen**
+''netstat -patune''
+''netstat -tulpen''
 //>> Proto Recv-Q  Send-Q  "Local Adress"  "Foreign Adress" State Benutzer Inode PID/Programm Name//
 
 **<Proto>** → Das benutzte Protokoll (tcp, udp, raw), dass vom Socket benutzt wird 

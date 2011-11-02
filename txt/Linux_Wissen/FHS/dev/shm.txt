@@ -5,7 +5,7 @@ Creation-Date: 2011-07-07T18:33:58+02:00
 ====== shm ======
 Created Donnerstag 07 Juli 2011
 
-* Konzept des Shared Memory zur Verwaltung von Speicherbereichen zwoischen Prozessen
-* EIn Programm erstellt dabei ein geschützten Speicherbereich unter */dev/shm/ 
-* dieser wird vom tmpfs Dateisystem verwaltet und kann daten zwischen dem programm und dessen genutzten prozessen bereitgestellt werden
+* Konzept des Shared Memory zur Verwaltung von Speicherbereichen zwischen Prozessen
+* Ein Programm erstellt dabei ein geschützten Speicherbereich unter */dev/shm/ 
+* dieser wird vom tmpfs Dateisystem verwaltet und kann Daten zwischen dem Programm und dessen genutzten prozessen bereitgestellt werden
 * das Dateisystem tmpfs nutzt nur virtuelle Speicherbereiche im Hauptspeicher

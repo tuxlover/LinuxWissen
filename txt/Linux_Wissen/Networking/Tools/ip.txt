@@ -38,11 +38,10 @@ Created Donnerstag 22 September 2011
 		**set down **→ ausschalten
 		
 //Beispiele://
-**ip addr add local <IP>/<CIDR> dev <ethN> brd + [label <ethN:r>]**
+''ip addr add local <IP>/<CIDR> dev <ethN> brd + [label <ethN:r>]''
 → Netzwerkkarte <ethN> die IP mit der entsprechenden Netzmaske zuweisen mit Broadcastadresse entsprechend der NetzID
 → Optional kann mit **label **noch ein Alias gesetzt werden
 
-**ip link set up dev <ethN>   → **NIC <ethN> hochfahren
-**ip link set down dev <ethN> **→ NIC <ethN> herunterafahren
-
-**ip a **→ auflisten aller NICs
+''ip link set up dev <ethN>''**   → **NIC <ethN> hochfahren
+''ip link set down dev <ethN>'' → NIC <ethN> herunterafahren
+''ip a'' → auflisten aller NICs

@@ -5,21 +5,35 @@ Creation-Date: 2011-10-09T20:42:34+02:00
 ====== On Battery ======
 Created Sonntag 09 Oktober 2011
 
-//#Manchmal ist es sinnvoll zu überprüfen ob der Computer Battery betrieben läuft//
-//is_on_bat()//
-//{//
-//if  [ -d /proc/acpi/battery ]//
-	//then//
-		//#pipefail wird fehler zuurückgeben wenn ein Programm in der Pipe exit Status >0 zurückgibt//
-		//set -o pipefile//
-		//HAS_POWER=$(grep -r charging /proc/acpi/battery|tail -1|cut -d: -f3 || echo "no")//
-		//set +o pipefail//
-		
-		//if [ $HAS_POWER == "discharging" ] //
-			//then//
-				//echo "Ihr Laptop ist nicht an einer stabilen Stromversorgung angeschlossen"//
-				//exit 1//
-		//fi//
-//fi//
-//return 0 //
-//}//
+'''
+#Manchmal ist es sinnvoll zu überprüfen ob der Computer Battery betrieben läuft
+is_on_bat()
+{
+if  [ -d /proc/acpi/battery ]
+'''
+	'''
+	then
+	'''
+		'''
+		#pipefail wird fehler zuurückgeben wenn ein Programm in der Pipe exit Status >0 zurückgibt
+		set -o pipefile
+		HAS_POWER=$(grep -r charging /proc/acpi/battery|tail -1|cut -d: -f3 || echo "no")
+		set +o pipefail
+				
+		'''
+		'''
+		if [ $HAS_POWER == "discharging" ] 
+		'''
+			'''
+			then
+			'''
+				'''
+				echo "Ihr Laptop ist nicht an einer stabilen Stromversorgung angeschlossen"
+				exit 1
+				'''
+		'''
+		fi
+		fi
+		return 0 
+		}
+		'''

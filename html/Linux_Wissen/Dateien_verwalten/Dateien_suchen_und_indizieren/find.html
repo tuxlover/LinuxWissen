@@ -174,66 +174,66 @@ s=Unix Domain Socket<br>
 <p>
 <em>Beispiele;</em><br>
 <u>Reguläre Dateien die mit my beginnen im aktuellen Verzeichnis finden und die erweiterte Dateiinformationen anzeigen</u><br>
-<em>find . -iname 'my*' -type f -ls</em><br>
+<code>find . -iname 'my*' -type f -ls</code><br>
 </p>
 
 <p>
 <u>Finde die Datei myfile und suche dabei nicht in proc und nicht in sys</u><br>
-<em>find / -path /proc -prune -o -path /sys -prune -o -type f -name myfile -print</em><br>
+<code>find / -path /proc -prune -o -path /sys -prune -o -type f -name myfile -print</code><br>
 </p>
 
 <p>
 <u>Alle Dateien MP3 und mp3 werden auf nur lesbar gesetzt</u><br>
-<em>find /home -iname "*.mp3" -type f -exec chmod 444 {} \;</em><br>
+<code>find /home -iname "*.mp3" -type f -exec chmod 444 {} \;</code><br>
 </p>
 
 <p>
 <u>Alle Dateien in Peters /home in ein tar.gz packen</u><br>
-<em>find /home/peter -type f -print0|xargs -0 tar cvfz peters_home.tar.gz</em><br>
+<code>find /home/peter -type f -print0|xargs -0 tar cvfz peters_home.tar.gz</code><br>
 </p>
 
 <p>
 <u>Liste alle Verzeichnisse und Dateien auf nach der Anzahl des Typs im aktuellen Verzeichnis</u><br>
-<em>find ${*-.}</em>  -type f |xargs file|awk -F, 'print $1'|awk '{$1=NULL;print $1}'|sort|uniq -c|sort -n<br>
+<code>find ${*-.}  -type f |xargs file|awk -F, 'print $1'|awk '{$1=NULL;print $1}'|sort|uniq -c|sort -n</code><br>
 </p>
 
 <p>
 <u>Finde und lösche leere Verzeichnisse</u><br>
-<em>find . -type d -empty -print0|xargs -0 rmdir</em><br>
-<em>find . -type d -empty -ok rmdir {} \;</em><br>
+<code>find . -type d -empty -print0|xargs -0 rmdir</code><br>
+<code>find . -type d -empty -ok rmdir {} \;</code><br>
 </p>
  
 <p>
 <u>Stelle die Verzeichnisstruktur als Baum dar</u><br>
-<em>find . -type d |sed -e "s/[^-][^\/]*\</em> |/g" -e "s/|\([^ ]\)/|-\1/"//<br>
+<code>find . -type d |sed -e "s/[^-][^\/]*\ |/g" -e "s/|\([^ ]\)/|-\1/"//</code><br>
 </p>
 
 <p>
 <u>Checksummen über alle Verzeichnisse berechnen die unter . liegen</u><br>
-<em>IFS=' ; for i in $(find . -type f -print); do sha256sum "$i"; done</em><br>
+<code>IFS=' ; for i in $(find . -type f -print); do sha256sum "$i"; done</code><br>
 </p>
 
 <p>
 <u>Finde und ersetze .php3 files in .php files</u><br>
-<em>find . -name "*.php3" | sed 's/\(.*\).php3$/mv "&amp;" "\1.php"/'|sh</em><br>
+<code>find . -name "*.php3" | sed 's/\(.*\).php3$/mv "&amp;" "\1.php"/'|sh</code><br>
 </p>
 
 <p>
 <u>konvertiere alle ASCII Dateien von DOS in Unix Style</u><br>
-<em>for f in $(find * -type f); do echo "dos2unix $f $f";done|sh</em><br>
+<code>for f in $(find * -type f); do echo "dos2unix $f $f";done|sh</code><br>
 </p>
 
 <p>
 <u>Finde das Verzeichnis dass den meisten Platz auf der Platte/Partition verbraucht</u><br>
-find . -type d |xargs du -ms |sort -g<br>
+<code>find . -type d |xargs du -ms |sort -g</code><br>
 </p>
 
 <p>
 <u>finde defekte symbolische Links</u><br>
-<em>for f in $(find / -type l -printf "%p \n"); do test -h "$f" &amp;&amp; test -e "$f" || echo ""$f" broken";done</em><br>
-<em>find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"</em><br>
-<em>find / -type l -exec ls -L {} \;|grep "nicht möglich"</em><br>
-<em>find  -L / -xtype l -ls  | awk 'NF &gt; 12 {print $11}' | sort -u</em><br>
+<code>for f in $(find / -type l -printf "%p \n"); do test -h "$f" &amp;&amp; test -e "$f" || echo ""$f" broken";done</code><br>
+<code>find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"</code><br>
+<code>find / -type l -exec ls -L {} \;|grep "nicht möglich"</code><br>
+<code>find  -L / -xtype l -ls  | awk 'NF &gt; 12 {print $11}' | sort -u</code><br>
 </p>
 
 

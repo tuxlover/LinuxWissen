@@ -129,7 +129,7 @@ Created Montag 25 April 2011<br>
  
 <p>
 <u>Hinweis: Benutzen der Option </u><strong>--justdb</strong><u> um einen zweiten Kernel zu installieren.</u><br>
-<strong>rpm -i --justdb kernel-default-2.26.3.i586.rm &amp;&amp; rpm -i &lt;mein-generierter-Kernel&gt;.rpm</strong><br>
+<code>rpm -i --justdb kernel-default-2.26.3.i586.rm &amp;&amp; rpm -i &lt;mein-generierter-Kernel&gt;.rpm</code><br>
 </p>
 
 <h4>löschen</h4>
@@ -159,11 +159,11 @@ Created Montag 25 April 2011<br>
 </p>
 
 <p>
-<u>Hinweis: Mit </u> r<strong>pm -qa --last|head -N</strong><u> kann man sich die letzten N installierten Pakete anzeigen lassen.</u><br>
+<u>Hinweis: Mit </u> <code>rpm -qa --last|head -N</code><u> kann man sich die letzten N installierten Pakete anzeigen lassen.</u><br>
 </p>
 
 <p>
-<u>Hinweis: Benutzen von </u><strong>rpm -qa --last|head -1|awk '{print $1}' |xargs rpm -e </strong><u>kann man das zuletzt installierte</u><br>
+<u>Hinweis: Benutzen von </u><code>rpm -qa --last|head -1|awk '{print $1}' |xargs rpm -e</code> <u>kann man das zuletzt installierte</u><br>
 <u>Paket deinstallieren, auch wenn man den Namen nicht mehr weiß.</u><br>
 </p>
 
@@ -252,7 +252,7 @@ installiert sein.<br>
 
 <p>
 <em>Beispiel:</em><br>
-<strong>rpmorphan -gui -exclude libdvdcss2 libdvdcss -guess-lib</strong><br>
+<code>rpmorphan -gui -exclude libdvdcss2 libdvdcss -guess-lib</code><br>
 </p>
 
 <p>

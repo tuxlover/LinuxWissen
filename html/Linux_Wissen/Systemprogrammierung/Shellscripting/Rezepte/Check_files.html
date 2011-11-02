@@ -130,51 +130,47 @@
 Created Montag 10 Oktober 2011<br>
 </p>
 
-<p>
-<em>check_files()</em><br>
-<em>{</em><br>
-<em>FILES=$(ls *)</em><br>
-</p>
+<pre>
+check_files()
+{
+FILES=$(ls *)
 
-<p>
-<em>for i in ${FILES[@]}</em><br>
-<div style='padding-left: 30pt'>
-<em>do</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>#Prefix einer Datei überprüfen</em><br>
-<em>if [ ! ${i/#\/pref*} ]</em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>echo "MATCH $i"</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>fi</em><br>
-</div>
-</p>
+for i in ${FILES[@]}
+</pre>
+<pre style='padding-left: 30pt'>
+do
+</pre>
+<pre style='padding-left: 60pt'>
+#Prefix einer Datei überprüfen
+if [ ! ${i/#\/pref*} ]
+</pre>
+<pre style='padding-left: 90pt'>
+then
+</pre>
+<pre style='padding-left: 120pt'>
+echo "MATCH $i"
+</pre>
+<pre style='padding-left: 60pt'>
+fi
 		
-<p>
-<div style='padding-left: 60pt'>
-<em>#Suffix einer Datei überprüfen</em><br>
-<em>if [  ${i##*. } != "suf" ]</em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>echo "MATCH $i" </em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>fi</em><br>
-</div>
-<div style='padding-left: 30pt'>
-<em>done</em><br>
-</div>
-<em>}</em><br>
-</p>
+</pre>
+<pre style='padding-left: 60pt'>
+#Suffix einer Datei überprüfen
+if [  ${i##*. } != "suf" ]
+</pre>
+<pre style='padding-left: 90pt'>
+then
+</pre>
+<pre style='padding-left: 120pt'>
+echo "MATCH $i" 
+</pre>
+<pre style='padding-left: 60pt'>
+fi
+</pre>
+<pre style='padding-left: 30pt'>
+done
+}
+</pre>
 
 
 			<!-- End wiki content -->
@@ -182,7 +178,7 @@ Created Montag 10 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

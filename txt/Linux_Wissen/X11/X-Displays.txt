@@ -17,8 +17,11 @@ DISPLAY=[<Rechner>]:<Nummer des X-Servers>[.Subdisplay]
 als Subdisplay konfiguriert, die wiederrum durchnummeriert werden
 
 //Beispiel://
+'''
 DISPLAY= localhost:2.0
 DISPLAY=remotepc:0.0
+'''
+
 
 
 >> :0.0 →  Server 1, Bildschirm 1 (tty7)

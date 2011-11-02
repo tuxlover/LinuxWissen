@@ -112,33 +112,33 @@ Created Donnerstag 28 April 2011<br>
 <p>
 <em>Definieren einer Tabelle:</em><br>
 ++<br>
-<em>CREATE TABLE &lt;Tabllenname&gt;</em><br>
-<em>(</em><br>
-<div style='padding-left: 30pt'>
-<em>ID(PRIMÄRSCHLÜSSEL)	INTEGER	PRIMARY KEY,</em><br>
-<em>ITEM1	DATENTYP,</em><br>
-<em>...</em><br>
-<em>...</em><br>
-<em>ITEM(N)	DATENTYP,</em><br>
-<em>CONSTRAINT &lt;Name_des_Contraint&gt; PRIMARY KEY (Name Bezugsspalte für Primary Key),</em><br>
-PRIMARY KEY (ITEM(S)) */definiert den Primärschlüssel /*,<br>
-FOREIGN KEY (ITEM(R)) */definiert den Fremdschlüssel /*<br>
-</div>
+</p>
+<pre>
+CREATE TABLE &lt;Tabllenname&gt;
+(
+</pre>
+<pre style='padding-left: 30pt'>
+ID(PRIMÄRSCHLÜSSEL)	INTEGER	PRIMARY KEY,
+ITEM1	DATENTYP,
+...
+...
+ITEM(N)	DATENTYP,
+CONSTRAINT &lt;Name_des_Contraint&gt; PRIMARY KEY (Name Bezugsspalte für Primary Key),
+PRIMARY KEY (ITEM(S)) */definiert den Primärschlüssel /*,
+FOREIGN KEY (ITEM(R)) */definiert den Fremdschlüssel /*
+</pre>
+<p>
 <em>);</em><br>
 ++<br>
+<br>
 </p>
-
 <h5>Einlesen des Schemas in eine Sqlite3 Datenbank</h5>
 <p>
 <strong>sqlite3 datenbank.db &lt; schema.sql</strong><br>
-</p>
-
-<p>
+<br>
 <strong>SOURCE &lt;Shema.sql&gt;</strong><br>
 → eine leeres Gerüsteschema importieren<br>
-</p>
-
-<p>
+<br>
 <strong>SOURCE &lt;Data.sql&gt;</strong><br>
 → die Daten der Datenbank in das Schma importieren<br>
 <a href="./Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a><br>

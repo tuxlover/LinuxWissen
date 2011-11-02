@@ -132,37 +132,195 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<em>[user]</em>
-<em>    name = John Doe</em>
-<em>    email = john@doe.com</em>
+				<p>
+Created Samstag 29 Oktober 2011<br>
+</p>
 
+<p>
+<ul>
+<li>Neben der globalen Konfigurationsdatei sollten Nutzerkonfigurationen stets unter *~/.gitconfig vorgenommen werden</li>
+<li>alle einstellungen können auch mit <strong>git config </strong>vorgenommen werden (<a href="../../git_Vesionskontrolle/git_config.html" title="Linux Wissen:git Vesionskontrolle:git config">Linux Wissen:git Vesionskontrolle:git config</a>)</li>
+</ul>
++++<br>
+<em>;Dies ist ein Kommentar</em><br>
+<em>[Section]</em><br>
+<div style='padding-left: 30pt'>
+<em>Variable = Wert</em><br>
+</div>
+</p>
+
+<p>
+;Einstellungen des Git Kern Moduls<br>
+<em>[core]</em><br>
+<div style='padding-left: 30pt'>
+<em>;ignoriere x bit</em><br>
+<em>filemode = false</em><br>
+<em>;ignoriere Groß und Kleinschreibung</em><br>
+<em>ignorecase = true</em><br>
+<em>;symbolischen Links folgen</em><br>
+<em>symlinks = true</em><br>
+<em>;immer nach workspace klonen</em><br>
+<em>worktree = ~/workspace</em><br>
+<em>excludefile = local_excludes</em><br>
+<em>editor = vim +"se nu"</em><br>
+<em>pager = cat -n</em><br>
+</div>
+</p>
+	
+<p>
+<em>;Nutzer</em><br>
+<em>[user]</em><br>
+<em>        name = John Doe</em><br>
+        <em>email</em> = <a href="mailto:john@doe.com" title="john@doe.com">john@doe.com</a><br>
+</p>
+
+<p>
 <em>[github]</em><br>
-name = John Doe<br>
-email = johnny@project.org<br>
-<br>
-<em>[alias]</em>
-<em>    ci = commit -a</em>
-<em>    co = checkout</em>
-<em>    st = status -a</em>
-<em>    praise = blame</em>
+<em>name = John Doe</em><br>
+<em>email</em> = <a href="mailto:johnny@project.org" title="johnny@project.org">johnny@project.org</a><br>
+</p>
 
-<em>[apply]</em>
-<em>    whitespace = strip</em>
+<p>
+<em>;Umgebung </em><br>
+<em>[alias]</em><br>
+<em>    ci = commit -a</em><br>
+<em>    co = checkout</em><br>
+<em>    st = status -a</em><br>
+<em>    praise = blame</em><br>
+<em>    unstage = git reset HEAD</em><br>
+<em>    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short</em><br>
+</p>
 
+<p>
+<em>[apply]</em><br>
+<em>    whitespace = strip</em><br>
+    <em>ignorewhitespace = false</em><br>
+</p>
+
+
+<p>
 <em>[diff]</em><br>
-     tool = rdiff<br>
-<em>    color = auto</em>
-<em>    rename = copy</em>
+<em>     tool = rdiff</em><br>
+    <em>;external = /usr/bin/colordiff -Naur</em><br>
+<em>    renames = copy</em><br>
+</p>
 
-<em>[pager]</em>
-<em>    color = true</em>
-
-<em>[status]</em>
+<p>
+<em>[status]</em><br>
 <em>    color = auto</em><br>
 +++<br>
-<br>
-<em>[user] </em>
-<em>→ </em>globales festlegen von Nutzerinformationen die in jede Git Datenbank eingetragen werden<br>
+<em>[core] </em><br>
+→ festlegen des generellen Verhaltens von git<br>
+<em>       filemode = true|false </em>→ wenn auf <em>false </em>gesetzt, wird das Executable Bit (x) ignoriert<br>
+</p>
+       
+<p>
+<div style='padding-left: 30pt'>
+<em>ignorecase = true|false</em> → Groß- und Kleinschreibung wird nicht beachtet| beachtet<br>
+</div>
+</p>
+       
+<p>
+<div style='padding-left: 30pt'>
+<em>symlinks = true|false</em> → symbolischen links folgen | bzw. nicht folgen<br>
+</div>
+</p>
+       
+<p>
+<div style='padding-left: 30pt'>
+<em>worktree = &lt;PATH&gt;</em> → Alle Pulls, checkouts und clones in dieses Verzeichnis<br>
+</div>
+</p>
+       
+<p>
+<div style='padding-left: 30pt'>
+<em>exludefile = &lt;Name&gt;</em> → Es wird in jedem Arbeitsverzeichnis nach dieser Datei gesucht, existiert diese werden alle Dateien die hier gelistet sind von git excludiert<br>
+</div>
+                                     → ausserdem wird die Datei selber sowie die globale Datei .gitignore immer ausgelesen<br>
+</p>
+      
+<p>
+<div style='padding-left: 30pt'>
+<em>editor = &lt;Wert&gt;  → </em>dieser Wert spezifiziert den Editor Befehl der beim Editieren von Informationen benutzt wird<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<em>pager = &lt;Wert&gt;</em> → dieser Wert spezifiziert den Pager Befehl der zum Anzeigen von Ausgaben wie logs benutzt werden soll<br>
+</div>
+</p>
+
+<p>
+<em>[user] </em><br>
+<em>→ </em>festlegen von Nutzerinformationen die in jede Git Datenbank eingetragen werden, wenn dieser angemeldete Nutzer mit git arbeitet<br>
+<div style='padding-left: 30pt'>
+<em>name = &lt;Name&gt; → </em>festlegen des Git Usernamens<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>email= &lt;Name@Domain&gt; → </em>festlegen des entsprechenden Nutzers<br>
+</div>
+</p>
+	
+<p>
+<em>[alias]</em><br>
+→ festlegen eigener Aliasse für git, wenn zum beispiel co = checkout als alias vergeben wurde, so ist <strong>git co</strong> dasselbe wie <strong>git checkout</strong> <br>
+</p>
+
+<p>
+<em>[apply]</em><br>
+→ festlegen wie git mit dem Patch Modul <strong>git apply </strong>umgehen soll<br>
+<div style='padding-left: 30pt'>
+<em>whitespace = strip|andere aktion </em>→ sagt git wie es beim patchen mit Leerzeichen umgehen soll.<br>
+</div>
+                                                       → <em>strip</em> sagt hier dass alle nachgestellten Leerzeichen ignoriert und entfernt werden<br>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>ignorewhitespace = false|change</em> → werden Leerzeichen beim Anwenden eines Patches mit <strong>git apply </strong>berücksichtigt oder nicht<br>
+                                                               → falls auf <em>change </em>gesetzt wird, werden Leerzeichen ignoriert (nicht immer sinnvoll z.B. Python)<br>
+</div>
+<div style='padding-left: 150pt'>
+                                 →  falls auf false werden leerzeichen nicht ignoriert und immer als Änderung angeshen<br>
+</div>
+</p>
+
+<p>
+<em>[diff]</em><br>
+→ festlegen wie git mit dem Diff Tool <strong>git diff </strong>umgehen soll<br>
+<div style='padding-left: 30pt'>
+<em>tool = &lt;Tool&gt; </em>→ dieses Tool für git diff verwenden, muss die Optionen des git internenen Tools beherschen<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>external = &lt;Tool&gt;</em> → diesen Befehl anstelle von git internen Tools verwenden<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>renames = true|false|copy </em>→ falls <em>true</em>, werden Umbenennungen von Dateien mit berücksichtigt<br>
+</div>
+<div style='padding-left: 180pt'>
+ → falls <em>false </em>werden Umbenennungen von Dateien nicht mit berücksichtigt<br>
+→ falls <em>copy</em> werden Umbennungen und kopieren von Dateien mit berücksichtigt<br>
+</div>
+</p>
+
+<p>
+<em>[status] </em><br>
+<em>→ </em>festlegen des Verhaltens von Modul <strong>git status</strong> <br>
+</p>
+
+<p>
+<u>Hinweis: man git-config gibt die volle Liste aller Konfigrations Sektionen und Variablen an</u><br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -170,7 +328,7 @@ email = johnny@project.org<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../git_Vesionskontrolle/git_config.html'>Linux Wissen:git Vesionskontrolle:git config</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

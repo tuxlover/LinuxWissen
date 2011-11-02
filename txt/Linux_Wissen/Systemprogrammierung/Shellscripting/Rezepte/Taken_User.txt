@@ -5,19 +5,34 @@ Creation-Date: 2011-10-09T07:14:01+02:00
 ====== Taken User ======
 Created Sonntag 09 Oktober 2011
 
-//#Überprüfe ob diese Nutzer berreits vergeben sind//
-//taken_users()//
-//{//
-//NEW_USER=$1//
-//TAKEN_USERS=$(cut -d: -f1 /etc/passwd)//
+'''
+#Überprüfe ob diese Nutzer berreits vergeben sind
+taken_users()
+{
+NEW_USER=$1
+TAKEN_USERS=$(cut -d: -f1 /etc/passwd)
 
-//for u_taken in ${TAKEN_USERS[@]}//
-	//do//
-		//if [ $u_taken == $NEW_USER  ]//
-			//then//
-				//echo "Benutzername bereits vergeben"//
-		//fi//
-	//done//
-//}//
+for u_taken in ${TAKEN_USERS[@]}
+'''
+	'''
+	do
+	'''
+		'''
+		if [ $u_taken == $NEW_USER  ]
+		'''
+			'''
+			then
+			'''
+				'''
+				echo "Benutzername bereits vergeben"
+				'''
+		'''
+		fi
+		'''
+	'''
+	done
+	}
+	'''
+
 
 → Respektive für /etc/group und und Gruppen, wenn zum Beispiel jeder Nutzer auch seine eigene Gruppe erhalten soll

@@ -5,15 +5,20 @@ Creation-Date: 2011-10-10T10:15:45+02:00
 ====== Count down ======
 Created Montag 10 Oktober 2011
 
+'''
 count_down()
 {
 i=10
 until [ $i -eq 0 ]
 do
+'''
+	'''
 	i=$((i -=1 ))
 	sleep 1
 	clear
 	echo $i
-done
-}
+	done
+	}
+	'''
+
 

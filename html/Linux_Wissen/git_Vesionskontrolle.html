@@ -58,6 +58,9 @@
 <li><a href="./FHS.html" title="FHS">FHS</a></li>
 <li><a href="./Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
 <li><strong>git Vesionskontrolle</strong></li>
+<ul>
+<li><a href="./git_Vesionskontrolle/git_config.html" title="git config">git config</a></li>
+</ul>
 <li><a href="./Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="./Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
 <li><a href="./Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
@@ -89,10 +92,11 @@ Created Samstag 29 Oktober 2011<br>
 
 <p>
 <ul>
+<li>DVCS (Distributed Version Control System) == Work offline push online</li>
 <li>erstellt Snapshots von Dateien und ihren Zuständen</li>
 <li>Änderungen werden in Snapshots in einer Datenbank in sogenannten <em>Commits</em> gespeichert</li>
 <li>jeder Snapshot (<em>Commit</em>) enthält nur die Dateien die geändert wurden, nicht geänderte Dateien werden nur gelinkt</li>
-<li>Jede Datei wird in blobs mit einer SHA-1 Checksumme gespeichert und jede Veränderung in Git ist durch ihre Checksumme adressierbar</li>
+<li>Jede Datei wird in blobs mit einer SHA-1 Checksumme gespeichert und jede Veränderung in Git ist durch ihre Checksumme in der Datenbank adressierbar</li>
 </ul>
 </p>
 
@@ -100,7 +104,7 @@ Created Samstag 29 Oktober 2011<br>
 <p>
 <em>commited</em><strong> → </strong>Veränderung wurde sicher in der Git Datenbank gespeichert<br>
 modified → eine oder mehrere Veränderung wurde nicht in der Git Datenbank gespeichert und sind nicht von Git erfasst<br>
-<em>staged</em> → eine oder mehere Veränderungen wurden von Git erfassst jedoch nicht in der Datenbank <em>commited</em><br>
+<em>staged</em> → eine oder mehere Veränderungen wurden von Git erfassst jedoch nicht in der Datenbank aufgenommen (<em>commited)</em><br>
 </p>
 
 <p>

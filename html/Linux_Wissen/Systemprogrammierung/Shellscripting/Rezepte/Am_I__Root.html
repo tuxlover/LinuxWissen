@@ -130,27 +130,27 @@
 Created Sonntag 09 Oktober 2011<br>
 </p>
 
-<p>
-<em>#Überprüfen ob die richtigen Rechte vorhanden sind</em><br>
-<em>check_root()</em><br>
-<em>{</em><br>
-<em>if [ $UID -ne  0 ]</em><br>
-<div style='padding-left: 30pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>echo "Der Nutzer $USER verfügt nicht über die nötigen Rechte."</em><br>
-<em>echo "medlen sie sich als root an."</em><br>
-</div>
-<div style='padding-left: 30pt'>
-<em>else</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>echo "Sie sind root"</em><br>
-</div>
-<em>fi</em><br>
-<em>}</em><br>
-</p>
+<pre>
+#Überprüfen ob die richtigen Rechte vorhanden sind
+check_root()
+{
+if [ $UID -ne  0 ]
+</pre>
+<pre style='padding-left: 30pt'>
+then
+</pre>
+<pre style='padding-left: 60pt'>
+echo "Der Nutzer $USER verfügt nicht über die nötigen Rechte."
+echo "medlen sie sich als root an."
+</pre>
+<pre style='padding-left: 30pt'>
+else
+</pre>
+<pre style='padding-left: 60pt'>
+echo "Sie sind root"
+fi
+}
+</pre>
 
 
 			<!-- End wiki content -->
@@ -158,7 +158,7 @@ Created Sonntag 09 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

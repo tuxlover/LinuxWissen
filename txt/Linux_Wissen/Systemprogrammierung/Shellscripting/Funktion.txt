@@ -26,15 +26,18 @@ __Hinweis: Eine Bibliothek mit Shellfunktionen anlegen. __
 (1) Eine Datei my_lib,sh anlegen die die gewünschten Funktionen enthalten
 (2) sourcen der Datei zu Beginn des Scripts
 ++
-//#!/bin/bash//
-//. my_lib.sh//
+'''
+#!/bin/bash
+. my_lib.sh
 ++   
 
-//Beispiel://
+Beispiel:
 ++
-//toupper()//
-//{//
-//echo $* | tr '[:upper:]' '[:lower:]'//
+toupper()
+{
+echo $* | tr '[:upper:]' '[:lower:]'
+'''
+
 //}//
 ++
 → Groß in Kleinbuchstaben konvertieren

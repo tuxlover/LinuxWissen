@@ -34,12 +34,15 @@ __Durch die Bedingungen wird der Datentyp zu einer neue Menge definiert__
 	
 //Beispiel://
 +++
-//CREATE DOMAIN u_mail//
-//AS VARCHAR(120)//
-//CHECK//
-//(//
-//VALUE CONTAINING @//
-//);//
+'''
+CREATE DOMAIN u_mail
+AS VARCHAR(120)
+CHECK
+(
+VALUE CONTAINING @
+);
+'''
+
 +++
 
 **VALUE LIKE <Muster>**

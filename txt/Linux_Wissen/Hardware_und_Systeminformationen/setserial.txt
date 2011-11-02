@@ -12,4 +12,4 @@ Created Sonntag 24 April 2011
 → Setzen einer Konfiguration für ein Serielles Terminal
 
 //Beispiel://
-**setserial /dev/ttyS0 port 0x3f8 irq 4 spd_vhi**
+''setserial /dev/ttyS0 port 0x3f8 irq 4 spd_vhi''

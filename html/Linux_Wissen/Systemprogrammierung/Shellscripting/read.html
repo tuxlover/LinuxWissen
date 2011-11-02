@@ -127,31 +127,31 @@ Created Mittwoch 27 April 2011<br>
 <p>
 <em>Beispiel:</em><br>
 ++<br>
-<em>read -e -n 1 -p "Abbrechen? (y/n)" ANSWER</em><br>
-<em>${ANSWER:="y"}</em><br>
 </p>
+<pre>
+read -e -n 1 -p "Abbrechen? (y/n)" ANSWER
+${ANSWER:="y"}
 
 
+while read -n 1 -p "Abbrechen (y/n)" ANSWER
+</pre>
+<pre style='padding-left: 30pt'>
+do
+                case $ANSWER in
+                        [yY]*) result=0; break
+                        ;;
+                        [nN]*) result=1; break
+                        ;;
+                        [jJ]*) result=0; break
+                        ;;
+                        *) echo "Bitte antworten Sie mit j(y) oder n"
+                esac
+        done
+</pre>
 <p>
-<em>while read -n 1 -p "Abbrechen (y/n)" ANSWER</em><br>
-<div style='padding-left: 30pt'>
-<em>do</em><br>
-</div>
-<em>                case $ANSWER in</em><br>
-<em>                        [yY]*) result=0; break</em><br>
-<em>                        ;;</em><br>
-<em>                        [nN]*) result=1; break</em><br>
-<em>                        ;;</em><br>
-<em>                        [jJ]*) result=0; break</em><br>
-<em>                        ;;</em><br>
-<em>                        *) echo "Bitte antworten Sie mit j(y) oder n"</em><br>
-<em>                esac</em><br>
-<em>        done</em><br>
 ++<br>
 → dem Benutzer eine Frage stelllen<br>
-</p>
-
-<p>
+<br>
 ++<br>
 <em>grep --line-buffered &lt;Muster&gt; &lt;Datei&gt; | while read line</em><br>
 <em>        do</em><br>
@@ -159,9 +159,9 @@ Created Mittwoch 27 April 2011<br>
 <em>        done</em><br>
 ++<br>
 → eingehendes Muster in einer Schleife verarbeiten<br>
+<br>
+<br>
 </p>
-
-
 
 
 			<!-- End wiki content -->

@@ -9,36 +9,36 @@ Created Donnerstag 28 April 2011
 [[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke]]
 
 === Zeilenabstände ===
-**sed G <Datei>**
+''sed G <Datei>''
 → doppelter Zeilenabstand, falls <Datei> Leerzeilen enthält
 
-** sed '/^$/d;G' <Datei>**
+'' sed '/^$/d;G' <Datei>''
 → doppelte Leerzeichen in <Datei> löschen
 → jeder Zeile folgt eine Leerzeile
 
-**sed 'G;G' <Datei>**
+''sed 'G;G' <Datei>''
 → jeder Zeile folgen 3 Leerzeilen
 
-**sed 'n;d' <Datei>**
+''sed 'n;d' <Datei>''
 → doppelten Zeilenabstand rückgängig machen, wenn jede 2. Zeile eine Leerzeile ist
 
-**sed '/<Ausdruck>/{x;p;x;}' <Datei>**
+''sed '/<Ausdruck>/{x;p;x;}' <Datei>''
 → füge eine Leerzeile //über// die Zeile in <Datei> ein, auf die <Ausdruck> passt
 
-**sed '/<Ausdruck>/G' <Datei>**
+''sed '/<Ausdruck>/G' <Datei>''
 → füge eine Leerzeile //unter// die Zeile in <Datei> ein, auf die <Ausdruck> passt
 
-**sed '/<Ausdruck>/{x;p;x;G;}' <Datei>**
+''sed '/<Ausdruck>/{x;p;x;G;}' <Datei>''
 → füge eine Leerzeile //unter //und //über //den Zeilen in <Datei> ein, auf die <Ausdruck> passt
 
 === Nummerierung ===
-**sed = <Datei> |sed 'N;s/\n/\t'**
+''sed = <Datei> |sed 'N;s/\n/\t'''
 → Nummeriere alle Zeilen Linksbündig
 
-** sed = <Datei> | sed 'N; s/^/     /; s/ *\(.\{6,\}\)\n/\1  /'**
+'' sed = <Datei> | sed 'N; s/^/     /; s/ *\(.\{6,\}\)\n/\1  /'''
 → nummeriere alle Zeilen rechtsbündig in linker Spalte
 
-** sed '/./=' <Datei> | sed '/./N; s/\n/ /'**
+'' sed '/./=' <Datei> | sed '/./N; s/\n/ /'''
 → nummeriere alle Zeilen mit Ausnahme von Leerzeilen
  
 **sed -n '$=' <Datei>**
@@ -46,16 +46,16 @@ Created Donnerstag 28 April 2011
 [[Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren]]
 
 === zwischen Dos und Unix konvertieren ===
-** sed 's/.$//' <Datei>    #DOS    **
-** sed 's/^M$//'  <Datei> #Bash**
+'' sed 's/.$//' <Datei>    #DOS    ''
+'' sed 's/^M$//'  <Datei> #Bash''
 → Annahme: Alle Zeilen enden mit CR/LF
 → Wandle DOS Zeilenvorschübe (CR/LF) in das Unix Format
 
-**sed 's/$'"/`echo \\\r`/" <Datei> #Bash**
-** sed "s/$//" <Datei> #DOS**
+''sed 's/$'"/`echo \\\r`/" <Datei> #Bash''
+'' sed "s/$//" <Datei> #DOS''
 → Wandle Unix Zeilenvoorschübe (LF) in das DOS Format
  
-**sed "s/\r//" <EIngabedatei> > <Ausgabedatei> #Bash**
+''sed "s/\r//" <EIngabedatei> > <Ausgabedatei> #Bash''
 → DOS CR/LF in das Unix Format umwandeln und in <Ausgabedatei> schreiben
 → entspricht ** tr -d \r < <Eingabedatei> > <Ausgabedatei> **
 [[Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten]]
@@ -63,155 +63,155 @@ Created Donnerstag 28 April 2011
 **(missing link undokumentiert: dos2unix|unix2dos)**
 
 === Texte formatieren und einrücken ===
-** sed 's/^[ \t]*//' <Datei> **
+'' sed 's/^[ \t]*//' <Datei> ''
 → lösche alle Leerzelen und Tabulatoren vom Anfang der Zeile in <Datei> und richte alle Zeilen linksbündig aus
 
-** sed 's/[ \t]*$//' <Datei>**
+'' sed 's/[ \t]*$//' <Datei>''
 → lösche alle Leerzeichen und Tabulatoren vom Ende aller Zeilen von <Datei>
 
-** sed 's/^[ \t]*//;s/[ \t]*$//' <Datei>**
+'' sed 's/^[ \t]*//;s/[ \t]*$//' <Datei>''
 → lösche alle Leerzeichen und Tabulatoren vom Ende und vom Anfang aller Zeilen in <Datei>
  
-**sed 's/^/     /' <Datei>**
+''sed 's/^/     /' <Datei>''
 → füge 5 Leerzeichen an den Anfang einer jeden Datei
 → Einrückung
 
-** sed -e :a -e 's/^.\{1,78\}$/ &/;ta'  <Datei>**
+'' sed -e :a -e 's/^.\{1,78\}$/ &/;ta'  <Datei>''
 → alle Zeilen mit einer Spaltenbreite von 80 Zeichen rechtsbündig ausrichten
 
-**sed  -e :a -e 's/^.\{1,77\}$/ &/;ta' -e 's/\( *\)\1/\1/ <Datei>**
+''sed  -e :a -e 's/^.\{1,77\}$/ &/;ta' -e 's/\( *\)\1/\1/ <Datei>''
 → zentrieren aller Zeilen in einer 80 Zeichen breiten Spalte
 
 === Suchen und ersetzen ===
-** sed 's/foo/bar/' <Datei>**
+'' sed 's/foo/bar/' <Datei>''
 → ersetzt nur das erste Vorkommen von //foo // durch //bar//
 
-** sed 's/foo/bar/N' <Datei>**
+'' sed 's/foo/bar/N' <Datei>''
 → ersetzt nur das N-te vokommen von //foo //mit //bar// in <Datei>
 
-**sed 's/foo/bar/g' <Datei>**
+''sed 's/foo/bar/g' <Datei>''
 → ersetze alle vorkommen von //foo// durch //bar// in <Datei>
  
-**sed 's/\(.*\)foo\(.*foo\)/\1bar\2/' <Datei>**
+''sed 's/\(.*\)foo\(.*foo\)/\1bar\2/' <Datei>''
 → ersetze nur das zweite Vorkommen von //foo //durch //bar // in <Datei>
 
-**sed 's/\(.*\)foo/\1bar/'  <Datei>**
+''sed 's/\(.*\)foo/\1bar/'  <Datei>''
 → ersetze nur das letzte Vorkommen in <Datei> von //foo // durch //bar//
 
-**sed '/baz/s/foo/bar/g' <Datei>**
+''sed '/baz/s/foo/bar/g' <Datei>''
 → ersetze //foo //mit //bar //nur in Zeilen der <Datei> die auch //baz// enthalten
 
-**sed '/baz/!s/foo/bar/g' <Datei>**
+''sed '/baz/!s/foo/bar/g' <Datei>''
 → ersetze //foo //mit //bar //in Zeilen der <Datei> die nicht //baz //enthalten
 
-**sed 's/scarlet\|ruby\|puce/red/g' <Datei>**
+''sed 's/scarlet\|ruby\|puce/red/g' <Datei>''
 → ersetze die Vorkommen der Wörter //scarlet, ruby, puce //durch das Wort //red// in <Datei>
 
 === Zeilen manipulieren ===
-** sed -n '1!G;h;$p' <Datei>**
+'' sed -n '1!G;h;$p' <Datei>''
 → Reihenfolge der Zeilen umkehren, wie **tac **
 [[Linux Wissen:Filterprogramme:cat]]
 
-**sed '/\n/!G;s/\(.\)\(.*\n\)/&\2\1/;//D;s/.//' <Datei>**
+''sed '/\n/!G;s/\(.\)\(.*\n\)/&\2\1/;//D;s/.//' <Datei>''
 → die Reihenfolge der Buchstaben in jeder Zeile der <Datei> umkehren,wie **rev**
  [[Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten]]
 
-**sed '$!N;s/\n/ /' <Datei>**
+''sed '$!N;s/\n/ /' <Datei>''
 → füge Zeilenpaare nebeneinander zusammen, wie **paste**
 [[Linux Wissen:Filterprogramme:Dateien zusammenführen]]
 
-** sed -e :a -e '/\\$/N; s/\\\n//; ta' <Datei>**
+'' sed -e :a -e '/\\$/N; s/\\\n//; ta' <Datei>''
 → falls eine Zeile in der <Datei> mit \ endet, füge eine andere andere an
  
-**sed -e :a -e '$!N;s/\n=/ /;ta' -e 'P;D' <Datei>**
+''sed -e :a -e '$!N;s/\n=/ /;ta' -e 'P;D' <Datei>''
 → falls eine Zeile in der <Datei> mit einem = beginnt, füge vorherige Zeile hinzu und ersetze = durch Leerzeichen
 
 === Anzeigen ausgewählter Zeilen ===
-** sed 10q <Datei>**
+'' sed 10q <Datei>''
 → wie **head **ohne weitere Optionen
 [[Linux Wissen:Filterprogramme:head und tail]]
 
-**sed q <Datei>**
+''sed q <Datei>''
 → wie **head -1** 
 
-**sed -e :a -e '$q;N;11,$D;ba' <Datei>**
+''sed -e :a -e '$q;N;11,$D;ba' <Datei>''
 → wie **tail **ohne Optionen
 
-**sed '$!N;$!D' <Datei>**
+''sed '$!N;$!D' <Datei>''
 → wie **tail -2**
 
-**sed '$!d' <Datei>**
+''sed '$!d' <Datei>''
 → wie **tail -1**
 
-**sed -n '/<Ausdruck>/p' <Datei>**
+''sed -n '/<Ausdruck>/p' <Datei>''
 → wie **grep**, ausgeben von Zeilen einer <Datei>, die durch <Ausdruck> definiert sind
 
-**sed '/<Ausdruck>/d' <Datei>**
+''sed '/<Ausdruck>/d' <Datei>''
 → wie **grep -v**, ausgeben aller Zeilen die nicht durch <Ausdruck> definiert sind
 [[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep]]
 
-** sed -n '/<Ausdruck>/{g;1!p;};h' <Datei>**
+'' sed -n '/<Ausdruck>/{g;1!p;};h' <Datei>''
 → ausgeben der Zeile //oberhalb// des zutreffenden <Ausdruck>
 → die Zeile die <Ausdruck> enthält wird nicht ausgegeben
 
-** sed -n '/regexp/{n;p;}' <Datei>**
+'' sed -n '/regexp/{n;p;}' <Datei>''
 → ausgeben der Zeile //unter// dem zutreffenden <Ausdruck>
 → die Zeile die <Ausdruck> enthält, wird nicht ausgegeben
 
-**sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;' <Datei>**
+''sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;' <Datei>''
 → Ausgabe eines ganzen Absatzes, falls dieser AAA enthält
 
-**sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;/BBB/!d;/CCC/!d' <Datei>**
+''sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;/BBB/!d;/CCC/!d' <Datei>''
 → Ausgabe des ganzen Absatzes, falls dieser //AAA BBB// oder //CCC// enthält
  
-**sed -n '/^.\{N\}/p' <Datei>**
+''sed -n '/^.\{N\}/p' <Datei>''
 → Ausgabe der Zeilen, die mindestesn N Zeichen lang sind
 
-**sed '/^.\{N\}/d' <Datei>**
+''sed '/^.\{N\}/d' <Datei>''
 → Ausgabe der Zeilen die höchstens kleiner als N Zeichen lang sind
 
-**sed -n '/<Ausdruck>/,$p' <Datei>**
+''sed -n '/<Ausdruck>/,$p' <Datei>''
 → Ausgabe der Zeilen ab <Ausdruck>
 
 === Löschen von Zeilen ===
-**sed '/<Iowa>/,/<Montana>/d' <Datei>**
+''sed '/<Iowa>/,/<Montana>/d' <Datei>''
 → entfernen der Zeilen, die zwischen <Ausdruck1> und <Ausdruck2> stehen
 
-** sed '$!N; /^\(.*\)\n\1$/!P; D' <Datei>**
+'' sed '$!N; /^\(.*\)\n\1$/!P; D' <Datei>''
 → wie **uniq**
 [[Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren]]
 
-**sed -n 'G; s/\n/&&/; /^\([ -~]*\n\).*\n\1/d; s/\n//; h; P' <Datei>**
+''sed -n 'G; s/\n/&&/; /^\([ -~]*\n\).*\n\1/d; s/\n//; h; P' <Datei>''
 → löschen von identischen nicht aufeinanderfolgender Zeilen
 
-**sed '$!N; s/^\(.*\)\n\1$/\1/; t; D' <Datei>**
+''sed '$!N; s/^\(.*\)\n\1$/\1/; t; D' <Datei>''
 → wie **uniq -d**
 
-**sed '1,10d' <Datei>**
+''sed '1,10d' <Datei>''
 → löschen der ersten 10 Zeilen der <Datei>
 
-**sed '$d' <Datei>**
+''sed '$d' <Datei>''
 → löschen der letzten Zeile einer <Datei>
 
-**sed 'N;$!P;$!D;$d' <Datei>**
+''sed 'N;$!P;$!D;$d' <Datei>''
 → löschen der letzten zwei Zeilen einer <Datei>
 
-**sed -e :a -e '$d;N;2,10ba' -e 'P;D' <Datei>**
+''sed -e :a -e '$d;N;2,10ba' -e 'P;D' <Datei>''
 → löschen der letzten 10 Zeilen einer Datei
 
-**sed '0~Nd <Datei>**
+''sed '0~Nd <Datei>''
 → löschen jeder N-ten Zeile in <Datei>
 
-**sed '/^$/d' <Datei>**
+''sed '/^$/d' <Datei>''
 → Alle Leerzeichen aus <Datei> löschen
 
-**sed '/./,$!d' <Datei>**
+''sed '/./,$!d' <Datei>''
 → lösche alle Leerzeilen am Anfang einer <Datei>
 
-**sed -e :a -e '/^\n*$/{$d;N;ba' -e '}' <Datei>**
+''sed -e :a -e '/^\n*$/{$d;N;ba' -e '}' <Datei>''
 → lösche alle Leerzeilen am Ende einer Datei
 
-**sed -n '/^$/{p;h;};/./{x;/./p;}' <Datei>**
+''sed -n '/^$/{p;h;};/./{x;/./p;}' <Datei>''
 → lösche jede Leerzeile am Ende jeden Absatzes
 
 === Weitere Literatur ===

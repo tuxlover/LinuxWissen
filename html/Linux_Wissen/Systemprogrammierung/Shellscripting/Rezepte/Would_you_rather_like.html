@@ -130,49 +130,43 @@
 Created Sonntag 09 Oktober 2011<br>
 </p>
 
-<p>
-<em>#Manchmal kann es nötig sein, dem Nutzer eine Ja/Nein Frage zu stellen</em><br>
-<em>#und bei drücken einer bestimmten Taste eine Aktion auszuführen</em><br>
-</p>
+<pre>
+#Manchmal kann es nötig sein, dem Nutzer eine Ja/Nein Frage zu stellen
+#und bei drücken einer bestimmten Taste eine Aktion auszuführen
 
-<p>
-<em>would_you()</em><br>
-<em>{</em><br>
-<em>echo "Was wollen sie tun?"</em><br>
-<em>echo "Ein Backup erstellen (C)"</em><br>
-<em>echo "Ein bestehendes Backup zurücksetzen(R)"</em><br>
-</p>
+would_you()
+{
+echo "Was wollen sie tun?"
+echo "Ein Backup erstellen (C)"
+echo "Ein bestehendes Backup zurücksetzen(R)"
 
-<p>
-<em>read -e -n 1 -p "Taste r oder c drücken!" ANSWER</em><br>
-<em>${ANSWER:="n"}</em><br>
-</p>
+read -e -n 1 -p "Taste r oder c drücken!" ANSWER
+${ANSWER:="n"}
 
-<p>
-<em>if [ "$ANSWER" == "c"  ]</em><br>
-<div style='padding-left: 30pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>create_backup</em><br>
-</div>
-<em>elif [ $ANSWER == "r" ]</em><br>
-<div style='padding-left: 30pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>restore</em><br>
-</div>
-<div style='padding-left: 30pt'>
-<em>else</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>echo "ungültige taste gedrückt"</em><br>
-<em>exit 1</em><br>
-</div>
-<em>fi</em><br>
-<em>}</em><br>
-</p>
+if [ "$ANSWER" == "c"  ]
+</pre>
+<pre style='padding-left: 30pt'>
+then
+</pre>
+<pre style='padding-left: 60pt'>
+create_backup
+elif [ $ANSWER == "r" ]
+</pre>
+<pre style='padding-left: 30pt'>
+then
+</pre>
+<pre style='padding-left: 60pt'>
+restore
+</pre>
+<pre style='padding-left: 30pt'>
+else
+</pre>
+<pre style='padding-left: 60pt'>
+echo "ungültige taste gedrückt"
+exit 1
+fi
+}
+</pre>
 
 
 			<!-- End wiki content -->
@@ -180,7 +174,7 @@ Created Sonntag 09 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

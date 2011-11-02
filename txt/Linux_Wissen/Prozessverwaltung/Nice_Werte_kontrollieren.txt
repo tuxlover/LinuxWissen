@@ -17,5 +17,5 @@ Created Donnerstag 21 April 2011
 **-u <Nutzer> **→ die Porzesse des Nutzers ändern
 **-g <Gruppe> **→ die Prozesse der Gruppe ändern
 
-__Hinweis: Mit __**top -p <PID> **__kann man sich den Nice Wert zu einem Prozess mit <PID> anzeigen lassen.__
+__Hinweis: Mit __''top -p <PID>'' __kann man sich den Nice Wert zu einem Prozess mit <PID> anzeigen lassen.__
   

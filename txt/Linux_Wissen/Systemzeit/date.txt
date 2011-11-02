@@ -29,11 +29,14 @@ Created Mittwoch 14 September 2011
 
 **-d '<String>' **→ die Zeit durch einen beschreibenden Sting anzeigen lassen 
 //Beispiele://
-//date -d 'tomorrow' +%F//
-//date -d 'friday 1 weeks' +%A-%F//
-//date -d 'last sunday' +%H:%M-%F//
-//date -d '2 hours' +%H:%M-%F//
+'''
+date -d 'tomorrow' +%F
+date -d 'friday 1 weeks' +%A-%F
+date -d 'last sunday' +%H:%M-%F
+date -d '2 hours' +%H:%M-%F
+'''
 
-**date --set --date="2010-18-11 18:03:13 +0100" **→  explizites setzen des Datums und der Uhrzeit
+''date --set --date="2010-18-11 18:03:13 +0100"'' →  explizites setzen des Datums und der Uhrzeit
+                                                                                                       → root rechte erforderlich
 
 **cal [<Monat>] <Jahr> **→ Ein Kalender für diesen Monat| dieses Jahr anzeigen

@@ -112,19 +112,22 @@ Created Montag 18 April 2011<br>
 <strong>-e </strong>→ -vE<br>
 </p>
 
+<pre>
+cat &gt; &lt;Datei&gt; &lt;&lt; __EOF__
+blah
+__EOF__
+</pre>
+
 <p>
-<strong>cat &gt; &lt;Datei&gt; &lt;&lt; __EOF__</strong><br>
-<strong>blah</strong><br>
-<strong>__EOF__</strong><br>
 → schreibt den Inhalt blah in die &lt;Datei&gt;, <u>EOF</u> ist ein Dateiseperator und signaliseier das Ende der Datei<br>
 </p>
 
 <p>
-<strong>cat &lt;Datei* &gt; &lt;Datei&gt; </strong>→ fügt mit Split erzeugte Dateien wieder zusammen<br>
+<code>cat &lt;Datei* &gt; &lt;Datei&gt;</code> → fügt mit Split erzeugte Dateien wieder zusammen<br>
 </p>
 
 <p>
-<strong>cat &lt;Datei1&gt; &lt;Datei2&gt; &lt;Datei3&gt; ... &gt; &lt;großeDatei&gt; </strong>→ macht aus mehereren kleineren Dateien eine große<br>
+<code>cat &lt;Datei1&gt; &lt;Datei2&gt; &lt;Datei3&gt; ... &gt; &lt;großeDatei&gt;</code> → macht aus mehereren kleineren Dateien eine große<br>
 </p>
 
 <p>

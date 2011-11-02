@@ -113,15 +113,20 @@ Created Sonntag 08 Mai 2011<br>
 <p>
 <em>Syntax:</em><br>
 +++<br>
-<em>CREATE TABLE tabellenname</em><br>
-<em>(</em><br>
-<em>spaltenname1 datentyp,</em><br>
-<em>spaltenname2 datentyp</em><br>
-<em>[...]</em><br>
-<em>[PRIMARY KEY (spaltenliste)]</em><br>
-<em>[CONSTRAINT constraintname]</em><br>
-<em>UNIQUE (spaltenname1, spaltenname2 [...])</em><br>
-<em>);</em><br>
+</p>
+<pre>
+CREATE TABLE tabellenname
+(
+spaltenname1 datentyp,
+spaltenname2 datentyp
+[...]
+[PRIMARY KEY (spaltenliste)]
+[CONSTRAINT constraintname]
+UNIQUE (spaltenname1, spaltenname2 [...])
+);
+</pre>
+
+<p>
 +++<br>
 </p>
 
@@ -133,12 +138,17 @@ Created Sonntag 08 Mai 2011<br>
 <p>
 <em>Syntax:</em><br>
 +++<br>
-<em>CREATE TABLE tabellenname</em><br>
-<em>(</em><br>
-<em>spaltenname datentyp [CONSTRAINT constraintname]</em><br>
-<em>CHECK (bedingung)</em><br>
-<em>[...]</em><br>
-<em>);</em><br>
+</p>
+<pre>
+CREATE TABLE tabellenname
+(
+spaltenname datentyp [CONSTRAINT constraintname]
+CHECK (bedingung)
+[...]
+);
+</pre>
+
+<p>
 +++<br>
 </p>
 
@@ -150,11 +160,16 @@ Created Sonntag 08 Mai 2011<br>
 <p>
 <em>Syntax:</em><br>
 +++<br>
-<em>CREATE TABLE tabellenname</em><br>
-<em>(</em><br>
-<em>spaltenname datentyp DEFAULT vorgabewert</em><br>
-<em>[...]</em><br>
-<em>);</em><br>
+</p>
+<pre>
+CREATE TABLE tabellenname
+(
+spaltenname datentyp DEFAULT vorgabewert
+[...]
+);
+</pre>
+
+<p>
 +++<br>
 </p>
 
@@ -194,14 +209,19 @@ Standard Wert gesetzt<br>
 <p>
 <em>Syntax:</em><br>
 +++<br>
-<em>CREATE TABLE tabellenname</em><br>
-<em>(</em><br>
-<em>spaltenname Datentyp,</em><br>
-<em>FOREIGN KEY (spaltenname)</em><br>
-<em>REFERENCES tabellenname (spaltenname)</em><br>
-<em>[ON DELETE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]</em><br>
-<em>[ON UPDATE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]</em><br>
-<em>);</em><br>
+</p>
+<pre>
+CREATE TABLE tabellenname
+(
+spaltenname Datentyp,
+FOREIGN KEY (spaltenname)
+REFERENCES tabellenname (spaltenname)
+[ON DELETE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]
+[ON UPDATE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]
+);
+</pre>
+
+<p>
 +++<br>
 </p>
 

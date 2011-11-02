@@ -130,60 +130,58 @@
 Created Dienstag 18 Oktober 2011<br>
 </p>
 
-<p>
-<em>selcect_your_weapon()</em><br>
-<em>{</em><br>
-<em>WEAPON="done $(cat /etc/shells)"</em><br>
-<em>PS3="Welche Shell soll verwendet werden?"</em><br>
-</p>
+<pre>
+selcect_your_weapon()
+{
+WEAPON="done $(cat /etc/shells)"
+PS3="Welche Shell soll verwendet werden?"
 
-<p>
-<em>until  [ "$shell" == "done"  ]</em><br>
-<div style='padding-left: 30pt'>
-<em>do</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>echo "Wählen Sie Ihre Shell"</em><br>
-<em>select shell in $WEAPON</em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>do</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>if [ "$shell" == "done"  ]</em><br>
-</div>
-<div style='padding-left: 150pt'>
-<em>echo "finished"</em><br>
-<em>break</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>elif [ !  -z "$shell"  ]</em><br>
-</div>
-<div style='padding-left: 150pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 180pt'>
-<em>echo "Use the Shel l$REPLY )l $shell in future"</em><br>
-<em>chsh $shell</em><br>
-<em>break</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>else </em><br>
-</div>
-<div style='padding-left: 150pt'>
-<em>echo "Not a correct selection."</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>fi</em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>done</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>done</em><br>
-</div>
-<em>}</em><br>
-</p>
+until  [ "$shell" == "done"  ]
+</pre>
+<pre style='padding-left: 30pt'>
+do
+</pre>
+<pre style='padding-left: 60pt'>
+echo "Wählen Sie Ihre Shell"
+select shell in $WEAPON
+</pre>
+<pre style='padding-left: 90pt'>
+do
+</pre>
+<pre style='padding-left: 120pt'>
+if [ "$shell" == "done"  ]
+</pre>
+<pre style='padding-left: 150pt'>
+echo "finished"
+break
+</pre>
+<pre style='padding-left: 120pt'>
+elif [ !  -z "$shell"  ]
+</pre>
+<pre style='padding-left: 150pt'>
+then
+</pre>
+<pre style='padding-left: 180pt'>
+echo "Use the Shel l$REPLY )l $shell in future"
+chsh $shell
+break
+</pre>
+<pre style='padding-left: 120pt'>
+else 
+</pre>
+<pre style='padding-left: 150pt'>
+echo "Not a correct selection."
+</pre>
+<pre style='padding-left: 120pt'>
+fi
+</pre>
+<pre style='padding-left: 90pt'>
+done
+</pre>
+<pre style='padding-left: 60pt'>
+done
+}
+</pre>
 
 
 			<!-- End wiki content -->
@@ -191,7 +189,7 @@ Created Dienstag 18 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -134,16 +134,20 @@ Created Montag 10 Oktober 2011<br>
 <em>#diese Funktion tetstet ob ein übergebener Parameter ein Integer ist</em><br>
 <em>integer_test()</em><br>
 <em>{</em><br>
-<em>int=$1</em><br>
-<em>if [ ! $(echo "$int" | grep -E "^[0-9]+$") ]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;then</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo "$int is not an integer"</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit 1</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;else</em><br>
-<div style='padding-left: 30pt'>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;echo "$int is an integer."</em><br>
-</div>
-<em>fi</em><br>
+</p>
+<pre>
+int=$1
+if [ ! $(echo "$int" | grep -E "^[0-9]+$") ]
+	then
+		echo "$int is not an integer"
+		exit 1
+	else
+</pre>
+<pre style='padding-left: 30pt'>
+	echo "$int is an integer."
+fi
+</pre>
+<p>
 <em>}</em><br>
 </p>
 
@@ -153,7 +157,7 @@ Created Montag 10 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -134,30 +134,30 @@ Created Montag 18 April 2011<br>
 Scriptvorschlag um updatedb als abhängigkeit einiger Programme beim kompillieren zu befriedigen:<br>
 +++<br>
 <em>Scriptvorschlag linken nach updatedb um Abhängikeiten zu befriedigen:</em><br>
-<em>#!/bin/bash</em><br>
+<code>#!/bin/bash</code><br>
 </p>
 
 <p>
-<em>slocate_updateddb()</em><br>
-<em>{</em><br>
-<em>SLOCATE=$(which slocate || echo "no")</em><br>
-<em>if ["$SLOCATE" != "no" ]</em><br>
-<em>        then</em><br>
-<em>                $SLOCATE -u</em><br>
-<em>        else</em><br>
-<em>                echo "slocate not found or script broken"</em><br>
-<em>fi</em><br>
-<em>}</em><br>
+<code>slocate_updateddb()</code><br>
+<code>{</code><br>
+<code>SLOCATE=$(which slocate || echo "no")</code><br>
+<code>if ["$SLOCATE" != "no" ]</code><br>
+<code>        then</code><br>
+<code>                $SLOCATE -u</code><br>
+<code>        else</code><br>
+<code>                echo "slocate not found or script broken"</code><br>
+<code>fi</code><br>
+<code>}</code><br>
 </p>
 
 <p>
-<em>if [ "$UID" == "0" ]</em><br>
-<em>        then</em><br>
-<em>                slocate_updatedb</em><br>
-<em>        else</em><br>
-<em>                echo "must be root"</em><br>
-<em>                exit 1</em><br>
-<em>fi</em><br>
+<code>if [ "$UID" == "0" ]</code><br>
+<code>        then</code><br>
+<code>                slocate_updatedb</code><br>
+<code>        else</code><br>
+<code>                echo "must be root"</code><br>
+<code>                exit 1</code><br>
+<code>fi</code><br>
 +++<br>
 </p>
 

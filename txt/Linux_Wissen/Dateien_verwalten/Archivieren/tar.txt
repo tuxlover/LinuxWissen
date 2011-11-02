@@ -17,6 +17,6 @@ Created Dienstag 19 April 2011
 **-C <Pfad> **→ beim entpacken ein anderen <Pfad> angeben 
 
 //Beispiele://
-//tar xvfz MeinBeispiel.tar.gz//
-//tar xvfj MeinBeispiel.tar.bz2//
-//tar tvf Mein Beispiel.tar//
+''tar xvfz MeinBeispiel.tar.gz''
+''tar xvfj MeinBeispiel.tar.bz2''
+''tar tvf Mein Beispiel.tar''

@@ -6,19 +6,22 @@ Creation-Date: 2011-04-21T21:04:54+02:00
 Created Donnerstag 21 April 2011
 
 +++
-//#!/bin/bash//
-//#Script wird mit name partition aufgerufen//
-//#Funktioniert am besten wenn Partition nicht vom System Kernel benutzt wird//
+'''
+#!/bin/bash
+#Script wird mit name partition aufgerufen
+#Funktioniert am besten wenn Partition nicht vom System Kernel benutzt wird
 
-//mkdir $1/wipe_//
-//i=0//
-//while true//
-//        do//
-//                i=$(($i+1))//
+mkdir $1/wipe_
+i=0
+while true
+        do
+                i=$(($i+1))
 
-//                dd if=/dev/urandom of="/$1/wipe_/$i" bs=4K count=20000 #bs an die Blockgröße des Dateisystems anpassen//
+                dd if=/dev/urandom of="/$1/wipe_/$i" bs=4K count=20000 #bs an die Blockgröße des Dateisystems anpassen
 
-//        done//
-//wipe -r $1/wipe_ #wipe muss installiert sein//
-//#Script läuft sehr lange//
+        done
+wipe -r $1/wipe_ #wipe muss installiert sein
+#Script läuft sehr lange
+'''
+
 +++

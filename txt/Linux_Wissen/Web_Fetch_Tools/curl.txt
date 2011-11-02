@@ -19,4 +19,4 @@ Created Sonntag 17 Juli 2011
 
 //Beispiel://
 //Ein Verzeichnis auf einen Backupserver absichert und dieses vorher komprimieren//
-//tar czf - <dir>/ | curl -T - -u <Username>:<Passwort> ftp://<Server>/<Dir>.tar.gz//
+''tar czf - <dir>/ | curl -T - -u <Username>:<Passwort> ftp:<Server>/<Dir>.tar.gz//''

@@ -28,13 +28,16 @@ Created Dienstag 19 April 2011
 
 __Hinweis: setfacl kann mit nicht vorhandenen UIDs GIDs umgehen, nicht aber mit nicht vorhandenen Nutzer oder Gruppen.__
 
-//Beispiel <ACL> Datei://
-//user:axel:rw-//
+'''
+Beispiel <ACL> Datei:
+user:axel:rw-
 user:tippy::rw-
-//group:lensmen:r--//
-//group:fafnir:---//
-//mask::rw-//
-//other::---//
+group:lensmen:r--
+group:fafnir:---
+mask::rw-
+other::---
+'''
+
 
 Mit //mask// wird die effektive Rechtemaske gesetzt. 
 → limitiert die efektiven Rechte die Nutzern und Gruppen zugewiesen werden können

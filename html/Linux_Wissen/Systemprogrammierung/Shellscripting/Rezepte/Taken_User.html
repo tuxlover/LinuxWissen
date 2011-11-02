@@ -130,37 +130,34 @@
 Created Sonntag 09 Oktober 2011<br>
 </p>
 
-<p>
-<em>#Überprüfe ob diese Nutzer berreits vergeben sind</em><br>
-<em>taken_users()</em><br>
-<em>{</em><br>
-<em>NEW_USER=$1</em><br>
-<em>TAKEN_USERS=$(cut -d: -f1 /etc/passwd)</em><br>
-</p>
+<pre>
+#Überprüfe ob diese Nutzer berreits vergeben sind
+taken_users()
+{
+NEW_USER=$1
+TAKEN_USERS=$(cut -d: -f1 /etc/passwd)
 
-<p>
-<em>for u_taken in ${TAKEN_USERS[@]}</em><br>
-<div style='padding-left: 30pt'>
-<em>do</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>if [ $u_taken == $NEW_USER  ]</em><br>
-</div>
-<div style='padding-left: 90pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 120pt'>
-<em>echo "Benutzername bereits vergeben"</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>fi</em><br>
-</div>
-<div style='padding-left: 30pt'>
-<em>done</em><br>
-</div>
-<em>}</em><br>
-</p>
-
+for u_taken in ${TAKEN_USERS[@]}
+</pre>
+<pre style='padding-left: 30pt'>
+do
+</pre>
+<pre style='padding-left: 60pt'>
+if [ $u_taken == $NEW_USER  ]
+</pre>
+<pre style='padding-left: 90pt'>
+then
+</pre>
+<pre style='padding-left: 120pt'>
+echo "Benutzername bereits vergeben"
+</pre>
+<pre style='padding-left: 60pt'>
+fi
+</pre>
+<pre style='padding-left: 30pt'>
+done
+}
+</pre>
 <p>
 → Respektive für /etc/group und und Gruppen, wenn zum Beispiel jeder Nutzer auch seine eigene Gruppe erhalten soll<br>
 </p>
@@ -171,7 +168,7 @@ Created Sonntag 09 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

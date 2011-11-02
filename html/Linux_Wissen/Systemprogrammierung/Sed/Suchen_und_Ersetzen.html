@@ -125,12 +125,12 @@ davor und dahinter anfügt<br>
 → paarweise Adressierung<br>
 → Pattern Space<br>
 <em>Beispiele:</em><br>
-<strong>sed  -e 's/^\&lt;A.*\&gt;/ /g' testfile </strong><br>
+<code>sed  -e 's/^\&lt;A.*\&gt;/ /g' testfile </code><br>
 → entfernt in allen Zeilen die mit einem A Beginnen das erste Wort<br>
 </p>
 
 <p>
-<strong>sed 's/[a-z]*/(&amp;)' Datei</strong><br>
+<code>sed 's/[a-z]*/(&amp;)' Datei</code><br>
 → schließt jeden durch den Ausdruck [a-z]* gefundenen Muster in Klammern<br>
 </p>
 
@@ -171,12 +171,12 @@ Dies können durch die Ziffern \N im Holdspace und /N im Output Stream adressier
 
 <p>
 <em>Beispiele:</em><br>
-<strong>sed 's/\(Muser1\) \(Muster2\)/\2 \1/'</strong><br>
+<code>sed 's/\(Muser1\) \(Muster2\)/\2 \1/</code>'<br>
 → vertauscht das erste Vorkommen von Muster1 mit dem von Muster2<br>
 </p>
 
 <p>
-<strong>sed 's/Muster/String/2g'</strong><br>
+<code>sed 's/Muster/String/2g</code>'<br>
 → nur jedes 2-te Vorkommen von Muster durch String ersetzen<br>
 </p>
 

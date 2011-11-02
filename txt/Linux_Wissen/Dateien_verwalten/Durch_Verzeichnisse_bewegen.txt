@@ -27,7 +27,8 @@ Created Samstag 16 April 2011
 **-n <DIR> **→ entferne <DIR> aus dem Verzeichnis ohne zu rotieren
 
 **<Aktion> ~+<N>** → Führe <Aktion> auf dem Stack im Verzeichnis N aus
-//Beispiel: mv testfile ~+2//
+//Beispiel: //
+''mv testfile ~+2''
  
 
  

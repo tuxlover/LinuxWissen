@@ -20,8 +20,11 @@ Created Montag 18 April 2011
 
 
 //Beispiel://
-//cut -d: -f1,1 /etc/passwd//
-//cut -d' '-f3 meinedatei //
+'''
+cut -d: -f1,1 /etc/passwd
+cut -d' '-f3 meinedatei 
+'''
+
 
 
 **tr <s1> <s2> < <Inputfile> > <Outputfile> **→ tauschen aller Zeichen <s1> durch <s2> in einem Datenstrom
@@ -31,10 +34,10 @@ Created Montag 18 April 2011
 
 //Beispiele://
 //Aus Ae mach Ä//
-//tr -s Ae Ä < text1 > text2//
+''tr -s Ae Ä < text1 > text2''
 
 //Tabs in Leerzeichen umawandeln//
-//tr '\t'  '  ' < text1//
+''tr '\t'  '  ' < text1''
  
 
 __Hinweis: Für komplexere manipulationen empfiehlt sich __**sed**

@@ -7,12 +7,21 @@ Created Montag 10 Oktober 2011
 
 fortschrittsbalken()
 {
+'''
 echo -n $'____________________\r'
 for ((i = 0; i < 20; i++))
+'''
+	'''
 	do
+	'''
+		'''
 		echo -n "#"
 		sleep 2
 		...Befehle für $i
+		'''
+	'''
 	done
-echo 
+	echo 
+	'''
+
 }

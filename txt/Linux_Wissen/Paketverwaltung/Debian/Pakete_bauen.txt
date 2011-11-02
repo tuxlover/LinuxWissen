@@ -27,10 +27,10 @@ http://www.debian.org/doc/developers-reference/
 **--  <Befehl> **→ einen kompletten <Befehl> an den Fakeroot account übergeben
 **-s <Datei> **→ die Einstellungen der Fakeroot Umgebung als Snapshot in die <Datei> speichern
 **-i <Datei> **→ den Snapshot für die Fakeroot Umgebung lesen
-**-u **→ den Besitzer auf unknown wechseln anstelle von [[root:root]]
+**-u **→ den Besitzer auf unknown wechseln anstelle von root:root
 
 == Workflow ein Paket neu Übersetzen ==
-**(1) apt-get -d source **
+**(1) **''apt-get -d source ''
 → holt Quellpakete ohne sie zu entpacken
 → enthält in der Regel die Dateien <programm.orig.tar.gz>, <programm.dsc> und <programm.diff.gz>, die in das aktuelle Verzeichnis gepackt werden
 
@@ -43,7 +43,7 @@ http://www.debian.org/doc/developers-reference/
 
 //<Programm.diff.gz> //→ enthält die Änderungen zum Original
 
-**(2) dpkg-source -x <programm.dsc> **
+**(2)**'' dpkg-source -x <programm.dsc> ''
 → asupacken und für den Kompilationsvorgang vorbereiten
 → anwenden der Patches
 → Dabei wird ein Ordner <programm>/debian angelegt
@@ -204,7 +204,7 @@ http://www.debian.org/doc/developers-reference/
 
 **(2) **Aufruf von **dh_make:**
 **cd <programm>**
-**dh_make -f ../<programm.tar.gz> --email noop@mail.dom -c gpl**
+''dh_make -f ../<programm.tar.gz> --email noop@mail.dom -c gpl''
 
 **(3) **Anpassen und bearbeiten von Dateien in //debian //Unterverzeichnis
 (3.1) debuggen

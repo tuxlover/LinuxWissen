@@ -19,7 +19,7 @@ Created Donnerstag 21 April 2011
  
 
 //Beispiel://
-**top -d 4 -n 2 ** zeigt das Programm ( Sekunden lang an mit je 2 Durchläufen
+''top -d 4 -n 2''  zeigt das Programm ( Sekunden lang an mit je 2 Durchläufen
 
 Weitere nützliche Programme:
 //htop//

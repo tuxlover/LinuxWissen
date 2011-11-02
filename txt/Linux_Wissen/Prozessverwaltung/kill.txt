@@ -17,6 +17,8 @@ SIGTREM		15			terminate: beende Prozess,offene Dateien werden vorher geschlossee
 SIGCONT		18			continue: setze einen mit SIGSTOP angehaltenen Prozess fort
 SIGTSTP		20			terminal stop: entspricht <Strg+z>
 
+__Hinweis: man 7 signal__
+
 //<PID>//
 PID > 0 → sende das <SIGNAL> an den Prozess mit der angegbenen PID
 PID = 0 → sende das <SIGNAL> an alle Prozesse der gleichen Prozessgruppe wie der gesendete

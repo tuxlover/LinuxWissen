@@ -15,12 +15,12 @@ Created Dienstag 19 April 2011
 **-p <DIR> **→ angeben eines zusätzlichen Verzeichnis
 
 //Beispiele einpacken://
-//find . -type f| cpio -ov > archive.cpio//
-//ls | cpio -ov > verzeichnis.cpio//
+''find . -type f| cpio -ov > archive.cpio''
+''ls | cpio -ov > verzeichnis.cpio''
 
 //Beispiel auspacken://
-cpio -iv < archive.cpio
-//rpm2cpio linux-kernel.2.6.38.2-source.src.rpm|cpio -id //
+''cpio -iv < archive.cpio''
+''rpm2cpio linux-kernel.2.6.38.2-source.src.rpm|cpio -id ''
 
 
  

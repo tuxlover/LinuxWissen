@@ -134,83 +134,83 @@ Created Mittwoch 27 April 2011<br>
 
 
 <p>
-<strong>dialog --checklist "Was möchten Sie gerne?" 12 40 4 "H" "Hamburger" on "C" "Chesseburger" off</strong><br>
+<code>dialog --checklist "Was möchten Sie gerne?" 12 40 4 "H" "Hamburger" on "C" "Chesseburger" off</code><br>
 →  erstellt eine Checkliste in der der Menüeintrag Hamburger bereits ausgewählt ist und der Menueintrag Cheeseburger<br>
     nicht ausgewählt ist<br>
 </p>
 
 <p>
-<strong>dialog --dselect /home 20 20</strong><br>
+<code>dialog --dselect /home 20 20</code><br>
 →  erstellt einen Dialog zur Auswahl eines Verzeichnisses beginnend bei /home<br>
 </p>
 
 <p>
-<strong>touch /home/l1uard/emptyfile; dialog --editbox /home/l1zard/emptyfile 20 20</strong><br>
+<code>touch /home/l1uard/emptyfile; dialog --editbox /home/l1zard/emptyfile 20 20</code><br>
 →  erstellt eine leere Box zum editieren<br>
 </p>
 
 <p>
-<strong>dialog --fseclect $HOME/ 20 20</strong><br>
+<code>dialog --fseclect $HOME/ 20 20</code><br>
 →  erstellt einen Dialog zur Auswahl einer Datei beginnend beim Heimatverzeichnis des  Benutzeres<br>
 </p>
 
 <p>
-<strong>df |tail -1 |awk '{print $4}'|tr -d % |dialog --gauge used 20 20</strong><br>
+<code>df |tail -1 |awk '{print $4}'|tr -d % |dialog --gauge used 20 20</code><br>
 →  erhält die Prozentzahl des letzten von df erfragten Geräts und präsentiert ein grafische Prozentanzeige<br>
 </p>
 
 <p>
-<strong>for ((i=0; $i&lt;=100; i=i+5 )); do echo $i; sleep 1;done |dialog --gauge Test 20 20</strong><br>
+<code>for ((i=0; $i&lt;=100; i=i+5 )); do echo $i; sleep 1;done |dialog --gauge Test 20 20</code><br>
 →  erstelt einen Fortschrittsbalken der pro Sekunde um 5 Porzent anwächst<br>
 </p>
 
 <p>
 <strong>dialog --infobox '!Programm beendet!' 10 25</strong><br>
-→  erstellt eine leere Box mit der Information "!Programm beendet!"<br>
+<code>→  erstellt eine leere Box mit der Information "!Programm beendet!"</code><br>
 </p>
 
 <p>
-<strong>dialog --inputbox "Wirklich abbrechen? (Ja eintippen)" 20 30</strong><br>
+<code>dialog --inputbox "Wirklich abbrechen? (Ja eintippen)" 20 30</code><br>
 →  erstellt eine Box in der Nutzer eine Eingabe eintragen können.<br>
 </p>
 
 <p>
-<strong>dialog --inputmenu "Korregieren sie diese Wörter"  40 40 60 "F" Fraege "K" "Komputer"</strong><br>
+<code>dialog --inputmenu "Korregieren sie diese Wörter"  40 40 60 "F" Fraege "K" "Komputer"</code><br>
 →  erstelle eine Menubox in der der Nutzer die Menueinträge bearbeiten kann<br>
 </p>
 
 <p>
-<strong>dialog --msgbox '!Programm beendet!' 10 25</strong><br>
+<code>dialog --msgbox '!Programm beendet!' 10 25</code><br>
 →  erstellt eine Message box dessen lesen mit OK bestätigt werden muss<br>
 </p>
 
 <p>
-<strong>dialog --pause "Machmal Pause" 8 200 600</strong><br>
+<code>dialog --pause "Machmal Pause" 8 200 600</code><br>
 →  erstellt eine Box in der ein Balken angezeigt wird, der für die Länge von 600 Sekunden rückwärts<br>
 </p>
 
 <p>
-<strong>dialog --passwordbox "Geheim" 8 26</strong><br>
+<code>dialog --passwordbox "Geheim" 8 26</code><br>
 →  erstellt eine Box in der Text eingegeben werden kann, der nicht angezeigt wird<br>
 </p>
 
 <p>
-<strong>dialog --radiolist Choose 30 30 40 "Mo" Montag off "Di" Dienstag off "Mi" Mittwoch off Do "Donnerstag" off Fr "Freitag" off Sa "Samstag" off So "Sonntag" off</strong><br>
+<code>dialog --radiolist Choose 30 30 40 "Mo" Montag off "Di" Dienstag off "Mi" Mittwoch off Do "Donnerstag" off Fr "Freitag" off Sa "Samstag" off So</code> <code>"Sonntag" off</code><br>
  →  erstelltt eine Liste mit Einträgen, von denen genau eine ausgewählt werden kann<br>
 </p>
 
 <p>
-<strong>sudo dialog --tailbox /var/log/messages 30 120</strong><br>
+<code>sudo dialog --tailbox /var/log/messages 30 120</code><br>
 →  erstellt eine Box mit dem Inhalt der Ausgabe <strong>tail -f /var/log/messages</strong><br>
 </p>
 
 <p>
-<strong>sudo dialog --textbox /var/log/messages 30 120</strong><br>
+<code>sudo dialog --textbox /var/log/messages 30 120</code><br>
 →  erstellt eine Box mit dem blätterbaren Inhalt der gesamten Datei /var/log/messages<br>
 </p>
 
 <p>
-<strong>dialog --yesno "Kann man diese Frage richtig beantworten?" 6 45</strong><br>
+<code>dialog --yesno "Kann man diese Frage richtig beantworten?" 6 45</code><br>
 →  erstellt eine Box mit einer Entscheidungsfrage<br>
 </p>
 
@@ -219,11 +219,11 @@ Created Mittwoch 27 April 2011<br>
 </p>
 
 <p>
-<strong>result=$(dialog --menu "Test" 12 40 4 H "H" A "A"  2&gt;&amp;1 1&gt; $(tty))</strong><br>
+<code>result=$(dialog --menu "Test" 12 40 4 H "H" A "A"  2&gt;&amp;1 1&gt; $(tty))</code><br>
 </p>
 
 <p>
-<strong>result=$(dialog --yesno "Kann man diese Frage richtig beantworten?" 6 45 2&gt;&amp;1 1&gt; $(tty) &amp;&amp; echo yes || echo "no")</strong><br>
+<code>result=$(dialog --yesno "Kann man diese Frage richtig beantworten?" 6 45 2&gt;&amp;1 1&gt; $(tty) &amp;&amp; echo yes || echo "no")</code><br>
 →  schreibt die Ausgabe von dialog in die Variable result<br>
 </p>
 

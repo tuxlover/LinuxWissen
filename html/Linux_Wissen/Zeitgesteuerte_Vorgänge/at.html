@@ -150,16 +150,21 @@ Created Mittwoch 20 Juli 2011<br>
 <p>
 <em>Beispiele:</em><br>
 <em>Einen einfachen at-Jobs erstellen</em><br>
-<em>echo "/usr/local/bin/script.sh"|at 22:00 </em><br>
+<code>echo "/usr/local/bin/script.sh"|at 22:00 </code><br>
 </p>
 
 <p>
 <em>Mit </em><strong>logger</strong> <em>zu einem bestimmten Zeitpunkt eine Logdatei erstellen</em><br>
-<em>at +3 Minutes </em><br>
-<em>++</em><br>
-<em>&gt;logger -f /var/log/messages "Zeit für einen Kaffe"</em><br>
-<em>&gt;^D</em><br>
-<em>++ </em><br>
+</p>
+<pre>
+at +3 Minutes 
+++
+&gt;logger -f /var/log/messages "Zeit für einen Kaffe"
+&gt;^D
+</pre>
+
+<p>
+    <code>++ </code><br>
 </p>
 
 <h5>Ausgabeformat atq</h5>

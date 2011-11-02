@@ -130,126 +130,110 @@ Created Mittwoch 04 Mai 2011<br>
 	
 <p>
 <em>Beispiel:</em><br>
-<em>SELECT customer.first_name, customer.last_name, address.address </em><br>
-<div style='padding-left: 30pt'>
-<em>FROM customer JOIN address </em><br>
-<em>ON customer.address_id = address.address_id </em><br>
-<em>ORDER BY customer.last_name;</em><br>
-</div>
 </p>
-
-
+<pre>
+SELECT customer.first_name, customer.last_name, address.address 
+</pre>
+<pre style='padding-left: 30pt'>
+FROM customer JOIN address 
+ON customer.address_id = address.address_id 
+ORDER BY customer.last_name;
+</pre>
 <h4>Inner Joins</h4>
 <p>
 → verbietet die Verknüpfung leerer Datensätze<br>
 → gibt  nur Datensätze aus, die in beiden Tabellen vorhanden sind<br>
-</p>
-
-<p>
+<br>
 <strong>SELECT &lt;TabelleA&gt;.&lt;Spalte1&gt;,... &lt;TabelleB&gt;.&lt;Spalte2&gt;,...</strong><br>
 <div style='padding-left: 30pt'>
 <strong>FROM &lt;TabelleA&gt; INNER JOIN &lt;TabelleB&gt;</strong><br>
 <strong>ON &lt;TabelleA&gt;.&lt;SpalteX&gt; = &lt;TabelleB&gt;.&lt;SpalteX&gt;</strong><br>
 ....<br>
 </div>
-</p>
-
-<p>
+<br>
 → falls beide Fremdschlüssel verschiedene Attribute haben<br>
-</p>
-
-<p>
+<br>
 <em>Beispiel:</em><br>
-<em>SELECT actor.first_name, actor.last_name,city.city </em><br>
-<div style='padding-left: 30pt'>
-<em>FROM actor </em><br>
-<em>INNER JOIN  city ON actor.actor_id = city.city_id;</em><br>
-</div>
 </p>
-
-
+<pre>
+SELECT actor.first_name, actor.last_name,city.city 
+</pre>
+<pre style='padding-left: 30pt'>
+FROM actor 
+INNER JOIN  city ON actor.actor_id = city.city_id;
+</pre>
 <h5>*  Column Name Join</h5>
-
 <p>
+<br>
 <strong>SELECT &lt;TabelleA&gt;.&lt;Spalte1&gt;,... &lt;TabelleB&gt;.&lt;Spalte2&gt;,...</strong><br>
 <div style='padding-left: 30pt'>
 <strong>FROM &lt;TabelleA&gt; JOIN &lt;Tabelle2&gt;</strong><br>
 <strong>USING &lt;spalteX&gt;</strong><br>
+<br>
 </div>
-</p>
-	
-<p>
 → Spalten sind in beiden Tabellen gleich benannt<br>
 → falls beide Schlüssel gleiche Attribute haben<br>
 → <u>Hinweis: darauf Achten dass der Schlüssel geklammert werden muss</u><br>
-</p>
-
-<p>
+<br>
 <em>Beispiel:</em><br>
-<em>SELECT film_actor.actor_id, film_actor.last_update, actor.actor_id,actor.first_name,actor.last_name FROM film_actor INNER JOIN actor USING (actor_id);</em><br>
+<code>SELECT film_actor.actor_id, film_actor.last_update, actor.actor_id,actor.first_name,actor.last_name FROM film_actor INNER JOIN actor USING (actor_id);</code><br>
+<br>
 </p>
-
 <h5>•  Natural Join</h5>
-
 <p>
+<br>
 <strong>SELECT &lt;TabelleA&gt;.&lt;Spalte1&gt;,...&lt;TabelleB&gt;.&lt;Spalte2&gt;,...</strong><br>
 <div style='padding-left: 30pt'>
 <strong>FROM &lt;TabelleA&gt; NATURAL JOIN &lt;TabelleB&gt;</strong><br>
 </div>
-</p>
-
-
-<p>
+<br>
+<br>
 → verknüpft über den gleichen Spaltenname<br>
 → alle Spalten müssen in den zu verknüpfenden Tabellen vorhanden sein<br>
+<br>
 </p>
-
 <h5>• Self Join</h5>
 <p>
 → Tabellen mit sich selbst verknüpfen<br>
-</p>
-
-<p>
+<br>
 <strong>SELECT &lt;Alias1&gt;.&lt;Spalte1&gt;,...&lt;Alias2&gt;.&lt;Spalte2&gt;,...</strong><br>
 <div style='padding-left: 30pt'>
 <strong>FROM &lt;Tabelle&gt; AS &lt;Alias1&gt; INNER JOIN &lt;Tabelle&gt; AS &lt;Alias2&gt;</strong><br>
 <strong>USING &lt;Spalte&gt;</strong><br>
 </div>
-</p>
-
-<p>
+<br>
 <em>Beispiel:</em><br>
-<em>SELECT s1.Name, s2.Name AS Geschw, s1.Vater</em><br>
-<div style='padding-left: 30pt'>
-<em>FROM Film AS s1 INNER JOIN Film AS s2 </em><br>
-USING Vater <br>
-<em>WHERE s1.name &lt;&gt; s2.name;</em><br>
-</div>
 </p>
-
-
+<pre>
+SELECT s1.Name, s2.Name AS Geschw, s1.Vater
+</pre>
+<pre style='padding-left: 30pt'>
+FROM Film AS s1 INNER JOIN Film AS s2 
+USING Vater 
+WHERE s1.name &lt;&gt; s2.name;
+</pre>
 <h4>Cross Join</h4>
 <p>
 → verbindet alle Zeilen der einen Tabelle mit allen Zeilen einer anderen Tabelle<br>
 → bildet das kartesiche Produkt aller Spalten<br>
-</p>
-
-<p>
+<br>
 <strong>SELECT &lt;TabelleA&gt;.&lt;Spalte1&gt;,...&lt;TabelleB&gt;.&lt;Spalte2&gt;,...</strong><br>
 <div style='padding-left: 30pt'>
 <strong>FROM &lt;TabelleA&gt; CROSS JOIN &lt;TabelleB&gt;</strong><br>
 </div>
-</p>
-
-<p>
+<br>
 <em>Beispiel:</em><br>
-<em>SELECT title.film, film_id.film_actor </em><br>
-<div style='padding-left: 30pt'>
-<em>FROM title CROSS JOIN film_actor;</em><br>
-</div>
-&gt;&gt; 200000 rows in set (0.24 sec)<br>
 </p>
-
+<pre>
+SELECT title.film, film_id.film_actor 
+</pre>
+<pre style='padding-left: 30pt'>
+FROM title CROSS JOIN film_actor;
+</pre>
+<p>
+&gt;&gt; 200000 rows in set (0.24 sec)<br>
+<br>
+</p>
 
 
 			<!-- End wiki content -->

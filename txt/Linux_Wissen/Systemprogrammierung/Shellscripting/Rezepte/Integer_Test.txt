@@ -8,12 +8,17 @@ Created Montag 10 Oktober 2011
 //#diese Funktion tetstet ob ein übergebener Parameter ein Integer ist//
 //integer_test()//
 //{//
-//int=$1//
-//if [ ! $(echo "$int" | grep -E "^[0-9]+$") ]//
-//	then//
-//		echo "$int is not an integer"//
-//		exit 1//
-//	else//
-	//	echo "$int is an integer."//
-//fi//
+'''
+int=$1
+if [ ! $(echo "$int" | grep -E "^[0-9]+$") ]
+	then
+		echo "$int is not an integer"
+		exit 1
+	else
+'''
+	'''
+		echo "$int is an integer."
+	fi
+	'''
+
 //}//

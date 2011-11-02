@@ -25,4 +25,4 @@ Created Samstag 16 April 2011
 → dabei wird <A> durch <B> bei allen Dateien ersetz die Muser entsprechen
 
 //Beispiel//
-//rename .JPG .jpg *.JPEG//
+''rename .JPG .jpg *.JPEG''

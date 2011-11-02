@@ -13,15 +13,18 @@ Created Sonntag 08 Mai 2011
 
 //Syntax://
 +++
-//CREATE TABLE tabellenname//
-//(//
-//spaltenname1 datentyp,//
-//spaltenname2 datentyp//
-//[...]//
-//[PRIMARY KEY (spaltenliste)]//
-//[CONSTRAINT constraintname]//
-//UNIQUE (spaltenname1, spaltenname2 [...])//
-//);//
+'''
+CREATE TABLE tabellenname
+(
+spaltenname1 datentyp,
+spaltenname2 datentyp
+[...]
+[PRIMARY KEY (spaltenliste)]
+[CONSTRAINT constraintname]
+UNIQUE (spaltenname1, spaltenname2 [...])
+);
+'''
+
 +++
 
 **CHECK**
@@ -29,12 +32,15 @@ Created Sonntag 08 Mai 2011
 
 //Syntax://
 +++
-//CREATE TABLE tabellenname//
-//(//
-//spaltenname datentyp [CONSTRAINT constraintname]//
-//CHECK (bedingung)//
-//[...]//
-//);//
+'''
+CREATE TABLE tabellenname
+(
+spaltenname datentyp [CONSTRAINT constraintname]
+CHECK (bedingung)
+[...]
+);
+'''
+
 +++
 
 **DEFAULT**
@@ -42,11 +48,14 @@ Created Sonntag 08 Mai 2011
 
 //Syntax://
 +++
-//CREATE TABLE tabellenname//
-//(//
-//spaltenname datentyp DEFAULT vorgabewert//
-//[...]//
-//);//
+'''
+CREATE TABLE tabellenname
+(
+spaltenname datentyp DEFAULT vorgabewert
+[...]
+);
+'''
+
 +++
 
 === Für den Primärschlüssel ===
@@ -72,14 +81,17 @@ Standard Wert gesetzt
 
 //Syntax://
 +++
-//CREATE TABLE tabellenname//
-//(//
-//spaltenname Datentyp,//
-//FOREIGN KEY (spaltenname)//
-//REFERENCES tabellenname (spaltenname)//
-//[ON DELETE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]//
-//[ON UPDATE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]//
-//);//
+'''
+CREATE TABLE tabellenname
+(
+spaltenname Datentyp,
+FOREIGN KEY (spaltenname)
+REFERENCES tabellenname (spaltenname)
+[ON DELETE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]
+[ON UPDATE {NO ACTION|CASCADE|SET DEFAULT|SET NULL}]
+);
+'''
+
 +++
 
 === Domänen ===

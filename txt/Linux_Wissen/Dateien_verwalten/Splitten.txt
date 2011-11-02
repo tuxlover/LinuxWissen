@@ -11,6 +11,6 @@ Created Dienstag 19 April 2011
 **-d **→ nummerischer Suffix anstelle alphabetische Suffix
 
 //Beispiel://
-//  split -a name_ -b 2GB <Große_Datei>//
+''  split -a name_ -b 2GB <Große_Datei>''
 
 __Hinweis__: zusmmenfügen mit **cat **[[Linux Wissen:Filterprogramme:cat]]

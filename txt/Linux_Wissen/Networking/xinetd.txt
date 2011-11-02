@@ -17,4 +17,4 @@ Created Freitag 23 September 2011
 
 **itox **→ Tool zum konvertieren der Einträge des **inetd **zu Einträgen in **xinedt**
 //Beispiel://
-**itox < /etc/inetd.conf > /etc/xinetd.conf**
+''itox < /etc/inetd.conf > /etc/xinetd.conf''

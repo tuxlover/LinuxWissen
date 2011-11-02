@@ -39,4 +39,4 @@ grep -E "(wort1|wort2)" | egrep "(wort1|wort2)" --> Suchmuster enthält wort1 od
 
 //Beispiel://
 findet alle Nutzer der UID 4 Stellig ist
-**grep -E '^.*:x:\[\[:digit:\]\]{4}:' /etc/passwd**
+''grep -E '^.*:x:\[\[:digit:\]\]{4}:' /etc/passwd''

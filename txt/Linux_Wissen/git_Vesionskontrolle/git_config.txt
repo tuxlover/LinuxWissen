@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-01T21:48:10+01:00
+
+====== git config ======
+Created Dienstag 01 November 2011
+
+* git Modul zum konfigurieren der Globalen und nutzerspezifischen Konfigurationsdatei
+* **git config **kann nicht aufgerufen werden falls:
+	* die Konfigurationsdatei defekt oder ungültig ist ( [[Linux Wissen:FHS:etc:gitconfig]])
+	* der Nutzer keine Berechtigungen hat, besonders für **--system **wichtig
+	* **--global **mit einem nicht richtig gesetzten $HOME Verzeichnis ausgeführt wird
+
+**git config <Optionen> <Sektion>.<Variable> <Wert>  **[[Linux Wissen:FHS:etc:gitconfig]]
+**--global **→ editieren der Konfigurationsdatei des aktullen Nutzers unter //*~/.gitconfig//
+**--local **→ editieren der Konfigurationsdatei für das aktuelle Prokject
+**--system **→ editieren der Konfigurationsdatei für alle (Systemweit)
+
+__Hinweis: man git-config__
+
+//Beispiele://
+''git config  --global --add core.workspace /home/johnny/workspace/''

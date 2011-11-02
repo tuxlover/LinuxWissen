@@ -123,17 +123,20 @@ Created Donnerstag 28 April 2011<br>
 <p>
 <em>Beispiel:</em><br>
 ++<br>
-<em>awk '</em><br>
-<em>function mittel(a, b, c) {</em><br>
-<em>mittelwert=(a+b+c)/3</em><br>
-<em>print mittelwert</em><br>
-<em>}</em><br>
 </p>
+<pre>
+awk '
+function mittel(a, b, c) {
+mittelwert=(a+b+c)/3
+print mittelwert
+}
+
+BEGIN {
+ mittel(1, 2, 3)
+}'
+</pre>
 
 <p>
-<em>BEGIN {</em><br>
-<em> mittel(1, 2, 3)</em><br>
-<em>}'</em><br>
 ++<br>
 </p>
 

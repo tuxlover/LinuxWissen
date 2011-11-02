@@ -130,46 +130,41 @@
 Created Montag 10 Oktober 2011<br>
 </p>
 
-<p>
-#Dieses Beispiel zeigt wie man eine xml Datei erzeugen kann<br>
-<em>create_conf() </em><br>
-<em>{</em><br>
-<em>echo "Starting please be patient"</em><br>
-<em>RPMS=$(rpm -qa)</em><br>
-</p>
+<pre>
+#Dieses Beispiel zeigt wie man eine xml Datei erzeugen kann
+create_conf() 
+{
+echo "Starting please be patient"
+RPMS=$(rpm -qa)
 
 
 
 
-<p>
-<em>echo "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>echo "&lt;syscontent&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>echo -e "\t &lt;ident&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>echo -e "\t\t &lt;name&gt;&lt;/name&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>echo -e "\t\t &lt;version epoch=\"0\"/&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>echo -e "\t\t &lt;description&gt;&lt;/description&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>echo -e "\t\t &lt;created&gt;1234667821&lt;/created&gt;" &gt;&gt; $DOC_NAME.xml #unixtimestamp may be generatet by timestamp</em><br>
-<em>echo -e "\t &lt;/ident&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>echo -e "\t &lt;onsys&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-</p>
+echo "&lt;?xml version=\"1.0\" encoding=\"UTF-8\"?&gt;" &gt;&gt; $DOC_NAME.xml
+echo "&lt;syscontent&gt;" &gt;&gt; $DOC_NAME.xml
+echo -e "\t &lt;ident&gt;" &gt;&gt; $DOC_NAME.xml
+echo -e "\t\t &lt;name&gt;&lt;/name&gt;" &gt;&gt; $DOC_NAME.xml
+echo -e "\t\t &lt;version epoch=\"0\"/&gt;" &gt;&gt; $DOC_NAME.xml
+echo -e "\t\t &lt;description&gt;&lt;/description&gt;" &gt;&gt; $DOC_NAME.xml
+echo -e "\t\t &lt;created&gt;1234667821&lt;/created&gt;" &gt;&gt; $DOC_NAME.xml #unixtimestamp may be generatet by timestamp
+echo -e "\t &lt;/ident&gt;" &gt;&gt; $DOC_NAME.xml
+echo -e "\t &lt;onsys&gt;" &gt;&gt; $DOC_NAME.xml
 
-<p>
-<em>for i in $RPMS</em><br>
-</p>
+for i in $RPMS
 
-<p>
-<em>        do</em><br>
-<em>                NAME=$(echo $(rpm -q $i --qf %{NAME}))</em><br>
-<em>                VERSION=$(echo $(rpm -q $i --qf %{VERSION}))</em><br>
-<em>                RELEASE=$(echo $(rpm -q $i --qf %{RELEASE}))</em><br>
-<em>                ARCH=$(echo $(rpm -q $i --qf %{ARCH}))</em><br>
-<em>                echo -e "\t\t &lt;entry kind=\"package\" name=\"$NAME\" epoch=\"0\" ver=\"$VERSION\" rel=\"$RELEASE\" arch=\"$ARCH\"/&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>        done</em><br>
-</p>
+        do
+                NAME=$(echo $(rpm -q $i --qf %{NAME}))
+                VERSION=$(echo $(rpm -q $i --qf %{VERSION}))
+                RELEASE=$(echo $(rpm -q $i --qf %{RELEASE}))
+                ARCH=$(echo $(rpm -q $i --qf %{ARCH}))
+                echo -e "\t\t &lt;entry kind=\"package\" name=\"$NAME\" epoch=\"0\" ver=\"$VERSION\" rel=\"$RELEASE\" arch=\"$ARCH\"/&gt;" &gt;&gt; $DOC_NAME.xml
+        done
+
+echo -e "\t &lt;/onsys&gt;" &gt;&gt; $DOC_NAME.xml
+echo "&lt;/syscontent&gt;" &gt;&gt; $DOC_NAME.xml
+</pre>
 
 <p>
-<em>echo -e "\t &lt;/onsys&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
-<em>echo "&lt;/syscontent&gt;" &gt;&gt; $DOC_NAME.xml</em><br>
 <em>}</em><br>
 </p>
 
@@ -179,7 +174,7 @@ Created Montag 10 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

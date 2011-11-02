@@ -46,8 +46,13 @@ Created Freitag 10 Juni 2011
 
 //Beispiel://
 +++
-//SELECT * FROM person//
-	//WHERE POSITION ( '@' IN E-Mail) < 1//
+'''
+SELECT * FROM person
+'''
+	'''
+	WHERE POSITION ( '@' IN E-Mail) < 1
+	'''
+
 +++
 
 

@@ -21,26 +21,26 @@ Created Montag 18 April 2011
 Scriptvorschlag um updatedb als abhängigkeit einiger Programme beim kompillieren zu befriedigen:
 +++
 //Scriptvorschlag linken nach updatedb um Abhängikeiten zu befriedigen://
-//#!/bin/bash//
+''#!/bin/bash''
 
-//slocate_updateddb()//
-//{//
-//SLOCATE=$(which slocate || echo "no")//
-//if ["$SLOCATE" != "no" ]//
-//        then//
-//                $SLOCATE -u//
-//        else//
-//                echo "slocate not found or script broken"//
-//fi//
-//}//
+''slocate_updateddb()''
+''{''
+''SLOCATE=$(which slocate || echo "no")''
+''if ["$SLOCATE" != "no" ]''
+''        then''
+''                $SLOCATE -u''
+''        else''
+''                echo "slocate not found or script broken"''
+''fi''
+''}''
 
-//if [ "$UID" == "0" ]//
-//        then//
-//                slocate_updatedb//
-//        else//
-//                echo "must be root"//
-//                exit 1//
-//fi//
+''if [ "$UID" == "0" ]''
+''        then''
+''                slocate_updatedb''
+''        else''
+''                echo "must be root"''
+''                exit 1''
+''fi''
 +++
 
 

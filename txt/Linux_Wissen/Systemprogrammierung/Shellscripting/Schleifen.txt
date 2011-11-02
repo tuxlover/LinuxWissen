@@ -56,15 +56,18 @@ __Tipp: Durchlaufen aller Postionsparameter, wie $@__
 __Hinweis: Schleifen können Ein- und Ausgabeumleitungen in den Schleifenkopf übergeben bekommen:__
 //Beispiele://
 ++
-//while ping; do : ; done || echo "Sie sind offline"//
+''while ping; do : ; done || echo "Sie sind offline"''
 ++
 → testen ob ein Server noch läuft
 
 ++
-//wnhile read LINE//
-//        do//
-//                echo "--$LINE--"//
-//        done < /etc/passwd//
+'''
+wnhile read LINE
+        do
+                echo "--$LINE--"
+        done < /etc/passwd
+'''
+
 ++
 → gibt die Datei /etc/passwd Zeilenweise aus mit -- -- dazwischen
 
@@ -114,7 +117,7 @@ __Hinweis: Schleifen können Ein- und Ausgabeumleitungen in den Schleifenkopf ü
 
 //Beispiele://
 //Mit seq eine einfache Zahlenfolge definieren//
-//for i in $(seq -s "-->" 1 $((3*$i+1)) 100); do echo $i;done//
+''for i in $(seq -s "-->" 1 $((3*$i+1)) 100); do echo $i;done''
 
 //Gleitkommazahlenfolge//
-//for i in $(seq -s "-->" 0 0.1 2.0);do echo $i; done//
+''for i in $(seq -s "-->" 0 0.1 2.0);do echo $i; done''

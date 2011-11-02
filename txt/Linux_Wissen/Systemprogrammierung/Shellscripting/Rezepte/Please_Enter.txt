@@ -5,12 +5,21 @@ Creation-Date: 2011-10-09T07:22:35+02:00
 ====== Please Enter ======
 Created Sonntag 09 Oktober 2011
 
-//#den Nutzer zwingen eine Eingabe vorzunehmen//
-//please_enter()//
-//{//
-//while [ -z $INPUT ]//
-	//do//
-		//read -e -p "Bitte geben sie hier etwas ein:" INPUT//
-	//done//
-//}//
+'''
+#den Nutzer zwingen eine Eingabe vorzunehmen
+please_enter()
+{
+while [ -z $INPUT ]
+'''
+	'''
+	do
+	'''
+		'''
+		read -e -p "Bitte geben sie hier etwas ein:" INPUT
+		'''
+	'''
+	done
+	}
+	'''
+
 

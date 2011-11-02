@@ -7,8 +7,15 @@ Created Montag 10 Oktober 2011
 
 have_arguements()
 {
+'''
 if [ -z  "$1" ]
+'''
+	'''
 	then
+	'''
+		'''
 		echo "Usage: $(basename $0) Argument "
-fi 
+		fi 
+		'''
+
 }

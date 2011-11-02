@@ -15,7 +15,10 @@ Created Mittwoch 14 September 2011
 
 
 //Beispiele://
-//localedef -f UTF-8 -i fi_FI .///
-//localedef -f UTF-8 -i fi_FI fi_FI.UTF-8 //
+'''
+localedef -f UTF-8 -i fi_FI ./
+localedef -f UTF-8 -i fi_FI fi_FI.UTF-8 
+'''
+
 
 __Hinweis: Welche Verzeichnisse von Localedef Standardmäßig verwendet werden kann mit __**localedef --help** __erfragt werden.__

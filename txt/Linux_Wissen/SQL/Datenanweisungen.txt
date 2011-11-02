@@ -7,7 +7,8 @@ Created Freitag 29 April 2011
 
 /* Kommentar */
 /* !<Version digit> <Statement> */ → Diese Anweisung kann nur von //mysql// ausgeführt werden
-				                            → Angabe einer Minimalen Versionsnummer für die die Anwesiugn ausgeführt 				  werden soll
+				                            → Angabe einer Minimalen Versionsnummer für die die Anwesiugn ausgeführt 	werden soll
+
 
 === Transaktions Anweisungen ===
 **SOURCE <Schema.sql> | <Data.sql>**
@@ -85,10 +86,15 @@ Created Freitag 29 April 2011
 
 //Beispiel://
 //+++//
-//SELECT ort, COUNT(*)//
-	//FROM person//
-	//WHERE ort = 'Berlin' OR ort = 'Hamburg'//
-	//GROUP BY ort;//
+'''
+SELECT ort, COUNT(*)
+'''
+	'''
+	FROM person
+	WHERE ort = 'Berlin' OR ort = 'Hamburg'
+	GROUP BY ort;
+	'''
+
 //+++//
 //>> Berlin 212//
 //>> Hamburg 17//
@@ -99,10 +105,15 @@ Created Freitag 29 April 2011
 
 //Beispiel://
 //+++//
-//SELECT ort, COUNT(*)//
-	//FROM person//
-	//GROUP BY ort//
-	//HAVING COUNT(*) >= 100;//
+'''
+SELECT ort, COUNT(*)
+'''
+	'''
+	FROM person
+	GROUP BY ort
+	HAVING COUNT(*) >= 100;
+	'''
+
 //+++//
 //>> Berlin 212//
 //>> Dresden 112//
@@ -163,12 +174,15 @@ Created Freitag 29 April 2011
 → __es muss immer ein Primärschlüssel definiert durch das Schlüsselwort PRIMARY KEY definiert werden__
 
 //Beispiel://
-// CREATE TABLE autor (//
-//    -> id_autor INTEGER AUTO_INCREMENT,//
-//    -> Name VARCHAR(30) NOT NULL,//
-//    -> Vorname VARCHAR(30) NOT NULL,//
-//    -> PRIMARY KEY (id_autor)//
-//    -> );//
+'''
+ CREATE TABLE autor (
+    -> id_autor INTEGER AUTO_INCREMENT,
+    -> Name VARCHAR(30) NOT NULL,
+    -> Vorname VARCHAR(30) NOT NULL,
+    -> PRIMARY KEY (id_autor)
+    -> );
+'''
+
 
 
 === Löschen ===

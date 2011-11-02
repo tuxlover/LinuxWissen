@@ -20,58 +20,58 @@ Created Mittwoch 27 April 2011
 →  liefert Stunde:Minute:Sekunde
 
 
-**dialog --checklist "Was möchten Sie gerne?" 12 40 4 "H" "Hamburger" on "C" "Chesseburger" off**
+''dialog --checklist "Was möchten Sie gerne?" 12 40 4 "H" "Hamburger" on "C" "Chesseburger" off''
 →  erstellt eine Checkliste in der der Menüeintrag Hamburger bereits ausgewählt ist und der Menueintrag Cheeseburger
     nicht ausgewählt ist
 
-**dialog --dselect /home 20 20**
+''dialog --dselect /home 20 20''
 →  erstellt einen Dialog zur Auswahl eines Verzeichnisses beginnend bei /home
 
-**touch /home/l1uard/emptyfile; dialog --editbox /home/l1zard/emptyfile 20 20**
+''touch /home/l1uard/emptyfile; dialog --editbox /home/l1zard/emptyfile 20 20''
 →  erstellt eine leere Box zum editieren
 
-**dialog --fseclect $HOME/ 20 20**
+''dialog --fseclect $HOME/ 20 20''
 →  erstellt einen Dialog zur Auswahl einer Datei beginnend beim Heimatverzeichnis des  Benutzeres
 
-**df |tail -1 |awk '{print $4}'|tr -d % |dialog --gauge used 20 20**
+''df |tail -1 |awk '{print $4}'|tr -d % |dialog --gauge used 20 20''
 →  erhält die Prozentzahl des letzten von df erfragten Geräts und präsentiert ein grafische Prozentanzeige
 
-**for ((i=0; $i<=100; i=i+5 )); do echo $i; sleep 1;done |dialog --gauge Test 20 20**
+''for ((i=0; $i<=100; i=i+5 )); do echo $i; sleep 1;done |dialog --gauge Test 20 20''
 →  erstelt einen Fortschrittsbalken der pro Sekunde um 5 Porzent anwächst
 
 **dialog --infobox '!Programm beendet!' 10 25**
-→  erstellt eine leere Box mit der Information "!Programm beendet!"
+''→  erstellt eine leere Box mit der Information "!Programm beendet!"''
 
-**dialog --inputbox "Wirklich abbrechen? (Ja eintippen)" 20 30**
+''dialog --inputbox "Wirklich abbrechen? (Ja eintippen)" 20 30''
 →  erstellt eine Box in der Nutzer eine Eingabe eintragen können.
 
-**dialog --inputmenu "Korregieren sie diese Wörter"  40 40 60 "F" Fraege "K" "Komputer"**
+''dialog --inputmenu "Korregieren sie diese Wörter"  40 40 60 "F" Fraege "K" "Komputer"''
 →  erstelle eine Menubox in der der Nutzer die Menueinträge bearbeiten kann
 
-**dialog --msgbox '!Programm beendet!' 10 25**
+''dialog --msgbox '!Programm beendet!' 10 25''
 →  erstellt eine Message box dessen lesen mit OK bestätigt werden muss
 
-**dialog --pause "Machmal Pause" 8 200 600**
+''dialog --pause "Machmal Pause" 8 200 600''
 →  erstellt eine Box in der ein Balken angezeigt wird, der für die Länge von 600 Sekunden rückwärts
 
-**dialog --passwordbox "Geheim" 8 26**
+''dialog --passwordbox "Geheim" 8 26''
 →  erstellt eine Box in der Text eingegeben werden kann, der nicht angezeigt wird
 
-**dialog --radiolist Choose 30 30 40 "Mo" Montag off "Di" Dienstag off "Mi" Mittwoch off Do "Donnerstag" off Fr "Freitag" off Sa "Samstag" off So "Sonntag" off**
+''dialog --radiolist Choose 30 30 40 "Mo" Montag off "Di" Dienstag off "Mi" Mittwoch off Do "Donnerstag" off Fr "Freitag" off Sa "Samstag" off So'' ''"Sonntag" off''
  →  erstelltt eine Liste mit Einträgen, von denen genau eine ausgewählt werden kann
 
-**sudo dialog --tailbox /var/log/messages 30 120**
+''sudo dialog --tailbox /var/log/messages 30 120''
 →  erstellt eine Box mit dem Inhalt der Ausgabe **tail -f /var/log/messages**
 
-**sudo dialog --textbox /var/log/messages 30 120**
+''sudo dialog --textbox /var/log/messages 30 120''
 →  erstellt eine Box mit dem blätterbaren Inhalt der gesamten Datei /var/log/messages
 
-**dialog --yesno "Kann man diese Frage richtig beantworten?" 6 45**
+''dialog --yesno "Kann man diese Frage richtig beantworten?" 6 45''
 →  erstellt eine Box mit einer Entscheidungsfrage
 
 __Hinweis: Das Programm dialog schreibt seine Ausgabe nach Stder__r
 
-**result=$(dialog --menu "Test" 12 40 4 H "H" A "A"  2>&1 1> $(tty))**
+''result=$(dialog --menu "Test" 12 40 4 H "H" A "A"  2>&1 1> $(tty))''
 
-**result=$(dialog --yesno "Kann man diese Frage richtig beantworten?" 6 45 2>&1 1> $(tty) && echo yes || echo "no")**
+''result=$(dialog --yesno "Kann man diese Frage richtig beantworten?" 6 45 2>&1 1> $(tty) && echo yes || echo "no")''
 →  schreibt die Ausgabe von dialog in die Variable result

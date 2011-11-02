@@ -20,13 +20,16 @@ Created Mittwoch 27 April 2011
 
 //Beispiel://
 //++//
-//PS3="Choose: "//
-//select i in a b c quit//
-// do //
-// [ $i = "quit" ]  && exit 0//
-// echo "You chose $REPLY) $i"//
-//break//
-//done//
+'''
+PS3="Choose: "
+select i in a b c quit
+ do 
+ [ $i = "quit" ]  && exit 0
+ echo "You chose $REPLY) $i"
+break
+done
+'''
+
 //++//
 → solange nicht quit eingegeben wird, wird immer wieder gefragt
 

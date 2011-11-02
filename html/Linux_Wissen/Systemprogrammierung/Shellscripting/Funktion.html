@@ -142,17 +142,20 @@ Created Mittwoch 27 April 2011<br>
 (1) Eine Datei my_lib,sh anlegen die die gewünschten Funktionen enthalten<br>
 (2) sourcen der Datei zu Beginn des Scripts<br>
 ++<br>
-<em>#!/bin/bash</em><br>
-<em>. my_lib.sh</em><br>
-++   <br>
 </p>
+<pre>
+#!/bin/bash
+. my_lib.sh
+++   
+
+Beispiel:
+++
+toupper()
+{
+echo $* | tr '[:upper:]' '[:lower:]'
+</pre>
 
 <p>
-<em>Beispiel:</em><br>
-++<br>
-<em>toupper()</em><br>
-<em>{</em><br>
-<em>echo $* | tr '[:upper:]' '[:lower:]'</em><br>
 <em>}</em><br>
 ++<br>
 → Groß in Kleinbuchstaben konvertieren<br>
@@ -175,7 +178,7 @@ Created Mittwoch 27 April 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html'>Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a></li>
+				Backlinks:						<a href='../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html'>Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a></li>						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -157,12 +157,17 @@ Created Dienstag 07 Juni 2011<br>
 <p>
 <em>Beispiel:</em><br>
 +++<br>
-<em>CREATE DOMAIN u_mail</em><br>
-<em>AS VARCHAR(120)</em><br>
-<em>CHECK</em><br>
-<em>(</em><br>
-<em>VALUE CONTAINING @</em><br>
-<em>);</em><br>
+</p>
+<pre>
+CREATE DOMAIN u_mail
+AS VARCHAR(120)
+CHECK
+(
+VALUE CONTAINING @
+);
+</pre>
+
+<p>
 +++<br>
 </p>
 

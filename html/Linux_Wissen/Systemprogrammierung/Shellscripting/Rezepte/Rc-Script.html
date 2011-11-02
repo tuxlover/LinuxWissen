@@ -130,47 +130,41 @@
 Created Montag 10 Oktober 2011<br>
 </p>
 
-<p>
-<em>This startscript should be used as an example</em><br>
-<em>### BEGIN INIT INFO</em><br>
-<em># Provides:          daemon</em><br>
-<em># Required-Start:    $earlysyslog</em><br>
-<em># Required-Stop:     $networ</em><br>
-<em># Default-Start:     3 5</em><br>
-<em># Default-Stop:      0 6</em><br>
-<em># Short-Description: Selbsterstellter Service</em><br>
-<em># Description:       Lange Beschreibung</em><br>
-<em>### END INIT INFO</em><br>
-</p>
+<pre>
+This startscript should be used as an example
+### BEGIN INIT INFO
+# Provides:          daemon
+# Required-Start:    $earlysyslog
+# Required-Stop:     $networ
+# Default-Start:     3 5
+# Default-Stop:      0 6
+# Short-Description: Selbsterstellter Service
+# Description:       Lange Beschreibung
+### END INIT INFO
 
-<p>
-<em>start_daemon()</em><br>
-<em>{</em><br>
-<em>....</em><br>
-<em>}</em><br>
-</p>
+start_daemon()
+{
+....
+}
 
-<p>
-<em>stop_daemon()</em><br>
-<em>{</em><br>
-<em>....</em><br>
-<em>}</em><br>
-</p>
+stop_daemon()
+{
+....
+}
 
-<p>
-<em>case "$1" in</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"start") start_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"stop") stop_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"status") ps  -A|grep daemon &amp;&amp; echo "running" || echo "unused"</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"restart") start_daemon &amp;&amp; stop_daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;"reload") killall -1 daemon</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;;;</em><br>
-<em>esac</em><br>
-</p>
+case "$1" in
+	"start") start_daemon
+	;;
+	"stop") stop_daemon
+	;;
+	"status") ps  -A|grep daemon &amp;&amp; echo "running" || echo "unused"
+	;;
+	"restart") start_daemon &amp;&amp; stop_daemon
+	;;
+	"reload") killall -1 daemon
+	;;
+esac
+</pre>
 
 
 			<!-- End wiki content -->
@@ -178,7 +172,7 @@ Created Montag 10 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

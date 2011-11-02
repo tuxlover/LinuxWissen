@@ -47,7 +47,7 @@ __Hinweis: Auf Servern sollte /var auf eine andere Partition oder einen anderen 
 * wird über den //*/etc/syslog.conf //oder //*/etc/rsyslog.conf //konfiguriert
 [[Linux Wissen:FHS:etc:syslog.conf]]
 __Hinweis: Nach dem editieren der Konfigurationsdatei muss der syslogd die Konfigurationsdatei neu lesen__
-**kill -1 rsyslogd** bzw. **kill -1 syslogd → **den **syslogd **zwingen sein Konfiguration neu zu lesen
+''kill -1 rsyslogd ''bzw. ''kill -1 syslogd''** → **den **syslogd **zwingen sein Konfiguration neu zu lesen
 [[Linux Wissen:Prozessverwaltung:kill]]
 * das Programm **logger **kann dazu verwendet werden, Meldungen an den Syslog Daemoen zu senden
 [[Linux Wissen:Systemprotokollierung:logger]]
@@ -66,8 +66,8 @@ __Hinweis: Nach dem editieren der Konfigurationsdatei muss der syslogd die Konfi
 **dmesg|less** --> analysieren der kompletten Systemnachrichten auch die im frühen Bootstadium
 
 __Tricks:__
-**dmesg|grep fail** --> sucht nach Problemen
-**dmesg|grep "\<E\:.*\>"** --> nach E: was ein Indikator für Fehler sein kann
+''dmesg|grep fail ''--> sucht nach Problemen
+''dmesg|grep "\<E\:.*\>"'' --> nach E: was ein Indikator für Fehler sein kann
 
 == Logfiles interaktiv lesen ==
-**tail -f <Logfile>** --> zeigt die letzten 10 Zeilen von logfile und alle neu hinzukommenden
+''tail -f <Logfile>'' --> zeigt die letzten 10 Zeilen von logfile und alle neu hinzukommenden

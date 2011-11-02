@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>ulimit</title>
+		<title>git config</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									ulimit</h1>
+									git config</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -58,6 +58,9 @@
 <li><a href="../FHS.html" title="FHS">FHS</a></li>
 <li><a href="../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
 <li><a href="../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<ul>
+<li><strong>git config</strong></li>
+</ul>
 <li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
 <li><a href="../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
@@ -65,15 +68,6 @@
 <li><a href="../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
 <li><a href="../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
 <li><a href="../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
-<ul>
-<li><a href="./kill.html" title="kill">kill</a></li>
-<li><a href="./Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste">Magic Sys-Abf Taste</a></li>
-<li><a href="./Nice_Werte_kontrollieren.html" title="Nice Werte kontrollieren">Nice Werte kontrollieren</a></li>
-<li><a href="./ps.html" title="ps">ps</a></li>
-<li><a href="./strace.html" title="strace">strace</a></li>
-<li><a href="./top.html" title="top">top</a></li>
-<li><strong>ulimit</strong></li>
-</ul>
 <li><a href="../root.html" title="root">root</a></li>
 <li><a href="../Shell.html" title="Shell">Shell</a></li>
 <li><a href="../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
@@ -92,38 +86,37 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<strong>ulimt &lt;LIMIT&gt; </strong>→ limitiere die Resourcen für eine Shell und der von ihr gestarteten Prozesse<br>
-<div style='padding-left: 60pt'>
-           → Shell Buildin<br>
-</div>
-<div style='padding-left: 30pt'>
-                  → &lt;LIMITS&gt; werden in 1024 bytes Inkrementierungen übergeben<br>
-</div>
-<strong>-S </strong>→ eine weiche Grenze setzen<br>
-<strong>-H </strong>→ eine harte Grenze setzen<br>
-<strong>-a </strong>→ zeige die aktuelle gesetzten Limits an<br>
-<strong>-c </strong>→ maximale Größe der Speicherabzüge (Core-files)<br>
-<strong>-d </strong>→ schränkt die aktuelle Größe des Dateisegments|Heaps ein (Kilobyte)<br>
-<strong>-f </strong>→ verbietet den Anwender eine Datei über eine bestimmte Größe zu erzeugen<br>
-<strong>-n </strong>→ schränkt die maximal offenen Dateien pro Prozess ein<br>
-<strong>-m </strong>→ schränkt die maximale Anzahl des verwendeten Speichers ein (Kilobyte)<br>
-<strong>-t </strong>→ schränkt die verfügbare CPU-Zeit auf die angegebene Zahl Sekunden ein<br>
-<strong>-u </strong>→ schränkt die Anzahl der Prozesse je Nutzer ein<br>
-<strong>-v </strong>→ schränkt die maximale Größe des virtuellen Speichers ein (Kilobyte)<br>
-<br>
-<h4>Sicherheitsrelevante ulimits</h4>
-<strong>ulimit -c 0 </strong>→ Coredumps verhindern<br>
-<strong>ulimit -f 512000 </strong>→ keine Dateien größer als 512 MB zulassen<br>
-<strong>ulimt -S -n </strong>→ weiches Limit von maximal 250 Dateideskriptoren<br>
-<strong>ulimit -S -u 100 </strong>→ weiches Maximum von 100 Prozessen<br>
-<strong>ulimit -H -v 50000 </strong>→ nicht mehr als 50 MB virtuellen Speicher verwenden<br>
-<br>
-<em>Beispiel:</em>
-<em>Coredump ausschalten</em>
-<code>ulimit -H -c 0 - -</code><br>
-<br>
-*/etc/security/limits.conf<br>
-<a href="../FHS/etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf">Linux Wissen:FHS:etc:security++limits.conf</a>
+				<p>
+Created Dienstag 01 November 2011<br>
+</p>
+
+<p>
+<ul>
+<li>git Modul zum konfigurieren der Globalen und nutzerspezifischen Konfigurationsdatei</li>
+<li><strong>git config </strong>kann nicht aufgerufen werden falls:</li>
+<ul>
+<li>die Konfigurationsdatei defekt oder ungültig ist ( <a href="../FHS/etc/gitconfig.html" title="Linux Wissen:FHS:etc:gitconfig">Linux Wissen:FHS:etc:gitconfig</a>)</li>
+<li>der Nutzer keine Berechtigungen hat, besonders für <strong>--system </strong>wichtig</li>
+<li><strong>--global </strong>mit einem nicht richtig gesetzten $HOME Verzeichnis ausgeführt wird</li>
+</ul>
+</ul>
+</p>
+
+<p>
+<strong>git config &lt;Optionen&gt; &lt;Sektion&gt;.&lt;Variable&gt; &lt;Wert&gt;  </strong><a href="../FHS/etc/gitconfig.html" title="Linux Wissen:FHS:etc:gitconfig">Linux Wissen:FHS:etc:gitconfig</a><br>
+<strong>--global </strong>→ editieren der Konfigurationsdatei des aktullen Nutzers unter <em>*~/.gitconfig</em><br>
+<strong>--local </strong>→ editieren der Konfigurationsdatei für das aktuelle Prokject<br>
+<strong>--system </strong>→ editieren der Konfigurationsdatei für alle (Systemweit)<br>
+</p>
+
+<p>
+<u>Hinweis: man git-config</u><br>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
+<code>git config  --global --add core.workspace /home/johnny/workspace/</code><br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -131,7 +124,7 @@
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>
+				Backlinks:						<a href='../FHS/etc/gitconfig.html'>Linux Wissen:FHS:etc:gitconfig</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

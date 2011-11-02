@@ -12,16 +12,21 @@ Created Donnerstag 28 April 2011
 
 //Definieren einer Tabelle://
 ++
-//CREATE TABLE <Tabllenname>//
-//(//
-	//ID(PRIMÄRSCHLÜSSEL)	INTEGER	PRIMARY KEY,//
-	//ITEM1	DATENTYP,//
-	//...//
-	//...//
-	//ITEM(N)	DATENTYP,//
-	//CONSTRAINT <Name_des_Contraint> PRIMARY KEY (Name Bezugsspalte für Primary Key),//
+'''
+CREATE TABLE <Tabllenname>
+(
+'''
+	'''
+	ID(PRIMÄRSCHLÜSSEL)	INTEGER	PRIMARY KEY,
+	ITEM1	DATENTYP,
+	...
+	...
+	ITEM(N)	DATENTYP,
+	CONSTRAINT <Name_des_Contraint> PRIMARY KEY (Name Bezugsspalte für Primary Key),
 	PRIMARY KEY (ITEM(S)) */definiert den Primärschlüssel /*,
 	FOREIGN KEY (ITEM(R)) */definiert den Fremdschlüssel /*
+	'''
+
 //);//
 ++
 

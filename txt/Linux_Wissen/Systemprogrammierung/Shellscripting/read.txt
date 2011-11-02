@@ -17,22 +17,27 @@ Created Mittwoch 27 April 2011
 
 //Beispiel://
 ++
-//read -e -n 1 -p "Abbrechen? (y/n)" ANSWER//
-//${ANSWER:="y"}//
+'''
+read -e -n 1 -p "Abbrechen? (y/n)" ANSWER
+${ANSWER:="y"}
 
 
-//while read -n 1 -p "Abbrechen (y/n)" ANSWER//
-	//do//
-//                case $ANSWER in//
-//                        [yY]*) result=0; break//
-//                        ;;//
-//                        [nN]*) result=1; break//
-//                        ;;//
-//                        [jJ]*) result=0; break//
-//                        ;;//
-//                        *) echo "Bitte antworten Sie mit j(y) oder n"//
-//                esac//
-//        done//
+while read -n 1 -p "Abbrechen (y/n)" ANSWER
+'''
+	'''
+	do
+	                case $ANSWER in
+	                        [yY]*) result=0; break
+	                        ;;
+	                        [nN]*) result=1; break
+	                        ;;
+	                        [jJ]*) result=0; break
+	                        ;;
+	                        *) echo "Bitte antworten Sie mit j(y) oder n"
+	                esac
+	        done
+	'''
+
 ++
 → dem Benutzer eine Frage stelllen
 

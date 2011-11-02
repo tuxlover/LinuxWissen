@@ -24,11 +24,11 @@ Created Dienstag 27 September 2011
 **-o <Option>** → weitere Optionen hinzufügen ([[lpr]])
 
 //Beispiele://
-**lpadmin -p LaserJet4000 -E -v socket://192.168.128.31 -m laserjed4000.ppd **
+''lpadmin -p LaserJet4000 -E -v socket://192.168.128.31 -m laserjed4000.ppd''
 → hinzufügen und aktivieren eines Druckers der über das Netzerk über die IP-Adresse 192.168.128.31 angesprochen werden kann
-**lpadmin -p LaserJet4000 -u allow:all**
+''lpadmin -p LaserJet4000 -u allow:all''
 → allen den Zugriff auf den Drucker LaserJet400 erlauben
-**lpadmin -p LaserJet4000 -u deny:peter,paul**
+''lpadmin -p LaserJet4000 -u deny:peter,paul''
  → Den Nutzern Peter,Paul das Drucken auf den Drucker LaserJet4000 verbieten
 
  

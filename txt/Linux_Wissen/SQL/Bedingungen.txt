@@ -58,7 +58,7 @@ a% → a am Anfang und beliebige Zeichen
 → meherer Bedingungen durch Und verknüpft
 
 //Beispiel://
-//select title from film where special_features LIKE 'B%' AND length < 90;//
+''select title from film where special_features LIKE 'B%' AND length < 90;''
 
 === Mengenoperationen ===
 

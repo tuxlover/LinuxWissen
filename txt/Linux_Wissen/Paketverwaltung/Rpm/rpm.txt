@@ -30,7 +30,7 @@ Created Montag 25 April 2011
 **--justdb **→ nur die Datenbank erneuern, tatsächlich aber keine Installation der Dateien vornehmen
  
 __Hinweis: Benutzen der Option __**--justdb**__ um einen zweiten Kernel zu installieren.__
-**rpm -i --justdb kernel-default-2.26.3.i586.rm && rpm -i <mein-generierter-Kernel>.rpm**
+''rpm -i --justdb kernel-default-2.26.3.i586.rm && rpm -i <mein-generierter-Kernel>.rpm''
 
 === löschen ===
 **rpm -e <Paket> **→ deinstallieren von <Paket>
@@ -54,9 +54,9 @@ __Hinweis: Benutzen der Option __**--justdb**__ um einen zweiten Kernel zu insta
 **-R|--requires **→ zeigt an welche Abhängigkeiten ein Paket hat
 **--qf "%Formatstring"**→ Ausgabe formatieren
 
-__Hinweis: Mit __ r**pm -qa --last|head -N**__ kann man sich die letzten N installierten Pakete anzeigen lassen.__
+__Hinweis: Mit __ ''rpm -qa --last|head -N''__ kann man sich die letzten N installierten Pakete anzeigen lassen.__
 
-__Hinweis: Benutzen von __**rpm -qa --last|head -1|awk '{print $1}' |xargs rpm -e **__kann man das zuletzt installierte__
+__Hinweis: Benutzen von __''rpm -qa --last|head -1|awk '{print $1}' |xargs rpm -e'' __kann man das zuletzt installierte__
 __Paket deinstallieren, auch wenn man den Namen nicht mehr weiß.__
 
 === überprüfen ===
@@ -115,7 +115,7 @@ installiert sein.
 
 
 //Beispiel://
-**rpmorphan -gui -exclude libdvdcss2 libdvdcss -guess-lib**
+''rpmorphan -gui -exclude libdvdcss2 libdvdcss -guess-lib''
 
 __Hinweis: Von rpmorphan vorgeschlagenen Pakete sollten sehr gründlich geprüft werden.__
 

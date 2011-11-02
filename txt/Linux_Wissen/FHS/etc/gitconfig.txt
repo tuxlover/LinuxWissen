@@ -5,35 +5,104 @@ Creation-Date: 2011-10-29T16:18:39+02:00
 ====== gitconfig ======
 Created Samstag 29 Oktober 2011
 
+* Neben der globalen Konfigurationsdatei sollten Nutzerkonfigurationen stets unter *~/.gitconfig vorgenommen werden
+* alle einstellungen können auch mit **git config **vorgenommen werden ([[Linux Wissen:git Vesionskontrolle:git config]])
 +++
+//;Dies ist ein Kommentar//
+//[Section]//
+	//Variable = Wert//
+
+;Einstellungen des Git Kern Moduls
+//[core]//
+	//;ignoriere x bit//
+	//filemode = false//
+	//;ignoriere Groß und Kleinschreibung//
+	//ignorecase = true//
+	//;symbolischen Links folgen//
+	//symlinks = true//
+	//;immer nach workspace klonen//
+	//worktree = ~/workspace//
+	//excludefile = local_excludes//
+	//editor = vim +"se nu"//
+	//pager = cat -n//
+	
+//;Nutzer//
 //[user]//
-//    name = John Doe//
-//    email = john@doe.com//
+//        name = John Doe//
+        //email// = john@doe.com
 
 //[github]//
-name = John Doe
-email = johnny@project.org
+//name = John Doe//
+//email// = johnny@project.org
 
+//;Umgebung //
 //[alias]//
 //    ci = commit -a//
 //    co = checkout//
 //    st = status -a//
 //    praise = blame//
+//    unstage = git reset HEAD//
+//    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short//
 
 //[apply]//
 //    whitespace = strip//
+    //ignorewhitespace = false//
+
 
 //[diff]//
-     tool = rdiff
-//    color = auto//
-//    rename = copy//
-
-//[pager]//
-//    color = true//
+//     tool = rdiff//
+    //;external = /usr/bin/colordiff -Naur//
+//    renames = copy//
 
 //[status]//
 //    color = auto//
 +++
+//[core] //
+→ festlegen des generellen Verhaltens von git
+//       filemode = true|false //→ wenn auf //false //gesetzt, wird das Executable Bit (x) ignoriert
+       
+	//ignorecase = true|false// → Groß- und Kleinschreibung wird nicht beachtet| beachtet
+       
+	//symlinks = true|false// → symbolischen links folgen | bzw. nicht folgen
+       
+	//worktree = <PATH>// → Alle Pulls, checkouts und clones in dieses Verzeichnis
+       
+	//exludefile = <Name>// → Es wird in jedem Arbeitsverzeichnis nach dieser Datei gesucht, existiert diese werden alle Dateien die hier gelistet sind von git excludiert
+                                     → ausserdem wird die Datei selber sowie die globale Datei .gitignore immer ausgelesen
+      
+	//editor = <Wert>  → //dieser Wert spezifiziert den Editor Befehl der beim Editieren von Informationen benutzt wird
+
+	//pager = <Wert>// → dieser Wert spezifiziert den Pager Befehl der zum Anzeigen von Ausgaben wie logs benutzt werden soll
 
 //[user] //
-//→ //globales festlegen von Nutzerinformationen die in jede Git Datenbank eingetragen werden
+//→ //festlegen von Nutzerinformationen die in jede Git Datenbank eingetragen werden, wenn dieser angemeldete Nutzer mit git arbeitet
+	//name = <Name> → //festlegen des Git Usernamens
+	
+	//email= <Name@Domain> → //festlegen des entsprechenden Nutzers
+	
+//[alias]//
+→ festlegen eigener Aliasse für git, wenn zum beispiel co = checkout als alias vergeben wurde, so ist **git co** dasselbe wie **git checkout** 
+
+//[apply]//
+→ festlegen wie git mit dem Patch Modul **git apply **umgehen soll
+	//whitespace = strip|andere aktion //→ sagt git wie es beim patchen mit Leerzeichen umgehen soll.
+                                                       → //strip// sagt hier dass alle nachgestellten Leerzeichen ignoriert und entfernt werden
+	
+	//ignorewhitespace = false|change// → werden Leerzeichen beim Anwenden eines Patches mit **git apply **berücksichtigt oder nicht
+	                                                               → falls auf //change //gesetzt wird, werden Leerzeichen ignoriert (nicht immer sinnvoll z.B. Python)
+					                                 →  falls auf false werden leerzeichen nicht ignoriert und immer als Änderung angeshen
+
+//[diff]//
+→ festlegen wie git mit dem Diff Tool **git diff **umgehen soll
+	//tool = <Tool> //→ dieses Tool für git diff verwenden, muss die Optionen des git internenen Tools beherschen
+	
+	//external = <Tool>// → diesen Befehl anstelle von git internen Tools verwenden
+	
+	//renames = true|false|copy //→ falls //true//, werden Umbenennungen von Dateien mit berücksichtigt
+						 → falls //false //werden Umbenennungen von Dateien nicht mit berücksichtigt
+						→ falls //copy// werden Umbennungen und kopieren von Dateien mit berücksichtigt
+
+//[status] //
+//→ //festlegen des Verhaltens von Modul **git status** 
+
+__Hinweis: man git-config gibt die volle Liste aller Konfigrations Sektionen und Variablen an__

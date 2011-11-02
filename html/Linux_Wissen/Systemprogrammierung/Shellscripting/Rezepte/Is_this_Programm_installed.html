@@ -130,73 +130,67 @@
 Created Sonntag 09 Oktober 2011<br>
 </p>
 
-<p>
-<em>#Besipiel überporüfe ob find installiert ist</em><br>
-<em>check__if_installed()</em><br>
-<em>{</em><br>
-<em>find - -version &amp;&gt; /dev/null  &amp;&amp; HAS_FIND="yes" || HAS_FIND="no"</em><br>
-</p>
+<pre>
+#Besipiel überporüfe ob find installiert ist
+check__if_installed()
+{
+find - -version &amp;&gt; /dev/null  &amp;&amp; HAS_FIND="yes" || HAS_FIND="no"
 
-<p>
-<em>if [ "$HAS_FIND" == "yes" ]</em><br>
-<div style='padding-left: 30pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>echo "find ist installiert."</em><br>
-</div>
-<div style='padding-left: 30pt'>
-<em>else</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>echo "find ist nicht installiert."</em><br>
-</div>
-</p>
+if [ "$HAS_FIND" == "yes" ]
+</pre>
+<pre style='padding-left: 30pt'>
+then
+</pre>
+<pre style='padding-left: 60pt'>
+echo "find ist installiert."
+</pre>
+<pre style='padding-left: 30pt'>
+else
+</pre>
+<pre style='padding-left: 60pt'>
+echo "find ist nicht installiert."
 
-<p>
-<div style='padding-left: 60pt'>
-<em>exit 1</em><br>
-</div>
-<em>fi</em><br>
-<em>return 0</em><br>
-<em>}</em><br>
-</p>
+</pre>
+<pre style='padding-left: 60pt'>
+exit 1
+fi
+</pre>
+<pre>
+return 0
+}
+</pre>
+
 
 <p>
 → Jedes Programm hat eine Option die die Programmversion anzeigt<br>
 → Man kann mittels <strong>awk ( </strong><a href="../../Awk.html" title="Systemprogrammierung:Awk">Systemprogrammierung:Awk</a><strong> )</strong> auch prüfen ob eine bestimmte Version installiert ist<br>
 </p>
 
-<p>
-<em>check_if_installed()</em><br>
-<em>{</em><br>
-<em>FIND_VERSION=$(find --version |awk'\4.4.2\{print $4}')</em><br>
-<em>${FIND_VERSION:="no"} 2&gt; /dev/null</em><br>
-</p>
+<pre>
+check_if_installed()
+{
+FIND_VERSION=$(find --version |awk'\4.4.2\{print $4}')
+${FIND_VERSION:="no"} 2&gt; /dev/null
 
-<p>
-<em>if [ "$FIND_VERSION" == "4.4.2" ]</em><br>
-<div style='padding-left: 30pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>echo "find version 4.4.2 ist installiert"</em><br>
-</div>
-</p>
+if [ "$FIND_VERSION" == "4.4.2" ]
+</pre>
+<pre style='padding-left: 30pt'>
+then
+</pre>
+<pre style='padding-left: 60pt'>
+echo "find version 4.4.2 ist installiert"
 
-<p>
-<div style='padding-left: 30pt'>
-<em>else</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>echo "find version 4.4.2 ist nicht installiert"</em><br>
-<em>exit 1</em><br>
-</div>
-<em>fi</em><br>
-<em>return 0</em><br>
-<em>}</em><br>
-</p>
-
+</pre>
+<pre style='padding-left: 30pt'>
+else
+</pre>
+<pre style='padding-left: 60pt'>
+echo "find version 4.4.2 ist nicht installiert"
+exit 1
+fi
+return 0
+}
+</pre>
 
 
 			<!-- End wiki content -->
@@ -204,7 +198,7 @@ Created Sonntag 09 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -5,38 +5,65 @@ Creation-Date: 2011-10-09T20:15:29+02:00
 ====== Is this Programm installed ======
 Created Sonntag 09 Oktober 2011
 
-//#Besipiel überporüfe ob find installiert ist//
-//check__if_installed()//
-//{//
-//find - -version &> /dev/null  && HAS_FIND="yes" || HAS_FIND="no"//
+'''
+#Besipiel überporüfe ob find installiert ist
+check__if_installed()
+{
+find - -version &> /dev/null  && HAS_FIND="yes" || HAS_FIND="no"
 
-//if [ "$HAS_FIND" == "yes" ]//
-	//then//
-		//echo "find ist installiert."//
-	//else//
-		//echo "find ist nicht installiert."//
+if [ "$HAS_FIND" == "yes" ]
+'''
+	'''
+	then
+	'''
+		'''
+		echo "find ist installiert."
+		'''
+	'''
+	else
+	'''
+		'''
+		echo "find ist nicht installiert."
+		
+		'''
+		'''
+		exit 1
+		fi
+		'''
 
-		//exit 1//
-//fi//
-//return 0//
-//}//
+'''
+return 0
+}
+'''
+
 
 → Jedes Programm hat eine Option die die Programmversion anzeigt
 → Man kann mittels **awk ( **[[Systemprogrammierung:Awk]]** )** auch prüfen ob eine bestimmte Version installiert ist
 
-//check_if_installed()//
-//{//
-//FIND_VERSION=$(find --version |awk'\4.4.2\{print $4}')//
-//${FIND_VERSION:="no"} 2> /dev/null//
+'''
+check_if_installed()
+{
+FIND_VERSION=$(find --version |awk'\4.4.2\{print $4}')
+${FIND_VERSION:="no"} 2> /dev/null
 
-//if [ "$FIND_VERSION" == "4.4.2" ]//
-	//then//
-		//echo "find version 4.4.2 ist installiert"//
+if [ "$FIND_VERSION" == "4.4.2" ]
+'''
+	'''
+	then
+	'''
+		'''
+		echo "find version 4.4.2 ist installiert"
+		
+		'''
+	'''
+	else
+	'''
+		'''
+		echo "find version 4.4.2 ist nicht installiert"
+		exit 1
+		fi
+		return 0
+		}
+		'''
 
-	//else//
-		//echo "find version 4.4.2 ist nicht installiert"//
-		//exit 1//
-//fi//
-//return 0//
-//}//
 

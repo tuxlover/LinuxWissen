@@ -16,7 +16,7 @@ Created Samstag 16 April 2011
 {rot,gelb,blau}.txt → die Wörter rot.txt, gelb.txt und blau.txt
 
 //Beispiel: //
-//rm *.rpm → löscht alle Dateien die auf .rpm enden//
-//rm ?.ax → löscht zum Beispiel die Dateien die auf a.ax bax c.ax, aber nicht ca.ax//
-//rm [abc].deb → löscht a.deb, b.deb oder c.deb aber nicht d.deb, cd.deb//
-//mkdir -p /etc/init.d/rc{1,2,3,4,5}.d //            
+''rm *.rpm ''//→ löscht alle Dateien die auf .rpm enden//
+''rm ?.ax ''//→ löscht zum Beispiel die Dateien die auf a.ax bax c.ax, aber nicht ca.ax//
+''rm [abc].deb''// → löscht a.deb, b.deb oder c.deb aber nicht d.deb, cd.deb//
+''mkdir -p /etc/init.d/rc{1,2,3,4,5}.d ''            

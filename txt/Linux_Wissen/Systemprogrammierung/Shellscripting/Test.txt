@@ -5,11 +5,11 @@ Creation-Date: 2011-04-26T21:56:57+02:00
 ====== Test ======
 Created Dienstag 26 April 2011
 
-**test [ ]   (( )) [[ ]]**
+**test [ ]   (( ))  **
 
 ===== Pattern Matching =====
-• Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, benutzt man die neueren [[ ]] und der passende Ausdruck wird **ohne **"" angegeben
-//Beispiel://
+* **ohne **"" angegeben
+Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, benutzt man die neueren   und der passende Ausdruck wird //Beispiel://
 //if [[ ${FILE} == *.tar.gz ]]//
 	//then//
 		//tar xvfz $FILE//
@@ -56,42 +56,45 @@ Created Dienstag 26 April 2011
 
 === Arithmetische Tests mit (( )) ===
 ++
-//#!/bin/bash                                                            //
-//# arith-tests.sh                                                       //
-//# Arithmetic tests.                                                    //
+'''
+#!/bin/bash                                                            
+# arith-tests.sh                                                       
+# Arithmetic tests.                                                    
                                                                         
-// (( 0 ))                                                                //
-// echo "Exit status von \"(( 0 ))\" ist $?."         # 1                 //
+ (( 0 ))                                                                
+ echo "Exit status von \"(( 0 ))\" ist $?."         # 1                 
                                                                         
-// (( 1 ))                                                                //
-// echo "Exit status von \"(( 1 ))\" ist $?."         # 0                 //
+ (( 1 ))                                                                
+ echo "Exit status von \"(( 1 ))\" ist $?."         # 0                 
                                                                         
-// (( 5 > 4 ))                                      # wahr                //
-// echo "Exit status von \"(( 5 > 4 ))\" ist $?."   # 0                   //
+ (( 5 > 4 ))                                      # wahr                
+ echo "Exit status von \"(( 5 > 4 ))\" ist $?."   # 0                   
                                                                         
-// (( 5 > 9 ))                                      # false               //
-// echo "Exit status von \"(( 5 > 9 ))\" ist $?."   # 1                   //
+ (( 5 > 9 ))                                      # false               
+ echo "Exit status von \"(( 5 > 9 ))\" ist $?."   # 1                   
                                                                         
-// (( 5 == 5 ))                                     # wahr                //
-// # (( 5 = 5 ))  gibt einen Fehlerwert                                   //
+ (( 5 == 5 ))                                     # wahr                
+ # (( 5 = 5 ))  gibt einen Fehlerwert                                   
                                                                         
-// (( 5 - 5 ))                                      # 0                   //
+ (( 5 - 5 ))                                      # 0                   
                                                                         
-// (( 5 / 4 ))                                      # Division o.k.       //
+ (( 5 / 4 ))                                      # Division o.k.       
                                                                         
-// (( 1 / 2 ))                                     # Division resultat < 1. //
-//                                                  # 1                   //
+ (( 1 / 2 ))                                     # Division resultat < 1. 
+                                                  # 1                   
                                                                         
-// (( 1 / 0 )) 2>/dev/null                        #Illegal division durch 0. //
-// # 1          ^^^^^^^^^^^                                               //
+ (( 1 / 0 )) 2>/dev/null                        #Illegal division durch 0. 
+ # 1          ^^^^^^^^^^^                                               
                                                                         
                                                                         
-// if (( var1 > var2 ))                                                   //
-// then #^      ^      Note: Not $var1, $var2. Why?                       //
-//  echo "$var1 ist größer $var2"                                   //
-// fi     # 5 ist größer als 4                                          //
+ if (( var1 > var2 ))                                                   
+ then #^      ^      Note: Not $var1, $var2. Why?                       
+  echo "$var1 ist größer $var2"                                   
+ fi     # 5 ist größer als 4                                          
                                                                         
-// exit 0       //                                                          
+ exit 0            
+'''
+                                                     
 ++
 
 ===== Zeichenketten Tests =====

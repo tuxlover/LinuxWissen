@@ -153,51 +153,50 @@ Created Dienstag 18 Oktober 2011<br>
 
 <p>
 ++<br>
-<em># redirect tty fds to /dev/null</em><br>
-<em>redirect-std() {</em><br>
-//    <a href="" title=" -t 0 "> -t 0 </a> &amp;&amp; exec &lt;/dev/null//<br>
-//    <a href="" title=" -t 1 "> -t 1 </a> &amp;&amp; exec &gt;/dev/null//<br>
-//    <a href="" title=" -t 2 "> -t 2 </a> &amp;&amp; exec 2&gt;/dev/null//<br>
-<em>}</em><br>
 </p>
+<pre>
+# redirect tty fds to /dev/null
+redirect-std() {
+//     -t 0  &amp;&amp; exec &lt;/dev/null//
+//     -t 1  &amp;&amp; exec &gt;/dev/null//
+//     -t 2  &amp;&amp; exec 2&gt;/dev/null//
+}
  
-<p>
-<em># close all non-std* fds</em><br>
-<em>close-fds() {</em><br>
-<em>    eval exec {3..255}\&gt;\&amp;-</em><br>
-<em>}</em><br>
-</p>
+# close all non-std* fds
+close-fds() {
+    eval exec {3..255}\&gt;\&amp;-
+}
  
-<p>
-<em># full daemonization of external command with setsid</em><br>
-<em>daemonize() {</em><br>
-<em>    (                   # 1. fork</em><br>
-<em>        redirect-std    # 2.1. redirect stdin/stdout/stderr before setsid</em><br>
-<em>        cd /            # 3. ensure cwd isn't a mounted fs</em><br>
-<em>        # umask 0       # 4. umask (leave this to caller)</em><br>
-<em>        close-fds       # 5. close unneeded fds</em><br>
-<em>        exec setsid "$@"</em><br>
-<em>    ) &amp;</em><br>
-<em>}</em><br>
-</p>
+# full daemonization of external command with setsid
+daemonize() {
+    (                   # 1. fork
+        redirect-std    # 2.1. redirect stdin/stdout/stderr before setsid
+        cd /            # 3. ensure cwd isn't a mounted fs
+        # umask 0       # 4. umask (leave this to caller)
+        close-fds       # 5. close unneeded fds
+        exec setsid "$@"
+    ) &amp;
+}
  
+# daemonize without setsid, keeps the child in the jobs table
+daemonize-job() {
+    (                   # 1. fork
+        redirect-std    # 2.2.1. redirect stdin/stdout/stderr
+        trap '' 1 2     # 2.2.2. guard against HUP and INT (in child)
+        cd /            # 3. ensure cwd isn't a mounted fs
+        # umask 0       # 4. umask (leave this to caller)
+        close-fds       # 5. close unneeded fds
+//        if  $(type -t "$1") != file ; then//
+            "$@"
+        else
+            exec "$@"
+        fi
+    ) &amp;
+    disown -h $!       # 2.2.3. guard against HUP (in parent)
+}
+</pre>
+
 <p>
-<em># daemonize without setsid, keeps the child in the jobs table</em><br>
-<em>daemonize-job() {</em><br>
-<em>    (                   # 1. fork</em><br>
-<em>        redirect-std    # 2.2.1. redirect stdin/stdout/stderr</em><br>
-<em>        trap '' 1 2     # 2.2.2. guard against HUP and INT (in child)</em><br>
-<em>        cd /            # 3. ensure cwd isn't a mounted fs</em><br>
-<em>        # umask 0       # 4. umask (leave this to caller)</em><br>
-<em>        close-fds       # 5. close unneeded fds</em><br>
-//        if <a href="" title=" $(type -t &quot;$1&quot;) != file "> $(type -t "$1") != file </a>; then//<br>
-<em>            "$@"</em><br>
-<em>        else</em><br>
-<em>            exec "$@"</em><br>
-<em>        fi</em><br>
-<em>    ) &amp;</em><br>
-<em>    disown -h $!       # 2.2.3. guard against HUP (in parent)</em><br>
-<em>}</em><br>
 ++<br>
 → falls man das Script von vornherein als Daemon anlegen will<br>
 </p>
@@ -208,7 +207,7 @@ Created Dienstag 18 Oktober 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../../../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../../../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

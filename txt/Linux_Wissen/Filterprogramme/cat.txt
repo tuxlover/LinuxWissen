@@ -18,13 +18,16 @@ Created Montag 18 April 2011
 **-t **→ -vT
 **-e **→ -vE
 
-**cat > <Datei> << __EOF__**
-**blah**
-**__EOF__**
+'''
+cat > <Datei> << __EOF__
+blah
+__EOF__
+'''
+
 → schreibt den Inhalt blah in die <Datei>, __EOF__ ist ein Dateiseperator und signaliseier das Ende der Datei
 
-**cat <Datei* > <Datei> **→ fügt mit Split erzeugte Dateien wieder zusammen
+''cat <Datei* > <Datei>'' → fügt mit Split erzeugte Dateien wieder zusammen
 
-**cat <Datei1> <Datei2> <Datei3> ... > <großeDatei> **→ macht aus mehereren kleineren Dateien eine große
+''cat <Datei1> <Datei2> <Datei3> ... > <großeDatei>'' → macht aus mehereren kleineren Dateien eine große
 
 **tac **→ liest den Datenstrom oder den Inhalt der Datei von unten nach oben    

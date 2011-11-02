@@ -16,15 +16,18 @@ Created Donnerstag 28 April 2011
 
 //Beispiel://
 ++
-//awk '//
-//function mittel(a, b, c) {//
-//mittelwert=(a+b+c)/3//
-//print mittelwert//
-//}//
+'''
+awk '
+function mittel(a, b, c) {
+mittelwert=(a+b+c)/3
+print mittelwert
+}
 
-//BEGIN {//
-// mittel(1, 2, 3)//
-//}'//
+BEGIN {
+ mittel(1, 2, 3)
+}'
+'''
+
 ++
 
 **return**
