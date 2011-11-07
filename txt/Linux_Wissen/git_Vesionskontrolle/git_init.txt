@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-02T03:40:43+01:00
+
+====== git init ======
+Created Mittwoch 02 November 2011
+
+* initialisieren eines Verzeichnisses als **git **Repository

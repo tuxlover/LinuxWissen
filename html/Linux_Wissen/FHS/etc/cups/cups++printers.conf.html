@@ -62,6 +62,7 @@
 <li><a href="../../dev.html" title="dev">dev</a></li>
 <li><a href="../../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="../anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="../apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="../cups.html" title="cups">cups</a></li>
 <ul>
@@ -145,21 +146,24 @@ Created Dienstag 27 September 2011<br>
 <em>*/etc/cups/printers.conf</em><br>
 <a href="../../../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a><br>
 <em>+++</em><br>
-<em>&lt;DefaultPrinter Hades&gt;</em><br>
-<em>Procduct	"(PostScript level 1 Printer)"</em><br>
-<em>Accpeting 	yes</em><br>
-<em>AllowUser 	Peter</em><br>
-//DeviceURI 	<a href="socket://foo.bar.com:9100//" title="socket://foo.bar.com:9100//">socket://foo.bar.com:9100//</a><br>
-<em>ErrorPolicy	abort-job</em><br>
-<em>Location	MTU88</em><br>
-...<br>
-<em>&lt;/Printer&gt;</em><br>
 </p>
+<pre>
+&lt;DefaultPrinter Hades&gt;
+Procduct	"(PostScript level 1 Printer)"
+Accpeting 	yes
+AllowUser 	Peter
+//DeviceURI 	socket://foo.bar.com:9100//
+ErrorPolicy	abort-job
+Location	MTU88
+...
+&lt;/Printer&gt;
+
+&lt;Printer Hera&gt;
+...
+&lt;/Printer&gt;
+</pre>
 
 <p>
-<em>&lt;Printer Hera&gt;</em><br>
-<em>...</em><br>
-<em>&lt;/Printer&gt;</em><br>
 <em>+++</em><br>
 <ul>
 <li>alle Direktiven können auch mit dem <strong>lpadmin </strong>Tool gesetzt werden</li>

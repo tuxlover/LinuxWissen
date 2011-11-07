@@ -14,9 +14,12 @@ Created Freitag 23 September 2011
 [[services]]
 
 +++
-//#<Dienstname>    <Sockettyp>     <Protokoll>     <Parallelität>  <User>  <Kommando mit Pfadangabe> <Argumente>//
-//ntalk           dgram           udp             wait            root            /usr/sbin/tcpd     in.talkd//
-//ftp             stream          tcp             nowait          root            /usr/sbin/tcpd     in.ftpd//
+'''
+#<Dienstname>    <Sockettyp>     <Protokoll>     <Parallelität>  <User>  <Kommando mit Pfadangabe> <Argumente>
+ntalk           dgram           udp             wait            root            /usr/sbin/tcpd     in.talkd
+ftp             stream          tcp             nowait          root            /usr/sbin/tcpd     in.ftpd
+'''
+
 +++
 * Direktiven werden in Spaltenform eingetragen
 * jede Spalte in der hier aufgeführten Reihenfolge entspricht einer Direktive:

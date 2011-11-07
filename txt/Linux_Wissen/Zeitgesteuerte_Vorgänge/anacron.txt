@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-06T16:26:14+01:00
+
+====== anacron ======
+Created Sonntag 06 November 2011
+
+* Jobs asynchron periodisch ausführen
+* Die Periode wird in Tagen angegeben
+* Im gegensatz zu **cron **muss die Maschine nicht die ganze Zeit laufen
+
+**anacron **
+**-t <anacrontab> **→ diese Datei als Anacrontab einlesen
+**-f **→ sofort alle Befehle ausführe, Zeitstempel werden nicht berücksichtigt
+**-u **→ aktualisieren der Zeitstempel in //*/var/spool/anacron//
+**-s **→ Jobs nacheinander ausführen
+**-T **→ die Konfigurationsdatei testen
+
+//Beispiel://
+''anacron -t myanacrontab -T && echo "ok"''
+→ überprüfen ob eine erstelle anacrontab valide ist9

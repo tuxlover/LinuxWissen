@@ -62,6 +62,7 @@
 <li><a href="../../dev.html" title="dev">dev</a></li>
 <li><a href="../../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="../anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="../apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="../cups.html" title="cups">cups</a></li>
 <ul>
@@ -149,53 +150,46 @@ Created Dienstag 27 September 2011<br>
 </ul>
 <a href="../../../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a><br>
 +++<br>
-<em>LogLevel				warn</em><br>
-<em>SystemGroup			sys root</em><br>
-<em>Listen					localhost:631</em><br>
-<em>Listen					/var/run/cups/cups.sock</em><br>
 </p>
+<pre>
+LogLevel				warn
+SystemGroup			sys root
+Listen					localhost:631
+Listen					/var/run/cups/cups.sock
 
+
+Browsing				on
+BrowseOrder			allow,deny
+BrowseAllow			from all
+BrowseProtocols		cups smb
+BrowseLocalProtocols 	cups
+
+DefaultAuthType		 Basic
+
+&lt;Location /printers&gt;
+        Order Deny,Allow
+        Deny from all
+        Allow from 127.0.0.1
+        Allow from 192.168.123.0/24
+&lt;/Location&gt;
+
+&lt;Location /printers/newlp&gt;
+        Order allow,deny
+        Allow from 127.0.0.1
+        Allow from 192.168.123.0/24
+        Deny from 192.168.123.45
+        &lt;/Location&gt;
+
+&lt;Policy default&gt;
+  &lt;Limit Create-Job Print-Job Print-URI Validate-Job&gt;
+    Order deny,allow
+  &lt;/Limit&gt;
+&lt;/Policy&gt;
+
+DefaultPolicy 		default
+</pre>
 
 <p>
-<em>Browsing				on</em><br>
-<em>BrowseOrder			allow,deny</em><br>
-<em>BrowseAllow			from all</em><br>
-<em>BrowseProtocols		cups smb</em><br>
-<em>BrowseLocalProtocols 	cups</em><br>
-</p>
-
-<p>
-<em>DefaultAuthType		 Basic</em><br>
-</p>
-
-<p>
-<em>&lt;Location /printers&gt;</em><br>
-<em>        Order Deny,Allow</em><br>
-<em>        Deny from all</em><br>
-<em>        Allow from 127.0.0.1</em><br>
-<em>        Allow from 192.168.123.0/24</em><br>
-<em>&lt;/Location&gt;</em><br>
-</p>
-
-<p>
-<em>&lt;Location /printers/newlp&gt;</em><br>
-<em>        Order allow,deny</em><br>
-<em>        Allow from 127.0.0.1</em><br>
-<em>        Allow from 192.168.123.0/24</em><br>
-<em>        Deny from 192.168.123.45</em><br>
-<em>        &lt;/Location&gt;</em><br>
-</p>
-
-<p>
-<em>&lt;Policy default&gt;</em><br>
-<em>  &lt;Limit Create-Job Print-Job Print-URI Validate-Job&gt;</em><br>
-<em>    Order deny,allow</em><br>
-<em>  &lt;/Limit&gt;</em><br>
-<em>&lt;/Policy&gt;</em><br>
-</p>
-
-<p>
-<em>DefaultPolicy 		default</em><br>
 +++<br>
 <ul>
 <li>Diese Datei kann auch über das Cups Web Interface<em> localhost:631  </em>editiert werden</li>
@@ -366,7 +360,7 @@ weiter Direktiven werden in der Hilfe <a href="http://localhost:631/help/ref-cup
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='./cups%2B%2Bprinters.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a></li>						<a href='../cups.html'>Linux Wissen:FHS:etc:cups</a></li>						<a href='../../../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='../cups.html'>Linux Wissen:FHS:etc:cups</a></li>						<a href='../../../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='./cups%2B%2Bprinters.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

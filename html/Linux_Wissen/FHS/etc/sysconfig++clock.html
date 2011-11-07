@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -144,44 +145,47 @@ Created Montag 19 September 2011<br>
 
 <p>
 <em>+++</em><br>
-## Path:		System/Environment/Clock<br>
-## Description:		Information about your timezone and time<br>
-## Type:		string(-u,--utc,--localtime)<br>
-## ServiceRestart:	boot.clock<br>
-## Command:		/sbin/refresh_initrd<br>
-#<br>
-# Set to "-u" if your system clock is set to UTC, and to "--localtime"<br>
-# if your clock runs that way.<br>
-#<br>
-HWCLOCK="-u"<br>
-## Description: Write back system time to the hardware clock<br>
-## Type:		yesno<br>
-## Default:		yes<br>
-#<br>
-# Is set to "yes" write back the system time to the hardware<br>
-# clock at reboot or shutdown. Usefull if hardware clock is<br>
-# much more inaccurate than system clock.  Set to "no" if<br>
-# system time does it wrong due e.g. missed timer interrupts.<br>
-# If set to "no" the hardware clock adjust feature is also<br>
-# skipped because it is rather useless without writing back<br>
-# the system time to the hardware clock.<br>
-#<br>
-SYSTOHC="yes"<br>
 </p>
+<pre>
+## Path:		System/Environment/Clock
+## Description:		Information about your timezone and time
+## Type:		string(-u,--utc,--localtime)
+## ServiceRestart:	boot.clock
+## Command:		/sbin/refresh_initrd
+#
+# Set to "-u" if your system clock is set to UTC, and to "--localtime"
+# if your clock runs that way.
+#
+HWCLOCK="-u"
+## Description: Write back system time to the hardware clock
+## Type:		yesno
+## Default:		yes
+#
+# Is set to "yes" write back the system time to the hardware
+# clock at reboot or shutdown. Usefull if hardware clock is
+# much more inaccurate than system clock.  Set to "no" if
+# system time does it wrong due e.g. missed timer interrupts.
+# If set to "no" the hardware clock adjust feature is also
+# skipped because it is rather useless without writing back
+# the system time to the hardware clock.
+#
+SYSTOHC="yes"
+
+## Type:		string(Europe/Berlin,Europe/London,Europe/Paris)
+## ServiceRestart:	boot.clock
+## Command:		/sbin/refresh_initrd
+#
+# Timezone (e.g. CET or Asia/Tokyo). The value should correspond
+# to the contents of the /etc/localtime file and is for internal
+# YaST use; changing this setting will not make SuSEconfig update
+# the /etc/localtime file, YaST does that or you will need to do
+# this manually by calling zic -l.
+#
+TIMEZONE="Europe/Berlin"
+DEFAULT_TIMEZONE="Europe/Berlin"
+</pre>
 
 <p>
-## Type:		string(Europe/Berlin,Europe/London,Europe/Paris)<br>
-## ServiceRestart:	boot.clock<br>
-## Command:		/sbin/refresh_initrd<br>
-#<br>
-# Timezone (e.g. CET or Asia/Tokyo). The value should correspond<br>
-# to the contents of the /etc/localtime file and is for internal<br>
-# YaST use; changing this setting will not make SuSEconfig update<br>
-# the /etc/localtime file, YaST does that or you will need to do<br>
-# this manually by calling zic -l.<br>
-#<br>
-TIMEZONE="Europe/Berlin"<br>
-DEFAULT_TIMEZONE="Europe/Berlin"<br>
 +++<br>
 </p>
 

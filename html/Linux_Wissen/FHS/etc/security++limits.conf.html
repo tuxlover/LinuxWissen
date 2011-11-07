@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -139,40 +140,45 @@ Created Donnerstag 21 April 2011<br>
 <p>
 *<strong>/etc/security/limits.conf</strong><br>
 ++<br>
-<em>#Jede Zeile beschreibt ein gesteztes Limit für einen Nutzer in der Form</em><br>
-<em>#</em><br>
-<em>#&lt;Domain&gt;        &lt;Typ&gt;  &lt;Item&gt;  &lt;Wert&gt;</em><br>
-<em>#</em><br>
-<em>#Wobei:</em><br>
-<em>#&lt;Domain&gt; sein kann:</em><br>
-<em>#        - ein Nutzer Name</em><br>
-<em>#        - eine Gruppe wird entsprechend mt @Gruppe refernziert</em><br>
-<em>#        - * Für den Standardeintrag</em><br>
-<em>#        - % kann mit %Gruppe anagegeben werden um eine Maximalzahl von Logins festzulegen</em><br>
-<em>#</em><br>
-<em>#&lt;Typ&gt; kann die folgenden Werte haben:</em><br>
-<em>#        - "soft" für Softlimits</em><br>
-<em>#        - "hard" für Hardlimits</em><br>
-<em>#</em><br>
-<em>#&lt;Item&gt; kann eines der folgende Werte annehemn:</em><br>
-<em>#        - core - die größe der coredumps die bei segfaults etc. angelegt werden (KB)</em><br>
-<em>#        - data - maximale Data Größe (KB)</em><br>
-<em>#        - fsize - maximale Dateigröße (KB)</em><br>
-<em>#        - memlock - max locked-in-memory Adress Raum (KB)</em><br>
-<em>#        - nofile - max Anzahl offener Dateien</em><br>
-<em>#        - rss - Maximal residente Speichnutzung (KB)</em><br>
-<em>#        - stack - max Stack Größe (KB)</em><br>
-<em>#        - cpu - max CPU Zeit (MIN)</em><br>
-<em>#        - nproc - max Anzahl von Prozessen</em><br>
-<em>#        - as - address space limit (KB)</em><br>
-<em>#        - maxlogins - Maximale Anzahl der Logins für diesen User</em><br>
-<em>#        - maxsyslogins - Maximale Anzahl der Logins auf diesem System</em><br>
-<em>#        - priority - Die Priorität mit der die Prozesse des Nutzers laufen</em><br>
-<em>#        - locks - Maximale Anzahl der Locks die der Nutzer erhalten kann</em><br>
-<em>#        - sigpending - Maximale Anzahl der ausseteehden Signale</em><br>
-<em>#        - msgqueue - Maxiamle Anzahl von Ques (bytes)</em><br>
-<em>#        - nice - max nice Werte die mit renice erhöht werden können [-20, 19]</em><br>
-<em>#        - rtprio - max Realzeit Priorität</em><br>
+</p>
+<pre>
+#Jede Zeile beschreibt ein gesteztes Limit für einen Nutzer in der Form
+#
+#&lt;Domain&gt;        &lt;Typ&gt;  &lt;Item&gt;  &lt;Wert&gt;
+#
+#Wobei:
+#&lt;Domain&gt; sein kann:
+#        - ein Nutzer Name
+#        - eine Gruppe wird entsprechend mt @Gruppe refernziert
+#        - * Für den Standardeintrag
+#        - % kann mit %Gruppe anagegeben werden um eine Maximalzahl von Logins festzulegen
+#
+#&lt;Typ&gt; kann die folgenden Werte haben:
+#        - "soft" für Softlimits
+#        - "hard" für Hardlimits
+#
+#&lt;Item&gt; kann eines der folgende Werte annehemn:
+#        - core - die größe der coredumps die bei segfaults etc. angelegt werden (KB)
+#        - data - maximale Data Größe (KB)
+#        - fsize - maximale Dateigröße (KB)
+#        - memlock - max locked-in-memory Adress Raum (KB)
+#        - nofile - max Anzahl offener Dateien
+#        - rss - Maximal residente Speichnutzung (KB)
+#        - stack - max Stack Größe (KB)
+#        - cpu - max CPU Zeit (MIN)
+#        - nproc - max Anzahl von Prozessen
+#        - as - address space limit (KB)
+#        - maxlogins - Maximale Anzahl der Logins für diesen User
+#        - maxsyslogins - Maximale Anzahl der Logins auf diesem System
+#        - priority - Die Priorität mit der die Prozesse des Nutzers laufen
+#        - locks - Maximale Anzahl der Locks die der Nutzer erhalten kann
+#        - sigpending - Maximale Anzahl der ausseteehden Signale
+#        - msgqueue - Maxiamle Anzahl von Ques (bytes)
+#        - nice - max nice Werte die mit renice erhöht werden können [-20, 19]
+#        - rtprio - max Realzeit Priorität
+</pre>
+
+<p>
 <em>++</em><br>
 </p>
 
@@ -182,7 +188,7 @@ Created Donnerstag 21 April 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Prozessverwaltung/ulimit.html'>Linux Wissen:Prozessverwaltung:ulimit</a></li>
+				Backlinks:						<a href='../../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>						<a href='../../Prozessverwaltung/ulimit.html'>Linux Wissen:Prozessverwaltung:ulimit</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

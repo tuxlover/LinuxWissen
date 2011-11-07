@@ -105,185 +105,122 @@ Created Dienstag 26 April 2011<br>
 
 <p>
 ++<br>
-<em>##der norootforbuild flag ist ein Indikator der für den opensuse buildservice benötigt wird</em><br>
-<em>#norootforbuild</em><br>
 </p>
+<pre>
+##der norootforbuild flag ist ein Indikator der für den opensuse buildservice benötigt wird
+#norootforbuild
+
+#Macros vorher definieren
+%define _prefix /usr/share
+
+###Kopfteil:
+Name:                   AwOken                  #Name des Pakets
+
+Summary:                Awsome Token Icon Theme #Kurze Zusammenfassung wozu das Paket da ist
+
+Version:                1.1                     #Versionsnummer des Pakets
+
+Release:                1                       #Releasenummer des Build Vorgangs, bezieht sich auf die Versionsnummer
+                                                #des Pakets nicht auf die der Software
+
+Vendor:                 Opensuse BuildService   #Organisation die das Paket vertreibt und gebaut hat
+
+Packager:               propstmatthias &lt;pmatthias@fancynet.com&gt; #Nutzer und E-Mail Adresse des Packagers
+
+License:                Creative Commons Attribution-ShareAlike 2.5 License Agreement
+                                                #Lizenz unter der die Software, der Inhalt des Paketes steht
+
+Group:                  System/GUI/Gnome        #Die Zuordnung in der Rpm Datenbank
+
+URL:                    http://www.deviantart.com/download/163570862/ #URL zum Sourcecode des Paketes
+
+Source0:                 %{name}.tar.bz2                #Name inklusive Versionsnummer und tar.bz2|gz extension
+
+Source1:                index.theme             #weitere Dateien die zum Paket gehören aber nicht bestandteil des
+                                                #Source rpms sind
+
+Patch0:                 fancy-patch1.diff       #name diverser Patches die ebenfalls unter SOURCES liegen
+
+PATCH1:                 even-fancier.diff
+
+BuildRequires:  gtk2 &gt;= 2.18                    #Zum Bau der Software benötigte Pakete die installiert sein müssen
+BuildRequires:  fdupes
+
+Requires:       gnome                           #Eine Abstrakte Abhängigkeit die vorhanden sein muss und von einem
+                                                #anderen Paket angeboten werden muss
+
+Provides:       Icon-Theme                      #Eine Abstrakte Abhängigkeit die von diesem Paket angeboten wird
+
+Conflicts:      AwOken-gnome                    #Ein Paket die mit diesem Paket im Konflikt steht
+
+Obsoletes:      sonar-icon-theme                #Ein Paket welches durch dieses Übrflüssig gemacht wird
+
+BuildArch:              noarch                  #Für welche Zielarchitektur wird das Paket gebaut
+
+BuildRoot:              %{buildroot}            #Das Verezeichnis indem das Paket gebaut wird
+                                                #%{buildroot} ist ein Macro der sich auf die buildroot des Servers bezieht
+###Kopfteil:
+
+#beschreibt das Paket genauer. Meist wird hierfür ein teil der README Datei herangezogen
+%description
+My fancy icon theme for public use made with the customizable
+AwOken Icon Theme.
+
+#Angabe des Autors der Software, nicht des Packagers
+Authors:
+---------
+        Alessandro Roncone
+
+#Vorbereiten des Übersetzens der Software
+Patchen der Software
+%prep
+%setup -q
+%patch0 -p1
+%patch1 -p0
+
+#Befehle die zum Bau der Software ausgeführt werden sollen
+%build
+%__make %{?_smp_flags}
+
+#Befehle die für die Installation der Software ausgeführt werden
+%install
+%__makeinstall DESTDIR=%{buildroot} PREFIX=%{_prefix}
+%fdupes %{buildroot}%{_prefix}
+find %{buildroot}/usr/share/icons/ -type f -exec %__chmod 0644 {} \;
+
+#Befehle vor der Installation ausführen
+%pre
+
+#Befehl nach der Installation ausführen
+%post
+
+#Befehl vor der Deinstallation ausführen
+%preun
+
+Befehle nach der Deinstallation ausführen
+%postun
+
+#Aufräumen nach der Erstellung des Rpms
+%clean
+rm -rf %{buildrot}
+
+#Auflisten der Files
+#dies ist der schwierigste Prozess beim Bauen
+%files
+%defattr(-,root,root)
+%{_prefix}/icons/%{name}
+
+%changelog
+* &lt;Day of Week&gt; &lt;Month&gt; &lt;Day of Month&gt; &lt;Year&gt; &lt;Name des Autors&gt; &lt;Paket version&gt;
+- Notiz
+  +genauere Bechreibung der Notiz
+
+* Wed Dec 8 2010 propstmattias 1.0.1-1
+- initial build
+   + no bugs known
+</pre>
 
 <p>
-<em>#Macros vorher definieren</em><br>
-<em>%define _prefix /usr/share</em><br>
-</p>
-
-<p>
-<em>###Kopfteil:</em><br>
-<em>Name:                   AwOken                  #Name des Pakets</em><br>
-</p>
-
-<p>
-<em>Summary:                Awsome Token Icon Theme #Kurze Zusammenfassung wozu das Paket da ist</em><br>
-</p>
-
-<p>
-<em>Version:                1.1                     #Versionsnummer des Pakets</em><br>
-</p>
-
-<p>
-<em>Release:                1                       #Releasenummer des Build Vorgangs, bezieht sich auf die Versionsnummer</em><br>
-<em>                                                #des Pakets nicht auf die der Software</em><br>
-</p>
-
-<p>
-<em>Vendor:                 Opensuse BuildService   #Organisation die das Paket vertreibt und gebaut hat</em><br>
-</p>
-
-<p>
-//Packager:               propstmatthias &lt;<a href="mailto:pmatthias@fancynet.com" title="pmatthias@fancynet.com">pmatthias@fancynet.com</a>&gt; #Nutzer und E-Mail Adresse des Packagers//<br>
-</p>
-
-<p>
-<em>License:                Creative Commons Attribution-ShareAlike 2.5 License Agreement</em><br>
-<em>                                                #Lizenz unter der die Software, der Inhalt des Paketes steht</em><br>
-</p>
-
-<p>
-<em>Group:                  System/GUI/Gnome        #Die Zuordnung in der Rpm Datenbank</em><br>
-</p>
-
-<p>
-//URL:                    <a href="http://www.deviantart.com/download/163570862/" title="http://www.deviantart.com/download/163570862/">http://www.deviantart.com/download/163570862/</a> #URL zum Sourcecode des Paketes//<br>
-</p>
-
-<p>
-<em>Source0:                 %{name}.tar.bz2                #Name inklusive Versionsnummer und tar.bz2|gz extension</em><br>
-</p>
-
-<p>
-<em>Source1:                index.theme             #weitere Dateien die zum Paket gehören aber nicht bestandteil des</em><br>
-<em>                                                #Source rpms sind</em><br>
-</p>
-
-<p>
-<em>Patch0:                 fancy-patch1.diff       #name diverser Patches die ebenfalls unter SOURCES liegen</em><br>
-</p>
-
-<p>
-<em>PATCH1:                 even-fancier.diff</em><br>
-</p>
-
-<p>
-<em>BuildRequires:  gtk2 &gt;= 2.18                    #Zum Bau der Software benötigte Pakete die installiert sein müssen</em><br>
-<em>BuildRequires:  fdupes</em><br>
-</p>
-
-<p>
-<em>Requires:       gnome                           #Eine Abstrakte Abhängigkeit die vorhanden sein muss und von einem</em><br>
-<em>                                                #anderen Paket angeboten werden muss</em><br>
-</p>
-
-<p>
-<em>Provides:       Icon-Theme                      #Eine Abstrakte Abhängigkeit die von diesem Paket angeboten wird</em><br>
-</p>
-
-<p>
-<em>Conflicts:      AwOken-gnome                    #Ein Paket die mit diesem Paket im Konflikt steht</em><br>
-</p>
-
-<p>
-<em>Obsoletes:      sonar-icon-theme                #Ein Paket welches durch dieses Übrflüssig gemacht wird</em><br>
-</p>
-
-<p>
-<em>BuildArch:              noarch                  #Für welche Zielarchitektur wird das Paket gebaut</em><br>
-</p>
-
-<p>
-<em>BuildRoot:              %{buildroot}            #Das Verezeichnis indem das Paket gebaut wird</em><br>
-<em>                                                #%{buildroot} ist ein Macro der sich auf die buildroot des Servers bezieht</em><br>
-<em>###Kopfteil:</em><br>
-</p>
-
-<p>
-<em>#beschreibt das Paket genauer. Meist wird hierfür ein teil der README Datei herangezogen</em><br>
-<em>%description</em><br>
-<em>My fancy icon theme for public use made with the customizable</em><br>
-<em>AwOken Icon Theme.</em><br>
-</p>
-
-<p>
-<em>#Angabe des Autors der Software, nicht des Packagers</em><br>
-<em>Authors:</em><br>
-<em>---------</em><br>
-<em>        Alessandro Roncone</em><br>
-</p>
-
-<p>
-<em>#Vorbereiten des Übersetzens der Software</em><br>
-<em>Patchen der Software</em><br>
-<em>%prep</em><br>
-<em>%setup -q</em><br>
-<em>%patch0 -p1</em><br>
-<em>%patch1 -p0</em><br>
-</p>
-
-<p>
-<em>#Befehle die zum Bau der Software ausgeführt werden sollen</em><br>
-<em>%build</em><br>
-<em>%__make %{?_smp_flags}</em><br>
-</p>
-
-<p>
-<em>#Befehle die für die Installation der Software ausgeführt werden</em><br>
-<em>%install</em><br>
-<em>%__makeinstall DESTDIR=%{buildroot} PREFIX=%{_prefix}</em><br>
-<em>%fdupes %{buildroot}%{_prefix}</em><br>
-<em>find %{buildroot}/usr/share/icons/ -type f -exec %__chmod 0644 {} \;</em><br>
-</p>
-
-<p>
-<em>#Befehle vor der Installation ausführen</em><br>
-<em>%pre</em><br>
-</p>
-
-<p>
-<em>#Befehl nach der Installation ausführen</em><br>
-<em>%post</em><br>
-</p>
-
-<p>
-<em>#Befehl vor der Deinstallation ausführen</em><br>
-<em>%preun</em><br>
-</p>
-
-<p>
-<em>Befehle nach der Deinstallation ausführen</em><br>
-<em>%postun</em><br>
-</p>
-
-<p>
-<em>#Aufräumen nach der Erstellung des Rpms</em><br>
-<em>%clean</em><br>
-<em>rm -rf %{buildrot}</em><br>
-</p>
-
-<p>
-<em>#Auflisten der Files</em><br>
-<em>#dies ist der schwierigste Prozess beim Bauen</em><br>
-<em>%files</em><br>
-<em>%defattr(-,root,root)</em><br>
-<em>%{_prefix}/icons/%{name}</em><br>
-</p>
-
-<p>
-<em>%changelog</em><br>
-<em>* &lt;Day of Week&gt; &lt;Month&gt; &lt;Day of Month&gt; &lt;Year&gt; &lt;Name des Autors&gt; &lt;Paket version&gt;</em><br>
-<em>- Notiz</em><br>
-<em>  +genauere Bechreibung der Notiz</em><br>
-</p>
-
-<p>
-<em>* Wed Dec 8 2010 propstmattias 1.0.1-1</em><br>
-<em>- initial build</em><br>
-<em>   + no bugs known</em><br>
 ++<br>
 </p>
 

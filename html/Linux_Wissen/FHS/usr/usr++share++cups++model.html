@@ -106,188 +106,163 @@ Created Dienstag 27 September 2011<br>
 <p>
 <em>Beispiel.ppd</em><br>
 +++<br>
-<em>PPD-Adobe: "4.3"</em><br>
-<em>*%</em><br>
-<em>*% For information on using this, and to obtain the required backend</em><br>
-//*% script, consult <a href="http://www.linuxprinting.org///" title="http://www.linuxprinting.org///">http://www.linuxprinting.org///</a><br>
-<em>*FormatVersion:	"4.3"</em><br>
-<em>*FileVersion:	"1.1"</em><br>
-<em>*LanguageVersion: English</em><br>
-<em>*LanguageEncoding: ISOLatin1</em><br>
-<em>*PCFileName:	"PSLEVEL1.PPD"</em><br>
-<em>*Manufacturer:	"Generic"</em><br>
-<em>*Product:	"(PostScript level 1 Printer)"</em><br>
-<em>*cupsVersion:	1.0</em><br>
-<em>*cupsManualCopies: True</em><br>
-<em>*cupsModelNumber:  2</em><br>
-<em>*cupsFilter:	"application/vnd.cups-postscript 0 foomatic-rip"</em><br>
-<em>*%pprRIP:        foomatic-rip other</em><br>
-<em>*ModelName:     "Generic PostScript level 1 Printer"</em><br>
-<em>*ShortNickName: "Generic P.S. level 1 Printer"</em><br>
-<em>*NickName:      "Generic PostScript level 1 Printer Foomatic/Postscript (recommended)"</em><br>
-<em>*PSVersion:	"(3010.000) 550"</em><br>
-<em>*PSVersion:	"(3010.000) 651"</em><br>
-<em>*PSVersion:	"(3010.000) 652"</em><br>
-<em>*PSVersion:	"(3010.000) 653"</em><br>
-<em>*PSVersion:	"(3010.000) 704"</em><br>
-<em>*PSVersion:	"(3010.000) 705"</em><br>
-<em>*PSVersion:	"(3010.000) 800"</em><br>
-<em>*LanguageLevel:	"3"</em><br>
-<em>*ColorDevice:	True</em><br>
-<em>*DefaultColorSpace: RGB</em><br>
-<em>*FileSystem:	False</em><br>
-<em>*Throughput:	"1"</em><br>
-<em>*LandscapeOrientation: Plus90</em><br>
-<em>*TTRasterizer:	Type42</em><br>
 </p>
+<pre>
+PPD-Adobe: "4.3"
+*%
+*% For information on using this, and to obtain the required backend
+//*% script, consult http://www.linuxprinting.org///
+*FormatVersion:	"4.3"
+*FileVersion:	"1.1"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName:	"PSLEVEL1.PPD"
+*Manufacturer:	"Generic"
+*Product:	"(PostScript level 1 Printer)"
+*cupsVersion:	1.0
+*cupsManualCopies: True
+*cupsModelNumber:  2
+*cupsFilter:	"application/vnd.cups-postscript 0 foomatic-rip"
+*%pprRIP:        foomatic-rip other
+*ModelName:     "Generic PostScript level 1 Printer"
+*ShortNickName: "Generic P.S. level 1 Printer"
+*NickName:      "Generic PostScript level 1 Printer Foomatic/Postscript (recommended)"
+*PSVersion:	"(3010.000) 550"
+*PSVersion:	"(3010.000) 651"
+*PSVersion:	"(3010.000) 652"
+*PSVersion:	"(3010.000) 653"
+*PSVersion:	"(3010.000) 704"
+*PSVersion:	"(3010.000) 705"
+*PSVersion:	"(3010.000) 800"
+*LanguageLevel:	"3"
+*ColorDevice:	True
+*DefaultColorSpace: RGB
+*FileSystem:	False
+*Throughput:	"1"
+*LandscapeOrientation: Plus90
+*TTRasterizer:	Type42
 
 
 
+
+*VariablePaperSize: False
+
+*FoomaticIDs: Generic-PostScript_Printer Postscript
+*FoomaticRIPCommandLine: "level=%D; echo -en &amp;quot;%!\n%% %%\n%C&amp;quot;&amp;&amp;
+; if (( $level &amp;gt; 0 )); then if (( $level &amp;lt; 99 )); then level=&amp;qu&amp;&amp;
+ot; -dLanguageLevel=$level&amp;quot;; else level=&amp;quot;&amp;quot;; fi; gs -q -&amp;&amp;
+dPARANOIDSAFER -dNOPAUSE -dBATCH -sDEVICE=pswrite$level%A%Z -sOutputFi&amp;&amp;
+le=- -; else cat; fi"
+*End
+
+*OpenGroup: General/General
+
+*OpenUI *PageSize/Page Size: PickOne
+*OrderDependency: 100 AnySetup *PageSize
+*DefaultPageSize: A4
+*PageSize A4/A4: "&lt;&lt;/PageSize[595 842]/ImagingBBox null&gt;&gt;setpagedevice"
+...
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 100 AnySetup *PageRegion
+*DefaultPageRegion: A4
+*PageRegion A4/A4: "&lt;&lt;/PageSize[595 842]/ImagingBBox null&gt;&gt;setpagedevice"
+...
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: A4
+*ImageableArea 11x17/11x17: "0 0 792 1224"
+...
+
+*DefaultPaperDimension: A4
+...
+
+*OpenUI *Duplex/Double-Sided Printing: PickOne
+*FoomaticRIPOption Duplex: enum CmdLine C
+*OrderDependency: 130 AnySetup *Duplex
+*DefaultDuplex: None
+*Duplex DuplexNoTumble/Long Edge (Standard): "%% FoomaticRIPOptionSetting: Duplex=DuplexNoTumble"
+*FoomaticRIPOptionSetting Duplex=DuplexNoTumble: "&amp;lt;&amp;lt;/Duplex true&amp;&amp;
+ /Tumble false&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Duplex DuplexTumble/Short Edge (Flip): "%% FoomaticRIPOptionSetting: Duplex=DuplexTumble"
+*FoomaticRIPOptionSetting Duplex=DuplexTumble: "&amp;lt;&amp;lt;/Duplex true /&amp;&amp;
+Tumble true&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Duplex None/Off: "%% FoomaticRIPOptionSetting: Duplex=None"
+*FoomaticRIPOptionSetting Duplex=None: "&amp;lt;&amp;lt;/Duplex false&amp;gt;&amp;gt;s&amp;&amp;
+etpagedevice\n"
+*End
+*CloseUI: *Duplex
+
+*OpenUI *Resolution/Resolution: PickOne
+*FoomaticRIPOption Resolution: enum CmdLine C
+*OrderDependency: 110 AnySetup *Resolution
+*DefaultResolution: Unknown
+*Resolution 150x150dpi/150 DPI: "%% FoomaticRIPOptionSetting: Resolution=150x150dpi"
+*FoomaticRIPOptionSetting Resolution=150x150dpi: "&amp;lt;&amp;lt;/HWResolutio&amp;&amp;
+n[150 150]&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Resolution 300x300dpi/300 DPI: "%% FoomaticRIPOptionSetting: Resolution=300x300dpi"
+*FoomaticRIPOptionSetting Resolution=300x300dpi: "&amp;lt;&amp;lt;/HWResolutio&amp;&amp;
+n[300 300]&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Resolution 600x600dpi/600 DPI: "%% FoomaticRIPOptionSetting: Resolution=600x600dpi"
+*FoomaticRIPOptionSetting Resolution=600x600dpi: "&amp;lt;&amp;lt;/HWResolutio&amp;&amp;
+n[600 600]&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Resolution 1200x600dpi/1200x600 DPI: "%% FoomaticRIPOptionSetting: Resolution=1200x600dpi"
+*FoomaticRIPOptionSetting Resolution=1200x600dpi: "&amp;lt;&amp;lt;/HWResoluti&amp;&amp;
+on[1200 600]&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Resolution 1200x1200dpi/1200 DPI: "%% FoomaticRIPOptionSetting: Resolution=1200x1200dpi"
+*FoomaticRIPOptionSetting Resolution=1200x1200dpi: "&amp;lt;&amp;lt;/HWResolut&amp;&amp;
+ion[1200 1200]&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Resolution 2400x600dpi/2400x600 DPI: "%% FoomaticRIPOptionSetting: Resolution=2400x600dpi"
+*FoomaticRIPOptionSetting Resolution=2400x600dpi: "&amp;lt;&amp;lt;/HWResoluti&amp;&amp;
+on[2400 600]&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Resolution 2400x1200dpi/2400x1200 DPI: "%% FoomaticRIPOptionSetting: Resolution=2400x1200dpi"
+*FoomaticRIPOptionSetting Resolution=2400x1200dpi: "&amp;lt;&amp;lt;/HWResolut&amp;&amp;
+ion[2400 1200]&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*Resolution 2400x2400dpi/2400 DPI: "%% FoomaticRIPOptionSetting: Resolution=2400x2400dpi"
+*FoomaticRIPOptionSetting Resolution=2400x2400dpi: "&amp;lt;&amp;lt;/HWResolut&amp;&amp;
+ion[2400 2400]&amp;gt;&amp;gt;setpagedevice\n"
+*End
+*CloseUI: *Resolution
+
+*CloseGroup: General
+
+*OpenGroup: Miscellaneous/Miscellaneous
+
+*OpenUI *PreFilter/GhostScript pre-filtering: PickOne
+*FoomaticRIPOption PreFilter: enum CmdLine D
+*OrderDependency: 100 AnySetup *PreFilter
+*DefaultPreFilter: Level1
+*PreFilter EmbedFonts/Embed GhostScript fonts only: "%% FoomaticRIPOptionSetting: PreFilter=EmbedFonts"
+*FoomaticRIPOptionSetting PreFilter=EmbedFonts: "99"
+*PreFilter Level1/Convert to PS level 1: "%% FoomaticRIPOptionSetting: PreFilter=Level1"
+*FoomaticRIPOptionSetting PreFilter=Level1: "1"
+*PreFilter Level2/Convert to PS level 2: "%% FoomaticRIPOptionSetting: PreFilter=Level2"
+*FoomaticRIPOptionSetting PreFilter=Level2: "2"
+*PreFilter No/No pre-filtering: "%% FoomaticRIPOptionSetting: PreFilter=No"
+*FoomaticRIPOptionSetting PreFilter=No: "0"
+*CloseUI: *PreFilter
+
+*CloseGroup: Miscellaneous
+
+
+*% Generic boilerplate PPD stuff as standard PostScript fonts and so on
+
+*DefaultFont: Courier
+*Font AvantGarde-Book: Standard "(001.006S)" Standard ROM
+...
+</pre>
 
 <p>
-<em>*VariablePaperSize: False</em><br>
-</p>
-
-<p>
-<em>*FoomaticIDs: Generic-PostScript_Printer Postscript</em><br>
-<em>*FoomaticRIPCommandLine: "level=%D; echo -en &amp;quot;%!\n%% %%\n%C&amp;quot;&amp;&amp;</em><br>
-<em>; if (( $level &amp;gt; 0 )); then if (( $level &amp;lt; 99 )); then level=&amp;qu&amp;&amp;</em><br>
-<em>ot; -dLanguageLevel=$level&amp;quot;; else level=&amp;quot;&amp;quot;; fi; gs -q -&amp;&amp;</em><br>
-<em>dPARANOIDSAFER -dNOPAUSE -dBATCH -sDEVICE=pswrite$level%A%Z -sOutputFi&amp;&amp;</em><br>
-<em>le=- -; else cat; fi"</em><br>
-<em>*End</em><br>
-</p>
-
-<p>
-<em>*OpenGroup: General/General</em><br>
-</p>
-
-<p>
-<em>*OpenUI *PageSize/Page Size: PickOne</em><br>
-<em>*OrderDependency: 100 AnySetup *PageSize</em><br>
-<em>*DefaultPageSize: A4</em><br>
-<em>*PageSize A4/A4: "&lt;&lt;/PageSize[595 842]/ImagingBBox null&gt;&gt;setpagedevice"</em><br>
-...<br>
-<em>*CloseUI: *PageSize</em><br>
-</p>
-
-<p>
-<em>*OpenUI *PageRegion: PickOne</em><br>
-<em>*OrderDependency: 100 AnySetup *PageRegion</em><br>
-<em>*DefaultPageRegion: A4</em><br>
-<em>*PageRegion A4/A4: "&lt;&lt;/PageSize[595 842]/ImagingBBox null&gt;&gt;setpagedevice"</em><br>
-...<br>
-<em>*CloseUI: *PageRegion</em><br>
-</p>
-
-<p>
-<em>*DefaultImageableArea: A4</em><br>
-<em>*ImageableArea 11x17/11x17: "0 0 792 1224"</em><br>
-...<br>
-</p>
-
-<p>
-<em>*DefaultPaperDimension: A4</em><br>
-...<br>
-</p>
-
-<p>
-<em>*OpenUI *Duplex/Double-Sided Printing: PickOne</em><br>
-<em>*FoomaticRIPOption Duplex: enum CmdLine C</em><br>
-<em>*OrderDependency: 130 AnySetup *Duplex</em><br>
-<em>*DefaultDuplex: None</em><br>
-<em>*Duplex DuplexNoTumble/Long Edge (Standard): "%% FoomaticRIPOptionSetting: Duplex=DuplexNoTumble"</em><br>
-<em>*FoomaticRIPOptionSetting Duplex=DuplexNoTumble: "&amp;lt;&amp;lt;/Duplex true&amp;&amp;</em><br>
-<em> /Tumble false&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Duplex DuplexTumble/Short Edge (Flip): "%% FoomaticRIPOptionSetting: Duplex=DuplexTumble"</em><br>
-<em>*FoomaticRIPOptionSetting Duplex=DuplexTumble: "&amp;lt;&amp;lt;/Duplex true /&amp;&amp;</em><br>
-<em>Tumble true&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Duplex None/Off: "%% FoomaticRIPOptionSetting: Duplex=None"</em><br>
-<em>*FoomaticRIPOptionSetting Duplex=None: "&amp;lt;&amp;lt;/Duplex false&amp;gt;&amp;gt;s&amp;&amp;</em><br>
-<em>etpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*CloseUI: *Duplex</em><br>
-</p>
-
-<p>
-<em>*OpenUI *Resolution/Resolution: PickOne</em><br>
-<em>*FoomaticRIPOption Resolution: enum CmdLine C</em><br>
-<em>*OrderDependency: 110 AnySetup *Resolution</em><br>
-<em>*DefaultResolution: Unknown</em><br>
-<em>*Resolution 150x150dpi/150 DPI: "%% FoomaticRIPOptionSetting: Resolution=150x150dpi"</em><br>
-<em>*FoomaticRIPOptionSetting Resolution=150x150dpi: "&amp;lt;&amp;lt;/HWResolutio&amp;&amp;</em><br>
-<em>n[150 150]&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Resolution 300x300dpi/300 DPI: "%% FoomaticRIPOptionSetting: Resolution=300x300dpi"</em><br>
-<em>*FoomaticRIPOptionSetting Resolution=300x300dpi: "&amp;lt;&amp;lt;/HWResolutio&amp;&amp;</em><br>
-<em>n[300 300]&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Resolution 600x600dpi/600 DPI: "%% FoomaticRIPOptionSetting: Resolution=600x600dpi"</em><br>
-<em>*FoomaticRIPOptionSetting Resolution=600x600dpi: "&amp;lt;&amp;lt;/HWResolutio&amp;&amp;</em><br>
-<em>n[600 600]&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Resolution 1200x600dpi/1200x600 DPI: "%% FoomaticRIPOptionSetting: Resolution=1200x600dpi"</em><br>
-<em>*FoomaticRIPOptionSetting Resolution=1200x600dpi: "&amp;lt;&amp;lt;/HWResoluti&amp;&amp;</em><br>
-<em>on[1200 600]&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Resolution 1200x1200dpi/1200 DPI: "%% FoomaticRIPOptionSetting: Resolution=1200x1200dpi"</em><br>
-<em>*FoomaticRIPOptionSetting Resolution=1200x1200dpi: "&amp;lt;&amp;lt;/HWResolut&amp;&amp;</em><br>
-<em>ion[1200 1200]&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Resolution 2400x600dpi/2400x600 DPI: "%% FoomaticRIPOptionSetting: Resolution=2400x600dpi"</em><br>
-<em>*FoomaticRIPOptionSetting Resolution=2400x600dpi: "&amp;lt;&amp;lt;/HWResoluti&amp;&amp;</em><br>
-<em>on[2400 600]&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Resolution 2400x1200dpi/2400x1200 DPI: "%% FoomaticRIPOptionSetting: Resolution=2400x1200dpi"</em><br>
-<em>*FoomaticRIPOptionSetting Resolution=2400x1200dpi: "&amp;lt;&amp;lt;/HWResolut&amp;&amp;</em><br>
-<em>ion[2400 1200]&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*Resolution 2400x2400dpi/2400 DPI: "%% FoomaticRIPOptionSetting: Resolution=2400x2400dpi"</em><br>
-<em>*FoomaticRIPOptionSetting Resolution=2400x2400dpi: "&amp;lt;&amp;lt;/HWResolut&amp;&amp;</em><br>
-<em>ion[2400 2400]&amp;gt;&amp;gt;setpagedevice\n"</em><br>
-<em>*End</em><br>
-<em>*CloseUI: *Resolution</em><br>
-</p>
-
-<p>
-<em>*CloseGroup: General</em><br>
-</p>
-
-<p>
-<em>*OpenGroup: Miscellaneous/Miscellaneous</em><br>
-</p>
-
-<p>
-<em>*OpenUI *PreFilter/GhostScript pre-filtering: PickOne</em><br>
-<em>*FoomaticRIPOption PreFilter: enum CmdLine D</em><br>
-<em>*OrderDependency: 100 AnySetup *PreFilter</em><br>
-<em>*DefaultPreFilter: Level1</em><br>
-<em>*PreFilter EmbedFonts/Embed GhostScript fonts only: "%% FoomaticRIPOptionSetting: PreFilter=EmbedFonts"</em><br>
-<em>*FoomaticRIPOptionSetting PreFilter=EmbedFonts: "99"</em><br>
-<em>*PreFilter Level1/Convert to PS level 1: "%% FoomaticRIPOptionSetting: PreFilter=Level1"</em><br>
-<em>*FoomaticRIPOptionSetting PreFilter=Level1: "1"</em><br>
-<em>*PreFilter Level2/Convert to PS level 2: "%% FoomaticRIPOptionSetting: PreFilter=Level2"</em><br>
-<em>*FoomaticRIPOptionSetting PreFilter=Level2: "2"</em><br>
-<em>*PreFilter No/No pre-filtering: "%% FoomaticRIPOptionSetting: PreFilter=No"</em><br>
-<em>*FoomaticRIPOptionSetting PreFilter=No: "0"</em><br>
-<em>*CloseUI: *PreFilter</em><br>
-</p>
-
-<p>
-<em>*CloseGroup: Miscellaneous</em><br>
-</p>
-
-
-<p>
-<em>*% Generic boilerplate PPD stuff as standard PostScript fonts and so on</em><br>
-</p>
-
-<p>
-<em>*DefaultFont: Courier</em><br>
-<em>*Font AvantGarde-Book: Standard "(001.006S)" Standard ROM</em><br>
-<em>...</em><br>
 +++<br>
 </p>
 
@@ -297,7 +272,7 @@ Created Dienstag 27 September 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../usr.html'>Linux Wissen:FHS:usr</a></li>						<a href='../etc/cups/cups%2B%2Bprinters.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a></li>						<a href='../../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='../usr.html'>Linux Wissen:FHS:usr</a></li>						<a href='../../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../etc/cups/cups%2B%2Bprinters.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

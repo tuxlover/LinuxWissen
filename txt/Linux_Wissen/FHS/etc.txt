@@ -25,6 +25,7 @@ Created Dienstag 19 April 2011
 ***/etc/cron.hourly **→ Shellscripte die einmal stündlich ausgeführt werden
 ***/etc/cron.monthly **→ Shellscripte die einmal monatlich ausgeführt werden
 ***/etc/cron.weekly **→ Shellscripte die einmal wöchentlich ausgeführt werden
+***/etc/anacrontab **→ Konfiguration des anacron Daemons ([[+anacrontab]])
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 
 ***/etc/fstab **→ alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften

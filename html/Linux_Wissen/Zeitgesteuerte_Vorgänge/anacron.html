@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>kill</title>
+		<title>anacron</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									kill</h1>
+									anacron</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -65,15 +65,6 @@
 <li><a href="../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
 <li><a href="../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
 <li><a href="../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
-<ul>
-<li><strong>kill</strong></li>
-<li><a href="./Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste">Magic Sys-Abf Taste</a></li>
-<li><a href="./Nice_Werte_kontrollieren.html" title="Nice Werte kontrollieren">Nice Werte kontrollieren</a></li>
-<li><a href="./ps.html" title="ps">ps</a></li>
-<li><a href="./strace.html" title="strace">strace</a></li>
-<li><a href="./top.html" title="top">top</a></li>
-<li><a href="./ulimit.html" title="ulimit">ulimit</a></li>
-</ul>
 <li><a href="../root.html" title="root">root</a></li>
 <li><a href="../Shell.html" title="Shell">Shell</a></li>
 <li><a href="../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
@@ -85,6 +76,12 @@
 <li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
 <li><a href="../X11.html" title="X11">X11</a></li>
 <li><a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<ul>
+<li><strong>anacron</strong></li>
+<li><a href="./at.html" title="at">at</a></li>
+<li><a href="./atd.html" title="atd">atd</a></li>
+<li><a href="./crontab.html" title="crontab">crontab</a></li>
+</ul>
 <li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
 </ul>
 </ul>
@@ -93,63 +90,31 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Donnerstag 21 April 2011<br>
+Created Sonntag 06 November 2011<br>
 </p>
 
 <p>
-<strong>kill -&lt;SIGNR&gt;| &lt;SIGNAL&gt; %&lt;JOBNR&gt; | &lt;PID&gt;</strong> → sendet &lt;SIGNAL&gt; an Prozess mit der &lt;PID&gt; oder &lt;JOBNR&gt;<br>
+<ul>
+<li>Jobs asynchron periodisch ausführen</li>
+<li>Die Periode wird in Tagen angegeben</li>
+<li>Im gegensatz zu <strong>cron </strong>muss die Maschine nicht die ganze Zeit laufen</li>
+</ul>
 </p>
 
 <p>
-Hinweis: kill -l listet alle die Signale auf über die Linux mit Prozessen kommunizieren kann<br>
+<strong>anacron </strong><br>
+<strong>-t &lt;anacrontab&gt; </strong>→ diese Datei als Anacrontab einlesen<br>
+<strong>-f </strong>→ sofort alle Befehle ausführe, Zeitstempel werden nicht berücksichtigt<br>
+<strong>-u </strong>→ aktualisieren der Zeitstempel in <em>*/var/spool/anacron</em><br>
+<strong>-s </strong>→ Jobs nacheinander ausführen<br>
+<strong>-T </strong>→ die Konfigurationsdatei testen<br>
 </p>
 
 <p>
-<em>&lt;SIGNAL&gt;	&lt;SIGNR&gt;	Beschreibung</em><br>
-SIGHUP		1			hangup: beende alle Prozesse die Kindprozesse der aktuellen Shell sind<br>
-SIGINT		2			interrupt: &lt;Strg+c&gt; den Prozess unterbrechen<br>
-SIGKILL		9			kill: beende Prozess ohne Rückfrage, offene Dateien werden nicht geschlossen<br>
-SIGTREM		15			terminate: beende Prozess,offene Dateien werden vorher geschlosseen<br>
-SIGCONT		18			continue: setze einen mit SIGSTOP angehaltenen Prozess fort<br>
-SIGTSTP		20			terminal stop: entspricht &lt;Strg+z&gt;<br>
+<em>Beispiel:</em><br>
+<code>anacron -t myanacrontab -T &amp;&amp; echo "ok"</code><br>
+→ überprüfen ob eine erstelle anacrontab valide ist9<br>
 </p>
-
-<p>
-<u>Hinweis: man 7 signal</u><br>
-</p>
-
-<p>
-<em>&lt;PID&gt;</em><br>
-PID &gt; 0 → sende das &lt;SIGNAL&gt; an den Prozess mit der angegbenen PID<br>
-PID = 0 → sende das &lt;SIGNAL&gt; an alle Prozesse der gleichen Prozessgruppe wie der gesendete<br>
-PID &lt; -1 → sende das &lt;SIGNAL&gt; an die Prozessgruppe dessen Identifizierungsgruppe zur entsprechenden &lt;PID&gt; <br>
-<div style='padding-left: 60pt'>
-  gehören<br>
-</div>
-PID == -1 → sende das &lt;SIGNAL&gt; an alle Prozesse die dem aktuellen Benutzer gehören<br>
-</p>
-
-<p>
-<strong>killall &lt;SIGNAL&gt; &lt;NAME&gt; </strong>→ sende &lt;SIGNAL&gt; an alle Prozesse mit &lt;Name&gt;<br>
-<strong>-i </strong>→ frage vor durchführung nach<br>
-</p>
-
-<h4>Achtung:</h4>
-<p>
-<u>Unter BSD verwendet man killall um alle Prozesse zu beenden.</u><br>
-</p>
-
-<p>
-<u>Hinweis: </u>Es gilt<u> "exit Status" -128 = &lt;SIGNR&gt;</u><br>
-<a href="../Systemprogrammierung/Shellscripting/Exit_Status.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status">Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a><br>
-</p>
-
-<p>
-<strong>nohup &lt;Befehl&gt; </strong>→ &lt;Befehl&gt; wird auch nach dem beenden des Elternprozesses weiterausgeführt<br>
-                               → normalerweise wird dieser &lt;Befehl&gt; dann direkter Kindprozess des init Prozesses<br>
-                               → kann einen Zombie erzeugen<br>
-</p>
- 
 
 
 			<!-- End wiki content -->
@@ -157,7 +122,7 @@ PID == -1 → sende das &lt;SIGNAL&gt; an alle Prozesse die dem aktuellen Benutz
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Shell/Jobkontrolle.html'>Linux Wissen:Shell:Jobkontrolle</a></li>						<a href='./Magic_Sys-Abf_Taste.html'>Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste</a></li>						<a href='../Booten/Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>						<a href='../Booten/Init.html'>Linux Wissen:Booten:Init</a></li>						<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>						<a href='../Systemprotokollierung.html'>Linux Wissen:Systemprotokollierung</a></li>						<a href='./ps.html'>Linux Wissen:Prozessverwaltung:ps</a></li>						<a href='../FHS/etc/inetd.conf.html'>Linux Wissen:FHS:etc:inetd.conf</a></li>						<a href='../FHS/etc/xinetd.conf.html'>Linux Wissen:FHS:etc:xinetd.conf</a></li>
+				Backlinks:						<a href='../Zeitgesteuerte_Vorg%C3%A4nge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

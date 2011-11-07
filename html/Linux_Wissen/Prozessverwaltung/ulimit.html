@@ -92,7 +92,12 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<strong>ulimt &lt;LIMIT&gt; </strong>→ limitiere die Resourcen für eine Shell und der von ihr gestarteten Prozesse<br>
+				<p>
+Created Donnerstag 21 April 2011<br>
+</p>
+
+<p>
+<strong>ulimt &lt;LIMIT&gt; </strong>→ limitiere die Resourcen für eine Shell und der von ihr gestarteten Prozesse<br>
 <div style='padding-left: 60pt'>
            → Shell Buildin<br>
 </div>
@@ -110,20 +115,27 @@
 <strong>-t </strong>→ schränkt die verfügbare CPU-Zeit auf die angegebene Zahl Sekunden ein<br>
 <strong>-u </strong>→ schränkt die Anzahl der Prozesse je Nutzer ein<br>
 <strong>-v </strong>→ schränkt die maximale Größe des virtuellen Speichers ein (Kilobyte)<br>
-<br>
+</p>
+
 <h4>Sicherheitsrelevante ulimits</h4>
+<p>
 <strong>ulimit -c 0 </strong>→ Coredumps verhindern<br>
 <strong>ulimit -f 512000 </strong>→ keine Dateien größer als 512 MB zulassen<br>
 <strong>ulimt -S -n </strong>→ weiches Limit von maximal 250 Dateideskriptoren<br>
 <strong>ulimit -S -u 100 </strong>→ weiches Maximum von 100 Prozessen<br>
 <strong>ulimit -H -v 50000 </strong>→ nicht mehr als 50 MB virtuellen Speicher verwenden<br>
-<br>
-<em>Beispiel:</em>
-<em>Coredump ausschalten</em>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<em>Coredump ausschalten</em><br>
 <code>ulimit -H -c 0 - -</code><br>
-<br>
+</p>
+
+<p>
 */etc/security/limits.conf<br>
-<a href="../FHS/etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf">Linux Wissen:FHS:etc:security++limits.conf</a>
+<a href="../FHS/etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf">Linux Wissen:FHS:etc:security++limits.conf</a><br>
+</p>
 
 
 			<!-- End wiki content -->

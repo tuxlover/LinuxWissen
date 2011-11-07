@@ -18,19 +18,19 @@ __!!! Der Zugriff wird dann Protokolliert !!!__
 
 //weitere Beispiele://
 +++
-//ALL : ALL : twist (safe_finger -l @%h|usr/sbin/mail -s %d %h root ) &//
+''ALL : ALL : twist (safe_finger -l @%h|usr/sbin/mail -s %d %h root ) &''
 +++
 → und verweigert allen die nicht explizit erlaubt wurden den Zugriff
 → Anschließend wird **safe_finger** auf dem Client gestarte und versucht herauszufinde  wer auf den Rechner zugriffen hat und eine Mail an root geschickt
 → dabei wird eine Subschell () genutzt
 
 +++
-//in.ftpd  : ALL : twist /bin/echo 421 FTP not allowed from %h: DENY//
+''in.ftpd  : ALL : twist /bin/echo 421 FTP not allowed from %h: DENY''
 +++
 → der ftpd wird für alle verboten, es wird eine Nachricht an den Client und ein Errorcode gesendet
 
 +++
-//ALL : .example.com EXCEPT private.example.com deny//
+''ALL : .example.com EXCEPT private.example.com deny''
 +++
 → alle Dienste werden verboten, ausser die von der Domaine private.example.com kommen
 

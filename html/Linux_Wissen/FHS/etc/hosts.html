@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -145,19 +146,20 @@ Created Freitag 23 September 2011<br>
 
 <p>
 +++<br>
-<em># Kommentar</em><br>
-<em># &lt;Ip-Adresse&gt; &lt;Domanin Name (FQDN)&gt; &lt;kurzname&gt;</em><br>
-<em>127.0.0.1       localhost</em><br>
 </p>
+<pre>
+# Kommentar
+# &lt;Ip-Adresse&gt; &lt;Domanin Name (FQDN)&gt; &lt;kurzname&gt;
+127.0.0.1       localhost
+
+# special IPv6 addresses
+::1             localhost ipv6-localhost ipv6-loopback
+
+fe00::0         ipv6-localnet
+130.57.5.70     opensue.org suse
+</pre>
 
 <p>
-<em># special IPv6 addresses</em><br>
-<em>::1             localhost ipv6-localhost ipv6-loopback</em><br>
-</p>
-
-<p>
-<em>fe00::0         ipv6-localnet</em><br>
-<em>130.57.5.70     opensue.org suse</em><br>
 +++<br>
 </p>
 
@@ -167,7 +169,7 @@ Created Freitag 23 September 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Networking/Dienste/DNS.html'>Linux Wissen:Networking:Dienste:DNS</a></li>						<a href='./resolv.conf.html'>Linux Wissen:FHS:etc:resolv.conf</a></li>						<a href='../../Networking/Dienste/DNS/dnsmasq.html'>Linux Wissen:Networking:Dienste:DNS:dnsmasq</a></li>						<a href='./hosts.lpd.html'>Linux Wissen:FHS:etc:hosts.lpd</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='../../Networking/Dienste/DNS.html'>Linux Wissen:Networking:Dienste:DNS</a></li>						<a href='../../Networking/Dienste/DNS/dnsmasq.html'>Linux Wissen:Networking:Dienste:DNS:dnsmasq</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='./resolv.conf.html'>Linux Wissen:FHS:etc:resolv.conf</a></li>						<a href='./hosts.lpd.html'>Linux Wissen:FHS:etc:hosts.lpd</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

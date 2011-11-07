@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -138,24 +139,25 @@ Created Sonntag 24 April 2011<br>
 
 <p>
 ++<br>
-<em>prompt</em><br>
-<em>tineout=50  #Timer für den Bootprozess</em><br>
-<em>default=linux #verweist auf den Identifier label, der das zu startende System indetifiziert, wenn  der timeout</em><br>
-<em>              #abgelaufen ist</em><br>
 </p>
+<pre>
+prompt
+tineout=50  #Timer für den Bootprozess
+default=linux #verweist auf den Identifier label, der das zu startende System indetifiziert, wenn  der timeout
+              #abgelaufen ist
+
+boot=/dev/hda4 #verweist auf das gerät auf dem das /boot Gerät angehängt ist
+install=/boot/boot.b         #Pfad zum 2nd Stage Bootloader
+
+image=/boot/vmlinuz-2.4.7-10 #Pfad zum Kernel Image
+        label=linux          #Identifier für Image
+        initrd=/boot/initrd-2.4.7-10.img    #Initial Ram Disk
+        read=only                           #read only
+        root=/dev/hda9       #Verweis auf das / Verzeichnis
+        append=""            #Kernelparamter übergeben
+</pre>
 
 <p>
-<em>boot=/dev/hda4 #verweist auf das gerät auf dem das /boot Gerät angehängt ist</em><br>
-<em>install=/boot/boot.b         #Pfad zum 2nd Stage Bootloader</em><br>
-</p>
-
-<p>
-<em>image=/boot/vmlinuz-2.4.7-10 #Pfad zum Kernel Image</em><br>
-<em>        label=linux          #Identifier für Image</em><br>
-<em>        initrd=/boot/initrd-2.4.7-10.img    #Initial Ram Disk</em><br>
-<em>        read=only                           #read only</em><br>
-<em>        root=/dev/hda9       #Verweis auf das / Verzeichnis</em><br>
-<em>        append=""            #Kernelparamter übergeben</em><br>
 ++<br>
 <a href="../../Booten/LILO.html" title="Linux Wissen:Booten:LILO">Linux Wissen:Booten:LILO</a><br>
 </p>

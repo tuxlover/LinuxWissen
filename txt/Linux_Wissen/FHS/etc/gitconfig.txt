@@ -8,54 +8,61 @@ Created Samstag 29 Oktober 2011
 * Neben der globalen Konfigurationsdatei sollten Nutzerkonfigurationen stets unter *~/.gitconfig vorgenommen werden
 * alle einstellungen können auch mit **git config **vorgenommen werden ([[Linux Wissen:git Vesionskontrolle:git config]])
 +++
-//;Dies ist ein Kommentar//
-//[Section]//
-	//Variable = Wert//
-
-;Einstellungen des Git Kern Moduls
-//[core]//
-	//;ignoriere x bit//
-	//filemode = false//
-	//;ignoriere Groß und Kleinschreibung//
-	//ignorecase = true//
-	//;symbolischen Links folgen//
-	//symlinks = true//
-	//;immer nach workspace klonen//
-	//worktree = ~/workspace//
-	//excludefile = local_excludes//
-	//editor = vim +"se nu"//
-	//pager = cat -n//
+'''
+;Dies ist ein Kommentar
+[Section]
+'''
+	'''
+	Variable = Wert
 	
-//;Nutzer//
-//[user]//
-//        name = John Doe//
-        //email// = john@doe.com
+	;Einstellungen des Git Kern Moduls
+	[core]
+	'''
+	'''
+	;ignoriere x bit
+	filemode = false
+	;ignoriere Groß und Kleinschreibung
+	ignorecase = true
+	;symbolischen Links folgen
+	symlinks = true
+	;immer nach workspace klonen
+	worktree = ~/workspace
+	excludefile = local_excludes
+	editor = vim +"se nu"
+	pager = cat -n
+		
+	;Nutzer
+	[user]
+	        name = John Doe
+	        email = john@doe.com
+	
+	[github]
+	name = John Doe
+	email = johnny@project.org
+	
+	;Umgebung 
+	[alias]
+	    ci = commit -a
+	    co = checkout
+	    st = status -a
+	    praise = blame
+	    unstage = git reset HEAD
+	    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	
+	[apply]
+	    whitespace = strip
+	    ignorewhitespace = false
+	
+	
+	[diff]
+	     tool = rdiff
+	    ;external = /usr/bin/colordiff -Naur
+	    renames = copy
+	
+	[status]
+	    color = auto
+	'''
 
-//[github]//
-//name = John Doe//
-//email// = johnny@project.org
-
-//;Umgebung //
-//[alias]//
-//    ci = commit -a//
-//    co = checkout//
-//    st = status -a//
-//    praise = blame//
-//    unstage = git reset HEAD//
-//    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short//
-
-//[apply]//
-//    whitespace = strip//
-    //ignorewhitespace = false//
-
-
-//[diff]//
-//     tool = rdiff//
-    //;external = /usr/bin/colordiff -Naur//
-//    renames = copy//
-
-//[status]//
-//    color = auto//
 +++
 //[core] //
 → festlegen des generellen Verhaltens von git

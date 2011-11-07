@@ -6,6 +6,6 @@ Creation-Date: 2011-09-23T11:37:18+02:00
 Created Freitag 23 September 2011
 
 +++
-//hosts: files dns//
+''hosts: files dns''
 +++
 benutzt erst // */etc/hosts// für die Namensauflösung und dann DNS

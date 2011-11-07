@@ -28,11 +28,14 @@ Possix Optionen:
 Gnu Optionen:
 **-A |-e **→  zeige alle auf der Maschine laufenden Prozesse und Damons
 **-w **→ bei der Ausgabe wird nichts abgeschnitten
+**-f **→ vollständiges Format anzeigen
 **-C <Name> **→ zeige Informationen zum Prozess mit <Name> anstelle von <PID>
 **--forest **→ die Prozesshierarchie als Baum anzeigen
 
 **ps axo stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm** → Prozessinformationsausgabe formatieren
-
+//Beispiel://
+Alle Prozesse anzeigen
+''ps -ef''
 
 __Tipp: kill SIGNAL $(ps -A|awk '/<Name>/{print $1}' → alle Prozesse mit <Name> ein <SIGNAL> senden__
 wie killall

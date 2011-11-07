@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -138,42 +139,37 @@ Created Sonntag 24 April 2011<br>
 
 <p>
 ++<br>
-<em>#Standard-Runlevel                                                                      </em><br>
-<em>id:5:initdefault #Dieses runlevel wird gestartet wenn der Rechner hochgefahren wird     </em><br>
 </p>
+<pre>
+#Standard-Runlevel                                                                      
+id:5:initdefault #Dieses runlevel wird gestartet wenn der Rechner hochgefahren wird     
                                                                                          
-<p>
-<em>#Erstes auszuführendes Script                                                           </em><br>
-<em> si:bootwait:/etc/init.d/boot                                                            </em><br>
-</p>
+#Erstes auszuführendes Script                                                           
+ si:bootwait:/etc/init.d/boot                                                            
                                                                                          
-<p>
-<em># Runlevels                                                                             </em><br>
-<em>#&lt;Etikett&gt;:&lt;Runlevel&gt;:&lt;Aktion&gt;:&lt;Befehl&gt;                                                 </em><br>
-<em>l0:0:wait:/etc/init.d/rc 0                                                              </em><br>
-<em>l1:1:wait:/etc/init.d/rc 1                                                              </em><br>
-<em>l2:2:wait:/etc/init.d/rc 2                                                              </em><br>
-<em>l3:3:wait:/etc/init.d/rc 3                                                              </em><br>
-<em>l4:4:wait:/etc/init.d/rc 4                                                              </em><br>
-<em>l5:5:wait:/etc/init.d/rc 5                                                              </em><br>
-<em> l6:6:wait:/etc/init.d/rc 6                                                              </em><br>
-</p>
+# Runlevels                                                                             
+#&lt;Etikett&gt;:&lt;Runlevel&gt;:&lt;Aktion&gt;:&lt;Befehl&gt;                                                 
+l0:0:wait:/etc/init.d/rc 0                                                              
+l1:1:wait:/etc/init.d/rc 1                                                              
+l2:2:wait:/etc/init.d/rc 2                                                              
+l3:3:wait:/etc/init.d/rc 3                                                              
+l4:4:wait:/etc/init.d/rc 4                                                              
+l5:5:wait:/etc/init.d/rc 5                                                              
+ l6:6:wait:/etc/init.d/rc 6                                                              
                                                                                          
-<p>
-<em>#Ctr-Alt-Del                                                                            </em><br>
-<em>#Was passiert wenn man Strg-Alt-Entf drückt                                             </em><br>
-<em>ca:ctraltdel:/bin/true                                                                  </em><br>
-</p>
+#Ctr-Alt-Del                                                                            
+#Was passiert wenn man Strg-Alt-Entf drückt                                             
+ca:ctraltdel:/bin/true                                                                  
                                                                                          
-<p>
-<em># Terminals                                                                             </em><br>
-<em>#&lt;Terminal Nr&gt;:&lt;Runlevel&gt;:&lt;Aktion&gt;:&lt;Befehl&gt;                                             </em><br>
-<em>1:2345:respawn:/sbin/mingetty --noclear tty1                                            </em><br>
-</p>
+# Terminals                                                                             
+#&lt;Terminal Nr&gt;:&lt;Runlevel&gt;:&lt;Aktion&gt;:&lt;Befehl&gt;                                             
+1:2345:respawn:/sbin/mingetty --noclear tty1                                            
                                                                                          
+samS:A:ondemand:rcsmb start &amp;&amp; rcnmb start  #Samba bei bedarf starten und  stoppen      
+samK:B:ondemand:rcsmb stop &amp;&amp; rcnmb stop
+</pre>
+
 <p>
-<em>samS:A:ondemand:rcsmb start &amp;&amp; rcnmb start  #Samba bei bedarf starten und  stoppen      </em><br>
-<em>samK:B:ondemand:rcsmb stop &amp;&amp; rcnmb stop</em><br>
 ++<br>
 </p>
 

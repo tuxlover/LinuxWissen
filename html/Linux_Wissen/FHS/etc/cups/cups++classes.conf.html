@@ -62,6 +62,7 @@
 <li><a href="../../dev.html" title="dev">dev</a></li>
 <li><a href="../../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="../anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="../apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="../cups.html" title="cups">cups</a></li>
 <ul>
@@ -145,39 +146,36 @@ Created Sonntag 25 September 2011<br>
 <em>*/etc/cups/classes.conf</em><br>
 <a href="../../../Drucken.html" title="Linux Wissen:Drucken">Linux Wissen:Drucken</a><br>
 +++<br>
-<em>&lt;DefaultClass Default&gt;</em><br>
-<em>Accepting no</em><br>
-<em>...</em><br>
-<em>&lt;/Default&gt;</em><br>
 </p>
+<pre>
+&lt;DefaultClass Default&gt;
+Accepting no
+...
+&lt;/Default&gt;
+
+&lt;Class Students&gt;
+Info	"Druckerklasse fuer Personal" 
+JobSheets	none
+Localtion 	MT3345
+Printer		Aloede
+Printer		Samsung
+Shared 		yes
+
+Accepting	yes
+OpPolicy	default
+
+QuotaPeriod 2592000
+PageLimit	150
+
+AllowUser	Fred
+AllowUser	@Students
+AllowUser	@Profs
+DenyUser 	Hans
+DenyUser	@Gast
+&lt;/Class&gt;
+</pre>
 
 <p>
-<em>&lt;Class Students&gt;</em><br>
-<em>Info	"Druckerklasse fuer Personal" </em><br>
-<em>JobSheets	none</em><br>
-<em>Localtion 	MT3345</em><br>
-<em>Printer		Aloede</em><br>
-<em>Printer		Samsung</em><br>
-<em>Shared 		yes</em><br>
-</p>
-
-<p>
-<em>Accepting	yes</em><br>
-<em>OpPolicy	default</em><br>
-</p>
-
-<p>
-<em>QuotaPeriod 2592000</em><br>
-<em>PageLimit	150</em><br>
-</p>
-
-<p>
-<em>AllowUser	Fred</em><br>
-<em>AllowUser	@Students</em><br>
-<em>AllowUser	@Profs</em><br>
-<em>DenyUser 	Hans</em><br>
-<em>DenyUser	@Gast</em><br>
-<em>&lt;/Class&gt;</em><br>
 +++<br>
 <ul>
 <li>alle Direktiven können auch mit dem <strong>lpadmin </strong>Tool gesetzt werden</li>

@@ -126,14 +126,17 @@ angegeben <br>
 Gnu Optionen:<br>
 <strong>-A |-e </strong>→  zeige alle auf der Maschine laufenden Prozesse und Damons<br>
 <strong>-w </strong>→ bei der Ausgabe wird nichts abgeschnitten<br>
+<strong>-f </strong>→ vollständiges Format anzeigen<br>
 <strong>-C &lt;Name&gt; </strong>→ zeige Informationen zum Prozess mit &lt;Name&gt; anstelle von &lt;PID&gt;<br>
 <strong>--forest </strong>→ die Prozesshierarchie als Baum anzeigen<br>
 </p>
 
 <p>
 <strong>ps axo stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm</strong> → Prozessinformationsausgabe formatieren<br>
+<em>Beispiel:</em><br>
+Alle Prozesse anzeigen<br>
+<code>ps -ef</code><br>
 </p>
-
 
 <p>
 <u>Tipp: kill SIGNAL $(ps -A|awk '/&lt;Name&gt;/{print $1}' → alle Prozesse mit &lt;Name&gt; ein &lt;SIGNAL&gt; senden</u><br>

@@ -7,14 +7,17 @@ Created Donnerstag 22 September 2011
 
 **Aufbau einer /etc/syslog.conf Datei:**
 +++
-//#<Kategorie>.<Priorität>[;Kategorie.Priorität>]  <Ziel>//
-# //* ist ein Platzhalter für alle//
+'''
+#<Kategorie>.<Priorität>[;Kategorie.Priorität>]  <Ziel>
+# * ist ein Platzhalter für alle
 
-//##Beispiele://
-//kern.warn;*.err;authpriv.none /dev/tty10//
-//kern.warn;*.err;authpriv.none |/dev/xconsole//
-//*.emerg                         *//
-//*.=warn;*.=err                -/var/log/warn//
+##Beispiele:
+kern.warn;*.err;authpriv.none /dev/tty10
+kern.warn;*.err;authpriv.none |/dev/xconsole
+*.emerg                         *
+*.=warn;*.=err                -/var/log/warn
+'''
+
 //+++//
 **<Kategorie>**
 	//authpriv //**→ **vertrauliche Meldungen der Sicherheitsdienste

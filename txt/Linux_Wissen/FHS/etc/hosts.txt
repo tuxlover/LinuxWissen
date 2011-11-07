@@ -9,13 +9,16 @@ Created Freitag 23 September 2011
 * Tabellenförmige Datei die IP-Adresse mit Hostnamen verbindet
 
 +++
-//# Kommentar//
-//# <Ip-Adresse> <Domanin Name (FQDN)> <kurzname>//
-//127.0.0.1       localhost//
+'''
+# Kommentar
+# <Ip-Adresse> <Domanin Name (FQDN)> <kurzname>
+127.0.0.1       localhost
 
-//# special IPv6 addresses//
-//::1             localhost ipv6-localhost ipv6-loopback//
+# special IPv6 addresses
+::1             localhost ipv6-localhost ipv6-loopback
 
-//fe00::0         ipv6-localnet//
-//130.57.5.70     opensue.org suse//
+fe00::0         ipv6-localnet
+130.57.5.70     opensue.org suse
+'''
+
 +++

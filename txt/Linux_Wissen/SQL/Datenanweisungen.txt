@@ -65,9 +65,9 @@ Created Freitag 29 April 2011
 → die <Condition> kann auch auf andere auf andere <Spalten> als auf die angezeigte verweisen
 [[Linux Wissen:SQL:Bedingungen]]
 
-**SELECT <Spalte1>,...**
-	**FROM <Tabelle>**
-	**WHERE <BEDINGUNG>**
+**SELECT <Spalte1>,... /*eine oder mehrere Spalten */**
+	**FROM <Tabelle> /* aus Tabelle */**
+	**WHERE <BEDINGUNG> /* Wobei folgende Bedingugnen gelten */**
 	**(**
 	**SELECT <ABFRAGE>**
 	**);**
@@ -94,7 +94,6 @@ SELECT ort, COUNT(*)
 	WHERE ort = 'Berlin' OR ort = 'Hamburg'
 	GROUP BY ort;
 	'''
-
 //+++//
 //>> Berlin 212//
 //>> Hamburg 17//
@@ -113,7 +112,6 @@ SELECT ort, COUNT(*)
 	GROUP BY ort
 	HAVING COUNT(*) >= 100;
 	'''
-
 //+++//
 //>> Berlin 212//
 //>> Dresden 112//
@@ -131,10 +129,7 @@ SELECT ort, COUNT(*)
 == INSERT ==
 → schreiben von Daten in eine Tabelle
 
-**INSERT INTO <table> **
-	**(<Attribute>,...) **
-**VALUES **
-	**(<Werte>,...);**
+**INSERT INTO <table>  (<Attribute>,...)  VALUES  (<Werte>,...);**
 → fügt in die Tabelle <table> die entrsprechenden <Attribute> und den dazugerhörigen <Werte> ein
 → bijektiv Abbildung
 → die <Attribute> müssen bereits definiert sein
@@ -207,6 +202,11 @@ SELECT ort, COUNT(*)
 
 **ALTER TABLE <Name_alt> RENAME TO <Name_neu>**
 → Tabelle mit <Name_Alt> in <Name_neu> umbenennen
+
+**ALTER TABLE ADD id_key INTEGER; **
+**ALTER TABLE t2 ADD FOREIGN KEY (id_key) REFERENCES t1 (id);**
+→ einen Fremdschlüssel im Nachhinein definieren
+→ __id_keyy muss vorher bereits defineirt sein__
 
 **ALTER TABLE <Name> ADD [ CONSTARINT ] <Spalte> <Datentyp>**
 → das Attribut (Spalte)  mit dem entsprechenden <Datentyp> der Tabelle mit <Name> hinzufügen

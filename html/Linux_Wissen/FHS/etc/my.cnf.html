@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -138,55 +139,44 @@ Created Mittwoch 29 Juni 2011<br>
 
 <p>
 <em>++</em><br>
-<em>##Konfigration für die Clientprogramme mysql und mysqladmin</em><br>
-<em>[client]</em><br>
-<em>#Port auf dem die Clients lauschen</em><br>
-<em>port = &lt;N&gt;</em><br>
 </p>
+<pre>
+##Konfigration für die Clientprogramme mysql und mysqladmin
+[client]
+#Port auf dem die Clients lauschen
+port = &lt;N&gt;
 
+#Socketdatei über die die Clients mit dem Server kommunizieren 
+socket = /var/run/mysql/mysql.sock
+
+##Konfiguration für den Server Daemon mysqld
+##mysqld1-mysqldN können für weitere Server Daemonen verwendet werden
+##um zum Beispiel mehrere Serverinstanzen auf verschiedenen Ports laufen zu lassen
+[mysqld]
+
+#Nutzer mit dessen Privilegien der Server läuft
+user = &lt;USER&gt;
+
+#Port auf dem der Server Anfragen bearbeitet
+port = &lt;M&gt;
+
+#Verzeichnis in dem die Datenbank als .frm Dateistappel abgelegt wird
+datadir = &lt;DIR&gt;
+
+#Socketdatei über die der Server kommuniziert
+socket = /var/run/mysql/mysql.sock
+
+#Error Log Datei für den Server
+log-error = /var/log/mysql/error.log
+
+#Zeitzone die Mysql für die Verwaltung der Zeit in der Datenbank benötigt
+#Wird diese Variable nicht gesetzt wird der Wert des Betriebssystem verwendet
+system_time_zone = &lt;TZ&gt;|SYSTEM
+</pre>
 <p>
-<em>#Socketdatei über die die Clients mit dem Server kommunizieren </em><br>
-<em>socket = /var/run/mysql/mysql.sock</em><br>
+++<br>
+<br>
 </p>
-
-<p>
-<em>##Konfiguration für den Server Daemon mysqld</em><br>
-<em>##mysqld1-mysqldN können für weitere Server Daemonen verwendet werden</em><br>
-<em>##um zum Beispiel mehrere Serverinstanzen auf verschiedenen Ports laufen zu lassen</em><br>
-<em>[mysqld]</em><br>
-</p>
-
-<p>
-<em>#Nutzer mit dessen Privilegien der Server läuft</em><br>
-<em>user = &lt;USER&gt;</em><br>
-</p>
-
-<p>
-<em>#Port auf dem der Server Anfragen bearbeitet</em><br>
-<em>port = &lt;M&gt;</em><br>
-</p>
-
-<p>
-#Verzeichnis in dem die Datenbank als .frm Dateistappel abgelegt wird<br>
-datadir = &lt;DIR&gt;<br>
-</p>
-
-<p>
-<em>#Socketdatei über die der Server kommuniziert</em><br>
-<em>socket = /var/run/mysql/mysql.sock</em><br>
-</p>
-
-<p>
-<em>#Error Log Datei für den Server</em><br>
-<em>log-error = /var/log/mysql/error.log</em><br>
-</p>
-
-<p>
-#Zeitzone die Mysql für die Verwaltung der Zeit in der Datenbank benötigt<br>
-#Wird diese Variable nicht gesetzt wird der Wert des Betriebssystem verwendet<br>
-system_time_zone = &lt;TZ&gt;|SYSTEM<br>
-</p>
-
 
 
 			<!-- End wiki content -->

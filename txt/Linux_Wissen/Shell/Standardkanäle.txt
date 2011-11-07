@@ -61,11 +61,14 @@ __Hinweis: zwischen den { }  muss ein Leerzeichen sehen__
 
 //Beispiele://
 //jede mit find gefundene Datei in ein Archiv packen//
-//find / -name "*.bak" |xargs tar xvfz backup.tar.gz//
+''find / -name "*.bak" |xargs tar xvfz backup.tar.gz''
 
 //jede mit find gefundene .bak Datei in den Müll verschieben//
-// find . -name "*.bak" -print0 | xargs -0 -I {} mv {} /tmp/trash//
-// find . -name "*.bak" -print0 | xargs -0 -I xxx mv xxx /tmp/trash//
+'' find . -name "*.bak" -print0 | xargs -0 -I {} mv {} /tmp/trash''
+'' find . -name "*.bak" -print0 | xargs -0 -I xxx mv xxx /tmp/trash''
+
+//Dateien eines bestimmten Jahrgangs finden und löschen//
+''ls -lisah | awk '{if ($10 == 2001) print $11}'|xargs -I {} rm -rf {}''
 
 __Hinweis: beachte die Wirkung von set -o noclobber __
 [[Linux Wissen:Shell:Bash:Optionen für die Bash]]

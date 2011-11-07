@@ -8,31 +8,34 @@ Created Sonntag 25 September 2011
 //*/etc/cups/classes.conf//
 [[Linux Wissen:Drucken]]
 +++
-//<DefaultClass Default>//
-//Accepting no//
-//...//
-//</Default>//
+'''
+<DefaultClass Default>
+Accepting no
+...
+</Default>
 
-//<Class Students>//
-//Info	"Druckerklasse fuer Personal" //
-//JobSheets	none//
-//Localtion 	MT3345//
-//Printer		Aloede//
-//Printer		Samsung//
-//Shared 		yes//
+<Class Students>
+Info	"Druckerklasse fuer Personal" 
+JobSheets	none
+Localtion 	MT3345
+Printer		Aloede
+Printer		Samsung
+Shared 		yes
 
-//Accepting	yes//
-//OpPolicy	default//
+Accepting	yes
+OpPolicy	default
 
-//QuotaPeriod 2592000//
-//PageLimit	150//
+QuotaPeriod 2592000
+PageLimit	150
 
-//AllowUser	Fred//
-//AllowUser	@Students//
-//AllowUser	@Profs//
-//DenyUser 	Hans//
-//DenyUser	@Gast//
-//</Class>//
+AllowUser	Fred
+AllowUser	@Students
+AllowUser	@Profs
+DenyUser 	Hans
+DenyUser	@Gast
+</Class>
+'''
+
 +++
 * alle Direktiven können auch mit dem **lpadmin **Tool gesetzt werden
 * Die Eigenschaften einer Klasse werden zwischen //<Class Name>// und //</Class>// definiert

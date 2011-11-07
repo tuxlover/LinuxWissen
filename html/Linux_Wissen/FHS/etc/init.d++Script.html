@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -139,47 +140,50 @@ Created Sonntag 24 April 2011<br>
 <p>
 Die folgende Datei findet man auch unter */etc/init.d/skeleton<br>
 ++<br>
-<em>### BEGIN INIT INFO</em><br>
-<em># Provides:          daemon</em><br>
-<em># Required-Start:    $required_before_start</em><br>
-<em># Required-Stop:     $required_before_stop</em><br>
-<em># Default-Start:     3 5</em><br>
-<em># Default-Stop:      0 6</em><br>
-<em># Short-Description: daemon providing foo by bar</em><br>
-<em># Description: daemon foo with  bar doing baz</em><br>
-<em>### END INIT INFO</em><br>
-<em>DIENST=/usr/bin/daemon</em><br>
-<em>LOGFILE=/var/log/daemon</em><br>
-<em>PIDFILE=/Var/run/daemon.pid</em><br>
 </p>
+<pre>
+### BEGIN INIT INFO
+# Provides:          daemon
+# Required-Start:    $required_before_start
+# Required-Stop:     $required_before_stop
+# Default-Start:     3 5
+# Default-Stop:      0 6
+# Short-Description: daemon providing foo by bar
+# Description: daemon foo with  bar doing baz
+### END INIT INFO
+DIENST=/usr/bin/daemon
+LOGFILE=/var/log/daemon
+PIDFILE=/Var/run/daemon.pid
 
+
+case $1 in
+        start) #starten des Prozesses
+               #nicht daemonen sollten mit &amp; in den Hintergrund geschickt werden
+               #Programme die eine Systemänderung bewirken sollten ihren alten Status ablegen damit er durch stoppen
+               #des Dienstes wiederhergestellt werden kann
+               #Fehlerausagben des Scripts gehören nach /dev/null oder nach LOGFILE
+               #Ablegen einer Prozess-ID in einer Datei PIDFILE=/var/run/daemon.pid
+        ;;
+        stop) #beendet des Proezesses mit kill
+              #zurücksetzen des alten Status falls das Programm eine Systemveränderung bewirkt
+              #löschen nicht mehr benötigter Dateien inklusive /var/run/daemon.pid
+        ;;
+        status) #Auswerten des Statuses des Prozesses durch parsen von PIDFILE
+        ;;
+        resart) #falls dienst schon gestartet: stop &amp;&amp; start
+                #andernfalls start
+        ;;
+        reload) #Daemon soll Konfigration neu einlesen zum Beispiel durch senden von SIGHUP (1) PIDFILE
+                #Statusänderungen am System sollen erneuert werden
+        ;;
+        force-reload) #Daemon soll Konfiguration neu einlesen oder restart ausführen, falls ersteres nicht möglich
+        ;;
+        *) #Was soll geschehen wenn etwas anderes auferufen wird
+exit 0 #Scripte enden immer mit einem Rückagbewert von 0 wenn sie erfolgreich waren
+       #Misserfolg sollte vorher abgefangen werden
+</pre>
 
 <p>
-<em>case $1 in</em><br>
-<em>        start) #starten des Prozesses</em><br>
-<em>               #nicht daemonen sollten mit &amp; in den Hintergrund geschickt werden</em><br>
-<em>               #Programme die eine Systemänderung bewirken sollten ihren alten Status ablegen damit er durch stoppen</em><br>
-<em>               #des Dienstes wiederhergestellt werden kann</em><br>
-<em>               #Fehlerausagben des Scripts gehören nach /dev/null oder nach LOGFILE</em><br>
-<em>               #Ablegen einer Prozess-ID in einer Datei PIDFILE=/var/run/daemon.pid</em><br>
-<em>        ;;</em><br>
-<em>        stop) #beendet des Proezesses mit kill</em><br>
-<em>              #zurücksetzen des alten Status falls das Programm eine Systemveränderung bewirkt</em><br>
-<em>              #löschen nicht mehr benötigter Dateien inklusive /var/run/daemon.pid</em><br>
-<em>        ;;</em><br>
-<em>        status) #Auswerten des Statuses des Prozesses durch parsen von PIDFILE</em><br>
-<em>        ;;</em><br>
-<em>        resart) #falls dienst schon gestartet: stop &amp;&amp; start</em><br>
-<em>                #andernfalls start</em><br>
-<em>        ;;</em><br>
-<em>        reload) #Daemon soll Konfigration neu einlesen zum Beispiel durch senden von SIGHUP (1) PIDFILE</em><br>
-<em>                #Statusänderungen am System sollen erneuert werden</em><br>
-<em>        ;;</em><br>
-<em>        force-reload) #Daemon soll Konfiguration neu einlesen oder restart ausführen, falls ersteres nicht möglich</em><br>
-<em>        ;;</em><br>
-<em>        *) #Was soll geschehen wenn etwas anderes auferufen wird</em><br>
-<em>exit 0 #Scripte enden immer mit einem Rückagbewert von 0 wenn sie erfolgreich waren</em><br>
-<em>       #Misserfolg sollte vorher abgefangen werden</em><br>
 ++<br>
 </p>
 

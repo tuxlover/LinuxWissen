@@ -22,3 +22,41 @@ modified → eine oder mehrere Veränderung wurde nicht in der Git Datenbank ges
 ===== Setup =====
 //*/etc/gitconfig // → globale Konfigurationsdatei für git
 //*~/.gitconfig// → nutzerspezifische Konfigurationen für git
+
+
+===== General use =====
+**git <Modul> <Optionen <Parameter>**
+	**<Modul>**
+		**add **→ hinzufügung von Dateien zur //Staging Area//
+		**apply **→ Hinzufügen eines Patches 
+		**archive **→ ein Archiv aus einem Arbeitszweig (//Working Tree//) erstellen
+		**blame **→ Anzeigen wer welche Veränderungen wo vorgenmommen hat
+		**branch **→ erstellen von Branches
+		**checkout **→ auscheken eines Branches oder einer Revision
+		**clean **→ entfernen von Dateien die von **git **nicht erfasst wurden
+		**clone **→ ein Repository von einer Remotequelle spiegeln
+		**config **→ editieren von Konfigurationsdateien 
+[[+git config]]
+		**describe **→ Anzeigen des aktuellsten Tags
+		**diif **→ Änderungen zwischen den einzelnen Commits anzeigen
+		**difftools **→ zeigt Veränderungen mit Hilfe von gewöhnlichen Difftools an
+		**fetch **→ Download von Objekten und Refs aus einem anderen Repository
+		**fsck **→ überprüft die Git Datenbank auf konsistenz
+		**init **→ initialisieren eines Git Repositories 
+[[+git init]]
+		**log **→ Anzeigen der Commit logs
+		**merge **→ Änderungen zwischen einzelnen Commits zusammenführen
+		**mergetool **→ Zusammenführen von Veränderungen mit Hilfe von gewöhnlichen Mergetools 
+		**mv **→ umbenennen einer Datei
+		**notes **→ Notizen zu einem Objekt hinzufügen, ändern oder editieren
+		**pull **→ Update des Lokalen Repository aus dem Remote Repository	
+		**push **→ Updated des Remote Repository aus dem Lokalen Repository
+		**remote **→ Verwalten von Remote Repositroies
+		**rm **→ entfernen einer Datei
+		**show **→ Anzeigen spezifischer Objekte (Blobs, Trees etc.)
+		**status **→ anzeigen des aktuellen Status
+		**tag **→ erstellen eines Tags
+		**whathaschanged **→ anzeigen von Logfiles und die Veränderungen die entsprechend vorgenommen wurden
+
+
+

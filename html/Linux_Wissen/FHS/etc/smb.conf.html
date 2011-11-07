@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -139,148 +140,139 @@ Created Samstag 22 Oktober 2011<br>
 <p>
 <strong>2 Beispiele:</strong><br>
 +++<br>
-<em># smb.conf is the main Samba configuration file. You find a full commented</em><br>
-<em># version at /usr/share/doc/packages/samba/examples/smb.conf.SUSE if the</em><br>
-<em># samba-doc package is installed.</em><br>
-<em># Date: 2010-09-15</em><br>
-<em>[global]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;#general server setup</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;workgroup = Domaene</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;server string = BeebleBrox using Samba %v</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;netbios name = wuerggrube</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;#security related server setup</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;#Accounting Security and Password Synching</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;encrypt passwords = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;unix password sync = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;passwd program = /usr/bin/passwd %u</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;#this does not work yet</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;passwd chat = *New*password* %n\n\</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      *Reenter*new*passwd* %n\n\</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      *Passwd*Changed*</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;#Network Security</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;interfaces = 192.168.128.0/24 </em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;bind interfaces only = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;hosts allow = 192.168.128.67, 192.168.128.90, 192.168.128.81,192.168.128.53,192.168.128.70</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;#logging related server setup</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;log level = 1</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;log file = /var/log/samba/smb.%m.log</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;max log size = 150</em><br>
 </p>
+<pre>
+# smb.conf is the main Samba configuration file. You find a full commented
+# version at /usr/share/doc/packages/samba/examples/smb.conf.SUSE if the
+# samba-doc package is installed.
+# Date: 2010-09-15
+[global]
+	#general server setup
+	workgroup = Domaene
+	server string = BeebleBrox using Samba %v
+	netbios name = wuerggrube
+	#security related server setup
+	#Accounting Security and Password Synching
+	encrypt passwords = Yes
+	unix password sync = Yes
+	passwd program = /usr/bin/passwd %u
+	#this does not work yet
+	passwd chat = *New*password* %n\n\
+		      *Reenter*new*passwd* %n\n\
+		      *Passwd*Changed*
+	#Network Security
+	interfaces = 192.168.128.0/24 
+	bind interfaces only = Yes
+	hosts allow = 192.168.128.67, 192.168.128.90, 192.168.128.81,192.168.128.53,192.168.128.70
+	#logging related server setup
+	log level = 1
+	log file = /var/log/samba/smb.%m.log
+	max log size = 150
 	
-<p>
-<em>[Magrathea]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = Willkommen</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /home/tux/smb</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;read only = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;guest ok = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;#maximum connection bound to 5</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;max connections = 5	</em><br>
-</p>
+[Magrathea]
+	comment = Willkommen
+	path = /home/tux/smb
+	read only = Yes
+	guest ok = No
+	#maximum connection bound to 5
+	max connections = 5	
 
-<p>
-<em>[Squornshoellischzeta]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = Music only</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /mnt/media</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;readonly = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;guest ok = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;max connections = 5	</em><br>
-</p>
+[Squornshoellischzeta]
+	comment = Music only
+	path = /mnt/media
+	readonly = Yes
+	guest ok = No
+	max connections = 5	
 
-<p>
-<em>[FroschsternB]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = Bitte keine unnötigen Dateien hochladen </em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /home/tux/smb_incomming</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;readonly = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;guest ok = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;max connections = 5	</em><br>
-</p>
+[FroschsternB]
+	comment = Bitte keine unnötigen Dateien hochladen 
+	path = /home/tux/smb_incomming
+	readonly = No
+	guest ok = No
+	max connections = 5	
 
-<p>
-<em>[Erde]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = Öffentlicher Zugang</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /home/tux/smb_pub </em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;readonly = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;guest ok = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;max connections = 2</em>&nbsp;&nbsp;&nbsp;&nbsp;<br>
-+++<br>
-<em># smb.conf is the main Samba configuration file. You find a full commented</em><br>
-<em># version at /usr/share/doc/packages/samba/examples/smb.conf.SUSE if the</em><br>
-<em># samba-doc package is installed.</em><br>
-<em># Date: 2010-06-28</em><br>
-<em>[global]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;workgroup = WORKGROUP</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;passdb backend = tdbsam #place where to save password</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;printing = cups</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;printcap name = cups</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;printcap cache time = 750</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;cups options = raw</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;map to guest = Bad User #howto handle guests</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;include = /etc/samba/dhcp.conf #read this script also on startup</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;logon path = \\%L\profiles\.msprofile #windows specific files are saved here</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;logon home = \\%L\%U\.9xprofile </em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;logon drive = P: #drive number which to adress in windows</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;usershare allow guests = Yes #configure this if you want guests to access users</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;ldap suffix = #configre ldap access server</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;wins server = </em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;wins support = No</em><br>
-<em>[homes]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = Home Directories #not relevant at all but must be here</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;valid users = %S, %D%w%S</em><br>
-</p>
+[Erde]
+	comment = Öffentlicher Zugang
+	path = /home/tux/smb_pub 
+	readonly = Yes
+	guest ok = Yes
+	max connections = 2	
++++
+# smb.conf is the main Samba configuration file. You find a full commented
+# version at /usr/share/doc/packages/samba/examples/smb.conf.SUSE if the
+# samba-doc package is installed.
+# Date: 2010-06-28
+[global]
+	workgroup = WORKGROUP
+	passdb backend = tdbsam #place where to save password
+	printing = cups
+	printcap name = cups
+	printcap cache time = 750
+	cups options = raw
+	map to guest = Bad User #howto handle guests
+	include = /etc/samba/dhcp.conf #read this script also on startup
+	logon path = \\%L\profiles\.msprofile #windows specific files are saved here
+	logon home = \\%L\%U\.9xprofile 
+	logon drive = P: #drive number which to adress in windows
+	usershare allow guests = Yes #configure this if you want guests to access users
+	ldap suffix = #configre ldap access server
+	wins server = 
+	wins support = No
+[homes]
+	comment = Home Directories #not relevant at all but must be here
+	valid users = %S, %D%w%S
 
-<p>
-<em>#%S all known samba users</em><br>
-<em>#%D all known Domains</em><br>
-<em>#%w all the </em><br>
-</p>
+#%S all known samba users
+#%D all known Domains
+#%w all the 
 
-<p>
-<em>#	browseable = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;browseable = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;read only = No </em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;inherit acls = Yes</em><br>
-<em>[profiles]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = Network Profiles Service</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = %H</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;read only = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;store dos attributes = Yes #atributes are hide note writeable etc.</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;create mask = 0600</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;directory mask = 0700</em><br>
-<em>[users]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = All users</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /home</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;read only = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;inherit acls = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;veto files = /aquota.user/groups/shares</em>/<br>
-<em>[groups]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = All groups</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /home/groups</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;read only = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;inherit acls = Yes</em><br>
-<em>[printers]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = All Printers</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /var/tmp</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;printable = Yes</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;create mask = 0600</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;browseable = No</em><br>
-<em>[print$]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = Printer Drivers</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /var/lib/samba/drivers</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;write list = @ntadmin root</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;force group = ntadmin</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;create mask = 0664</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;directory mask = 0775</em><br>
-</p>
+#	browseable = No
+	browseable = No
+	read only = No 
+	inherit acls = Yes
+[profiles]
+	comment = Network Profiles Service
+	path = %H
+	read only = No
+	store dos attributes = Yes #atributes are hide note writeable etc.
+	create mask = 0600
+	directory mask = 0700
+[users]
+	comment = All users
+	path = /home
+	read only = No
+	inherit acls = Yes
+	veto files = /aquota.user/groups/shares/
+[groups]
+	comment = All groups
+	path = /home/groups
+	read only = No
+	inherit acls = Yes
+[printers]
+	comment = All Printers
+	path = /var/tmp
+	printable = Yes
+	create mask = 0600
+	browseable = No
+[print$]
+	comment = Printer Drivers
+	path = /var/lib/samba/drivers
+	write list = @ntadmin root
+	force group = ntadmin
+	create mask = 0664
+	directory mask = 0775
 
 
+[Wildwudel6]
+	comment = shared
+	path = /mnt/nfs #path on local machine
+	valid users = yoda peter micha
+	read only = YES
+	browsable = No
+	#write list = 
+</pre>
+
 <p>
-<em>[Wildwudel6]</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;comment = shared</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;path = /mnt/nfs #path on local machine</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;valid users = yoda peter micha</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;read only = YES</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;browsable = No</em><br>
-<em>&nbsp;&nbsp;&nbsp;&nbsp;#write list = </em><br>
 +++<br>
 </p>
 

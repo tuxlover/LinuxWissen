@@ -110,7 +110,7 @@ Created Donnerstag 28 April 2011<br>
 </p>
 
 <p>
-<em>Definieren einer Tabelle:</em><br>
+<em>Definieren einer Tabelle sqlite3:</em><br>
 ++<br>
 </p>
 <pre>
@@ -131,14 +131,35 @@ FOREIGN KEY (ITEM(R)) */definiert den Fremdschlüssel /*
 <em>);</em><br>
 ++<br>
 <br>
+<em>Definieren einer Tabelle Mysql</em><br>
+++<br>
 </p>
+<pre>
+CREATE  TABLE `Bewerbungen`.`Arbeitgeber` (
+  `ID` INT NOT NULL ,
+  `Name` VARCHAR(60) NULL ,
+  `Strasse` VARCHAR(120) NULL ,
+  `Ort` VARCHAR(45) NULL ,
+  `PLZ` DECIMAL(5) NULL ,
+  PRIMARY KEY (`ID`) ,
+  INDEX `fk_Arbeitgeber_1` () );
+</pre>
+
+<p>
+++<br>
+</p>
+
 <h5>Einlesen des Schemas in eine Sqlite3 Datenbank</h5>
 <p>
 <strong>sqlite3 datenbank.db &lt; schema.sql</strong><br>
-<br>
+</p>
+
+<p>
 <strong>SOURCE &lt;Shema.sql&gt;</strong><br>
 → eine leeres Gerüsteschema importieren<br>
-<br>
+</p>
+
+<p>
 <strong>SOURCE &lt;Data.sql&gt;</strong><br>
 → die Daten der Datenbank in das Schma importieren<br>
 <a href="./Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a><br>

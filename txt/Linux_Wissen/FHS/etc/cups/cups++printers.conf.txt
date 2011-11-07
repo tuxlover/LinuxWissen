@@ -8,19 +8,22 @@ Created Dienstag 27 September 2011
 //*/etc/cups/printers.conf//
 [[Linux Wissen:Drucken]]
 //+++//
-//<DefaultPrinter Hades>//
-//Procduct	"(PostScript level 1 Printer)"//
-//Accpeting 	yes//
-//AllowUser 	Peter//
+'''
+<DefaultPrinter Hades>
+Procduct	"(PostScript level 1 Printer)"
+Accpeting 	yes
+AllowUser 	Peter
 //DeviceURI 	socket://foo.bar.com:9100//
-//ErrorPolicy	abort-job//
-//Location	MTU88//
+ErrorPolicy	abort-job
+Location	MTU88
 ...
-//</Printer>//
+</Printer>
 
-//<Printer Hera>//
-//...//
-//</Printer>//
+<Printer Hera>
+...
+</Printer>
+'''
+
 //+++//
 * alle Direktiven können auch mit dem **lpadmin **Tool gesetzt werden
 * Die Eigenschaften eines Druckers  werden zwischen //<Printer Name>// und //</Printer>// definiert

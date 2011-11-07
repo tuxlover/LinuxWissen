@@ -175,13 +175,18 @@ Created Montag 18 April 2011<br>
 <p>
 <em>Beispiele:</em><br>
 <em>jede mit find gefundene Datei in ein Archiv packen</em><br>
-<em>find / -name "*.bak" |xargs tar xvfz backup.tar.gz</em><br>
+<code>find / -name "*.bak" |xargs tar xvfz backup.tar.gz</code><br>
 </p>
 
 <p>
 <em>jede mit find gefundene .bak Datei in den Müll verschieben</em><br>
-<em> find . -name "*.bak" -print0 | xargs -0 -I {} mv {} /tmp/trash</em><br>
-<em> find . -name "*.bak" -print0 | xargs -0 -I xxx mv xxx /tmp/trash</em><br>
+<code> find . -name "*.bak" -print0 | xargs -0 -I {} mv {} /tmp/trash</code><br>
+<code> find . -name "*.bak" -print0 | xargs -0 -I xxx mv xxx /tmp/trash</code><br>
+</p>
+
+<p>
+<em>Dateien eines bestimmten Jahrgangs finden und löschen</em><br>
+<code>ls -lisah | awk '{if ($10 == 2001) print $11}'|xargs -I {} rm -rf {}</code><br>
 </p>
 
 <p>

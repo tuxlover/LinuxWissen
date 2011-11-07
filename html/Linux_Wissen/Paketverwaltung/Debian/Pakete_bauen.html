@@ -92,22 +92,37 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>Vorteile einer Paketverwaltung lassen sich nur bei konsequenter Nutzung nutzen.</li>
+				<p>
+Created Montag 25 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Vorteile einer Paketverwaltung lassen sich nur bei konsequenter Nutzung nutzen.</li>
 <li>einfachere Erkennung von Einbrüchen.</li>
 <li>Insallierte Dateien können dank der Paketdatenbank besser verwaltet werden.</li>
 <li>Alte Konfigurationsdateien bleiben bei der Deinistallation ohne Angabe sie zu löschen erhalten.</li>
+</ul>
+</p>
 
 <h4>Minimale Umgebung:</h4>
-<strong>gcc, g++, make, libc6-dev, dpkg-dev } </strong>→ im Metapaket <em>build-essentials</em>
+<p>
+<strong>gcc, g++, make, libc6-dev, dpkg-dev } </strong>→ im Metapaket <em>build-essentials</em><br>
+</p>
 
 <h4>zusätzliche Dokumentation:</h4>
-<strong>debian-policy, developers-reference</strong>
-<a href="http://www.debian.org/doc/developers-reference/" title="http://www.debian.org/doc/developers-reference/">http://www.debian.org/doc/developers-reference/</a>
+<p>
+<strong>debian-policy, developers-reference</strong><br>
+<a href="http://www.debian.org/doc/developers-reference/" title="http://www.debian.org/doc/developers-reference/">http://www.debian.org/doc/developers-reference/</a><br>
+</p>
 
+<p>
 <strong>apt-get build-dep &lt;Paket&gt;|aptitude build-dep &lt;Paket&gt; </strong><br>
 → herunterladen und installieren der Paketbauabhängigkeiten für &lt;Paket&gt;<br>
-<br>
-<br>
+</p>
+
+
+<p>
 <strong>fakeroot </strong><br>
 → Programm was den Root Account unter Debian vortäuscht und so das Paket baut<br>
 → kann in einer Umgebung ausgeführt werden, um root Privilegien vorzutäuschen<br>
@@ -115,136 +130,184 @@
 <strong>-s &lt;Datei&gt; </strong>→ die Einstellungen der Fakeroot Umgebung als Snapshot in die &lt;Datei&gt; speichern<br>
 <strong>-i &lt;Datei&gt; </strong>→ den Snapshot für die Fakeroot Umgebung lesen<br>
 <strong>-u </strong>→ den Besitzer auf unknown wechseln anstelle von root:root<br>
-<br>
+</p>
+
 <h5>Workflow ein Paket neu Übersetzen</h5>
+<p>
 <strong>(1) </strong><code>apt-get -d source </code><br>
 → holt Quellpakete ohne sie zu entpacken<br>
 → enthält in der Regel die Dateien &lt;programm.orig.tar.gz&gt;, &lt;programm.dsc&gt; und &lt;programm.diff.gz&gt;, die in das aktuelle Verzeichnis gepackt werden<br>
-<br>
+</p>
+
+<p>
 <em>&lt;programm.orig.tar.gz&gt; → </em>Original Quellen auf dem das &lt;Paket&gt; basiert<br>
-<br>
+</p>
+
+<p>
 <em>&lt;programm.dsc&gt; </em>→ Prüfsummen zu den beiden anderen Dateien<br>
 <div style='padding-left: 90pt'>
      → Email Adresse des Paketbetreuers<br>
      → Informationen zum Paketbau <br>
      → Ist vom Paketbetreuer signiert<br>
 </div>
+</p>
 
+<p>
 <em>&lt;Programm.diff.gz&gt; </em>→ enthält die Änderungen zum Original<br>
-<br>
+</p>
+
+<p>
 <strong>(2)</strong><code> dpkg-source -x &lt;programm.dsc&gt; </code><br>
 → asupacken und für den Kompilationsvorgang vorbereiten<br>
 → anwenden der Patches<br>
 → Dabei wird ein Ordner &lt;programm&gt;/debian angelegt<br>
-<br>
+</p>
+
+<p>
 <em>&lt;programm&gt;/debian/README.debian </em>→ Debian betreffende Änderungen und Anmerkungen<br>
-<br>
+</p>
+
+<p>
 <em>&lt;programm&gt;/debian/changelog </em>→ Changelog des Paketmaintainers<br>
 ++<br>
-<em>&lt;name_programm&gt; (&lt;Versionsnummer) &lt;Codename&gt;; urgency=&lt;level&gt;</em>
-<em>  * &lt;Kommantar&gt;</em>
-<em>  -- &lt;Name und Email in &lt;&gt; des Maintainers&gt; &lt;Tag der Woche&gt;, &lt;Tag des Jahes&gt; &lt;Monat&gt; &lt;Jahr&gt; &lt;Uhrzeit in HH:MM:SS&gt; &lt;+|-UTC&gt;</em>
+<em>&lt;name_programm&gt; (&lt;Versionsnummer) &lt;Codename&gt;; urgency=&lt;level&gt;</em><br>
+<em>  * &lt;Kommantar&gt;</em><br>
+<em>  -- &lt;Name und Email in &lt;&gt; des Maintainers&gt; &lt;Tag der Woche&gt;, &lt;Tag des Jahes&gt; &lt;Monat&gt; &lt;Jahr&gt; &lt;Uhrzeit in HH:MM:SS&gt; &lt;+|-UTC&gt;</em><br>
+</p>
 
-<em>quemu (0.7.2-1) unstable; urgency=low</em>
+<p>
+<em>quemu (0.7.2-1) unstable; urgency=low</em><br>
 <em>  * Initial release Closes #nnn</em><br>
 //  -- Paul Seelig &lt;<a href="mailto:pseelig@debian.org" title="pseelig@debian.org">pseelig@debian.org</a>&gt; Wed, 7 Sep 2005 22:03:21 +0200//<br>
 ++<br>
-<br>
+</p>
+
+<p>
 <em>&lt;programm&gt;/debian/control </em>→ enthält Informationen die zum Bau des Paketes benötigt werden<br>
 ++<br>
-<em>Source:                 &lt;Source Paket Name&gt;</em>
-<em>Section:                &lt;Angabe der Application Area für das Paket spezifiziert wurde&gt;</em>
-<em>Priority:               &lt;Wie wichtig ist es diese Paket zu installiern&gt; requiered, importend, standard, optional, extra</em>
-<em>Maintainer:             &lt;Name und E-Mail Adresse (in &lt;&gt;) des Package Maintainers&gt;</em>
-<em>Standard-Version:       &lt;Version des Standards (Policy, Manual) mit denen das Paket gebaut wird&gt;</em>
-<em>Build-Depends:          &lt;Abhängigkeiten die erfüllt sein müssen um das Paket zu bauen&gt; (&gt;, &lt;, = Versions), ...</em>
-<em>Recommends:             das zu installierende Paket empfiehlt dringend auch das hier aufgelistete mitzuinstallieren</em>
-<em>Suggests:               das zu installierende Paket ist nützlicher wenn auch dieses Paket installiert</em>
-<em>Enhances:               das zu installierende Paket wird durch dieses Paket sinnvoll ergänzt</em>
-<em>Conflicts:              Das zu installierende Paket kann nicht gleichzeitig mit diesem installiert sein</em>
+<em>Source:                 &lt;Source Paket Name&gt;</em><br>
+<em>Section:                &lt;Angabe der Application Area für das Paket spezifiziert wurde&gt;</em><br>
+<em>Priority:               &lt;Wie wichtig ist es diese Paket zu installiern&gt; requiered, importend, standard, optional, extra</em><br>
+<em>Maintainer:             &lt;Name und E-Mail Adresse (in &lt;&gt;) des Package Maintainers&gt;</em><br>
+<em>Standard-Version:       &lt;Version des Standards (Policy, Manual) mit denen das Paket gebaut wird&gt;</em><br>
+<em>Build-Depends:          &lt;Abhängigkeiten die erfüllt sein müssen um das Paket zu bauen&gt; (&gt;, &lt;, = Versions), ...</em><br>
+<em>Recommends:             das zu installierende Paket empfiehlt dringend auch das hier aufgelistete mitzuinstallieren</em><br>
+<em>Suggests:               das zu installierende Paket ist nützlicher wenn auch dieses Paket installiert</em><br>
+<em>Enhances:               das zu installierende Paket wird durch dieses Paket sinnvoll ergänzt</em><br>
+<em>Conflicts:              Das zu installierende Paket kann nicht gleichzeitig mit diesem installiert sein</em><br>
+</p>
 
-<em>Package:                &lt;Name des zu erzeugenden Debian Pakets&gt;</em>
-<em>Architecture:           &lt;die Zielarchitektur des Paketes&gt; any,all,i386,am64</em>
-<em>Depends:                &lt;Abhängigkeiten zur Laufzeit&gt;</em>
-<em>Description:            &lt;Kurze Beschreibung des Paketes&gt;</em>
-<em>&lt;Lange Beschreibung des Pakets&gt;</em>
+<p>
+<em>Package:                &lt;Name des zu erzeugenden Debian Pakets&gt;</em><br>
+<em>Architecture:           &lt;die Zielarchitektur des Paketes&gt; any,all,i386,am64</em><br>
+<em>Depends:                &lt;Abhängigkeiten zur Laufzeit&gt;</em><br>
+<em>Description:            &lt;Kurze Beschreibung des Paketes&gt;</em><br>
+<em>&lt;Lange Beschreibung des Pakets&gt;</em><br>
+</p>
 
-<em>Binary:                 &lt;Eine durch Kommata searierte Liste, die auflistet welche Binärpalete ein Quellpaket erzeugt&gt;</em>
-<em>Homepage:               &lt;URL von der der Original Qullcode erstanden werden kann&gt;</em>
-<em>Uploaders:              &lt;Liste von nbamen udn E-Mail Adressen weiterer Mitautoren</em>
+<p>
+<em>Binary:                 &lt;Eine durch Kommata searierte Liste, die auflistet welche Binärpalete ein Quellpaket erzeugt&gt;</em><br>
+<em>Homepage:               &lt;URL von der der Original Qullcode erstanden werden kann&gt;</em><br>
+<em>Uploaders:              &lt;Liste von nbamen udn E-Mail Adressen weiterer Mitautoren</em><br>
 <em>Files:                  &lt;md5sum&gt; &lt;Größe&gt; &lt;Section&gt; &lt;Priorität&gt;</em><br>
 ++<br>
-<br>
+</p>
+
+<p>
 <em>&lt;porgramm&gt;/debian/copyright </em>→ Lizenz und Autoren der Software<br>
-<br>
+</p>
+
+<p>
 <em>&lt;programm&gt;/debian/dirs </em>→ festlegen von Verzeichnissen, die gebraucht werden aber von Debian nicht automatisch erkannt werden<br>
 ++<br>
-<em>etc/X11/app-defaults</em>
-<em>usr/bin</em>
-<em>usr/share/doc/xtartan</em>
-<em>usr/share/lintian/overrides</em>
+<em>etc/X11/app-defaults</em><br>
+<em>usr/bin</em><br>
+<em>usr/share/doc/xtartan</em><br>
+<em>usr/share/lintian/overrides</em><br>
 <em>usr/share/menu</em><br>
 ++<br>
-<br>
+</p>
+
+<p>
 <em>&lt;programm&gt;/debian/lintian.overrides </em><br>
 → Regeln und Definitionen die von <strong>lintian </strong>nicht beachtet werden<br>
 → Ausnahmen <br>
-<br>
+</p>
+
+<p>
 <em>&lt;programm&gt;/debian/menu </em><br>
 → definieren einer Menudatei<br>
 ++<br>
-<em>?package(totem):\</em>
-<em>needs="X11"\</em>
-<em>section="Applications/Video"\</em>
-<em>title="Totem"\</em>
-<em>icon="/usr/share/pixmaps/totem.xpm"\</em>
+<em>?package(totem):\</em><br>
+<em>needs="X11"\</em><br>
+<em>section="Applications/Video"\</em><br>
+<em>title="Totem"\</em><br>
+<em>icon="/usr/share/pixmaps/totem.xpm"\</em><br>
 <em>command="/usr/bin/totem"</em><br>
 ++<br>
-<br>
-<em>&lt;programm&gt;/debian/postinst → </em>Script dass nach der Installation ausgeführt wird <br>
-<a href="../../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting">Linux Wissen:Systemprogrammierung:Shellscripting</a>
+</p>
 
+<p>
+<em>&lt;programm&gt;/debian/postinst → </em>Script dass nach der Installation ausgeführt wird <br>
+<a href="../../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting">Linux Wissen:Systemprogrammierung:Shellscripting</a><br>
+</p>
+
+<p>
 <em>&lt;programm&gt;/debian/prerm → </em>Scripte dass nach dem entfernen ausgeführt wird<br>
-<br>
-<em>&lt;programm&gt;/debian/rules </em>
+</p>
+
+<p>
+<em>&lt;programm&gt;/debian/rules </em><br>
 <em>→  </em>Regeln und <strong>make</strong> Anweisungen die aus dem Quellcode das Kompilat erzeugt<br>
 → wird als <em>Makefile </em>relalisiert<br>
 ++<br>
-<em>#!/usr/bin/make -f</em>
-<em>config.status:  configure</em>
-<em>        dh_testdir</em>
-<em>        ./configure --cc=gcc-3.4 --preifx=/usr</em>
+<em>#!/usr/bin/make -f</em><br>
+<em>config.status:  configure</em><br>
+<em>        dh_testdir</em><br>
+<em>        ./configure --cc=gcc-3.4 --preifx=/usr</em><br>
+</p>
 
-<em>build: build-stamp</em>
-<em>build-stamp:    config.status</em>
-<em>        dh_testdir</em>
-<em>        $(MAKE)</em>
-<em>        touch build-stamp</em>
-<em>clean:</em>
-<em>        dh_testdir</em>
-<em>        dh_testroot</em>
-<em>        rm -f build-stamp</em>
-<em>        -$(MAKE) distclean</em>
-<em>        dh_clean</em>
+<p>
+<em>build: build-stamp</em><br>
+<em>build-stamp:    config.status</em><br>
+<em>        dh_testdir</em><br>
+<em>        $(MAKE)</em><br>
+<em>        touch build-stamp</em><br>
+<em>clean:</em><br>
+<em>        dh_testdir</em><br>
+<em>        dh_testroot</em><br>
+<em>        rm -f build-stamp</em><br>
+<em>        -$(MAKE) distclean</em><br>
+<em>        dh_clean</em><br>
+</p>
 
-<em>install: build</em>
-<em>        #deb helper scripte befinden sich im paket dh-make</em>
-<em>        dh_testdir</em>
-<em>        dh_testroot</em>
-<em>        dh_clean -k</em>
-<em>        dh_installdirs</em>
-<em>        $(MAKE) install prefix=$(CURDIR)/debian/quemu/usr</em>
+<p>
+<em>install: build</em><br>
+<em>        #deb helper scripte befinden sich im paket dh-make</em><br>
+<em>        dh_testdir</em><br>
+<em>        dh_testroot</em><br>
+<em>        dh_clean -k</em><br>
+<em>        dh_installdirs</em><br>
+<em>        $(MAKE) install prefix=$(CURDIR)/debian/quemu/usr</em><br>
+</p>
 
-<em>binary-indep: build install</em>
+<p>
+<em>binary-indep: build install</em><br>
+</p>
 
-<em>binary-arch: build install</em>
-<em>        dh_...</em>
+<p>
+<em>binary-arch: build install</em><br>
+<em>        dh_...</em><br>
+</p>
 
-<em>binary: binary-indep binary-arch #wird zuerst ausgeführt und ruft die verweisenden Sektionen auf</em>
+<p>
+<em>binary: binary-indep binary-arch #wird zuerst ausgeführt und ruft die verweisenden Sektionen auf</em><br>
 <em>.PHONY: build clean binary-indep binary-arch binary install</em><br>
 ++<br>
-<br>
+</p>
+
 <h5>Tools</h5>
+<p>
 <strong>dh-make </strong>→ konvertieren und anpassen eines Sourcecode Paketes an die Debian Reggeln<br>
 <strong>-c &lt;Lizenz&gt; </strong>→ angeben der Paketlizenz <br>
 **-e &lt;<a href="mailto:mail@mail.dom" title="mail@mail.dom">mail@mail.dom</a>&gt; **→ angeben einer E-Mail Adresse<br>
@@ -254,8 +317,10 @@
 <strong>-s </strong>→ setzen der Paketklasse auf einzelne binäre Datei<br>
 <strong>-m </strong>→ setzen der Paketklasse auf multiple binäre Datei<br>
 <strong>-p &lt;Name&gt; </strong>→ angeben eines alternernativen Paketnamens abweichend von der Quelldatei<br>
-<br>
-  <br>
+</p>
+
+  
+<p>
 <strong>dpkg-builder </strong>→ Programm dass aus einem Debian Konformen Quellpaket das Debian Paket baut<br>
 <strong>-us </strong>→ (unsigned) Paket nicht signieren<br>
 <strong>-uc </strong>→ <em> Changes </em>Datei nicht signieren<br>
@@ -264,7 +329,9 @@
 <strong>-a &lt;Arch&gt; </strong>→ explizite Angabe einer Zielarchitektur<br>
 <strong>-d </strong>→ Abhängigkeiten beim Bauen ignorieren<br>
 <strong>-rfakroot </strong>→ benutze eine gefälschte Rootumgebung zum Bauen<br>
-<br>
+</p>
+
+<p>
 <strong>lintian &lt;Paket.deb&gt; </strong><br>
 → Untersucht das Paket nach Bugs und Policyverletzungen<br>
 → dabei wird ein Verzeichnis, labortory angelegt in welche Informationen über das Paket abgelegt werden<br>
@@ -274,33 +341,52 @@
 <strong>--color </strong>→ ein bisschen bunter<br>
 <strong>-l|--lab &lt;Verzeichnis&gt; </strong>→ ein alternatives labortory &lt;Verzeichnis&gt; angeben<br>
 <strong>-j N </strong>→ Anzahl der Aufträge die gleichzeitig abgewickelt werden<br>
-<br>
+</p>
+
+<p>
 <strong>pbuilder </strong><br>
 → bauen eines .deb Pakets in einer sicheren sauberen Umgebung<br>
 → stellt sicher dass Abhängigkeiten richtig erkannt wurden<br>
 → es wird eine Chroot Umgebung in einem tarball erstellt<br>
-<br>
+</p>
+
+<p>
 <strong>pbuilder create </strong><br>
 → erstellt eine Chroot Umgebung für debian sid<br>
 <strong>--distribution &lt;Code&gt; </strong>→ erstellt eine Chroot Umgebung für die Distribution &lt;Code&gt;<br>
-<br>
+</p>
+
+<p>
 <strong>pbuilder update </strong>→ aktualisieren der Chroot Umgebung<br>
-<br>
-<strong>pbuilder builder &lt;programm.dsc&gt; </strong>→ baut das Programm aus der  Datei <em>&lt;programm.dsc&gt;</em>
+</p>
+
+<p>
+<strong>pbuilder builder &lt;programm.dsc&gt; </strong>→ baut das Programm aus der  Datei <em>&lt;programm.dsc&gt;</em><br>
+</p>
 
 <h5>Workflow ein eigenes Paket bauen</h5>
+<p>
 <strong>(1) </strong>Herunterladen und auspacken des Quellcodes, sowie lesen der Dokumentation um entsprechend fehlende Libraries nachzuinstallieren<br>
-<br>
-<strong>(2) </strong>Aufruf von <strong>dh_make:</strong>
-<strong>cd &lt;programm&gt;</strong>
-<code>dh_make -f ../&lt;programm.tar.gz&gt; --email noop@mail.dom -c gpl</code>
+</p>
 
+<p>
+<strong>(2) </strong>Aufruf von <strong>dh_make:</strong><br>
+<strong>cd &lt;programm&gt;</strong><br>
+<code>dh_make -f ../&lt;programm.tar.gz&gt; --email noop@mail.dom -c gpl</code><br>
+</p>
+
+<p>
 <strong>(3) </strong>Anpassen und bearbeiten von Dateien in <em>debian </em>Unterverzeichnis<br>
 (3.1) debuggen<br>
-<br>
-<strong>(4) </strong>Das Paket mit <strong>dpkg-buildpackage </strong>bauen: <strong>dpkg-buildpackage -uc -us -rfakeroot</strong>
+</p>
 
+<p>
+<strong>(4) </strong>Das Paket mit <strong>dpkg-buildpackage </strong>bauen: <strong>dpkg-buildpackage -uc -us -rfakeroot</strong><br>
+</p>
+
+<p>
 <strong>(5) </strong>Paket mit <strong>lintian </strong>und <strong>pbuilder </strong>nach Fehlern durchsuchen <br>
+</p>
 
 
 			<!-- End wiki content -->

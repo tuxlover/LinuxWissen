@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -141,14 +142,17 @@ Created Freitag 23 September 2011<br>
 
 <p>
 +++<br>
-<em>nameserver 192.168.10.1</em><br>
-<em>nameserver 192.168.0.99</em><br>
 </p>
+<pre>
+nameserver 192.168.10.1
+nameserver 192.168.0.99
+
+search foo.example.com bar.example.com example.com
+sortlist 172.16.0.0 10.10.19.10
+options rotate
+</pre>
 
 <p>
-<em>search foo.example.com bar.example.com example.com</em><br>
-<em>sortlist 172.16.0.0 10.10.19.10</em><br>
-<em>options rotate</em><br>
 +++<br>
 <strong>Direktiven:</strong><br>
 <em>nameserver</em><br>

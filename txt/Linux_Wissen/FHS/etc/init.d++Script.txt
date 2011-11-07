@@ -7,43 +7,46 @@ Created Sonntag 24 April 2011
 
 Die folgende Datei findet man auch unter */etc/init.d/skeleton
 ++
-//### BEGIN INIT INFO//
-//# Provides:          daemon//
-//# Required-Start:    $required_before_start//
-//# Required-Stop:     $required_before_stop//
-//# Default-Start:     3 5//
-//# Default-Stop:      0 6//
-//# Short-Description: daemon providing foo by bar//
-//# Description: daemon foo with  bar doing baz//
-//### END INIT INFO//
-//DIENST=/usr/bin/daemon//
-//LOGFILE=/var/log/daemon//
-//PIDFILE=/Var/run/daemon.pid//
+'''
+### BEGIN INIT INFO
+# Provides:          daemon
+# Required-Start:    $required_before_start
+# Required-Stop:     $required_before_stop
+# Default-Start:     3 5
+# Default-Stop:      0 6
+# Short-Description: daemon providing foo by bar
+# Description: daemon foo with  bar doing baz
+### END INIT INFO
+DIENST=/usr/bin/daemon
+LOGFILE=/var/log/daemon
+PIDFILE=/Var/run/daemon.pid
 
 
-//case $1 in//
-//        start) #starten des Prozesses//
-//               #nicht daemonen sollten mit & in den Hintergrund geschickt werden//
-//               #Programme die eine Systemänderung bewirken sollten ihren alten Status ablegen damit er durch stoppen//
-//               #des Dienstes wiederhergestellt werden kann//
-//               #Fehlerausagben des Scripts gehören nach /dev/null oder nach LOGFILE//
-//               #Ablegen einer Prozess-ID in einer Datei PIDFILE=/var/run/daemon.pid//
-//        ;;//
-//        stop) #beendet des Proezesses mit kill//
-//              #zurücksetzen des alten Status falls das Programm eine Systemveränderung bewirkt//
-//              #löschen nicht mehr benötigter Dateien inklusive /var/run/daemon.pid//
-//        ;;//
-//        status) #Auswerten des Statuses des Prozesses durch parsen von PIDFILE//
-//        ;;//
-//        resart) #falls dienst schon gestartet: stop && start//
-//                #andernfalls start//
-//        ;;//
-//        reload) #Daemon soll Konfigration neu einlesen zum Beispiel durch senden von SIGHUP (1) PIDFILE//
-//                #Statusänderungen am System sollen erneuert werden//
-//        ;;//
-//        force-reload) #Daemon soll Konfiguration neu einlesen oder restart ausführen, falls ersteres nicht möglich//
-//        ;;//
-//        *) #Was soll geschehen wenn etwas anderes auferufen wird//
-//exit 0 #Scripte enden immer mit einem Rückagbewert von 0 wenn sie erfolgreich waren//
-//       #Misserfolg sollte vorher abgefangen werden//
+case $1 in
+        start) #starten des Prozesses
+               #nicht daemonen sollten mit & in den Hintergrund geschickt werden
+               #Programme die eine Systemänderung bewirken sollten ihren alten Status ablegen damit er durch stoppen
+               #des Dienstes wiederhergestellt werden kann
+               #Fehlerausagben des Scripts gehören nach /dev/null oder nach LOGFILE
+               #Ablegen einer Prozess-ID in einer Datei PIDFILE=/var/run/daemon.pid
+        ;;
+        stop) #beendet des Proezesses mit kill
+              #zurücksetzen des alten Status falls das Programm eine Systemveränderung bewirkt
+              #löschen nicht mehr benötigter Dateien inklusive /var/run/daemon.pid
+        ;;
+        status) #Auswerten des Statuses des Prozesses durch parsen von PIDFILE
+        ;;
+        resart) #falls dienst schon gestartet: stop && start
+                #andernfalls start
+        ;;
+        reload) #Daemon soll Konfigration neu einlesen zum Beispiel durch senden von SIGHUP (1) PIDFILE
+                #Statusänderungen am System sollen erneuert werden
+        ;;
+        force-reload) #Daemon soll Konfiguration neu einlesen oder restart ausführen, falls ersteres nicht möglich
+        ;;
+        *) #Was soll geschehen wenn etwas anderes auferufen wird
+exit 0 #Scripte enden immer mit einem Rückagbewert von 0 wenn sie erfolgreich waren
+       #Misserfolg sollte vorher abgefangen werden
+'''
+
 ++

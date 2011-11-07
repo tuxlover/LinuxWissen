@@ -6,9 +6,12 @@ Creation-Date: 2011-09-25T22:58:14+02:00
 Created Sonntag 25 September 2011
 
 +++
-//Anaconda//
-//Doria	//
-//Andromeda	//
+'''
+Anaconda
+Doria	
+Andromeda	
+'''
+
 +++		
 //*/etc/hosts //muss entsprechend konfiguriert sein
 [[hosts]]

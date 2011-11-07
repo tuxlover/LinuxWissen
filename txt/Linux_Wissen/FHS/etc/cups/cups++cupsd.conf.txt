@@ -10,41 +10,44 @@ Created Dienstag 27 September 2011
 * nach dem Editieren dieser Dateien muss der Drucker-Server mit **service cups restart **neu gestartet werden 
 [[Linux Wissen:Drucken]]
 +++
-//LogLevel				warn//
-//SystemGroup			sys root//
-//Listen					localhost:631//
-//Listen					/var/run/cups/cups.sock//
+'''
+LogLevel				warn
+SystemGroup			sys root
+Listen					localhost:631
+Listen					/var/run/cups/cups.sock
 
 
-//Browsing				on//
-//BrowseOrder			allow,deny//
-//BrowseAllow			from all//
-//BrowseProtocols		cups smb//
-//BrowseLocalProtocols 	cups//
+Browsing				on
+BrowseOrder			allow,deny
+BrowseAllow			from all
+BrowseProtocols		cups smb
+BrowseLocalProtocols 	cups
 
-//DefaultAuthType		 Basic//
+DefaultAuthType		 Basic
 
-//<Location /printers>//
-//        Order Deny,Allow//
-//        Deny from all//
-//        Allow from 127.0.0.1//
-//        Allow from 192.168.123.0/24//
-//</Location>//
+<Location /printers>
+        Order Deny,Allow
+        Deny from all
+        Allow from 127.0.0.1
+        Allow from 192.168.123.0/24
+</Location>
 
-//<Location /printers/newlp>//
-//        Order allow,deny//
-//        Allow from 127.0.0.1//
-//        Allow from 192.168.123.0/24//
-//        Deny from 192.168.123.45//
-//        </Location>//
+<Location /printers/newlp>
+        Order allow,deny
+        Allow from 127.0.0.1
+        Allow from 192.168.123.0/24
+        Deny from 192.168.123.45
+        </Location>
 
-//<Policy default>//
-//  <Limit Create-Job Print-Job Print-URI Validate-Job>//
-//    Order deny,allow//
-//  </Limit>//
-//</Policy>//
+<Policy default>
+  <Limit Create-Job Print-Job Print-URI Validate-Job>
+    Order deny,allow
+  </Limit>
+</Policy>
 
-//DefaultPolicy 		default//
+DefaultPolicy 		default
+'''
+
 +++
 * Diese Datei kann auch über das Cups Web Interface// localhost:631  //editiert werden
 * Innerhalb einer <//Location  Name> </Location> Klasse// können Eigenschaften für die spezifizierte HTTP- oder andere Resource festgelegt werden

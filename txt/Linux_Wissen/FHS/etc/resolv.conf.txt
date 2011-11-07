@@ -7,12 +7,15 @@ Created Freitag 23 September 2011
 * Konfigrationsdatei für den lokalen Resolver
 
 +++
-//nameserver 192.168.10.1//
-//nameserver 192.168.0.99//
+'''
+nameserver 192.168.10.1
+nameserver 192.168.0.99
 
-//search foo.example.com bar.example.com example.com//
-//sortlist 172.16.0.0 10.10.19.10//
-//options rotate//
+search foo.example.com bar.example.com example.com
+sortlist 172.16.0.0 10.10.19.10
+options rotate
+'''
+
 +++
 **Direktiven:**
 //nameserver//

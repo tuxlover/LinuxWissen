@@ -107,27 +107,30 @@ Created Mittwoch 20 Juli 2011<br>
 
 <p>
 ++<br>
-#Dies ist ein Kommantar<br>
-#User an den eine Mail geschickt werden soll<br>
-#falls MAILTO="" wird keine Systemmail gesendet<br>
-MAILTO=&lt;User&gt;<br>
-#Shell die für die Ausführung von Jobs verwendet wird<br>
-SHELL=&lt;SHELL&gt;<br>
 </p>
+<pre>
+#Dies ist ein Kommantar
+#User an den eine Mail geschickt werden soll
+#falls MAILTO="" wird keine Systemmail gesendet
+MAILTO=&lt;User&gt;
+#Shell die für die Ausführung von Jobs verwendet wird
+SHELL=&lt;SHELL&gt;
 
+</pre>
 <p>
 <ul>
-<li>* * * * &lt;Befehlskette&gt; &lt;Zeilentrennzeichen oder %&gt;</li>
+<li><code>* * * * &lt;Befehlskette&gt; &lt;Zeilentrennzeichen oder %&gt;</code></li>
 </ul>
-#Minuten (0-59) <br>
-#Stunden (0-23) <br>
-#Tag des Monats(1-31)<br>
-#Monat des Jahres (1-12)<br>
-#Tag der Woche (0-7), 0=7=Sonntag<br>
-#!Wichtig!, falls mail verwendet wird, ist % als Zeilentrenner anzugeben  <br>
+<br>
+<code>#Minuten (0-59) </code><br>
+<code>#Stunden (0-23) </code><br>
+<code>#Tag des Monats(1-31)</code><br>
+<code>#Monat des Jahres (1-12)</code><br>
+<code>#Tag der Woche (0-7), 0=7=Sonntag</code><br>
+<code>#!Wichtig!, falls mail verwendet wird, ist % als Zeilentrenner anzugeben  </code><br>
 ++<br>
+<br>
 </p>
-
 <h5>Angabe von Zeitintervallen</h5>
 <p>
 <strong>N </strong>→ wird dem Felde gemäß zum Zeitpunkt N ausgeführt<br>

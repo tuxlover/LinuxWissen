@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -135,35 +136,30 @@
 				<p>
 Created Montag 19 September 2011<br>
 <em>+++</em><br>
-<em># Abweichungen zur CMOS Zeit</em><br>
-<em>driftfile /var/lib/ntp/ntp.drift</em><br>
 </p>
+<pre>
+# Abweichungen zur CMOS Zeit
+driftfile /var/lib/ntp/ntp.drift
+
+# NTP-Server
+server ptbtime1.ptb.de
+server ptbtime2.ptb.de
+
+# Zugriff durch NTP-Server gestatten
+restrict ptbtime1.ptb.de
+restrict ptbtime2.ptb.de
+
+# Zugriff vom localhost gestatten (ntpq -p)
+restrict 127.0.0.1
+
+# Zugriff aus dem internen Netz gestatten
+:restrict 192.168.1.0 mask 255.255.255.0
+
+# allen anderen Rechnern Zugriff verwehren
+restrict default notrust nomodify nopeer
+</pre>
 
 <p>
-<em># NTP-Server</em><br>
-<em>server ptbtime1.ptb.de</em><br>
-<em>server ptbtime2.ptb.de</em><br>
-</p>
-
-<p>
-<em># Zugriff durch NTP-Server gestatten</em><br>
-<em>restrict ptbtime1.ptb.de</em><br>
-<em>restrict ptbtime2.ptb.de</em><br>
-</p>
-
-<p>
-<em># Zugriff vom localhost gestatten (ntpq -p)</em><br>
-<em>restrict 127.0.0.1</em><br>
-</p>
-
-<p>
-<em># Zugriff aus dem internen Netz gestatten</em><br>
-<em>:restrict 192.168.1.0 mask 255.255.255.0</em><br>
-</p>
-
-<p>
-<em># allen anderen Rechnern Zugriff verwehren</em><br>
-<em>restrict default notrust nomodify nopeer</em><br>
 <em>+++</em><br>
 </p>
 

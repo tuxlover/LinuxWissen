@@ -6,16 +6,19 @@ Creation-Date: 2011-04-21T23:52:49+02:00
 Created Donnerstag 21 April 2011
 
 ++
-//#Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Reihenfolge des Checks beim Booten              //
-///dev/system/swap          none               swap      	 defaults              		0 0//
-///dev/system/root         /          		     ext3     acl,user_xattr        		1 1//
-///dev/disk/by-id/a...      /boot                  ext2       	acl,user_xattr        		1 2//
-///dev/system/home    /home                 ext3       	acl,user_xattr        		1 2//
-///dev/system/tmp       /tmp                   ext3       	acl,user_xattr        		1 2//
-//proc                          /proc           	     proc       	defaults     		         0 0//
-//sysfs                        /sys            	     sysfs    	noauto     		         0 0//
-//debugfs                  /sys/kernel/debug  debugfs   	 noauto             	         0 0//
-//usbfs                    /proc/bus/usb           usbfs      	noauto    	                 0 0//
-//devpts                  /dev/pts     	            devpts     	mode=0620,gid=5       	 0 0//
-//Alucard:/media/Elements  /srv/nfs             nfs        rw,... #man 5 nfs//
+'''
+#Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Reihenfolge des Checks beim Booten              
+/dev/system/swap          none               swap      	 defaults              		0 0
+/dev/system/root         /          		     ext3     acl,user_xattr        		1 1
+/dev/disk/by-id/a...      /boot                  ext2       	acl,user_xattr        		1 2
+/dev/system/home    /home                 ext3       	acl,user_xattr        		1 2
+/dev/system/tmp       /tmp                   ext3       	acl,user_xattr        		1 2
+proc                          /proc           	     proc       	defaults     		         0 0
+sysfs                        /sys            	     sysfs    	noauto     		         0 0
+debugfs                  /sys/kernel/debug  debugfs   	 noauto             	         0 0
+usbfs                    /proc/bus/usb           usbfs      	noauto    	                 0 0
+devpts                  /dev/pts     	            devpts     	mode=0620,gid=5       	 0 0
+Alucard:/media/Elements  /srv/nfs             nfs        rw,... #man 5 nfs
+'''
+
 ++

@@ -31,7 +31,7 @@ Created Mittwoch 20 Juli 2011
 
 === !Achtung! ===
 Es gibt verschiedene cron-Implementierungen
-zum Beispiel **annacron** oder **cronie**
+zum Beispiel **vixie-cron** oder **cronie**
 
 //*/var/spool/cron/tabs $$SUSE$$//
 //*/var/spool/cron $$Fedora$$//
@@ -50,3 +50,18 @@ Syntax einer Crontab:
 * falls eine Datei */etc/cron.allow dürfen nur Nutzer die in dieser Datei aufgelistet sind den **crond** benutzen dürfen
 * falls eine Datei */etc/cron.allow nicht existiert, aber eine Datei */etc/cron.deny dann dürfen die Nutzer die in */etc/cron.deny stehen den **crond **nicht benutzen
 * existieren beide Datein */etc/cron.allow, */etc/cron.deny wird nur die Datei */etc/cron.allow ausgewertet
+
+
+=== anacron ===
+* wird vom Programm **/usr/sbin/anacron **ausgeführt
+[[+anacron]]
+• muss meistens nachinstalliert werden und gehört nicht zum Umfang dazu
+* wiederholtes Ausführen von zeitgestierten in unregelmäßigen Zeitabständen
+* Es muss ein Konfigurationsscript in //*/etc/cron.hourly/0anacron  //existieren, hier kann der **anacron** Daemon konfiguriert werden
+* in der Datei //*/etc/anacrontab //werden die Jobs für **anacron **konfiguriert (
+[[FHS:etc:anacrontab]])
+
+//*/var/spool/anacron/daily//
+//*/var/spool/anacron/weekly//
+//*/var/spool/anacron/monthly//
+→ Zeitstempel die die Ausführung des nächsten Cronjobs angeben

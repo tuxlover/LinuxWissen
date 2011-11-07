@@ -1,0 +1,44 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-06T15:19:25+01:00
+
+====== anacrontab ======
+Created Sonntag 06 November 2011
+
+++
+''# die zu verwendende Shell''
+''SHELL=/bin/sh''
+''# suche Programme in diesen Verzeichnissen''
+''PATH=/sbin:/bin:/usr/sbin:/usr/bin''
+''# sende einen Statusbericht an diesen Nutzer''
+''MAILTO=root''
+''# Anacron lässt seinen Daemon zufällig laufen''
+''# Hier kann die maximale verzögerung pro Tag eingestellt werden''
+''RANDOM_DELAY=45''
+''# Innerhalb dieser Tagesstunden wird anacron nach auszuführenden Jobs suchen''
+''START_HOURS_RANGE=6-23''
+
+''#period in days   delay in minutes   job-identifier   command''
+''1       5       cron.daily              nice /usr/lib/cron/run-crons /etc/cron.daily''
+''7       25      cron.weekly             nice /usr/lib/cron/run-crons /etc/cron.weekly''
+''@monthly 45     cron.monthly            nice /usr/lib/cron/run-crons /etc/cron.monthly''
+''@daily  30      cron.avg_l1zard         /usr/bin/avgscan -W /home/l1zard/.wine -awbHpPcmj -r /var/log/avg_l1zard.report''
+''@daily 30       cron.avg_tmp            /usr/bin/avgscan -awbHpPcmj -r /var/log/avg_tmp.report''
+''@daily 30       cron.avg_root           /usr/bin/avgscan -awbHpPcmj -r /var/log/avg_root.report''
+++
+//#period in days//
+	→ Nach dieser Periode in Tage soll der Befehl in der Spalte //#Command //ausgeführt werden
+	→ es können auch Macros verwendet werden 
+		//daily //→ täglich
+		//monthly //→ monatlich
+		//weekly //→ wöchentlich
+
+//#delay in minutes//
+	→ Integer Wert der die Minuten repräsentiert die Anacron vor Ausführung dieses Befehls warten soll
+
+//#job-identifier//
+	→ der Identifier der in der logdatei verwendet wird
+
+//#command//
+	→ der Befehl der ausgeführt werden soll inklusive Optionen und Argumente
+	→ falls der Befehl nicht in //PATH //steht, muss der Pfad mitangegeben werden 

@@ -6,6 +6,7 @@ Creation-Date: 2011-07-20T21:43:12+02:00
 Created Mittwoch 20 Juli 2011
 
 ++
+'''
 #Dies ist ein Kommantar
 #User an den eine Mail geschickt werden soll
 #falls MAILTO="" wird keine Systemmail gesendet
@@ -13,13 +14,15 @@ MAILTO=<User>
 #Shell die für die Ausführung von Jobs verwendet wird
 SHELL=<SHELL>
 
-* * * * * <Befehlskette> <Zeilentrennzeichen oder %>
-#Minuten (0-59) 
-#Stunden (0-23) 
-#Tag des Monats(1-31)
-#Monat des Jahres (1-12)
-#Tag der Woche (0-7), 0=7=Sonntag
-#!Wichtig!, falls mail verwendet wird, ist % als Zeilentrenner anzugeben  
+'''
+* ''* * * * <Befehlskette> <Zeilentrennzeichen oder %>''
+
+''#Minuten (0-59) ''
+''#Stunden (0-23) ''
+''#Tag des Monats(1-31)''
+''#Monat des Jahres (1-12)''
+''#Tag der Woche (0-7), 0=7=Sonntag''
+''#!Wichtig!, falls mail verwendet wird, ist % als Zeilentrenner anzugeben  ''
 ++
 
 == Angabe von Zeitintervallen ==

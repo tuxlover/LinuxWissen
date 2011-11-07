@@ -8,6 +8,7 @@ Created Montag 19 September 2011
 * festlegen und konfigurieren der Systemzeit in $$SUSE$$ und $$Fedora$$
 
 //+++//
+'''
 ## Path:		System/Environment/Clock
 ## Description:		Information about your timezone and time
 ## Type:		string(-u,--utc,--localtime)
@@ -44,4 +45,6 @@ SYSTOHC="yes"
 #
 TIMEZONE="Europe/Berlin"
 DEFAULT_TIMEZONE="Europe/Berlin"
+'''
+
 +++

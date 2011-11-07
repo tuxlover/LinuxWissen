@@ -60,6 +60,7 @@
 <li><a href="../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
 <ul>
 <li><strong>git config</strong></li>
+<li><a href="./git_init.html" title="git init">git init</a></li>
 </ul>
 <li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
@@ -103,19 +104,36 @@ Created Dienstag 01 November 2011<br>
 </p>
 
 <p>
-<strong>git config &lt;Optionen&gt; &lt;Sektion&gt;.&lt;Variable&gt; &lt;Wert&gt;  </strong><a href="../FHS/etc/gitconfig.html" title="Linux Wissen:FHS:etc:gitconfig">Linux Wissen:FHS:etc:gitconfig</a><br>
+<strong>git config &lt;Optionen&gt; [&lt;Sektion&gt;.&lt;Variable&gt; &lt;Wert&gt;]  </strong><a href="../FHS/etc/gitconfig.html" title="Linux Wissen:FHS:etc:gitconfig">Linux Wissen:FHS:etc:gitconfig</a><br>
 <strong>--global </strong>→ editieren der Konfigurationsdatei des aktullen Nutzers unter <em>*~/.gitconfig</em><br>
 <strong>--local </strong>→ editieren der Konfigurationsdatei für das aktuelle Prokject<br>
 <strong>--system </strong>→ editieren der Konfigurationsdatei für alle (Systemweit)<br>
+<strong>--add </strong>→ hinzufügen eines Wertes<br>
+--<strong>get </strong>→ abfragen eines Wertes<br>
+<strong>--get-all </strong>→ wie <strong>--get, </strong>zeigt aber auch Konfigurationswerte an, wenn mehr als eine Zeile zutrifft<br>
+<strong>-f &lt;Datei&gt; </strong>→ diese &lt;Datei&gt; als Konfigurationsdatei benutzen<br>
+<strong>--remove-section &lt;Sektion&gt; </strong>→ diese Sektion komplett entfernen (neu eintragen nicht vergessen!!!)<br>
+<strong>--unset </strong>→ diese Zeile aus der Konfigurationsdatei entfernen<br>
+<strong>-l </strong>→ anzeigen aller Variablen aller Konfigurationsdateien<br>
+<strong>-e </strong>→ öffnen eines Editors <br>
 </p>
 
 <p>
-<u>Hinweis: man git-config</u><br>
+<u>Hinweis: man git-config für eine Auflistung aller Verfügbaren Sektionen und Variablen</u><br>
 </p>
 
 <p>
-<em>Beispiele:</em><br>
+<u>Hinweis: .git/config wird vor ~/.gitconfig und vor /etc/gitconfig gelesen. Es gilt je tiefer im Dateibaum sich eine Konfigurationsdatei befindet, desto eher wird sie gelesen.</u><br>
+</p>
+
+<p>
+Beispiele<em>:</em><br>
+hinzufügen eines workspaces:<br>
 <code>git config  --global --add core.workspace /home/johnny/workspace/</code><br>
+emacs als Standardeditor:<br>
+<code>git config --global --add core.editor emacs</code><br>
+anzeigen einer Variablen:<br>
+<code>git config core.filemode</code><br>
 </p>
 
 
@@ -124,7 +142,7 @@ Created Dienstag 01 November 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../FHS/etc/gitconfig.html'>Linux Wissen:FHS:etc:gitconfig</a></li>
+				Backlinks:						<a href='../git_Vesionskontrolle.html'>Linux Wissen:git Vesionskontrolle</a></li>						<a href='../FHS/etc/gitconfig.html'>Linux Wissen:FHS:etc:gitconfig</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

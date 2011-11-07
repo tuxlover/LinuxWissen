@@ -11,12 +11,27 @@ Created Dienstag 01 November 2011
 	* der Nutzer keine Berechtigungen hat, besonders für **--system **wichtig
 	* **--global **mit einem nicht richtig gesetzten $HOME Verzeichnis ausgeführt wird
 
-**git config <Optionen> <Sektion>.<Variable> <Wert>  **[[Linux Wissen:FHS:etc:gitconfig]]
+**git config <Optionen> [<Sektion>.<Variable> <Wert>]  **[[Linux Wissen:FHS:etc:gitconfig]]
 **--global **→ editieren der Konfigurationsdatei des aktullen Nutzers unter //*~/.gitconfig//
 **--local **→ editieren der Konfigurationsdatei für das aktuelle Prokject
 **--system **→ editieren der Konfigurationsdatei für alle (Systemweit)
+**--add **→ hinzufügen eines Wertes
+--**get **→ abfragen eines Wertes
+**--get-all **→ wie **--get, **zeigt aber auch Konfigurationswerte an, wenn mehr als eine Zeile zutrifft
+**-f <Datei> **→ diese <Datei> als Konfigurationsdatei benutzen
+**--remove-section <Sektion> **→ diese Sektion komplett entfernen (neu eintragen nicht vergessen!!!)
+**--unset **→ diese Zeile aus der Konfigurationsdatei entfernen
+**-l **→ anzeigen aller Variablen aller Konfigurationsdateien
+**-e **→ öffnen eines Editors 
 
-__Hinweis: man git-config__
+__Hinweis: man git-config für eine Auflistung aller Verfügbaren Sektionen und Variablen__
 
-//Beispiele://
+__Hinweis: .git/config wird vor ~/.gitconfig und vor /etc/gitconfig gelesen. Es gilt je tiefer im Dateibaum sich eine Konfigurationsdatei befindet, desto eher wird sie gelesen.__
+
+Beispiele//://
+hinzufügen eines workspaces:
 ''git config  --global --add core.workspace /home/johnny/workspace/''
+emacs als Standardeditor:
+''git config --global --add core.editor emacs''
+anzeigen einer Variablen:
+''git config core.filemode''

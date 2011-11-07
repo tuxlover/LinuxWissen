@@ -11,17 +11,20 @@ __der Dienst mittles __**killall -1 xinetd **__oder __**service  xinetd restart 
 
 Aufbau der xinetd.conf:
 +++
-//#Kommentar zum Beispiel Name des Dienstes//
-//defaults//
-//        {//
-//                <Attribut> <Operator>   <Parameter> [<Parameter> ...]//
-//        }//
+'''
+#Kommentar zum Beispiel Name des Dienstes
+defaults
+        {
+                <Attribut> <Operator>   <Parameter> [<Parameter> ...]
+        }
 
-//service <Dienst>//
-//        {//
-//                <Attribut> <Operator>   <Parameter> [<Parameter> ...]//
+service <Dienst>
+        {
+                <Attribut> <Operator>   <Parameter> [<Parameter> ...]
 
-//        }//
+        }
+'''
+
 +++
 
 //defaults{}//

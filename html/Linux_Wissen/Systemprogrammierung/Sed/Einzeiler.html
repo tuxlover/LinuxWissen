@@ -99,219 +99,350 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<a href="../../Dateien_verwalten/Dateien_suchen_und_indizieren/grep/Regul%C3%A4re_Ausdr%C3%BCcke.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke</a>
+				<p>
+Created Donnerstag 28 April 2011<br>
+</p>
+
+<p>
+&lt;Ausdruck&gt; meint regular Expression<br>
+<a href="../../Dateien_verwalten/Dateien_suchen_und_indizieren/grep/Regul%C3%A4re_Ausdr%C3%BCcke.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke</a><br>
+</p>
 
 <h4>Zeilenabstände</h4>
+<p>
 <code>sed G &lt;Datei&gt;</code><br>
 → doppelter Zeilenabstand, falls &lt;Datei&gt; Leerzeilen enthält<br>
-<br>
+</p>
+
+<p>
 <code> sed '/^$/d;G' &lt;Datei&gt;</code><br>
 → doppelte Leerzeichen in &lt;Datei&gt; löschen<br>
 → jeder Zeile folgt eine Leerzeile<br>
-<br>
+</p>
+
+<p>
 <code>sed 'G;G' &lt;Datei&gt;</code><br>
 → jeder Zeile folgen 3 Leerzeilen<br>
-<br>
+</p>
+
+<p>
 <code>sed 'n;d' &lt;Datei&gt;</code><br>
 → doppelten Zeilenabstand rückgängig machen, wenn jede 2. Zeile eine Leerzeile ist<br>
-<br>
+</p>
+
+<p>
 <code>sed '/&lt;Ausdruck&gt;/{x;p;x;}' &lt;Datei&gt;</code><br>
 → füge eine Leerzeile <em>über</em> die Zeile in &lt;Datei&gt; ein, auf die &lt;Ausdruck&gt; passt<br>
-<br>
+</p>
+
+<p>
 <code>sed '/&lt;Ausdruck&gt;/G' &lt;Datei&gt;</code><br>
 → füge eine Leerzeile <em>unter</em> die Zeile in &lt;Datei&gt; ein, auf die &lt;Ausdruck&gt; passt<br>
-<br>
+</p>
+
+<p>
 <code>sed '/&lt;Ausdruck&gt;/{x;p;x;G;}' &lt;Datei&gt;</code><br>
 → füge eine Leerzeile <em>unter </em>und <em>über </em>den Zeilen in &lt;Datei&gt; ein, auf die &lt;Ausdruck&gt; passt<br>
-<br>
+</p>
+
 <h4>Nummerierung</h4>
-<code>sed = &lt;Datei&gt; |sed 'N;s/\n/\t'</code><br>
+<p>
+<code>sed = &lt;Datei&gt; |sed 'N;s/\n/\t</code>'<br>
 → Nummeriere alle Zeilen Linksbündig<br>
-<br>
-<code> sed = &lt;Datei&gt; | sed 'N; s/^/     /; s/ *\(.\{6,\}\)\n/\1  /'</code><br>
+</p>
+
+<p>
+<code> sed = &lt;Datei&gt; | sed 'N; s/^/     /; s/ *\(.\{6,\}\)\n/\1  /</code>'<br>
 → nummeriere alle Zeilen rechtsbündig in linker Spalte<br>
-<br>
-<code> sed '/./=' &lt;Datei&gt; | sed '/./N; s/\n/ /'</code><br>
+</p>
+
+<p>
+<code> sed '/./=' &lt;Datei&gt; | sed '/./N; s/\n/ /</code>'<br>
 → nummeriere alle Zeilen mit Ausnahme von Leerzeilen<br>
- <br>
+</p>
+ 
+<p>
 <strong>sed -n '$=' &lt;Datei&gt;</strong><br>
-→ <strong>wc -l  </strong>
-<a href="../../Filterprogramme/W%C3%B6rter_z%C3%A4hlen_und_W%C3%B6rter_sortieren.html" title="Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren">Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren</a>
+→ <strong>wc -l  </strong><br>
+<a href="../../Filterprogramme/W%C3%B6rter_z%C3%A4hlen_und_W%C3%B6rter_sortieren.html" title="Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren">Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren</a><br>
+</p>
 
 <h4>zwischen Dos und Unix konvertieren</h4>
-<code> sed 's/.$//' &lt;Datei&gt;    #DOS    </code>
+<p>
+<code> sed 's/.$//' &lt;Datei&gt;    #DOS    </code><br>
 <code> sed 's/^M$//'  &lt;Datei&gt; #Bash</code><br>
 → Annahme: Alle Zeilen enden mit CR/LF<br>
 → Wandle DOS Zeilenvorschübe (CR/LF) in das Unix Format<br>
-<br>
-<code>sed 's/$'"/`echo \\\r`/" &lt;Datei&gt; #Bash</code>
+</p>
+
+<p>
+<code>sed 's/$'"/`echo \\\r`/" &lt;Datei&gt; #Bash</code><br>
 <code> sed "s/$//" &lt;Datei&gt; #DOS</code><br>
 → Wandle Unix Zeilenvoorschübe (LF) in das DOS Format<br>
- <br>
+</p>
+ 
+<p>
 <code>sed "s/\r//" &lt;EIngabedatei&gt; &gt; &lt;Ausgabedatei&gt; #Bash</code><br>
 → DOS CR/LF in das Unix Format umwandeln und in &lt;Ausgabedatei&gt; schreiben<br>
-→ entspricht <strong> tr -d \r &lt; &lt;Eingabedatei&gt; &gt; &lt;Ausgabedatei&gt; </strong>
-<a href="../../Filterprogramme/Texte_manipulieren_und_aufbereiten.html" title="Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten">Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten</a>
+→ entspricht <strong> tr -d \r &lt; &lt;Eingabedatei&gt; &gt; &lt;Ausgabedatei&gt; </strong><br>
+<a href="../../Filterprogramme/Texte_manipulieren_und_aufbereiten.html" title="Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten">Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten</a><br>
+</p>
 
-<strong>(missing link undokumentiert: dos2unix|unix2dos)</strong>
+<p>
+<strong>(missing link undokumentiert: dos2unix|unix2dos)</strong><br>
+</p>
 
 <h4>Texte formatieren und einrücken</h4>
+<p>
 <code> sed 's/^[ \t]*//' &lt;Datei&gt; </code><br>
 → lösche alle Leerzelen und Tabulatoren vom Anfang der Zeile in &lt;Datei&gt; und richte alle Zeilen linksbündig aus<br>
-<br>
+</p>
+
+<p>
 <code> sed 's/[ \t]*$//' &lt;Datei&gt;</code><br>
 → lösche alle Leerzeichen und Tabulatoren vom Ende aller Zeilen von &lt;Datei&gt;<br>
-<br>
+</p>
+
+<p>
 <code> sed 's/^[ \t]*//;s/[ \t]*$//' &lt;Datei&gt;</code><br>
 → lösche alle Leerzeichen und Tabulatoren vom Ende und vom Anfang aller Zeilen in &lt;Datei&gt;<br>
- <br>
+</p>
+ 
+<p>
 <code>sed 's/^/     /' &lt;Datei&gt;</code><br>
 → füge 5 Leerzeichen an den Anfang einer jeden Datei<br>
 → Einrückung<br>
-<br>
+</p>
+
+<p>
 <code> sed -e :a -e 's/^.\{1,78\}$/ &amp;/;ta'  &lt;Datei&gt;</code><br>
 → alle Zeilen mit einer Spaltenbreite von 80 Zeichen rechtsbündig ausrichten<br>
-<br>
+</p>
+
+<p>
 <code>sed  -e :a -e 's/^.\{1,77\}$/ &amp;/;ta' -e 's/\( *\)\1/\1/ &lt;Datei&gt;</code><br>
 → zentrieren aller Zeilen in einer 80 Zeichen breiten Spalte<br>
-<br>
-<h4>Suchen und ersetzen</h4>
-<code> sed 's/foo/bar/' &lt;Datei&gt;</code><br>
-→ ersetzt nur das erste Vorkommen von <em>foo </em> durch <em>bar</em>
+</p>
 
+<h4>Suchen und ersetzen</h4>
+<p>
+<code> sed 's/foo/bar/' &lt;Datei&gt;</code><br>
+→ ersetzt nur das erste Vorkommen von <em>foo </em> durch <em>bar</em><br>
+</p>
+
+<p>
 <code> sed 's/foo/bar/N' &lt;Datei&gt;</code><br>
 → ersetzt nur das N-te vokommen von <em>foo </em>mit <em>bar</em> in &lt;Datei&gt;<br>
-<br>
+</p>
+
+<p>
 <code>sed 's/foo/bar/g' &lt;Datei&gt;</code><br>
 → ersetze alle vorkommen von <em>foo</em> durch <em>bar</em> in &lt;Datei&gt;<br>
- <br>
+</p>
+ 
+<p>
 <code>sed 's/\(.*\)foo\(.*foo\)/\1bar\2/' &lt;Datei&gt;</code><br>
 → ersetze nur das zweite Vorkommen von <em>foo </em>durch <em>bar </em> in &lt;Datei&gt;<br>
-<br>
-<code>sed 's/\(.*\)foo/\1bar/'  &lt;Datei&gt;</code><br>
-→ ersetze nur das letzte Vorkommen in &lt;Datei&gt; von <em>foo </em> durch <em>bar</em>
+</p>
 
+<p>
+<code>sed 's/\(.*\)foo/\1bar/'  &lt;Datei&gt;</code><br>
+→ ersetze nur das letzte Vorkommen in &lt;Datei&gt; von <em>foo </em> durch <em>bar</em><br>
+</p>
+
+<p>
 <code>sed '/baz/s/foo/bar/g' &lt;Datei&gt;</code><br>
 → ersetze <em>foo </em>mit <em>bar </em>nur in Zeilen der &lt;Datei&gt; die auch <em>baz</em> enthalten<br>
-<br>
+</p>
+
+<p>
 <code>sed '/baz/!s/foo/bar/g' &lt;Datei&gt;</code><br>
 → ersetze <em>foo </em>mit <em>bar </em>in Zeilen der &lt;Datei&gt; die nicht <em>baz </em>enthalten<br>
-<br>
+</p>
+
+<p>
 <code>sed 's/scarlet\|ruby\|puce/red/g' &lt;Datei&gt;</code><br>
 → ersetze die Vorkommen der Wörter <em>scarlet, ruby, puce </em>durch das Wort <em>red</em> in &lt;Datei&gt;<br>
-<br>
+</p>
+
 <h4>Zeilen manipulieren</h4>
+<p>
 <code> sed -n '1!G;h;$p' &lt;Datei&gt;</code><br>
-→ Reihenfolge der Zeilen umkehren, wie <strong>tac </strong>
-<a href="../../Filterprogramme/cat.html" title="Linux Wissen:Filterprogramme:cat">Linux Wissen:Filterprogramme:cat</a>
+→ Reihenfolge der Zeilen umkehren, wie <strong>tac </strong><br>
+<a href="../../Filterprogramme/cat.html" title="Linux Wissen:Filterprogramme:cat">Linux Wissen:Filterprogramme:cat</a><br>
+</p>
 
+<p>
 <code>sed '/\n/!G;s/\(.\)\(.*\n\)/&amp;\2\1/;//D;s/.//' &lt;Datei&gt;</code><br>
-→ die Reihenfolge der Buchstaben in jeder Zeile der &lt;Datei&gt; umkehren,wie <strong>rev</strong>
- <a href="../../Filterprogramme/Texte_manipulieren_und_aufbereiten.html" title="Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten">Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten</a>
+→ die Reihenfolge der Buchstaben in jeder Zeile der &lt;Datei&gt; umkehren,wie <strong>rev</strong><br>
+ <a href="../../Filterprogramme/Texte_manipulieren_und_aufbereiten.html" title="Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten">Linux Wissen:Filterprogramme:Texte manipulieren und aufbereiten</a><br>
+</p>
 
+<p>
 <code>sed '$!N;s/\n/ /' &lt;Datei&gt;</code><br>
-→ füge Zeilenpaare nebeneinander zusammen, wie <strong>paste</strong>
-<a href="../../Filterprogramme/Dateien_zusammenf%C3%BChren.html" title="Linux Wissen:Filterprogramme:Dateien zusammenführen">Linux Wissen:Filterprogramme:Dateien zusammenführen</a>
+→ füge Zeilenpaare nebeneinander zusammen, wie <strong>paste</strong><br>
+<a href="../../Filterprogramme/Dateien_zusammenf%C3%BChren.html" title="Linux Wissen:Filterprogramme:Dateien zusammenführen">Linux Wissen:Filterprogramme:Dateien zusammenführen</a><br>
+</p>
 
+<p>
 <code> sed -e :a -e '/\\$/N; s/\\\n//; ta' &lt;Datei&gt;</code><br>
 → falls eine Zeile in der &lt;Datei&gt; mit \ endet, füge eine andere andere an<br>
- <br>
+</p>
+ 
+<p>
 <code>sed -e :a -e '$!N;s/\n=/ /;ta' -e 'P;D' &lt;Datei&gt;</code><br>
 → falls eine Zeile in der &lt;Datei&gt; mit einem = beginnt, füge vorherige Zeile hinzu und ersetze = durch Leerzeichen<br>
-<br>
+</p>
+
 <h4>Anzeigen ausgewählter Zeilen</h4>
+<p>
 <code> sed 10q &lt;Datei&gt;</code><br>
 → wie <strong>head </strong>ohne weitere Optionen<br>
-<a href="../../Filterprogramme/head_und_tail.html" title="Linux Wissen:Filterprogramme:head und tail">Linux Wissen:Filterprogramme:head und tail</a>
+<a href="../../Filterprogramme/head_und_tail.html" title="Linux Wissen:Filterprogramme:head und tail">Linux Wissen:Filterprogramme:head und tail</a><br>
+</p>
 
+<p>
 <code>sed q &lt;Datei&gt;</code><br>
-→ wie <strong>head -1</strong> 
+→ wie <strong>head -1</strong> <br>
+</p>
 
+<p>
 <code>sed -e :a -e '$q;N;11,$D;ba' &lt;Datei&gt;</code><br>
 → wie <strong>tail </strong>ohne Optionen<br>
-<br>
+</p>
+
+<p>
 <code>sed '$!N;$!D' &lt;Datei&gt;</code><br>
-→ wie <strong>tail -2</strong>
+→ wie <strong>tail -2</strong><br>
+</p>
 
+<p>
 <code>sed '$!d' &lt;Datei&gt;</code><br>
-→ wie <strong>tail -1</strong>
+→ wie <strong>tail -1</strong><br>
+</p>
 
+<p>
 <code>sed -n '/&lt;Ausdruck&gt;/p' &lt;Datei&gt;</code><br>
 → wie <strong>grep</strong>, ausgeben von Zeilen einer &lt;Datei&gt;, die durch &lt;Ausdruck&gt; definiert sind<br>
-<br>
+</p>
+
+<p>
 <code>sed '/&lt;Ausdruck&gt;/d' &lt;Datei&gt;</code><br>
 → wie <strong>grep -v</strong>, ausgeben aller Zeilen die nicht durch &lt;Ausdruck&gt; definiert sind<br>
-<a href="../../Dateien_verwalten/Dateien_suchen_und_indizieren/grep.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep</a>
+<a href="../../Dateien_verwalten/Dateien_suchen_und_indizieren/grep.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep</a><br>
+</p>
 
+<p>
 <code> sed -n '/&lt;Ausdruck&gt;/{g;1!p;};h' &lt;Datei&gt;</code><br>
 → ausgeben der Zeile <em>oberhalb</em> des zutreffenden &lt;Ausdruck&gt;<br>
 → die Zeile die &lt;Ausdruck&gt; enthält wird nicht ausgegeben<br>
-<br>
+</p>
+
+<p>
 <code> sed -n '/regexp/{n;p;}' &lt;Datei&gt;</code><br>
 → ausgeben der Zeile <em>unter</em> dem zutreffenden &lt;Ausdruck&gt;<br>
 → die Zeile die &lt;Ausdruck&gt; enthält, wird nicht ausgegeben<br>
-<br>
+</p>
+
+<p>
 <code>sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;' &lt;Datei&gt;</code><br>
 → Ausgabe eines ganzen Absatzes, falls dieser AAA enthält<br>
-<br>
+</p>
+
+<p>
 <code>sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;/BBB/!d;/CCC/!d' &lt;Datei&gt;</code><br>
 → Ausgabe des ganzen Absatzes, falls dieser <em>AAA BBB</em> oder <em>CCC</em> enthält<br>
- <br>
+</p>
+ 
+<p>
 <code>sed -n '/^.\{N\}/p' &lt;Datei&gt;</code><br>
 → Ausgabe der Zeilen, die mindestesn N Zeichen lang sind<br>
-<br>
+</p>
+
+<p>
 <code>sed '/^.\{N\}/d' &lt;Datei&gt;</code><br>
 → Ausgabe der Zeilen die höchstens kleiner als N Zeichen lang sind<br>
-<br>
+</p>
+
+<p>
 <code>sed -n '/&lt;Ausdruck&gt;/,$p' &lt;Datei&gt;</code><br>
 → Ausgabe der Zeilen ab &lt;Ausdruck&gt;<br>
-<br>
+</p>
+
 <h4>Löschen von Zeilen</h4>
+<p>
 <code>sed '/&lt;Iowa&gt;/,/&lt;Montana&gt;/d' &lt;Datei&gt;</code><br>
 → entfernen der Zeilen, die zwischen &lt;Ausdruck1&gt; und &lt;Ausdruck2&gt; stehen<br>
-<br>
-<code> sed '$!N; /^\(.*\)\n\1$/!P; D' &lt;Datei&gt;</code><br>
-→ wie <strong>uniq</strong>
-<a href="../../Filterprogramme/W%C3%B6rter_z%C3%A4hlen_und_W%C3%B6rter_sortieren.html" title="Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren">Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren</a>
+</p>
 
+<p>
+<code> sed '$!N; /^\(.*\)\n\1$/!P; D' &lt;Datei&gt;</code><br>
+→ wie <strong>uniq</strong><br>
+<a href="../../Filterprogramme/W%C3%B6rter_z%C3%A4hlen_und_W%C3%B6rter_sortieren.html" title="Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren">Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren</a><br>
+</p>
+
+<p>
 <code>sed -n 'G; s/\n/&amp;&amp;/; /^\([ -~]*\n\).*\n\1/d; s/\n//; h; P' &lt;Datei&gt;</code><br>
 → löschen von identischen nicht aufeinanderfolgender Zeilen<br>
-<br>
-<code>sed '$!N; s/^\(.*\)\n\1$/\1/; t; D' &lt;Datei&gt;</code><br>
-→ wie <strong>uniq -d</strong>
+</p>
 
+<p>
+<code>sed '$!N; s/^\(.*\)\n\1$/\1/; t; D' &lt;Datei&gt;</code><br>
+→ wie <strong>uniq -d</strong><br>
+</p>
+
+<p>
 <code>sed '1,10d' &lt;Datei&gt;</code><br>
 → löschen der ersten 10 Zeilen der &lt;Datei&gt;<br>
-<br>
+</p>
+
+<p>
 <code>sed '$d' &lt;Datei&gt;</code><br>
 → löschen der letzten Zeile einer &lt;Datei&gt;<br>
-<br>
+</p>
+
+<p>
 <code>sed 'N;$!P;$!D;$d' &lt;Datei&gt;</code><br>
 → löschen der letzten zwei Zeilen einer &lt;Datei&gt;<br>
-<br>
+</p>
+
+<p>
 <code>sed -e :a -e '$d;N;2,10ba' -e 'P;D' &lt;Datei&gt;</code><br>
 → löschen der letzten 10 Zeilen einer Datei<br>
-<br>
+</p>
+
+<p>
 <code>sed '0~Nd &lt;Datei&gt;</code><br>
 → löschen jeder N-ten Zeile in &lt;Datei&gt;<br>
-<br>
+</p>
+
+<p>
 <code>sed '/^$/d' &lt;Datei&gt;</code><br>
 → Alle Leerzeichen aus &lt;Datei&gt; löschen<br>
-<br>
+</p>
+
+<p>
 <code>sed '/./,$!d' &lt;Datei&gt;</code><br>
 → lösche alle Leerzeilen am Anfang einer &lt;Datei&gt;<br>
-<br>
+</p>
+
+<p>
 <code>sed -e :a -e '/^\n*$/{$d;N;ba' -e '}' &lt;Datei&gt;</code><br>
 → lösche alle Leerzeilen am Ende einer Datei<br>
-<br>
+</p>
+
+<p>
 <code>sed -n '/^$/{p;h;};/./{x;/./p;}' &lt;Datei&gt;</code><br>
 → lösche jede Leerzeile am Ende jeden Absatzes<br>
-<br>
+</p>
+
 <h4>Weitere Literatur</h4>
-<a href="http://sed.sourceforge.net/sed1line_de.html" title="http://sed.sourceforge.net/sed1line_de.html">http://sed.sourceforge.net/sed1line_de.html</a>
-<a href="http://www.catonmat.net/blog/sed-one-liners-explained-part-one" title="http://www.catonmat.net/blog/sed-one-liners-explained-part-one">http://www.catonmat.net/blog/sed-one-liners-explained-part-one</a>
-<a href="http://www.catonmat.net/blog/sed-one-liners-explained-part-two" title="http://www.catonmat.net/blog/sed-one-liners-explained-part-two">http://www.catonmat.net/blog/sed-one-liners-explained-part-two</a>
-<a href="http://www.catonmat.net/blog/sed-one-liners-explained-part-three" title="http://www.catonmat.net/blog/sed-one-liners-explained-part-three">http://www.catonmat.net/blog/sed-one-liners-explained-part-three</a>
+<p>
+<a href="http://sed.sourceforge.net/sed1line_de.html" title="http://sed.sourceforge.net/sed1line_de.html">http://sed.sourceforge.net/sed1line_de.html</a><br>
+<a href="http://www.catonmat.net/blog/sed-one-liners-explained-part-one" title="http://www.catonmat.net/blog/sed-one-liners-explained-part-one">http://www.catonmat.net/blog/sed-one-liners-explained-part-one</a><br>
+<a href="http://www.catonmat.net/blog/sed-one-liners-explained-part-two" title="http://www.catonmat.net/blog/sed-one-liners-explained-part-two">http://www.catonmat.net/blog/sed-one-liners-explained-part-two</a><br>
+<a href="http://www.catonmat.net/blog/sed-one-liners-explained-part-three" title="http://www.catonmat.net/blog/sed-one-liners-explained-part-three">http://www.catonmat.net/blog/sed-one-liners-explained-part-three</a><br>
+</p>
 
 
 			<!-- End wiki content -->

@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -138,28 +139,25 @@ Created Sonntag 24 April 2011<br>
 
 <p>
 ++<br>
-<em>alias &lt;Modul&gt; &lt;Aliasname&gt; --&gt; alternative Namen für Module, die beim Laden mittels modprobe verwendet werden können</em><br>
-<em>alias nfs4 nfs</em><br>
 </p>
+<pre>
+alias &lt;Modul&gt; &lt;Aliasname&gt; --&gt; alternative Namen für Module, die beim Laden mittels modprobe verwendet werden können
+alias nfs4 nfs
+
+options &lt;Modul&gt; &lt;Parameter&gt; --&gt; zusätzliche Angabe von Optionen zu einem Modul
+options ide-scsi idescsi_nocd=1
+
+install &lt;Modul&gt; &lt;Kommando&gt; --&gt; Zum Laden von &lt;Modul&gt; wird eigens definierter Befehl verwendet
+install ohci-hcd /sbin/modprobe ehci-hcd; /sbin/modprobe --ignore-install ohci-hcd
+
+remove &lt;Modul&gt; &lt;Kommando&gt; --&gt; zum entladen von &lt;Modul&gt; wird ein eigens definierter Befehl verwendet
+remove xfs /bin/echo "Not allowed to remove xfs from modules stack"
+
+include &lt;Datiename&gt; --&gt; Zum Laden der Konfiguration aus der entsprechenden Datei
+include /etc/modprobe.d/mydriver.conf
+</pre>
 
 <p>
-<em>options &lt;Modul&gt; &lt;Parameter&gt; --&gt; zusätzliche Angabe von Optionen zu einem Modul</em><br>
-<em>options ide-scsi idescsi_nocd=1</em><br>
-</p>
-
-<p>
-<em>install &lt;Modul&gt; &lt;Kommando&gt; --&gt; Zum Laden von &lt;Modul&gt; wird eigens definierter Befehl verwendet</em><br>
-<em>install ohci-hcd /sbin/modprobe ehci-hcd; /sbin/modprobe --ignore-install ohci-hcd</em><br>
-</p>
-
-<p>
-<em>remove &lt;Modul&gt; &lt;Kommando&gt; --&gt; zum entladen von &lt;Modul&gt; wird ein eigens definierter Befehl verwendet</em><br>
-<em>remove xfs /bin/echo "Not allowed to remove xfs from modules stack"</em><br>
-</p>
-
-<p>
-<em>include &lt;Datiename&gt; --&gt; Zum Laden der Konfiguration aus der entsprechenden Datei</em><br>
-<em>include /etc/modprobe.d/mydriver.conf</em><br>
 ++<br>
 </p>
 

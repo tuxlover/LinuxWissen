@@ -62,6 +62,7 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -147,94 +148,84 @@ Created Mittwoch 21 September 2011<br>
 
 <p>
 +++<br>
-<em>Section "Modules"</em><br>
-<em>        Load "glx"                      #Die von X zu ladenden Module</em><br>
-<em>        Load "freetype"                 #Stellen Treiber und Spezielle Features zur Verfügung</em><br>
-<em>EndSection</em><br>
 </p>
+<pre>
+Section "Modules"
+        Load "glx"                      #Die von X zu ladenden Module
+        Load "freetype"                 #Stellen Treiber und Spezielle Features zur Verfügung
+EndSection
 
+Section "Input Device"
+        Identifier "Keyboard"           #Die von X verwendete Tastatur
+        Driver "kbd"                    #Treiber, Standardlayout, Model, Verhalten der Tastatur
+        Option "XkbModel" "pc105"       #Model
+        Option "XkbLayout" "de"         #Layout für die Tastatur
+        Option "AutoRepeat" "500 200"   #automatische Wiederholung falls Taste wird gehalten in Sekunden wie oft
+EndSection
+
+
+Section "Input Device"
+        Identifier "Mouse"              #Die von X verwendetet Maus ist das zweite Inputgerät
+        Driver "mouse"                  #Der verwendete Treiber
+        Option "Protocol" "IMPS/2"      #Das verwendetet Protokoll mit der die Mouse und der X-Server kommunizieren
+        Option "Device" "/dev/input/mice" #Das Device File
+        Option "Emulate3Buttons" "no"   #Auf "yes" setzen falls man durch herunterdrücken beider Tasten die Maus emul. will
+        Option "ZAxisMapping" "4 5"     #mapp das Scrollen der Maus auf die virtuellen Tasten 4 und 5
+EndSection
+
+Section "Monitor"                       #Die Monitor Section
+    Identifier "Monitor0"               #Identifier für ServerLayout
+    ModelName "VisionMaster Pro 450"    #Name des Monitors
+    HorizSync 27.0-115.0                #Horizontale Synchronisationsrate (Handbuch des Monitors)
+    VertRefresh 50.0-160.0              #Vertiakle Synchronisationsrate (Handbuch des Monitors)
+</pre>
+<pre style='padding-left: 180pt'>
+    # My custom 1360x1024 mode
+    Modeline "1360x1024" 197.8 \        #Auflösung des Monitors
+              1360 1370 1480 1752 \
+              1024 1031 1046 1072 -HSync -VSync
+EndSection
+
+Section "Device"
+    Identifier "Videocard0"             #Identifier für die Grafikkarte
+    Driver       "nv"                   #Der verwendete Treiber
+    VendorName "nVidia"                 #Der Hersteller der Karte
+    BoardName    "GeForce 8900gs"       #Name der Karte
+    VideoRam     512M                   #Verfügbarer Ram
+EndSection
+
+Section "Screen"                        #Kombination von Monitor und Grafikkarte, Zweck: zur Konfiguration mehrerer Mon
+    Identifier "Screen0"                #Der erste von X angesprochene Bildschirm
+    Device     "Videocard0"             #Über Videocard0 Geforce 8900gs
+    Monitor    "Monitor0"               #auf Monitor0 VisionMaster Pro 450
+    DefaultDepth 24                     #Mit Farbtiefe 24
+    SubSection "Display"                #Untersection zum Festlegen verschiedener Displays
+        Depth     24
+        Modes    "1024x768" "1024x600" "800x600" "640x480" #Reihenfolge der zu Probierenden Auflösung bie 24 bit Farbtiefe
+    EndSubSection
+    SubSection "Display"
+        Depth      8
+        Modes     "1024x768" "800x600" "640x480" #Reihenfolge der zu probierenden Auflösung bei 8 bit Farbtiefe
+    EndSubSection
+EndSection
+
+Section "ServerLayout"
+    Identifier     "single head configuration"
+    Screen         "Screen0" 0 0                #Der Screen auf dem X-Client gestartet wird, auf X-Server 1 Display 1
+    InputDevice    "Mouse0" "CorePointer"       #Starten der ersten und einzigen Maus
+    InputDevice    "Keyboard0" "CoreKeyboard"   #Starten der ersten und einzigen Tastatur
+EndSection
+
+Section "Files"                                 #Definieren von X Fonts
+        FontPath "/usr/share/fonts/100dpi:unscaled"
+        FontPath "/usr/share/fonts/Type1"
+        FontPath "/usr/share/fonts/truetype"
+        FontPath "/usr/share/fonts/URW"
+        FontPath "/usr/share/fonts/Speedo"
+        FontPath "/usr/share/fonts/100dpi"
+EndSection
+</pre>
 <p>
-<em>Section "Input Device"</em><br>
-<em>        Identifier "Keyboard"           #Die von X verwendete Tastatur</em><br>
-<em>        Driver "kbd"                    #Treiber, Standardlayout, Model, Verhalten der Tastatur</em><br>
-<em>        Option "XkbModel" "pc105"       #Model</em><br>
-<em>        Option "XkbLayout" "de"         #Layout für die Tastatur</em><br>
-<em>        Option "AutoRepeat" "500 200"   #automatische Wiederholung falls Taste wird gehalten in Sekunden wie oft</em><br>
-<em>EndSection</em><br>
-</p>
-
-
-<p>
-<em>Section "Input Device"</em><br>
-<em>        Identifier "Mouse"              #Die von X verwendetet Maus ist das zweite Inputgerät</em><br>
-<em>        Driver "mouse"                  #Der verwendete Treiber</em><br>
-<em>        Option "Protocol" "IMPS/2"      #Das verwendetet Protokoll mit der die Mouse und der X-Server kommunizieren</em><br>
-<em>        Option "Device" "/dev/input/mice" #Das Device File</em><br>
-<em>        Option "Emulate3Buttons" "no"   #Auf "yes" setzen falls man durch herunterdrücken beider Tasten die Maus emul. will</em><br>
-<em>        Option "ZAxisMapping" "4 5"     #mapp das Scrollen der Maus auf die virtuellen Tasten 4 und 5</em><br>
-<em>EndSection</em><br>
-</p>
-
-<p>
-<em>Section "Monitor"                       #Die Monitor Section</em><br>
-<em>    Identifier "Monitor0"               #Identifier für ServerLayout</em><br>
-<em>    ModelName "VisionMaster Pro 450"    #Name des Monitors</em><br>
-<em>    HorizSync 27.0-115.0                #Horizontale Synchronisationsrate (Handbuch des Monitors)</em><br>
-<em>    VertRefresh 50.0-160.0              #Vertiakle Synchronisationsrate (Handbuch des Monitors)</em><br>
-<div style='padding-left: 180pt'>
-<em>    # My custom 1360x1024 mode</em><br>
-</div>
-<em>    Modeline "1360x1024" 197.8 \        #Auflösung des Monitors</em><br>
-<em>              1360 1370 1480 1752 \</em><br>
-<em>              1024 1031 1046 1072 -HSync -VSync</em><br>
-<em>EndSection</em><br>
-</p>
-
-<p>
-<em>Section "Device"</em><br>
-<em>    Identifier "Videocard0"             #Identifier für die Grafikkarte</em><br>
-<em>    Driver       "nv"                   #Der verwendete Treiber</em><br>
-<em>    VendorName "nVidia"                 #Der Hersteller der Karte</em><br>
-<em>    BoardName    "GeForce 8900gs"       #Name der Karte</em><br>
-<em>    VideoRam     512M                   #Verfügbarer Ram</em><br>
-<em>EndSection</em><br>
-</p>
-
-<p>
-<em>Section "Screen"                        #Kombination von Monitor und Grafikkarte, Zweck: zur Konfiguration mehrerer Mon</em><br>
-<em>    Identifier "Screen0"                #Der erste von X angesprochene Bildschirm</em><br>
-<em>    Device     "Videocard0"             #Über Videocard0 Geforce 8900gs</em><br>
-<em>    Monitor    "Monitor0"               #auf Monitor0 VisionMaster Pro 450</em><br>
-<em>    DefaultDepth 24                     #Mit Farbtiefe 24</em><br>
-<em>    SubSection "Display"                #Untersection zum Festlegen verschiedener Displays</em><br>
-<em>        Depth     24</em><br>
-<em>        Modes    "1024x768" "1024x600" "800x600" "640x480" #Reihenfolge der zu Probierenden Auflösung bie 24 bit Farbtiefe</em><br>
-<em>    EndSubSection</em><br>
-<em>    SubSection "Display"</em><br>
-<em>        Depth      8</em><br>
-<em>        Modes     "1024x768" "800x600" "640x480" #Reihenfolge der zu probierenden Auflösung bei 8 bit Farbtiefe</em><br>
-<em>    EndSubSection</em><br>
-<em>EndSection</em><br>
-</p>
-
-<p>
-<em>Section "ServerLayout"</em><br>
-<em>    Identifier     "single head configuration"</em><br>
-<em>    Screen         "Screen0" 0 0                #Der Screen auf dem X-Client gestartet wird, auf X-Server 1 Display 1</em><br>
-<em>    InputDevice    "Mouse0" "CorePointer"       #Starten der ersten und einzigen Maus</em><br>
-<em>    InputDevice    "Keyboard0" "CoreKeyboard"   #Starten der ersten und einzigen Tastatur</em><br>
-<em>EndSection</em><br>
-</p>
-
-<p>
-<em>Section "Files"                                 #Definieren von X Fonts</em><br>
-<em>        FontPath "/usr/share/fonts/100dpi:unscaled"</em><br>
-<em>        FontPath "/usr/share/fonts/Type1"</em><br>
-<em>        FontPath "/usr/share/fonts/truetype"</em><br>
-<em>        FontPath "/usr/share/fonts/URW"</em><br>
-<em>        FontPath "/usr/share/fonts/Speedo"</em><br>
-<em>        FontPath "/usr/share/fonts/100dpi"</em><br>
-<em>EndSection</em><br>
 +++<br>
 __<u>Nividia kommt mit einem eigenen Konfigarationstool nvidia-settings und kann nicht über Xorg konfiguriert werden</u>__<br>
 </p>
