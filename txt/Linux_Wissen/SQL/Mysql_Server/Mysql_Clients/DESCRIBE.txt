@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-08T22:37:26+01:00
+
+====== DESCRIBE ======
+Created Dienstag 08 November 2011
+
+* Befehl für den Mysql Client
+
+**mysql DESCRIBE <TABLE>;**
+→ die Ausagbe zeigt eine Zeile für jede Definierte Spalte der Tabelle
+→ die einzelnen Spalten beschreiben die Eigenschaften dieser Spalten
+'''
++-------------+----------+------+-----+---------+----------------+
+
+| Field       | Type     | Null | Key | Default | Extra          |
+
++-------------+----------+------+-----+---------+----------------+
+'''
+
+
+//Field //**→ **bezeichnet den Namen der Spalte
+
+//Type //**→ **zeigt den Datentyp dieser Spalte
+
+//NULL //→
+		//Yes → //Spalte darf den Wert ''NULL'' haben
+		//No //→ Spalte darf nicht den Wert ''NULL haben''
+
+//Key //→ kann leer sein oder eine von diesen Werten enthalten
+	→ Describe zeigt nur den höchsten dieser Werte an (//PRI/UNI/MUL//)
+		//PRI //→ diese Spalte ist ein Primär Schlüssel oder ist Teil eines mehrspaltigen Primär Schlüssels
+		//UNI// → diese Spalte enthält einen eindeutigen Wert (Unique) der indiziert wird
+		//MUL //→ diese Spalte ist die erste Spalte eines eindeutigen oder nicht eindeutigen
+
+//Default //→ zeigt den Standard Wert für diese Spalte
+
+//Extra //→ zusätzlicha Attribute wie //auto_increment//

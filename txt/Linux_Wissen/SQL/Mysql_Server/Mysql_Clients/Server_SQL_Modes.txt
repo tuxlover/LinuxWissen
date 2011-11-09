@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-08T23:28:42+01:00
+
+====== Server SQL Modes ======
+Created Dienstag 08 November 2011
+
+* setzt das Verhalten des SQL Servers zur Laufzeit
+* wird konfigueriert durch setzen der Variablen ''sql_mode ''mittles  **SET**
+
+**SET [SESSION|GLOBAL] sql_mode = '<Mode>[,...}';**
+
+//sql-mode// Variable in //*/etc/my.cnf//
+[[Linux Wissen:FHS:etc:my.cnf]]
+
+== Zurücksetzen des SQL Modes: ==
+''SET sql_mode = '';''
+
+== Einige Modes ==
+ANSI_QUOTES → Doppelte Quoten werden als Identifier quoting benutzt
+
+IGNORE_SPACE →  Ignoriere Leerzeichen nach Funktionsnamen
+
+ERROR_FOR_DIVISION_BY_ZERO → bei Division durch 0 wird eine Warnung ausgegeben bzw. im //STRICT MODE // 
+
+STRICT_TRANS_TABLES → Werte die missgestaltig oder ungültig sind werden als Fehler erkannt
+                                     → nur für transactional Tabellen
+
+STRICT_ALL_TABLES → Werte die missgestaltig oder ungültig sind werden als Fehler erkannt
+                                           → für alle Tabellen
+
+TRADITIONAL → kombinierter Modus des STRICT_MODE und diverse andere restriktionen aktiviert
+
+ANSI → kombinierter Modus der das Verhalten für den ANSI Standard aktiviert
+
+== Abfragen des Modus ==
+**SELECT @@sql_mode;**

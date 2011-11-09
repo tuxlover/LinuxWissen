@@ -120,13 +120,16 @@
 <br>
 <strong>SHOW </strong>→ vorhandene Datenbank Elemente anzeigen<br>
 <strong>SHOW databases </strong>→ vorhandene Datenbanken anzeigen zu denen Berichtigungen existieren<br>
-<strong>SHOW tables </strong>→ vorhandene <br>
-<br>
-<br>
-<strong>DESC &lt;table&gt;</strong><br>
+<strong>SHOW tables </strong>→ vorhandene Tabellen in Datenbank anzeigen<br>
+<strong>SHOW variables like 'E%'; → </strong>alle gesetzten Variablen anzeigen (Mysql), die mit E begeinnen<br>
+                                                       → <u>die '' nicht vergesen</u>
+
+
+<strong>DESC | DESCRIBE &lt;table&gt;</strong><br>
 → gibt eine Beschreibung für die Tabelle &lt;Table&gt; aus<br>
 → anzeigen der Tabellenform mit ihren zulässigen Zeichenklassen und Wertebereichen<br>
-<br>
+<a href="./Mysql_Server/Mysql_Clients/DESCRIBE.html" title="Mysql Server:Mysql Clients:DESCRIBE">Mysql Server:Mysql Clients:DESCRIBE</a>
+
 <h3>DML (Data Manipulation Language)</h3>
 
 <h4>Querry</h4>
@@ -145,6 +148,15 @@
 → aus allen Tabellen &lt;table1&gt; bis &lt;tableN&gt; alle Zeilen auswählen<br>
 → die Tabellen werden dabei kartesisch verknüpft<br>
 <br>
+<em>Beispiel:</em>
+<pre>
+SELECT Name,Population FROM City 
+WHERE CountryCode='IND' 
+AND Population &gt; 3000000;
+</pre>
+
+
+
 <h5>→ !Achtung!:</h5>
 <strong>Sehr hohe Laufzeit!</strong>
 
@@ -254,8 +266,10 @@ HAVING COUNT(*) &gt;= 100;
 <h5>CREATE</h5><br>
 → erzeugen von Datenbanken, Tabellen und Indezies<br>
 <br>
-<strong>CREATE DATABASE &lt;Name&gt;</strong><br>
+<strong>CREATE DATABASE </strong>[<strong>IF NOT EXISTS</strong>]<strong> &lt;Name&gt;</strong><br>
 → eine neue Datenbank mit Name &lt;Name&gt; anlegen<br>
+<br>
+<br>
 <br>
 <strong>CREATE TABLE &lt;Name&gt; (</strong>
 <strong>id INTEGER AUTO_INCREMENT,</strong>
@@ -289,17 +303,20 @@ HAVING COUNT(*) &gt;= 100;
 <strong>DELETE FROM &lt;table&gt; [WHERE &lt;Condition&gt;]</strong><br>
 → entfernen aller Werte aus der Tabelle die einer bestimmten &lt;Condition&gt; entsprechen <br>
 <br>
-<h5>DROP</h5><br>
+<h5>DROP </h5><br>
 → löschen ganzer Tabllen<br>
 → sind Views involviert werden diese ebenfalls gelöscht<br>
 <br>
-<strong>DROP TABLE &lt;table&gt;</strong><br>
+<strong>DROP [IF EXISTS] TABLE &lt;table&gt;</strong><br>
 → die Tabelle &lt;table&gt; löschen<br>
 <br>
 <h4>Manipulieren</h4>
 
 <h5>ALTER</h5><br>
 → die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen<br>
+<br>
+<strong>ALTER DATABASE &lt;Datenbank&gt; [CHARACTER SET &lt;ISOLang&gt; COLLATE &lt;ISOCollate&gt; ];</strong><br>
+→ setzen eines Zeichensatzes und eines Sortiervorgang<br>
 <br>
 <strong>ALTER TABLE &lt;Name_alt&gt; RENAME TO &lt;Name_neu&gt;</strong><br>
 → Tabelle mit &lt;Name_Alt&gt; in &lt;Name_neu&gt; umbenennen<br>
@@ -317,6 +334,17 @@ HAVING COUNT(*) &gt;= 100;
 <strong>ALTER TABLE &lt;Name&gt; MODIFY &lt;Spalte&gt; &lt;Datentyp&gt; </strong><br>
 → die Bedigungnen (Datentyp) einer &lt;Spalte&gt; ändern<br>
 <br>
+<strong>ALTER TABLE &lt;Name&gt; CHANGE  COLLUMN&lt;Spalte&gt; &lt;Spalte&gt; &lt;Datentyp&gt;,..</strong><br>
+→ Eigenschaften einer Spalte ändern<br>
+<br>
+<em>Beispiel:</em>
+<pre>
+ALTER TABLE Arbeitgeber 
+CHANGE COLUMN PLZ 
+PLZ SMALLINT;
+</pre>
+
+
 <strong>ALTER TABLE &lt;Name&gt; DROP [ CONSTRAINT ] &lt;Spalte&gt;</strong><br>
 → entfernen einer Spalte aus der Tabelle &lt;Name&gt;<br>
 → wird das Schlüsselwort CONSTRAINT verwendet, wird ein Constraint gelöscht<br>
@@ -329,7 +357,7 @@ HAVING COUNT(*) &gt;= 100;
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../SQL.html'>Linux Wissen:SQL</a></li>						<a href='./Mysql_Server/Mysql_Clients.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients</a></li>						<a href='./Schemaanweisungen.html'>Linux Wissen:SQL:Schemaanweisungen</a></li>
+				Backlinks:						<a href='../SQL.html'>Linux Wissen:SQL</a></li>						<a href='./Schemaanweisungen.html'>Linux Wissen:SQL:Schemaanweisungen</a></li>						<a href='./Mysql_Server/Mysql_Clients/mysql_Client.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

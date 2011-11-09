@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>mysql Client</title>
+		<meta name='Generator' content='Zim 0.53'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									mysql Client</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../../Networking.html" title="Networking">Networking</a></li>
+<li><a href="../../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../../root.html" title="root">root</a></li>
+<li><a href="../../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../../SQL.html" title="SQL">SQL</a></li>
+<ul>
+<li><a href="../../Bedingungen.html" title="Bedingungen">Bedingungen</a></li>
+<li><a href="../../Constraints.html" title="Constraints">Constraints</a></li>
+<li><a href="../../Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
+<li><a href="../../Datentypen.html" title="Datentypen">Datentypen</a></li>
+<li><a href="../../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
+<li><a href="../../Joins.html" title="Joins">Joins</a></li>
+<li><a href="../../Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
+<ul>
+<li><a href="../Anweisungen.html" title="Anweisungen">Anweisungen</a></li>
+<li><a href="../Mysql_Clients.html" title="Mysql Clients">Mysql Clients</a></li>
+<ul>
+<li><a href="./DESCRIBE.html" title="DESCRIBE">DESCRIBE</a></li>
+<li><strong>mysql Client</strong></li>
+<li><a href="./mysqladmin.html" title="mysqladmin">mysqladmin</a></li>
+<li><a href="./Prompt.html" title="Prompt">Prompt</a></li>
+<li><a href="./Server_SQL_Modes.html" title="Server SQL Modes">Server SQL Modes</a></li>
+</ul>
+<li><a href="../Mysql_Daemon.html" title="Mysql Daemon">Mysql Daemon</a></li>
+<li><a href="../Upgrade_des_Servers.html" title="Upgrade des Servers">Upgrade des Servers</a></li>
+</ul>
+<li><a href="../../Normalisierung.html" title="Normalisierung">Normalisierung</a></li>
+<li><a href="../../Schemaanweisungen.html" title="Schemaanweisungen">Schemaanweisungen</a></li>
+<li><a href="../../UML.html" title="UML">UML</a></li>
+<li><a href="../../Views.html" title="Views">Views</a></li>
+</ul>
+<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../../X11.html" title="X11">X11</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Mittwoch 09 November 2011<br>
+</p>
+
+<h5>Hilfe erhalten</h5>
+<p>
+<strong>help contents </strong><br>
+→ im Mysql Client zeigt die MySQL Referenz<br>
+<strong>help &lt;Keyword&gt;</strong><br>
+→ Hilfe zu einem Bestimmten <br>
+<strong>mysqlamdin -help</strong><br>
+→ Hilfe für das mysqladmin Tool erhalten<br>
+</p>
+
+<h5>Nicht interaktiver Modus</h5>
+<p>
+<strong>mysql &lt; &lt;Schema.sql&gt;</strong><br>
+→ einlesen und ausführen von DDL und DML Anweisungen aus einer .sql Datei<br>
+→ wie <strong>SOURCE</strong><br>
+→ es dürfen nie zwei argument hintereinander verwendet werden<br>
+<a href="../../Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen">Linux Wissen:SQL:Datenanweisungen</a><br>
+</p>
+
+<h5>Trick:</h5>
+<p>
+<strong>mysql &lt;|xargs cat &lt;Schema1.sql&gt; &lt;Schema2.sql&gt; ...</strong><br>
+</p>
+
+<h5>die häufigsten Optionen</h5>
+<p>
+<strong>mysql [&lt;Database&gt;]</strong><br>
+<strong>-u |--user &lt;Nutzer&gt; </strong><br>
+→ mit diesem &lt;Nutzer&gt; an der Datenbank anmelden<br>
+-<strong>p|--password [&lt;Password&gt;] </strong><br>
+→ Ein Password bei der Anmeldung verwenden<br>
+→ Wird &lt;Passwort&gt; nicht übergeben, wird danach gefragt<br>
+→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort<br>
+<strong>-D|--database &lt;Name&gt;</strong><br>
+→ beim Verbinden mit dem Server die Datenbank &lt;Name&gt; verwenden<br>
+<strong>-A </strong><br>
+→ Tab Complettion deaktivieren<br>
+<strong>-E |--vertical</strong><br>
+→ vertikale Ausgabe der einzelnen Spalten<br>
+→ sinnvoll wenn zu erwarten ist, dass die Ausgabe nicht in das Terminal passt<br>
+<strong>-e </strong><br>
+→ Statement direkt von der Kommandozeile absetzen<br>
+→ meherer Statements werden durch ein ; getrennt<br>
+<strong>--compress</strong><br>
+→ komprimiert Daten die zwischen Client und Server ausgetauscht werden<br>
+<strong>--default-character-set=Charstet</strong><br>
+→ Angeben des vom Client verwendeten Zeichensatzes<br>
+→ verwenden von <strong>SHOW CHARSET; </strong>um sich alle mögliche Zeichensätze anzeigen zu lassen<br>
+→ verwenden von<strong> SET CHARSET &lt;CHARSET&gt; </strong>um den Zeichensatz nachträglich festzulegen<br>
+<strong>--protocol [=TCP|=Socket] </strong><br>
+→ Festlegen des benutzten Protocols<br>
+→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird<br>
+<strong>--port=N</strong><br>
+→  festelgen des Ports über den eine Verbindung erfolgt<br>
+<strong>-S|--socket =&lt;PATH&gt; </strong><br>
+→ festlegen des Pfades zum Socket<br>
+→ */tmp/mysqld.sock wird als Standardsocket verwendet<br>
+→ nur mit <em>--protocol=Socket</em><br>
+<strong>-h|--host [IP|FQDN|localhost]</strong><br>
+→ festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll<br>
+→ Standard ist <em>localhost</em><br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+öffnen der Datenbank world als Datenbanknutzer root auf dem Host Magrathea mit Passwortabfrage<br>
+<code>mysql -u root -p -h Magrathea world</code><br>
+</p>
+
+<p>
+<u>HInweise:</u><br>
+<ul>
+<li><u>Wird keine der Optionen --protocol, --port, -h oder -S verwendet, so wird ein Socket benutzt und ein Default</u></li>
+</ul>
+<div style='padding-left: 30pt'>
+<u>Wert für den Socket benutzt</u><br>
+</div>
+</p>
+
+<p>
+<ul>
+<li><u>Wird die Option --port verwendet, nicht aber --protocol und --host, wird ein Socket benutzt und ein Default Wert</u></li>
+</ul>
+<div style='padding-left: 30pt'>
+<u>für den Socket benutzt.</u><br>
+</div>
+</p>
+
+<p>
+•<u>Wird als Protocol TCP angegeben, erfolgt die Verbindung über TCP/IP</u><br>
+</p>
+
+<p>
+<ul>
+<li><u>Falls als Portocoltyp Socket angegeben wird und der Hosttyp nicht localhost ist, wird ein Fehler ausgegeben</u></li>
+</ul>
+</p>
+
+<h5>mysql ssl Optionen</h5>
+<p>
+<strong>--ssl-ca=&lt;Datei&gt;</strong><br>
+→ Pfad zu vetrauenswürdigen SSL Certifcate Authorities<br>
+<strong>--ssl-capath=&lt;DIR&gt;</strong><br>
+→  festelgen des Verzeichnisses für Dateien, die SSL Zertifikate im PEM Format enthalten<br>
+<strong>--ssl-cert=&lt;Datei&gt;</strong><br>
+→ Pfad zur Datei mit dem SSL Zertifikat<br>
+<strong>--ssl-cipher-list=&lt;sha1:aes...&gt; </strong><br>
+→ Liste der Zulässigen Verschlüsselungsalgorithmen<br>
+<strong>--ssl-key=&lt;Datei&gt;</strong><br>
+→ Angeben er SSL Schlüsseldatei<br>
+<strong>--ssl-verify-server-cert</strong><br>
+→ Server Certifcates name ist derselbe wie der Hostname<br>
+<u>→ Schutz vor man in the middle</u><br>
+<strong>(missing link ssl)</strong><br>
+</p>
+
+<h5>mysql Client Befehle</h5>
+<p>
+<strong>\h</strong> → auflisten der Clientbefehle<br>
+<strong>\c </strong>→ Statement verwerfen und neuen mysql-Prompt setzen<br>
+<strong>\q </strong>→ <strong>mysql Client </strong>verlassen<br>
+<strong>\g | ; </strong>→ Befehlsterminator<br>
+<strong>\G → </strong>Befehlsterminator mit vertiakler Ausgabe<br>
+<strong>\! &lt;Shell-Befehl&gt; </strong>→ Ausführen eines Shell Befehls im mysql Client<br>
+</p>
+
+<h5>Der Mysql Prompt</h5>
+<p>
+<ul>
+<li>In Mysql gibt es verschiedene Prompts die Indikator für verschiedene Stati sind</li>
+<li>gibt Informationen über den Status eines Statements</li>
+</ul>
+<a href="./Prompt.html" title="Prompt">Prompt</a><br>
+</p>
+
+<h5>Server SQL Modes</h5>
+<p>
+<ul>
+<li>setzt das Verhalten des SQL Servers zur Laufzeit</li>
+<li>darunter fallen bestimmte Such- und Sortieralgorihtmen</li>
+<li>wird durch setzen der Server variable <em>sql_mode gesetz</em></li>
+</ul>
+<code>SET sql_mode='&lt;Mode&gt;';</code><br>
+<a href="./Server_SQL_Modes.html" title="Server SQL Modes">Server SQL Modes</a><br>
+</p>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../Mysql_Clients.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

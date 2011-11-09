@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-09T00:49:53+01:00
+
+====== Prompt ======
+Created Mittwoch 09 November 2011
+
+* bietet mehrere Prompts die den Status eines Statements angeben
+
+''mysql> ''→ wartet auf Eingabe
+
+''-> ''→ Wartet auf die nächste Zeile im Statement
+
+'''> ''→ Wartet auf das Ende eines eine '' Quotes
+
+''"> ''→ Wartet auf das Ende eine " " Quotes
+
+''`> ''→ Warten auf das Ende des Backticks
+
+''/*>'' → Warten auf das Ende eines Kommentars
+

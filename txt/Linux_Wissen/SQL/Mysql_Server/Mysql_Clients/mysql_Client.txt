@@ -1,0 +1,112 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-09T13:31:17+01:00
+
+====== mysql Client ======
+Created Mittwoch 09 November 2011
+
+== Hilfe erhalten ==
+**help contents **
+→ im Mysql Client zeigt die MySQL Referenz
+**help <Keyword>**
+→ Hilfe zu einem Bestimmten 
+**mysqlamdin -help**
+→ Hilfe für das mysqladmin Tool erhalten
+
+== Nicht interaktiver Modus ==
+**mysql < <Schema.sql>**
+→ einlesen und ausführen von DDL und DML Anweisungen aus einer .sql Datei
+→ wie **SOURCE**
+→ es dürfen nie zwei argument hintereinander verwendet werden
+[[Linux Wissen:SQL:Datenanweisungen]]
+
+== Trick: ==
+**mysql <|xargs cat <Schema1.sql> <Schema2.sql> ...**
+
+== die häufigsten Optionen ==
+**mysql [<Database>]**
+**-u |--user <Nutzer> **
+→ mit diesem <Nutzer> an der Datenbank anmelden
+-**p|--password [<Password>] **
+→ Ein Password bei der Anmeldung verwenden
+→ Wird <Passwort> nicht übergeben, wird danach gefragt
+→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort
+**-D|--database <Name>**
+→ beim Verbinden mit dem Server die Datenbank <Name> verwenden
+**-A **
+→ Tab Complettion deaktivieren
+**-E |--vertical**
+→ vertikale Ausgabe der einzelnen Spalten
+→ sinnvoll wenn zu erwarten ist, dass die Ausgabe nicht in das Terminal passt
+**-e **
+→ Statement direkt von der Kommandozeile absetzen
+→ meherer Statements werden durch ein ; getrennt
+**--compress**
+→ komprimiert Daten die zwischen Client und Server ausgetauscht werden
+**--default-character-set=Charstet**
+→ Angeben des vom Client verwendeten Zeichensatzes
+→ verwenden von **SHOW CHARSET; **um sich alle mögliche Zeichensätze anzeigen zu lassen
+→ verwenden von** SET CHARSET <CHARSET> **um den Zeichensatz nachträglich festzulegen
+**--protocol [=TCP|=Socket] **
+→ Festlegen des benutzten Protocols
+→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird
+**--port=N**
+→  festelgen des Ports über den eine Verbindung erfolgt
+**-S|--socket =<PATH> **
+→ festlegen des Pfades zum Socket
+→ */tmp/mysqld.sock wird als Standardsocket verwendet
+→ nur mit //--protocol=Socket//
+**-h|--host [IP|FQDN|localhost]**
+→ festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll
+→ Standard ist //localhost//
+
+//Beispiel://
+öffnen der Datenbank world als Datenbanknutzer root auf dem Host Magrathea mit Passwortabfrage
+''mysql -u root -p -h Magrathea world''
+
+__HInweise:__
+* __Wird keine der Optionen --protocol, --port, -h oder -S verwendet, so wird ein Socket benutzt und ein Default__
+	__Wert für den Socket benutzt__
+
+* __Wird die Option --port verwendet, nicht aber --protocol und --host, wird ein Socket benutzt und ein Default Wert__
+	__für den Socket benutzt.__
+
+•__Wird als Protocol TCP angegeben, erfolgt die Verbindung über TCP/IP__
+
+* __Falls als Portocoltyp Socket angegeben wird und der Hosttyp nicht localhost ist, wird ein Fehler ausgegeben__
+
+== mysql ssl Optionen ==
+**--ssl-ca=<Datei>**
+→ Pfad zu vetrauenswürdigen SSL Certifcate Authorities
+**--ssl-capath=<DIR>**
+→  festelgen des Verzeichnisses für Dateien, die SSL Zertifikate im PEM Format enthalten
+**--ssl-cert=<Datei>**
+→ Pfad zur Datei mit dem SSL Zertifikat
+**--ssl-cipher-list=<sha1:aes...> **
+→ Liste der Zulässigen Verschlüsselungsalgorithmen
+**--ssl-key=<Datei>**
+→ Angeben er SSL Schlüsseldatei
+**--ssl-verify-server-cert**
+→ Server Certifcates name ist derselbe wie der Hostname
+__→ Schutz vor man in the middle__
+**(missing link ssl)**
+
+== mysql Client Befehle ==
+**\h** → auflisten der Clientbefehle
+**\c **→ Statement verwerfen und neuen mysql-Prompt setzen
+**\q **→ **mysql Client **verlassen
+**\g | ; **→ Befehlsterminator
+**\G → **Befehlsterminator mit vertiakler Ausgabe
+**\! <Shell-Befehl> **→ Ausführen eines Shell Befehls im mysql Client
+
+== Der Mysql Prompt ==
+* In Mysql gibt es verschiedene Prompts die Indikator für verschiedene Stati sind
+* gibt Informationen über den Status eines Statements
+[[Prompt]]
+
+== Server SQL Modes ==
+* setzt das Verhalten des SQL Servers zur Laufzeit
+* darunter fallen bestimmte Such- und Sortieralgorihtmen
+* wird durch setzen der Server variable //sql_mode gesetz//
+''SET sql_mode='<Mode>';''
+[[Server SQL Modes]]

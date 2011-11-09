@@ -1,0 +1,101 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-09T13:34:09+01:00
+
+====== mysqladmin ======
+Created Mittwoch 09 November 2011
+
+**mysqladmin [Option] Kommando [Argument] [Kommando [Argument]] ...**
+
+//Beispiel://
+Passwort ändern:
+''mysqladmin -p <Password> <Password>''
+
+== Optionen ==
+**-u |--user <Nutzer> **
+→ mit diesem <Nutzer> an der Datenbank anmelden
+-**p|--password [<Password>] **
+→ Ein Password bei der Anmeldung verwenden
+→ Wird <Passwort> nicht übergeben, wird danach gefragt
+→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort
+**--protocol [=TCP|=Socket] **
+→ Festlegen des benutzten Protocols
+→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird
+**--port=N**
+→  festelgen des Ports über den eine Verbindung erfolgt
+**-S|--socket =<PATH> **
+→ festlegen des Pfades zum Socket
+→ */tmp/mysqld.sock wird als Standardsocket verwendet
+→ nur mit //--protocol=Socket//
+**-h|--host [IP|FQDN|localhost]**
+→ festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll
+→ Standard ist //localhost//
+**--count=N**
+→ den Befehl N Mal wiederholen
+→ kann mit //--sleep// verwendet werden
+**--sleep=N**
+→  den Befehl nach N Sekunden wiederholen
+→ kann mit //--count// verwendet werden
+**--debug-info**
+→ den Befehl mit zusätzlicher Debug-Informationen aufrufen
+**--bind-address=<IP>**
+→ festlegen des zu verwendeten NIC IPs, falls der Rechner mehr als eine NIC verwendet
+
+== Befehle ==
+**create <Datenbank> **
+→ eine neue leere Tabelle anlegen
+
+**debug **
+→ Sendet detailierte Informationen an das Error Log
+
+**drop <Datenbank>**
+→ die <Datenbank> vom Server löschen
+
+**extended-status**
+→ einen Statusbericht über den laufenden Server und seiner Verbindungen anzeigen
+
+**flush-hosts**
+→ bereinigen der Hostinformationen
+→ leeren des DNS Caches un der Hostnames
+
+**flush-logs**
+→ bereinigen der Logfiles
+→ bisher verwendete Logfiles werden geschlossen, deren Inhalt bereinigt und neue logfiles angelegt
+
+**flush-privileges**
+→ erneuern der Nutzerprivilegien, falls dies geändert wurden
+
+**flush-status**
+→  erneuern der verwendeten Serveroptionen aus den KOnfigurationsdateien
+
+**flush-threads**
+→ neuladen des Threadcaches
+
+**kill<ThreadID>**
+→ den mysqlthread mit der entsprechenden ID beenden
+
+**password <Passwort>**
+→ setzen oder ändern eines Passwortes dass für die Verbindung zum Server benötigt wird
+
+**ping**
+→ erfragen ob der Server läuft
+
+**processlist**
+→ erfragen der vom mysqld verwenddeten Prozesse
+[[Linux Wissen:Prozessverwaltung]]
+
+**reload**
+→ neu einlesen der Konfigurationsdatei
+[[Linux Wissen:FHS:etc:my.cnf]]
+
+**shutdown**
+→ stoppen des Mysqld
+
+**status**
+→ Status des Servers abfragen
+
+**start-slave|stop-slave**
+→ Starten|Stoppen einer Replikation
+
+**variables**
+→ Anzeigen er verwendeten und nicht verwendeten Systemvariablen der mysqld-Konfiguration

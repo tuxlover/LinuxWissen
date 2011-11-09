@@ -47,3 +47,7 @@ Created Donnerstag 21 April 2011
 //+++//
 
 **ffmpeg -i eingangsvideo.flv ausgangsvideo.avi  → **flv in avi
+
+
+=== update der avg Virendatenbank aus einem Verzeichnis ===
+''sudo avgupdate --path=<PATH>''

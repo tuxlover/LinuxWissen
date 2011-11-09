@@ -49,8 +49,11 @@ Created Freitag 29 April 2011
 **MediumInt | BIGINT**
 
 
-**Double(p,s) | Float(p,s)**
+**Double(s,p) | Float(s,p)**
 → Fließkommazahlen mit Präzision nahe **p ** der Länge **s**
+//Beispiel://
+//Double(6,2)// gibt folgende Zahlen 9999.99
+Double(9,4) gibt folgende Zahlen 99999.9999
 
 === Datums und Zeitbasierend ===
 **Date** → **YY-MM-DD**

@@ -46,7 +46,7 @@ __Hinweis: Um eine Liste zu importieren: __**zypper ar -r Repo.repo**
 **-d **→ deaktivieren des Repositories|aber nicht entfernen
 **-e **→ ein deaktiviertes Repository wieder aktivieren
 **-r|-R **→ aktivieren|deaktivieren der Autoaktualisierung für dieses Repository 
-**-p [1-99]**→ eine Priorität für dieses Repositorie festlegen, je höher die Zahl des kleiner die Priorität
+**-p [1-99]**→ eine Priorität für dieses Repositorie festlegen, je größer die Zahl des kleiner die Priorität
 **-k|-K **→ aktivieren |deaktivieren des lokalen Caches für dieses Repository
 
 == Repositories auffrischen ==

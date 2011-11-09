@@ -4,7 +4,7 @@ Creation-Date: 2011-06-29T11:28:55+02:00
 
 ====== my.cnf ======
 Created Mittwoch 29 Juni 2011
-
+* In der Dokumentation auch als Option File bezeichnet
 //++//
 '''
 ##Konfigration für die Clientprogramme mysql und mysqladmin

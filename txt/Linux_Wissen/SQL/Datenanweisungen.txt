@@ -21,12 +21,15 @@ Created Freitag 29 April 2011
 
 **SHOW **→ vorhandene Datenbank Elemente anzeigen
 **SHOW databases **→ vorhandene Datenbanken anzeigen zu denen Berichtigungen existieren
-**SHOW tables **→ vorhandene 
+**SHOW tables **→ vorhandene Tabellen in Datenbank anzeigen
+**SHOW variables like 'E%'; → **alle gesetzten Variablen anzeigen (Mysql), die mit E begeinnen
+                                                       → __die '' nicht vergesen__
 
 
-**DESC <table>**
+**DESC | DESCRIBE <table>**
 → gibt eine Beschreibung für die Tabelle <Table> aus
 → anzeigen der Tabellenform mit ihren zulässigen Zeichenklassen und Wertebereichen
+[[Mysql Server:Mysql Clients:DESCRIBE]]
 
 ==== DML (Data Manipulation Language) ====
 
@@ -45,6 +48,15 @@ Created Freitag 29 April 2011
 **SELCECT * FROM <table1>,...,<tableN>**
 → aus allen Tabellen <table1> bis <tableN> alle Zeilen auswählen
 → die Tabellen werden dabei kartesisch verknüpft
+
+//Beispiel://
+'''
+SELECT Name,Population FROM City 
+WHERE CountryCode='IND' 
+AND Population > 3000000;
+'''
+
+
 
 == → !Achtung!: ==
 **Sehr hohe Laufzeit!**
@@ -153,8 +165,10 @@ SELECT ort, COUNT(*)
 == CREATE ==
 → erzeugen von Datenbanken, Tabellen und Indezies
 
-**CREATE DATABASE <Name>**
+**CREATE DATABASE **[**IF NOT EXISTS**]** <Name>**
 → eine neue Datenbank mit Name <Name> anlegen
+
+
 
 **CREATE TABLE <Name> (**
 **id INTEGER AUTO_INCREMENT,**
@@ -188,17 +202,20 @@ SELECT ort, COUNT(*)
 **DELETE FROM <table> [WHERE <Condition>]**
 → entfernen aller Werte aus der Tabelle die einer bestimmten <Condition> entsprechen 
 
-== DROP ==
+== DROP  ==
 → löschen ganzer Tabllen
 → sind Views involviert werden diese ebenfalls gelöscht
 
-**DROP TABLE <table>**
+**DROP [IF EXISTS] TABLE <table>**
 → die Tabelle <table> löschen
 
 === Manipulieren ===
 
 == ALTER ==
 → die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen
+
+**ALTER DATABASE <Datenbank> [CHARACTER SET <ISOLang> COLLATE <ISOCollate> ];**
+→ setzen eines Zeichensatzes und eines Sortiervorgang
 
 **ALTER TABLE <Name_alt> RENAME TO <Name_neu>**
 → Tabelle mit <Name_Alt> in <Name_neu> umbenennen
@@ -215,6 +232,17 @@ SELECT ort, COUNT(*)
 
 **ALTER TABLE <Name> MODIFY <Spalte> <Datentyp> **
 → die Bedigungnen (Datentyp) einer <Spalte> ändern
+
+**ALTER TABLE <Name> CHANGE  COLLUMN<Spalte> <Spalte> <Datentyp>,..**
+→ Eigenschaften einer Spalte ändern
+
+//Beispiel://
+'''
+ALTER TABLE Arbeitgeber 
+CHANGE COLUMN PLZ 
+PLZ SMALLINT;
+'''
+
 
 **ALTER TABLE <Name> DROP [ CONSTRAINT ] <Spalte>**
 → entfernen einer Spalte aus der Tabelle <Name>
