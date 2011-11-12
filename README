@@ -10,11 +10,14 @@ verändere,- in html Format im Unterordner html/ und im Zim Desktop Wiki Stil un
 Das Zim Desktop  Wiki kann unter http://zim-wiki.org/downloads.html heruntergeladen und installiert werden.
 
 Die Dateien im Unterordner txt/ lasen sich so sehr einfach importieren und benutzen oder weiterentwickeln.
+Um Dateien ins Wiki zu importieren, kann ein neuer Ordner erstellt werden. Danach rsync oder kopiert man
+alle Dateien aus dem Unterordner txt/ in dieses Verzeichnis. Anschließend muss zim nur noch gestartet werden.
 
 Wenn du etwas an dem Wiki änderst oder verbesserst würde ich mich freuen, wenn du so nett bist und 
-die Veränderungen an mich zurücksendest, damit auch alle etwas davon haben.
+die Veränderungen an mich zurücksendest oder mir einen Pull Request auf Github stellst damit auch alle etwas 
+davon haben.
 
 Unter zzzUndokumentiert befinden sich Einträge die bisher auch nicht oder nur unzureichend
-in der alten Version dokumentiert sind. Fühle Dich willkommen geheißen, dies zu ändern.
+in der alten Version dokumentiert sind. Fühle dich frei dies zu ändern und diese Themen zu dokumentieren.
 
 Dieses WIki erscheint unter Creative Commence License NC  
