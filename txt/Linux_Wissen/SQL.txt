@@ -99,6 +99,7 @@ __Hinweis: Beachte, dass Anweisungen immer mit __**;**__abgeschlossen werden.__
 **Operatoren oder Vergleichsoperatoren **verknüpft werden.
 [[Linux Wissen:SQL:Datenanweisungen]]
 
+
 **Verknüpfungsoperatoren → **zur Verknüpfung von 
 **Unterabfragen **→ Schachtelung verschiedener SQL Ausdrücke
 **gespeicherte Prozeduren **→ Wiederverwendbare Ausdrücke, die als Metadaten gespeichert werden (Views)

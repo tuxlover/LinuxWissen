@@ -1,0 +1,100 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-12T16:11:59+01:00
+
+====== DDL ======
+Created Samstag 12 November 2011
+
+* erstellen von Datenbanken, Tabellen und Views
+* löschen von Datenbanken, Tabellen und Views
+* Umbauen von Datenbanken, Tabellen und Views
+
+=== Erstellen ===
+
+== CREATE ==
+→ erzeugen von Datenbanken, Tabellen und Indezies
+
+**CREATE DATABASE **[**IF NOT EXISTS**]** <Name>**
+→ eine neue Datenbank mit Name <Name> anlegen
+
+
+
+**CREATE TABLE <Name> (**
+**id INTEGER AUTO_INCREMENT,**
+**<Spalt1> <Datentyp> <Extra Function>,**
+**...**
+**PRIMARY KEY (id)**
+**);**
+→ erstellen einer neuen Tabelle <Name> 
+→ es kann alles in eine Zeile geschrieben werden
+→ Jede Spaltendefinition wird duch ein Komma abgeschlossen
+→ die Definition einer Tabelle wird durch ; abgeschlossen 
+→ __es muss immer ein Primärschlüssel definiert durch das Schlüsselwort PRIMARY KEY definiert werden__
+
+//Beispiel://
+'''
+ CREATE TABLE autor (
+    -> id_autor INTEGER AUTO_INCREMENT,
+    -> Name VARCHAR(30) NOT NULL,
+    -> Vorname VARCHAR(30) NOT NULL,
+    -> PRIMARY KEY (id_autor)
+    -> );
+'''
+
+
+
+=== Löschen ===
+
+== DELETE ==
+→ löschen von Daten aus einer Tabelle
+
+**DELETE FROM <table> [WHERE <Condition>]**
+→ entfernen aller Werte aus der Tabelle die einer bestimmten <Condition> entsprechen 
+
+== DROP ==
+→ löschen ganzer Tabllen
+→ sind Views involviert werden diese ebenfalls gelöscht
+
+**DROP [IF EXISTS] TABLE <table>**
+→ die Tabelle <table> löschen
+
+=== Manipulieren ===
+
+== ALTER ==
+→ die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen
+
+**ALTER DATABASE <Datenbank> [CHARACTER SET <ISOLang> COLLATE <ISOCollate> ];**
+→ setzen eines Zeichensatzes und eines Sortiervorgang
+
+**ALTER TABLE <Name_alt> RENAME TO <Name_neu>**
+→ Tabelle mit <Name_Alt> in <Name_neu> umbenennen
+
+**ALTER TABLE ADD id_key INTEGER; **
+**ALTER TABLE t2 ADD FOREIGN KEY (id_key) REFERENCES t1 (id);**
+→ einen Fremdschlüssel im Nachhinein definieren
+→ __id_keyy muss vorher bereits defineirt sein__
+
+**ALTER TABLE <Name> ADD [ CONSTARINT ] <Spalte> <Datentyp>**
+→ das Attribut (Spalte)  mit dem entsprechenden <Datentyp> der Tabelle mit <Name> hinzufügen
+→ wird das Schlüsselwort CONSTRANT benutzt, wird ein Constraint hinzugefügt
+[[Linux Wissen:SQL:Constraints]]
+
+**ALTER TABLE <Name> MODIFY <Spalte> <Datentyp> **
+→ die Bedigungnen (Datentyp) einer <Spalte> ändern
+
+**ALTER TABLE <Name> CHANGE  COLLUMN<Spalte> <Spalte> <Datentyp>,..**
+→ Eigenschaften einer Spalte ändern
+
+//Beispiel://
+'''
+ALTER TABLE Arbeitgeber 
+CHANGE COLUMN PLZ 
+PLZ SMALLINT;
+'''
+
+
+**ALTER TABLE <Name> DROP [ CONSTRAINT ] <Spalte>**
+→ entfernen einer Spalte aus der Tabelle <Name>
+→ wird das Schlüsselwort CONSTRAINT verwendet, wird ein Constraint gelöscht
+
+__Hinweis: Mehere Datenanweisungen lassen sich durch IN und NOT IN sowie () verknüpfen.__

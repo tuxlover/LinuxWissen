@@ -35,3 +35,5 @@ ANSI → kombinierter Modus der das Verhalten für den ANSI Standard aktiviert
 
 == Abfragen des Modus ==
 **SELECT @@sql_mode;**
+**SELECT @@SESSION.sql_mode**
+**SELECT @@GLOBAL.sql_mode**

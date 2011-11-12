@@ -1,0 +1,144 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-11-12T16:05:19+01:00
+
+====== DML ======
+Created Samstag 12 November 2011
+
+* Data Manipulation Language
+* Abfragen und Manipulieren von Datenbanken und deren Inhalten
+
+=== Querry ===
+* können mit Aggregatfunktionen kombiniert werden
+[[Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen]]
+[[Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen]]
+
+**SELECT [<Name> AS ] [DISTINCT] <Werte>**
+	**FROM <Tabelle|View>**
+	**[WHERE <Filter>**
+	**GROUP BY <wie_soll_gruppiert_werden>**
+	**HAVING <Ausddruck>**
+	**ORDER BY <ASC|DESC>[,<Spalte1>,...<Spalte N>]**
+	**LIMIT <Anzahl der Zeilen>];|\G|\g**
+
+**SELECT version(),user() [<Database>]**
+→ Nutzer und Version der Datenbank <Database>
+
+**SELECT * FROM <table>**
+→ aus der der Tabelle <table> alle Zeilen anzeigen
+→ die ganze Tabelle <table anzeigen> 
+
+**SELCECT * FROM <table1>,...,<tableN>**
+→ aus allen Tabellen <table1> bis <tableN> alle Zeilen auswählen
+→ die Tabellen werden dabei kartesisch verknüpft
+
+//Beispiel://
+'''
+SELECT Name,Population FROM City 
+WHERE CountryCode='IND' 
+AND Population > 3000000;
+'''
+
+
+== → !Achtung!: ==
+**Sehr hohe Laufzeit!**
+
+**SELECT <Spalte1>,<Spalte2>,... FROM <table> <Alias>**
+→ aus einer Tabelle <table> mehrere Spalten abfragen
+→ ein * steht stellvertretend für alle Spalten einer Tabelle
+
+**SELECT <Spalte> INTO OUTFILE <Datei> FROM <table>**
+→ eine <Spalte> einer Tabelle <table> in eine <Datei> schreiben
+→ der Nutzer mysql muss entsprechend auf die Dateien Zugriff haben
+
+== WHERE ==
+**SELECT <Spalte> FROM <table> WHERE <Condition>**
+→ nur die Werte von Spalte ausgeben die auf <Condition> passen
+→ die <Condition> kann auch auf andere auf andere <Spalten> als auf die angezeigte verweisen
+[[Linux Wissen:SQL:Bedingungen]]
+
+**SELECT <Spalte1>,... /*eine oder mehrere Spalten */**
+	**FROM <Tabelle> /* aus Tabelle */**
+	**WHERE <BEDINGUNG> /* Wobei folgende Bedingugnen gelten */**
+	**(**
+	**SELECT <ABFRAGE>**
+	**);**
+→ Unterabfrage in einer Abfrage
+
+== DISTINCT ==
+→ festlegen dass jeder Wert nur einmal angezeigt werden soll
+
+**SELECT DISTINCT <Spalte> from <Tabelle>**
+→ eindeutige Zuordnungseinheiten
+→ muss in sortierter From vorliegen
+
+== GROUP BY ==
+**SELECT <Spalte> FROM <table> WHERE <Condition> GROUP BY **
+→ fasst Zeilen nach gemeinsamen Werten entsprechend von Spalte zusammen
+
+//Beispiel://
+//+++//
+'''
+SELECT ort, COUNT(*)
+'''
+	'''
+	FROM person
+	WHERE ort = 'Berlin' OR ort = 'Hamburg'
+	GROUP BY ort;
+	'''
+//+++//
+//>> Berlin 212//
+//>> Hamburg 17//
+
+== HAVING ==
+**SELECT <Spalte> FROM <table> WHERE <Condition1> GROUPBY <Spalte> HAVING <Conditon2> **
+→ herausfiltern von unerwünschten Gruppen
+
+//Beispiel://
+//+++//
+'''
+SELECT ort, COUNT(*)
+'''
+	'''
+	FROM person
+	GROUP BY ort
+	HAVING COUNT(*) >= 100;
+	'''
+//+++//
+//>> Berlin 212//
+//>> Dresden 112//
+//>> Köln 150//
+
+== LIMIT ==
+**SELECT <Spalte> FROM <table> WHERE <Condition1> LIMIT N**
+→ die auf <Condition> zutreffenden Ergebnisse auf die ersten N Ergebnise limmitiren
+
+== ORDER BY ==
+**SELECT <Spalte> FROM <table> WHERE <Condtion> ORDER BY <SpalteA> [ ASC | DESC ]**
+→ die auf <Condition> zutreffenden Ergebnisse nach <SpalteA> sortieren
+→ sortiren der Abfrage nach 
+
+==== Manipulieren ====
+* Tabellen mit Daten auffüllen
+* Daten in Tabellen aktualisierien
+* Daten in Tabellen verändern
+
+== INSERT ==
+→ schreiben von Daten in eine Tabelle
+
+**INSERT INTO <table>  (<Attribute>,...)  VALUES  (<Werte>,...);**
+→ fügt in die Tabelle <table> die entrsprechenden <Attribute> und den dazugerhörigen <Werte> ein
+→ bijektiv Abbildung
+→ die <Attribute> müssen bereits definiert sein
+
+**INSERT INTO <table1> SELECT <Spalte> FROM <table2>**
+→ Werte von einer Tabelle <table2> einer <Spalte> in die Tabelle <table1> einfügen
+→ Dimenstion und Attribute müssen übereinstimmen
+
+== UPDATE ==
+→ verändern von Daten in einer Tabelle
+→ das Attribut ist bereits vergeben
+
+**UPDATE <table> SET <Attribut>=<Wert> [ WHERE <Condition>][,..]**
+→ setzt einen neuen <Wert> für Attribut von Tabelle <table> wo die Bedingungen <Condition> zutreffen
+→ mehrere Attribute müssen durch Kommata getrennt werden

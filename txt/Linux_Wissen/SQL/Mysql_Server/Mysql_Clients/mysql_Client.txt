@@ -97,6 +97,7 @@ __→ Schutz vor man in the middle__
 **\q **→ **mysql Client **verlassen
 **\g | ; **→ Befehlsterminator
 **\G → **Befehlsterminator mit vertiakler Ausgabe
+**\T <LOGFILE>**→ Logging einschalten und nach <LOGFILE> schreiben
 **\! <Shell-Befehl> **→ Ausführen eines Shell Befehls im mysql Client
 
 == Der Mysql Prompt ==

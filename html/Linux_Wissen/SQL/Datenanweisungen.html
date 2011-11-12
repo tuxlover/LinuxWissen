@@ -76,6 +76,8 @@
 <ul>
 <li><a href="./Datenanweisungen/Aggregatfunktionen.html" title="Aggregatfunktionen">Aggregatfunktionen</a></li>
 <li><a href="./Datenanweisungen/Datumsfunktionen.html" title="Datumsfunktionen">Datumsfunktionen</a></li>
+<li><a href="./Datenanweisungen/DDL.html" title="DDL">DDL</a></li>
+<li><a href="./Datenanweisungen/DML.html" title="DML">DML</a></li>
 <li><a href="./Datenanweisungen/Dom%C3%A4nen.html" title="Domänen">Domänen</a></li>
 <li><a href="./Datenanweisungen/Indicies.html" title="Indicies">Indicies</a></li>
 <li><a href="./Datenanweisungen/Mathematische_Funktionen.html" title="Mathematische Funktionen">Mathematische Funktionen</a></li>
@@ -131,225 +133,13 @@
 <a href="./Mysql_Server/Mysql_Clients/DESCRIBE.html" title="Mysql Server:Mysql Clients:DESCRIBE">Mysql Server:Mysql Clients:DESCRIBE</a>
 
 <h3>DML (Data Manipulation Language)</h3>
+<li>Syntax zum Manipulieren und Abfragen von Datenbanken, Tabellen und deren Inhalten</li>
+<a href="./Datenanweisungen/DML.html" title="+DML">+DML</a>
 
-<h4>Querry</h4>
-<li>können mit Aggregatfunktionen kombiniert werden</li>
-<a href="./Datenanweisungen/Aggregatfunktionen.html" title="Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen">Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen</a>
-<a href="./Datenanweisungen/Mathematische_Funktionen.html" title="Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen">Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen</a>
-
-<strong>SELECT version(),user() [&lt;Database&gt;]</strong><br>
-→ Nutzer und Version der Datenbank &lt;Database&gt;<br>
-<br>
-<strong>SELECT * FROM &lt;table&gt;</strong><br>
-→ aus der der Tabelle &lt;table&gt; alle Zeilen anzeigen<br>
-→ die ganze Tabelle &lt;table anzeigen&gt; <br>
-<br>
-<strong>SELCECT * FROM &lt;table1&gt;,...,&lt;tableN&gt;</strong><br>
-→ aus allen Tabellen &lt;table1&gt; bis &lt;tableN&gt; alle Zeilen auswählen<br>
-→ die Tabellen werden dabei kartesisch verknüpft<br>
-<br>
-<em>Beispiel:</em>
-<pre>
-SELECT Name,Population FROM City 
-WHERE CountryCode='IND' 
-AND Population &gt; 3000000;
-</pre>
-
-
-
-<h5>→ !Achtung!:</h5>
-<strong>Sehr hohe Laufzeit!</strong>
-
-
-
-<strong>SELECT &lt;Spalte1&gt;,&lt;Spalte2&gt;,... FROM &lt;table&gt; &lt;Alias&gt;</strong><br>
-→ aus einer Tabelle &lt;table&gt; mehrere Spalten abfragen<br>
-→ ein * steht stellvertretend für alle Spalten einer Tabelle<br>
-<br>
-<strong>SELECT &lt;Spalte&gt; INTO OUTFILE &lt;Datei&gt; FROM &lt;table&gt;</strong><br>
-→ eine &lt;Spalte&gt; einer Tabelle &lt;table&gt; in eine &lt;Datei&gt; schreiben<br>
-→ der Nutzer mysql muss entsprechend auf die Dateien Zugriff haben<br>
-<br>
-<h5>WHERE</h5>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt;</strong><br>
-→ nur die Werte von Spalte ausgeben die auf &lt;Condition&gt; passen<br>
-→ die &lt;Condition&gt; kann auch auf andere auf andere &lt;Spalten&gt; als auf die angezeigte verweisen<br>
-<a href="./Bedingungen.html" title="Linux Wissen:SQL:Bedingungen">Linux Wissen:SQL:Bedingungen</a>
-
-<strong>SELECT &lt;Spalte1&gt;,... /*eine oder mehrere Spalten */</strong>
-<div style='padding-left: 30pt'>
-<strong>FROM &lt;Tabelle&gt; /* aus Tabelle */</strong><br>
-<strong>WHERE &lt;BEDINGUNG&gt; /* Wobei folgende Bedingugnen gelten */</strong><br>
-<strong>(</strong><br>
-<strong>SELECT &lt;ABFRAGE&gt;</strong><br>
-<strong>);</strong><br>
-</div>
-→ Unterabfrage in einer Abfrage<br>
-<br>
-<h5>DISTINCT</h5><br>
-→ festlegen dass jeder Wert nur einmal angezeigt werden soll<br>
-<br>
-<strong>SELECT DISTINCT &lt;Spalte&gt; from &lt;Tabelle&gt;</strong><br>
-→ eindeutige Zuordnungseinheiten<br>
-→ muss in sortierter From vorliegen<br>
-<br>
-<h5>GROUP BY</h5>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt; GROUP BY </strong><br>
-→ fasst Zeilen nach gemeinsamen Werten entsprechend von Spalte zusammen<br>
-<br>
-<em>Beispiel:</em>
-<em>+++</em>
-<pre>
-SELECT ort, COUNT(*)
-</pre>
-<pre style='padding-left: 30pt'>
-FROM person
-WHERE ort = 'Berlin' OR ort = 'Hamburg'
-GROUP BY ort;
-</pre>
-<em>+++</em>
-<em>&gt;&gt; Berlin 212</em>
-<em>&gt;&gt; Hamburg 17</em>
-
-<h5>HAVING</h5>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; GROUPBY &lt;Spalte&gt; HAVING &lt;Conditon2&gt; </strong><br>
-→ herausfiltern von unerwünschten Gruppen<br>
-<br>
-<em>Beispiel:</em>
-<em>+++</em>
-<pre>
-SELECT ort, COUNT(*)
-</pre>
-<pre style='padding-left: 30pt'>
-FROM person
-GROUP BY ort
-HAVING COUNT(*) &gt;= 100;
-</pre>
-<em>+++</em>
-<em>&gt;&gt; Berlin 212</em>
-<em>&gt;&gt; Dresden 112</em>
-<em>&gt;&gt; Köln 150</em>
-
-<h5>LIMIT</h5>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; LIMIT N</strong><br>
-→ die auf &lt;Condition&gt; zutreffenden Ergebnisse auf die ersten N Ergebnise limmitiren<br>
-<br>
-<h5>ORDER BY</h5>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condtion&gt; ORDER BY &lt;SpalteA&gt; [ ASC | DESC ]</strong><br>
-→ die auf &lt;Condition&gt; zutreffenden Ergebnisse nach &lt;SpalteA&gt; sortieren<br>
-→ sortiren der Abfrage nach <br>
-<br>
-<h5>INSERT</h5><br>
-→ schreiben von Daten in eine Tabelle<br>
-<br>
-<strong>INSERT INTO &lt;table&gt;  (&lt;Attribute&gt;,...)  VALUES  (&lt;Werte&gt;,...);</strong><br>
-→ fügt in die Tabelle &lt;table&gt; die entrsprechenden &lt;Attribute&gt; und den dazugerhörigen &lt;Werte&gt; ein<br>
-→ bijektiv Abbildung<br>
-→ die &lt;Attribute&gt; müssen bereits definiert sein<br>
-<br>
-<strong>INSERT INTO &lt;table1&gt; SELECT &lt;Spalte&gt; FROM &lt;table2&gt;</strong><br>
-→ Werte von einer Tabelle &lt;table2&gt; einer &lt;Spalte&gt; in die Tabelle &lt;table1&gt; einfügen<br>
-→ Dimenstion und Attribute müssen übereinstimmen<br>
-<br>
-<h5>UPDATE</h5><br>
-→ verändern von Daten in einer Tabelle<br>
-→ das Attribut ist bereits vergeben<br>
-<br>
-<strong>UPDATE &lt;table&gt; SET &lt;Attribut&gt;=&lt;Wert&gt; [ WHERE &lt;Condition&gt;][,..]</strong><br>
-→ setzt einen neuen &lt;Wert&gt; für Attribut von Tabelle &lt;table&gt; wo die Bedingungen &lt;Condition&gt; zutreffen<br>
-→ mehrere Attribute müssen durch Kommata getrennt werden<br>
-<br>
 <h3>DDL (Database Definition Language)</h3>
+<li>Syntax zum Erstellen, Löschen und   Umbauen von Datenbaken, Tabellen und Views</li>
+<a href="./Datenanweisungen/DDL.html" title="+DDL">+DDL</a>
 
-<h4>Erstellen</h4>
-
-<h5>CREATE</h5><br>
-→ erzeugen von Datenbanken, Tabellen und Indezies<br>
-<br>
-<strong>CREATE DATABASE </strong>[<strong>IF NOT EXISTS</strong>]<strong> &lt;Name&gt;</strong><br>
-→ eine neue Datenbank mit Name &lt;Name&gt; anlegen<br>
-<br>
-<br>
-<br>
-<strong>CREATE TABLE &lt;Name&gt; (</strong>
-<strong>id INTEGER AUTO_INCREMENT,</strong>
-<strong>&lt;Spalt1&gt; &lt;Datentyp&gt; &lt;Extra Function&gt;,</strong>
-<strong>...</strong>
-<strong>PRIMARY KEY (id)</strong>
-<strong>);</strong><br>
-→ erstellen einer neuen Tabelle &lt;Name&gt; <br>
-→ es kann alles in eine Zeile geschrieben werden<br>
-→ Jede Spaltendefinition wird duch ein Komma abgeschlossen<br>
-→ die Definition einer Tabelle wird durch ; abgeschlossen <br>
-→ <u>es muss immer ein Primärschlüssel definiert durch das Schlüsselwort PRIMARY KEY definiert werden</u>
-
-<em>Beispiel:</em>
-<pre>
- CREATE TABLE autor (
-    -&gt; id_autor INTEGER AUTO_INCREMENT,
-    -&gt; Name VARCHAR(30) NOT NULL,
-    -&gt; Vorname VARCHAR(30) NOT NULL,
-    -&gt; PRIMARY KEY (id_autor)
-    -&gt; );
-</pre>
-
-
-
-<h4>Löschen</h4>
-
-<h5>DELETE</h5><br>
-→ löschen von Daten aus einer Tabelle<br>
-<br>
-<strong>DELETE FROM &lt;table&gt; [WHERE &lt;Condition&gt;]</strong><br>
-→ entfernen aller Werte aus der Tabelle die einer bestimmten &lt;Condition&gt; entsprechen <br>
-<br>
-<h5>DROP </h5><br>
-→ löschen ganzer Tabllen<br>
-→ sind Views involviert werden diese ebenfalls gelöscht<br>
-<br>
-<strong>DROP [IF EXISTS] TABLE &lt;table&gt;</strong><br>
-→ die Tabelle &lt;table&gt; löschen<br>
-<br>
-<h4>Manipulieren</h4>
-
-<h5>ALTER</h5><br>
-→ die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen<br>
-<br>
-<strong>ALTER DATABASE &lt;Datenbank&gt; [CHARACTER SET &lt;ISOLang&gt; COLLATE &lt;ISOCollate&gt; ];</strong><br>
-→ setzen eines Zeichensatzes und eines Sortiervorgang<br>
-<br>
-<strong>ALTER TABLE &lt;Name_alt&gt; RENAME TO &lt;Name_neu&gt;</strong><br>
-→ Tabelle mit &lt;Name_Alt&gt; in &lt;Name_neu&gt; umbenennen<br>
-<br>
-<strong>ALTER TABLE ADD id_key INTEGER; </strong>
-<strong>ALTER TABLE t2 ADD FOREIGN KEY (id_key) REFERENCES t1 (id);</strong><br>
-→ einen Fremdschlüssel im Nachhinein definieren<br>
-→ <u>id_keyy muss vorher bereits defineirt sein</u>
-
-<strong>ALTER TABLE &lt;Name&gt; ADD [ CONSTARINT ] &lt;Spalte&gt; &lt;Datentyp&gt;</strong><br>
-→ das Attribut (Spalte)  mit dem entsprechenden &lt;Datentyp&gt; der Tabelle mit &lt;Name&gt; hinzufügen<br>
-→ wird das Schlüsselwort CONSTRANT benutzt, wird ein Constraint hinzugefügt<br>
-<a href="./Constraints.html" title="Linux Wissen:SQL:Constraints">Linux Wissen:SQL:Constraints</a>
-
-<strong>ALTER TABLE &lt;Name&gt; MODIFY &lt;Spalte&gt; &lt;Datentyp&gt; </strong><br>
-→ die Bedigungnen (Datentyp) einer &lt;Spalte&gt; ändern<br>
-<br>
-<strong>ALTER TABLE &lt;Name&gt; CHANGE  COLLUMN&lt;Spalte&gt; &lt;Spalte&gt; &lt;Datentyp&gt;,..</strong><br>
-→ Eigenschaften einer Spalte ändern<br>
-<br>
-<em>Beispiel:</em>
-<pre>
-ALTER TABLE Arbeitgeber 
-CHANGE COLUMN PLZ 
-PLZ SMALLINT;
-</pre>
-
-
-<strong>ALTER TABLE &lt;Name&gt; DROP [ CONSTRAINT ] &lt;Spalte&gt;</strong><br>
-→ entfernen einer Spalte aus der Tabelle &lt;Name&gt;<br>
-→ wird das Schlüsselwort CONSTRAINT verwendet, wird ein Constraint gelöscht<br>
-<br>
-<u>Hinweis: Mehere Datenanweisungen lassen sich durch IN und NOT IN sowie () verknüpfen.</u>
 
 
 			<!-- End wiki content -->
@@ -357,7 +147,7 @@ PLZ SMALLINT;
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../SQL.html'>Linux Wissen:SQL</a></li>						<a href='./Schemaanweisungen.html'>Linux Wissen:SQL:Schemaanweisungen</a></li>						<a href='./Mysql_Server/Mysql_Clients/mysql_Client.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client</a></li>
+				Backlinks:						<a href='./Schemaanweisungen.html'>Linux Wissen:SQL:Schemaanweisungen</a></li>						<a href='./Mysql_Server/Mysql_Clients/mysql_Client.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client</a></li>						<a href='../SQL.html'>Linux Wissen:SQL</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

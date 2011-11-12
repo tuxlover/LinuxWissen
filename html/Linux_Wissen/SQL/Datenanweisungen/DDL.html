@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Indicies</title>
+		<title>DDL</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Indicies</h1>
+									DDL</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -76,10 +76,10 @@
 <ul>
 <li><a href="./Aggregatfunktionen.html" title="Aggregatfunktionen">Aggregatfunktionen</a></li>
 <li><a href="./Datumsfunktionen.html" title="Datumsfunktionen">Datumsfunktionen</a></li>
-<li><a href="./DDL.html" title="DDL">DDL</a></li>
+<li><strong>DDL</strong></li>
 <li><a href="./DML.html" title="DML">DML</a></li>
 <li><a href="./Dom%C3%A4nen.html" title="Domänen">Domänen</a></li>
-<li><strong>Indicies</strong></li>
+<li><a href="./Indicies.html" title="Indicies">Indicies</a></li>
 <li><a href="./Mathematische_Funktionen.html" title="Mathematische Funktionen">Mathematische Funktionen</a></li>
 </ul>
 <li><a href="../Datentypen.html" title="Datentypen">Datentypen</a></li>
@@ -106,44 +106,141 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Freitag 10 Juni 2011<br>
+Created Samstag 12 November 2011<br>
 </p>
 
 <p>
 <ul>
-<li>Jede Tabelle kann einen Index besitzen</li>
-<li>erstellen über <strong>CREATE INDEX </strong></li>
+<li>erstellen von Datenbanken, Tabellen und Views</li>
+<li>löschen von Datenbanken, Tabellen und Views</li>
+<li>Umbauen von Datenbanken, Tabellen und Views</li>
 </ul>
-<div style='padding-left: 30pt'>
-→ benötigen die Angabe mindestens einer Spalte <br>
-</div>
+</p>
+
+<h4>Erstellen</h4>
+
+<h5>CREATE</h5>
+<p>
+→ erzeugen von Datenbanken, Tabellen und Indezies<br>
 </p>
 
 <p>
-<strong>CREATE INDEX &lt;indexname&gt;</strong><br>
-<div style='padding-left: 30pt'>
-<strong>ON &lt;tabelle&gt; (&lt;Spalte1&gt;,...);</strong><br>
-</div>
+<strong>CREATE DATABASE </strong>[<strong>IF NOT EXISTS</strong>]<strong> &lt;Name&gt;</strong><br>
+→ eine neue Datenbank mit Name &lt;Name&gt; anlegen<br>
 </p>
 
+
+
 <p>
-→ erstelle einen Index für die Tabelle &lt;tabelle&gt; mit dem Namen &lt;indexname&gt;<br>
-→ benutze &lt;Spalte1&gt;,... für die Indizierung<br>
+<strong>CREATE TABLE &lt;Name&gt; (</strong><br>
+<strong>id INTEGER AUTO_INCREMENT,</strong><br>
+<strong>&lt;Spalt1&gt; &lt;Datentyp&gt; &lt;Extra Function&gt;,</strong><br>
+<strong>...</strong><br>
+<strong>PRIMARY KEY (id)</strong><br>
+<strong>);</strong><br>
+→ erstellen einer neuen Tabelle &lt;Name&gt; <br>
+→ es kann alles in eine Zeile geschrieben werden<br>
+→ Jede Spaltendefinition wird duch ein Komma abgeschlossen<br>
+→ die Definition einer Tabelle wird durch ; abgeschlossen <br>
+→ <u>es muss immer ein Primärschlüssel definiert durch das Schlüsselwort PRIMARY KEY definiert werden</u><br>
 </p>
 
 <p>
 <em>Beispiel:</em><br>
 </p>
 <pre>
-CREATE INDEX idx_person
+ CREATE TABLE autor (
+    -&gt; id_autor INTEGER AUTO_INCREMENT,
+    -&gt; Name VARCHAR(30) NOT NULL,
+    -&gt; Vorname VARCHAR(30) NOT NULL,
+    -&gt; PRIMARY KEY (id_autor)
+    -&gt; );
 </pre>
-<pre style='padding-left: 30pt'>
-ON person (Name,Vorname);
-</pre>
+
+
+
+<h4>Löschen</h4>
+
+<h5>DELETE</h5>
 <p>
-<strong>DROP INDEX &lt;indexname&gt;;</strong><br>
-→ löschen eines Index &lt;indexname&gt;<br>
-<br>
+→ löschen von Daten aus einer Tabelle<br>
+</p>
+
+<p>
+<strong>DELETE FROM &lt;table&gt; [WHERE &lt;Condition&gt;]</strong><br>
+→ entfernen aller Werte aus der Tabelle die einer bestimmten &lt;Condition&gt; entsprechen <br>
+</p>
+
+<h5>DROP</h5>
+<p>
+→ löschen ganzer Tabllen<br>
+→ sind Views involviert werden diese ebenfalls gelöscht<br>
+</p>
+
+<p>
+<strong>DROP [IF EXISTS] TABLE &lt;table&gt;</strong><br>
+→ die Tabelle &lt;table&gt; löschen<br>
+</p>
+
+<h4>Manipulieren</h4>
+
+<h5>ALTER</h5>
+<p>
+→ die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen<br>
+</p>
+
+<p>
+<strong>ALTER DATABASE &lt;Datenbank&gt; [CHARACTER SET &lt;ISOLang&gt; COLLATE &lt;ISOCollate&gt; ];</strong><br>
+→ setzen eines Zeichensatzes und eines Sortiervorgang<br>
+</p>
+
+<p>
+<strong>ALTER TABLE &lt;Name_alt&gt; RENAME TO &lt;Name_neu&gt;</strong><br>
+→ Tabelle mit &lt;Name_Alt&gt; in &lt;Name_neu&gt; umbenennen<br>
+</p>
+
+<p>
+<strong>ALTER TABLE ADD id_key INTEGER; </strong><br>
+<strong>ALTER TABLE t2 ADD FOREIGN KEY (id_key) REFERENCES t1 (id);</strong><br>
+→ einen Fremdschlüssel im Nachhinein definieren<br>
+→ <u>id_keyy muss vorher bereits defineirt sein</u><br>
+</p>
+
+<p>
+<strong>ALTER TABLE &lt;Name&gt; ADD [ CONSTARINT ] &lt;Spalte&gt; &lt;Datentyp&gt;</strong><br>
+→ das Attribut (Spalte)  mit dem entsprechenden &lt;Datentyp&gt; der Tabelle mit &lt;Name&gt; hinzufügen<br>
+→ wird das Schlüsselwort CONSTRANT benutzt, wird ein Constraint hinzugefügt<br>
+<a href="../Constraints.html" title="Linux Wissen:SQL:Constraints">Linux Wissen:SQL:Constraints</a><br>
+</p>
+
+<p>
+<strong>ALTER TABLE &lt;Name&gt; MODIFY &lt;Spalte&gt; &lt;Datentyp&gt; </strong><br>
+→ die Bedigungnen (Datentyp) einer &lt;Spalte&gt; ändern<br>
+</p>
+
+<p>
+<strong>ALTER TABLE &lt;Name&gt; CHANGE  COLLUMN&lt;Spalte&gt; &lt;Spalte&gt; &lt;Datentyp&gt;,..</strong><br>
+→ Eigenschaften einer Spalte ändern<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+ALTER TABLE Arbeitgeber 
+CHANGE COLUMN PLZ 
+PLZ SMALLINT;
+</pre>
+
+
+<p>
+<strong>ALTER TABLE &lt;Name&gt; DROP [ CONSTRAINT ] &lt;Spalte&gt;</strong><br>
+→ entfernen einer Spalte aus der Tabelle &lt;Name&gt;<br>
+→ wird das Schlüsselwort CONSTRAINT verwendet, wird ein Constraint gelöscht<br>
+</p>
+
+<p>
+<u>Hinweis: Mehere Datenanweisungen lassen sich durch IN und NOT IN sowie () verknüpfen.</u><br>
 </p>
 
 
@@ -152,7 +249,7 @@ ON person (Name,Vorname);
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../SQL.html'>Linux Wissen:SQL</a></li>
+				Backlinks:						<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>
