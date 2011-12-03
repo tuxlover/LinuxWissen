@@ -28,6 +28,7 @@ PID == -1 → sende das <SIGNAL> an alle Prozesse die dem aktuellen Benutzer geh
 
 **killall <SIGNAL> <NAME> **→ sende <SIGNAL> an alle Prozesse mit <Name>
 **-i **→ frage vor durchführung nach
+**-u <User> **→ die Prozesse eines bestimmtes Nutzers <User> beenden
 
 === Achtung: ===
 __Unter BSD verwendet man killall um alle Prozesse zu beenden.__
@@ -38,4 +39,3 @@ __Hinweis: __Es gilt__ "exit Status" -128 = <SIGNR>__
 **nohup <Befehl> **→ <Befehl> wird auch nach dem beenden des Elternprozesses weiterausgeführt
                                → normalerweise wird dieser <Befehl> dann direkter Kindprozess des init Prozesses
                                → kann einen Zombie erzeugen
- 

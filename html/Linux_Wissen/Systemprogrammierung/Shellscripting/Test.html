@@ -122,16 +122,17 @@ Created Dienstag 26 April 2011<br>
 <li><strong>ohne </strong>"" angegeben</li>
 </ul>
 Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, benutzt man die neueren   und der passende Ausdruck wird <em>Beispiel:</em><br>
-//if <a href="" title=" ${FILE} == *.tar.gz "> ${FILE} == *.tar.gz </a>//<br>
-<div style='padding-left: 30pt'>
-<em>then</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>tar xvfz $FILE</em><br>
-</div>
-<em>fi</em><br>
 </p>
-
+<pre>
+if  ${FILE} == *.tar.gz 
+</pre>
+<pre style='padding-left: 30pt'>
+then
+</pre>
+<pre style='padding-left: 60pt'>
+tar xvfz $FILE
+fi
+</pre>
 <p>
 <ul>
 <li>erweitertes Patternmatching kann aktivert werden indem man <strong>shopt -s </strong>benutzt, damit wir das sogenannte Globbing eingeschaltet</li>
@@ -141,58 +142,46 @@ Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, b
 +( ... ) Ein oder mehr Vorkommen<br>
 ?( ... ) Null oder ein Vorkommen<br>
 !( ... ) keine dieser Ausdrücke<br>
+<br>
 </p>
-
 <h2>Reguläre Ausdrücke</h2>
 <p>
 <ul>
 <li>Der Vergelichsoperator für reguläre Ausdrücke ist <strong>=~ (siehe unten)</strong></li>
 </ul>
+<br>
 </p>
-
 <h2>Arithmetische Tests</h2>
 <p>
 <strong>test "$x" </strong><br>
 →   0 falls Variable exitiert und nicht leer<br>
 →  1 falls Variable leer oder nicht gesetzt<br>
-</p>
-
-<p>
+<br>
 <strong>test $x -gt N </strong><br>
 →  0 falls x größer als N<br>
 →  1 sonst<br>
-</p>
-
-<p>
+<br>
 <strong>test $x -ge N </strong><br>
 →  0 falls x größer oder gleich N<br>
 →  1 sonst<br>
-</p>
-
-<p>
+<br>
 <strong>test $x -eq N</strong><br>
  →  0 falls x gleich N<br>
 →  1 sonst<br>
-</p>
-
-<p>
+<br>
 <strong>test $x -lt N </strong><br>
 →  0 falls x kleiner N<br>
 →  1 sonst<br>
-</p>
-
-<p>
+<br>
 <strong>test $x -le N </strong><br>
 →  0 fals x kleiner oder gleich N<br>
  →  1 sonst<br>
-</p>
-
-<p>
+<br>
 <strong>test $x -ne N </strong><br>
 →  0 falls x ungleich N<br>
 →  1 sonst<br>
+<br>
 </p>
-
 <h4>Arithmetische Tests mit (( ))</h4>
 <p>
 ++<br>
@@ -483,7 +472,7 @@ esac<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
+				Backlinks:						<a href='./Exit_Status.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a></li>						<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

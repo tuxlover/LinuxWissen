@@ -10,10 +10,17 @@ Created Dienstag 26 April 2011
 ===== Pattern Matching =====
 * **ohne **"" angegeben
 Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, benutzt man die neueren   und der passende Ausdruck wird //Beispiel://
-//if [[ ${FILE} == *.tar.gz ]]//
-	//then//
-		//tar xvfz $FILE//
-//fi//
+'''
+if  ${FILE} == *.tar.gz 
+'''
+	'''
+	then
+	'''
+		'''
+		tar xvfz $FILE
+		fi
+		'''
+
 
 * erweitertes Patternmatching kann aktivert werden indem man **shopt -s **benutzt, damit wir das sogenannte Globbing eingeschaltet
 @( ... ) Nur ein einzelnes Vorkommen

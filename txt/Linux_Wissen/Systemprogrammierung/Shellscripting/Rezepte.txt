@@ -21,3 +21,4 @@ Created Sonntag 09 Oktober 2011
 [[+AreWeInteractive]] (Testen ob ein Script interaktiv läuft oder nicht)
 [[+Daemon]] (Ein Script als Daemon laufen lassen)
 [[+SelectYourWeapon]] (Ein Select Statement bauen)
+[[+string has path]] (Überprüfen ob ein String mit einem vorgeschriebenen Pfadnamen beginnt)

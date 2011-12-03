@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Am I  Root</title>
+		<title>string has path</title>
 		<meta name='Generator' content='Zim 0.53'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Am I  Root</h1>
+									string has path</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -89,7 +89,7 @@
 <li><a href="../read.html" title="read">read</a></li>
 <li><a href="../Rezepte.html" title="Rezepte">Rezepte</a></li>
 <ul>
-<li><strong>Am I  Root</strong></li>
+<li><a href="./Am_I__Root.html" title="Am I  Root">Am I  Root</a></li>
 <li><a href="./AreWeInteractive.html" title="AreWeInteractive">AreWeInteractive</a></li>
 <li><a href="./Check_files.html" title="Check files">Check files</a></li>
 <li><a href="./Count_down.html" title="Count down">Count down</a></li>
@@ -103,7 +103,7 @@
 <li><a href="./Please_Enter.html" title="Please Enter">Please Enter</a></li>
 <li><a href="./Rc-Script.html" title="Rc-Script">Rc-Script</a></li>
 <li><a href="./SelectYourWeapon.html" title="SelectYourWeapon">SelectYourWeapon</a></li>
-<li><a href="./string_has_path.html" title="string has path">string has path</a></li>
+<li><strong>string has path</strong></li>
 <li><a href="./Taken_User.html" title="Taken User">Taken User</a></li>
 <li><a href="./Would_you_rather_like.html" title="Would you rather like">Would you rather like</a></li>
 </ul>
@@ -128,30 +128,28 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 09 Oktober 2011<br>
+Created Samstag 03 Dezember 2011<br>
 </p>
 
-<pre>
-#Überprüfen ob die richtigen Rechte vorhanden sind
-check_root()
-{
-if [ $UID -ne  0 ]
-</pre>
-<pre style='padding-left: 30pt'>
-then
-</pre>
-<pre style='padding-left: 60pt'>
-echo "Der Nutzer $USER verfügt nicht über die nötigen Rechte."
-echo "medlen sie sich als root an."
-</pre>
-<pre style='padding-left: 30pt'>
-else
-</pre>
-<pre style='padding-left: 60pt'>
-echo "Sie sind root"
-fi
-}
-</pre>
+<p>
+string_has_path()<br>
+{<br>
+<code>if [ "${var1:0:5}" == "/etc/" ]</code><br>
+<div style='padding-left: 30pt'>
+<code>then </code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>echo "true"</code><br>
+</div>
+<div style='padding-left: 30pt'>
+<code>else </code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>echo "false" </code><br>
+</div>
+<code>fi</code><br>
+}<br>
+</p>
 
 
 			<!-- End wiki content -->

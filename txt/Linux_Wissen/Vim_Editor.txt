@@ -29,3 +29,25 @@ Created Freitag 15 April 2011
 * vom Kommando-Modus durch **:!<Befehl> **gewechselt
 * füht den <Befehl> aus, beenden mit **Enter**
 
+===== Häufig benutze Befehle =====
+//Beispiele://
+''wq''
+→ Schreibe veränderungen und beende vim
+
+dd
+→ lösche die aktuelle Zeile
+
+x
+→ lösche das aktuelle Zeichen
+
+''<N>r<M> ''
+→ Zeichen <N> unter dem Cursor durch Zeichen <M> ersetzen
+
+q!
+→ Beende Vim ohne diese Veränderungen vorher zu speichern
+
+''gg "y+G''
+→ Springe an den Anfang der Datei und kopiere alle Zeilen in den Zwischenspeicher von Gnome/KDE
+
+'':! <Befehl> % ''
+→ Benutze ein externes Programm, und nehme mit % Bezug auf das aktuelle Dokument

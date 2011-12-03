@@ -54,3 +54,5 @@ Created Freitag 15 April 2011
 
 **:Sex → **den S Explorer aufrufen
   
+**:! → **Ein externes Programm aufrufen
+    → mit % kann man sich auf das aktuelle Dokument als StdtIn beziehen

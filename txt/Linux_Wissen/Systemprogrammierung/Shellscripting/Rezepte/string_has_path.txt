@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-03T18:13:12+01:00
+
+====== string has path ======
+Created Samstag 03 Dezember 2011
+
+string_has_path()
+{
+''if [ "${var1:0:5}" == "/etc/" ]''
+	''then ''
+		''echo "true"''
+	''else ''
+		''echo "false" ''
+''fi''
+}

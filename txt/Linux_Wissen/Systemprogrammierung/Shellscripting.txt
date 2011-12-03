@@ -162,3 +162,4 @@ __Hinweis: Für die Turingvollständigkeit reicht die while Schleife.__
 [[+Rezepte:AreWeInteractive]] (Testen ob die bash interaktiv läuft oder nicht und entsprechende zuweisung von Anweisungen)
 [[+Rezepte:SelectYourWeapon]] (Eine Auswahltliste erstellen)
 [[+Rezepte:Daemon]] (Ein Script als Daemon laufen lassen)
+[[+Rezepte:string has path]] (Überprüfen ob ein String mit einem Substring beginnt, der auf einen bestimmten Pfad referenziert)

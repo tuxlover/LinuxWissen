@@ -27,7 +27,7 @@ MANPATH → Umgebungsvariable ( [[Linux Wissen:Shell:Bash:Shell Varibalen und di
 
 **manpath **→ Programm zum Konfigurieren falls MANPATH nicht gesetzt ist
 
-===== Aufbau einer Man Page =====
+===== gAufbau einer Man Page =====
 NAME (Kommandoname mit knapper Kurzbeschreibung)
 SYNOPSIS (Beschreibung der Befehlssyntax)
 DESCRIPTION (Ausführliche Beschreibung der Kommandowirkung)

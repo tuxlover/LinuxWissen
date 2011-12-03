@@ -22,3 +22,5 @@ __Hinweis: Rückgabewerte > 127 geben das Signal an, welches an diese geschickt 
 **RÜCKGABEWERT - 127=<SIGNAL>**
 
 **echo $?** →  liefert den letzten Rückgabewert
+
+[[Test]]
