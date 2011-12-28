@@ -76,3 +76,8 @@ Created Mittwoch 29 Juni 2011
 **mysqlshow **zum betrachten von Datenbanken
 **mysqldump **für Backups
 [[+Mysql Clients]]
+
+=== Mysql Metadatenbanken ===
+[[+INFORMATION SCHEMA]]
+
+__Achtung: Der root Mysql User ist nicht der root User des Betriebssystems__

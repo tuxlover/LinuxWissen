@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>DDL</title>
-		<meta name='Generator' content='Zim 0.53'>
+		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -84,6 +84,7 @@
 </ul>
 <li><a href="../Datentypen.html" title="Datentypen">Datentypen</a></li>
 <li><a href="../Design.html" title="Design">Design</a></li>
+<li><a href="../Index.html" title="Index">Index</a></li>
 <li><a href="../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="../Joins.html" title="Joins">Joins</a></li>
 <li><a href="../Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -159,7 +160,6 @@ Created Samstag 12 November 2011<br>
 </pre>
 
 
-
 <h4>Löschen</h4>
 
 <h5>DELETE</h5>
@@ -172,6 +172,11 @@ Created Samstag 12 November 2011<br>
 → entfernen aller Werte aus der Tabelle die einer bestimmten &lt;Condition&gt; entsprechen <br>
 </p>
 
+<p>
+<em>Beispiel:</em><br>
+<code>DELETE FROM HAT WHERE MB='terminated';</code><br>
+</p>
+
 <h5>DROP</h5>
 <p>
 → löschen ganzer Tabllen<br>
@@ -179,8 +184,22 @@ Created Samstag 12 November 2011<br>
 </p>
 
 <p>
-<strong>DROP [IF EXISTS] TABLE &lt;table&gt;</strong><br>
-→ die Tabelle &lt;table&gt; löschen<br>
+<strong>DROP TABLE [IF EXISTS] &lt;table&gt;</strong><br>
+→ die Tabelle löschen, falls diese existiert<br>
+<strong>DROP DATABASE [IF EXISTS] &lt;table&gt;</strong><br>
+→ die komplette Datenbank löschen, falls diese exisstiert<br>
+</p>
+
+<p>
+→ entfernt nur die Datendateien aus dem in my.cnf konfigurierten <code>datadir = &lt;DIR&gt;</code><br>
+→ Berechtigungen bleiben erhalten und müssen nahchträglich entfernt werden<br>
+<a href="../../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
+</p>
+
+<p>
+<strong>TRUNCATE TABLE [IF EXISTS] &lt;Tabelle&gt;</strong><br>
+→ leert die Daten aus den Spalten von &lt;Tabelle&gt;<br>
+→ das leere Gerüst bleibt aber erhalten<br>
 </p>
 
 <h4>Manipulieren</h4>
@@ -189,6 +208,9 @@ Created Samstag 12 November 2011<br>
 <p>
 → die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen<br>
 → kann nicht zum Umbenennen einer Datenbank verwendet werden<br>
+<div style='padding-left: 30pt'>
+→ erst Backup dann neue Datenbank dann zurückspielen<br>
+</div>
 </p>
 
 <p>
@@ -205,18 +227,18 @@ Created Samstag 12 November 2011<br>
 <strong>ALTER TABLE ADD id_key INTEGER; </strong><br>
 <strong>ALTER TABLE t2 ADD FOREIGN KEY (id_key) REFERENCES t1 (id);</strong><br>
 → einen Fremdschlüssel im Nachhinein definieren<br>
-→ <u>id_keyy muss vorher bereits defineirt sein</u><br>
+→ <u>id_key muss vorher bereits defineirt sein</u><br>
 </p>
 
 <p>
-<strong>ALTER TABLE &lt;Name&gt; ADD [ CONSTARINT ] &lt;Spalte&gt; &lt;Datentyp&gt;</strong><br>
+<strong>ALTER TABLE &lt;Name&gt; ADD [ CONSTARINT ] &lt;Spalte&gt; &lt;Datentyp&gt;  [FIRST|After &lt;Spalte&gt;|BEFORE &lt;Spalte&gt;];</strong><br>
 → das Attribut (Spalte)  mit dem entsprechenden &lt;Datentyp&gt; der Tabelle mit &lt;Name&gt; hinzufügen<br>
 → wird das Schlüsselwort CONSTRANT benutzt, wird ein Constraint hinzugefügt<br>
 <a href="../Constraints.html" title="Linux Wissen:SQL:Constraints">Linux Wissen:SQL:Constraints</a><br>
 </p>
 
 <p>
-<strong>ALTER TABLE &lt;Name&gt; MODIFY &lt;Spalte&gt; &lt;Datentyp&gt; </strong><br>
+<strong>ALTER TABLE &lt;Name&gt; MODIFY &lt;Spalte&gt; &lt;Datentyp&gt; [FIRST|After &lt;Spalte&gt;|BEFORE &lt;Spalte&gt;];</strong><br>
 → die Bedigungnen (Datentyp) einer &lt;Spalte&gt; ändern<br>
 </p>
 
@@ -227,12 +249,27 @@ Created Samstag 12 November 2011<br>
 
 <p>
 <em>Beispiel:</em><br>
+hinzufügen einer Spalte in Mysql:<br>
+</p>
+<pre>
+ALTER TABLE world
+</pre>
+<pre style='padding-left: 30pt'>
+ADD inc Bool NOT NULL DEFAULT=1;
+</pre>
+<p>
+Den Datentypen von PLZ ändern:<br>
 </p>
 <pre>
 ALTER TABLE Arbeitgeber 
 CHANGE COLUMN PLZ 
 PLZ SMALLINT;
 </pre>
+
+<p>
+Ändern der Storage Engine in Mysql:<br>
+<code>ALTER TABLE world ENGINE=MYISAM</code><br>
+</p>
 
 
 <p>
@@ -251,7 +288,7 @@ PLZ SMALLINT;
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>
+				Backlinks:						<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>						<a href='../Index.html'>Linux Wissen:SQL:Index</a></li>						<a href='../Views.html'>Linux Wissen:SQL:Views</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

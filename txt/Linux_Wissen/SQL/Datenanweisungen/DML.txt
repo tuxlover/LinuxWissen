@@ -118,6 +118,24 @@ SELECT ort, COUNT(*)
 → die auf <Condition> zutreffenden Ergebnisse nach <SpalteA> sortieren
 → sortiren der Abfrage nach 
 
+== CONCAT ==
+**SELECT CONCAT(<Zeile1> ,'[<TRENNER]',... ) AS Aliasse**
+**FROM <Tabelle>**
+**WHERE <Bedingung>**
+**ORDER BY <Spalte> DESC|ASC;**
+
+→ zusammenführen von Spalten ohne Schlüsselpaar
+
+//Beispiel://
+'''
+SELECT CONCAT(table_schema,'.',table_name)
+AS table_name,table_rows
+FROM information_schema.tables
+WHERE table_rows > 1000
+ORDER BY table_rows DESC;
+'''
+
+
 ==== Manipulieren ====
 * Tabellen mit Daten auffüllen
 * Daten in Tabellen aktualisierien
@@ -142,3 +160,4 @@ SELECT ort, COUNT(*)
 **UPDATE <table> SET <Attribut>=<Wert> [ WHERE <Condition>][,..]**
 → setzt einen neuen <Wert> für Attribut von Tabelle <table> wo die Bedingungen <Condition> zutreffen
 → mehrere Attribute müssen durch Kommata getrennt werden
+

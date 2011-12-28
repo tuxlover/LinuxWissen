@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T17:04:38+01:00
+
+====== mysqlimport ======
+Created Mittwoch 28 Dezember 2011
+
+* Programm zum importieren von Datensätzen aus einer externen Quelldatei
+* die zu importierende Datei muss in ''datadir = <DIR> ''gespeichert werden und lesbar sein
+[[Linux Wissen:FHS:etc:my.cnf]]
+
+**mysqlimport [<Optionen>] <Datenbank> <Text1>,...**
+
+	**<Optionen>**
+		→ siehe mysql refman (http://dev.mysql.com/doc/refman/5.1/de/mysqlimport.html)
+
+//Beispiel://
+Importieren der Datei imptest.txt in die Datenbank test:
+''mysqlimport --local -u root -p test imptest.txt''

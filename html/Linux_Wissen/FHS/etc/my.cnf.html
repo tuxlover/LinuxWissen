@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>my.cnf</title>
-		<meta name='Generator' content='Zim 0.53'>
+		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -133,13 +133,8 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Mittwoch 29 Juni 2011<br>
-<ul>
-<li>In der Dokumentation auch als Option File bezeichnet</li>
-</ul>
-<em>++</em><br>
-</p>
+				<li>In der Dokumentation auch als Option File bezeichnet</li>
+<em>++</em>
 <pre>
 ##Konfigration für die Clientprogramme mysql und mysqladmin
 [client]
@@ -147,6 +142,10 @@ Created Mittwoch 29 Juni 2011<br>
 port = &lt;N&gt;
 #Verhalten von Case Sensetivity
 lower_case_variable = 1|2
+
+#Standardanmeldeinformationen für alle mysql Clientporgramme
+user = &lt;User&gt;
+passwort = &lt;Paaswort&gt;|&lt;Datei&gt;
 
 
 #Socketdatei über die die Clients mit dem Server kommunizieren 
@@ -165,6 +164,9 @@ port = &lt;M&gt;
 
 #Verzeichnis in dem die Datenbank als .frm Dateistappel abgelegt wird
 datadir = &lt;DIR&gt;
+
+#standard Storage Engine
+default-storage-engine = INNODB
 
 #Socketdatei über die der Server kommuniziert
 socket = /var/run/mysql/mysql.sock
@@ -186,7 +188,7 @@ system_time_zone = &lt;TZ&gt;|SYSTEM
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../SQL/Mysql_Server/Mysql_Clients/Server_SQL_Modes.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:Server SQL Modes</a></li>						<a href='../../SQL/Mysql_Server/Mysql_Clients/mysqladmin.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysqladmin</a></li>						<a href='../../SQL/Mysql_Server.html'>Linux Wissen:SQL:Mysql Server</a></li>						<a href='../../SQL/Mysql_Server/Anweisungen.html'>Linux Wissen:SQL:Mysql Server:Anweisungen</a></li>
+				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../SQL/Mysql_Server/Anweisungen.html'>Linux Wissen:SQL:Mysql Server:Anweisungen</a></li>						<a href='../../SQL/Mysql_Server/Mysql_Clients/mysqladmin.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysqladmin</a></li>						<a href='../../SQL/Mysql_Server/Mysql_Clients/Server_SQL_Modes.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:Server SQL Modes</a></li>						<a href='../../SQL/Mysql_Server.html'>Linux Wissen:SQL:Mysql Server</a></li>						<a href='../../SQL/Datenanweisungen/DDL.html'>Linux Wissen:SQL:Datenanweisungen:DDL</a></li>						<a href='../../SQL/Mysql_Server/Mysql_Clients/mysqlimport.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysqlimport</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

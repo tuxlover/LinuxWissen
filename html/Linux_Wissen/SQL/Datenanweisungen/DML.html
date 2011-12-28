@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>DML</title>
-		<meta name='Generator' content='Zim 0.53'>
+		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -84,6 +84,7 @@
 </ul>
 <li><a href="../Datentypen.html" title="Datentypen">Datentypen</a></li>
 <li><a href="../Design.html" title="Design">Design</a></li>
+<li><a href="../Index.html" title="Index">Index</a></li>
 <li><a href="../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="../Joins.html" title="Joins">Joins</a></li>
 <li><a href="../Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -273,6 +274,26 @@ HAVING COUNT(*) &gt;= 100;
 → sortiren der Abfrage nach <br>
 <br>
 </p>
+<h5>CONCAT</h5>
+<p>
+<strong>SELECT CONCAT(&lt;Zeile1&gt; ,'[&lt;TRENNER]',... ) AS Aliasse</strong><br>
+<strong>FROM &lt;Tabelle&gt;</strong><br>
+<strong>WHERE &lt;Bedingung&gt;</strong><br>
+<strong>ORDER BY &lt;Spalte&gt; DESC|ASC;</strong><br>
+<br>
+→ zusammenführen von Spalten ohne Schlüsselpaar<br>
+<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+SELECT CONCAT(table_schema,'.',table_name)
+AS table_name,table_rows
+FROM information_schema.tables
+WHERE table_rows &gt; 1000
+ORDER BY table_rows DESC;
+</pre>
+
+
 <h3>Manipulieren</h3>
 <p>
 <ul>
@@ -280,31 +301,38 @@ HAVING COUNT(*) &gt;= 100;
 <li>Daten in Tabellen aktualisierien</li>
 <li>Daten in Tabellen verändern</li>
 </ul>
-<br>
 </p>
+
 <h5>INSERT</h5>
 <p>
 → schreiben von Daten in eine Tabelle<br>
-<br>
+</p>
+
+<p>
 <strong>INSERT INTO &lt;table&gt;  (&lt;Attribute&gt;,...)  VALUES  (&lt;Werte&gt;,...);</strong><br>
 → fügt in die Tabelle &lt;table&gt; die entrsprechenden &lt;Attribute&gt; und den dazugerhörigen &lt;Werte&gt; ein<br>
 → bijektiv Abbildung<br>
 → die &lt;Attribute&gt; müssen bereits definiert sein<br>
-<br>
+</p>
+
+<p>
 <strong>INSERT INTO &lt;table1&gt; SELECT &lt;Spalte&gt; FROM &lt;table2&gt;</strong><br>
 → Werte von einer Tabelle &lt;table2&gt; einer &lt;Spalte&gt; in die Tabelle &lt;table1&gt; einfügen<br>
 → Dimenstion und Attribute müssen übereinstimmen<br>
-<br>
 </p>
+
 <h5>UPDATE</h5>
 <p>
 → verändern von Daten in einer Tabelle<br>
 → das Attribut ist bereits vergeben<br>
-<br>
+</p>
+
+<p>
 <strong>UPDATE &lt;table&gt; SET &lt;Attribut&gt;=&lt;Wert&gt; [ WHERE &lt;Condition&gt;][,..]</strong><br>
 → setzt einen neuen &lt;Wert&gt; für Attribut von Tabelle &lt;table&gt; wo die Bedingungen &lt;Condition&gt; zutreffen<br>
 → mehrere Attribute müssen durch Kommata getrennt werden<br>
 </p>
+
 
 
 			<!-- End wiki content -->
@@ -312,7 +340,7 @@ HAVING COUNT(*) &gt;= 100;
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>
+				Backlinks:						<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>						<a href='../Views.html'>Linux Wissen:SQL:Views</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

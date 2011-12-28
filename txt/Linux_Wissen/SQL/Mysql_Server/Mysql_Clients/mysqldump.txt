@@ -1,0 +1,98 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T03:03:30+01:00
+
+====== mysqldump ======
+Created Mittwoch 28 Dezember 2011
+
+* Programm zum erstellen von Backups 
+* erstellen eines Binären Abbilds einer Datenbank in einer Datei
+* zur Übertragung von Daten an anedere Mysql Server
+* Backups können mit dem SOURCE Befehl wieder eingelesen werden
+[[mysql Client:SOURCE]]
+
+__ACHTUNG: Mysqldump schreibt alles nach StdOut.__
+
+**mysqldump  [<Optionen>] <Datenbank> [<Tabellen>],...**
+
+**<Optionen>**
+	**--help|-?**
+	→ Hilfe zu mysqldump anzeigen
+	
+	 
+	**--add-drop-table**
+	→ vor jedem CREATE <TABLE> STATEMENT wird ein DROP <TABLE> STATEMENT ausgeführt
+	→ um dumps zu aktualisierun und vorhanden Tabellen komplett neu zu schreiben
+	
+	**--add-drop-database**
+	→ wie **--add-drop-table **für das CREATE <DATABASE> STATEMENT
+	
+	**--all-databases|-A**
+	→ erstellt einen Speicheranzug aller Datenbanken und aller Tabellen
+	
+	**--comments=0|1**
+	→  wenn dieser Wert 0 ist werden zusätzliche Informationen nicht im dump mit aufgenommen (Versionsnummer, Host)
+
+	→ wenn dieser Wert 1 (Standardwert ohne Angabe der Option) werden zusätzliche Informationen in den Dump geschrieben
+	
+	**--skip-comments**
+	→ wie **--comments=0**
+	
+	**--databases |- B**
+	→ erstellen eines Speicherabzugs mehrere Datenbanken
+	→ Jedes Argument wird nun als Datenbankname behandelt
+	
+	**--flush-logs|-F**
+	→ Synchronisieren der Logdateien des Mysql Servers auf der Festplatte bevor Speichervorgang gestartet wird
+	
+	**--force|-f**
+	→ Dump auch bei Fehlern fortsetzen
+	
+	**--lock-all-tables|-x**
+	→ für die Daueer des Dumps wird der Zugriff auf alle Tabellen gespeert
+	
+	**--no-data|-d**
+	→ keine Datensatzinformationen schreiben, nur ''CREATE ''Anweisungen werden berücksichtigt
+	
+	**-p**
+	→ ein Prompt anzeigen der nach einem Passwort fragt (empfohlen)
+	
+	**--password=<Passwort>**
+	→ das Passwort in Klartext an der Befehlszeile übergeben (nicht empfohlen)
+
+	**--port=N**
+	→  festelgen des Ports über den eine Verbindung erfolgt
+	
+	**--quick|-q**
+	→ Datensätze einer Tabelle werden Datensatzweise vom Server geholt
+	→ nützlich für Datenbanken mit großen Datensätzen
+	
+	**--result-file <Datei>|-r <Datei>**
+	→ Ausgabe in <Datei> schreiben
+	
+	**--user|-u <User>**
+	→ Verbindung zum Server als dieser <User>
+	
+	**--where="<Bedingung>"**
+	→ nur die Datensätze holen auf die die Bedingung zutrift
+	→ __ACHTUNG: Die Bedingung muss in "" stehen.__
+	//Beispiel://
+		''mysqldump --where="user='Horst'"''
+	
+	**--xml|-X**
+	→ Speicherauszüge werden als Xml gespeichert
+	
+
+//Beispiele://
+Erstellung eines Backups einer kompletten Datenbank:
+''mysqldump --opt world > world.sql''
+
+Die Datensätze von einer Datenbank in ein andere leere Datenbank einfügen:
+''mysqldump world -p|mysql -D Erde''
+
+Auffüllen von Datenbanken durch kopieren von Datensätzen zwischen zwei MYsql Server Instanzen:
+''mysqldump --opt sakila|mysql --host=Magrathea -C sakila2''
+
+Speicherauszug aller Datenbanken erstellen:
+''mysqldump --all-databases > all.sql ''
+

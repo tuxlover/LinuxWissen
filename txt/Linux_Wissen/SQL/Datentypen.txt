@@ -126,6 +126,11 @@ LastName      CHARACTER VARYI )
 → binary large Object
 → für beliebig Große Dateien
 
+=== NULL ===
+→  leerer nicht bekannter Wert 
+→ besitzt keine Speicheradresse und verbraucht daher auch keinen Speicherplatz
+→ NULL != NULL
+→ unbekannte Werte werden immer als ungleiche Werte behandelt
 
 //Beispiele://
 '''

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Constraints</title>
-		<meta name='Generator' content='Zim 0.53'>
+		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -75,6 +75,7 @@
 <li><a href="./Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <li><a href="./Datentypen.html" title="Datentypen">Datentypen</a></li>
 <li><a href="./Design.html" title="Design">Design</a></li>
+<li><a href="./Index.html" title="Index">Index</a></li>
 <li><a href="./Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="./Joins.html" title="Joins">Joins</a></li>
 <li><a href="./Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -108,11 +109,30 @@ Created Freitag 29 April 2011<br>
 </ul>
 </p>
 
+<p>
+<strong>CREATE TABLE parent (</strong><br>
+<strong>id INT NOT NULL,</strong><br>
+<strong>PRIMARY KEY(id))</strong><br>
+<strong>ENGINE=INNODB;</strong><br>
+</p>
+
+
 <h5>Fremdschlüssel Constraint</h5>
 <p>
 <ul>
 <li>sorgen dafür, dass eine oder meherer Spalten nur Werte enthalten, die aus Primärschlüsselspalten stammen</li>
+<li>In Mysql muss INNODB Storage Engine verwendet werden</li>
 </ul>
+</p>
+
+<p>
+<strong>CREATE TABLE child ( </strong><br>
+<strong>id INT,</strong><br>
+<strong>(INDEX par_ind (parent_id),)</strong><br>
+<strong>FOREIGN KEY (parent_id),</strong><br>
+<strong>REFERENCES parent(id)</strong><br>
+<strong>ON DELETE CASCADE) </strong><br>
+<strong>ENGINE=INNODB;</strong><br>
 </p>
 
 <h5>Unique Constraint</h5>
@@ -127,6 +147,22 @@ Created Freitag 29 April 2011<br>
 <ul>
 <li>Einschränken zulässiger Werte für eine Spalte</li>
 </ul>
+</p>
+
+<h5>DEFAULT Constriant</h5>
+<p>
+<ul>
+<li>falls eine Spalte keinen Wert enthält kann ihr einer zugewiesen werden</li>
+</ul>
+</p>
+
+<h5>NOT NULL Contraint</h5>
+<p>
+<ul>
+<li>eine Spalte darf keinen NULL Wert besitzen</li>
+</ul>
+<a href="./Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a><br>
+<a href="./Datentypen.html" title="Datentypen">Datentypen</a><br>
 </p>
 
 

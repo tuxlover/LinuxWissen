@@ -42,7 +42,6 @@ Created Samstag 12 November 2011
 '''
 
 
-
 === Löschen ===
 
 == DELETE ==
@@ -51,18 +50,32 @@ Created Samstag 12 November 2011
 **DELETE FROM <table> [WHERE <Condition>]**
 → entfernen aller Werte aus der Tabelle die einer bestimmten <Condition> entsprechen 
 
+//Beispiel://
+''DELETE FROM HAT WHERE MB='terminated';''
+
 == DROP ==
 → löschen ganzer Tabllen
 → sind Views involviert werden diese ebenfalls gelöscht
 
-**DROP [IF EXISTS] TABLE <table>**
-→ die Tabelle <table> löschen
+**DROP TABLE [IF EXISTS] <table>**
+→ die Tabelle löschen, falls diese existiert
+**DROP DATABASE [IF EXISTS] <table>**
+→ die komplette Datenbank löschen, falls diese exisstiert
+
+→ entfernt nur die Datendateien aus dem in my.cnf konfigurierten ''datadir = <DIR>''
+→ Berechtigungen bleiben erhalten und müssen nahchträglich entfernt werden
+[[Linux Wissen:FHS:etc:my.cnf]]
+
+**TRUNCATE TABLE [IF EXISTS] <Tabelle>**
+→ leert die Daten aus den Spalten von <Tabelle>
+→ das leere Gerüst bleibt aber erhalten
 
 === Manipulieren ===
 
 == ALTER ==
 → die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen
 → kann nicht zum Umbenennen einer Datenbank verwendet werden
+	→ erst Backup dann neue Datenbank dann zurückspielen
 
 **ALTER DATABASE <Datenbank> [CHARACTER SET <ISOLang> COLLATE <ISOCollate> ];**
 → setzen eines Zeichensatzes und eines Sortiervorgang
@@ -73,25 +86,37 @@ Created Samstag 12 November 2011
 **ALTER TABLE ADD id_key INTEGER; **
 **ALTER TABLE t2 ADD FOREIGN KEY (id_key) REFERENCES t1 (id);**
 → einen Fremdschlüssel im Nachhinein definieren
-→ __id_keyy muss vorher bereits defineirt sein__
+→ __id_key muss vorher bereits defineirt sein__
 
-**ALTER TABLE <Name> ADD [ CONSTARINT ] <Spalte> <Datentyp>**
+**ALTER TABLE <Name> ADD [ CONSTARINT ] <Spalte> <Datentyp>  [FIRST|After <Spalte>|BEFORE <Spalte>];**
 → das Attribut (Spalte)  mit dem entsprechenden <Datentyp> der Tabelle mit <Name> hinzufügen
 → wird das Schlüsselwort CONSTRANT benutzt, wird ein Constraint hinzugefügt
 [[Linux Wissen:SQL:Constraints]]
 
-**ALTER TABLE <Name> MODIFY <Spalte> <Datentyp> **
+**ALTER TABLE <Name> MODIFY <Spalte> <Datentyp> [FIRST|After <Spalte>|BEFORE <Spalte>];**
 → die Bedigungnen (Datentyp) einer <Spalte> ändern
 
 **ALTER TABLE <Name> CHANGE  COLLUMN<Spalte> <Spalte> <Datentyp>,..**
 → Eigenschaften einer Spalte ändern
 
 //Beispiel://
+hinzufügen einer Spalte in Mysql:
+'''
+ALTER TABLE world
+'''
+	'''
+	ADD inc Bool NOT NULL DEFAULT=1;
+	'''
+
+Den Datentypen von PLZ ändern:
 '''
 ALTER TABLE Arbeitgeber 
 CHANGE COLUMN PLZ 
 PLZ SMALLINT;
 '''
+
+Ändern der Storage Engine in Mysql:
+''ALTER TABLE world ENGINE=MYISAM''
 
 
 **ALTER TABLE <Name> DROP [ CONSTRAINT ] <Spalte>**

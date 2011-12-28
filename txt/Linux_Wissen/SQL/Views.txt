@@ -5,3 +5,41 @@ Creation-Date: 2011-05-04T23:34:29+02:00
 ====== Views ======
 Created Mittwoch 04 Mai 2011
 
+* ein gespeichertes SELECT Staetment
+* virtuelle Tabellen
+* werden duch ein ''CREATE SELECT Statement erstellt''
+* Views können andere Views enthalten
+[[Datenanweisungen:DDL]]
+[[Datenanweisungen:DML]]
+
+=== Sinn und Zweck; ===
+* Abspeichern komplexeren ''SELECT'' Querries
+* Abschirmen der Base-Tables vom Nutzer
+* vermeiden unnötiger Tabellen und damit einsparen von Speicherplatz auf der Platte
+
+=== Erstellen eines Views ===
+**CREATE VIEW <View> AS SELECT ...**
+	**FROM ...**
+	→ einen  View erstellen
+
+__ACHTUNG: Es liegt in der Natur von Views dass diese nicht Indiziert werden können.__
+
+__ACHTUNG: Es ist möglich eine Base Table die auf einen View verweist zu löschen__
+
+=== Ändern eines Views ===
+**ALTER**
+**    VIEW view_name [(column_list)]**
+**    AS select_statement**
+**    [WITH [CASCADED | LOCAL] CHECK OPTION]**
+
+
+=== Löschen eines Views ===
+**DROP VIEW [IF EXISTS]**
+**    view_name [, view_name] ...**
+**    [RESTRICT | CASCADE]**
+
+=== Design Steps nachvollziehen ===
+→ Views und Tables teilen sich den gleichen Namespace
+[[Mysql Server:Mysql Clients:mysql Client:SHOW]]
+[[Mysql Server:Mysql Clients:mysql Client:DESCRIBE]]
+[[Mysql Server:INFORMATION SCHEMA]] → Tabelle VIEWS

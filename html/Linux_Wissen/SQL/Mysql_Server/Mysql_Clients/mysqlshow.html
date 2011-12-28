@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>mysqlshow</title>
+		<meta name='Generator' content='Zim 0.54'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									mysqlshow</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../../Networking.html" title="Networking">Networking</a></li>
+<li><a href="../../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../../root.html" title="root">root</a></li>
+<li><a href="../../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../../SQL.html" title="SQL">SQL</a></li>
+<ul>
+<li><a href="../../Bedingungen.html" title="Bedingungen">Bedingungen</a></li>
+<li><a href="../../Constraints.html" title="Constraints">Constraints</a></li>
+<li><a href="../../Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
+<li><a href="../../Datentypen.html" title="Datentypen">Datentypen</a></li>
+<li><a href="../../Design.html" title="Design">Design</a></li>
+<li><a href="../../Index.html" title="Index">Index</a></li>
+<li><a href="../../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
+<li><a href="../../Joins.html" title="Joins">Joins</a></li>
+<li><a href="../../Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
+<ul>
+<li><a href="../Anweisungen.html" title="Anweisungen">Anweisungen</a></li>
+<li><a href="../INFORMATION_SCHEMA.html" title="INFORMATION SCHEMA">INFORMATION SCHEMA</a></li>
+<li><a href="../Mysql_Clients.html" title="Mysql Clients">Mysql Clients</a></li>
+<ul>
+<li><a href="./mysql_Client.html" title="mysql Client">mysql Client</a></li>
+<li><a href="./mysqladmin.html" title="mysqladmin">mysqladmin</a></li>
+<li><a href="./mysqldump.html" title="mysqldump">mysqldump</a></li>
+<li><a href="./mysqlimport.html" title="mysqlimport">mysqlimport</a></li>
+<li><strong>mysqlshow</strong></li>
+<li><a href="./Prompt.html" title="Prompt">Prompt</a></li>
+<li><a href="./Server_SQL_Modes.html" title="Server SQL Modes">Server SQL Modes</a></li>
+</ul>
+<li><a href="../Mysql_Daemon.html" title="Mysql Daemon">Mysql Daemon</a></li>
+<li><a href="../Upgrade_des_Servers.html" title="Upgrade des Servers">Upgrade des Servers</a></li>
+</ul>
+<li><a href="../../Normalisierung.html" title="Normalisierung">Normalisierung</a></li>
+<li><a href="../../Schemaanweisungen.html" title="Schemaanweisungen">Schemaanweisungen</a></li>
+<li><a href="../../UML.html" title="UML">UML</a></li>
+<li><a href="../../Views.html" title="Views">Views</a></li>
+</ul>
+<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../../X11.html" title="X11">X11</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Mittwoch 28 Dezember 2011<br>
+</p>
+
+<p>
+Siehe <a href="./mysql_Client/SHOW.html" title="mysql Client:SHOW">mysql Client:SHOW</a><br>
+</p>
+
+<p>
+<strong>mysqlshow [&lt;Optionen&gt;] [&lt;Datenbank&gt; [ &lt;Tablle&gt; [ &lt;Spalte&gt; ] ]]</strong><br>
+→ wird keine Datenbank angegeben wird eine Liste aler verfügbaren Datenbanken zurückgegeben<br>
+→ siehe refman <a href="http://dev.mysql.com/doc/refman/5.1/de/mysqlshow.html" title="http://dev.mysql.com/doc/refman/5.1/de/mysqlshow.html">http://dev.mysql.com/doc/refman/5.1/de/mysqlshow.html</a><br>
+</p>
+
+
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

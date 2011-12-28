@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T16:43:40+01:00
+
+====== Index ======
+Created Mittwoch 28 Dezember 2011
+
+* Indizies werden verwendet um häufig gestellte Abfragen dauerhaft im Speicher zu halten 
+* schnelererer Zugriff auf häufig verwendete Datensätze
+* werden mit dem CREATE Befehl erstellt
+[[Datenanweisungen:DDL]]
+
+**CREATE INDEX <Index Name> USING [<Index-Typ>]  ON <Tabelle>(<Spalte_von_Tabelle>)**
+→ einen Index erstellen

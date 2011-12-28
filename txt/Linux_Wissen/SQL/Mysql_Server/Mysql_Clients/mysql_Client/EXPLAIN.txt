@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T16:56:35+01:00
+
+====== EXPLAIN ======
+Created Mittwoch 28 Dezember 2011
+
+* ANSI/ISO Standard
+* zeigt an was Mysql ausgeührt hat um ein Resultat im Speicher zu bearbeiten
+* kann als Synonym für ''DESCIRBE ''verwendet werden
+[[DESCRIBE]]
+* kann verwenden werden um zu erfragen wie eine ''SELECT ''Anfrage bearbeitet wurde
+* Mithilfe von Explain kann überprüft werden, wo es sich lohnt Indexe anzulegen
+[[SQL:Index]]
+
+**EXPLAIN <Tabelle>; | EXPLAIN <SELECT-STATEMENT>**
+
+//Beispiel://
+''EXPLAIN SELECT * FROM sakila.actor;''

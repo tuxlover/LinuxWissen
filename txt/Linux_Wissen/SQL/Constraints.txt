@@ -8,11 +8,34 @@ Created Freitag 29 April 2011
 == Primärschlüssel Constraint ==
 * Kennzeichnen die Spalte, die in einer Tabelle die Eindeutigkeit gewährleisten
 
+**CREATE TABLE parent (**
+**id INT NOT NULL,**
+**PRIMARY KEY(id))**
+**ENGINE=INNODB;**
+
+
 == Fremdschlüssel Constraint ==
 * sorgen dafür, dass eine oder meherer Spalten nur Werte enthalten, die aus Primärschlüsselspalten stammen
+* In Mysql muss INNODB Storage Engine verwendet werden
+
+**CREATE TABLE child ( **
+**id INT,**
+**(INDEX par_ind (parent_id),)**
+**FOREIGN KEY (parent_id),**
+**REFERENCES parent(id)**
+**ON DELETE CASCADE) **
+**ENGINE=INNODB;**
 
 == Unique Constraint ==
 * Einschränken einer oder meherer Spalten auf eindeutige Werte
 
 == Check  Constraint ==
 * Einschränken zulässiger Werte für eine Spalte
+
+== DEFAULT Constriant ==
+* falls eine Spalte keinen Wert enthält kann ihr einer zugewiesen werden
+
+== NOT NULL Contraint ==
+* eine Spalte darf keinen NULL Wert besitzen
+[[Intigritätsregeln]]
+[[Datentypen]]

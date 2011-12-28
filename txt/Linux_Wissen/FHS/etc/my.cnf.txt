@@ -14,6 +14,10 @@ port = <N>
 #Verhalten von Case Sensetivity
 lower_case_variable = 1|2
 
+#Standardanmeldeinformationen für alle mysql Clientporgramme
+user = <User>
+passwort = <Paaswort>|<Datei>
+
 
 #Socketdatei über die die Clients mit dem Server kommunizieren 
 socket = /var/run/mysql/mysql.sock
@@ -31,6 +35,9 @@ port = <M>
 
 #Verzeichnis in dem die Datenbank als .frm Dateistappel abgelegt wird
 datadir = <DIR>
+
+#standard Storage Engine
+default-storage-engine = INNODB
 
 #Socketdatei über die der Server kommuniziert
 socket = /var/run/mysql/mysql.sock

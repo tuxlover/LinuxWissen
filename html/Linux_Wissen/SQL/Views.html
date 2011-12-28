@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Views</title>
-		<meta name='Generator' content='Zim 0.53'>
+		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -75,6 +75,7 @@
 <li><a href="./Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <li><a href="./Datentypen.html" title="Datentypen">Datentypen</a></li>
 <li><a href="./Design.html" title="Design">Design</a></li>
+<li><a href="./Index.html" title="Index">Index</a></li>
 <li><a href="./Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="./Joins.html" title="Joins">Joins</a></li>
 <li><a href="./Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -97,10 +98,46 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Mittwoch 04 Mai 2011<br>
-</p>
+				<li>ein gespeichertes SELECT Staetment</li>
+<li>virtuelle Tabellen</li>
+<li>werden duch ein <code>CREATE SELECT Statement erstellt</code></li>
+<li>Views können andere Views enthalten</li>
+<a href="./Datenanweisungen/DDL.html" title="Datenanweisungen:DDL">Datenanweisungen:DDL</a>
+<a href="./Datenanweisungen/DML.html" title="Datenanweisungen:DML">Datenanweisungen:DML</a>
 
+<h4>Sinn und Zweck;</h4>
+<li>Abspeichern komplexeren <code>SELECT</code> Querries</li>
+<li>Abschirmen der Base-Tables vom Nutzer</li>
+<li>vermeiden unnötiger Tabellen und damit einsparen von Speicherplatz auf der Platte</li>
+
+<h4>Erstellen eines Views</h4>
+<strong>CREATE VIEW &lt;View&gt; AS SELECT ...</strong>
+<div style='padding-left: 30pt'>
+<strong>FROM ...</strong><br>
+→ einen  View erstellen<br>
+</div>
+
+<u>ACHTUNG: Es liegt in der Natur von Views dass diese nicht Indiziert werden können.</u>
+
+<u>ACHTUNG: Es ist möglich eine Base Table die auf einen View verweist zu löschen</u>
+
+<h4>Ändern eines Views</h4>
+<strong>ALTER</strong>
+<strong>    VIEW view_name [(column_list)]</strong>
+<strong>    AS select_statement</strong>
+<strong>    [WITH [CASCADED | LOCAL] CHECK OPTION]</strong>
+
+
+<h4>Löschen eines Views</h4>
+<strong>DROP VIEW [IF EXISTS]</strong>
+<strong>    view_name [, view_name] ...</strong>
+<strong>    [RESTRICT | CASCADE]</strong>
+
+<h4>Design Steps nachvollziehen</h4><br>
+→ Views und Tables teilen sich den gleichen Namespace<br>
+<a href="./Mysql_Server/Mysql_Clients/mysql_Client/SHOW.html" title="Mysql Server:Mysql Clients:mysql Client:SHOW">Mysql Server:Mysql Clients:mysql Client:SHOW</a>
+<a href="./Mysql_Server/Mysql_Clients/mysql_Client/DESCRIBE.html" title="Mysql Server:Mysql Clients:mysql Client:DESCRIBE">Mysql Server:Mysql Clients:mysql Client:DESCRIBE</a>
+<a href="./Mysql_Server/INFORMATION_SCHEMA.html" title="Mysql Server:INFORMATION SCHEMA">Mysql Server:INFORMATION SCHEMA</a> → Tabelle VIEWS
 
 
 			<!-- End wiki content -->

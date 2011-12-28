@@ -122,6 +122,10 @@ __→ Schutz vor man in the middle__
 [[+SOURCE]]
 [[+USE]]
 [[+SHOW]]
+[[+EXPLAIN]]
+
+== mysql Funktionen ==
+[[+Funktionen]]
 
 == Der Mysql Prompt ==
 * In Mysql gibt es verschiedene Prompts die Indikator für verschiedene Stati sind

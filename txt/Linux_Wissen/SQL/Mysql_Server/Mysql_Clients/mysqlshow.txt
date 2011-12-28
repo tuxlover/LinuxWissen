@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T03:02:46+01:00
+
+====== mysqlshow ======
+Created Mittwoch 28 Dezember 2011
+
+Siehe [[mysql Client:SHOW]]
+
+**mysqlshow [<Optionen>] [<Datenbank> [ <Tablle> [ <Spalte> ] ]]**
+→ wird keine Datenbank angegeben wird eine Liste aler verfügbaren Datenbanken zurückgegeben
+→ siehe refman http://dev.mysql.com/doc/refman/5.1/de/mysqlshow.html
+
+
