@@ -8,9 +8,11 @@ Created Mittwoch 14 September 2011
 * gib das Datum im entsprechen festgelegten Format aus
 * Zeit wird entsprechend der eingestellten //Zeitzone //
 
-**date MMTThhmm [CCYY][.ss]**
-→ setzen der Zeit auf  Monat:TagedesMonats:Stunde:Minute:Jahrhuntert:Jahr:Sekunde
+__Achtung: Für die Einstellung der Zeit beachten dass erst der Monat und dann der Tag des Monats angegeben wird.__
+
+**date MMTThhmm [CCYY][.ss] **→ setzen der Zeit auf  Monat:TagedesMonats:Stunde:Minute:Jahrhuntert:Jahr:Sekunde
 **-u **→ in UTC
+**-s "MM TT, YYYY hh:mm:ss" → **einen beschreibenenden String verwenden für das Setzen des Datums
 
 **date +%<Format> →**Ausgabe des Datums im festgelegten Format
 	**<Format>:**
@@ -36,7 +38,8 @@ date -d 'last sunday' +%H:%M-%F
 date -d '2 hours' +%H:%M-%F
 '''
 
-''date --set --date="2010-18-11 18:03:13 +0100"'' →  explizites setzen des Datums und der Uhrzeit
-                                                                                                       → root rechte erforderlich
+''date -s "Oct 13, 1999 14:04:05" ''
+→  explizites setzen des Datums und der Uhrzeit durch einen Beschreibungsstring
+→ root rechte erforderlich
 
 **cal [<Monat>] <Jahr> **→ Ein Kalender für diesen Monat| dieses Jahr anzeigen

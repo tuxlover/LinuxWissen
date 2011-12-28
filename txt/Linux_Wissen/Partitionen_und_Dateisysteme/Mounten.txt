@@ -43,7 +43,7 @@ no//dev		//Dieses Dateisystem erlaubt __keinen__ Zugriff und das Schreiben auf z
 							      → falls es einen Eintrag */etc/fstab gibt ( 
 [[Linux Wissen:FHS:etc:fstab]] )
  
-__Hinweis:__ **mount -o loop,ro mycd.iso /home/iso **__hängt ein Iso ein.__
+__Hinweis:__ ''mount -o loop,ro mycd.iso /home/iso'' __hängt ein Iso ein.__
 
 **umount <Mountpoint>|<Device> **→ hängt das <Device> aus. 
 								 → Es reicht das <Device> oder den <Mountpoint> anzugeben

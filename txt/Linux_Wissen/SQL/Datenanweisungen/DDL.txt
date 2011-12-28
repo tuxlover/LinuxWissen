@@ -62,6 +62,7 @@ Created Samstag 12 November 2011
 
 == ALTER ==
 → die Tabelle verändern bzw. der Tabelle neue Spalten hinzufügen
+→ kann nicht zum Umbenennen einer Datenbank verwendet werden
 
 **ALTER DATABASE <Datenbank> [CHARACTER SET <ISOLang> COLLATE <ISOCollate> ];**
 → setzen eines Zeichensatzes und eines Sortiervorgang

@@ -7,18 +7,24 @@ Created Dienstag 26 April 2011
 
 === for-Schleife ===
 ++
-//for i in <Liste>//
-//        do//
-//                <Aktion> $i//
-//        done//
+'''
+for i in <Liste>
+        do
+                <Aktion> $i
+        done
+'''
+
 ++
 
 __Tipp: for-Schleife für eine Liste von Dateien im gleichen Verzeichnis__
 ++
+'''
 for f in *
         do
                 cp $f $f.sav
         done
+'''
+
 ++
 
 __Tipp: Durchlaufen aller Postionsparameter, wie $@__
@@ -29,27 +35,39 @@ __Tipp: Durchlaufen aller Postionsparameter, wie $@__
 
 === for-Schleife mit Angabe eines Wertebereiches (Range) ===
 ++
-//for (( i=Startwert ; $i [ < | > | =] Stopwert ; Increment | Decrement ))//
-	//do//
-		//<Aktion>//
-	//done//
-++
+'''
+for (( i=Startwert ; $i [ < | > | =] Stopwert ; Increment | Decrement ))
+'''
+	'''
+	do
+	'''
+		'''
+		<Aktion>
+		'''
+	'''
+	done
+	++
+	
+	++
+	for (( i=0; $i<10; i=i+1 ))        
+	        do                              
+	                <Aktion> $i                     
+	        done     
+	'''
 
-++
-//for (( i=0; $i<10; i=i+1 ))        //
-//        do                              //
-//                <Aktion> $i                     //
-//        done     //
 ++ 
 
 
 
 === while-Schleife ===
 ++
-//while <Test>//
-//        do//
-//                AKtion//
-//        done//
+'''
+while <Test>
+        do
+                Aktion
+        done
+'''
+
 ++
 * dabei kann <Test> ein gültiges Testkommando sein, der entweder 0 oder 1 liefert, eine Befehlsfolge die irgendwann den Wert 1 liefert oder eine die Werte **True** oder **False** dirket annhemen.
 
@@ -62,7 +80,7 @@ __Hinweis: Schleifen können Ein- und Ausgabeumleitungen in den Schleifenkopf ü
 
 ++
 '''
-wnhile read LINE
+while read LINE
         do
                 echo "--$LINE--"
         done < /etc/passwd

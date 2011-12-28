@@ -29,7 +29,7 @@ UNIQUE (spaltenname1, spaltenname2 [...])
 
 **CHECK**
 → definieren von Überpfüfungsregeln definieren um Fehlereingaben zu verhindern
-
+→ nicht in **mysql (**[[Mysql Server]])
 //Syntax://
 +++
 '''
@@ -60,9 +60,8 @@ spaltenname datentyp DEFAULT vorgabewert
 
 === Für den Primärschlüssel ===
 
-**AUTOINCREMENT**
+**AUTO_INCREMENT**
 → automatisches vergeben des Primärschlüssels als fortlaufenden Integer
-
 [[Linux Wissen:SQL:Constraints]]
 
 === Für den Fremdschlüssel ===

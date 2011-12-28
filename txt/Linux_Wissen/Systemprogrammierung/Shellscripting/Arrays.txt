@@ -20,14 +20,17 @@ ${**ARRAY[@]} **→ Zugriff auf ein Array, wie //"Wert1" "Wert2" "Wert3"//
 [[Variablen zuweisen]]
 
 //Beispiele://
-//Array=(eins zwei drei vier fünf)//
-//echo ${Array[@]:2} //
-//>> drei vier fünf//
-//echo ${Array[@]:1:2}//
-//>> zwei drei//
-//echo ${Array[@]#v*r}//
-//>> eins zwei drei fünf//
-//echo ${Array[@]//d*ei/XY}//
-//>> eins zwei XY vier fünf//
-//echo ${#Array[@]}//
-//>> 5//
+'''
+Array=(eins zwei drei vier fünf)
+echo ${Array[@]:2} 
+>> drei vier fünf
+echo ${Array[@]:1:2}
+>> zwei drei
+echo ${Array[@]#v*r}
+>> eins zwei drei fünf
+echo ${Array[@]d*ei/XY}//
+>> eins zwei XY vier fünf
+echo ${#Array[@]}
+>> 5
+'''
+

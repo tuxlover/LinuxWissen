@@ -14,7 +14,7 @@ Created Dienstag 08 November 2011
 [[Linux Wissen:FHS:etc:my.cnf]]
 
 == Zurücksetzen des SQL Modes: ==
-''SET sql_mode = '';''
+''SET sql_mode = "" ;''
 
 == Einige Modes ==
 ANSI_QUOTES → Doppelte Quoten werden als Identifier quoting benutzt
@@ -25,6 +25,7 @@ ERROR_FOR_DIVISION_BY_ZERO → bei Division durch 0 wird eine Warnung ausgegeben
 
 STRICT_TRANS_TABLES → Werte die missgestaltig oder ungültig sind werden als Fehler erkannt
                                      → nur für transactional Tabellen
+					(missing Link mysql:tranasaktionen)
 
 STRICT_ALL_TABLES → Werte die missgestaltig oder ungültig sind werden als Fehler erkannt
                                            → für alle Tabellen
@@ -34,6 +35,9 @@ TRADITIONAL → kombinierter Modus des STRICT_MODE und diverse andere restriktio
 ANSI → kombinierter Modus der das Verhalten für den ANSI Standard aktiviert
 
 == Abfragen des Modus ==
-**SELECT @@sql_mode;**
-**SELECT @@SESSION.sql_mode**
-**SELECT @@GLOBAL.sql_mode**
+'''
+SELECT @@sql_mode;
+SELECT @@SESSION.sql_mode
+SELECT @@GLOBAL.sql_mode
+'''
+

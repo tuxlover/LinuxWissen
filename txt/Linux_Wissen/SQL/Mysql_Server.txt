@@ -5,6 +5,14 @@ Creation-Date: 2011-06-29T11:18:41+02:00
 ====== Mysql Server ======
 Created Mittwoch 29 Juni 2011
 
+* SQL 92 Konform
+* Eine Transaktion fasst mehrere SQL-Anweisungen zu einer Datenbankoperation zusammen
+* MyISAM mit Volltextsuche
+* Referenzielle Integrität durch Fremdschlüssel für InnoDB
+* Vereinigung von Tabelle durch den **UNION**
+* Unterabfragen durch verschachtelte **SELECT** Operationen
+* erlaubt **VIEW**s
+
 === Starten und Stoppen des Daemons ===
 **service mysql start**
 → Startet den Daemon
@@ -26,7 +34,7 @@ Created Mittwoch 29 Juni 2011
 	* Benutzung in einem chroot
 	* Benutzung unterschiedlicher Charactersets
 
-***/usr/share/my-{huge,large,medium,small}.cnf **
+***/usr/share/mysql/my-{huge,large,medium,small}.cnf **
 → Beispielkonfigurationsdateien die entsprechend angepasst und kopiert werden können
 → die Angabe der Größe bezieht sich auf den zu verwendeneden RAM
 	* huge (1-2G RAM)
@@ -41,6 +49,30 @@ Created Mittwoch 29 Juni 2011
 ***/var/log/mysql **
 → enthält Logdateien für den Server
 
+=== PID File ===
+***/var/run/mysql/mysqld.pid**
+
+=== mysql Datafiles ===
+*/var/lib/mysql/<Datenbank>
+	MYISAM Storage Engine
+		→ .MYD → Data File
+		→ .FRM → Table File
+		→ .MYI → Index File
+		→ .TRG → Trigger File       
+	
+	INNODB Storage Engine
+	→ .IBDATA → Data File
+	→ .FRM → Table File
+(missing link  Storage Engine)
+
 === Anweisungen ===
 * Diese Anweisungen funktionieren nicht generell mit SQL Implementierungen, sondern nur mit Mysql
 [[Linux Wissen:SQL:Mysql Server:Anweisungen]]
+
+=== Mysql Clients ===
+* Programme die über den Server verbunden auf den Datenbanken operieren können
+**mysql **Kommandozeilen Tool
+**mysqladmin **Administartionstool zur Administration des Servers
+**mysqlshow **zum betrachten von Datenbanken
+**mysqldump **für Backups
+[[+Mysql Clients]]

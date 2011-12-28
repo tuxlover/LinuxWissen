@@ -11,6 +11,9 @@ Created Mittwoch 29 Juni 2011
 [client]
 #Port auf dem die Clients lauschen
 port = <N>
+#Verhalten von Case Sensetivity
+lower_case_variable = 1|2
+
 
 #Socketdatei über die die Clients mit dem Server kommunizieren 
 socket = /var/run/mysql/mysql.sock
@@ -38,6 +41,7 @@ log-error = /var/log/mysql/error.log
 #Zeitzone die Mysql für die Verwaltung der Zeit in der Datenbank benötigt
 #Wird diese Variable nicht gesetzt wird der Wert des Betriebssystem verwendet
 system_time_zone = <TZ>|SYSTEM
-'''
 ++
+'''
+
 

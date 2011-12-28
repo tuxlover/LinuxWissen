@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-27T22:28:36+01:00
+
+====== SOURCE ======
+Created Dienstag 27 Dezember 2011
+
+• Befehl zum einlesen von SQL Schema Dateien innerhalb des **mysql Clients**
+* Ausserhalb des Clients
+''mysql -u <user> -p <DBNAME> < input.sql''
+
+**SOURCE <Pfad>/<Schema>.sql**
+
+== Workflow Schema einlesen: ==
+**(1) **Anmelden an dem Datenbankserver
+''mysql -u root -p''
+
+**(2) a) **Anmelden an eine bereitsbesehende Datenbank
+	''USE DB1''
+       **b) **oder erstellen einer neuen Datenbank
+	''CREATE DB2''
+	''USE DB2''
+
+**3) **einlesen einer Schemadatei aus einem Backup oder eines DB-Developers
+''SOURCE /usr/src/dbs/mydb.sql''

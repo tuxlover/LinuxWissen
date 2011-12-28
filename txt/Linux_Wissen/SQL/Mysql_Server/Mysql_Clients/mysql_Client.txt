@@ -8,10 +8,11 @@ Created Mittwoch 09 November 2011
 == Hilfe erhalten ==
 **help contents **
 → im Mysql Client zeigt die MySQL Referenz
-**help <Keyword>**
+**help <Keywords>**
 → Hilfe zu einem Bestimmten 
-**mysqlamdin -help**
-→ Hilfe für das mysqladmin Tool erhalten
+
+//Beispiel://
+''help GRANT''
 
 == Nicht interaktiver Modus ==
 **mysql < <Schema.sql>**
@@ -27,41 +28,56 @@ Created Mittwoch 09 November 2011
 **mysql [<Database>]**
 **-u |--user <Nutzer> **
 → mit diesem <Nutzer> an der Datenbank anmelden
--**p|--password [<Password>] **
-→ Ein Password bei der Anmeldung verwenden
-→ Wird <Passwort> nicht übergeben, wird danach gefragt
-→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort
+
+-**p **
+→ frage nach einem Passwort
+→ empfohlene Authentisierungsmethode !!!
+
+**--password  <Password>**
+→ Passwort wird im Klartext übergeben
+→ nicht empfohlen 
+
 **-D|--database <Name>**
 → beim Verbinden mit dem Server die Datenbank <Name> verwenden
+
 **-A **
 → Tab Complettion deaktivieren
+
 **-E |--vertical**
 → vertikale Ausgabe der einzelnen Spalten
 → sinnvoll wenn zu erwarten ist, dass die Ausgabe nicht in das Terminal passt
+
 **-e **
 → Statement direkt von der Kommandozeile absetzen
 → meherer Statements werden durch ein ; getrennt
+
 **--compress**
 → komprimiert Daten die zwischen Client und Server ausgetauscht werden
+
 **--default-character-set=Charstet**
 → Angeben des vom Client verwendeten Zeichensatzes
 → verwenden von **SHOW CHARSET; **um sich alle mögliche Zeichensätze anzeigen zu lassen
 → verwenden von** SET CHARSET <CHARSET> **um den Zeichensatz nachträglich festzulegen
+
 **--protocol [=TCP|=Socket] **
 → Festlegen des benutzten Protocols
 → Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird
+
 **--port=N**
 →  festelgen des Ports über den eine Verbindung erfolgt
+
 **-S|--socket =<PATH> **
 → festlegen des Pfades zum Socket
 → */tmp/mysqld.sock wird als Standardsocket verwendet
 → nur mit //--protocol=Socket//
+
 **-h|--host [IP|FQDN|localhost]**
 → festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll
 → Standard ist //localhost//
+→ falls ein FQDN verwendet wird, muss (missing link FQDN) DNS konfiguriert sein
 
 //Beispiel://
-öffnen der Datenbank world als Datenbanknutzer root auf dem Host Magrathea mit Passwortabfrage
+öffnen der Datenbank __world__ als Datenbanknutzer __root__ auf dem Host __Magrathea__ mit Passwortabfrage
 ''mysql -u root -p -h Magrathea world''
 
 __HInweise:__
@@ -92,6 +108,7 @@ __→ Schutz vor man in the middle__
 **(missing link ssl)**
 
 == mysql Client Befehle ==
+**; **→ ein Statement beenden
 **\h** → auflisten der Clientbefehle
 **\c **→ Statement verwerfen und neuen mysql-Prompt setzen
 **\q **→ **mysql Client **verlassen
@@ -99,6 +116,12 @@ __→ Schutz vor man in the middle__
 **\G → **Befehlsterminator mit vertiakler Ausgabe
 **\T <LOGFILE>**→ Logging einschalten und nach <LOGFILE> schreiben
 **\! <Shell-Befehl> **→ Ausführen eines Shell Befehls im mysql Client
+
+== mysql Client Statements ==
+[[+DESCRIBE]]
+[[+SOURCE]]
+[[+USE]]
+[[+SHOW]]
 
 == Der Mysql Prompt ==
 * In Mysql gibt es verschiedene Prompts die Indikator für verschiedene Stati sind

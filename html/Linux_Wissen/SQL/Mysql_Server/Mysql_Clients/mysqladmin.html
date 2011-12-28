@@ -74,6 +74,7 @@
 <li><a href="../../Constraints.html" title="Constraints">Constraints</a></li>
 <li><a href="../../Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <li><a href="../../Datentypen.html" title="Datentypen">Datentypen</a></li>
+<li><a href="../../Design.html" title="Design">Design</a></li>
 <li><a href="../../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="../../Joins.html" title="Joins">Joins</a></li>
 <li><a href="../../Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -81,7 +82,6 @@
 <li><a href="../Anweisungen.html" title="Anweisungen">Anweisungen</a></li>
 <li><a href="../Mysql_Clients.html" title="Mysql Clients">Mysql Clients</a></li>
 <ul>
-<li><a href="./DESCRIBE.html" title="DESCRIBE">DESCRIBE</a></li>
 <li><a href="./mysql_Client.html" title="mysql Client">mysql Client</a></li>
 <li><strong>mysqladmin</strong></li>
 <li><a href="./Prompt.html" title="Prompt">Prompt</a></li>
@@ -114,7 +114,21 @@ Created Mittwoch 09 November 2011<br>
 </p>
 
 <p>
-<strong>mysqladmin [Option] Kommando [Argument] [Kommando [Argument]] ...</strong><br>
+<ul>
+<li>Tool zum  verwalten des <strong>mysqld</strong> Mysql Daemon</li>
+<li>starten und stoppen / Nutzer anlegen</li>
+<li>monitoring von mysql Verbindungen</li>
+<li>kein DML</li>
+</ul>
+</p>
+
+<p>
+<strong>mysqladmin [&lt;Option&gt;] &lt;Befehl&gt; [&lt;Argument&gt;] [&lt;Befehl&gt; [&lt;Argument&gt;]] ...</strong><br>
+</p>
+
+<p>
+<strong>mysqlamdin -help|-?</strong><br>
+→ Hilfe für das mysqladmin Tool erhalten<br>
 </p>
 
 <p>
@@ -123,131 +137,237 @@ Passwort ändern:<br>
 <code>mysqladmin -p &lt;Password&gt; &lt;Password&gt;</code><br>
 </p>
 
-<h5>Optionen</h5>
 <p>
+<strong>&lt;Optionen&gt;</strong><br>
+<div style='padding-left: 30pt'>
 <strong>-u |--user &lt;Nutzer&gt; </strong><br>
 → mit diesem &lt;Nutzer&gt; an der Datenbank anmelden<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 -<strong>p|--password [&lt;Password&gt;] </strong><br>
 → Ein Password bei der Anmeldung verwenden<br>
 → Wird &lt;Passwort&gt; nicht übergeben, wird danach gefragt<br>
 → kein Leerzeichen zwischen -p und dem zu übergebenen Passwort<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
 <strong>--protocol [=TCP|=Socket] </strong><br>
 → Festlegen des benutzten Protocols<br>
 → Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
 <strong>--port=N</strong><br>
 →  festelgen des Ports über den eine Verbindung erfolgt<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <strong>-S|--socket =&lt;PATH&gt; </strong><br>
 → festlegen des Pfades zum Socket<br>
 → */tmp/mysqld.sock wird als Standardsocket verwendet<br>
 → nur mit <em>--protocol=Socket</em><br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <strong>-h|--host [IP|FQDN|localhost]</strong><br>
 → festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll<br>
 → Standard ist <em>localhost</em><br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <strong>--count=N</strong><br>
 → den Befehl N Mal wiederholen<br>
 → kann mit <em>--sleep</em> verwendet werden<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
 <strong>--sleep=N</strong><br>
 →  den Befehl nach N Sekunden wiederholen<br>
 → kann mit <em>--count</em> verwendet werden<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
 <strong>--debug-info</strong><br>
 → den Befehl mit zusätzlicher Debug-Informationen aufrufen<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
 <strong>--bind-address=&lt;IP&gt;</strong><br>
 → festlegen des zu verwendeten NIC IPs, falls der Rechner mehr als eine NIC verwendet<br>
+</div>
 </p>
 
-<h5>Befehle</h5>
 <p>
+&lt;<strong>Befehle&gt;</strong><br>
+<div style='padding-left: 30pt'>
 <strong>create &lt;Datenbank&gt; </strong><br>
-→ eine neue leere Tabelle anlegen<br>
+→ eine neue leere Datenbank anlegen<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>debug </strong><br>
 → Sendet detailierte Informationen an das Error Log<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>drop &lt;Datenbank&gt;</strong><br>
 → die &lt;Datenbank&gt; vom Server löschen<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>extended-status</strong><br>
 → einen Statusbericht über den laufenden Server und seiner Verbindungen anzeigen<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>flush-hosts</strong><br>
 → bereinigen der Hostinformationen<br>
 → leeren des DNS Caches un der Hostnames<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>flush-logs</strong><br>
 → bereinigen der Logfiles<br>
 → bisher verwendete Logfiles werden geschlossen, deren Inhalt bereinigt und neue logfiles angelegt<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>flush-privileges</strong><br>
 → erneuern der Nutzerprivilegien, falls dies geändert wurden<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>flush-status</strong><br>
 →  erneuern der verwendeten Serveroptionen aus den KOnfigurationsdateien<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>flush-threads</strong><br>
 → neuladen des Threadcaches<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>kill&lt;ThreadID&gt;</strong><br>
 → den mysqlthread mit der entsprechenden ID beenden<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>password &lt;Passwort&gt;</strong><br>
 → setzen oder ändern eines Passwortes dass für die Verbindung zum Server benötigt wird<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>ping</strong><br>
 → erfragen ob der Server läuft<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>processlist</strong><br>
 → erfragen der vom mysqld verwenddeten Prozesse<br>
 <a href="../../../Prozessverwaltung.html" title="Linux Wissen:Prozessverwaltung">Linux Wissen:Prozessverwaltung</a><br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>reload</strong><br>
 → neu einlesen der Konfigurationsdatei<br>
 <a href="../../../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>shutdown</strong><br>
 → stoppen des Mysqld<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>status</strong><br>
 → Status des Servers abfragen<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>start-slave|stop-slave</strong><br>
 → Starten|Stoppen einer Replikation<br>
+</div>
 </p>
 
 <p>
+<div style='padding-left: 30pt'>
 <strong>variables</strong><br>
 → Anzeigen er verwendeten und nicht verwendeten Systemvariablen der mysqld-Konfiguration<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<strong>version</strong><br>
+→ Anzeigen von Versionsinformationen<br>
+</div>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+erstellen einer Datenbank:<br>
+<code>mysqladmin -u root -p create db2</code><br>
+</p>
+
+<p>
+Server anpingen:<br>
+<code>mysqladmin -u root -p ping</code><br>
+</p>
+
+<p>
+Versionsinformationen erfragen:<br>
+<code>mysqladmin -u root -p version</code><br>
 </p>
 
 

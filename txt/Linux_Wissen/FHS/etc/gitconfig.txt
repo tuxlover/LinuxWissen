@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2011-10-29T16:18:39+02:00
 
-====== gitconfig ======
+====== vi /gitconfig ======
 Created Samstag 29 Oktober 2011
 
 * Neben der globalen Konfigurationsdatei sollten Nutzerkonfigurationen stets unter *~/.gitconfig vorgenommen werden
@@ -17,8 +17,6 @@ Created Samstag 29 Oktober 2011
 	
 	;Einstellungen des Git Kern Moduls
 	[core]
-	'''
-	'''
 	;ignoriere x bit
 	filemode = false
 	;ignoriere Groß und Kleinschreibung
@@ -62,7 +60,6 @@ Created Samstag 29 Oktober 2011
 	[status]
 	    color = auto
 	'''
-
 +++
 //[core] //
 → festlegen des generellen Verhaltens von git

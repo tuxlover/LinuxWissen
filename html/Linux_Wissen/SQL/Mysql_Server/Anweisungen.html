@@ -74,6 +74,7 @@
 <li><a href="../Constraints.html" title="Constraints">Constraints</a></li>
 <li><a href="../Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <li><a href="../Datentypen.html" title="Datentypen">Datentypen</a></li>
+<li><a href="../Design.html" title="Design">Design</a></li>
 <li><a href="../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="../Joins.html" title="Joins">Joins</a></li>
 <li><a href="../Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -114,12 +115,12 @@ Created Mittwoch 06 Juli 2011<br>
 
 <h4>.Dot-Notation</h4>
 <p>
-→ Tabellen ausserhalb einer Tabelle können mit &lt;Datenbank&gt;.&lt;Tabelle&gt; angesprochen werden<br>
+→ Tabellen ausserhalb einer Tabelle können mit <code>&lt;Datenbank&gt;.&lt;Tabelle&gt;.&lt;Spalte&gt;</code> angesprochen werden<br>
 </p>
 
 <p>
 <em>Beispiel:</em><br>
-<em>SELECT * FROM sakila.film_list</em><br>
+<code>SELECT * FROM sakila.film_list</code><br>
 </p>
 
 <h4>Server Anfragen</h4>
@@ -131,8 +132,27 @@ Created Mittwoch 06 Juli 2011<br>
 <p>
 <strong>SHOW WARNINGS</strong><br>
 → Alle Warnungen seit dem Start ausgeben<br>
+→ Alle Fehler seit dem Start ausgeben<br>
+<a href="./Mysql_Clients/mysql_Client/SHOW.html" title="Mysql Clients:mysql Client:SHOW">Mysql Clients:mysql Client:SHOW</a><br>
 </p>
 
+<h4>Case Sensitvity</h4>
+<p>
+<ul>
+<li>Spaltennamen sind nicht Case Sensetive </li>
+<li>wirkt sich auch auf Alliasse aus</li>
+</ul>
+in*/etc/my.cnf eintragen<br>
+<a href="../../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
+<code>lower_case_table=1|2</code><br>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+1 → Namen von Tabellen sind nicht Case Sesetiv<br>
+2 → Tabllen werden gespeichert wie übergeben mit Unterscheidung in Groß-und Kleinschreibung<br>
+</div>
+</p>
 
 
 			<!-- End wiki content -->

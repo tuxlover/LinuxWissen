@@ -1,0 +1,77 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T01:38:17+01:00
+
+====== SHOW ======
+Created Mittwoch 28 Dezember 2011
+
+**mysqlshow **
+→ Client um Tabllen und Daten anzeigen zu lassen
+→ keine Abfrage (Query) möglich
+
+==== Anzeigen der Namen  und Informationen von  ====
+* Datenbanken anzeigen
+	''SHOW DATABASES;''
+
+• Tabellennamen in einer verbundenen Datenbank anzeigen
+	''SHOW TABLES;''
+
+* geöffnete Tabellen und gelockte Tabellen
+	''SHOW OPEN TABLES;''
+
+• Spaltendefinitionen wie ''DESCRIBE''
+	* [[DESCRIBE]]
+	''SHOW COLUMNS FROM <Tablellenname>;''
+
+• Schlüssel einer definierten Tabelle und ihre Werte anzeigen
+	''SHOW KEYS FROM <Datenbank>.<Tabelle>;''
+
+
+==== Design Steps zurückverfolgen ====
+* Wie wurde eine Datenbank erstellt?
+* Dabei werden auch alle verwendete Parameter angezeigt
+	''SHOW CREATE DATABASE <Datenbank>;''
+
+* Wie wurde eine Tabelle erstellt?
+* Welche Parameter wurden bei der Erstelllung einer Tabelle verwendet
+	* ''SHOW CREATE TABLE <Tabelle>;''
+
+* Wie wurde ein View erstellt?
+	* ''SHOW CREATE VIEW <View>;''
+
+==== Anzeigen verfügbarer Zeichensätze  ====
+* Auflisten der auf dem Server verfügbaren Zeichensätze
+* kann mit dem ''LIKE ''Operator eingeschränkt werden
+''SHOW CHARACTER SET LIKE '<Muster>';''
+
+* Auflisten von Sortierungsreihenfolgen
+''SHOW COLLATION LIKE '<Muster>';''
+
+==== Anzeigen von Serverinformationen und Status ====
+* Auflisten der Binärlogs inklusive Größe auf dem Server
+	''SHOW MASTER LOGS;''
+	''SHOW BINARY LOGS;''
+
+• Anzeigen der Ereignisse eines Binärlogs
+	''SHOW BINLOG EVENTS IN '<log_name>' LIMIT N[,M] \G|;''
+	//Beispiel://
+	''SHOW BINLOG EVENTS IN 'mysql-bin.000024' LIMIT 10 \G''
+
+* Anzeigen der verfügbaren Storage Engine (missing link Storage Engine)
+	''SHOW ENGINES;''
+
+* Anzeigen der Berechtigungen eines Nutzers auf einer Domain
+	''SHOW GRANTS FOR '<User>'@'<HOST>'''
+	__Beachten Sie dass User und Host in Single Ticks geschrieben sind.__
+	__Es müssen User und Hostname angegben werden__
+
+* Anzeigen der verfügbaren Systemberechtigungen
+	''SHOW PRIVILEGES;''
+
+
+==== Anzeigen von Fehler und Warnungen ====
+''SHOW ERRORS;''
+→ zeigt schwerwiegende Fehler und Warnungen an
+
+''SHOW WARNINGS;''
+→ zeigt nur Warnungen an

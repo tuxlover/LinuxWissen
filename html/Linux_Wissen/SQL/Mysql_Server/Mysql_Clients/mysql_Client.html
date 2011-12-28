@@ -74,6 +74,7 @@
 <li><a href="../../Constraints.html" title="Constraints">Constraints</a></li>
 <li><a href="../../Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <li><a href="../../Datentypen.html" title="Datentypen">Datentypen</a></li>
+<li><a href="../../Design.html" title="Design">Design</a></li>
 <li><a href="../../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="../../Joins.html" title="Joins">Joins</a></li>
 <li><a href="../../Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -81,8 +82,13 @@
 <li><a href="../Anweisungen.html" title="Anweisungen">Anweisungen</a></li>
 <li><a href="../Mysql_Clients.html" title="Mysql Clients">Mysql Clients</a></li>
 <ul>
-<li><a href="./DESCRIBE.html" title="DESCRIBE">DESCRIBE</a></li>
 <li><strong>mysql Client</strong></li>
+<ul>
+<li><a href="./mysql_Client/DESCRIBE.html" title="DESCRIBE">DESCRIBE</a></li>
+<li><a href="./mysql_Client/SHOW.html" title="SHOW">SHOW</a></li>
+<li><a href="./mysql_Client/SOURCE.html" title="SOURCE">SOURCE</a></li>
+<li><a href="./mysql_Client/USE.html" title="USE">USE</a></li>
+</ul>
 <li><a href="./mysqladmin.html" title="mysqladmin">mysqladmin</a></li>
 <li><a href="./Prompt.html" title="Prompt">Prompt</a></li>
 <li><a href="./Server_SQL_Modes.html" title="Server SQL Modes">Server SQL Modes</a></li>
@@ -117,10 +123,13 @@ Created Mittwoch 09 November 2011<br>
 <p>
 <strong>help contents </strong><br>
 → im Mysql Client zeigt die MySQL Referenz<br>
-<strong>help &lt;Keyword&gt;</strong><br>
+<strong>help &lt;Keywords&gt;</strong><br>
 → Hilfe zu einem Bestimmten <br>
-<strong>mysqlamdin -help</strong><br>
-→ Hilfe für das mysqladmin Tool erhalten<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<code>help GRANT</code><br>
 </p>
 
 <h5>Nicht interaktiver Modus</h5>
@@ -142,43 +151,82 @@ Created Mittwoch 09 November 2011<br>
 <strong>mysql [&lt;Database&gt;]</strong><br>
 <strong>-u |--user &lt;Nutzer&gt; </strong><br>
 → mit diesem &lt;Nutzer&gt; an der Datenbank anmelden<br>
--<strong>p|--password [&lt;Password&gt;] </strong><br>
-→ Ein Password bei der Anmeldung verwenden<br>
-→ Wird &lt;Passwort&gt; nicht übergeben, wird danach gefragt<br>
-→ kein Leerzeichen zwischen -p und dem zu übergebenen Passwort<br>
+</p>
+
+<p>
+-<strong>p </strong><br>
+→ frage nach einem Passwort<br>
+→ empfohlene Authentisierungsmethode !!!<br>
+</p>
+
+<p>
+<strong>--password  &lt;Password&gt;</strong><br>
+→ Passwort wird im Klartext übergeben<br>
+→ nicht empfohlen <br>
+</p>
+
+<p>
 <strong>-D|--database &lt;Name&gt;</strong><br>
 → beim Verbinden mit dem Server die Datenbank &lt;Name&gt; verwenden<br>
+</p>
+
+<p>
 <strong>-A </strong><br>
 → Tab Complettion deaktivieren<br>
+</p>
+
+<p>
 <strong>-E |--vertical</strong><br>
 → vertikale Ausgabe der einzelnen Spalten<br>
 → sinnvoll wenn zu erwarten ist, dass die Ausgabe nicht in das Terminal passt<br>
+</p>
+
+<p>
 <strong>-e </strong><br>
 → Statement direkt von der Kommandozeile absetzen<br>
 → meherer Statements werden durch ein ; getrennt<br>
+</p>
+
+<p>
 <strong>--compress</strong><br>
 → komprimiert Daten die zwischen Client und Server ausgetauscht werden<br>
+</p>
+
+<p>
 <strong>--default-character-set=Charstet</strong><br>
 → Angeben des vom Client verwendeten Zeichensatzes<br>
 → verwenden von <strong>SHOW CHARSET; </strong>um sich alle mögliche Zeichensätze anzeigen zu lassen<br>
 → verwenden von<strong> SET CHARSET &lt;CHARSET&gt; </strong>um den Zeichensatz nachträglich festzulegen<br>
+</p>
+
+<p>
 <strong>--protocol [=TCP|=Socket] </strong><br>
 → Festlegen des benutzten Protocols<br>
 → Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird<br>
+</p>
+
+<p>
 <strong>--port=N</strong><br>
 →  festelgen des Ports über den eine Verbindung erfolgt<br>
+</p>
+
+<p>
 <strong>-S|--socket =&lt;PATH&gt; </strong><br>
 → festlegen des Pfades zum Socket<br>
 → */tmp/mysqld.sock wird als Standardsocket verwendet<br>
 → nur mit <em>--protocol=Socket</em><br>
+</p>
+
+<p>
 <strong>-h|--host [IP|FQDN|localhost]</strong><br>
 → festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll<br>
 → Standard ist <em>localhost</em><br>
+→ falls ein FQDN verwendet wird, muss (missing link FQDN) DNS konfiguriert sein<br>
 </p>
 
 <p>
 <em>Beispiel:</em><br>
-öffnen der Datenbank world als Datenbanknutzer root auf dem Host Magrathea mit Passwortabfrage<br>
+öffnen der Datenbank <u>world</u> als Datenbanknutzer <u>root</u> auf dem Host <u>Magrathea</u> mit Passwortabfrage<br>
 <code>mysql -u root -p -h Magrathea world</code><br>
 </p>
 
@@ -231,6 +279,7 @@ Created Mittwoch 09 November 2011<br>
 
 <h5>mysql Client Befehle</h5>
 <p>
+<strong>; </strong>→ ein Statement beenden<br>
 <strong>\h</strong> → auflisten der Clientbefehle<br>
 <strong>\c </strong>→ Statement verwerfen und neuen mysql-Prompt setzen<br>
 <strong>\q </strong>→ <strong>mysql Client </strong>verlassen<br>
@@ -238,6 +287,14 @@ Created Mittwoch 09 November 2011<br>
 <strong>\G → </strong>Befehlsterminator mit vertiakler Ausgabe<br>
 <strong>\T &lt;LOGFILE&gt;</strong>→ Logging einschalten und nach &lt;LOGFILE&gt; schreiben<br>
 <strong>\! &lt;Shell-Befehl&gt; </strong>→ Ausführen eines Shell Befehls im mysql Client<br>
+</p>
+
+<h5>mysql Client Statements</h5>
+<p>
+<a href="./mysql_Client/DESCRIBE.html" title="+DESCRIBE">+DESCRIBE</a><br>
+<a href="./mysql_Client/SOURCE.html" title="+SOURCE">+SOURCE</a><br>
+<a href="./mysql_Client/USE.html" title="+USE">+USE</a><br>
+<a href="./mysql_Client/SHOW.html" title="+SHOW">+SHOW</a><br>
 </p>
 
 <h5>Der Mysql Prompt</h5>

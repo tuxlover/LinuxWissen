@@ -8,10 +8,10 @@ Created Mittwoch 06 Juli 2011
 * Für Mysql typische Anweisungen und Konventionen
 
 === .Dot-Notation ===
-→ Tabellen ausserhalb einer Tabelle können mit <Datenbank>.<Tabelle> angesprochen werden
+→ Tabellen ausserhalb einer Tabelle können mit ''<Datenbank>.<Tabelle>.<Spalte>'' angesprochen werden
 
 //Beispiel://
-//SELECT * FROM sakila.film_list//
+''SELECT * FROM sakila.film_list''
 
 === Server Anfragen ===
 **SHOW ERRORS**
@@ -19,4 +19,15 @@ Created Mittwoch 06 Juli 2011
 
 **SHOW WARNINGS**
 → Alle Warnungen seit dem Start ausgeben
+→ Alle Fehler seit dem Start ausgeben
+[[Mysql Clients:mysql Client:SHOW]]
 
+=== Case Sensitvity ===
+* Spaltennamen sind nicht Case Sensetive 
+* wirkt sich auch auf Alliasse aus
+in*/etc/my.cnf eintragen
+[[Linux Wissen:FHS:etc:my.cnf]]
+''lower_case_table=1|2''
+
+	1 → Namen von Tabellen sind nicht Case Sesetiv
+	2 → Tabllen werden gespeichert wie übergeben mit Unterscheidung in Groß-und Kleinschreibung

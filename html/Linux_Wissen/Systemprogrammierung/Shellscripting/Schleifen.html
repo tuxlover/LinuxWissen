@@ -115,20 +115,30 @@ Created Dienstag 26 April 2011<br>
 <h4>for-Schleife</h4>
 <p>
 ++<br>
-<em>for i in &lt;Liste&gt;</em><br>
-<em>        do</em><br>
-<em>                &lt;Aktion&gt; $i</em><br>
-<em>        done</em><br>
+</p>
+<pre>
+for i in &lt;Liste&gt;
+        do
+                &lt;Aktion&gt; $i
+        done
+</pre>
+
+<p>
 ++<br>
 </p>
 
 <p>
 <u>Tipp: for-Schleife für eine Liste von Dateien im gleichen Verzeichnis</u><br>
 ++<br>
-for f in *<br>
-        do<br>
-                cp $f $f.sav<br>
-        done<br>
+</p>
+<pre>
+for f in *
+        do
+                cp $f $f.sav
+        done
+</pre>
+
+<p>
 ++<br>
 </p>
 
@@ -143,37 +153,44 @@ for f in *<br>
 <h4>for-Schleife mit Angabe eines Wertebereiches (Range)</h4>
 <p>
 ++<br>
-<em>for (( i=Startwert ; $i [ &lt; | &gt; | =] Stopwert ; Increment | Decrement ))</em><br>
-<div style='padding-left: 30pt'>
-<em>do</em><br>
-</div>
-<div style='padding-left: 60pt'>
-<em>&lt;Aktion&gt;</em><br>
-</div>
-<div style='padding-left: 30pt'>
-<em>done</em><br>
-</div>
-++<br>
 </p>
+<pre>
+for (( i=Startwert ; $i [ &lt; | &gt; | =] Stopwert ; Increment | Decrement ))
+</pre>
+<pre style='padding-left: 30pt'>
+do
+</pre>
+<pre style='padding-left: 60pt'>
+&lt;Aktion&gt;
+</pre>
+<pre style='padding-left: 30pt'>
+done
+++
 
+++
+for (( i=0; $i&lt;10; i=i+1 ))        
+        do                              
+                &lt;Aktion&gt; $i                     
+        done     
+</pre>
 <p>
-++<br>
-<em>for (( i=0; $i&lt;10; i=i+1 ))        </em><br>
-<em>        do                              </em><br>
-<em>                &lt;Aktion&gt; $i                     </em><br>
-<em>        done     </em><br>
 ++ <br>
+<br>
+<br>
+<br>
 </p>
-
-
-
 <h4>while-Schleife</h4>
 <p>
 ++<br>
-<em>while &lt;Test&gt;</em><br>
-<em>        do</em><br>
-<em>                AKtion</em><br>
-<em>        done</em><br>
+</p>
+<pre>
+while &lt;Test&gt;
+        do
+                Aktion
+        done
+</pre>
+
+<p>
 ++<br>
 <ul>
 <li>dabei kann &lt;Test&gt; ein gültiges Testkommando sein, der entweder 0 oder 1 liefert, eine Befehlsfolge die irgendwann den Wert 1 liefert oder eine die Werte <strong>True</strong> oder <strong>False</strong> dirket annhemen.</li>
@@ -193,7 +210,7 @@ for f in *<br>
 ++<br>
 </p>
 <pre>
-wnhile read LINE
+while read LINE
         do
                 echo "--$LINE--"
         done &lt; /etc/passwd

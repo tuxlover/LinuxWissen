@@ -5,6 +5,10 @@ Creation-Date: 2011-04-29T00:28:24+02:00
 ====== Datentypen ======
 Created Freitag 29 April 2011
 
+* effiziente Nutzung von verfügbaren Speicherplatz
+* Gewährleistung besserer Datenintigrität
+* Sortierreihenfolge
+
 === Zeichenbasiert ===
 * bestehen aus Strings fester oder variabler Größe
 
@@ -46,14 +50,17 @@ Created Freitag 29 April 2011
 **SmallInt**
 → zwei Byte bei der Adressierung
 
-**MediumInt | BIGINT**
+**MediumInt **
+→ 3 Byte bei der Adressierung
 
+** BIGINT**
+→ 8 Byte bei der Adressierung
 
 **Double(s,p) | Float(s,p)**
 → Fließkommazahlen mit Präzision nahe **p ** der Länge **s**
 //Beispiel://
-//Double(6,2)// gibt folgende Zahlen 9999.99
-Double(9,4) gibt folgende Zahlen 99999.9999
+''Double(6,2) ''gibt folgende Zahlen 9999.99
+''Double(9,4)'' gibt folgende Zahlen 99999.9999
 
 === Datums und Zeitbasierend ===
 **Date** → **YY-MM-DD**
@@ -77,22 +84,23 @@ Double(9,4) gibt folgende Zahlen 99999.9999
 **ROW**
 → Datentyp der eine Zeile innerhalb eines Array definiert
 //Beispiel://
-++
 '''
 CREATE ROW CUSTOMER (
 CustID        INTEGER      PRIMARY KEY,    
 LastName      CHARACTER VARYI )    
 '''
-               
-++
+
 
 **ENUM **
 → festlegen einer eingegrenzten Menge von Zeichen im Werte und Defintionsbereich
+
 //Beispiel://
-++
-//gender ENUM('m','f')//
-++
+''gender ENUM('m','f')''
 → nur m oder f dürfen für den Eintrag in gender verwendet werden
+
+**SET **''('StringA',...)''
+→ festlegen einer eingegrenzten Menge von Zeichen
+→ mehrfachnennun möglich
 
 **AUTO_INCREMENT**
 → der Zähler wird selbsständig inkrementiert, nützlich für Primärschlüssel
@@ -106,6 +114,28 @@ LastName      CHARACTER VARYI )
 **VARBIT(n) **
 → variable Bitkette mit maximal n Bits
 
-**BLOB **
+**BINARY**
+→ binäre Dateien bis 255 Bits
+→ feste Größe
+
+**VARBINARY**
+→ binäre Dateien bis 65535 Bits
+→ variable Größe
+
+**BLOB |TINYBLOB|MEDIUMBLOB|LONGBLOB**
 → binary large Object
 → für beliebig Große Dateien
+
+
+//Beispiele://
+'''
+CREATE TABLE testsample
+'''
+	'''
+	(
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	zeile1 CHAR(5) CHARACTER SET utf8,
+	zeile2 DATE DEFAULT '2011-12-12',
+	PRIMARY KEY(id)
+	) ENGINE=innodb;
+	'''

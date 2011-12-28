@@ -110,9 +110,15 @@ Created Donnerstag 22 September 2011<br>
     → <u>dies ist immer notwendig wenn Logfiles von Hand gelöscht wurden</u><br>
 <strong>-m &lt;Befehl&gt; </strong>→ diesen &lt;Befehl&gt; beim mailen verwenden<br>
 <strong>-s &lt;Status Datei&gt; </strong>→ eine andere Statusdatei verwenden<br>
-<strong>-v [d] </strong>→ verbose , falls <strong>-d </strong>verwendet wird, debugging modus<br>
+<strong>-v [d] </strong>→ verbose , falls <strong>-d </strong>verwendet wird, debugging <br>
 </p>
 
+<h5>Beispiele:</h5>
+<p>
+<code>logrotate -f /etc/logrotate.d/*</code><br>
+→ einlesen der Konfigurationsdateien und rotieren erzwingen<br>
+→ möglicherweise werden weitere Dienste neugestaret<br>
+</p>
 
 
 			<!-- End wiki content -->

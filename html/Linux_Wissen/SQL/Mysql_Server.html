@@ -74,6 +74,7 @@
 <li><a href="./Constraints.html" title="Constraints">Constraints</a></li>
 <li><a href="./Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <li><a href="./Datentypen.html" title="Datentypen">Datentypen</a></li>
+<li><a href="./Design.html" title="Design">Design</a></li>
 <li><a href="./Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="./Joins.html" title="Joins">Joins</a></li>
 <li><strong>Mysql Server</strong></li>
@@ -106,6 +107,18 @@
 Created Mittwoch 29 Juni 2011<br>
 </p>
 
+<p>
+<ul>
+<li>SQL 92 Konform</li>
+<li>Eine Transaktion fasst mehrere SQL-Anweisungen zu einer Datenbankoperation zusammen</li>
+<li>MyISAM mit Volltextsuche</li>
+<li>Referenzielle Integrität durch Fremdschlüssel für InnoDB</li>
+<li>Vereinigung von Tabelle durch den <strong>UNION</strong></li>
+<li>Unterabfragen durch verschachtelte <strong>SELECT</strong> Operationen</li>
+<li>erlaubt <strong>VIEW</strong>s</li>
+</ul>
+</p>
+
 <h4>Starten und Stoppen des Daemons</h4>
 <p>
 <strong>service mysql start</strong><br>
@@ -134,7 +147,7 @@ Created Mittwoch 29 Juni 2011<br>
 </p>
 
 <p>
-*<strong>/usr/share/my-{huge,large,medium,small}.cnf </strong><br>
+*<strong>/usr/share/mysql/my-{huge,large,medium,small}.cnf </strong><br>
 → Beispielkonfigurationsdateien die entsprechend angepasst und kopiert werden können<br>
 → die Angabe der Größe bezieht sich auf den zu verwendeneden RAM<br>
 <ul style='padding-left: 30pt'>
@@ -156,6 +169,34 @@ Created Mittwoch 29 Juni 2011<br>
 → enthält Logdateien für den Server<br>
 </p>
 
+<h4>PID File</h4>
+<p>
+*<strong>/var/run/mysql/mysqld.pid</strong><br>
+</p>
+
+<h4>mysql Datafiles</h4>
+<p>
+*/var/lib/mysql/&lt;Datenbank&gt;<br>
+<div style='padding-left: 30pt'>
+MYISAM Storage Engine<br>
+</div>
+<div style='padding-left: 60pt'>
+→ .MYD → Data File<br>
+→ .FRM → Table File<br>
+→ .MYI → Index File<br>
+→ .TRG → Trigger File       <br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+INNODB Storage Engine<br>
+→ .IBDATA → Data File<br>
+→ .FRM → Table File<br>
+</div>
+(missing link  Storage Engine)<br>
+</p>
+
 <h4>Anweisungen</h4>
 <p>
 <ul>
@@ -164,13 +205,25 @@ Created Mittwoch 29 Juni 2011<br>
 <a href="./Mysql_Server/Anweisungen.html" title="Linux Wissen:SQL:Mysql Server:Anweisungen">Linux Wissen:SQL:Mysql Server:Anweisungen</a><br>
 </p>
 
+<h4>Mysql Clients</h4>
+<p>
+<ul>
+<li>Programme die über den Server verbunden auf den Datenbanken operieren können</li>
+</ul>
+<strong>mysql </strong>Kommandozeilen Tool<br>
+<strong>mysqladmin </strong>Administartionstool zur Administration des Servers<br>
+<strong>mysqlshow </strong>zum betrachten von Datenbanken<br>
+<strong>mysqldump </strong>für Backups<br>
+<a href="./Mysql_Server/Mysql_Clients.html" title="+Mysql Clients">+Mysql Clients</a><br>
+</p>
+
 
 			<!-- End wiki content -->
 			</div>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../FHS/var.html'>Linux Wissen:FHS:var</a></li>						<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../SQL.html'>Linux Wissen:SQL</a></li>
+				Backlinks:						<a href='../FHS/var.html'>Linux Wissen:FHS:var</a></li>						<a href='../SQL.html'>Linux Wissen:SQL</a></li>						<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='./Intigrit%C3%A4tsregeln.html'>Linux Wissen:SQL:Intigritätsregeln</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T00:44:49+01:00
+
+====== Design ======
+Created Mittwoch 28 Dezember 2011
+
+**1) **Analyse der benötigten Daten
+	* Was soll gespeichert werden?
+	* zu welchem Zweck soll gespeichert werden?
+	* Welche Schnittstellen sollen verfügbar sein?
+
+**2) **Erstellen ERD (Entety Relationship Model) / erweiterten ERD
+	* Zusammenhänge der einzelnen Entitäten durch ein Verknüpfungsmodel vertiefen
+	* erstellen der Tabellen
+
+**3) **Normalisierung  [[Normalisierung]]

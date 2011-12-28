@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-08T17:24:17+01:00
+
+====== Hostsecurity ======
+Created Donnerstag 08 Dezember 2011
+
+* Absichern des Hosts durch diverse Maßnahmen:
+
+===== Einrichten von Secure Mountpoints =====
+* erschwert es Root-Zugriff auf dem System zu erlangen
+* Für Verzeichnisse auf die jeder Nutzer zugreifen darf, wie zum Beispiel */tmp kann man folgende Optionen verrwenden in 
+*/etc/fstab [[Linux Wissen:FHS:etc:fstab]]
+''/dev/system/tmp      /tmp                 ext4       acl,user_xattr,nodev,noexc,nosuid        1 2''
+''/dev/system/home     /home                ext4       acl,user_xattr,nosuid,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 1 2''
+
+===== Aufspüren von SUID und SGID Shellscripten =====
+* Der folgende Befehl hilft dabei Shellscripte die ein SUID oder SGID Bit gesetzt haben, ausfindig zu machen:
+''find / \( -perm -4000 -o -perm -2000 \) -type f  -exec file {} \; | grep -v ELF''

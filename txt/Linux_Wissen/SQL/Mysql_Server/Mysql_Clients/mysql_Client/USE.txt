@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T01:37:11+01:00
+
+====== USE ======
+Created Mittwoch 28 Dezember 2011
+
+* Verbinden mit einer Datenbank
+
+**USE <Datenbank>**

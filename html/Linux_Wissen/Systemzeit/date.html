@@ -103,9 +103,13 @@ Created Mittwoch 14 September 2011<br>
 </p>
 
 <p>
-<strong>date MMTThhmm [CCYY][.ss]</strong><br>
-→ setzen der Zeit auf  Monat:TagedesMonats:Stunde:Minute:Jahrhuntert:Jahr:Sekunde<br>
+<u>Achtung: Für die Einstellung der Zeit beachten dass erst der Monat und dann der Tag des Monats angegeben wird.</u><br>
+</p>
+
+<p>
+<strong>date MMTThhmm [CCYY][.ss] </strong>→ setzen der Zeit auf  Monat:TagedesMonats:Stunde:Minute:Jahrhuntert:Jahr:Sekunde<br>
 <strong>-u </strong>→ in UTC<br>
+<strong>-s "MM TT, YYYY hh:mm:ss" → </strong>einen beschreibenenden String verwenden für das Setzen des Datums<br>
 </p>
 
 <p>
@@ -149,8 +153,9 @@ date -d '2 hours' +%H:%M-%F
 </pre>
 
 <p>
-<code>date --set --date="2010-18-11 18:03:13 +0100"</code> →  explizites setzen des Datums und der Uhrzeit<br>
-                                                                                                       → root rechte erforderlich<br>
+<code>date -s "Oct 13, 1999 14:04:05" </code><br>
+→  explizites setzen des Datums und der Uhrzeit durch einen Beschreibungsstring<br>
+→ root rechte erforderlich<br>
 </p>
 
 <p>

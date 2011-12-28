@@ -77,6 +77,7 @@
 <ul>
 <li><a href="./Datentypen/Cast.html" title="Cast">Cast</a></li>
 </ul>
+<li><a href="./Design.html" title="Design">Design</a></li>
 <li><a href="./Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="./Joins.html" title="Joins">Joins</a></li>
 <li><a href="./Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -101,6 +102,14 @@
 			<!-- Wiki content -->
 				<p>
 Created Freitag 29 April 2011<br>
+</p>
+
+<p>
+<ul>
+<li>effiziente Nutzung von verfügbaren Speicherplatz</li>
+<li>Gewährleistung besserer Datenintigrität</li>
+<li>Sortierreihenfolge</li>
+</ul>
 </p>
 
 <h4>Zeichenbasiert</h4>
@@ -167,16 +176,21 @@ Created Freitag 29 April 2011<br>
 </p>
 
 <p>
-<strong>MediumInt | BIGINT</strong><br>
+<strong>MediumInt </strong><br>
+→ 3 Byte bei der Adressierung<br>
 </p>
 
+<p>
+<strong> BIGINT</strong><br>
+→ 8 Byte bei der Adressierung<br>
+</p>
 
 <p>
 <strong>Double(s,p) | Float(s,p)</strong><br>
 → Fließkommazahlen mit Präzision nahe <strong>p </strong> der Länge <strong>s</strong><br>
 <em>Beispiel:</em><br>
-<em>Double(6,2)</em> gibt folgende Zahlen 9999.99<br>
-Double(9,4) gibt folgende Zahlen 99999.9999<br>
+<code>Double(6,2) </code>gibt folgende Zahlen 9999.99<br>
+<code>Double(9,4)</code> gibt folgende Zahlen 99999.9999<br>
 </p>
 
 <h4>Datums und Zeitbasierend</h4>
@@ -216,26 +230,29 @@ Double(9,4) gibt folgende Zahlen 99999.9999<br>
 <strong>ROW</strong><br>
 → Datentyp der eine Zeile innerhalb eines Array definiert<br>
 <em>Beispiel:</em><br>
-++<br>
 </p>
 <pre>
 CREATE ROW CUSTOMER (
 CustID        INTEGER      PRIMARY KEY,    
 LastName      CHARACTER VARYI )    
 </pre>
-               
-<p>
-++<br>
-</p>
+
 
 <p>
 <strong>ENUM </strong><br>
 → festlegen einer eingegrenzten Menge von Zeichen im Werte und Defintionsbereich<br>
+</p>
+
+<p>
 <em>Beispiel:</em><br>
-++<br>
-<em>gender ENUM('m','f')</em><br>
-++<br>
+<code>gender ENUM('m','f')</code><br>
 → nur m oder f dürfen für den Eintrag in gender verwendet werden<br>
+</p>
+
+<p>
+<strong>SET </strong><code>('StringA',...)</code><br>
+→ festlegen einer eingegrenzten Menge von Zeichen<br>
+→ mehrfachnennun möglich<br>
 </p>
 
 <p>
@@ -259,10 +276,38 @@ LastName      CHARACTER VARYI )
 </p>
 
 <p>
-<strong>BLOB </strong><br>
+<strong>BINARY</strong><br>
+→ binäre Dateien bis 255 Bits<br>
+→ feste Größe<br>
+</p>
+
+<p>
+<strong>VARBINARY</strong><br>
+→ binäre Dateien bis 65535 Bits<br>
+→ variable Größe<br>
+</p>
+
+<p>
+<strong>BLOB |TINYBLOB|MEDIUMBLOB|LONGBLOB</strong><br>
 → binary large Object<br>
 → für beliebig Große Dateien<br>
 </p>
+
+
+<p>
+<em>Beispiele:</em><br>
+</p>
+<pre>
+CREATE TABLE testsample
+</pre>
+<pre style='padding-left: 30pt'>
+(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+zeile1 CHAR(5) CHARACTER SET utf8,
+zeile2 DATE DEFAULT '2011-12-12',
+PRIMARY KEY(id)
+) ENGINE=innodb;
+</pre>
 
 
 			<!-- End wiki content -->

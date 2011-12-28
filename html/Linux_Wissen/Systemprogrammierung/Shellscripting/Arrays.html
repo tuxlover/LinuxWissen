@@ -138,18 +138,21 @@ ${<strong>ARRAY[@]} </strong>→ Zugriff auf ein Array, wie <em>"Wert1" "Wert2" 
 
 <p>
 <em>Beispiele:</em><br>
-<em>Array=(eins zwei drei vier fünf)</em><br>
-<em>echo ${Array[@]:2} </em><br>
-<em>&gt;&gt; drei vier fünf</em><br>
-<em>echo ${Array[@]:1:2}</em><br>
-<em>&gt;&gt; zwei drei</em><br>
-<em>echo ${Array[@]#v*r}</em><br>
-<em>&gt;&gt; eins zwei drei fünf</em><br>
-<em>echo ${Array[@]</em>d*ei/XY}//<br>
-<em>&gt;&gt; eins zwei XY vier fünf</em><br>
-<em>echo ${#Array[@]}</em><br>
-<em>&gt;&gt; 5</em><br>
 </p>
+<pre>
+Array=(eins zwei drei vier fünf)
+echo ${Array[@]:2} 
+&gt;&gt; drei vier fünf
+echo ${Array[@]:1:2}
+&gt;&gt; zwei drei
+echo ${Array[@]#v*r}
+&gt;&gt; eins zwei drei fünf
+echo ${Array[@]d*ei/XY}//
+&gt;&gt; eins zwei XY vier fünf
+echo ${#Array[@]}
+&gt;&gt; 5
+</pre>
+
 
 
 			<!-- End wiki content -->

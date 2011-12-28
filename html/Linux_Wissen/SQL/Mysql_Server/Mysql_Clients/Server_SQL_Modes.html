@@ -74,6 +74,7 @@
 <li><a href="../../Constraints.html" title="Constraints">Constraints</a></li>
 <li><a href="../../Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <li><a href="../../Datentypen.html" title="Datentypen">Datentypen</a></li>
+<li><a href="../../Design.html" title="Design">Design</a></li>
 <li><a href="../../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln">Intigritätsregeln</a></li>
 <li><a href="../../Joins.html" title="Joins">Joins</a></li>
 <li><a href="../../Mysql_Server.html" title="Mysql Server">Mysql Server</a></li>
@@ -81,7 +82,6 @@
 <li><a href="../Anweisungen.html" title="Anweisungen">Anweisungen</a></li>
 <li><a href="../Mysql_Clients.html" title="Mysql Clients">Mysql Clients</a></li>
 <ul>
-<li><a href="./DESCRIBE.html" title="DESCRIBE">DESCRIBE</a></li>
 <li><a href="./mysql_Client.html" title="mysql Client">mysql Client</a></li>
 <li><a href="./mysqladmin.html" title="mysqladmin">mysqladmin</a></li>
 <li><a href="./Prompt.html" title="Prompt">Prompt</a></li>
@@ -131,7 +131,7 @@ Created Dienstag 08 November 2011<br>
 
 <h5>Zurücksetzen des SQL Modes:</h5>
 <p>
-<code>SET sql_mode = </code>;''<br>
+<code>SET sql_mode = "" ;</code><br>
 </p>
 
 <h5>Einige Modes</h5>
@@ -150,6 +150,9 @@ ERROR_FOR_DIVISION_BY_ZERO → bei Division durch 0 wird eine Warnung ausgegeben
 <p>
 STRICT_TRANS_TABLES → Werte die missgestaltig oder ungültig sind werden als Fehler erkannt<br>
                                      → nur für transactional Tabellen<br>
+<div style='padding-left: 150pt'>
+(missing Link mysql:tranasaktionen)<br>
+</div>
 </p>
 
 <p>
@@ -166,11 +169,12 @@ ANSI → kombinierter Modus der das Verhalten für den ANSI Standard aktiviert<b
 </p>
 
 <h5>Abfragen des Modus</h5>
-<p>
-<strong>SELECT @@sql_mode;</strong><br>
-<strong>SELECT @@SESSION.sql_mode</strong><br>
-<strong>SELECT @@GLOBAL.sql_mode</strong><br>
-</p>
+<pre>
+SELECT @@sql_mode;
+SELECT @@SESSION.sql_mode
+SELECT @@GLOBAL.sql_mode
+</pre>
+
 
 
 			<!-- End wiki content -->
