@@ -74,13 +74,9 @@
 <li><a href="../Constraints.html" title="Constraints">Constraints</a></li>
 <li><a href="../Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <ul>
-<li><a href="./Aggregatfunktionen.html" title="Aggregatfunktionen">Aggregatfunktionen</a></li>
-<li><a href="./Datumsfunktionen.html" title="Datumsfunktionen">Datumsfunktionen</a></li>
 <li><strong>DDL</strong></li>
 <li><a href="./DML.html" title="DML">DML</a></li>
 <li><a href="./Dom%C3%A4nen.html" title="Domänen">Domänen</a></li>
-<li><a href="./Indicies.html" title="Indicies">Indicies</a></li>
-<li><a href="./Mathematische_Funktionen.html" title="Mathematische Funktionen">Mathematische Funktionen</a></li>
 </ul>
 <li><a href="../Datentypen.html" title="Datentypen">Datentypen</a></li>
 <li><a href="../Design.html" title="Design">Design</a></li>
@@ -177,6 +173,10 @@ Created Samstag 12 November 2011<br>
 <code>DELETE FROM HAT WHERE MB='terminated';</code><br>
 </p>
 
+<p>
+<code>DELETE FROM people WHERE age &lt; 18;</code><br>
+</p>
+
 <h5>DROP</h5>
 <p>
 → löschen ganzer Tabllen<br>
@@ -196,10 +196,12 @@ Created Samstag 12 November 2011<br>
 <a href="../../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
 </p>
 
+<h5>TRUNCATE</h5>
 <p>
 <strong>TRUNCATE TABLE [IF EXISTS] &lt;Tabelle&gt;</strong><br>
 → leert die Daten aus den Spalten von &lt;Tabelle&gt;<br>
 → das leere Gerüst bleibt aber erhalten<br>
+→ in MYISAM schneller als mit <code>DELETE</code> und <code>WHERE</code><br>
 </p>
 
 <h4>Manipulieren</h4>
@@ -288,7 +290,7 @@ PLZ SMALLINT;
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>						<a href='../Index.html'>Linux Wissen:SQL:Index</a></li>						<a href='../Views.html'>Linux Wissen:SQL:Views</a></li>
+				Backlinks:						<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>						<a href='../Views.html'>Linux Wissen:SQL:Views</a></li>						<a href='../Index.html'>Linux Wissen:SQL:Index</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

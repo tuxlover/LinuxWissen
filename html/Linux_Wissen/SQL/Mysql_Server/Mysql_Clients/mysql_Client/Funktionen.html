@@ -89,6 +89,8 @@
 <li><a href="./DESCRIBE.html" title="DESCRIBE">DESCRIBE</a></li>
 <li><a href="./EXPLAIN.html" title="EXPLAIN">EXPLAIN</a></li>
 <li><strong>Funktionen</strong></li>
+<li><a href="./Kommentare.html" title="Kommentare">Kommentare</a></li>
+<li><a href="./Operatoren.html" title="Operatoren">Operatoren</a></li>
 <li><a href="./SHOW.html" title="SHOW">SHOW</a></li>
 <li><a href="./SOURCE.html" title="SOURCE">SOURCE</a></li>
 <li><a href="./USE.html" title="USE">USE</a></li>
@@ -122,13 +124,141 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Mittwoch 28 Dezember 2011<br>
-</p>
+				<h4>SELECT()</h4>
+<code>select user()</code>
 
-<p>
-<code>select user()</code><br>
-</p>
+
+<h3>String basierte Funktionen</h3>
+
+<h4>CONCAT()</h4><br>
+→ zwei Spalten miteinander verknüpfen<br>
+→ hat eine Spalte keinen Wert oder nicht genügent Records, so wird der Rest auf <code>NULL</code> gesetzt<br>
+<br>
+<strong>SELECT CONCAT (&lt;Spalte&gt;,'&lt;Seperator',&lt;Spalte) </strong>
+<div style='padding-left: 30pt'>
+<strong>AS &lt;Alias&gt; FROM &lt;Tabelle&gt;</strong><br>
+</div>
+
+<em>Beispiel:</em>
+<code>SELECT CONCAT(first_name,' ',last_name)</code>
+<div style='padding-left: 30pt'>
+<code>AS fullname</code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>FROM customer </code><br>
+</div>
+<pre style='padding-left: 90pt'>
+ORDER BY last_name
+</pre>
+<pre style='padding-left: 120pt'>
+LIMIT 19;
+</pre>
+
+<h4>CONCAT_WS()</h4><br>
+→ zwei Spalten miteinander Verknüpfen<br>
+→ das erste Argument enthält den Seperator<br>
+<br>
+<strong>SELECT CONCAT_WS('Seperator',Spalte1,Spalte2,...) </strong>
+<div style='padding-left: 30pt'>
+<strong>AS &lt;Alias&gt; FROM &lt;Tabelle&gt;</strong><br>
+</div>
+
+<em>Beispiel:</em>
+<pre>
+SELECT CONCAT_WS(' ',first_name,last_name) 
+</pre>
+<pre style='padding-left: 30pt'>
+AS fullname 
+</pre>
+<pre style='padding-left: 60pt'>
+FROM sakila.customer LIMIT 20;
+</pre>
+
+<h4>UPPER()</h4><br>
+→ umwandeln aller Kleinbuchstaben in Großbuchstaben<br>
+<strong>SELECT UPPER('String'|&lt;Spalte&gt;) </strong>
+<div style='padding-left: 30pt'>
+<strong>[FROM &lt;Tabelle&gt;];</strong><br>
+</div>
+
+
+<h4>LOWER()</h4><br>
+→ umwandeln aller Großbuchstaben in Kleinbuchstaben<br>
+<strong>SELECT LOWER('String'|&lt;Spalte&gt;)</strong>
+<div style='padding-left: 30pt'>
+<strong>[FROM &lt;Tabelle&gt;];</strong><br>
+<br>
+</div>
+<em>Beispiel:</em>
+<code>SELECT LOWER(first_name) AS 'FN',</code>
+<div style='padding-left: 60pt'>
+<code>LOWER(last_name) AS 'LN</code>'<br>
+</div>
+<div style='padding-left: 90pt'>
+<code>FROM customer</code><br>
+</div>
+<div style='padding-left: 120pt'>
+<code>ORDER BY last_name</code><br>
+</div>
+<div style='padding-left: 150pt'>
+<code>LIMIT 10;</code><br>
+</div>
+
+
+<h3>Mathematische Funktionen</h3>
+
+<h4>BIN()</h4><br>
+→ Integer in Binär umwandeln<br>
+<br>
+<strong>SELECT BIN(&lt;Integer&gt;) [AS &lt;Alias&gt;];</strong>
+
+<em> Beispiel:</em>
+<code>SELECT BIN(42) AS NETMASK;</code>
+
+<h4>SUM(a1+....+aN)</h4><br>
+→ Summe zweier oder mehrerer Zahlen bestimmen<br>
+<br>
+<em>Beispiel:</em>
+<code>SELECT SUM(1+2+3+4+5+6+7+8+9+10) AS 'Gauss Sum';</code>
+
+<h3>Mittelnde Funktionen</h3>
+
+<h4>COUNT(*)</h4><br>
+→ Zählen von Spalten<br>
+→ wird Spalte benutzt, so wird die Anzahl der Zeilen gezählt die nicht <code>NULL</code> sind<br>
+<strong>SELECT COUNT(*|&lt;Spalte&gt;) FROM &lt;Tabelle&gt;</strong>
+
+<em>Beispiele:</em>
+<pre>
+SELECT COUNT(*) AS 'Number of Actors' 
+</pre>
+<pre style='padding-left: 30pt'>
+FROM actor;
+
+</pre>
+<code>   SELECT COUNT(DISTINCT(Continent)) </code>
+<div style='padding-left: 60pt'>
+FROM<code> world.Country;</code><br>
+</div>
+
+
+<h4>MIN()|MAX()</h4><br>
+→ Rückgabe des kleinste Wertes aus einer Ergebnismenge<br>
+<strong>SELECT MIN|MAX(&lt;Spalte&gt;) FROM &lt;Tabelle&gt;;</strong>
+
+<em>Besipiele:</em>
+<div style='padding-left: 30pt'>
+<code>SELECT MIN(unitprice),MAX(unitprice)</code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>FROM products;</code><br>
+</div>
+
+
+<h4>AVG()</h4><br>
+→ Rückgabe des durschnittlichen Wertes<br>
+<br>
+<h3>Datumsfunktionen</h3>
 
 
 			<!-- End wiki content -->

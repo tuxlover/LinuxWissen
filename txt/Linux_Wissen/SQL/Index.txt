@@ -12,3 +12,22 @@ Created Mittwoch 28 Dezember 2011
 
 **CREATE INDEX <Index Name> USING [<Index-Typ>]  ON <Tabelle>(<Spalte_von_Tabelle>)**
 → einen Index erstellen
+
+* Jede Tabelle kann einen Index besitzen
+* erstellen über **CREATE INDEX **
+	→ benötigen die Angabe mindestens einer Spalte 
+
+
+→ erstelle einen Index für die Tabelle <tabelle> mit dem Namen <indexname>
+→ benutze <Spalte1>,... für die Indizierung
+
+//Beispiel://
+'''
+CREATE INDEX idx_person
+'''
+	'''
+	ON person (Name,Vorname);
+	'''
+
+**DROP INDEX <indexname>;**
+→ löschen eines Index <indexname>

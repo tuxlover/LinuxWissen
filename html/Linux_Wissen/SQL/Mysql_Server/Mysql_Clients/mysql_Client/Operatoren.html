@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>DESCRIBE</title>
+		<title>Operatoren</title>
 		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									DESCRIBE</h1>
+									Operatoren</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -86,11 +86,11 @@
 <ul>
 <li><a href="../mysql_Client.html" title="mysql Client">mysql Client</a></li>
 <ul>
-<li><strong>DESCRIBE</strong></li>
+<li><a href="./DESCRIBE.html" title="DESCRIBE">DESCRIBE</a></li>
 <li><a href="./EXPLAIN.html" title="EXPLAIN">EXPLAIN</a></li>
 <li><a href="./Funktionen.html" title="Funktionen">Funktionen</a></li>
 <li><a href="./Kommentare.html" title="Kommentare">Kommentare</a></li>
-<li><a href="./Operatoren.html" title="Operatoren">Operatoren</a></li>
+<li><strong>Operatoren</strong></li>
 <li><a href="./SHOW.html" title="SHOW">SHOW</a></li>
 <li><a href="./SOURCE.html" title="SOURCE">SOURCE</a></li>
 <li><a href="./USE.html" title="USE">USE</a></li>
@@ -125,64 +125,28 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Dienstag 08 November 2011<br>
+Created Mittwoch 28 Dezember 2011<br>
 </p>
 
-<p>
-<ul>
-<li>Befehl für den Mysql Client</li>
-</ul>
-</p>
-
-<p>
-<strong>DESCRIBE &lt;TABLE&gt;;</strong><br>
-→ die Ausagbe zeigt eine Zeile für jede Definierte Spalte der Tabelle<br>
-→ die einzelnen Spalten beschreiben die Eigenschaften dieser Spalten<br>
-</p>
+<h4>Rangfolge in der Operatoren abgearbeitet werden</h4>
 <pre>
-+-------------+----------+------+-----+---------+----------------+
-
-| Field       | Type     | Null | Key | Default | Extra          |
-
-+-------------+----------+------+-----+---------+----------------+
+:=
+||, OR, XOR
+&amp;&amp;, AND
+NOT
+BETWEEN, CASE, WHEN, THEN, ELSE
+=, &lt;=&gt;, &gt;=, &gt;, &lt;=, &lt;, &lt;&gt;, !=, IS, LIKE, REGEXP, IN
+|
+&amp;
+&lt;&lt;, &gt;&gt;
+-, +
+*, /, DIV, %, MOD
+^
+- (unary minus), ~ (unary bit inversion)
+!
+BINARY, COLLATE
 </pre>
 
-
-<p>
-<em>Field </em><strong>→ </strong>bezeichnet den Namen der Spalte<br>
-</p>
-
-<p>
-<em>Type </em><strong>→ </strong>zeigt den Datentyp dieser Spalte<br>
-</p>
-
-<p>
-<em>NULL </em>→<br>
-<div style='padding-left: 60pt'>
-<em>Yes → </em>Spalte darf den Wert <code>NULL</code> haben<br>
-<em>No </em>→ Spalte darf nicht den Wert <code>NULL haben</code><br>
-</div>
-</p>
-
-<p>
-<em>Key </em>→ kann leer sein oder eine von diesen Werten enthalten<br>
-<div style='padding-left: 30pt'>
-→ Describe zeigt nur den höchsten dieser Werte an (<em>PRI/UNI/MUL</em>)<br>
-</div>
-<div style='padding-left: 60pt'>
-<em>PRI </em>→ diese Spalte ist ein Primär Schlüssel oder ist Teil eines mehrspaltigen Primär Schlüssels<br>
-<em>UNI</em> → diese Spalte enthält einen eindeutigen Wert (Unique) der indiziert wird<br>
-<em>MUL </em>→ diese Spalte ist die erste Spalte eines eindeutigen oder nicht eindeutigen<br>
-</div>
-</p>
-
-<p>
-<em>Default </em>→ zeigt den Standard Wert für diese Spalte<br>
-</p>
-
-<p>
-<em>Extra </em>→ zusätzlicha Attribute wie <em>auto_increment</em><br>
-</p>
 
 
 			<!-- End wiki content -->
@@ -190,7 +154,7 @@ Created Dienstag 08 November 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a></li>						<a href='./SHOW.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client:SHOW</a></li>						<a href='../mysql_Client.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client</a></li>						<a href='./EXPLAIN.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client:EXPLAIN</a></li>						<a href='../../../Views.html'>Linux Wissen:SQL:Views</a></li>
+				Backlinks:
 			<!-- End Backlinks -->
 			</div>
 		</div>

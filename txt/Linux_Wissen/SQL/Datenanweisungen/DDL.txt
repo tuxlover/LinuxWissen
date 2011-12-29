@@ -53,6 +53,8 @@ Created Samstag 12 November 2011
 //Beispiel://
 ''DELETE FROM HAT WHERE MB='terminated';''
 
+''DELETE FROM people WHERE age < 18;''
+
 == DROP ==
 → löschen ganzer Tabllen
 → sind Views involviert werden diese ebenfalls gelöscht
@@ -66,9 +68,11 @@ Created Samstag 12 November 2011
 → Berechtigungen bleiben erhalten und müssen nahchträglich entfernt werden
 [[Linux Wissen:FHS:etc:my.cnf]]
 
+== TRUNCATE ==
 **TRUNCATE TABLE [IF EXISTS] <Tabelle>**
 → leert die Daten aus den Spalten von <Tabelle>
 → das leere Gerüst bleibt aber erhalten
+→ in MYISAM schneller als mit ''DELETE'' und ''WHERE''
 
 === Manipulieren ===
 
@@ -107,7 +111,6 @@ ALTER TABLE world
 	'''
 	ADD inc Bool NOT NULL DEFAULT=1;
 	'''
-
 Den Datentypen von PLZ ändern:
 '''
 ALTER TABLE Arbeitgeber 

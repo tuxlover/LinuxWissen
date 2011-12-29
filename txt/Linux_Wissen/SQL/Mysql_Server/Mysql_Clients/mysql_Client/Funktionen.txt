@@ -5,4 +5,113 @@ Creation-Date: 2011-12-28T14:21:49+01:00
 ====== Funktionen ======
 Created Mittwoch 28 Dezember 2011
 
+
+=== SELECT() ===
 ''select user()''
+
+
+==== String basierte Funktionen ====
+
+=== CONCAT() ===
+→ zwei Spalten miteinander verknüpfen
+→ hat eine Spalte keinen Wert oder nicht genügent Records, so wird der Rest auf ''NULL'' gesetzt
+
+**SELECT CONCAT (<Spalte>,'<Seperator',<Spalte) **
+	**AS <Alias> FROM <Tabelle>**
+
+//Beispiel://
+''SELECT CONCAT(first_name,' ',last_name)''
+	''AS fullname''
+		''FROM customer ''
+			'''
+			ORDER BY last_name
+			'''
+				'''
+				LIMIT 19;
+				'''
+
+=== CONCAT_WS() ===
+→ zwei Spalten miteinander Verknüpfen
+→ das erste Argument enthält den Seperator
+
+**SELECT CONCAT_WS('Seperator',Spalte1,Spalte2,...) **
+	**AS <Alias> FROM <Tabelle>**
+
+//Beispiel://
+'''
+SELECT CONCAT_WS(' ',first_name,last_name) 
+'''
+	'''
+	AS fullname 
+	'''
+		'''
+		FROM sakila.customer LIMIT 20;
+		'''
+
+=== UPPER() ===
+→ umwandeln aller Kleinbuchstaben in Großbuchstaben
+**SELECT UPPER('String'|<Spalte>) **
+	**[FROM <Tabelle>];**
+
+
+=== LOWER() ===
+→ umwandeln aller Großbuchstaben in Kleinbuchstaben
+**SELECT LOWER('String'|<Spalte>)**
+	**[FROM <Tabelle>];**
+	
+//Beispiel://
+''SELECT LOWER(first_name) AS 'FN',''
+		''LOWER(last_name) AS 'LN'''
+			''FROM customer''
+				''ORDER BY last_name''
+					''LIMIT 10;''
+
+
+==== Mathematische Funktionen ====
+
+=== BIN() ===
+→ Integer in Binär umwandeln
+
+**SELECT BIN(<Integer>) [AS <Alias>];**
+
+// Beispiel://
+''SELECT BIN(42) AS NETMASK;''
+
+=== SUM(a1+....+aN) ===
+→ Summe zweier oder mehrerer Zahlen bestimmen
+
+//Beispiel://
+''SELECT SUM(1+2+3+4+5+6+7+8+9+10) AS 'Gauss Sum';''
+
+==== Mittelnde Funktionen ====
+
+=== COUNT(*) ===
+→ Zählen von Spalten
+→ wird Spalte benutzt, so wird die Anzahl der Zeilen gezählt die nicht ''NULL'' sind
+**SELECT COUNT(*|<Spalte>) FROM <Tabelle>**
+
+//Beispiele://
+'''
+SELECT COUNT(*) AS 'Number of Actors' 
+'''
+	'''
+	FROM actor;
+	
+	'''
+''   SELECT COUNT(DISTINCT(Continent)) ''
+		FROM'' world.Country;''
+
+
+=== MIN()|MAX() ===
+→ Rückgabe des kleinste Wertes aus einer Ergebnismenge
+**SELECT MIN|MAX(<Spalte>) FROM <Tabelle>;**
+
+//Besipiele://
+	''SELECT MIN(unitprice),MAX(unitprice)''
+		''FROM products;''
+
+
+=== AVG() ===
+→ Rückgabe des durschnittlichen Wertes
+
+==== Datumsfunktionen ====

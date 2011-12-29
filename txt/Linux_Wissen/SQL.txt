@@ -121,4 +121,4 @@ __Hinweis: Beachte, dass Anweisungen immer mit __**;**__abgeschlossen werden.__
 * beschleunigen von Abfragen
 * beschleunigung von Sortiervorgängen
 * definieren von Maximal- und Minimalwerten
-[[Linux Wissen:SQL:Datenanweisungen:Indicies]]
+Linux Wissen:SQL:Datenanweisungen:Indicies

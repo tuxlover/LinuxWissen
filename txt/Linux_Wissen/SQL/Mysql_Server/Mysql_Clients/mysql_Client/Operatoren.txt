@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T22:57:57+01:00
+
+====== Operatoren ======
+Created Mittwoch 28 Dezember 2011
+
+=== Rangfolge in der Operatoren abgearbeitet werden ===
+'''
+:=
+||, OR, XOR
+&&, AND
+NOT
+BETWEEN, CASE, WHEN, THEN, ELSE
+=, <=>, >=, >, <=, <, <>, !=, IS, LIKE, REGEXP, IN
+|
+&
+<<, >>
+-, +
+*, /, DIV, %, MOD
+^
+- (unary minus), ~ (unary bit inversion)
+!
+BINARY, COLLATE
+'''
+

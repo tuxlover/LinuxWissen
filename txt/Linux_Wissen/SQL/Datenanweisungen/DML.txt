@@ -10,8 +10,8 @@ Created Samstag 12 November 2011
 
 === Querry ===
 * können mit Aggregatfunktionen kombiniert werden
-[[Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen]]
-[[Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen]]
+Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen
+Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen
 
 **SELECT [<Name> AS ] [DISTINCT] <Werte>**
 	**FROM <Tabelle|View>**
@@ -19,7 +19,7 @@ Created Samstag 12 November 2011
 	**GROUP BY <wie_soll_gruppiert_werden>**
 	**HAVING <Ausddruck>**
 	**ORDER BY <ASC|DESC>[,<Spalte1>,...<Spalte N>]**
-	**LIMIT <Anzahl der Zeilen>];|\G|\g**
+	''LIMIT''** <Anzahl der Zeilen>];|\G|\g**
 
 **SELECT version(),user() [<Database>]**
 → Nutzer und Version der Datenbank <Database>
@@ -55,6 +55,7 @@ AND Population > 3000000;
 **SELECT <Spalte> FROM <table> WHERE <Condition>**
 → nur die Werte von Spalte ausgeben die auf <Condition> passen
 → die <Condition> kann auch auf andere auf andere <Spalten> als auf die angezeigte verweisen
+→ Währende des Querries
 [[Linux Wissen:SQL:Bedingungen]]
 
 **SELECT <Spalte1>,... /*eine oder mehrere Spalten */**
@@ -93,6 +94,7 @@ SELECT ort, COUNT(*)
 == HAVING ==
 **SELECT <Spalte> FROM <table> WHERE <Condition1> GROUPBY <Spalte> HAVING <Conditon2> **
 → herausfiltern von unerwünschten Gruppen
+→ Having wirkt nach dem Querry
 
 //Beispiel://
 //+++//
@@ -126,16 +128,43 @@ SELECT ort, COUNT(*)
 
 → zusammenführen von Spalten ohne Schlüsselpaar
 
-//Beispiel://
-'''
-SELECT CONCAT(table_schema,'.',table_name)
-AS table_name,table_rows
-FROM information_schema.tables
-WHERE table_rows > 1000
-ORDER BY table_rows DESC;
-'''
-
-
+//Beispiele://
+	''SELECT * FROM City;''
+	
+	''SELECT * FROM world.City;''
+	
+	''SELECT ID,Name,Population''
+		'''
+		FROM City;
+		'''
+	''SELECT Name AS 'City Name', Population Pop''
+		''FROM City;''
+		
+	''SELECT * FROM Country WHERE IndepYear > 1988;''
+	
+	''SELECT * FROM Country''
+		''WHERE Population > 50000 AND Conitnet='Africa';''
+		
+	''SELECT ID,firstname,lastname,hiredate''
+		''ORDER BY hiredate DESC;''
+		
+	SELECT * FROM Country
+		''WHERE (GNP > 500 AND Continent = 'Asia') OR Continent = 'Europe';''
+		
+	'''
+	SELECT * FROM Country
+	'''
+		'''
+		WHERE Country LIKE '%A'
+		'''
+			'''
+			ORDER BY Population DESC;
+			SELECT CONCAT(table_schema,'.',table_name)
+				AS table_name,table_rows
+					FROM information_schema.tables
+						WHERE table_rows > 1000
+							ORDER BY table_rows DESC;
+			'''
 ==== Manipulieren ====
 * Tabellen mit Daten auffüllen
 * Daten in Tabellen aktualisierien
@@ -143,21 +172,79 @@ ORDER BY table_rows DESC;
 
 == INSERT ==
 → schreiben von Daten in eine Tabelle
+→ neue Einträge in eine Datenbank Tabelle hinzufügen
+→ wird der Wert ''DEFAULT ''benutzt, wird der definierte Standardwert gesetzt
+→ überschreibt keine bestehenden Werte
 
-**INSERT INTO <table>  (<Attribute>,...)  VALUES  (<Werte>,...);**
-→ fügt in die Tabelle <table> die entrsprechenden <Attribute> und den dazugerhörigen <Werte> ein
+**INSERT INTO <table>  (<Attribute>,...)  VALUES  (<Werte>,...),(<Werte>,...)...;**
+→ fügt in die Tabelle <table> die entsprrechenden <Attribute> und den dazugerhörigen <Werte> ein
 → bijektiv Abbildung
+→ jeder Record wird als Vektor in einem Klammerpaar dargestellt
 → die <Attribute> müssen bereits definiert sein
+
+**INSERT INTO <Tabelle> VALUES (<Werte>)**
+→ NULL und DEFAULT Werte werden ersetzt
 
 **INSERT INTO <table1> SELECT <Spalte> FROM <table2>**
 → Werte von einer Tabelle <table2> einer <Spalte> in die Tabelle <table1> einfügen
 → Dimenstion und Attribute müssen übereinstimmen
 
+**INSERT INTO emp SET <Spalte>=<Wert>,...;**
+
+//Beispiel://
+3 verschieden Möglichkeiten;
+(1) ''INSERT INTO emp(id,last_name,Number) ''
+	'''
+	VALUES (10,'jonson',2089487);
+	'''
+(2)'' INSERT INTO emp VALUES(10,'jonson',2089487);''
+
+(3) ''INSERT INTO emp''
+	'''
+	SET id=10, last_name='jonson',Number=2089487;
+	'''
+Mehere Records einfügen:
+(1) ''INSERT INTO Dinner(Vorspeise,Nachspeise) ''
+	'''
+	VALUES('Nudeln','Pudding'),('Steak','Joghurt');
+	'''
+== REPLACE ==
+→ hinzufügen meherer Records
+→ ersetzt bestehende Records
+→ ''DELETE und INSERT'' als ein Befehl
+
+**REPLACE INTO <Tabelle> **
+	**SET <Spalte1>=<Wert1>,...,<SpalteN>=<WertN>;**
+	
+//Beispiel://
+''REPLACE INTO emp''
+	''SET id=3,frst_name='Joseph',Geld=1000;''
+
+
 == UPDATE ==
+→ ANSI/ISO Standard DML Statement
 → verändern von Daten in einer Tabelle
 → das Attribut ist bereits vergeben
+→ Ein Attribut wird aufgrund eines Matches in einer WHERE Klausel geändert
 
-**UPDATE <table> SET <Attribut>=<Wert> [ WHERE <Condition>][,..]**
+**UPDATE <table> SET <Attribut>=<Wert> [ WHERE= <Condition>] [LIMIT N,M]**
 → setzt einen neuen <Wert> für Attribut von Tabelle <table> wo die Bedingungen <Condition> zutreffen
 → mehrere Attribute müssen durch Kommata getrennt werden
+→ ''WHERE ''Klausel muss mit angegeben werden, da sonst jeder Record aktualisiert wird
+→ Mit LIMIT wird die WHERE Klausel weiter eingeschärnkt, falls es zum Beispiel meherer Einträge Maier gibt
+→ ''sql_safe_update ''in my.cnf  erzwingt die eindeutige Eingrenzung durch ''WHERE'' Klausel
+[[Linux Wissen:FHS:etc:my.cnf]]
 
+//Beispiel://
+'''
+UPDATE personen
+'''
+	'''
+	SET nachname='Schmit'
+	'''
+		'''
+		WHERE nachname='Anders'
+		'''
+			'''
+			LIMIT 1;
+			'''

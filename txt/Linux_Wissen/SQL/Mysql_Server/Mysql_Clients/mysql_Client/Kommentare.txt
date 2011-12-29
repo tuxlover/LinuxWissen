@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-12-28T22:48:31+01:00
+
+====== Kommentare ======
+Created Mittwoch 28 Dezember 2011
+
+=== Unixartiger Kommentar ===
+''#Hier steht ein Kommentar''
+
+=== C-Style Kommentar ===
+'''
+/* hier 
+'''
+		'''
+		steht ein
+		'''
+			'''
+			Kommentar */
+			'''
+
+
+
+=== ANSI/ISO Kommentar ===
+ --'' hier steht ein Kommentar''

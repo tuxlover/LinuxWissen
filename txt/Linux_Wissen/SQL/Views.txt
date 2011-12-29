@@ -43,3 +43,34 @@ __ACHTUNG: Es ist möglich eine Base Table die auf einen View verweist zu lösch
 [[Mysql Server:Mysql Clients:mysql Client:SHOW]]
 [[Mysql Server:Mysql Clients:mysql Client:DESCRIBE]]
 [[Mysql Server:INFORMATION SCHEMA]] → Tabelle VIEWS
+
+//Beispiele://
+Erstellen eines Views:
+'''
+CREATE VIEW v_city_country AS 
+'''
+	'''
+	SELECT Country.Name,City.Name 
+	'''
+		'''
+		FROM Country, City
+		'''
+			'''
+			WHERE Code = CountryCode;
+			'''
+
+Verändenr eines Views:
+	'''
+	ALTER VEIW v_city AS
+	'''
+		'''
+		SELECT ID,Name 
+		'''
+			'''
+			FROM City
+			'''
+				'''
+				WHERE Name LIKE 'A%' WITH CHECK OPTION;
+				'''
+
+

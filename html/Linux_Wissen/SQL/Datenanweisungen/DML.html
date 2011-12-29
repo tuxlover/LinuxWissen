@@ -74,13 +74,9 @@
 <li><a href="../Constraints.html" title="Constraints">Constraints</a></li>
 <li><a href="../Datenanweisungen.html" title="Datenanweisungen">Datenanweisungen</a></li>
 <ul>
-<li><a href="./Aggregatfunktionen.html" title="Aggregatfunktionen">Aggregatfunktionen</a></li>
-<li><a href="./Datumsfunktionen.html" title="Datumsfunktionen">Datumsfunktionen</a></li>
 <li><a href="./DDL.html" title="DDL">DDL</a></li>
 <li><strong>DML</strong></li>
 <li><a href="./Dom%C3%A4nen.html" title="Domänen">Domänen</a></li>
-<li><a href="./Indicies.html" title="Indicies">Indicies</a></li>
-<li><a href="./Mathematische_Funktionen.html" title="Mathematische Funktionen">Mathematische Funktionen</a></li>
 </ul>
 <li><a href="../Datentypen.html" title="Datentypen">Datentypen</a></li>
 <li><a href="../Design.html" title="Design">Design</a></li>
@@ -123,8 +119,8 @@ Created Samstag 12 November 2011<br>
 <ul>
 <li>können mit Aggregatfunktionen kombiniert werden</li>
 </ul>
-<a href="./Aggregatfunktionen.html" title="Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen">Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen</a><br>
-<a href="./Mathematische_Funktionen.html" title="Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen">Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen</a><br>
+Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen<br>
+Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen<br>
 </p>
 
 <p>
@@ -135,7 +131,7 @@ Created Samstag 12 November 2011<br>
 <strong>GROUP BY &lt;wie_soll_gruppiert_werden&gt;</strong><br>
 <strong>HAVING &lt;Ausddruck&gt;</strong><br>
 <strong>ORDER BY &lt;ASC|DESC&gt;[,&lt;Spalte1&gt;,...&lt;Spalte N&gt;]</strong><br>
-<strong>LIMIT &lt;Anzahl der Zeilen&gt;];|\G|\g</strong><br>
+<code>LIMIT</code><strong> &lt;Anzahl der Zeilen&gt;];|\G|\g</strong><br>
 </div>
 </p>
 
@@ -188,6 +184,7 @@ AND Population &gt; 3000000;
 <strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt;</strong><br>
 → nur die Werte von Spalte ausgeben die auf &lt;Condition&gt; passen<br>
 → die &lt;Condition&gt; kann auch auf andere auf andere &lt;Spalten&gt; als auf die angezeigte verweisen<br>
+→ Währende des Querries<br>
 <a href="../Bedingungen.html" title="Linux Wissen:SQL:Bedingungen">Linux Wissen:SQL:Bedingungen</a><br>
 </p>
 
@@ -242,6 +239,7 @@ GROUP BY ort;
 <p>
 <strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; GROUPBY &lt;Spalte&gt; HAVING &lt;Conditon2&gt; </strong><br>
 → herausfiltern von unerwünschten Gruppen<br>
+→ Having wirkt nach dem Querry<br>
 <br>
 <em>Beispiel:</em><br>
 <em>+++</em><br>
@@ -283,17 +281,64 @@ HAVING COUNT(*) &gt;= 100;
 <br>
 → zusammenführen von Spalten ohne Schlüsselpaar<br>
 <br>
-<em>Beispiel:</em><br>
+<em>Beispiele:</em><br>
+<div style='padding-left: 30pt'>
+<code>SELECT * FROM City;</code><br>
+<br>
+<code>SELECT * FROM world.City;</code><br>
+<br>
+<code>SELECT ID,Name,Population</code><br>
+</div>
 </p>
-<pre>
-SELECT CONCAT(table_schema,'.',table_name)
-AS table_name,table_rows
-FROM information_schema.tables
-WHERE table_rows &gt; 1000
-ORDER BY table_rows DESC;
+<pre style='padding-left: 60pt'>
+FROM City;
 </pre>
-
-
+<p>
+<div style='padding-left: 30pt'>
+<code>SELECT Name AS 'City Name', Population Pop</code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>FROM City;</code><br>
+<br>
+</div>
+<div style='padding-left: 30pt'>
+<code>SELECT * FROM Country WHERE IndepYear &gt; 1988;</code><br>
+<br>
+<code>SELECT * FROM Country</code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>WHERE Population &gt; 50000 AND Conitnet='Africa';</code><br>
+<br>
+</div>
+<div style='padding-left: 30pt'>
+<code>SELECT ID,firstname,lastname,hiredate</code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>ORDER BY hiredate DESC;</code><br>
+<br>
+</div>
+<div style='padding-left: 30pt'>
+SELECT * FROM Country<br>
+</div>
+<div style='padding-left: 60pt'>
+<code>WHERE (GNP &gt; 500 AND Continent = 'Asia') OR Continent = 'Europe';</code><br>
+<br>
+</div>
+</p>
+<pre style='padding-left: 30pt'>
+SELECT * FROM Country
+</pre>
+<pre style='padding-left: 60pt'>
+WHERE Country LIKE '%A'
+</pre>
+<pre style='padding-left: 90pt'>
+ORDER BY Population DESC;
+SELECT CONCAT(table_schema,'.',table_name)
+	AS table_name,table_rows
+		FROM information_schema.tables
+			WHERE table_rows &gt; 1000
+				ORDER BY table_rows DESC;
+</pre>
 <h3>Manipulieren</h3>
 <p>
 <ul>
@@ -301,38 +346,100 @@ ORDER BY table_rows DESC;
 <li>Daten in Tabellen aktualisierien</li>
 <li>Daten in Tabellen verändern</li>
 </ul>
+<br>
 </p>
-
 <h5>INSERT</h5>
 <p>
 → schreiben von Daten in eine Tabelle<br>
-</p>
-
-<p>
-<strong>INSERT INTO &lt;table&gt;  (&lt;Attribute&gt;,...)  VALUES  (&lt;Werte&gt;,...);</strong><br>
-→ fügt in die Tabelle &lt;table&gt; die entrsprechenden &lt;Attribute&gt; und den dazugerhörigen &lt;Werte&gt; ein<br>
+→ neue Einträge in eine Datenbank Tabelle hinzufügen<br>
+→ wird der Wert <code>DEFAULT </code>benutzt, wird der definierte Standardwert gesetzt<br>
+→ überschreibt keine bestehenden Werte<br>
+<br>
+<strong>INSERT INTO &lt;table&gt;  (&lt;Attribute&gt;,...)  VALUES  (&lt;Werte&gt;,...),(&lt;Werte&gt;,...)...;</strong><br>
+→ fügt in die Tabelle &lt;table&gt; die entsprrechenden &lt;Attribute&gt; und den dazugerhörigen &lt;Werte&gt; ein<br>
 → bijektiv Abbildung<br>
+→ jeder Record wird als Vektor in einem Klammerpaar dargestellt<br>
 → die &lt;Attribute&gt; müssen bereits definiert sein<br>
-</p>
-
-<p>
+<br>
+<strong>INSERT INTO &lt;Tabelle&gt; VALUES (&lt;Werte&gt;)</strong><br>
+→ NULL und DEFAULT Werte werden ersetzt<br>
+<br>
 <strong>INSERT INTO &lt;table1&gt; SELECT &lt;Spalte&gt; FROM &lt;table2&gt;</strong><br>
 → Werte von einer Tabelle &lt;table2&gt; einer &lt;Spalte&gt; in die Tabelle &lt;table1&gt; einfügen<br>
 → Dimenstion und Attribute müssen übereinstimmen<br>
+<br>
+<strong>INSERT INTO emp SET &lt;Spalte&gt;=&lt;Wert&gt;,...;</strong><br>
+<br>
+<em>Beispiel:</em><br>
+3 verschieden Möglichkeiten;<br>
+(1) <code>INSERT INTO emp(id,last_name,Number) </code><br>
 </p>
-
+<pre style='padding-left: 30pt'>
+VALUES (10,'jonson',2089487);
+</pre>
+<p>
+(2)<code> INSERT INTO emp VALUES(10,'jonson',2089487);</code><br>
+<br>
+(3) <code>INSERT INTO emp</code><br>
+</p>
+<pre style='padding-left: 30pt'>
+SET id=10, last_name='jonson',Number=2089487;
+</pre>
+<p>
+Mehere Records einfügen:<br>
+(1) <code>INSERT INTO Dinner(Vorspeise,Nachspeise) </code><br>
+</p>
+<pre style='padding-left: 30pt'>
+VALUES('Nudeln','Pudding'),('Steak','Joghurt');
+</pre>
+<h5>REPLACE</h5>
+<p>
+→ hinzufügen meherer Records<br>
+→ ersetzt bestehende Records<br>
+→ <code>DELETE und INSERT</code> als ein Befehl<br>
+<br>
+<strong>REPLACE INTO &lt;Tabelle&gt; </strong><br>
+<div style='padding-left: 30pt'>
+<strong>SET &lt;Spalte1&gt;=&lt;Wert1&gt;,...,&lt;SpalteN&gt;=&lt;WertN&gt;;</strong><br>
+<br>
+</div>
+<em>Beispiel:</em><br>
+<code>REPLACE INTO emp</code><br>
+<div style='padding-left: 30pt'>
+<code>SET id=3,frst_name='Joseph',Geld=1000;</code><br>
+</div>
+<br>
+<br>
+</p>
 <h5>UPDATE</h5>
 <p>
+→ ANSI/ISO Standard DML Statement<br>
 → verändern von Daten in einer Tabelle<br>
 → das Attribut ist bereits vergeben<br>
-</p>
-
-<p>
-<strong>UPDATE &lt;table&gt; SET &lt;Attribut&gt;=&lt;Wert&gt; [ WHERE &lt;Condition&gt;][,..]</strong><br>
+→ Ein Attribut wird aufgrund eines Matches in einer WHERE Klausel geändert<br>
+<br>
+<strong>UPDATE &lt;table&gt; SET &lt;Attribut&gt;=&lt;Wert&gt; [ WHERE= &lt;Condition&gt;] [LIMIT N,M]</strong><br>
 → setzt einen neuen &lt;Wert&gt; für Attribut von Tabelle &lt;table&gt; wo die Bedingungen &lt;Condition&gt; zutreffen<br>
 → mehrere Attribute müssen durch Kommata getrennt werden<br>
+→ <code>WHERE </code>Klausel muss mit angegeben werden, da sonst jeder Record aktualisiert wird<br>
+→ Mit LIMIT wird die WHERE Klausel weiter eingeschärnkt, falls es zum Beispiel meherer Einträge Maier gibt<br>
+→ <code>sql_safe_update </code>in my.cnf  erzwingt die eindeutige Eingrenzung durch <code>WHERE</code> Klausel<br>
+<a href="../../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf">Linux Wissen:FHS:etc:my.cnf</a><br>
+<br>
+<em>Beispiel:</em><br>
 </p>
-
+<pre>
+UPDATE personen
+</pre>
+<pre style='padding-left: 30pt'>
+SET nachname='Schmit'
+</pre>
+<pre style='padding-left: 60pt'>
+WHERE nachname='Anders'
+</pre>
+<pre style='padding-left: 90pt'>
+LIMIT 1;
+</pre>
 
 
 			<!-- End wiki content -->
