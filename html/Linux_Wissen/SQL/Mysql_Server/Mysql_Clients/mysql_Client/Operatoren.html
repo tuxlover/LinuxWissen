@@ -131,8 +131,8 @@ Created Mittwoch 28 Dezember 2011<br>
 <h4>Rangfolge in der Operatoren abgearbeitet werden</h4>
 <pre>
 :=
-||, OR, XOR
-&amp;&amp;, AND
+||, OR, XOR 
+&amp;&amp;, AND 
 NOT
 BETWEEN, CASE, WHEN, THEN, ELSE
 =, &lt;=&gt;, &gt;=, &gt;, &lt;=, &lt;, &lt;&gt;, !=, IS, LIKE, REGEXP, IN
@@ -145,8 +145,173 @@ BETWEEN, CASE, WHEN, THEN, ELSE
 - (unary minus), ~ (unary bit inversion)
 !
 BINARY, COLLATE
+
+
+</pre>
+<h4>Operatoren und ihre Bedeutung</h4>
+
+<h5>Logische Operatoren ( AND , &amp;&amp; , OR, || )</h5>
+<p>
+<strong>→ </strong>logisches Und<br>
+<br>
+<em>Beispiel:</em><br>
+<div style='padding-left: 30pt'>
+<code>SELECT * FROM actor </code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>WHERE first_name='ED' AND last_name='CHASE';</code><br>
+<br>
+</div>
+</p>
+<h5>=</h5>
+<p>
+<strong>→ </strong>Zuweisungsoperator, eine Variablen wird ein Wert zugewiesen, verwendet in der <code>SET Klausel</code><br>
+<br>
+</p>
+<h5>:=</h5>
+<p>
+ → Zuweisung eines Wertes<br>
+<br>
+</p>
+<h5>[NOT] BETWEEN ... AND ...</h5>
+<p>
+→ Prüfoperator ein Wert innerhalb eines Intervalls <br>
+→ Es können nur Zahlenwerte überprüft werden<br>
+→ wird die Negation NOT verwendet so wird die Komplementärergebnissmenge ausgegeben<br>
+<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+SELECT * FROM actor 
+</pre>
+<pre style='padding-left: 30pt'>
+WHERE actor_id NOT BETWEEN 10 AND 20;
+</pre>
+<h5>BINARY</h5>
+<p>
+→ ein String in einen Binären String umwandeln<br>
+<br>
+</p>
+<h5>&amp;</h5>
+<p>
+ <br>
+<strong>→ </strong>Bitwesises Und<br>
+<br>
+</p>
+<h5>~</h5>
+<p>
+ <br>
+<strong>→ </strong>Bits invertieren<strong>| </strong>→ Bitweises Oder<br>
+<br>
+</p>
+<h5>^</h5>
+<p>
+ <br>
+<strong>→ </strong>Bitweises XOR<br>
+<br>
+</p>
+<h5>CASE</h5>
+<p>
+ → Konstrukt für Fallunterscheidungen in einem Select Statement<br>
+<br>
+...(<br>
+<div style='padding-left: 30pt'>
+<strong>CASE WHEN [&lt;Bedingung1&gt;] </strong><br>
+<strong>THEN &lt;Ausgabe1&gt; [WHEN [&lt;Bedingung2&gt;] </strong><br>
+<strong>THEN &lt;Ausgabe2&gt; ...] </strong><br>
+<strong>[ELSE &lt;AusgabeN&gt;] END</strong><br>
+<strong>)...</strong><br>
+</div>
+<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+SELECT (
+CASE WHEN bestellung.express = 0 
+	THEN SUM(artikel_preise.preis)
+	ELSE ( SUM(artikel_preise.preis)+$exp )
+END
+)
+FROM bestellung
+INNER JOIN artikel_preise ON bestellung.AuflageId = artikel_preise.id_preis
+WHERE bestellung.id_benutzer=1 AND artikel_preise.mwst=19;
+
+</pre>
+<h5>DIV</h5>
+<p>
+ <br>
+→ Integer Division<br>
+<strong>→ </strong>wie <strong>FLOOR </strong>Funktion (<a href="./Funktionen.html" title="Funktionen">Funktionen</a>)<br>
+→ kann aber auch mit <strong>BIGINT</strong> Datentypen umgehen (<a href="../../../Datentypen.html" title="SQL:Datentypen">SQL:Datentypen</a>)<br>
+<br>
+<em>Beispiel:</em><br>
+<code>SELECT 10 DIV 3 AS 'Gauss Klammer';</code><br>
+<br>
+</p>
+<h5>/</h5>
+<p>
+<strong>→ </strong>Divison mit Nachkommastellen im Ergebnis<br>
+<em>Beispiel:</em><br>
+<code>SELECT 10 / 3;</code><br>
+<br>
+</p>
+<h5>&lt;==&gt;</h5>
+<p>
+→ NULL-Safe Vergleichsoperator<br>
+→ im Gegensatz zum normalen Vergleichsoperator können auch NULL Werte verglichen werden<br>
+<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+SELECT 1 &lt;=&gt; 1, NULL &lt;=&gt; NULL, 1 &lt;=&gt; NULL;
+        -&gt; 1, 1, 0
 </pre>
 
+
+<h5>Vergleichsoperatoren ( =, &gt;= , &gt; , &lt;= , &lt; , &lt;&gt;, !=)</h5>
+<p>
+<strong>→ </strong>Vergleichsoperatoren können Integerwerte überprüfen und entweder Boolesche Werte zurückliefern oder eine Menge von gefundenen Resultaten<br>
+→ die Operatoren &lt;&gt; und != stehen beiden für Ungleich<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+SELECT * FROM actor 
+	WHERE actor_id &lt;= 150;
+
+</pre>
+<h5>NULL Werte Tests ( IS NULL, IS NOT NULL)</h5>
+<p>
+<strong>→ </strong>Testen ob es Werte mit NULL gibt <br>
+<br>
+<em>Beispiel:</em><br>
+<code>SELECT first_name,last_name FROM customer </code><br>
+<div style='padding-left: 30pt'>
+<code>WHERE email IS NULL;</code><br>
+</div>
+<br>
+<br>
+</p>
+<h5>Einfaches Pattern Matching ( LIKE, NOT LIKE  )</h5>
+<p>
+<br>
+<br>
+<code>&lt;&lt; 	Left shift</code><br>
+<code>- 	Minus operator</code><br>
+<code>% 	Modulo operator</code><br>
+<code>NOT REGEXP 	Negation of REGEXP</code><br>
+<code>NOT, ! 	Negates valueqq</code><br>
+<code>+ 	Addition operator</code><br>
+<code>REGEXP 	Pattern matching using regular expressions</code><br>
+<code>&gt;&gt; 	Right shift</code><br>
+<code>RLIKE 	Synonym for REGEXP</code><br>
+<code>* 	Multiplication operator</code><br>
+<code>- 	Change the sign of the argument</code><br>
+<code>XOR 	Logical XOR</code><br>
+<br>
+</p>
 
 
 			<!-- End wiki content -->

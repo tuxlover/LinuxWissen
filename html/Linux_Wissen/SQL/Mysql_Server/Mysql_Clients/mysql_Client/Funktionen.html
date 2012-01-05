@@ -124,9 +124,19 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<h4>SELECT()</h4>
+				<a href="http://dev.mysql.com/doc/refman/5.1/en/func-op-summary-ref.html" title="http://dev.mysql.com/doc/refman/5.1/en/func-op-summary-ref.html">http://dev.mysql.com/doc/refman/5.1/en/func-op-summary-ref.html</a>
+<li>Funktionen können dazu verwendet werden um Daten zu manipulieren und zusammenzufaassen</li>
+<li>Funktionen können mit überall in einem <code>SELECT</code> und <code>INSERT INTO</code> Statements  verwenden werden</li>
+<li>Funktionen können meistens geschachtelt werden </li>
+
+<h4>SELECT()</h4>
 <code>select user()</code>
 
+<h4>DISTINCT()</h4><br>
+→ nur eindutige Werte ausgeben<br>
+→ schneide doppelte vorkommen ab<br>
+→ in Verbindung mit <code>AVG()</code> und <code>COUNT()</code>sinnvoll<br>
+<a href="../../../Datenanweisungen/DML.html" title="SQL:Datenanweisungen:DML">SQL:Datenanweisungen:DML</a>
 
 <h3>String basierte Funktionen</h3>
 
@@ -154,6 +164,7 @@ ORDER BY last_name
 LIMIT 19;
 </pre>
 
+
 <h4>CONCAT_WS()</h4><br>
 → zwei Spalten miteinander Verknüpfen<br>
 → das erste Argument enthält den Seperator<br>
@@ -173,6 +184,7 @@ AS fullname
 <pre style='padding-left: 60pt'>
 FROM sakila.customer LIMIT 20;
 </pre>
+
 
 <h4>UPPER()</h4><br>
 → umwandeln aller Kleinbuchstaben in Großbuchstaben<br>
@@ -205,13 +217,41 @@ FROM sakila.customer LIMIT 20;
 </div>
 
 
+<h4>TRIM([LEADING &lt;CHAR&gt;] | [TRAILLING &lt;CHAR&gt;] | [BOTH &lt;CHAR&gt; ] FROM )</h4><br>
+→ Abschneiden von Zeichen vor oder hinter einer Zeischenkette<br>
+→ wird kein Zeichen mit angegeben, so werden Whitespaces vor und hinter der Zeichenkette entfernt<br>
+<br>
+<em>Beispiele:</em>
+<code>SELECT TRIM(BOTH 'x' FROM 'xxxxxxHallo Weltxxxxxxxxx');</code>
+
+<code>SELECT TRIM(LEADING 'x' FROM 'xxxxxxHallo Weltxxxxxxxxx');</code>
+
+<code>SELECT TRIM(TRAILING 'x' FROM 'xxxxxxHallo Weltxxxxxxxxx');</code>
+
+<h4>GROUP_CONCAT()</h4><br>
+→ Eine Spalte zu einer Zeile zusammenfügen<br>
+<br>
+<strong>GROUP_CONCAT([DISTINCT] expr [,expr ...]</strong>
+<strong>             [ORDER BY {unsigned_integer | col_name | expr}</strong>
+<strong>                 [ASC | DESC] [,col_name ...]]</strong>
+<strong>             [SEPARATOR str_val]);</strong>
+
+<em>Beispiel:</em>
+<pre>
+SELECT GROUP_CONCAT(DISTINCT(category)) 
+</pre>
+<pre style='padding-left: 30pt'>
+FROM sakila.film_list;
+</pre>
+
+
 <h3>Mathematische Funktionen</h3>
+<li>Mysql kennt eine Reihe von mathetischen Funktionen</li>
+<a href="http://dev.mysql.com/doc/refman/5.1/en/numeric-functions.html" title="http://dev.mysql.com/doc/refman/5.1/en/numeric-functions.html">http://dev.mysql.com/doc/refman/5.1/en/numeric-functions.html</a>
 
 <h4>BIN()</h4><br>
 → Integer in Binär umwandeln<br>
 <br>
-<strong>SELECT BIN(&lt;Integer&gt;) [AS &lt;Alias&gt;];</strong>
-
 <em> Beispiel:</em>
 <code>SELECT BIN(42) AS NETMASK;</code>
 
@@ -221,13 +261,22 @@ FROM sakila.customer LIMIT 20;
 <em>Beispiel:</em>
 <code>SELECT SUM(1+2+3+4+5+6+7+8+9+10) AS 'Gauss Sum';</code>
 
+<h4>FLOOR(Y)</h4><br>
+→ den kleinsten Integerwert nicht größer als Y ausgeben<br>
+→ In der Mathematik auch als Guasklammer bekannt<br>
+<br>
+<em>Beispiel:</em><br>
+Pi ist 3 für genügend große 3:<br>
+Funktioern können geschachtelt werden<br>
+<code> SELECT FLOOR(PI());</code>
+
+
 <h3>Mittelnde Funktionen</h3>
 
 <h4>COUNT(*)</h4><br>
 → Zählen von Spalten<br>
 → wird Spalte benutzt, so wird die Anzahl der Zeilen gezählt die nicht <code>NULL</code> sind<br>
-<strong>SELECT COUNT(*|&lt;Spalte&gt;) FROM &lt;Tabelle&gt;</strong>
-
+<br>
 <em>Beispiele:</em>
 <pre>
 SELECT COUNT(*) AS 'Number of Actors' 
@@ -244,8 +293,7 @@ FROM<code> world.Country;</code><br>
 
 <h4>MIN()|MAX()</h4><br>
 → Rückgabe des kleinste Wertes aus einer Ergebnismenge<br>
-<strong>SELECT MIN|MAX(&lt;Spalte&gt;) FROM &lt;Tabelle&gt;;</strong>
-
+<br>
 <em>Besipiele:</em>
 <div style='padding-left: 30pt'>
 <code>SELECT MIN(unitprice),MAX(unitprice)</code><br>
@@ -257,8 +305,110 @@ FROM<code> world.Country;</code><br>
 
 <h4>AVG()</h4><br>
 → Rückgabe des durschnittlichen Wertes<br>
+→ kann mit der DISTINCT Funktion verwendet werden<br>
 <br>
+<em>Beispiele:</em>
+<code>SELECT AVG(Population) AS 'Durchschnittliche Bev. in Europa' </code>
+<div style='padding-left: 30pt'>
+<code>FROM world.Country </code><br>
+</div>
+<div style='padding-left: 60pt'>
+<code>WHERE Continent='Europe';</code><br>
+</div>
+
+
 <h3>Datumsfunktionen</h3>
+
+<h4>DATE()</h4><br>
+→ extrahiert das Datum aus einem Datetime-Ausdruck<br>
+<br>
+<em>Beispiel:</em>
+<pre>
+SELECT last_name, first_name, DATE(last_update) 
+</pre>
+<pre style='padding-left: 30pt'>
+FROM customer;
+</pre>
+
+
+<h4>DATEDIFF(&lt;Ausdruck1&gt;,&lt;Asudruck2&gt;)</h4><br>
+→ Die Differenz in Tagen zwischen dem Datums-String in &lt;Ausdruck1&gt; und &lt;Ausdruck2&gt;<br>
+<br>
+<em>Beispiel:</em>
+<code>SELECT DATEDIFF('2012-01-05','1980-07-26');</code>
+
+<h4>CURDATE()</h4><br>
+→ Ausgabe des aktuellen Datums <br>
+→ Ausgabe in String oder nummerischer Form, je nach Kontext<br>
+<br>
+<em>Beispiele:</em>
+<pre>
+ SELECT CURDATE();
+        -&gt; '2008-06-13'
+ SELECT CURDATE() + 0;
+        -&gt; 20080613
+</pre>
+
+
+<h4>CURTIME()</h4><br>
+→ die Ausgabe des aktuellen Datums<br>
+→ Ausgabe als String oder nummerischer Form, je nach Kontext<br>
+→ Siehe <code>CURDATE()</code>
+
+<h4>NOW()</h4><br>
+→ Ausgabe der aktullen Datums und der Uhrzeit inklusive Sekunden<br>
+→ je nach Kontext als String oder in nummerischer Form<br>
+<br>
+<em>Beispiel:</em>
+<code>SELECT NOW() +360000;</code>
+
+<h4>TIMESTAMP('&lt;Date&gt;'[,&lt;TIME&gt;])</h4><br>
+→ Ausgabe eines zeitstempels <br>
+→ Konvertiert ein Datumssting in einen Zeitstempel<br>
+→ Wenn &lt;Time&gt; als Zweites Argument mit angegeben, wird ein zusammengesetzter Zeitstempel erzeugt<br>
+<br>
+<em>Beispiel:</em>
+<code>SELECT TIMESTAMP('2011.09.01','11:45:12');</code><br>
+-&gt; <br>
+<pre>
+| TIMESTAMP('2011.09.01','11:45:12') |
++------------------------------------+
+| 2011-09-01 11:45:12                |
++------------------------------------+
+</pre>
+
+
+<h4>UNIX_TIMESTAMP()</h4><br>
+→ Ausgabe eines Unix Zeitstemels nach UnixZeit<br>
+<a href="../../../../Systemzeit.html" title="Linux Wissen:Systemzeit">Linux Wissen:Systemzeit</a>
+
+<em>Beispiel:</em>
+<code>SELECT UNIX_TIMESTAMP('1970-01-01');</code>
+<pre>
++------------------------------+
+| UNIX_TIMESTAMP('1970-01-01') |
++------------------------------+
+|                            0 |
++------------------------------+
+</pre>
+<br>
+Wieviele Sekunden hat ein Jahr:<br>
+<code>SELECT UNIX_TIMESTAMP('1971-01-01');</code>
+
+<h4>YEAR()</h4><br>
+→ Ausgabe des jahres aus einem Datums Datentyp<br>
+<br>
+<em>Beispiel:</em>
+<pre>
+SELECT staff_id,first_name,last_name,YEAR(last_update) 
+</pre>
+<pre style='padding-left: 30pt'>
+FROM staff 
+</pre>
+<pre style='padding-left: 60pt'>
+WHERE email IS NOT NULL;
+</pre>
+
 
 
 			<!-- End wiki content -->
@@ -266,7 +416,7 @@ FROM<code> world.Country;</code><br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../mysql_Client.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client</a></li>
+				Backlinks:						<a href='../mysql_Client.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client</a></li>						<a href='./Operatoren.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client:Operatoren</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

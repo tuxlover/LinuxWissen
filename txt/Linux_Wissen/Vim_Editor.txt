@@ -10,6 +10,8 @@ Created Freitag 15 April 2011
 **vi**
 **-r recover <Datei> **→ Dateien nach einem Absturz wieder herstellen
 **-t <Marke> <Datei> **→ Starte Editor ab <Marke> falls vorhanden
+**-p <Datei1> ... <DateiN> → **öffnen meherer Dateien
+		                      → druch //:tabnext// und// :tabprevious //im Kommandomodus kann zwischen den Tabs gewechselt werden
 **+ <Datei> **→ öffne Datei an der letzten Zeile
 **+n <Datei> **→ öffne Datei an Zeile n
 **+"se nu"** → öffne Datei mit Zeilennummerrierung
@@ -19,6 +21,7 @@ Created Freitag 15 April 2011
 
 ===== Kommando-Modus =====
 * Jede Taste stellt einen Befehl oder eine Folge von Befehlen dar
+* Vim Interne Befehle werden duch : eingeleitet
 * In der Kommando-Modus gelangt man nach öffnen einer Datei mit Editor oder durch **Esc**
 
 ===== Eingabe-Modus =====

@@ -5,10 +5,19 @@ Creation-Date: 2011-12-28T14:21:49+01:00
 ====== Funktionen ======
 Created Mittwoch 28 Dezember 2011
 
+http://dev.mysql.com/doc/refman/5.1/en/func-op-summary-ref.html
+* Funktionen können dazu verwendet werden um Daten zu manipulieren und zusammenzufaassen
+* Funktionen können mit überall in einem ''SELECT'' und ''INSERT INTO'' Statements  verwenden werden
+* Funktionen können meistens geschachtelt werden 
 
 === SELECT() ===
 ''select user()''
 
+=== DISTINCT() ===
+→ nur eindutige Werte ausgeben
+→ schneide doppelte vorkommen ab
+→ in Verbindung mit ''AVG()'' und ''COUNT()''sinnvoll
+[[SQL:Datenanweisungen:DML]]
 
 ==== String basierte Funktionen ====
 
@@ -30,6 +39,7 @@ Created Mittwoch 28 Dezember 2011
 				LIMIT 19;
 				'''
 
+
 === CONCAT_WS() ===
 → zwei Spalten miteinander Verknüpfen
 → das erste Argument enthält den Seperator
@@ -47,6 +57,7 @@ SELECT CONCAT_WS(' ',first_name,last_name)
 		'''
 		FROM sakila.customer LIMIT 20;
 		'''
+
 
 === UPPER() ===
 → umwandeln aller Kleinbuchstaben in Großbuchstaben
@@ -67,12 +78,40 @@ SELECT CONCAT_WS(' ',first_name,last_name)
 					''LIMIT 10;''
 
 
+=== TRIM([LEADING <CHAR>] | [TRAILLING <CHAR>] | [BOTH <CHAR> ] FROM ) ===
+→ Abschneiden von Zeichen vor oder hinter einer Zeischenkette
+→ wird kein Zeichen mit angegeben, so werden Whitespaces vor und hinter der Zeichenkette entfernt
+
+//Beispiele://
+''SELECT TRIM(BOTH 'x' FROM 'xxxxxxHallo Weltxxxxxxxxx');''
+
+''SELECT TRIM(LEADING 'x' FROM 'xxxxxxHallo Weltxxxxxxxxx');''
+
+''SELECT TRIM(TRAILING 'x' FROM 'xxxxxxHallo Weltxxxxxxxxx');''
+
+=== GROUP_CONCAT() ===
+→ Eine Spalte zu einer Zeile zusammenfügen
+
+**GROUP_CONCAT([DISTINCT] expr [,expr ...]**
+**             [ORDER BY {unsigned_integer | col_name | expr}**
+**                 [ASC | DESC] [,col_name ...]]**
+**             [SEPARATOR str_val]);**
+
+//Beispiel://
+'''
+SELECT GROUP_CONCAT(DISTINCT(category)) 
+'''
+	'''
+	FROM sakila.film_list;
+	'''
+
+
 ==== Mathematische Funktionen ====
+* Mysql kennt eine Reihe von mathetischen Funktionen
+http://dev.mysql.com/doc/refman/5.1/en/numeric-functions.html
 
 === BIN() ===
 → Integer in Binär umwandeln
-
-**SELECT BIN(<Integer>) [AS <Alias>];**
 
 // Beispiel://
 ''SELECT BIN(42) AS NETMASK;''
@@ -83,12 +122,21 @@ SELECT CONCAT_WS(' ',first_name,last_name)
 //Beispiel://
 ''SELECT SUM(1+2+3+4+5+6+7+8+9+10) AS 'Gauss Sum';''
 
+=== FLOOR(Y) ===
+→ den kleinsten Integerwert nicht größer als Y ausgeben
+→ In der Mathematik auch als Guasklammer bekannt
+
+//Beispiel://
+Pi ist 3 für genügend große 3:
+Funktioern können geschachtelt werden
+'' SELECT FLOOR(PI());''
+
+
 ==== Mittelnde Funktionen ====
 
 === COUNT(*) ===
 → Zählen von Spalten
 → wird Spalte benutzt, so wird die Anzahl der Zeilen gezählt die nicht ''NULL'' sind
-**SELECT COUNT(*|<Spalte>) FROM <Tabelle>**
 
 //Beispiele://
 '''
@@ -104,7 +152,6 @@ SELECT COUNT(*) AS 'Number of Actors'
 
 === MIN()|MAX() ===
 → Rückgabe des kleinste Wertes aus einer Ergebnismenge
-**SELECT MIN|MAX(<Spalte>) FROM <Tabelle>;**
 
 //Besipiele://
 	''SELECT MIN(unitprice),MAX(unitprice)''
@@ -113,5 +160,103 @@ SELECT COUNT(*) AS 'Number of Actors'
 
 === AVG() ===
 → Rückgabe des durschnittlichen Wertes
+→ kann mit der DISTINCT Funktion verwendet werden
+
+//Beispiele://
+''SELECT AVG(Population) AS 'Durchschnittliche Bev. in Europa' ''
+	''FROM world.Country ''
+		''WHERE Continent='Europe';''
+
 
 ==== Datumsfunktionen ====
+
+=== DATE() ===
+→ extrahiert das Datum aus einem Datetime-Ausdruck
+
+//Beispiel://
+'''
+SELECT last_name, first_name, DATE(last_update) 
+'''
+	'''
+	FROM customer;
+	'''
+
+
+=== DATEDIFF(<Ausdruck1>,<Asudruck2>) ===
+→ Die Differenz in Tagen zwischen dem Datums-String in <Ausdruck1> und <Ausdruck2>
+
+//Beispiel://
+''SELECT DATEDIFF('2012-01-05','1980-07-26');''
+
+=== CURDATE() ===
+→ Ausgabe des aktuellen Datums 
+→ Ausgabe in String oder nummerischer Form, je nach Kontext
+
+//Beispiele://
+'''
+ SELECT CURDATE();
+        -> '2008-06-13'
+ SELECT CURDATE() + 0;
+        -> 20080613
+'''
+
+
+=== CURTIME() ===
+→ die Ausgabe des aktuellen Datums
+→ Ausgabe als String oder nummerischer Form, je nach Kontext
+→ Siehe ''CURDATE()''
+
+=== NOW() ===
+→ Ausgabe der aktullen Datums und der Uhrzeit inklusive Sekunden
+→ je nach Kontext als String oder in nummerischer Form
+
+//Beispiel://
+''SELECT NOW() +360000;''
+
+=== TIMESTAMP('<Date>'[,<TIME>]) ===
+→ Ausgabe eines zeitstempels 
+→ Konvertiert ein Datumssting in einen Zeitstempel
+→ Wenn <Time> als Zweites Argument mit angegeben, wird ein zusammengesetzter Zeitstempel erzeugt
+
+//Beispiel://
+''SELECT TIMESTAMP('2011.09.01','11:45:12');''
+-> 
+'''
+| TIMESTAMP('2011.09.01','11:45:12') |
++------------------------------------+
+| 2011-09-01 11:45:12                |
++------------------------------------+
+'''
+
+
+=== UNIX_TIMESTAMP() ===
+→ Ausgabe eines Unix Zeitstemels nach UnixZeit
+[[Linux Wissen:Systemzeit]]
+
+//Beispiel://
+''SELECT UNIX_TIMESTAMP('1970-01-01');''
+'''
++------------------------------+
+| UNIX_TIMESTAMP('1970-01-01') |
++------------------------------+
+|                            0 |
++------------------------------+
+'''
+
+Wieviele Sekunden hat ein Jahr:
+''SELECT UNIX_TIMESTAMP('1971-01-01');''
+
+=== YEAR() ===
+→ Ausgabe des jahres aus einem Datums Datentyp
+
+//Beispiel://
+'''
+SELECT staff_id,first_name,last_name,YEAR(last_update) 
+'''
+	'''
+	FROM staff 
+	'''
+		'''
+		WHERE email IS NOT NULL;
+		'''
+

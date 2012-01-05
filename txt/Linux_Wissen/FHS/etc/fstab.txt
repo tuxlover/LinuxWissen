@@ -6,7 +6,6 @@ Creation-Date: 2011-04-21T23:52:49+02:00
 Created Donnerstag 21 April 2011
 
 ++
-'''
 #Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Reihenfolge des Checks beim Booten              
 
 /dev/system/swap          none               swap      	 defaults              		0 0
@@ -30,8 +29,6 @@ usbfs                    /proc/bus/usb           usbfs      	noauto    	        
 devpts                  /dev/pts     	            devpts     	mode=0620,gid=5       	 0 0
 
 Alucard:/media/Elements  /srv/nfs             nfs        rw,... #man 5 nfs
-'''
-
 ++
 __Hinweis:__
 __Für mehr sicherheit sollte man folgende Mountoptionen für Verzeichnisse vorsehen auf denen jeder Zugriff hat.__

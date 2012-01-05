@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2011-04-21T15:44:24+02:00
 
-====== Partitionen und Dateisysteme ======
+	====== Partitionen und Dateisysteme ======
 Created Donnerstag 21 April 2011
 
 ===== Interner Verschnitt =====
@@ -75,7 +75,8 @@ Eine UUID (Universal Unique Identifier) ist einem Gerät zugewiesene eindeutige 
 **blkid [</dev/sdX>] **→ Informationen über UUID, typ des Dateissystems anzeigen
                                      → wird ein spezielles Gerät angegeben, werden nur Informationen für    
 
-__Hinweis: UUID und Labels können für die */etc/fstab in der ersten Zeile verwendet.( __[[Linux Wissen:FHS:etc:fstab]] )
+__Hinweis: UUID und Labels können für die */etc/fstab in der ersten Zeile verwendet.__
+__( __[[Linux Wissen:FHS:etc:fstab]] )
 
 **e2label /dev/sdX <LABEL> **→ das Gerät /dev/sdX erhält das <LABEL>
 

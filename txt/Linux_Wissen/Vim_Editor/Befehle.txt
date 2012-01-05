@@ -53,6 +53,9 @@ Created Freitag 15 April 2011
 **:%s/alt/neu/gc** → alle Wörter alt duch das Wort neu in gesamten Text ersetzen und dabei um Bestätigung fragen
 
 **:Sex → **den S Explorer aufrufen
+
+:**tabnext **→ durch Tabs vorwärts springen (erfordert -p)
+**:tabprevious → **durch Tabs rückwärts springen (erfordert -p)
   
 **:! → **Ein externes Programm aufrufen
     → mit % kann man sich auf das aktuelle Dokument als StdtIn beziehen

@@ -139,34 +139,51 @@ Created Donnerstag 21 April 2011<br>
 
 <p>
 ++<br>
+#Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Reihenfolge des Checks beim Booten              <br>
 </p>
-<pre>
-#Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Reihenfolge des Checks beim Booten              
-
-/dev/system/swap          none               swap      	 defaults              		0 0
-
-/dev/system/root         /          		     ext3     acl,user_xattr        		1 1
-
-/dev/disk/by-id/a...      /boot                  ext2       	acl,user_xattr        		1 2
-
-/dev/system/home    /home                 ext3       	acl,user_xattr        		1 2
-
-/dev/system/tmp       /tmp                   ext3       	acl,user_xattr        		1 2
-
-proc                          /proc           	     proc       	defaults     		         0 0
-
-sysfs                        /sys            	     sysfs    	noauto     		         0 0
-
-debugfs                  /sys/kernel/debug  debugfs   	 noauto             	         0 0
-
-usbfs                    /proc/bus/usb           usbfs      	noauto    	                 0 0
-
-devpts                  /dev/pts     	            devpts     	mode=0620,gid=5       	 0 0
-
-Alucard:/media/Elements  /srv/nfs             nfs        rw,... #man 5 nfs
-</pre>
 
 <p>
+/dev/system/swap          none               swap      	 defaults              		0 0<br>
+</p>
+
+<p>
+/dev/system/root         /          		     ext3     acl,user_xattr        		1 1<br>
+</p>
+
+<p>
+/dev/disk/by-id/a...      /boot                  ext2       	acl,user_xattr        		1 2<br>
+</p>
+
+<p>
+/dev/system/home    /home                 ext3       	acl,user_xattr        		1 2<br>
+</p>
+
+<p>
+/dev/system/tmp       /tmp                   ext3       	acl,user_xattr        		1 2<br>
+</p>
+
+<p>
+proc                          /proc           	     proc       	defaults     		         0 0<br>
+</p>
+
+<p>
+sysfs                        /sys            	     sysfs    	noauto     		         0 0<br>
+</p>
+
+<p>
+debugfs                  /sys/kernel/debug  debugfs   	 noauto             	         0 0<br>
+</p>
+
+<p>
+usbfs                    /proc/bus/usb           usbfs      	noauto    	                 0 0<br>
+</p>
+
+<p>
+devpts                  /dev/pts     	            devpts     	mode=0620,gid=5       	 0 0<br>
+</p>
+
+<p>
+Alucard:/media/Elements  /srv/nfs             nfs        rw,... #man 5 nfs<br>
 ++<br>
 <u>Hinweis:</u><br>
 <u>Für mehr sicherheit sollte man folgende Mountoptionen für Verzeichnisse vorsehen auf denen jeder Zugriff hat.</u><br>
@@ -180,7 +197,7 @@ Alucard:/media/Elements  /srv/nfs             nfs        rw,... #man 5 nfs
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Partitionen_und_Dateisysteme/Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>						<a href='../../Partitionen_und_Dateisysteme/Mounten.html'>Linux Wissen:Partitionen und Dateisysteme:Mounten</a></li>						<a href='../../Partitionen_und_Dateisysteme/Swap.html'>Linux Wissen:Partitionen und Dateisysteme:Swap</a></li>						<a href='../../Partitionen_und_Dateisysteme/Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a></li>						<a href='../../Sicherheit/Hostsecurity.html'>Linux Wissen:Sicherheit:Hostsecurity</a></li>
+				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Partitionen_und_Dateisysteme/Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>						<a href='../../Partitionen_und_Dateisysteme/Mounten.html'>Linux Wissen:Partitionen und Dateisysteme:Mounten</a></li>						<a href='../../Partitionen_und_Dateisysteme/Swap.html'>Linux Wissen:Partitionen und Dateisysteme:Swap</a></li>						<a href='../../Partitionen_und_Dateisysteme/Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a></li>						<a href='../../Sicherheit/Hostsecurity.html'>Linux Wissen:Sicherheit:Hostsecurity</a></li>						<a href='../../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

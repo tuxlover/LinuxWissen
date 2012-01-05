@@ -8,8 +8,8 @@ Created Mittwoch 28 Dezember 2011
 === Rangfolge in der Operatoren abgearbeitet werden ===
 '''
 :=
-||, OR, XOR
-&&, AND
+||, OR, XOR 
+&&, AND 
 NOT
 BETWEEN, CASE, WHEN, THEN, ELSE
 =, <=>, >=, >, <=, <, <>, !=, IS, LIKE, REGEXP, IN
@@ -22,5 +22,132 @@ BETWEEN, CASE, WHEN, THEN, ELSE
 - (unary minus), ~ (unary bit inversion)
 !
 BINARY, COLLATE
+
+
 '''
+=== Operatoren und ihre Bedeutung ===
+
+== Logische Operatoren ( AND , && , OR, || )  ==
+**→ **logisches Und
+
+//Beispiel://
+	''SELECT * FROM actor ''
+		''WHERE first_name='ED' AND last_name='CHASE';''
+		
+== =  ==
+**→ **Zuweisungsoperator, eine Variablen wird ein Wert zugewiesen, verwendet in der ''SET Klausel''
+
+== := ==
+ → Zuweisung eines Wertes
+
+== [NOT] BETWEEN ... AND ...  ==
+→ Prüfoperator ein Wert innerhalb eines Intervalls 
+→ Es können nur Zahlenwerte überprüft werden
+→ wird die Negation NOT verwendet so wird die Komplementärergebnissmenge ausgegeben
+
+//Beispiel://
+'''
+SELECT * FROM actor 
+'''
+	'''
+	WHERE actor_id NOT BETWEEN 10 AND 20;
+	'''
+
+
+== BINARY  ==
+→ ein String in einen Binären String umwandeln
+
+== & ==
+ 
+**→ **Bitwesises Und
+
+== ~ ==
+ 
+**→ **Bits invertieren**| **→ Bitweises Oder
+
+== ^ ==
+ 
+**→ **Bitweises XOR
+
+== CASE ==
+ → Konstrukt für Fallunterscheidungen in einem Select Statement
+
+...(
+	**CASE WHEN [<Bedingung1>] **
+	**THEN <Ausgabe1> [WHEN [<Bedingung2>] **
+	**THEN <Ausgabe2> ...] **
+	**[ELSE <AusgabeN>] END**
+	**)...**
+
+//Beispiel://
+'''
+SELECT (
+CASE WHEN bestellung.express = 0 
+	THEN SUM(artikel_preise.preis)
+	ELSE ( SUM(artikel_preise.preis)+$exp )
+END
+)
+FROM bestellung
+INNER JOIN artikel_preise ON bestellung.AuflageId = artikel_preise.id_preis
+WHERE bestellung.id_benutzer=1 AND artikel_preise.mwst=19;
+
+'''
+== DIV ==
+ 
+→ Integer Division
+**→ **wie **FLOOR **Funktion ([[Funktionen]])
+→ kann aber auch mit **BIGINT** Datentypen umgehen ([[SQL:Datentypen]])
+
+//Beispiel://
+''SELECT 10 DIV 3 AS 'Gauss Klammer';''
+
+== / ==
+**→ **Divison mit Nachkommastellen im Ergebnis
+//Beispiel://
+''SELECT 10 / 3;''
+
+== <==> ==
+→ NULL-Safe Vergleichsoperator
+→ im Gegensatz zum normalen Vergleichsoperator können auch NULL Werte verglichen werden
+
+//Beispiel://
+'''
+SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;
+        -> 1, 1, 0
+'''
+
+
+== Vergleichsoperatoren ( =, >= , > , <= , < , <>, !=) ==
+**→ **Vergleichsoperatoren können Integerwerte überprüfen und entweder Boolesche Werte zurückliefern oder eine Menge von gefundenen Resultaten
+→ die Operatoren <> und != stehen beiden für Ungleich
+
+//Beispiel://
+'''
+SELECT * FROM actor 
+	WHERE actor_id <= 150;
+
+'''
+== NULL Werte Tests ( IS NULL, IS NOT NULL) ==
+**→ **Testen ob es Werte mit NULL gibt 
+
+//Beispiel://
+''SELECT first_name,last_name FROM customer ''
+	''WHERE email IS NULL;''
+
+
+== Einfaches Pattern Matching ( LIKE, NOT LIKE  ) ==
+
+
+''<< 	Left shift''
+''- 	Minus operator''
+''% 	Modulo operator''
+''NOT REGEXP 	Negation of REGEXP''
+''NOT, ! 	Negates valueqq''
+''+ 	Addition operator''
+''REGEXP 	Pattern matching using regular expressions''
+''>> 	Right shift''
+''RLIKE 	Synonym for REGEXP''
+''* 	Multiplication operator''
+''- 	Change the sign of the argument''
+''XOR 	Logical XOR''
 
