@@ -27,20 +27,20 @@ BINARY, COLLATE
 '''
 === Operatoren und ihre Bedeutung ===
 
-== Logische Operatoren ( AND , && , OR, || )  ==
+== Logische Operatoren ( AND , && , OR, || , XOR ) ==
 **→ **logisches Und
 
 //Beispiel://
 	''SELECT * FROM actor ''
 		''WHERE first_name='ED' AND last_name='CHASE';''
 		
-== =  ==
+== = ==
 **→ **Zuweisungsoperator, eine Variablen wird ein Wert zugewiesen, verwendet in der ''SET Klausel''
 
 == := ==
  → Zuweisung eines Wertes
 
-== [NOT] BETWEEN ... AND ...  ==
+== [NOT] BETWEEN ... AND ... ==
 → Prüfoperator ein Wert innerhalb eines Intervalls 
 → Es können nur Zahlenwerte überprüft werden
 → wird die Negation NOT verwendet so wird die Komplementärergebnissmenge ausgegeben
@@ -53,8 +53,7 @@ SELECT * FROM actor
 	WHERE actor_id NOT BETWEEN 10 AND 20;
 	'''
 
-
-== BINARY  ==
+== BINARY ==
 → ein String in einen Binären String umwandeln
 
 == & ==
@@ -117,6 +116,14 @@ SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;
 '''
 
 
+== mathematische Operatoren(- , +, * ,  / ) ==
+→ eine mathematische Rechenoperationen ausführen
+
+//Beispiel://
+''SELECT (4*4)+(2*4*6)+(6*6);''
+
+__Achtung: Keine Leerzeichen zwischen den einzelnen Operanten lassen.__
+
 == Vergleichsoperatoren ( =, >= , > , <= , < , <>, !=) ==
 **→ **Vergleichsoperatoren können Integerwerte überprüfen und entweder Boolesche Werte zurückliefern oder eine Menge von gefundenen Resultaten
 → die Operatoren <> und != stehen beiden für Ungleich
@@ -136,18 +143,33 @@ SELECT * FROM actor
 
 
 == Einfaches Pattern Matching ( LIKE, NOT LIKE  ) ==
+→ nach einfaches Strings matchen
+→ wird meistens in einer ''WHERE'' Klausel verwedet
+
+* % → beliebig viele Zeichen
+* _ → ein beliebiges Zeichen
+
+//Beispiele://
+''SELECT * FROM film ''
+	''WHERE title NOT LIKE 'T%' \G''
+'''
+
+SELECT * FROM film 
+'''
+	'''
+	WHERE film_id LIKE '1_' \G
+	'''
 
 
-''<< 	Left shift''
-''- 	Minus operator''
-''% 	Modulo operator''
-''NOT REGEXP 	Negation of REGEXP''
-''NOT, ! 	Negates valueqq''
-''+ 	Addition operator''
-''REGEXP 	Pattern matching using regular expressions''
-''>> 	Right shift''
-''RLIKE 	Synonym for REGEXP''
-''* 	Multiplication operator''
-''- 	Change the sign of the argument''
-''XOR 	Logical XOR''
+
+== Matching mit Regulären Ausdrücken (RLIKE , REGEXP , NOT REGEXP) ==
+→ nach Zeichenketten Suchen mithilfe von Regulären Ausdrücken
+→ RLIKE ist ein internes Synonym für  REGEXP
+[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke]]
+http://dev.mysql.com/doc/refman/5.1/en/regexp.html#operator_regexp
+
+
+//Beispiel://
+''SELECT * FROM film ''
+	''WHERE title RLIKE '^A.*Y$' \G''
 
