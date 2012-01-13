@@ -16,8 +16,7 @@ Created Samstag 12 November 2011
 
 **CREATE DATABASE **[**IF NOT EXISTS**]** <Name>**
 → eine neue Datenbank mit Name <Name> anlegen
-
-
+→ IF NOT EXISTS verhindert dabei dass vorhandene Datenbanken überschrieben werden
 
 **CREATE TABLE <Name> (**
 **id INTEGER AUTO_INCREMENT,**

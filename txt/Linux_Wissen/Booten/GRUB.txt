@@ -47,7 +47,7 @@ grub>setup (hd0,0) --> konfiguriert und installiert den neunen Kernel in den boo
 
 **(2) **Nach zweimaliger Eingabe eines Passworts (welches man sich merken sollte!!) wird ein Hashwert ausgegeben
 
-**(3) **In der /boot/grub/menu.lst wird unter der Zeile //timeoute //folgende Zeile angefügt und für Hashwert der ausgegebene Haswert eingetragen:
+**(3) **In der /boot/grub/menu.lst wird unter der Zeile //timeout //folgende Zeile angefügt und für Hashwert der ausgegebene Haswert eingetragen:
 ++
 ...
 password --md5 <Hashwert>

@@ -5,6 +5,12 @@ Creation-Date: 2011-04-24T01:42:37+02:00
 ====== Dienste ======
 Created Sonntag 24 April 2011
 
+=== Systemd ===
+* Programm zum verwalten, starten, stoppen von Systemdiensten
+* seid Fedorra 14, openSUSE 12.1
+[[+systemd]]
+
+=== Manuelles Steuern von Init Scripten ===
 **/etc/init.d/<Dienst> start|stop|status|reload|restart**
 → manuelle Verwaltung eines Dienstes
 **start **→ starten eines Dienstes
@@ -13,9 +19,11 @@ Created Sonntag 24 April 2011
 **reload **→ liest die vom Dienst benötigten Konfigurationsdateien neu ein
 **restart **→ den Dienst neu starten, entspricht **stop && restart**
 
+=== Hinzufügen eines Dienstes zu einem Runlevel  ===
 **insserv**
 **chkconfig**
 [[Linux Wissen:Booten:Dienste:chkconfig]]
+
 
 === Manuelles Hinzufügen eines Dienstes zu einem Runlevel ===
 **ln -s /etc/init.d/<Dienst> /etc/init.d/<K<N>Dienst>**
@@ -65,5 +73,3 @@ __Hinweis: Um einen eigenen Dienst zu erstellen muss unter /etc/init.d/<Dienst> 
 **-i M **→ Threading I/O setzen, der Standardwert ist 800 
 **-a **→  Argumente an die Scripte übergeben
 **-M **→ ein ähnliches Verhalten wie make 
-
- 

@@ -5,7 +5,7 @@ Creation-Date: 2011-04-15T00:47:17+02:00
 ====== root werden ======
 Created Freitag 15 April 2011
 
-=== !!Achtung!!:  ===
+=== !!Achtung!!: ===
 Sollte ausschließlich zur Administration am System verwandt werden.
 
 === !!Achtung!!: ===
@@ -18,6 +18,8 @@ Sollte ausschließlich zur Administration am System verwandt werden.
 
 **sudo -s **→ startet eine neue Shell über sudo 
                → notwendig bei Distributionen wie Ubuntu, in der es keinen superuser gibt
+
+**sudo -e <Datei> **→ öffnete die Datei als Priviligierter Benutzer zum Editieren
 
 * Nach der erfolgreicher Anmeldung ändert sich der Prompt von $ zu #
 

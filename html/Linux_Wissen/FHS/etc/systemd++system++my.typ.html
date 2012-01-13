@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>init.d++Script</title>
+		<title>systemd++system++my.typ</title>
 		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									init.d++Script</h1>
+									systemd++system++my.typ</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -75,7 +75,7 @@
 <li><a href="./hosts.deny.html" title="hosts.deny">hosts.deny</a></li>
 <li><a href="./hosts.lpd.html" title="hosts.lpd">hosts.lpd</a></li>
 <li><a href="./inetd.conf.html" title="inetd.conf">inetd.conf</a></li>
-<li><strong>init.d++Script</strong></li>
+<li><a href="./init.d%2B%2BScript.html" title="init.d++Script">init.d++Script</a></li>
 <li><a href="./inittab.html" title="inittab">inittab</a></li>
 <li><a href="./lilo.conf.html" title="lilo.conf">lilo.conf</a></li>
 <li><a href="./logrotate.conf.html" title="logrotate.conf">logrotate.conf</a></li>
@@ -93,7 +93,7 @@
 <li><a href="./ssh.html" title="ssh">ssh</a></li>
 <li><a href="./sysconfig%2B%2Bclock.html" title="sysconfig++clock">sysconfig++clock</a></li>
 <li><a href="./syslog.conf.html" title="syslog.conf">syslog.conf</a></li>
-<li><a href="./systemd%2B%2Bsystem%2B%2Bmy.typ.html" title="systemd++system++my.typ">systemd++system++my.typ</a></li>
+<li><strong>systemd++system++my.typ</strong></li>
 <li><a href="./udev%2B%2Brules.d%2B%2B99-myrule.html" title="udev++rules.d++99-myrule">udev++rules.d++99-myrule</a></li>
 <li><a href="./udev%2B%2Budev.conf.html" title="udev++udev.conf">udev++udev.conf</a></li>
 <li><a href="./X11%2B%2Bxdm.html" title="X11++xdm">X11++xdm</a></li>
@@ -134,59 +134,26 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Sonntag 24 April 2011<br>
-</p>
-
-<p>
-Die folgende Datei findet man auch unter */etc/init.d/skeleton<br>
-++<br>
-</p>
+				<li>Beispiel Unit für den systemd </li>
+<br>
++++<br>
 <pre>
-### BEGIN INIT INFO
-# Provides:          daemon
-# Required-Start:    $required_before_start
-# Required-Stop:     $required_before_stop
-# Default-Start:     3 5
-# Default-Stop:      0 6
-# Short-Description: daemon providing foo by bar
-# Description: daemon foo with  bar doing baz
-### END INIT INFO
-DIENST=/usr/bin/daemon
-LOGFILE=/var/log/daemon
-PIDFILE=/Var/run/daemon.pid
+[Unit]
+Description=udev Kernel Device Manager
+Wants=udev-control.socket udev-kernel.socket
+After=udev-control.socket udev-kernel.socket
+Before=basic.target
+DefaultDependencies=no
 
-
-case $1 in
-        start) #starten des Prozesses
-               #nicht daemonen sollten mit &amp; in den Hintergrund geschickt werden
-               #Programme die eine Systemänderung bewirken sollten ihren alten Status ablegen damit er durch stoppen
-               #des Dienstes wiederhergestellt werden kann
-               #Fehlerausagben des Scripts gehören nach /dev/null oder nach LOGFILE
-               #Ablegen einer Prozess-ID in einer Datei PIDFILE=/var/run/daemon.pid
-        ;;
-        stop) #beendet des Proezesses mit kill
-              #zurücksetzen des alten Status falls das Programm eine Systemveränderung bewirkt
-              #löschen nicht mehr benötigter Dateien inklusive /var/run/daemon.pid
-        ;;
-        status) #Auswerten des Statuses des Prozesses durch parsen von PIDFILE
-        ;;
-        resart) #falls dienst schon gestartet: stop &amp;&amp; start
-                #andernfalls start
-        ;;
-        reload) #Daemon soll Konfigration neu einlesen zum Beispiel durch senden von SIGHUP (1) PIDFILE
-                #Statusänderungen am System sollen erneuert werden
-        ;;
-        force-reload) #Daemon soll Konfiguration neu einlesen oder restart ausführen, falls ersteres nicht möglich
-        ;;
-        *) #Was soll geschehen wenn etwas anderes auferufen wird
-exit 0 #Scripte enden immer mit einem Rückagbewert von 0 wenn sie erfolgreich waren
-       #Misserfolg sollte vorher abgefangen werden
+[Service]
+Type=notify
+OOMScoreAdjust=-1000
+Sockets=udev-control.socket udev-kernel.socket
+Restart=on-failure
+ExecStart=/sbin/udevd
 </pre>
-
-<p>
-++<br>
-</p>
+<br>
++++<br>
 
 
 			<!-- End wiki content -->
@@ -194,7 +161,7 @@ exit 0 #Scripte enden immer mit einem Rückagbewert von 0 wenn sie erfolgreich w
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Booten/Dienste.html'>Linux Wissen:Booten:Dienste</a></li>						<a href='../../Booten/Dienste/chkconfig.html'>Linux Wissen:Booten:Dienste:chkconfig</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:
 			<!-- End Backlinks -->
 			</div>
 		</div>

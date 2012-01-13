@@ -149,7 +149,7 @@ GROUPS → Gruppenzugehörigkeit des momentanen Benutzers<br>
 
 <p>
 ----<br>
-HISTFILE → Umgebungsvariable die auf die Datei verweist in der bash seine history ablegt<br>
+HISTFILE → Shellvariable die auf die Datei verweist in der bash seine history ablegt<br>
 </p>
 
 <p>
@@ -162,9 +162,21 @@ HISTFILESIZE → Größe der in der Datei bash seine history anlegt <br>
 
 <p>
 HISTIGNORE → Eine durch : getrennte Liste von Befehlen oder Mustern die nicht in der History auftauchen sollen<br>
+</p>
+
+<p>
 <em>Besipiel:</em><br>
 <em>HISTIGNORE="su *":"sudo *"</em><br>
 </p>
+
+<p>
+<u>Achtung: HISTFILE ist eine Shellvariable.</u><br>
+</p>
+
+<p>
+<u>Tipp: Informationen zur aktullen Histroy erhalten: </u><code>set|grep HIST</code><br>
+</p>
+
 
 <p>
 HISTTIMEFORMAT → Eine date Konforme formatierung die benutzt wird um zusätzlich anzuzeigen, wann welcher Befehl ausgegegen wurde<br>

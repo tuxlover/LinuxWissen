@@ -44,3 +44,4 @@ __Hinweis: Umgebungsvariablen sind Shellvariablen aber nicht umgekehrt. Die Auss
 
 ===== Anzeigen des aktuellen virtuellen Geräts =====
 **tty **→ zeigt das unter */dev gemappte Gerät an auf der das Terminal lauscht
+man b

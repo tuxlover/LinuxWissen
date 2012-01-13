@@ -19,3 +19,5 @@ Grundlage biildet das Pseudodateisystem sysfs des Kernels 2.6.x
 ***/sys/class/ **→ Schnittstellen für zeichenorienterte Geräte
 
 ***/sys/bus/usb **→ vom Kernel gerneriertes usbfs Abbild 
+
+***/sys/fs/cgroup **→ Dateisystem das die Linux Kernel Contorl Groups auflistet **(missing link Cgroups)**

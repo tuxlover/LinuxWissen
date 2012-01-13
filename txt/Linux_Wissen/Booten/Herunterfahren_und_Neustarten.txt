@@ -10,11 +10,15 @@ Created Sonntag 24 April 2011
 → wird <Nachricht> vverwendet wird diese mittels **wall **an alle Nutzer versendet
   [[Linux Wissen:Benutzer und Gruppen]]
 **-h **→ system halt
+**-H **→ system halt bei __Systemd__
 **-r **→ reboot
 **-c **→ letzte Aktion rückgängig machen
 **-k **→ nichts machen, testen von Scripten die ein Shutdown bewirken sollen
-**-f **→ fsck wird in jedem Fall übersprungen
-**-F **→ fsck wird  auf jeden Fall ausgeführt 
+**-f **→ fsck wird in jedem Fall übersprungen (__nicht im systemd shutdown__)
+**-F **→ fsck wird  auf jeden Fall ausgeführt (__nicht im systemd shutdown__)
+**-P **→ Nur __systemd Shutdown, __auschalten (Power down) nach dem anhalten des Systems
+
+[[Dienste:systemd]]
 
 //<Time>//
 now → sofort

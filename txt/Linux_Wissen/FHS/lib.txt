@@ -13,3 +13,5 @@ Created Dienstag 19 April 2011
 [[Linux Wissen:Hardware und Systeminformationen:Module]]
 
 ***/lib/security →** Module die vom PAM Stack benutz und verarbeitet werden** (missing link)**
+
+***/lib/systemd/system **→ Units des System-V-Init kompatiblen systemd

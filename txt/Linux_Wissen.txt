@@ -10,7 +10,7 @@ neuer als die Textversion. Derzeit befindet sie sich aber noch in Bearbeitung.
 
 Jedes Kapitel (ehemals eingleitet durch ===) wird in Unterkapitel (ehemals __) eingeteilt.
 
-Befehle werden **fett** hervorgehoben.
+Befehle werden ''so'' hervorgehoben.
 Beispielkonfigurationen werden so
 
 ++++

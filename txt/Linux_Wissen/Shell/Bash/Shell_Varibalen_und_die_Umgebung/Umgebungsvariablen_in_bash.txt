@@ -26,15 +26,21 @@ FUNCNAME → Name der aktuell aufgerufenen Funktion
 GROUPS → Gruppenzugehörigkeit des momentanen Benutzers
 
 ----
-HISTFILE → Umgebungsvariable die auf die Datei verweist in der bash seine history ablegt
+HISTFILE → Shellvariable die auf die Datei verweist in der bash seine history ablegt
 
 HISTSIZE → Größe der in der History gemerkten Befehle
 
 HISTFILESIZE → Größe der in der Datei bash seine history anlegt 
 
 HISTIGNORE → Eine durch : getrennte Liste von Befehlen oder Mustern die nicht in der History auftauchen sollen
+
 //Besipiel://
 //HISTIGNORE="su *":"sudo *"//
+
+__Achtung: HISTFILE ist eine Shellvariable.__
+
+__Tipp: Informationen zur aktullen Histroy erhalten: __''set|grep HIST''
+
 
 HISTTIMEFORMAT → Eine date Konforme formatierung die benutzt wird um zusätzlich anzuzeigen, wann welcher Befehl ausgegegen wurde
 [[Linux Wissen:Systemzeit:date]]

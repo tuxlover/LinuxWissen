@@ -40,7 +40,7 @@ Quotas werden unterhalb des Mountpoints in den Dateien //aquota.user //und //aqu
 [[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
 [[Linux Wissen:FHS:etc:fstab]]
 
-__Hinweis: Neuer sind journaled Quotas, die nach einem unsauberen Abschalten Quotas aus einem journaled Dateisystem schneller wiederherstellen können. (grpjquota=aquota.group usrjquota=aquota.user jqfmt=vfv0)__
+__Hinweis: Neuer sind journaled Quotas, die nach einem unsauberen Abschalten Quotas aus einem journaled Dateisystem schneller wiederherstellen können. (grpjquota=aquota.group usrjquota=aquota.user jqfmt=vfsv0)__
 
 **(3) **Blöcke insgesamt mittels **df** ermitteln 
 [[Linux Wissen:Partitionen und Dateisysteme:Plattenbelegung analysieren]] 
@@ -58,4 +58,5 @@ __Hinweis: Neuer sind journaled Quotas, die nach einem unsauberen Abschalten Quo
 **(9) quotaon -avu **die Quotas einschalten
 
 __Hinweis: Mit dem InitScript /etc/init.d/boot.quota.restart können Quotas on the fly aktiviert werden__
+__Hinweis: Ab openSUSE 12.1 und Fedora 16 wird systemctl verwendet. __''systemctl restart quota.service ''**(missing link systemctl)**
 

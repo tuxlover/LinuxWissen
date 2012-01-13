@@ -138,6 +138,10 @@ __Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
 ***/etc/logrotate.conf **→ Konfiguration des Logrotierungsdinestes
 [[Linux Wissen:FHS:etc:logrotate.conf]]
 
+***/etc/systemd/ → **Konfigurationsdateien des Sys-V-Init komaptiblen systemd die zur Laufzeit benötigt werden
+	**system/ **→ Verzeichnis in dem die von systemd genutzten Units abgelegt werden
+
+
 ***/etc/termcap**
 → obsolete Datenbank die von **tput **benutzt wird
 [[Linux Wissen:Systemprogrammierung:Shellscripting:tput]]

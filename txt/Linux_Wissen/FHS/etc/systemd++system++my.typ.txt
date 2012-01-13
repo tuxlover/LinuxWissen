@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-13T19:51:19+01:00
+
+====== systemd++system++my.typ ======
+Created Freitag 13 Januar 2012
+
+* Beispiel Unit für den systemd 
+
++++
+'''
+[Unit]
+Description=udev Kernel Device Manager
+Wants=udev-control.socket udev-kernel.socket
+After=udev-control.socket udev-kernel.socket
+Before=basic.target
+DefaultDependencies=no
+
+[Service]
+Type=notify
+OOMScoreAdjust=-1000
+Sockets=udev-control.socket udev-kernel.socket
+Restart=on-failure
+ExecStart=/sbin/udevd
+'''
+
++++

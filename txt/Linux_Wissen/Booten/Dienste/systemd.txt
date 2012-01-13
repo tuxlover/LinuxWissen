@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-12T16:17:36+01:00
+
+====== systemd ======
+Created Donnerstag 12 Januar 2012
+
+* System- und Servicemanager für Linux
+* Parallelisierung von mehreren Diensten beim Booten
+* Nutzt DBUS - und Socketaktivierung
+* rückwärtskompatibel zu sys-V-init
+* rückwärtskompatibel mit LSB Init Scripts
+* verwaltet mounts und automounts (au)
+* kann Cgroups verwalten (Seit Kernel 2.6.35)
+* kann zum Abfragen von Informationen auch vom Nutzer ausgeführt werden (Vorteil oder Nachteil)
+
+=== Units ===
+* Konfigurationsdatei die einen entsprechenden Dienst beschreibt
+* beschreibt einen von Systemd zu verwaltenden Dienst, Socket oder Gerät oder ein System-V-Init Script
+
+* aktive Units findet man unter //*/etc/systemd/system //
+* alle Units die das System installiert hat aber nicht genutzt werden findet man unter //*/lib/systemd/system/<Name>.<Typ>//
+**<Typ> **
+→ kann ein //Socket//,//Target//, eine //Dateisystem Pfad//, ein //Gerät //, ein //mount //oder //automountpoint, timer //oder //Snapshot //sein
+**man 5 systemd.unit**
+
+
+=== Systemdienste steuern ===
+**systemctl [start|stop|reload|restart|show  <Unit> ]  **
+→ zum anzeigen und steuern von System Services
+**--no-pager **→ die Ausgabe nicht nach less pipen 
+**<Starten und Veralten von Diensten>**
+
+**<Anzeigen und Filtern von Diensten>**
+→ ohne weitere Arguemente wird systemctl die Units (systemd Units und Sys-V-Initscripte) und ihren Status anzeigen, als Pager wird less verwendet
+→ es wird angezeigt ob eine Unit erfolgreich gestartet wurde oder mit einem Fehler beendet wurde
+
+**systemctl status <Unit>**
+→ Anzeigen von detailierten Statusinformationen zu einer Unit
+
+=== Control Groups verwalten (CGroups) ===
+**systemd-cgls <Cgroup>**
+→ rekursive Baumansicht einer Linux CGroup, wenn nicht angegeben werden alle Cgrups aufgelisetet
+→ eine Liste von gültigen Cgroups erhält man durch ''ls /sys/fs/cgroup''
+[[Linux Wissen:FHS:sys]]
+**(missing link Cgroups)**
+
+
+
+
+__ACHTUNG: Man verwechsle systemctl nicht mit sysctl.__
+

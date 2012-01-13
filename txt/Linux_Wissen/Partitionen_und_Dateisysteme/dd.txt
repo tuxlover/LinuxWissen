@@ -12,7 +12,7 @@ Created Freitag 22 April 2011
 **dd if=/dev/sdX of=/mnt/Backup/sdX.dump **
 → erstellt eine Abbilddatei von /dev/sdX als Datei unter /mnt/Backup/sdX.dump
 
-**dd if=/mnt/Backup/sdX,dump of=/dev/sdX **
+**dd if=/mnt/Backup/sdX.dump of=/dev/sdX **
 → spielt das Image zurück
 
 **dd if=/dev/sdX of=/dev/sdY conv=notrunc**
