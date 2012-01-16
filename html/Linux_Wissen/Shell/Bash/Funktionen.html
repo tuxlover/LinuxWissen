@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Emacs Modus</title>
+		<title>Funktionen</title>
 		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Emacs Modus</h1>
+									Funktionen</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -73,8 +73,8 @@
 <li><a href="../Bash.html" title="Bash">Bash</a></li>
 <ul>
 <li><a href="./Aliasse.html" title="Aliasse">Aliasse</a></li>
-<li><strong>Emacs Modus</strong></li>
-<li><a href="./Funktionen.html" title="Funktionen">Funktionen</a></li>
+<li><a href="./Emacs_Modus.html" title="Emacs Modus">Emacs Modus</a></li>
+<li><strong>Funktionen</strong></li>
 <li><a href="./History.html" title="History">History</a></li>
 <li><a href="./Optionen_f%C3%BCr_die_Bash.html" title="Optionen für die Bash">Optionen für die Bash</a></li>
 <li><a href="./Shell_Varibalen_und_die_Umgebung.html" title="Shell Varibalen und die Umgebung">Shell Varibalen und die Umgebung</a></li>
@@ -103,114 +103,45 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Freitag 15 April 2011<br>
-</p>
-
-<h4>Strg+c</h4>
-<p>
-→ Befehl abbrechen, Signal STOP Senden ( <a href="../Jobkontrolle.html" title="Shell:Jobkontrolle">Shell:Jobkontrolle</a> )<br>
-</p>
-
-<h4>Strg+d</h4>
-<p>
-→ den Eingabestrom beenden <br>
+Created Sonntag 15 Januar 2012<br>
 </p>
 
 <p>
-----<br>
+<ul>
+<li>längere Befehle und Prozeduren </li>
+<li><em>bashrc </em>oder in derNutzerspezifischen <em>~/.bashrc</em> defineirt werden in der globalen</li>
+</ul>
+<a href="../../Systemprogrammierung/Shellscripting/Funktion.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Funktion">Linux Wissen:Systemprogrammierung:Shellscripting:Funktion</a><br>
 </p>
 
-<h4>Strg+z</h4>
 <p>
-→ Befehl unterbrechen, anhalten aber nicht beenden<br>
-                → danach kann mittels <strong>fg </strong>und <strong>bg </strong> der Befehl in der Vorder- | Hintergrund gestellt werden<br>
-<a href="../Jobkontrolle.html" title="Shell:Jobkontrolle">Shell:Jobkontrolle</a><br>
-----<br>
-----<br>
+<strong>function &lt;Funktionsname&gt; </strong>→ definieren der Funktion<br>
+<a href="./Shell_Varibalen_und_die_Umgebung.html" title="Shell Varibalen und die Umgebung">Shell Varibalen und die Umgebung</a><br>
 </p>
 
-<h4>Strg+r</h4>
 <p>
-→ Liste der zuletzt aufgerufenen Befehle inkrementell durchsuchen <br>
-                   mehrmaliger Aufruf der Tastenkombination durchsucht die history <br>
-                   nach allen passenden Suchmustern<br>
+<em>Beispiel</em><br>
++++<br>
+</p>
+<pre>
+spwd () 
+{ 
+    ( IFS=/;
+    set $PWD;
+    if test $# -le 3; then
+        echo "$PWD";
+    else
+        eval echo \"..\${$(($#-1))}/\${$#}\";
+    fi )
+}
+</pre>
+
+<p>
++++<br>
 </p>
 
-<h4>Strg+s</h4>
 <p>
-→  siehe Strg+r nur vorwärts<br>
-</p>
-
-<h4>Strg+g</h4>
-<p>
-→ durchsuchen der Shellhistory beenden <br>
-----<br>
-<a href="./History.html" title="Linux Wissen:Shell:Bash:History">Linux Wissen:Shell:Bash:History</a><br>
-</p>
-
-<h4>Strg+w</h4>
-<p>
-→ lösche ein Wort von rechts nach links (&lt;&lt;)<br>
-</p>
-
-<h4>Strg+d</h4>
-<p>
-→ lösche ein Zeichen von links nach recht (&gt;)<br>
-</p>
-
-<h4>Strg+u</h4>
-<p>
-→ lösche alles von rechts nach links (&lt;&lt;&lt;...)<br>
-</p>
-
-<h4>Strg+k</h4>
-<p>
-→ lösche alles von links nach rechts (...&gt;&gt;&gt;)<br>
-</p>
-
-<h4>Strg+t</h4>
-<p>
- → die beiden Zeichen vor dem Cursor tauschen<br>
-</p>
-
-<h4>Alt+t</h4>
-<p>
- → die Wörter vor dem Cursor tauschen<br>
-</p>
-
-<h4>Alt+u</h4>
-<p>
-→ ein ganzes Wort in Großbuchstaben konvertieren<br>
-</p>
-
-<h4>Alt+l</h4>
-<p>
- → ein ganzes Wort in Kleinbuchstaben konvertieren<br>
-</p>
-
-<h4>Alt+c</h4>
-<p>
- → ein einzelnes Zeichen in Groß|Kleinbuchstaben kovertieren, je nachdem ob es vorher Groß  oder Klein war<br>
-</p>
-
-<h4>Strg+a</h4>
-<p>
-→ zum Anfang des Textes springen<br>
-</p>
-
-<h4>Strg+e</h4>
-<p>
-→ zum ende des Textes springen<br>
-</p>
-
-<h4>Alt+f</h4>
-<p>
-→ ein Wort vorwärts bewegen<br>
-</p>
-
-<h4>Alt+b</h4>
-<p>
-→ ein Wort rückwärst bewegen<br>
+mit <strong>set </strong>ohne Angabe einer Option können alle bekannten Funktionen angezeigt werden<br>
 </p>
 
 
@@ -219,7 +150,7 @@ Created Freitag 15 April 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Jobkontrolle.html'>Linux Wissen:Shell:Jobkontrolle</a></li>						<a href='../Bash.html'>Linux Wissen:Shell:Bash</a></li>						<a href='./History.html'>Linux Wissen:Shell:Bash:History</a></li>
+				Backlinks:
 			<!-- End Backlinks -->
 			</div>
 		</div>

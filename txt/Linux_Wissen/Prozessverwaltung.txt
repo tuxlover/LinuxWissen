@@ -76,6 +76,12 @@ __Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vorde
 */etc/security/limits.conf
 [[Linux Wissen:FHS:etc:security++limits.conf]]
 
+==== CGroups ====
+* Prozesse können zu hierarschichen Bäumen gruppiert werden, diese werden als CGroups bezeichnet
+* Diese Gruppen können mit einem //Label// versehen werden
+* Für jede Gruppe kann bestimmt werden, wieviel Systemresourcen Sie benutzen darf
+[[+Cgroups]]
+
 ===== Magic Sys-Abf Taste =====
 * ermöglicht das direkte Signalen und SysCalls an den Rechner
 [[Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste]]

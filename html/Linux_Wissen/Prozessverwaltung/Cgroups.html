@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>top</title>
+		<title>Cgroups</title>
 		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									top</h1>
+									Cgroups</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -66,13 +66,13 @@
 <li><a href="../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
 <li><a href="../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
 <ul>
-<li><a href="./Cgroups.html" title="Cgroups">Cgroups</a></li>
+<li><strong>Cgroups</strong></li>
 <li><a href="./kill.html" title="kill">kill</a></li>
 <li><a href="./Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste">Magic Sys-Abf Taste</a></li>
 <li><a href="./Nice_Werte_kontrollieren.html" title="Nice Werte kontrollieren">Nice Werte kontrollieren</a></li>
 <li><a href="./ps.html" title="ps">ps</a></li>
 <li><a href="./strace.html" title="strace">strace</a></li>
-<li><strong>top</strong></li>
+<li><a href="./top.html" title="top">top</a></li>
 <li><a href="./ulimit.html" title="ulimit">ulimit</a></li>
 </ul>
 <li><a href="../root.html" title="root">root</a></li>
@@ -93,39 +93,100 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Donnerstag 21 April 2011<br>
-</p>
+				<li>gebündelt durch ein gemeinsames Kriterium</li>
+<li>Gruppen können in einer Baumhierarchie existieren, wobei jede CGroup ihre Limitierungen von seinem Parrent erbt</li>
+<li>Kernel bietet Zugang (Subsystems) zum <em>cgroup </em>Interface</li>
+<br>
+•<em>Resourcen</em> Limitierung des RAM<br>
+<li><em>Priorisierung</em>  von Prozessgruppen auf der CPU-Zeitscheibe oder des Disk IO</li>
+<li><em>Accounting </em>von bestimmten Aufgaben</li>
+<li><em>Isolation </em>von Prozessen, so dass diese sich nicht sehen können</li>
+<li><em>Kontrolle </em>durch erstellen von Checkpoints von Prozessen und das wiederherstellen</li>
+<li>Zuweisung von Resourcen an Prozesse und bestimmte Nutzer</li>
 
-<p>
-<strong>top </strong>→ zeigt eine dynamische und interaktive Prozesstabelle an<br>
-<strong>-d N</strong> → Anzahl N in Sekunden nach der die Tabelle aktualisiert wird<br>
-<strong>-p &lt;PID&gt;,... </strong>→ nur die Prozesse mit diesen &lt;PID&gt;s anzeigen<br>
-<strong>-n N</strong> → stopt das Programm nach N durchläufen<br>
-</p>
+<h3>Gruppern Hierarchien</h3>
+<li>Jeder Prozess kann zur gleichen Zeit nur in einer Gruppe existieren (Ein Prozess besitzt genau eine PID)</li>
+<li>neu erstellte Untergruppen sind bei Ihrer Erstellung leer und müssen mit Prozessen befüllt werden</li>
+<li>eine Gruppe kann nur aufgelöst werden, fallls ihr keine Prozesse zugeordnet sind und sie keine weiteren Kinder in Ihrer Hierarchie besitzt</li>
+<li>Einstellungen von Subsystemen werden an Untergruppen weitervererbt</li>
 
-<h2>Navigation innerhalb von top</h2>
-<p>
-<strong>h</strong> → Hilfe<br>
-<strong>k </strong>→ Signal an Prozess senden<br>
-<strong>r </strong>→ renice ( <a href="./Nice_Werte_kontrollieren.html" title="Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren">Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren</a> )<br>
-<strong>t l m </strong>→ Zusammenfassung für Load Avg, Task, CPU Stats, Speicherinfomationen an|ausschalten<br>
-<strong>d,s  </strong>→ Updateintervall setzen<br>
-</p>
- 
+<h3>Cgroups Subsystem</h3>
+<li>Kernel Modul dass Limitationen und Isolationen für Resourcen verwaltet</li>
+<li>bietet die Möpglichkeit Resourcen und Eigenschaften einer Prozessgruppe zu verändern </li>
+<li>Resource Controller:</li>
+<li>cpu scheduler, <em>mountoption cpu,</em> CPU Bandbreite auf Gruppen aufteilen/zwischen Gruppern</li>
+<li>memory,<em> mountoption memory</em>, den Speicherverbrauch von User Space Programmen einschränken	</li>
+<li>disk I/O, <em>mountoption blkio, </em>die Disk I/O eines Prozesses einschränken </li>
+<li>network, <em>mountoption net_cls</em>, Kontrolieren der Netzwerk I/O</li>
+<li>Isolationen und besondere Controller:</li>
+<li>cpuset</li>
+<li>namespace</li>
+<li>freezer</li>
+<li>device</li>
+<li>checkpoint/restart</li>
 
-<p>
-<em>Beispiel:</em><br>
-<code>top -d 4 -n 2</code>  zeigt das Programm ( Sekunden lang an mit je 2 Durchläufen<br>
-</p>
 
-<p>
-Weitere nützliche Programme:<br>
-<em>htop</em><br>
-iotop<br>
-iftop<br>
-conky<br>
-</p>
+<h4>Virtuelle Cgroup Dateisystem</h4>
+<li>erlaubt Zugriff auf Cgroups auf Userlevel Ebene um Gruppen zu erzeugen und Subsysteme zu verwalten</li>
+<li>Mountpoints für virtuelle Cgroups Dateisystem kann unter <em>*/sys/fs/cgroups </em>eingeshen werden</li>
+
+<h3>Cgroups verwalten</h3>
+<li>können Manuell angelegt werden</li>
+
+<strong>vorhandene Cgroups anzeigen</strong>
+<code>cat /proc/cgroups</code>
+<a href="../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a>
+
+<strong>cgcreate</strong>
+
+<strong>cgexec</strong>
+
+<strong>cgclassify</strong><br>
+<br>
+--<br>
+cgclassify (1)       - move running task(s) to given cgroups<br>
+cgclear (1)          - unload the cgroup filesystem<br>
+cgconfig.conf (5)    - libcgroup configuration file<br>
+cgcreate (1)         - create new cgroup(s)<br>
+cgred.conf (5)       - libcgroup configuration file<br>
+cgrules.conf (5)     - libcgroup configuration file<br>
+cgset (1)            - set the parameters of given cgroup(s)<br>
+lscgroup (1)<br>
+lssubsys (1)<br>
+<br>
+1.6 How do I use cgroups ?<br>
+--------------------------<br>
+<br>
+To start a new job that is to be contained within a cgroup, using<br>
+the "cpuset" cgroup subsystem, the steps are something like:<br>
+<br>
+ 1) mount -t tmpfs cgroup_root /sys/fs/cgroup<br>
+ 2) mkdir /sys/fs/cgroup/cpuset<br>
+ 3) mount -t cgroup -ocpuset cpuset /sys/fs/cgroup/cpuset<br>
+ 4) Create the new cgroup by doing mkdir's and write's (or echo's) in<br>
+    the /sys/fs/cgroup virtual file system.<br>
+ 5) Start a task that will be the "founding father" of the new job.<br>
+ 6) Attach that task to the new cgroup by writing its pid to the<br>
+    /sys/fs/cgroup/cpuset/tasks file for that cgroup.<br>
+ 7) fork, exec or clone the job tasks from this founding father task.<br>
+<br>
+For example, the following sequence of commands will setup a cgroup<br>
+named "Charlie", containing just CPUs 2 and 3, and Memory Node 1,<br>
+and then start a subshell 'sh' in that cgroup:<br>
+<br>
+  mount -t tmpfs cgroup_root /sys/fs/cgroup<br>
+  mkdir /sys/fs/cgroup/cpuset<br>
+  mount -t cgroup cpuset -ocpuset /sys/fs/cgroup/cpuset<br>
+  cd /sys/fs/cgroup/cpuset<br>
+  mkdir Charlie<br>
+  cd Charlie<br>
+  /bin/echo 2-3 &gt; cpuset.cpus<br>
+  /bin/echo 1 &gt; cpuset.mems<br>
+  /bin/echo $$ &gt; tasks<br>
+  sh<br>
+  # The subshell 'sh' is now running in cgroup Charlie<br>
+  # The next line should display '/Charlie'<br>
+  cat /proc/self/cgroup<br>
 
 
 			<!-- End wiki content -->

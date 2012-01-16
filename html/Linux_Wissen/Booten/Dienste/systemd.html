@@ -95,7 +95,13 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>System- und Servicemanager für Linux</li>
+				<p>
+Created Donnerstag 12 Januar 2012<br>
+</p>
+
+<p>
+<ul>
+<li>System- und Servicemanager für Linux</li>
 <li>Parallelisierung von mehreren Diensten beim Booten</li>
 <li>Nutzt DBUS - und Socketaktivierung</li>
 <li>rückwärtskompatibel zu sys-V-init</li>
@@ -103,42 +109,62 @@
 <li>verwaltet mounts und automounts (au)</li>
 <li>kann Cgroups verwalten (Seit Kernel 2.6.35)</li>
 <li>kann zum Abfragen von Informationen auch vom Nutzer ausgeführt werden (Vorteil oder Nachteil)</li>
+</ul>
+</p>
 
 <h4>Units</h4>
+<p>
+<ul>
 <li>Konfigurationsdatei die einen entsprechenden Dienst beschreibt</li>
 <li>beschreibt einen von Systemd zu verwaltenden Dienst, Socket oder Gerät oder ein System-V-Init Script</li>
+</ul>
+</p>
 
+<p>
+<ul>
 <li>aktive Units findet man unter <em>*/etc/systemd/system </em></li>
 <li>alle Units die das System installiert hat aber nicht genutzt werden findet man unter <em>*/lib/systemd/system/&lt;Name&gt;.&lt;Typ&gt;</em></li>
+</ul>
 <strong>&lt;Typ&gt; </strong><br>
 → kann ein <em>Socket</em>,<em>Target</em>, eine <em>Dateisystem Pfad</em>, ein <em>Gerät </em>, ein <em>mount </em>oder <em>automountpoint, timer </em>oder <em>Snapshot </em>sein<br>
-<strong>man 5 systemd.unit</strong>
+<strong>man 5 systemd.unit</strong><br>
+</p>
 
 
 <h4>Systemdienste steuern</h4>
+<p>
 <strong>systemctl [start|stop|reload|restart|show  &lt;Unit&gt; ]  </strong><br>
 → zum anzeigen und steuern von System Services<br>
 <strong>--no-pager </strong>→ die Ausgabe nicht nach less pipen <br>
-<strong>&lt;Starten und Veralten von Diensten&gt;</strong>
+<strong>&lt;Starten und Veralten von Diensten&gt;</strong><br>
+</p>
 
+<p>
 <strong>&lt;Anzeigen und Filtern von Diensten&gt;</strong><br>
 → ohne weitere Arguemente wird systemctl die Units (systemd Units und Sys-V-Initscripte) und ihren Status anzeigen, als Pager wird less verwendet<br>
 → es wird angezeigt ob eine Unit erfolgreich gestartet wurde oder mit einem Fehler beendet wurde<br>
-<br>
+</p>
+
+<p>
 <strong>systemctl status &lt;Unit&gt;</strong><br>
 → Anzeigen von detailierten Statusinformationen zu einer Unit<br>
-<br>
+</p>
+
 <h4>Control Groups verwalten (CGroups)</h4>
+<p>
 <strong>systemd-cgls &lt;Cgroup&gt;</strong><br>
 → rekursive Baumansicht einer Linux CGroup, wenn nicht angegeben werden alle Cgrups aufgelisetet<br>
-→ eine Liste von gültigen Cgroups erhält man durch <code>ls /sys/fs/cgroup</code>
-<a href="../../FHS/sys.html" title="Linux Wissen:FHS:sys">Linux Wissen:FHS:sys</a>
-<strong>(missing link Cgroups)</strong>
+→ eine Liste von gültigen Cgroups erhält man durch <code>ls /sys/fs/cgroup</code><br>
+<a href="../../FHS/sys.html" title="Linux Wissen:FHS:sys">Linux Wissen:FHS:sys</a><br>
+<strong>(missing link Cgroups)</strong><br>
+</p>
 
 
 
 
-<u>ACHTUNG: Man verwechsle systemctl nicht mit sysctl.</u>
+<p>
+<u>ACHTUNG: Man verwechsle systemctl nicht mit sysctl.</u><br>
+</p>
 
 
 

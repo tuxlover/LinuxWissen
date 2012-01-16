@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-15T22:04:22+01:00
+
+====== Funktionen ======
+Created Sonntag 15 Januar 2012
+
+* längere Befehle und Prozeduren 
+* //bashrc //oder in derNutzerspezifischen //~/.bashrc// defineirt werden in der globalen
+[[Linux Wissen:Systemprogrammierung:Shellscripting:Funktion]]
+
+**function <Funktionsname> **→ definieren der Funktion
+[[Shell Varibalen und die Umgebung]]
+
+//Beispiel//
++++
+'''
+spwd () 
+{ 
+    ( IFS=/;
+    set $PWD;
+    if test $# -le 3; then
+        echo "$PWD";
+    else
+        eval echo \"..\${$(($#-1))}/\${$#}\";
+    fi )
+}
+'''
+
++++
+
+mit **set **ohne Angabe einer Option können alle bekannten Funktionen angezeigt werden

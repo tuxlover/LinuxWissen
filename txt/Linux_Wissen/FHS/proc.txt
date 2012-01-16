@@ -21,6 +21,8 @@ Created Dienstag 19 April 2011
 
 ***/proc/devices **→ Liste der Dateien die vom Kernel unterstützt werden
 
+***/proc/cgroups **→ Liste der benutzten Cgroups so sie denn verwendet werden
+
 ***/proc/dma **→ Liste der benutzen DMA Kanäle
 
 ***/proc/interrupts **→ Liste der vom Kernel beanspruchten Interrupts

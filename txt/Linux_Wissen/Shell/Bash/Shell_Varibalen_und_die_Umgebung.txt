@@ -24,7 +24,7 @@ Created Freitag 15 April 2011
 **printenv VAR **→ Inhalt einer Umgebungsvariable anzeigen
 
 ===== Alle Shellvariablen anzeigen =====
-**set**
+**set **→ zeigt alle definierten Variablen und Funktionen an, die momentan in der Shell verwendet werden
 
 __Hinweis: Umgebungsvariablen sind Shellvariablen aber nicht umgekehrt. Die Aussage ist nicht äquivalent.__
 
