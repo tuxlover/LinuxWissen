@@ -1,0 +1,43 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-17T15:23:13+01:00
+
+====== Regeln ======
+Created Dienstag 17 Januar 2012
+
+//(Aus dem Red Hat Manual Resourcenverwaltung)//
+
+Denken Sie daran, dass Systemprozesse in Kontrollgruppenterminologie als Aufgaben bezeichnet werden.
+Sehen Sie nachfolgend einige einfache Regeln, die für die Beziehungen zwischen Subsystemen, Hierarchien von Kontrollgruppen und Aufgaben maßgeblich sind, sowie eine Erklärung der Auswirkungen dieser Regeln.
+
+=== Regel 1 ===
+Jedes einzelne Subsystem (wie z.B. cpu) kann mit maximal einer Hierarchie verknüpft werden.
+Demnach kann das **cpu-Subsystem** nie mit zwei verschiedenen Hierarchien verknüpft werden.
+
+=== Regel 2 ===
+Eine einzelne Hierarchie kann mit einem oder mehreren Subsystemen verknüpft sein.
+Demnach können die** cpu- und memory- Subsysteme **(oder eine beliebige Anzahl an Subsystemen) mit einer einzelnen Hierarchie verknüpft werden, vorausgesetzt, dass keine von beiden mit einer anderen Hierarchie verknüpft ist.
+
+=== Regel 3 ===
+Jedes Mal, wenn eine neue Hierarchie auf dem System erstellt wird, sind alle Aufgaben auf dem System anfangs Mitglieder der standardmäßigen Kontrollgruppe dieser Hierarchie, die auch Root-Kontrollgruppe genannt wird. Für jede einzelne von Ihnen erstellte Hierarchie gilt, dass jede Aufgabe auf dem System Mitglied von genau einer Kontrollgruppe in dieser Hierarchie sein kann. Eine einzelne Aufgabe kann in mehreren Kontrollgruppen sein, vorausgesetzt, diese Kontrollgruppen befinden sich in verschiedenen Hierarchien. Sobald eine Aufgabe zu einem Mitglied einer zweiten Kontrollgruppe in derselben Hierarchie gemacht wird, wird sie von der ersten Kontrollgruppe in dieser Hierarchie entfernt. Zu keinem Zeitpunkt kann eine Aufgabe Mitglied in zwei Kontrollgruppen in derselben Hierarchie sein.
+Demnach gilt, falls das cpu- und das memory-Subsystem mit einer Hierarchie namens cpu_and_mem verknüpft sind, und das net_cls-Subsystem mit einer Hierarchie namens net, dann könnte ein laufender httpd-Prozess ein Mitglied in einer Kontrollgruppe in cpu_and_mem und in einer Kontrollgruppe in net sein.
+Die Kontrollgruppe in cpu_and_mem, in der der httpd-Prozess Mitglied ist, kann seine CPU-Zeit auf die Hälfte dessen setzen, was anderen Prozessen zugewiesen ist, und kann seinen Speicherverbrauch auf maximal 1024 MB begrenzen. Zusätzlich kann die Kontrollgruppe in net, in der er ebenfalls Mitglied ist, seine Übertragungsrate auf 30 Megabytes pro Sekunde begrenzen.
+Wenn die erste Hierarchie erstellt wird, werden alle Aufgaben auf dem System Mitglieder von mindestens einer Kontrollgruppe: Der Root-Kontrollgruppe. Beim Einsatz von Kontrollgruppen ist jede Systemaufgabe demnach grundsätzlich Mitglied in mindestens einer Kontrollgruppe.
+
+=== Regel 4 ===
+Jeder Prozess (Aufgabe) auf dem System, der sich selbst klont, erzeugt einen untergeordneten Prozess (Aufgabe). Der untergeordnete Prozess wird automatisch Mitglied all jener Kontrollgruppen, bei denen auch der übergeordnete Prozess Mitglied ist. Der untergeordnete Prozess kann anschließend bei Bedarf anderen Kontrollgruppen zugewiesen werden, anfänglich erbt er jedoch immer die Kontrollgruppen (in Prozessterminologie die "Umgebung") seines übergeordneten Prozesses.
+Nehmen wir nun also an, dass die httpd-Aufgabe ein Mitglied der Kontrollgruppe namens half_cpu_1gb_max in der cpu_and_mem-Hierarchie ist sowie ein Mitglied der Kontrollgruppe trans_rate_30 in der net-Hierarchie. Wenn der httpd-Prozess sich selbst klont, werden seine untergeordneten Prozesse demnach automatisch Mitglieder der half_cpu_1gb_max-Kontrollgruppe und der trans_rate_30-Kontrollgruppe. Sie erben genau dieselben Kontrollgruppen, denen auch ihr übergeordneter Prozess angehört.
+Von diesem Zeitpunkt an sind die über- und untergeordneten Aufgaben jedoch völlig unabhängig voneinander: Wenn Sie die Kontrollgruppen ändern, denen eine Aufgabe angehört, wirkt sich dies auf keine Weise auf die andere Aufgabe aus. Ebenso wirkt sich auch das Ändern der Kontrollgruppen einer übergeordneten Aufgabe in keiner Weise auf mehrere Ebenen darunter liegende Aufgaben aus. Kurz: jegliche untergeordnete Aufgaben erben zu Beginn grundsätzlich die Mitgliedschaften zu genau denselben Kontrollgruppen wie die übergeordnete Aufgabe, doch diese Mitgliedschaften können später geändert oder gelöscht werden. 
+
+===== Auswirkungen auf die Ressourcenverwaltung =====
+ Da eine Aufgabe in jeder Hierarchie nur einer einzigen Kontrollgruppe zugewiesen sein kann, gibt es nur eine Art und Weise, auf die eine Aufgabe von einem Subsystem begrenzt oder beeinflusst wird. Dies Verhalten ist logisch - also ein Feature, kein Manko.
+    
+Sie können mehrere Subsysteme zusammen gruppieren, so dass sie alle Aufgaben in einer einzelnen Hierarchie beeinflussen. Da Kontrollgruppen in dieser Hierarchie verschiedene Parameter gesetzt haben, werden diese Aufgaben unterschiedlich beeinflusst.
+    
+Unter Umständen kann es manchmal nötig sein, eine Hierarchie zu refaktorieren (umzugestalten). Ein Beispiel hierfür ist das Entfernen eines Subsystems von einer Hierarchie, die mit mehreren Subsystemen verknüpft ist, um es anschließend mit einer neuen, separaten Hierarchie zu verknüpfen.
+    
+Falls der Bedarf, Subsysteme unter separaten Hierarchien aufzuteilen, nicht mehr besteht, können Sie umgekehrt auch eine Hierarchie entfernen und deren Subsysteme einer vorhandenen Hierarchie zuordnen.
+    
+Dieser Aufbau ermöglicht eine sehr einfache Implementierung von Kontrollgruppen, bei der z.B. einige wenige Parameter für bestimmte Aufgaben in einer einzelnen Hierarchie festgelegt werden, die z.B. nur mit den CPU- und Speichersubsystemen verknüpft ist.
+    
+Dieser Aufbau ermöglicht jedoch auch sehr ausgefeilte Konfigurationen: Jede Aufgabe (Prozess) auf einem System kann ein Mitglied jeder Hierarchie sein, jede davon mit einem einzelnen Subsystem verknüpft. Solch eine Konfiguration gibt dem Systemadministrator vollständige Kontrolle über alle Parameter für jede einzelne Aufgabe. 

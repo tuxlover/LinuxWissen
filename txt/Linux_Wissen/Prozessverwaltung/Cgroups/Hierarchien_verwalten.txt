@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-17T14:28:50+01:00
+
+====== Hierarchien verwalten ======
+Created Dienstag 17 Januar 2012
+
+== Workflow eine Subsystem Hierarchie erstellen ==
+**(1) **Erstellen eines Einhängepunktes für die Hierarchie
+→ Name des Einhängepunktes sollte den Namen der CGroup und den Name der Hierarchie als Unterverzeichnis enthalten
+//Beispiel://
+''mkdir -p /cgroup/cpu_mem''
+
+**(2) **Einnhängen der  Cgroup mit den Entsprechenden Subsystemen als Option
+//Beispiel://
+''mount -t cgroup -o cpu,cpuset,memory cpu_mem /cgroup/cpu_mmem'' 
+
+[[Linux Wissen:Dateien verwalten:Dateien anlegen und löschen]]
+[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+
+__Hinweis: Entsprechen können Hierarchien wieder durch unmounten entfernt werden. Hierarchieen die andere Cgroup Kontrollgruppen dieser Hierarchie__
+__verwenden, verbleiben aktiv im Kernel.__
+

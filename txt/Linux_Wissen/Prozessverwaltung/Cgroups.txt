@@ -8,6 +8,8 @@ Created Freitag 13 Januar 2012
 CGroups bieten einen Mechanismus zum zerlegen und partitionieren von Tasks und ihrer möglicherweise gespawnten Prozesse in
 hierarchischen Gruppen. 
 
+Paket //libcgroup1//
+
 Eine Sammlung von Prozessen: 
 	* gebündelt durch ein gemeinsames Kriterium
 	* Gruppen können in einer Baumhierarchie existieren, wobei jede CGroup ihre Limitierungen von seinem Parrent erbt
@@ -19,87 +21,48 @@ Eine Sammlung von Prozessen:
 * //Isolation //von Prozessen, so dass diese sich nicht sehen können
 * //Kontrolle //durch erstellen von Checkpoints von Prozessen und das wiederherstellen
 * Zuweisung von Resourcen an Prozesse und bestimmte Nutzer
+[[+Regeln]]
 
 ==== Gruppern Hierarchien ====
 * Jeder Prozess kann zur gleichen Zeit nur in einer Gruppe existieren (Ein Prozess besitzt genau eine PID)
 * neu erstellte Untergruppen sind bei Ihrer Erstellung leer und müssen mit Prozessen befüllt werden
 * eine Gruppe kann nur aufgelöst werden, fallls ihr keine Prozesse zugeordnet sind und sie keine weiteren Kinder in Ihrer Hierarchie besitzt
 * Einstellungen von Subsystemen werden an Untergruppen weitervererbt
+[[+Hierarchien verwalten]]
 
 ==== Cgroups Subsystem ====
 * Kernel Modul dass Limitationen und Isolationen für Resourcen verwaltet
 * bietet die Möpglichkeit Resourcen und Eigenschaften einer Prozessgruppe zu verändern 
+* die vom Kernel unterstützten Subsysteme können in der Datei //*/proc/cgroups// erfragt werden
 * Resource Controller:
-	* cpu scheduler, //mountoption cpu,// CPU Bandbreite auf Gruppen aufteilen/zwischen Gruppern
-	* memory,// mountoption memory//, den Speicherverbrauch von User Space Programmen einschränken	
-	* disk I/O, //mountoption blkio, //die Disk I/O eines Prozesses einschränken 
-	* network, //mountoption net_cls//, Kontrolieren der Netzwerk I/O
-* Isolationen und besondere Controller:
-	* cpuset
+	* cpu scheduler
+	* memory
+	* disk I/O
+	* network,
+* Isolationen und besondere Sterungs Subsysteme:
+	* cpuset 
 	* namespace
 	* freezer
 	* device
 	* checkpoint/restart
+[[+Cgroups Subsysteme]]
 
 
-=== Virtuelle Cgroup Dateisystem ===
+=== Virtuelles Cgroup Dateisystem ===
 * erlaubt Zugriff auf Cgroups auf Userlevel Ebene um Gruppen zu erzeugen und Subsysteme zu verwalten
 * Mountpoints für virtuelle Cgroups Dateisystem kann unter //*/sys/fs/cgroups //eingeshen werden
 
+==== Der Dienst cgconfig ====
+* Systemdienst zum persistenten erstellen von CGroups und verwalten deren Subsysteme
+* liest die Datei //*/etc/cgconfig.conf//
+[[+cgconfig und cgred]]
+[[Linux Wissen:Booten:Dienste]]
+[[Linux Wissen:FHS:etc:cgconfig.conf]]
+
 ==== Cgroups verwalten ====
 * können Manuell angelegt werden
+* Alle Tasks einer Cgroup werden in der Pseudodatei unter der Cgroup Prozesshierarchie verwaltet
+///<Cgroup Mountpoint>/tasks//
+[[+Cgroups erstellen]]
 
-**vorhandene Cgroups anzeigen**
-''cat /proc/cgroups''
-[[Linux Wissen:FHS:proc]]
-
-**cgcreate**
-
-**cgexec**
-
-**cgclassify**
-
---
-cgclassify (1)       - move running task(s) to given cgroups
-cgclear (1)          - unload the cgroup filesystem
-cgconfig.conf (5)    - libcgroup configuration file
-cgcreate (1)         - create new cgroup(s)
-cgred.conf (5)       - libcgroup configuration file
-cgrules.conf (5)     - libcgroup configuration file
-cgset (1)            - set the parameters of given cgroup(s)
-lscgroup (1)
-lssubsys (1)
-
-1.6 How do I use cgroups ?
---------------------------
-
-To start a new job that is to be contained within a cgroup, using
-the "cpuset" cgroup subsystem, the steps are something like:
-
- 1) mount -t tmpfs cgroup_root /sys/fs/cgroup
- 2) mkdir /sys/fs/cgroup/cpuset
- 3) mount -t cgroup -ocpuset cpuset /sys/fs/cgroup/cpuset
- 4) Create the new cgroup by doing mkdir's and write's (or echo's) in
-    the /sys/fs/cgroup virtual file system.
- 5) Start a task that will be the "founding father" of the new job.
- 6) Attach that task to the new cgroup by writing its pid to the
-    /sys/fs/cgroup/cpuset/tasks file for that cgroup.
- 7) fork, exec or clone the job tasks from this founding father task.
-
-For example, the following sequence of commands will setup a cgroup
-named "Charlie", containing just CPUs 2 and 3, and Memory Node 1,
-and then start a subshell 'sh' in that cgroup:
-
-  mount -t tmpfs cgroup_root /sys/fs/cgroup
-  mkdir /sys/fs/cgroup/cpuset
-  mount -t cgroup cpuset -ocpuset /sys/fs/cgroup/cpuset
-  cd /sys/fs/cgroup/cpuset
-  mkdir Charlie
-  cd Charlie
-  /bin/echo 2-3 > cpuset.cpus
-  /bin/echo 1 > cpuset.mems
-  /bin/echo $$ > tasks
-  sh
-  # The subshell 'sh' is now running in cgroup Charlie
-  # The next line should display '/Charlie'
-  cat /proc/self/cgroup
+[[+Regeln]]

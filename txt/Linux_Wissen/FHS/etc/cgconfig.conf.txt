@@ -1,0 +1,86 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-17T12:30:07+01:00
+
+====== cgconfig.conf ======
+Created Dienstag 17 Januar 2012
+
+* Konfigurationsdatei für den cgconfig Daemon
+* **man 5 cgconfig.conf**
+++
+#''Kommentar''
+'''
+mount {
+    cpuset = /cgroup/cpu;
+}
+
+group daemons/sql {
+    perm {
+        task {
+            uid = root;
+            gid = sqladmin;
+        } admin {
+            uid = root;
+            gid = root;
+        }
+    } cpu {
+        cpu.shares = 100;
+    }
+}
+
+mount {
+    <controller> = <path>;
+    …
+}
+
+group <name> {
+	perm {
+   		 task {
+        		uid = <task user>;
+        		gid = <task group>;
+    	}
+    		admin {
+       			uid = <admin name>;
+       			gid = <admin group>;
+    }
+}
+    <controller> {
+        <param name> = <param value>;
+        …
+    }
+    …
+}
+'''
+
+
+++
+
+__Hineweis: Der Daemon muss nach dem ändern der Konfigurationsdatei neu gestartet werden.__
+
+**mount **→ Direktive für die Mountpunkte der Hierarchien und ihrer Subsysteme
+	     → Jedem Subsystem dass verwendet wird, wird ein Mountpunkt zugewiesen
+	      → Mounten der Subsysteme in eine virtuelles Dateisystem
+
+//Verwendete Befehle://
+	''mkdir <Cgroup>''
+	''mount -t cgroup -o <Subsystem> <Name> <Mountpunkt>''
+[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+__Hinweis: EIn Mountpunkt kann mehereren Hierarchien zugewiesen sein.__
+
+
+**group **→ Direktive zum Erstellen und verwalten von Cgroup Kontrollgruppen
+	   → setzen von Subsystemparameter
+           → setzen von Berechtigungen für Cgroups
+           __Hinweis: Die verwendeten Subsysteme müssen entsprechend gmounted worden sein. __
+
+//Verwendete Befehle://
+'''
+mkdir -p <Cgroups>/<Hierarchie>/<Tasks>
+chown <admin_user>:<admin_group> <Mountpoint mount>/<Cgroup>
+chown <perms_root>:<perms_group> <Mountpoint mount>/<Cgroup>/<Tasks>
+echo <Param Wert> > <Mountpoint mount>/<Cgroup>/Task/<Parameter>
+'''
+
+[[Linux Wissen:Benutzer und Gruppen]]
+[[Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme]]
+

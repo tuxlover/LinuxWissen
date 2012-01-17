@@ -28,6 +28,12 @@ Created Dienstag 19 April 2011
 ***/etc/anacrontab **→ Konfiguration des anacron Daemons ([[+anacrontab]])
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 
+***/etc/cgconfig.conf **→ Konfigurationsdatei für den cgcnfig Daemon 
+				      → zur Erstellung persistenter Cgroups
+[[Linux Wissen:Prozessverwaltung:Cgroups]] 
+[[+cgconfig.conf]]
+[[Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred]]
+
 ***/etc/fstab **→ alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften
 [[Linux Wissen:FHS:etc:fstab]]
 

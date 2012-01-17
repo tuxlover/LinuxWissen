@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-17T12:25:31+01:00
+
+====== Cgroups Subsysteme ======
+Created Dienstag 17 Januar 2012
+
+**lssubsys <Subsys>**
+→ Programm zum Auflisten von Hierarchien
+→  wird kein Subsystem als Parameter angegeben, werden alle eingehängten Hierarchien gezeigt
+**-a → **alle Subsysteme anzeigen, auch solche die momentan nicht in einer Hierarchei gemounted sind
+**-m **→ auch die Mountpunkte anzeigen
+
+
+

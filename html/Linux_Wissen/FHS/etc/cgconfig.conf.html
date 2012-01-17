@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>anacrontab</title>
+		<title>cgconfig.conf</title>
 		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									anacrontab</h1>
+									cgconfig.conf</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -62,9 +62,9 @@
 <li><a href="../dev.html" title="dev">dev</a></li>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
-<li><strong>anacrontab</strong></li>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
-<li><a href="./cgconfig.conf.html" title="cgconfig.conf">cgconfig.conf</a></li>
+<li><strong>cgconfig.conf</strong></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
 <li><a href="./foremost.conf.html" title="foremost.conf">foremost.conf</a></li>
@@ -136,66 +136,112 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 06 November 2011<br>
+Created Dienstag 17 Januar 2012<br>
 </p>
+
+<p>
+<ul>
+<li>Konfigurationsdatei für den cgconfig Daemon</li>
+<li><strong>man 5 cgconfig.conf</strong></li>
+</ul>
+++<br>
+#<code>Kommentar</code><br>
+</p>
+<pre>
+mount {
+    cpuset = /cgroup/cpu;
+}
+
+group daemons/sql {
+    perm {
+        task {
+            uid = root;
+            gid = sqladmin;
+        } admin {
+            uid = root;
+            gid = root;
+        }
+    } cpu {
+        cpu.shares = 100;
+    }
+}
+
+mount {
+    &lt;controller&gt; = &lt;path&gt;;
+    …
+}
+
+group &lt;name&gt; {
+	perm {
+   		 task {
+        		uid = &lt;task user&gt;;
+        		gid = &lt;task group&gt;;
+    	}
+    		admin {
+       			uid = &lt;admin name&gt;;
+       			gid = &lt;admin group&gt;;
+    }
+}
+    &lt;controller&gt; {
+        &lt;param name&gt; = &lt;param value&gt;;
+        …
+    }
+    …
+}
+</pre>
+
 
 <p>
 ++<br>
-<code># die zu verwendende Shell</code><br>
-<code>SHELL=/bin/sh</code><br>
-<code># suche Programme in diesen Verzeichnissen</code><br>
-<code>PATH=/sbin:/bin:/usr/sbin:/usr/bin</code><br>
-<code># sende einen Statusbericht an diesen Nutzer</code><br>
-<code>MAILTO=root</code><br>
-<code># Anacron lässt seinen Daemon zufällig laufen</code><br>
-<code># Hier kann die maximale verzögerung pro Tag eingestellt werden</code><br>
-<code>RANDOM_DELAY=45</code><br>
-<code># Innerhalb dieser Tagesstunden wird anacron nach auszuführenden Jobs suchen</code><br>
-<code>START_HOURS_RANGE=6-23</code><br>
 </p>
 
 <p>
-<code>#period in days   delay in minutes   job-identifier   command</code><br>
-<code>1       5       cron.daily              nice /usr/lib/cron/run-crons /etc/cron.daily</code><br>
-<code>7       25      cron.weekly             nice /usr/lib/cron/run-crons /etc/cron.weekly</code><br>
-<code>@monthly 45     cron.monthly            nice /usr/lib/cron/run-crons /etc/cron.monthly</code><br>
-<code>@daily  30      cron.avg_l1zard         /usr/bin/avgscan -W /home/l1zard/.wine -awbHpPcmj -r /var/log/avg_l1zard.report</code><br>
-<code>@daily 30       cron.avg_tmp            /usr/bin/avgscan -awbHpPcmj -r /var/log/avg_tmp.report</code><br>
-<code>@daily 30       cron.avg_root           /usr/bin/avgscan -awbHpPcmj -r /var/log/avg_root.report</code><br>
-++<br>
-<em>#period in days</em><br>
+<u>Hineweis: Der Daemon muss nach dem ändern der Konfigurationsdatei neu gestartet werden.</u><br>
+</p>
+
+<p>
+<strong>mount </strong>→ Direktive für die Mountpunkte der Hierarchien und ihrer Subsysteme<br>
 <div style='padding-left: 30pt'>
-→ Nach dieser Periode in Tage soll der Befehl in der Spalte <em>#Command </em>ausgeführt werden<br>
-→ es können auch Macros verwendet werden <br>
-</div>
-<div style='padding-left: 60pt'>
-<em>daily </em>→ täglich<br>
-<em>monthly </em>→ monatlich<br>
-<em>weekly </em>→ wöchentlich<br>
+     → Jedem Subsystem dass verwendet wird, wird ein Mountpunkt zugewiesen<br>
+      → Mounten der Subsysteme in eine virtuelles Dateisystem<br>
 </div>
 </p>
 
 <p>
-<em>#delay in minutes</em><br>
+<em>Verwendete Befehle:</em><br>
 <div style='padding-left: 30pt'>
-→ Integer Wert der die Minuten repräsentiert die Anacron vor Ausführung dieses Befehls warten soll<br>
+<code>mkdir &lt;Cgroup&gt;</code><br>
+<code>mount -t cgroup -o &lt;Subsystem&gt; &lt;Name&gt; &lt;Mountpunkt&gt;</code><br>
 </div>
+<a href="../../Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
+<u>Hinweis: EIn Mountpunkt kann mehereren Hierarchien zugewiesen sein.</u><br>
+</p>
+
+
+<p>
+<strong>group </strong>→ Direktive zum Erstellen und verwalten von Cgroup Kontrollgruppen<br>
+<div style='padding-left: 30pt'>
+   → setzen von Subsystemparameter<br>
+</div>
+           → setzen von Berechtigungen für Cgroups<br>
+           <u>Hinweis: Die verwendeten Subsysteme müssen entsprechend gmounted worden sein. </u><br>
 </p>
 
 <p>
-<em>#job-identifier</em><br>
-<div style='padding-left: 30pt'>
-→ der Identifier der in der logdatei verwendet wird<br>
-</div>
+<em>Verwendete Befehle:</em><br>
 </p>
+<pre>
+mkdir -p &lt;Cgroups&gt;/&lt;Hierarchie&gt;/&lt;Tasks&gt;
+chown &lt;admin_user&gt;:&lt;admin_group&gt; &lt;Mountpoint mount&gt;/&lt;Cgroup&gt;
+chown &lt;perms_root&gt;:&lt;perms_group&gt; &lt;Mountpoint mount&gt;/&lt;Cgroup&gt;/&lt;Tasks&gt;
+echo &lt;Param Wert&gt; &gt; &lt;Mountpoint mount&gt;/&lt;Cgroup&gt;/Task/&lt;Parameter&gt;
+</pre>
 
 <p>
-<em>#command</em><br>
-<div style='padding-left: 30pt'>
-→ der Befehl der ausgeführt werden soll inklusive Optionen und Argumente<br>
-→ falls der Befehl nicht in <em>PATH </em>steht, muss der Pfad mitangegeben werden <br>
-</div>
+<a href="../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a><br>
+<a href="../../Prozessverwaltung/Cgroups/Cgroups_Subsysteme.html" title="Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme">Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme</a><br>
 </p>
+
 
 
 			<!-- End wiki content -->
@@ -203,7 +249,7 @@ Created Sonntag 06 November 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Zeitgesteuerte_Vorg%C3%A4nge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Prozessverwaltung/Cgroups.html'>Linux Wissen:Prozessverwaltung:Cgroups</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>
