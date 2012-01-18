@@ -101,64 +101,109 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<em>libcgroup1</em><br>
-<br>
+				<p>
+Created Freitag 13 Januar 2012<br>
+</p>
+
+<p>
+CGroups bieten einen Mechanismus zum zerlegen und partitionieren von Tasks und ihrer möglicherweise gespawnten Prozesse in<br>
+hierarchischen Gruppen. <br>
+</p>
+
+<p>
+Paket <em>libcgroup1</em><br>
+</p>
+
+<p>
 Eine Sammlung von Prozessen: <br>
+<ul style='padding-left: 30pt'>
 <li>gebündelt durch ein gemeinsames Kriterium</li>
 <li>Gruppen können in einer Baumhierarchie existieren, wobei jede CGroup ihre Limitierungen von seinem Parrent erbt</li>
 <li>Kernel bietet Zugang (Subsystems) zum <em>cgroup </em>Interface</li>
-<br>
+</ul>
+</p>
+
+<p>
 •<em>Resourcen</em> Limitierung des RAM<br>
+<ul>
 <li><em>Priorisierung</em>  von Prozessgruppen auf der CPU-Zeitscheibe oder des Disk IO</li>
 <li><em>Accounting </em>von bestimmten Aufgaben</li>
 <li><em>Isolation </em>von Prozessen, so dass diese sich nicht sehen können</li>
 <li><em>Kontrolle </em>durch erstellen von Checkpoints von Prozessen und das wiederherstellen</li>
 <li>Zuweisung von Resourcen an Prozesse und bestimmte Nutzer</li>
-<a href="./Cgroups/Regeln.html" title="+Regeln">+Regeln</a>
+</ul>
+<a href="./Cgroups/Regeln.html" title="+Regeln">+Regeln</a><br>
+</p>
 
 <h3>Gruppern Hierarchien</h3>
+<p>
+<ul>
 <li>Jeder Prozess kann zur gleichen Zeit nur in einer Gruppe existieren (Ein Prozess besitzt genau eine PID)</li>
 <li>neu erstellte Untergruppen sind bei Ihrer Erstellung leer und müssen mit Prozessen befüllt werden</li>
 <li>eine Gruppe kann nur aufgelöst werden, fallls ihr keine Prozesse zugeordnet sind und sie keine weiteren Kinder in Ihrer Hierarchie besitzt</li>
 <li>Einstellungen von Subsystemen werden an Untergruppen weitervererbt</li>
-<a href="./Cgroups/Hierarchien_verwalten.html" title="+Hierarchien verwalten">+Hierarchien verwalten</a>
+</ul>
+<a href="./Cgroups/Hierarchien_verwalten.html" title="+Hierarchien verwalten">+Hierarchien verwalten</a><br>
+</p>
 
 <h3>Cgroups Subsystem</h3>
+<p>
+<ul>
 <li>Kernel Modul dass Limitationen und Isolationen für Resourcen verwaltet</li>
 <li>bietet die Möpglichkeit Resourcen und Eigenschaften einer Prozessgruppe zu verändern </li>
 <li>die vom Kernel unterstützten Subsysteme können in der Datei <em>*/proc/cgroups</em> erfragt werden</li>
 <li>Resource Controller:</li>
+<ul>
 <li>cpu scheduler</li>
 <li>memory</li>
 <li>disk I/O</li>
 <li>network,</li>
+</ul>
 <li>Isolationen und besondere Sterungs Subsysteme:</li>
+<ul>
 <li>cpuset </li>
 <li>namespace</li>
 <li>freezer</li>
 <li>device</li>
 <li>checkpoint/restart</li>
-<a href="./Cgroups/Cgroups_Subsysteme.html" title="+Cgroups Subsysteme">+Cgroups Subsysteme</a>
+</ul>
+</ul>
+<a href="./Cgroups/Cgroups_Subsysteme.html" title="+Cgroups Subsysteme">+Cgroups Subsysteme</a><br>
+</p>
 
 
 <h4>Virtuelles Cgroup Dateisystem</h4>
+<p>
+<ul>
 <li>erlaubt Zugriff auf Cgroups auf Userlevel Ebene um Gruppen zu erzeugen und Subsysteme zu verwalten</li>
 <li>Mountpoints für virtuelle Cgroups Dateisystem kann unter <em>*/sys/fs/cgroups </em>eingeshen werden</li>
+</ul>
+</p>
 
 <h3>Der Dienst cgconfig</h3>
+<p>
+<ul>
 <li>Systemdienst zum persistenten erstellen von CGroups und verwalten deren Subsysteme</li>
 <li>liest die Datei <em>*/etc/cgconfig.conf</em></li>
-<a href="./Cgroups/cgconfig_und_cgred.html" title="+cgconfig und cgred">+cgconfig und cgred</a>
-<a href="../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a>
-<a href="../FHS/etc/cgconfig.conf.html" title="Linux Wissen:FHS:etc:cgconfig.conf">Linux Wissen:FHS:etc:cgconfig.conf</a>
+</ul>
+<a href="./Cgroups/cgconfig_und_cgred.html" title="+cgconfig und cgred">+cgconfig und cgred</a><br>
+<a href="../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a><br>
+<a href="../FHS/etc/cgconfig.conf.html" title="Linux Wissen:FHS:etc:cgconfig.conf">Linux Wissen:FHS:etc:cgconfig.conf</a><br>
+</p>
 
 <h3>Cgroups verwalten</h3>
+<p>
+<ul>
 <li>können Manuell angelegt werden</li>
 <li>Alle Tasks einer Cgroup werden in der Pseudodatei unter der Cgroup Prozesshierarchie verwaltet</li>
-<em>/&lt;Cgroup Mountpoint&gt;/tasks</em>
-<a href="./Cgroups/Cgroups_erstellen.html" title="+Cgroups erstellen">+Cgroups erstellen</a>
+</ul>
+/<em>&lt;Cgroup Mountpoint&gt;/tasks</em><br>
+<a href="./Cgroups/Cgroups_erstellen.html" title="+Cgroups erstellen">+Cgroups erstellen</a><br>
+</p>
 
-<a href="./Cgroups/Regeln.html" title="+Regeln">+Regeln</a>
+<p>
+<a href="./Cgroups/Regeln.html" title="+Regeln">+Regeln</a><br>
+</p>
 
 
 			<!-- End wiki content -->

@@ -5,3 +5,24 @@ Creation-Date: 2012-01-17T12:24:47+01:00
 ====== cgconfig und cgred ======
 Created Dienstag 17 Januar 2012
 
+* **cgconfig **Daemon zum persistenten Erstellen und Verwalten von Cgroup Hierarchien
+* **cgred **Daemon zum Verschieben von Prozessen in die entpsrechenden Cgroup Hierarchien
+[[Linux Wissen:FHS:etc:cgconfig.conf]]
+[[Linux Wissen:FHS:etc:cgrules.conf]]
+
+
+**cgconfig **
+
+**cgred **
+→ Daemon der Prozesse anhand von festgelegten Parametern in Kontrollgruppen verschiebt
+→ Eine Liste von Nutzern, Prozessen werden einem **Subsystem **in einer **CGroup **Hierarche zugewiesen
+→ ist ein LSB Init Script, welches **cgrulesengd **ausführt
+
+**cgrulesengd **
+→ Programm das von **cgred **als Daemon ausgführt wird
+**-f|--logfile <Datei> **→ absoluter Pfad zur Logdatei
+**-s <Fac> → **bestimmen einer Syslog Facility für den syslog Daemon
+**-q **→ keine Ausgabe nach StdOut oder StdErr
+**-Q **→ Logging deaktiviert
+   
+[[Linux Wissen:Systemprotokollierung]]

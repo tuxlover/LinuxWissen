@@ -101,10 +101,27 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Dienstag 17 Januar 2012<br>
-</p>
+				<li><strong>cgconfig </strong>Daemon zum persistenten Erstellen und Verwalten von Cgroup Hierarchien</li>
+<li><strong>cgred </strong>Daemon zum Verschieben von Prozessen in die entpsrechenden Cgroup Hierarchien</li>
+<a href="../../FHS/etc/cgconfig.conf.html" title="Linux Wissen:FHS:etc:cgconfig.conf">Linux Wissen:FHS:etc:cgconfig.conf</a>
+<a href="../../FHS/etc/cgrules.conf.html" title="Linux Wissen:FHS:etc:cgrules.conf">Linux Wissen:FHS:etc:cgrules.conf</a>
 
+
+<strong>cgconfig </strong>
+
+<strong>cgred </strong><br>
+→ Daemon der Prozesse anhand von festgelegten Parametern in Kontrollgruppen verschiebt<br>
+→ Eine Liste von Nutzern, Prozessen werden einem <strong>Subsystem </strong>in einer <strong>CGroup </strong>Hierarche zugewiesen<br>
+→ ist ein LSB Init Script, welches <strong>cgrulesengd </strong>ausführt<br>
+<br>
+<strong>cgrulesengd </strong><br>
+→ Programm das von <strong>cgred </strong>als Daemon ausgführt wird<br>
+<strong>-f|--logfile &lt;Datei&gt; </strong>→ absoluter Pfad zur Logdatei<br>
+<strong>-s &lt;Fac&gt; → </strong>bestimmen einer Syslog Facility für den syslog Daemon<br>
+<strong>-q </strong>→ keine Ausgabe nach StdOut oder StdErr<br>
+<strong>-Q </strong>→ Logging deaktiviert<br>
+   <br>
+<a href="../../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a>
 
 
 			<!-- End wiki content -->

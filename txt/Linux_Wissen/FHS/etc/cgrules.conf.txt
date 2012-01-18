@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-18T17:10:59+01:00
+
+====== cgrules.conf ======
+Created Mittwoch 18 Januar 2012
+
