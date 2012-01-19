@@ -24,6 +24,7 @@ Eine Sammlung von Prozessen:
 [[+Regeln]]
 
 ==== Gruppern Hierarchien ====
+ Eine hierarchie ist eine virtuelle gemountet Verzeichnisstruktur die als Parameter die ihnen zughörigen subsysteme hat
 * Jeder Prozess kann zur gleichen Zeit nur in einer Gruppe existieren (Ein Prozess besitzt genau eine PID)
 * neu erstellte Untergruppen sind bei Ihrer Erstellung leer und müssen mit Prozessen befüllt werden
 * eine Gruppe kann nur aufgelöst werden, fallls ihr keine Prozesse zugeordnet sind und sie keine weiteren Kinder in Ihrer Hierarchie besitzt
@@ -31,6 +32,7 @@ Eine Sammlung von Prozessen:
 [[+Hierarchien verwalten]]
 
 ==== Cgroups Subsystem ====
+Über ein Subystem oder Controler  kann man Beschränkungen durch Parameter für eine entsprechende cgroup setzen
 * Kernel Modul dass Limitationen und Isolationen für Resourcen verwaltet
 * bietet die Möpglichkeit Resourcen und Eigenschaften einer Prozessgruppe zu verändern 
 * die vom Kernel unterstützten Subsysteme können in der Datei //*/proc/cgroups// erfragt werden
@@ -47,6 +49,9 @@ Eine Sammlung von Prozessen:
 	* checkpoint/restart
 [[+Cgroups Subsysteme]]
 
+=== Cgroup ===
+ Eine Cgroup ist ein Unterverzeichnis in der Hierarchie in der die datei task liegt
+ Alle PIDS in der entsprecheden tasks datei werden dieser cgroup zugeordnet
 
 === Virtuelles Cgroup Dateisystem ===
 * erlaubt Zugriff auf Cgroups auf Userlevel Ebene um Gruppen zu erzeugen und Subsysteme zu verwalten
@@ -63,6 +68,6 @@ Eine Sammlung von Prozessen:
 * können Manuell angelegt werden
 * Alle Tasks einer Cgroup werden in der Pseudodatei unter der Cgroup Prozesshierarchie verwaltet
 ///<Cgroup Mountpoint>/tasks//
-[[+Cgroups erstellen]]
+[[+Cgroups erstellen und löschen]]
 
 [[+Regeln]]

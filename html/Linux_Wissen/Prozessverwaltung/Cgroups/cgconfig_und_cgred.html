@@ -69,7 +69,7 @@
 <li><a href="../Cgroups.html" title="Cgroups">Cgroups</a></li>
 <ul>
 <li><strong>cgconfig und cgred</strong></li>
-<li><a href="./Cgroups_erstellen.html" title="Cgroups erstellen">Cgroups erstellen</a></li>
+<li><a href="./Cgroups_erstellen_und_l%C3%B6schen.html" title="Cgroups erstellen und löschen">Cgroups erstellen und löschen</a></li>
 <li><a href="./Cgroups_Subsysteme.html" title="Cgroups Subsysteme">Cgroups Subsysteme</a></li>
 <li><a href="./Cgroups_verwalten.html" title="Cgroups verwalten">Cgroups verwalten</a></li>
 <li><a href="./Hierarchien_verwalten.html" title="Hierarchien verwalten">Hierarchien verwalten</a></li>
@@ -101,27 +101,44 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li><strong>cgconfig </strong>Daemon zum persistenten Erstellen und Verwalten von Cgroup Hierarchien</li>
+				<p>
+Created Dienstag 17 Januar 2012<br>
+</p>
+
+<p>
+<ul>
+<li><strong>cgconfig </strong>Daemon zum persistenten Erstellen und Verwalten von Cgroup Hierarchien</li>
 <li><strong>cgred </strong>Daemon zum Verschieben von Prozessen in die entpsrechenden Cgroup Hierarchien</li>
-<a href="../../FHS/etc/cgconfig.conf.html" title="Linux Wissen:FHS:etc:cgconfig.conf">Linux Wissen:FHS:etc:cgconfig.conf</a>
-<a href="../../FHS/etc/cgrules.conf.html" title="Linux Wissen:FHS:etc:cgrules.conf">Linux Wissen:FHS:etc:cgrules.conf</a>
+</ul>
+<a href="../../FHS/etc/cgconfig.conf.html" title="Linux Wissen:FHS:etc:cgconfig.conf">Linux Wissen:FHS:etc:cgconfig.conf</a><br>
+<a href="../../FHS/etc/cgrules.conf.html" title="Linux Wissen:FHS:etc:cgrules.conf">Linux Wissen:FHS:etc:cgrules.conf</a><br>
+</p>
 
+<p>
+<u>Hinweis: Der Dienst ist nach der Installation nicht gestartet und muss gestartet und den persistenten Diensten hinzugefügt werden.</u><br>
+<a href="../../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a><br>
+</p>
 
-<strong>cgconfig </strong>
+<p>
+<strong>cgconfig </strong><br>
+</p>
 
+<p>
 <strong>cgred </strong><br>
 → Daemon der Prozesse anhand von festgelegten Parametern in Kontrollgruppen verschiebt<br>
 → Eine Liste von Nutzern, Prozessen werden einem <strong>Subsystem </strong>in einer <strong>CGroup </strong>Hierarche zugewiesen<br>
 → ist ein LSB Init Script, welches <strong>cgrulesengd </strong>ausführt<br>
-<br>
+</p>
+
+<p>
 <strong>cgrulesengd </strong><br>
 → Programm das von <strong>cgred </strong>als Daemon ausgführt wird<br>
 <strong>-f|--logfile &lt;Datei&gt; </strong>→ absoluter Pfad zur Logdatei<br>
 <strong>-s &lt;Fac&gt; → </strong>bestimmen einer Syslog Facility für den syslog Daemon<br>
 <strong>-q </strong>→ keine Ausgabe nach StdOut oder StdErr<br>
 <strong>-Q </strong>→ Logging deaktiviert<br>
-   <br>
-<a href="../../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a>
+<a href="../../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a><br>
+</p>
 
 
 			<!-- End wiki content -->

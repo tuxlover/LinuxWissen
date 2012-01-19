@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Regeln</title>
+		<title>Cgroups erstellen und löschen</title>
 		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Regeln</h1>
+									Cgroups erstellen und löschen</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -69,11 +69,11 @@
 <li><a href="../Cgroups.html" title="Cgroups">Cgroups</a></li>
 <ul>
 <li><a href="./cgconfig_und_cgred.html" title="cgconfig und cgred">cgconfig und cgred</a></li>
-<li><a href="./Cgroups_erstellen_und_l%C3%B6schen.html" title="Cgroups erstellen und löschen">Cgroups erstellen und löschen</a></li>
+<li><strong>Cgroups erstellen und löschen</strong></li>
 <li><a href="./Cgroups_Subsysteme.html" title="Cgroups Subsysteme">Cgroups Subsysteme</a></li>
 <li><a href="./Cgroups_verwalten.html" title="Cgroups verwalten">Cgroups verwalten</a></li>
 <li><a href="./Hierarchien_verwalten.html" title="Hierarchien verwalten">Hierarchien verwalten</a></li>
-<li><strong>Regeln</strong></li>
+<li><a href="./Regeln.html" title="Regeln">Regeln</a></li>
 </ul>
 <li><a href="../kill.html" title="kill">kill</a></li>
 <li><a href="../Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste">Magic Sys-Abf Taste</a></li>
@@ -101,65 +101,46 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Dienstag 17 Januar 2012<br>
-</p>
+				<li>können manuelle erstellt werden oder mithilfe der im <em>libcgroup</em> Paket enthaltenen Hilfstools</li>
 
+<h4>Ohne Tools</h4>
+<li>mit mkdir kann eine untergeordnet Cgroup erstellt werden</li>
+<li>Die Rechte für die <strong>tasks </strong>Datei und die <strong>Hierarchie</strong> muss dann mit <strong>chown</strong> gesetzt werden</li>
+<a href="../../Dateien_verwalten/Dateien_anlegen_und_l%C3%B6schen.html" title="Linux Wissen:Dateien verwalten:Dateien anlegen und löschen">Linux Wissen:Dateien verwalten:Dateien anlegen und löschen</a>
+<a href="../../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a>
 
-<p>
-<ul>
-<li>für die Erstellung von Hierarchien und Subsystemen müssen bestimmte Regeln gelten</li>
-</ul>
-</p>
+<strong>mkdir /&lt;Cgroup Hierarchie&gt;/&lt;Group&gt;</strong>
 
-<h4>Regel 1</h4>
-<p>
-<ul>
-<li>Ein <strong>Subsystem</strong> kann mit <u>genau einer</u> <strong>Hierarchie</strong> verknüpft sein. </li>
-</ul>
-</p>
+<em>Beispiel</em>
+<code>mkdir /cgroups/cpu_limit/lab1/students</code>
 
-<h4>Regel 2</h4>
-<p>
-<ul>
-<li>Eine einzelne <strong>Hierarchie </strong>kann mit <u>mehereren</u> <strong>Subsystemen</strong> verknüpft. </li>
-</ul>
-</p>
+<h4>Mit Tools</h4>
+<strong>cgcreate </strong>→ Tool zum Erstellen einer Cgroup Kontrollgruppe<br>
+<strong>-t &lt;UID&gt;:&lt;GID&gt;</strong> <br>
+→ definiert UID und GID der <strong>tasks</strong> Pseudodatei<br>
+→ dieser Benutzer darf neue Prozesse zu der Cgroup erstellen<br>
+<br>
+<strong>-a &lt;UID&gt;:&lt;GID&gt; </strong><br>
+→ definiert UID und GID des Benutzers, ausser der <strong>tasks </strong><code>Datei</code><br>
+→ dieser Benutzer darf den Zugriff für Cgroups ändern<br>
+<br>
+<strong>-g &lt;Hierarchie&gt;:&lt;Cgroup Subpfad&gt; </strong><br>
+→ durch Komma getrennte Liste on Cgroup und den dazugehörenden Subystemen<br>
+→ als &lt;Cgroup Subpfad&gt; wird ein relativ zu relativ zur Hierachie ,die mit diesem Subsystem verknüpft ist, Subpfad angegegeben<br>
+<a href="../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a>
 
-<p>
-<u>Es herscht eine linkseindeutige Relation zwischen Subsystem und Hierarchie.</u><br>
-</p>
-
-<p>
 <em>Beispiel:</em><br>
-<ul>
-<li>Das <strong>cpu</strong> Subsystem kann nur in der Hierarchie <em>cpu_mem </em>angelgelt werden. Gleichzeitig kann die Hierchie cpu_mem aber auch das Subsystem <strong>mem </strong>beinhalten.</li>
-</ul>
-</p>
+Erstellen einer Croup mit Namen httpd unter Verwendung der Hierarchien <strong>cpu_limit</strong> und <strong>mem_limit</strong>
+<code>cgcreate -t root:root -a cgroupadmin:admins -g cpu_limit,mem_limit:httpd</code>
 
-<h4>Regel 3</h4>
-<p>
-<ul>
-<li>Wird eine neue <strong>Hierarchie</strong> auf dem System erstellt, sind<strong> alle Tasks</strong> auf dem System<u> Mitglieder der standard CGroup</u> dieser <u>Hierarchie (</u><strong>Root Kontrollgruppe)</strong></li>
-<li>Jede <strong>Task</strong> kann<u> Mitglied in genau einer Cgroup </u><strong>dieser</strong> <strong>Hierarchie</strong> sein.</li>
-<li>Ein <strong>Taks</strong> kann in<u> Mitglied mehreren Cgroups sein</u>, wenn sich diese in <strong>verschiedenen Hierachien</strong> befinden.</li>
-<li>Wird ein <strong>Task</strong> <u>Mitglied einer anderen Cgroup in der </u><strong>gleichen Hierarchie</strong><u> zugeordnet</u>, wird sie aus der <strong>ursprünglichen Cgroup </strong>in <strong>dieser</strong> <strong>Hierarchie</strong> entfernt.</li>
-<li>Ein <strong>Taks</strong> kann <u>niemals Mitglied </u>in zwei <strong>Cgroups derselben Hierachie sein.</strong></li>
-</ul>
-</p>
 
-<p>
+<strong>cgdelete &lt;Hierarchie&gt;:&lt;Cgroup Subpfad&gt; </strong>→ Tool zum Entfernen von Cgroup Kontrellgruppen<br>
+→ beim löschen eine Cgruppe werden alle ihre Tasks in die übergeordnete Kontrollgruppe verschoben<br>
+<strong>-r </strong>→ rekursiv alle Untergruppen dieser Cgroup mit entfernen<br>
+<br>
 <em>Beispiel:</em><br>
-Der Apache Webserver Daemon httpd ist als <strong>Task </strong>einer <u>Cgroup</u> in der <strong>Hierarchie</strong> <em>cpu_mem zugewiesen. </em>Gleichzeitig ist ein <strong>Taks</strong> mit einer <u>Cgroup</u> in der <strong>Hierarchie</strong> <em>net</em> verknüpft. <br>
-</p>
-
-<h4>Regel 4</h4>
-<p>
-<ul>
-<li>Da jeder <strong>Taks </strong> ein Prozess ist, wird jeder neu erstellte Kindporzess dieses <strong>Task </strong>MItglied aller <u>Cgroups</u> wie dessen Vaterprozess.</li>
-<li>Der untergeordnete Prozess kann als <strong>Task</strong> anderen <u>Cgroups</u> zugewiesen werden, erbt aber immer die Eigenschaften seines Vaters und als solche auch seine <u>Cgroups</u>.</li>
-</ul>
-</p>
+löschen der Gruppe httpd und all ihrer Kinder<br>
+<code>cgdelete -r cpu_limit:httpd</code>
 
 
 			<!-- End wiki content -->
@@ -167,7 +148,7 @@ Der Apache Webserver Daemon httpd ist als <strong>Task </strong>einer <u>Cgroup<
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Cgroups.html'>Linux Wissen:Prozessverwaltung:Cgroups</a></li>
+				Backlinks:						<a href='../Cgroups.html'>Linux Wissen:Prozessverwaltung:Cgroups</a></li>						<a href='./Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

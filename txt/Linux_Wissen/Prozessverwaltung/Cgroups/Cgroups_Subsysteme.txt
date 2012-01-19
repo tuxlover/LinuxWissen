@@ -13,3 +13,37 @@ Created Dienstag 17 Januar 2012
 
 
 
+==== Subsysteme ====
+* In der Dokumentation wird auch Controller dazu gesagt, gemeint ist aber dass Selbe
+
+**blkio**
+→ beschränken des Eingabe/Ausgabe-Zugriff auf Datenträger und Laufwerke
+
+**cpu**
+→ beschränken des Schedulers einer oder mehrerer CPUs
+
+**cpuset **
+→ einzelne CPUs oder Cores bestimmten **Tasks** zuordnen
+
+**cpuacct**
+→ Logs übder die Verwendung von CPU-Resourcen für einen oder mehrere **Tasks** verwenden
+
+**devices**
+→ erlauben/verbieten des Zugriffs von **Tasks **auf bestimmte Geräte in //*/dev//
+
+**freezer**
+→ **Tasks **in einer Kontrollgruppe pausieren|fortsetzen
+
+**memory**
+→ beschränken des Verbrauchs von Arbeitsspeicher für einen **Task **
+→ erstellen von Logs über den Speicherverbrauch für diesen **Task**
+
+**net_cls **
+→ makieren von Netzwerkpaketen eines bestimmten **Tasks **
+→ dabei wir ein //Class Identifier //eingesetzt um Paktete aus eineme **Task **einer bestimmten Cgroup zu identifiezieren
+
+**ns **
+→ Namensraum Subsystem
+
+
+ 

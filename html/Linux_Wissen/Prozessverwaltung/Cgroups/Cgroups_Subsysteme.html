@@ -69,7 +69,7 @@
 <li><a href="../Cgroups.html" title="Cgroups">Cgroups</a></li>
 <ul>
 <li><a href="./cgconfig_und_cgred.html" title="cgconfig und cgred">cgconfig und cgred</a></li>
-<li><a href="./Cgroups_erstellen.html" title="Cgroups erstellen">Cgroups erstellen</a></li>
+<li><a href="./Cgroups_erstellen_und_l%C3%B6schen.html" title="Cgroups erstellen und löschen">Cgroups erstellen und löschen</a></li>
 <li><strong>Cgroups Subsysteme</strong></li>
 <li><a href="./Cgroups_verwalten.html" title="Cgroups verwalten">Cgroups verwalten</a></li>
 <li><a href="./Hierarchien_verwalten.html" title="Hierarchien verwalten">Hierarchien verwalten</a></li>
@@ -115,6 +115,62 @@ Created Dienstag 17 Januar 2012<br>
 
 
 
+<h3>Subsysteme</h3>
+<p>
+<ul>
+<li>In der Dokumentation wird auch Controller dazu gesagt, gemeint ist aber dass Selbe</li>
+</ul>
+</p>
+
+<p>
+<strong>blkio</strong><br>
+→ beschränken des Eingabe/Ausgabe-Zugriff auf Datenträger und Laufwerke<br>
+</p>
+
+<p>
+<strong>cpu</strong><br>
+→ beschränken des Schedulers einer oder mehrerer CPUs<br>
+</p>
+
+<p>
+<strong>cpuset </strong><br>
+→ einzelne CPUs oder Cores bestimmten <strong>Tasks</strong> zuordnen<br>
+</p>
+
+<p>
+<strong>cpuacct</strong><br>
+→ Logs übder die Verwendung von CPU-Resourcen für einen oder mehrere <strong>Tasks</strong> verwenden<br>
+</p>
+
+<p>
+<strong>devices</strong><br>
+→ erlauben/verbieten des Zugriffs von <strong>Tasks </strong>auf bestimmte Geräte in <em>*/dev</em><br>
+</p>
+
+<p>
+<strong>freezer</strong><br>
+→ <strong>Tasks </strong>in einer Kontrollgruppe pausieren|fortsetzen<br>
+</p>
+
+<p>
+<strong>memory</strong><br>
+→ beschränken des Verbrauchs von Arbeitsspeicher für einen <strong>Task </strong><br>
+→ erstellen von Logs über den Speicherverbrauch für diesen <strong>Task</strong><br>
+</p>
+
+<p>
+<strong>net_cls </strong><br>
+→ makieren von Netzwerkpaketen eines bestimmten <strong>Tasks </strong><br>
+→ dabei wir ein <em>Class Identifier </em>eingesetzt um Paktete aus eineme <strong>Task </strong>einer bestimmten Cgroup zu identifiezieren<br>
+</p>
+
+<p>
+<strong>ns </strong><br>
+→ Namensraum Subsystem<br>
+</p>
+
+
+ 
 
 
 			<!-- End wiki content -->

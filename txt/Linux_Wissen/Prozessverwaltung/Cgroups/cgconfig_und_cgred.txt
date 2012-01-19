@@ -10,6 +10,8 @@ Created Dienstag 17 Januar 2012
 [[Linux Wissen:FHS:etc:cgconfig.conf]]
 [[Linux Wissen:FHS:etc:cgrules.conf]]
 
+__Hinweis: Der Dienst ist nach der Installation nicht gestartet und muss gestartet und den persistenten Diensten hinzugefügt werden.__
+[[Linux Wissen:Booten:Dienste]]
 
 **cgconfig **
 
@@ -24,5 +26,4 @@ Created Dienstag 17 Januar 2012
 **-s <Fac> → **bestimmen einer Syslog Facility für den syslog Daemon
 **-q **→ keine Ausgabe nach StdOut oder StdErr
 **-Q **→ Logging deaktiviert
-   
 [[Linux Wissen:Systemprotokollierung]]

@@ -62,8 +62,8 @@ __Hineweis: Der Daemon muss nach dem ändern der Konfigurationsdatei neu gestart
 	      → Mounten der Subsysteme in eine virtuelles Dateisystem
 
 //Verwendete Befehle://
-	''mkdir <Cgroup>''
-	''mount -t cgroup -o <Subsystem> <Name> <Mountpunkt>''
+	''mkdir <Cgroup Mountpunkt>''
+	''mount -t cgroup -o <Subsystem>,... <Name der Hierarchie> <Mountpunkt>''
 [[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
 __Hinweis: EIn Mountpunkt kann mehereren Hierarchien zugewiesen sein.__
 
@@ -72,6 +72,10 @@ __Hinweis: EIn Mountpunkt kann mehereren Hierarchien zugewiesen sein.__
 	   → setzen von Subsystemparameter
            → setzen von Berechtigungen für Cgroups
            __Hinweis: Die verwendeten Subsysteme müssen entsprechend gmounted worden sein. __
+
+**permissions **→ optionale Unterdirektive von group die aus den Unterdirektiven  **admin **und **task** besteht
+			**task **→ festlegen der UID und GID für alle Tasks in dieser Hierarchie
+			**admin** → Administrator dieseer Cgroup, er darf die Berichtigungen für diese Group ändern
 
 //Verwendete Befehle://
 '''

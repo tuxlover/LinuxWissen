@@ -1,0 +1,47 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-17T15:40:49+01:00
+
+====== Cgroups erstellen und löschen ======
+Created Dienstag 17 Januar 2012
+
+* können manuelle erstellt werden oder mithilfe der im //libcgroup// Paket enthaltenen Hilfstools
+
+=== Ohne Tools ===
+* mit mkdir kann eine untergeordnet Cgroup erstellt werden
+* Die Rechte für die **tasks **Datei und die **Hierarchie** muss dann mit **chown** gesetzt werden
+[[Linux Wissen:Dateien verwalten:Dateien anlegen und löschen]]
+[[Linux Wissen:Dateien verwalten:Zugriffsrechte]]
+
+**mkdir /<Cgroup Hierarchie>/<Group>**
+
+//Beispiel//
+''mkdir /cgroups/cpu_limit/lab1/students''
+
+=== Mit Tools ===
+**cgcreate **→ Tool zum Erstellen einer Cgroup Kontrollgruppe
+**-t <UID>:<GID>** 
+→ definiert UID und GID der **tasks** Pseudodatei
+→ dieser Benutzer darf neue Prozesse zu der Cgroup erstellen
+
+**-a <UID>:<GID> **
+→ definiert UID und GID des Benutzers, ausser der **tasks **''Datei''
+→ dieser Benutzer darf den Zugriff für Cgroups ändern
+
+**-g <Hierarchie>:<Cgroup Subpfad> **
+→ durch Komma getrennte Liste on Cgroup und den dazugehörenden Subystemen
+→ als <Cgroup Subpfad> wird ein relativ zu relativ zur Hierachie ,die mit diesem Subsystem verknüpft ist, Subpfad angegegeben
+[[Linux Wissen:Benutzer und Gruppen]]
+
+//Beispiel://
+Erstellen einer Croup mit Namen httpd unter Verwendung der Hierarchien **cpu_limit** und **mem_limit**
+''cgcreate -t root:root -a cgroupadmin:admins -g cpu_limit,mem_limit:httpd''
+
+
+**cgdelete <Hierarchie>:<Cgroup Subpfad> **→ Tool zum Entfernen von Cgroup Kontrellgruppen
+→ beim löschen eine Cgruppe werden alle ihre Tasks in die übergeordnete Kontrollgruppe verschoben
+**-r **→ rekursiv alle Untergruppen dieser Cgroup mit entfernen
+
+//Beispiel://
+löschen der Gruppe httpd und all ihrer Kinder
+''cgdelete -r cpu_limit:httpd''

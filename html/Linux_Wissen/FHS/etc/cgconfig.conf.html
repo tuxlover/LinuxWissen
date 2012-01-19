@@ -136,18 +136,10 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Dienstag 17 Januar 2012<br>
-</p>
-
-<p>
-<ul>
-<li>Konfigurationsdatei für den cgconfig Daemon</li>
+				<li>Konfigurationsdatei für den cgconfig Daemon</li>
 <li><strong>man 5 cgconfig.conf</strong></li>
-</ul>
 ++<br>
-#<code>Kommentar</code><br>
-</p>
+#<code>Kommentar</code>
 <pre>
 mount {
     cpuset = /cgroup/cpu;
@@ -190,47 +182,41 @@ group &lt;name&gt; {
     …
 }
 </pre>
-
-
-<p>
+<br>
+<br>
 ++<br>
-</p>
+<br>
+<u>Hineweis: Der Daemon muss nach dem ändern der Konfigurationsdatei neu gestartet werden.</u>
 
-<p>
-<u>Hineweis: Der Daemon muss nach dem ändern der Konfigurationsdatei neu gestartet werden.</u><br>
-</p>
-
-<p>
 <strong>mount </strong>→ Direktive für die Mountpunkte der Hierarchien und ihrer Subsysteme<br>
 <div style='padding-left: 30pt'>
      → Jedem Subsystem dass verwendet wird, wird ein Mountpunkt zugewiesen<br>
       → Mounten der Subsysteme in eine virtuelles Dateisystem<br>
 </div>
-</p>
 
-<p>
-<em>Verwendete Befehle:</em><br>
+<em>Verwendete Befehle:</em>
 <div style='padding-left: 30pt'>
-<code>mkdir &lt;Cgroup&gt;</code><br>
-<code>mount -t cgroup -o &lt;Subsystem&gt; &lt;Name&gt; &lt;Mountpunkt&gt;</code><br>
+<code>mkdir &lt;Cgroup Mountpunkt&gt;</code><br>
+<code>mount -t cgroup -o &lt;Subsystem&gt;,... &lt;Name der Hierarchie&gt; &lt;Mountpunkt&gt;</code><br>
 </div>
-<a href="../../Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
-<u>Hinweis: EIn Mountpunkt kann mehereren Hierarchien zugewiesen sein.</u><br>
-</p>
+<a href="../../Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a>
+<u>Hinweis: EIn Mountpunkt kann mehereren Hierarchien zugewiesen sein.</u>
 
 
-<p>
 <strong>group </strong>→ Direktive zum Erstellen und verwalten von Cgroup Kontrollgruppen<br>
 <div style='padding-left: 30pt'>
    → setzen von Subsystemparameter<br>
 </div>
            → setzen von Berechtigungen für Cgroups<br>
-           <u>Hinweis: Die verwendeten Subsysteme müssen entsprechend gmounted worden sein. </u><br>
-</p>
+           <u>Hinweis: Die verwendeten Subsysteme müssen entsprechend gmounted worden sein. </u>
 
-<p>
-<em>Verwendete Befehle:</em><br>
-</p>
+<strong>permissions </strong>→ optionale Unterdirektive von group die aus den Unterdirektiven  <strong>admin </strong>und <strong>task</strong> besteht<br>
+<div style='padding-left: 90pt'>
+<strong>task </strong>→ festlegen der UID und GID für alle Tasks in dieser Hierarchie<br>
+<strong>admin</strong> → Administrator dieseer Cgroup, er darf die Berichtigungen für diese Group ändern<br>
+</div>
+
+<em>Verwendete Befehle:</em>
 <pre>
 mkdir -p &lt;Cgroups&gt;/&lt;Hierarchie&gt;/&lt;Tasks&gt;
 chown &lt;admin_user&gt;:&lt;admin_group&gt; &lt;Mountpoint mount&gt;/&lt;Cgroup&gt;
@@ -238,10 +224,8 @@ chown &lt;perms_root&gt;:&lt;perms_group&gt; &lt;Mountpoint mount&gt;/&lt;Cgroup
 echo &lt;Param Wert&gt; &gt; &lt;Mountpoint mount&gt;/&lt;Cgroup&gt;/Task/&lt;Parameter&gt;
 </pre>
 
-<p>
-<a href="../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a><br>
-<a href="../../Prozessverwaltung/Cgroups/Cgroups_Subsysteme.html" title="Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme">Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme</a><br>
-</p>
+<a href="../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a>
+<a href="../../Prozessverwaltung/Cgroups/Cgroups_Subsysteme.html" title="Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme">Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme</a>
 
 
 
@@ -250,7 +234,7 @@ echo &lt;Param Wert&gt; &gt; &lt;Mountpoint mount&gt;/&lt;Cgroup&gt;/Task/&lt;Pa
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Prozessverwaltung/Cgroups.html'>Linux Wissen:Prozessverwaltung:Cgroups</a></li>						<a href='../../Prozessverwaltung/Cgroups/cgconfig_und_cgred.html'>Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred</a></li>
+				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Prozessverwaltung/Cgroups/cgconfig_und_cgred.html'>Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred</a></li>						<a href='../../Prozessverwaltung/Cgroups.html'>Linux Wissen:Prozessverwaltung:Cgroups</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

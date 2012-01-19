@@ -5,11 +5,18 @@ Creation-Date: 2012-01-17T12:24:14+01:00
 ====== Cgroups verwalten ======
 Created Dienstag 17 Januar 2012
 
+* In jeder Cgroup können für die entsprechenden Subsysteme gesetzt werden
+
 **vorhandene Cgroups anzeigen**
 ''cat /proc/cgroups''
 [[Linux Wissen:FHS:proc]]
 
-**cgcreate**
+**cgset <Parameter>=<wert> <Cgroup Pfad relativ zur Hierarchie> **
+→ Setzen von Subsystemparametern 
+→ der Ausführende muss über die entsprechenden Berechtigungen für diese Cgroup verfügen
+[[Cgroups erstellen und löschen]]
+[[Linux Wissen:Dateien verwalten:Zugriffsrechte]]
+
 
 
 **cgexec**
@@ -21,9 +28,6 @@ cgclassify (1)       - move running task(s) to given cgroups
 cgclear (1)          - unload the cgroup filesystem
 cgconfig.conf (5)    - libcgroup configuration file
 cgcreate (1)         - create new cgroup(s)
-cgred.conf (5)       - libcgroup configuration file
-cgrules.conf (5)     - libcgroup configuration file
-cgset (1)            - set the parameters of given cgroup(s)
 lscgroup (1)
 lssubsys (1)
 
