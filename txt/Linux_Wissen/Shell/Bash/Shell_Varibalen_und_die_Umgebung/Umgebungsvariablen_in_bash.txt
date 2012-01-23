@@ -7,7 +7,7 @@ Created Freitag 15 April 2011
 
 BASH → Pfad zur Binärdatei der aktuellen Shell
 
-BASH_SUBSHELL → Indikator für die Tiefe der Subshellverschachtlelung, 0 bedeutet keine Subshell, 1 in der ersten Subshell 					 usw. 
+BASH_SUBSHELL → Indikator für die Tiefe der Subshellverschachtlelung, 0 bedeutet keine Subshell, 1 in der ersten Subshell 	usw. 
 
 BASHPID → PID der aktuell aufgerufenen Bash Shell
 
@@ -111,6 +111,8 @@ PS3 → Drittes Promptzeichen. Wird angezeigt wenn in einer **select  **Schleife
 
 PS4 → viertes Promptzeichen. Wird angezeigt wen **set -x **verwendet wird 
 [[Linux Wissen:Shell:Bash:Optionen für die Bash]]
+
+RANDOM → Variable die Zufallszahlen ausgibt
 
 SECONDS → Anzahl der Sekunden die eine Shell | Shellscript gelaufen ist  
 

@@ -4,4 +4,37 @@ Creation-Date: 2012-01-18T17:10:59+01:00
 
 ====== cgrules.conf ======
 Created Mittwoch 18 Januar 2012
+* Datei die festlegt welche Prozesses/ oder spezifischer Prozesse von bestimmten Nutzern in welche Cgroup verschoben wird
+* wird vom** cgrulesengd **gelesen, der dann die Prozesse in die entsprechenden Cgroups verschiebt
 
+++
+''#Nutzer:#(Befehl) #Subsysteme #Kontrollgruppe''
+''katja:firefox	cpuacct,cpuset /user/students/''
+''@users	net_cls		/usr/all		 ''
+''horst 	blikio		/usr/%u''
+''* 	*		/usr/unpriv''
+++
+1. Spalte: Der Name eines Nutzers der zu einem Bestimmten Befehl gehört
+ → Mit **@Gruppe** kann eine Gruppe anstelle eines Nutzers angegeben werden
+ → Mit **% **kann man auf den Namen in der Zeile davor referenziert werden
+→ Das Metazeichen * vereweist auf alle
+
+2. Spalte: (Optinal) Befehl für den die Einschränkung gelten soll
+→ wird diese Spalte ausgelassen, so werden alle Prozesse für diesen Nutzer eingeschränkt
+→ der Befehl kann als absuluter Pfad, als PID oder als solches spezifiziert sein
+→ wird nur der Befehl angegeben muss dieser in ''PATH'' der verwendeten Shell sein
+[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]]
+
+3. Spalte:  Name der kontrollierenden Subsysteme in der entsprechenden Gruppe
+→ durch Komma getrennte Liste von Subsystemen die in eine Hierarchie eingehängt sind die auf die Cgroups in der 4. Spalte verweisen
+→ das Metazeichen * verweist auf alle
+
+4. Spalte: Cgroup relativ zur Hierarchie
+→ folgende Stings werden durch ihre korspondierenden Namen expandiert:
+	**%u** → Name des Nutzers, falls dieser nicht aufgelöst werden kann wird die UID verwendet
+	**%U → ** UID des Nutzers
+	**%g **→ Gruppe des Nutzers, falls dieser nicht aufgelöst werden kann wird die GID verwendet
+
+	**%G **→ GID des Nutzers
+	**%p **→ Prozessname, falls dieser nicht aufgelöst werden kann, wird PID verwendet
+	**%P → **PID des Prozesse

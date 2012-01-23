@@ -29,6 +29,7 @@ Eine Sammlung von Prozessen:
 * neu erstellte Untergruppen sind bei Ihrer Erstellung leer und müssen mit Prozessen befüllt werden
 * eine Gruppe kann nur aufgelöst werden, fallls ihr keine Prozesse zugeordnet sind und sie keine weiteren Kinder in Ihrer Hierarchie besitzt
 * Einstellungen von Subsystemen werden an Untergruppen weitervererbt
+* Jede Hierarchie hat mindestens eine Cgroup Gruppe, diese Cgroups ist die root-Cgroup
 [[+Hierarchien verwalten]]
 
 ==== Cgroups Subsystem ====

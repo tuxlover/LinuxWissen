@@ -138,8 +138,57 @@
 			<!-- Wiki content -->
 				<p>
 Created Mittwoch 18 Januar 2012<br>
+<ul>
+<li>Datei die festlegt welche Prozesses/ oder spezifischer Prozesse von bestimmten Nutzern in welche Cgroup verschoben wird</li>
+<li>wird vom<strong> cgrulesengd </strong>gelesen, der dann die Prozesse in die entsprechenden Cgroups verschiebt</li>
+</ul>
 </p>
 
+<p>
+++<br>
+<code>#Nutzer:#(Befehl) #Subsysteme #Kontrollgruppe</code><br>
+<code>katja:firefox	cpuacct,cpuset /user/students/</code><br>
+<code>@users	net_cls		/usr/all		 </code><br>
+<code>horst 	blikio		/usr/%u</code><br>
+<code>* 	*		/usr/unpriv</code><br>
+++<br>
+1. Spalte: Der Name eines Nutzers der zu einem Bestimmten Befehl gehört<br>
+ → Mit <strong>@Gruppe</strong> kann eine Gruppe anstelle eines Nutzers angegeben werden<br>
+ → Mit <strong>% </strong>kann man auf den Namen in der Zeile davor referenziert werden<br>
+→ Das Metazeichen * vereweist auf alle<br>
+</p>
+
+<p>
+2. Spalte: (Optinal) Befehl für den die Einschränkung gelten soll<br>
+→ wird diese Spalte ausgelassen, so werden alle Prozesse für diesen Nutzer eingeschränkt<br>
+→ der Befehl kann als absuluter Pfad, als PID oder als solches spezifiziert sein<br>
+→ wird nur der Befehl angegeben muss dieser in <code>PATH</code> der verwendeten Shell sein<br>
+<a href="../../Shell/Bash/Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash</a><br>
+</p>
+
+<p>
+3. Spalte:  Name der kontrollierenden Subsysteme in der entsprechenden Gruppe<br>
+→ durch Komma getrennte Liste von Subsystemen die in eine Hierarchie eingehängt sind die auf die Cgroups in der 4. Spalte verweisen<br>
+→ das Metazeichen * verweist auf alle<br>
+</p>
+
+<p>
+4. Spalte: Cgroup relativ zur Hierarchie<br>
+→ folgende Stings werden durch ihre korspondierenden Namen expandiert:<br>
+<div style='padding-left: 30pt'>
+<strong>%u</strong> → Name des Nutzers, falls dieser nicht aufgelöst werden kann wird die UID verwendet<br>
+<strong>%U → </strong> UID des Nutzers<br>
+<strong>%g </strong>→ Gruppe des Nutzers, falls dieser nicht aufgelöst werden kann wird die GID verwendet<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<strong>%G </strong>→ GID des Nutzers<br>
+<strong>%p </strong>→ Prozessname, falls dieser nicht aufgelöst werden kann, wird PID verwendet<br>
+<strong>%P → </strong>PID des Prozesse<br>
+</div>
+</p>
 
 
 			<!-- End wiki content -->
@@ -147,7 +196,7 @@ Created Mittwoch 18 Januar 2012<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Prozessverwaltung/Cgroups/cgconfig_und_cgred.html'>Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred</a></li>
+				Backlinks:						<a href='../../Prozessverwaltung/Cgroups/cgconfig_und_cgred.html'>Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred</a></li>						<a href='../../Prozessverwaltung/Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -111,7 +111,7 @@ Created Dienstag 19 April 2011
 [[Linux Wissen:SQL:Mysql Server]]
 [[Linux Wissen:FHS:etc:my.cnf]]
 
-***/etc/services/ → **mappt Ports an den **inetd** bzw. **xinetd** bzw an den syscall //getserverbyname()//
+***/etc/services → **mappt Ports an den **inetd** bzw. **xinetd** bzw an den syscall //getserverbyname()//
 [[Linux Wissen:FHS:etc:services]]
 ***/etc/ethers **→ Konfigurieren des Arp Caches
 [[Linux Wissen:FHS:etc:ethers]]
@@ -147,6 +147,7 @@ __Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
 ***/etc/systemd/ → **Konfigurationsdateien des Sys-V-Init komaptiblen systemd die zur Laufzeit benötigt werden
 	**system/ **→ Verzeichnis in dem die von systemd genutzten Units abgelegt werden
 
+***/etc/sysconfig/ → **Konfigurationsdateien die für die einzelnen Dienste  spezifische Umgebungsvariablen setzen 
 
 ***/etc/termcap**
 → obsolete Datenbank die von **tput **benutzt wird

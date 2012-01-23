@@ -32,6 +32,7 @@ Created Donnerstag 21 April 2011
 [ ] filter und muster für rsync
 [ ] mkisofs
 [ ] rsync nicht komplett
+[ ] dump
 
 === cool hacks ===
 +++
@@ -51,3 +52,7 @@ Created Donnerstag 21 April 2011
 
 === update der avg Virendatenbank aus einem Verzeichnis ===
 ''sudo avgupdate --path=<PATH>''
+
+
+=== Fragen: ===
+Welche Subsysteme und Parameter gibt es? Welche Pflichtparameter gibt es?

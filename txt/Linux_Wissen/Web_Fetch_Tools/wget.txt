@@ -29,10 +29,10 @@ Created Sonntag 17 Juli 2011
 **-r** → Links rekursiv verfolgen
 **-l|--level N** → die Rekursionstiefe auf N festlegen
 **-H **→ verfolge Links auf externen Websites
-**--nd **→ verhindert das Herunderladen von einzelnen Unterverzeichnissen
+**-nd **→ verhindert das Herunderladen von einzelnen Unterverzeichnissen
 **-x |--force-directories **→ übernehmen der Verzeichnisstruktur vom Server
 **-nH **→ die Verzeichnissstruktur mit übernehmen, der Hostname wird aber nicht übernommen aus **http://meine-seite.de/bilder **wird **bilder**
-**-A **''→ eine Liste von akzeptierten Dateien, dabei wird die typische Dateiendung als Parameter übergeben''
+**-A **→  eine Liste von akzeptierten Dateien, dabei wird die typische Dateiendung als Parameter übergeben
 **-R **→ eine Liste von zurückzuweisenden Dateien, dabei wird die typische Dateiendung als Parameter übergeben
 **-L | --relative-links **→ nur relativen Links folgen
 

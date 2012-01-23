@@ -142,7 +142,7 @@ Created Donnerstag 21 April 2011<br>
 
 <p>
 ++<br>
-#Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Reihenfolge des Checks beim Booten              <br>
+#Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Welches Dateisystem soll gedumped werden 	#Reihenfolge in der fsck durchgeführt wird      <br>
 </p>
 
 <p>
@@ -193,6 +193,32 @@ Alucard:/media/Elements  /srv/nfs             nfs        rw,... #man 5 nfs<br>
 <code>/dev/system/tmp      /tmp                 ext4       acl,user_xattr,nodev,noexc,nosuid        1 2</code><br>
 </p>
 
+<p>
+1. Spalte: der Pfad der Gerätedatei, des device map file<br>
+</p>
+
+<p>
+2. Spalte: Mountpoint des Dateisystems<br>
+</p>
+
+<p>
+3. Spalte: Typ des Dateisystems<br>
+</p>
+
+<p>
+4. Spalte: Bootoptionen, siehe mount<br>
+<a href="../../Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
+</p>
+
+<p>
+5. Spalte: kann 1 oder 0 sein und sagt dem <strong>dump (missing link) </strong>Befehl ob ein dump durchgeführt werden soll oder nicht. Ist dieser Wert 0 so wird dump keinen <br>
+Dateisystem dump druchführen.<br>
+</p>
+
+<p>
+6. Spalte: Reihenfolge in der <strong>fsck</strong> den check durchführt. Falls dieser Wert auf 0 gesetzt wurde, führe keinen fsck durch.<br>
+<a href="../../Partitionen_und_Dateisysteme/Dateisysteme.html" title="Linux Wissen:Partitionen und Dateisysteme:Dateisysteme">Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a><br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -200,7 +226,7 @@ Alucard:/media/Elements  /srv/nfs             nfs        rw,... #man 5 nfs<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Partitionen_und_Dateisysteme/Swap.html'>Linux Wissen:Partitionen und Dateisysteme:Swap</a></li>						<a href='../../Partitionen_und_Dateisysteme/Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a></li>						<a href='../../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>						<a href='../../Partitionen_und_Dateisysteme/Mounten.html'>Linux Wissen:Partitionen und Dateisysteme:Mounten</a></li>						<a href='../../Sicherheit/Hostsecurity.html'>Linux Wissen:Sicherheit:Hostsecurity</a></li>						<a href='../../Partitionen_und_Dateisysteme/Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='../../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>						<a href='../../Partitionen_und_Dateisysteme/Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>						<a href='../../Partitionen_und_Dateisysteme/Mounten.html'>Linux Wissen:Partitionen und Dateisysteme:Mounten</a></li>						<a href='../../Partitionen_und_Dateisysteme/Swap.html'>Linux Wissen:Partitionen und Dateisysteme:Swap</a></li>						<a href='../../Partitionen_und_Dateisysteme/Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a></li>						<a href='../../Sicherheit/Hostsecurity.html'>Linux Wissen:Sicherheit:Hostsecurity</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

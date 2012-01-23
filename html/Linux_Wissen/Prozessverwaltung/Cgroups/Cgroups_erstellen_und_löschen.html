@@ -101,46 +101,74 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>können manuelle erstellt werden oder mithilfe der im <em>libcgroup</em> Paket enthaltenen Hilfstools</li>
+				<p>
+Created Dienstag 17 Januar 2012<br>
+</p>
+
+<p>
+<ul>
+<li>können manuelle erstellt werden oder mithilfe der im <em>libcgroup</em> Paket enthaltenen Hilfstools</li>
+</ul>
+</p>
 
 <h4>Ohne Tools</h4>
+<p>
+<ul>
 <li>mit mkdir kann eine untergeordnet Cgroup erstellt werden</li>
 <li>Die Rechte für die <strong>tasks </strong>Datei und die <strong>Hierarchie</strong> muss dann mit <strong>chown</strong> gesetzt werden</li>
-<a href="../../Dateien_verwalten/Dateien_anlegen_und_l%C3%B6schen.html" title="Linux Wissen:Dateien verwalten:Dateien anlegen und löschen">Linux Wissen:Dateien verwalten:Dateien anlegen und löschen</a>
-<a href="../../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a>
+</ul>
+<a href="../../Dateien_verwalten/Dateien_anlegen_und_l%C3%B6schen.html" title="Linux Wissen:Dateien verwalten:Dateien anlegen und löschen">Linux Wissen:Dateien verwalten:Dateien anlegen und löschen</a><br>
+<a href="../../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
+</p>
 
-<strong>mkdir /&lt;Cgroup Hierarchie&gt;/&lt;Group&gt;</strong>
+<p>
+<strong>mkdir /&lt;Cgroup Hierarchie&gt;/&lt;Group&gt;</strong><br>
+</p>
 
-<em>Beispiel</em>
-<code>mkdir /cgroups/cpu_limit/lab1/students</code>
+<p>
+<em>Beispiel</em><br>
+<code>mkdir /cgroups/cpu_limit/lab1/students</code><br>
+</p>
 
 <h4>Mit Tools</h4>
+<p>
 <strong>cgcreate </strong>→ Tool zum Erstellen einer Cgroup Kontrollgruppe<br>
 <strong>-t &lt;UID&gt;:&lt;GID&gt;</strong> <br>
 → definiert UID und GID der <strong>tasks</strong> Pseudodatei<br>
 → dieser Benutzer darf neue Prozesse zu der Cgroup erstellen<br>
-<br>
+</p>
+
+<p>
 <strong>-a &lt;UID&gt;:&lt;GID&gt; </strong><br>
 → definiert UID und GID des Benutzers, ausser der <strong>tasks </strong><code>Datei</code><br>
 → dieser Benutzer darf den Zugriff für Cgroups ändern<br>
-<br>
+</p>
+
+<p>
 <strong>-g &lt;Hierarchie&gt;:&lt;Cgroup Subpfad&gt; </strong><br>
 → durch Komma getrennte Liste on Cgroup und den dazugehörenden Subystemen<br>
 → als &lt;Cgroup Subpfad&gt; wird ein relativ zu relativ zur Hierachie ,die mit diesem Subsystem verknüpft ist, Subpfad angegegeben<br>
-<a href="../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a>
+<a href="../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a><br>
+</p>
 
+<p>
 <em>Beispiel:</em><br>
-Erstellen einer Croup mit Namen httpd unter Verwendung der Hierarchien <strong>cpu_limit</strong> und <strong>mem_limit</strong>
-<code>cgcreate -t root:root -a cgroupadmin:admins -g cpu_limit,mem_limit:httpd</code>
+Erstellen einer Croup mit Namen httpd unter Verwendung der Hierarchien <strong>cpu_limit</strong> und <strong>mem_limit</strong><br>
+<code>cgcreate -t root:root -a cgroupadmin:admins -g cpu_limit,mem_limit:httpd</code><br>
+</p>
 
 
+<p>
 <strong>cgdelete &lt;Hierarchie&gt;:&lt;Cgroup Subpfad&gt; </strong>→ Tool zum Entfernen von Cgroup Kontrellgruppen<br>
 → beim löschen eine Cgruppe werden alle ihre Tasks in die übergeordnete Kontrollgruppe verschoben<br>
 <strong>-r </strong>→ rekursiv alle Untergruppen dieser Cgroup mit entfernen<br>
-<br>
+</p>
+
+<p>
 <em>Beispiel:</em><br>
 löschen der Gruppe httpd und all ihrer Kinder<br>
-<code>cgdelete -r cpu_limit:httpd</code>
+<code>cgdelete -r cpu_limit:httpd</code><br>
+</p>
 
 
 			<!-- End wiki content -->

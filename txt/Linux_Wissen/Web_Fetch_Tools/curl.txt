@@ -13,7 +13,7 @@ Created Sonntag 17 Juli 2011
 
 
 === Einzeiler ===
-**curl -T <Datei>|- -u <Username>:<Passwort> ftp://<Server>/<Verzeichnis>/...**
+''curl -T <Datei>|- -u <Username>:<Passwort> ftp://<Server>/<Verzeichnis>/...''
 → läd <Datei> auf den ftp-<Server>
 → wird statt <Datei>, ein - angegeben, wird von StdIn 
 

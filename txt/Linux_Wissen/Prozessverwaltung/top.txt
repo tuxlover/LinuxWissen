@@ -25,4 +25,5 @@ Weitere nützliche Programme:
 //htop//
 iotop
 iftop
+iptraf
 conky

@@ -7,11 +7,12 @@ Created Montag 25 April 2011
 
 Verwalten von Repositories und Rpm Paketen.
 $Alle Rpm basierten Distributionen$
-Für $Suse$ nich empfholen. **zypper** verwenden.
+Für $Suse$ nicht empfholen. **zypper** verwenden.
 [[Linux Wissen:Paketverwaltung:Rpm:zypper]]
 
 */etc/yum/repos.d → Konfigurationsdateien für einzelne Yum Repos
 */etc/yum.conf → globale Konfigurationsdateien für yum 
+**(repos.d missing link)**
 
 **yum <Globale Option> <Aktion> <Aktionsoptionen>** 
 

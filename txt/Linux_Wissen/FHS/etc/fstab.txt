@@ -6,7 +6,7 @@ Creation-Date: 2011-04-21T23:52:49+02:00
 Created Donnerstag 21 April 2011
 
 ++
-#Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Reihenfolge des Checks beim Booten              
+#Gerätedatei            #Mountpoint     #Dateisystemtyp #Optionen            #Welches Dateisystem soll gedumped werden 	#Reihenfolge in der fsck durchgeführt wird      
 
 /dev/system/swap          none               swap      	 defaults              		0 0
 
@@ -34,3 +34,17 @@ __Hinweis:__
 __Für mehr sicherheit sollte man folgende Mountoptionen für Verzeichnisse vorsehen auf denen jeder Zugriff hat.__
 ''/dev/system/tmp      /tmp                 ext4       acl,user_xattr,nodev,noexc,nosuid        1 2''
 
+1. Spalte: der Pfad der Gerätedatei, des device map file
+
+2. Spalte: Mountpoint des Dateisystems
+
+3. Spalte: Typ des Dateisystems
+
+4. Spalte: Bootoptionen, siehe mount
+[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+
+5. Spalte: kann 1 oder 0 sein und sagt dem **dump (missing link) **Befehl ob ein dump durchgeführt werden soll oder nicht. Ist dieser Wert 0 so wird dump keinen 
+Dateisystem dump druchführen.
+
+6. Spalte: Reihenfolge in der **fsck** den check durchführt. Falls dieser Wert auf 0 gesetzt wurde, führe keinen fsck durch.
+[[Linux Wissen:Partitionen und Dateisysteme:Dateisysteme]]
