@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>shm</title>
+		<title>Linux Allocated Devices</title>
 		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									shm</h1>
+									Linux Allocated Devices</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -61,8 +61,8 @@
 <li><a href="../boot.html" title="boot">boot</a></li>
 <li><a href="../dev.html" title="dev">dev</a></li>
 <ul>
-<li><a href="./Linux_Allocated_Devices.html" title="Linux Allocated Devices">Linux Allocated Devices</a></li>
-<li><strong>shm</strong></li>
+<li><strong>Linux Allocated Devices</strong></li>
+<li><a href="./shm.html" title="shm">shm</a></li>
 </ul>
 <li><a href="../etc.html" title="etc">etc</a></li>
 <li><a href="../lib.html" title="lib">lib</a></li>
@@ -100,16 +100,15 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Donnerstag 07 Juli 2011<br>
+Created Montag 23 Januar 2012<br>
 </p>
 
 <p>
 <ul>
-<li>Konzept des Shared Memory zur Verwaltung von Speicherbereichen zwischen Prozessen</li>
-<li>Ein Programm erstellt dabei ein geschützten Speicherbereich unter */dev/shm/ </li>
-<li>dieser wird vom tmpfs Dateisystem verwaltet und kann Daten zwischen dem Programm und dessen genutzten prozessen bereitgestellt werden</li>
-<li>das Dateisystem tmpfs nutzt nur virtuelle Speicherbereiche im Hauptspeicher</li>
+<li>Jedem Gerät in /dev ist einer Major und einer Minor Gerätenummer zugeordnet</li>
+<li>Diese Wird in der Linux Dokumentation beschrieben:</li>
 </ul>
+<a href="http://kernel.org/doc/Documentation/devices.txt" title="http://kernel.org/doc/Documentation/devices.txt">http://kernel.org/doc/Documentation/devices.txt</a><br>
 </p>
 
 
@@ -118,7 +117,7 @@ Created Donnerstag 07 Juli 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../dev.html'>Linux Wissen:FHS:dev</a></li>
+				Backlinks:						<a href='../../Dateien_verwalten/Verzeichnisse_und_Dateien_auflisten.html'>Linux Wissen:Dateien verwalten:Verzeichnisse und Dateien auflisten</a></li>						<a href='../../Prozessverwaltung/Cgroups/Cgroups_Subsysteme/blkio.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme:blkio</a></li>						<a href='../../Prozessverwaltung/Cgroups/Cgroups_Subsysteme/devices.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme:devices</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

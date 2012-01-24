@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-24T18:55:23+01:00
+
+====== freezer ======
+Created Dienstag 24 Januar 2012
+
+* Um einen speziellen Prozess anzuhalten, muss dieser in einer Cgroup mit dem freezer Subsystem verschoben werden
+
+**freezer.state**
+→ zeigt oder setzt den Status des Subsystems für die ihr zugeweisenen Cgroups an
+→ es gibt 3 mögliche Werte
+	//FROZEN //→ Tasks in dieser Cgroup sind angehalten
+	//FREEZING// → Tasks in dieser Cgroup werden gerade suspendiert
+	//THAWED → //Tasks in dieser Cgroup wurden fortgesetzt
+	
+→ es nicht möglich einen Prozess in eine Cgroup zu verschieben mit dem Status //FREEZING//
+→ der Status //FREEZING// kann nicht geschrieben werden, nur gelesen
+
+//Beispiel://
+''cgset -r freezer.state='THAWED' halted''

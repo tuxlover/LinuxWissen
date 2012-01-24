@@ -1,0 +1,65 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-24T19:01:36+01:00
+
+====== memory ======
+Created Dienstag 24 Januar 2012
+
+* generien von automatischen Reports für Memory Resourcen für Tasks in diesen Cgroups
+
+**memory.stat**
+→ gibt Auskunft über Statistiken im Memory
+	//cache //→ Page Cache inklusive tmpfs (shmem) in Bytes
+	//rss //→ anonymer und swap Cache, ohne tmpfs (shmem)
+	//mapped_file //→ Größe der im Specher gemappten mapped-files
+	//pgpin → //Anzahl der Speicherseiten im RAM
+	//pgpout //→ Anzahl der Speicherseiten die aus dem RAM geholt wurden
+	//swap //→ verbrauchter Swap  Speicher in Bytes
+	//active_anon //→ anoymer und swap-Cache auf aktiven LRU inklusive tmpfs (shmem)
+	//inactive_anon //→ anonymer und Swap-Cache auf inaktiven LRU inklusive tmpfs (shmem)
+	//active_file// → file-backed Memory auf aktiven LRU Listen
+	//inactive_file //→ file-backed Memory auf inaktiven LRU Listen
+	//unevictable → //Speicher der nicht wieder zurückgewonnen werden kann
+	//hierarchical_memory_limit //→ Speicherlimits für Hierarchien die das memory Subsystem benutzen
+	//hierarchical_memsw_limit //→ Speicher- und Swap Limit für Hierarchien die memory Subsystem benutzen
+	total_* //→ //Reports für diese Cgroup und alle ihre Kinder
+	
+//Beispiel://
+''cgget -r memory.stat /''
+
+**memory.usage_in_bytes**
+→ der gesamte Speicherverbrauche aller Tasks in einer Cgroup
+
+**memory.memsw.usage_in_bytes**
+→ der gesamte Speicherverbrauch inklusive Swap aller Tasks in einer Cgroup 
+
+**memory.max_usage_in_bytes**
+→ Bericht über die Maximale Menge die an Speicher verbraucht wurde 
+
+**memory.memsw.max_usage_in_bytes**
+→ Bericht über die Maximal Menge die an Speicher und Swap verbraucht wurde
+
+**memory.limits_in_bytes**
+→ setzen des Maximalen Speichermenge des User-Memory inklusive File Cache
+→ wird kein Suffix angegeben wird von Bytes ausgegenaen, als Suffix kann aber k K, m M und g G verwendet werden
+→ die Root Cgroup kann nicht limitiert werden
+→ Der Wert **-1 **ist dazu da um existierende Limitierungen zu entfernen
+
+**memory.memsw.limits_in_bytes**
+→ setzen des Maximalen Speichermenge inklusive Swap des User-Memory inklusive File Cache
+→ wird kein Suffix angegeben wird von Bytes ausgegenaen, als Suffix kann aber k K, m M und g G verwendet werden
+→ die Root Cgroup kann nicht limitiert werden
+→ Der Wert **-1 **ist dazu da um existierende Limitierungen zu entfernen
+
+=== ACHTUNG ===
+__: Sie müssen __**memory.limits_in_bytes **__setzen, bevor es möglich  ist __**memory.memsw.limits_in_bytes**__ zu setzen. Diese Reihenfolge muss auch in der Datei __//*/etc/cgconfig.conf //__ berücksichtigt werden.__
+[[Linux Wissen:FHS:etc:cgconfig.conf]]
+
+**memory.failcnt**
+→ wie oft wurden Limits die durch **memory.limits_in_bytes **gesetzt wurden, erreicht
+
+**memory.memsw.failcnt**
+→ wie oft wurden Limits die durch  **memory.memsw_limits_in_bytes** gesetzt wurden, erreicht
+
+**memory.force.empty**
+**→ **

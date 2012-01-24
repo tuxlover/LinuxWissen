@@ -1,0 +1,92 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-24T14:51:13+01:00
+
+====== cpuset ======
+Created Dienstag 24 Januar 2012
+
+* Mechanismus ein Set von CPUS und verfügabren Speicherknoten einer Gruppe von Tasks zuweisen
+* Ein Speicherknoten refernziert einen verfügbaren Speicherbereich
+
+**cpuset.cpus**
+→ __Pflichtparameter!!__
+→ CPUs (bei meheren CPUs oder Kernen) auf die diese Kontrollgruppe Zugriff haben soll
+→ durch die ASCI-Format Zuweisung "N-M" wird ein Bereich definiert
+→ duch Komagetrennt werden CPUs explizit zugewiesen
+→ 0 ist die erste CPU
+
+//Beispiel://
+Der Gruppe httpd_min erlauben die ersten 2 CPUS und die 8 CPU für sich zu beanspruchen
+	''cgset -r cpuset.cpus="0-1,7" httpd_min''
+
+**cpuset.mems**
+→ __Pflichtparameter!!__
+→ Speicherknoten (bei mehreren CPUs oder Kernen) auf die Aufgaben in dieser Kontrollgruppe Zugriff haben solle
+→ durch die ASCI-Format Zuweisung "N-M" wird ein Bereich definiert
+→ duch Komagetrennt werden CPUs explizit zugewiesen
+→ 0 ist die erste CPU
+
+**cpuset.memory_migrate**
+→ 0 oder 1
+→ soll eine Seite im Speicher auf einen nuen Knoten migirren
+	**0 (standard) aus**
+	**1 an**
+
+**cpuset.cpu_exclusive**
+→ 0 oder 1
+→ definiert ob andere **cpusets** und deren Über- und Untergeordneten Sets die für diesen **cpuset** definierten CPUs gemeinsam nutzen dürfen
+	**0 (standard) aus**
+	**1 an**
+
+**cpusset.mem_exclusive**
+→ 0 oder 1
+→ definiert ob andere **cpusets** und deren Über- und Untergeordneten Sets die für diesen **cpuset **defineriten Speicherknoten gemeinsam nutzen dürfen
+	**0 (standard) aus**
+	**1 an**
+	
+**cpuset.mem_hardwall**
+→ 0 oder 1
+→ definiert ob die Kernel-Zuweisungen von Speicherseiten und Puffer-Daten auf Speicherknoten beschränkt werden soll
+	**0 (standard) aus**
+	**1 an**
+	
+**cpuset.memory_pressure**
+→ kann nicht gesetzt werden
+→ Die entsptechende Pseudodatei ist schreibgeschützt
+→ laufender Durchschnttswert des Speicherdrucks
+
+
+**cpuset.memory_pressure_enabled**
+→ 0 oder 1
+→ soll Memory Pressure genutzt werden und die Pseudodatei für **cpuset.memory_pressure **erzeugt werden
+	**0 aus**
+	**1 an**
+	
+**cpuset.memory_spread_page**
+→ 0 oder 1
+→ spezifizier ob die System Buffer auf alle Speichereinheiten gleich verteilt werden soll
+	**0 (standard) aus **(gleicher node auf dem der Vaterporezss läuft)
+	**1 an**
+
+**cpuset.memory_spread_slab**
+→ 0 oder 1 
+→ spezifiziert ob Kernel Slab Caches für I/O Operationen gleichmäßig über **cpuset** verteilt werden sollen
+	**0 (standard) aus **
+	**1 an**
+
+**cpuset.sched_load_balance**
+**→ **0 oder 1
+→ Loadbalancing für den Kernel aktivieren
+	**0 aus**
+	**1 an**
+
+**cpu.sched_relax_domain_level**
+→ -1 - 5
+→ die Reichweite in CPUs über die der Load Balancer seine Last verteilen soll
+	**-1 **→ System Standard für Load Blaancing verwenden
+	**0 **→ nur periodisches Load Balancing
+	**1 **→ sofortiges Load Balancing zwischen Threads im selben Kern
+	**2 **→ sofortiges Load Balancing zwischen Kernen im selben Paket 
+	**3 **→ sofortiges Load Balancing zwischen CPUs im selben Böade
+	**4 **→ sofrotiges Load Balancing über einige CPUs und Architekturen mit NUMA (Non-uniform Memory Access)
+	**5 **→ sofortiges Load Balancing über CPUS mit NUMA

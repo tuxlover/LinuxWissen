@@ -103,6 +103,7 @@
 			<!-- Wiki content -->
 				<li>In jeder Cgroup können für die entsprechenden Subsysteme gesetzt werden</li>
 
+<h4>Informationen zu Cgroups erhalten</h4>
 <strong>vorhandene Cgroups anzeigen</strong>
 <code>cat /proc/cgroups</code>
 
@@ -116,6 +117,13 @@
 <strong>PID anzeigen, die einer CGroup zugeordnet ist:</strong>
 <code>cat /proc/PID/cgroup</code>
 
+<strong>cgget &lt;Cgroup&gt;...</strong>→ Parameter für bestimmte Kontrollgruppen anzeigen lassen<br>
+<div style='padding-left: 120pt'>
+→ wird / als Parameter übergeben so werden Informationen über die Root Cgroup angezegt<br>
+</div>
+<strong>-r &lt;Parameter&gt; </strong>→ den Wert für den definierten Parameter anzeigen lassen, wobei Parameter auf eine Pseudeodatei verweist die Werte für ein Subsystem definiert <br>
+<strong>-g &lt;Subsystem&gt; </strong>→ den Wert den ein zugewiesenes Subsystem hat<br>
+<br>
 <h4>Parameter für Subsysteme in Kontrollgruppen einstellen</h4>
 <li>entweder mit dem <strong>cgset </strong>Befehl oder durch beschreiben der Pseudodatei in die Kontrllgruppe der eingehängten Hierarchie:</li>
 <strong>echo &lt;Wert&gt; &gt; &lt;Hierarchie&gt;/&lt;Cgroup&gt;/&lt;Subsystem&gt;.&lt;Parameter&gt;</strong>
@@ -184,15 +192,33 @@ dies würde den vim in die Gruppe mem_cpu Verlegen:<br>
 → einen Befehl ausführen und ihn alsTask dieser Cgroup zuordnen<br>
 <strong>--sticky </strong>→ auch alle Unterprozesse die dieser Befehl spawned dieser Cgroup zuordnen<br>
 <br>
-<br>
 <h4>Starten eines System Services in einer Cgroup</h4>
 <li>einem Service der durch <strong>systemd </strong>oder <strong>sys-V-init </strong>verwaltet wird, kann beim Starten einer Cgroup zugeordnet werden</li>
 <li>dazu wird die Variable <code>ControlGroup</code> in einer der Konfigurationsdateien in <em>*/etc/sysconfig/&lt;Dienst&gt; gesetzt</em></li>
 <strong>ControlGroup="&lt;subsystem&gt;:&lt;CGroup&gt;"</strong>
 <strong>CGROUP_DAEMON="&lt;subsystem&gt;:&lt;Cgroup&gt;" $$redhat</strong>
-
 <a href="../../Booten/Dienste/systemd.html" title="Linux Wissen:Booten:Dienste:systemd">Linux Wissen:Booten:Dienste:systemd</a>
 <a href="../../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a>
+
+<h4>Löschen von Cgroups</h4>
+<strong>cgdelelete &lt;subsystem&gt;,...|*:&lt;Cgroup&gt;</strong><br>
+→ entfernen von Subsystemen und Cgroups<br>
+<strong>-r </strong>rekursiv alle Untergruppen mit enfernen<br>
+<br>
+<em>Beispiel:</em><br>
+Die Gruppe paul_hansen und deren Subsysteme cpu, und net_cls entfernen:<br>
+<code>cgdelete cpu,net_cls:/paul_hansen</code>
+
+<h4>Entladen aller Cgroups</h4>
+<strong>cgclear </strong>→ entfernen aller Kontrollgruppen in allen Hierarchien<br>
+              → zuweisen aller Prozesses zur Root Hierarchie Kontrollgruppe<br>
+<div style='padding-left: 60pt'>
+→ aushängen der Subsysteme und löschen der Verzeichnisse<br>
+</div>
+		
+
+<h4>ACHTUNG:</h4>
+<u>Alle Angelegten Cgroups gehen unwiederurflich verloren. Wenn keine Konfigurationsdatei existiert, liegt die vollständige Restaurierung der Cgroups Kontrollstruktur beim Administrator.Wurden die Hierarchien manuell gemounted, so muss der Eintrag </u>/<em>etc/mtab </em><u>entfernt werden.</u>
 
 
 			<!-- End wiki content -->

@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-24T14:20:40+01:00
+
+====== cpuacct ======
+Created Dienstag 24 Januar 2012
+
+**cpuacct.stat**
+→Wertebereich: Anzahl der CPU-Zyklen 
+→ Einheiten Grundlage ist die Variable ''USER_HZ''
+→ gibt die Anzahl der CPU-Zyklen aus, die von Aufgaben in dieser Kontrollgurppe im Usermode und Kernelmode verbraucht wurden
+
+**cpuacct.usage**
+→ Wertebreich: CPU Zeit in Nanonsekunden
+→ zeigt die gesamte CPU-Zeit die von Taks in dieser Cgroup beansprucht wurden 
+→ inkludiert die in dieser Hierarchie untergeordente Prozesse
+
+**cpuacct.usage_percpu**
+→ Wertebreich: CPU-Zeit in Nanosekunden
+→ zeigt die CPU-Zeit für die einzelnen Kerne/CPUs an die Taks in dieser Cgroup beansprucht haben
+→ inkludiert die in dieser Hierarchie untergeordneten Prozesse

@@ -17,26 +17,33 @@ __Subsysteme sind Kernel Module die auch kurz Controller heißen.__
 * In der Dokumentation wird auch Controller dazu gesagt, gemeint ist aber dass Selbe
 
 **blkio**
-→ beschränken des Eingabe/Ausgabe-Zugriff auf Datenträger und Laufwerke
+→ überwachen und steuern des Eingabe/Ausgabe-Zugriff auf Datenträger und Laufwerke
+[[+blkio]]
 
 **cpu**
-→ beschränken des Schedulers einer oder mehrerer CPUs
+→ disponiert CPU-Zugriff für Kontrollgruppen
+[[+cpu]]
+
+**cpuacct**
+→ Logs überr die Verwendung von CPU-Resourcen einer Cgroup einschließlich ihrere Untergruppen für einen oder mehrere **Tasks** verwenden
+[[+cpuacct]]
 
 **cpuset **
 → einzelne CPUs oder Cores bestimmten **Tasks** zuordnen
-
-**cpuacct**
-→ Logs übder die Verwendung von CPU-Resourcen für einen oder mehrere **Tasks** verwenden
+[[+cpuset]]
 
 **devices**
 → erlauben/verbieten des Zugriffs von **Tasks **auf bestimmte Geräte in //*/dev//
+[[+devices]]
 
 **freezer**
 → **Tasks **in einer Kontrollgruppe pausieren|fortsetzen
+[[+freezer]]
 
 **memory**
 → beschränken des Verbrauchs von Arbeitsspeicher für einen **Task **
 → erstellen von Logs über den Speicherverbrauch für diesen **Task**
+[[+memory]]
 
 **net_cls **
 → makieren von Netzwerkpaketen eines bestimmten **Tasks **
@@ -47,5 +54,4 @@ __Subsysteme sind Kernel Module die auch kurz Controller heißen.__
 
 === Pflichtparameter ===
 * einige der Subsysteme besitzen Pflichtparameter die gesetzt werden müssen, um diese Subsysteme zu verwenden
-
  

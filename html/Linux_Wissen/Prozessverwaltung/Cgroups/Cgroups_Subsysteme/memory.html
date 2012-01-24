@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>memory</title>
+		<meta name='Generator' content='Zim 0.54'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									memory</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../../Networking.html" title="Networking">Networking</a></li>
+<li><a href="../../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<ul>
+<li><a href="../../Cgroups.html" title="Cgroups">Cgroups</a></li>
+<ul>
+<li><a href="../cgconfig_und_cgred.html" title="cgconfig und cgred">cgconfig und cgred</a></li>
+<li><a href="../Cgroups_erstellen_und_l%C3%B6schen.html" title="Cgroups erstellen und löschen">Cgroups erstellen und löschen</a></li>
+<li><a href="../Cgroups_Subsysteme.html" title="Cgroups Subsysteme">Cgroups Subsysteme</a></li>
+<ul>
+<li><a href="./blkio.html" title="blkio">blkio</a></li>
+<li><a href="./cpu.html" title="cpu">cpu</a></li>
+<li><a href="./cpuacct.html" title="cpuacct">cpuacct</a></li>
+<li><a href="./cpuset.html" title="cpuset">cpuset</a></li>
+<li><a href="./devices.html" title="devices">devices</a></li>
+<li><a href="./freezer.html" title="freezer">freezer</a></li>
+<li><strong>memory</strong></li>
+</ul>
+<li><a href="../Cgroups_verwalten.html" title="Cgroups verwalten">Cgroups verwalten</a></li>
+<li><a href="../Hierarchien_verwalten.html" title="Hierarchien verwalten">Hierarchien verwalten</a></li>
+<li><a href="../Regeln.html" title="Regeln">Regeln</a></li>
+</ul>
+<li><a href="../../kill.html" title="kill">kill</a></li>
+<li><a href="../../Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste">Magic Sys-Abf Taste</a></li>
+<li><a href="../../Nice_Werte_kontrollieren.html" title="Nice Werte kontrollieren">Nice Werte kontrollieren</a></li>
+<li><a href="../../ps.html" title="ps">ps</a></li>
+<li><a href="../../strace.html" title="strace">strace</a></li>
+<li><a href="../../top.html" title="top">top</a></li>
+<li><a href="../../ulimit.html" title="ulimit">ulimit</a></li>
+</ul>
+<li><a href="../../../root.html" title="root">root</a></li>
+<li><a href="../../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../../X11.html" title="X11">X11</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<li>generien von automatischen Reports für Memory Resourcen für Tasks in diesen Cgroups</li>
+
+<strong>memory.stat</strong><br>
+→ gibt Auskunft über Statistiken im Memory<br>
+<div style='padding-left: 30pt'>
+<em>cache </em>→ Page Cache inklusive tmpfs (shmem) in Bytes<br>
+<em>rss </em>→ anonymer und swap Cache, ohne tmpfs (shmem)<br>
+<em>mapped_file </em>→ Größe der im Specher gemappten mapped-files<br>
+<em>pgpin → </em>Anzahl der Speicherseiten im RAM<br>
+<em>pgpout </em>→ Anzahl der Speicherseiten die aus dem RAM geholt wurden<br>
+<em>swap </em>→ verbrauchter Swap  Speicher in Bytes<br>
+<em>active_anon </em>→ anoymer und swap-Cache auf aktiven LRU inklusive tmpfs (shmem)<br>
+<em>inactive_anon </em>→ anonymer und Swap-Cache auf inaktiven LRU inklusive tmpfs (shmem)<br>
+<em>active_file</em> → file-backed Memory auf aktiven LRU Listen<br>
+<em>inactive_file </em>→ file-backed Memory auf inaktiven LRU Listen<br>
+<em>unevictable → </em>Speicher der nicht wieder zurückgewonnen werden kann<br>
+<em>hierarchical_memory_limit </em>→ Speicherlimits für Hierarchien die das memory Subsystem benutzen<br>
+<em>hierarchical_memsw_limit </em>→ Speicher- und Swap Limit für Hierarchien die memory Subsystem benutzen<br>
+total_* <em>→ </em>Reports für diese Cgroup und alle ihre Kinder<br>
+<br>
+</div>
+<em>Beispiel:</em>
+<code>cgget -r memory.stat /</code>
+
+<strong>memory.usage_in_bytes</strong><br>
+→ der gesamte Speicherverbrauche aller Tasks in einer Cgroup<br>
+<br>
+<strong>memory.memsw.usage_in_bytes</strong><br>
+→ der gesamte Speicherverbrauch inklusive Swap aller Tasks in einer Cgroup <br>
+<br>
+<strong>memory.max_usage_in_bytes</strong><br>
+→ Bericht über die Maximale Menge die an Speicher verbraucht wurde <br>
+<br>
+<strong>memory.memsw.max_usage_in_bytes</strong><br>
+→ Bericht über die Maximal Menge die an Speicher und Swap verbraucht wurde<br>
+<br>
+<strong>memory.limits_in_bytes</strong><br>
+→ setzen des Maximalen Speichermenge des User-Memory inklusive File Cache<br>
+→ wird kein Suffix angegeben wird von Bytes ausgegenaen, als Suffix kann aber k K, m M und g G verwendet werden<br>
+→ die Root Cgroup kann nicht limitiert werden<br>
+→ Der Wert <strong>-1 </strong>ist dazu da um existierende Limitierungen zu entfernen<br>
+<br>
+<strong>memory.memsw.limits_in_bytes</strong><br>
+→ setzen des Maximalen Speichermenge inklusive Swap des User-Memory inklusive File Cache<br>
+→ wird kein Suffix angegeben wird von Bytes ausgegenaen, als Suffix kann aber k K, m M und g G verwendet werden<br>
+→ die Root Cgroup kann nicht limitiert werden<br>
+→ Der Wert <strong>-1 </strong>ist dazu da um existierende Limitierungen zu entfernen<br>
+<br>
+<h4>ACHTUNG</h4>
+<u>: Sie müssen </u><strong>memory.limits_in_bytes </strong><u>setzen, bevor es möglich  ist </u><strong>memory.memsw.limits_in_bytes</strong><u> zu setzen. Diese Reihenfolge muss auch in der Datei </u><em>*/etc/cgconfig.conf </em><u> berücksichtigt werden.</u>
+<a href="../../../FHS/etc/cgconfig.conf.html" title="Linux Wissen:FHS:etc:cgconfig.conf">Linux Wissen:FHS:etc:cgconfig.conf</a>
+
+<strong>memory.failcnt</strong><br>
+→ wie oft wurden Limits die durch <strong>memory.limits_in_bytes </strong>gesetzt wurden, erreicht<br>
+<br>
+<strong>memory.memsw.failcnt</strong><br>
+→ wie oft wurden Limits die durch  <strong>memory.memsw_limits_in_bytes</strong> gesetzt wurden, erreicht<br>
+<br>
+<strong>memory.force.empty</strong>
+<strong>→ </strong>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../Cgroups_Subsysteme.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

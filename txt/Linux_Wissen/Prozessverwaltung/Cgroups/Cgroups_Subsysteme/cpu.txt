@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-24T13:49:08+01:00
+
+====== cpu ======
+Created Dienstag 24 Januar 2012
+
+**cpu.shares **
+**→ **Wertbereich: ganzzahliger Wert
+→ bestimmt den relativen CPU-Zeit Anteil der einer Cgroup in Vergelich zu anderen zur verfügung stehet
+
+//Beispiel://
+Im folgenden Beispiel erhält die Cgroup schools2 dopelt soviel CPU Zeit wie school2 und school3 genausoviel wie schhool1
+'''
+cgset -r cpu.shares=1 schools1
+cgset -r cpu.shares=1 schools2
+cgset -r cpu.shares=2 schhols3
+'''
+
+**cpu.rt_runtime_us**
+→ Wertebereich: <ganzezahliger Bereich in Mikrosekunden>
+→ spezifiziert die längste kontinurierliche Zeitperiode für einen Task in dieser Kontollgruppe
+→ verhindern dass Aufgaben on einer Kontrollgruppe CPU-Zeit für sich allein beanspruchen könnnen
+
+**cpu.rt_period_us**
+→ Wertebereich: <ganzzahliger Bereich in Mikrossekunden>
+→ spezifiziert wie häufig der Zugriff einer Kontrollgruppe auf CPU-Resourcen neu zugewiesen werden soll
+
+//Beispiel://
+Allen Tasks Cgroup admin soll mindestens ein Zugriff vier von fünf Sekunden auf der CPU zugewiesen werden
+	''cgset -r cpu.rt_runtime_us=40000 admin''
+	''cgset -r cpu.rt_period_us=50000 admin''
+

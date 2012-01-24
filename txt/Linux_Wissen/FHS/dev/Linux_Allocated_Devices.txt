@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-23T17:15:32+01:00
+
+====== Linux Allocated Devices ======
+Created Montag 23 Januar 2012
+
+* Jedem Gerät in /dev ist einer Major und einer Minor Gerätenummer zugeordnet
+* Diese Wird in der Linux Dokumentation beschrieben:
+http://kernel.org/doc/Documentation/devices.txt

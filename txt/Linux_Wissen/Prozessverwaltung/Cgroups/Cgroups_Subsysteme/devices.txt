@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-24T17:45:55+01:00
+
+====== devices ======
+Created Dienstag 24 Januar 2012
+
+**devices.allow**
+→ Wertebereich: <Type> <major> <minor> <access>
+→ Geräte auf die Tasks einer Gruppe Zugriff haben dürfen
+[[Linux Wissen:FHS:dev:Linux Allocated Devices]]
+→ als <Type> kann einer der folgenden Werte vergeben werden
+	**a **→ character und block Geräte (all)
+	**b **→ ein Block Geräte wie ein Festplatte
+	**c **→ ein Zeichenorientiertes Gerät
+
+→ als <access> kann einer der folgenden Werte oder Kombination vergeben werden
+	**r **→ erlaubt es den Tasks der Gruppe das Lesen von angegeben Gerät
+	**w **→ erlaubt es den Tasks der Gruppe das Schreiben auf das angegebene Gerät
+	**m **→ erlaubt es den Tasks Device-fiels zu erstellen die bisher nicht existieren
+
+→ für <Major> oder <Minor> kann auch * als Globbing Parameter für alle gesetzt sein
+
+//Beispiel://
+Niemand kann von /dev/sda1 lesen oder schreiben ausser Nobody
+''cgset -r devices.allow="b 8 1 rwm" nobody''
+
+Allen Tasks der Cgroup admin alles erlauben
+''cgset -r devices.allow="a * * rwm" admin''
+
+**devices.deny**
+→ wie devices.allow
+→ Geräte auf die Tasks einer Gruppe keinen Zugriff haben
+
+**devices.list**
+**→ **Listet die Devices für die Zugangskontrollen aktiviert sind

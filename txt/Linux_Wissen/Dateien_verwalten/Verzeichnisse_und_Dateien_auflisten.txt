@@ -15,7 +15,7 @@ Created Samstag 16 April 2011
 **-R **→ zeige Rekursiv , **-R1 **zeigt rekursiv eine Zeile pro Eintrag
 **-F **→ zeige Informationen über den Typ an
 
-         * ausführbar 
+		* ausführbar 
 	/ Verezeichnis
 	@ link
 	| FIFO
@@ -30,4 +30,10 @@ Created Samstag 16 April 2011
 
 __Hinweis: merke ls -lisah__
  
+__Hinweis: Für das Verezeichnis /dev zeigt die Ausgabe von ls -l ledigleich Major, MInor Device Nummer.__
+''brw-rw---- 1 root disk 8, 1 23. Jan 11:26 /dev/sda1''
+^
+Blockgerät			             ^major,minor 
+[[Linux Wissen:FHS:dev:Linux Allocated Devices]]
+
 

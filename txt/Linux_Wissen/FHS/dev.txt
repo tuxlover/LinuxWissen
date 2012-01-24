@@ -34,3 +34,5 @@ Created Dienstag 19 April 2011
 ***/dev/lpX **→ Gerätedatei die auf den Drucker verweist
 
 ***/dev/fd **→ Datei Desctiptoren
+
+

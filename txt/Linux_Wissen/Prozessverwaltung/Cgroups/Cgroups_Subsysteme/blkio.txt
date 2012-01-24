@@ -1,0 +1,90 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-01-24T13:48:29+01:00
+
+====== blkio ======
+Created Dienstag 24 Januar 2012
+
+**blkio.weight **
+→ Wertebereich: 100-1000
+→ relativer Anteil von I/O Zugriffszeit
+
+**blkio.weight_device **
+→ Wertebereich: <major> : <minor> 100-1000
+→ relativer Anteil von Block I/O Zugriffszeit
+__→ auf die Leerzeichen achten!!__
+[[Linux Wissen:FHS:dev:Linux Allocated Devices]]
+[[Linux Wissen:Dateien verwalten:Verzeichnisse und Dateien auflisten]]
+
+**blkio.time **
+→ Wertebereich: <major> <minor> <Zeit in ms> 
+→ kann nicht gesetzt werden
+→ Zeigt die Zeit an, die eine Cgroup  I/O Zugriff auf ein bestimmtes Gerät hatt
+
+**blkio.sectors **
+→ Wertebereich: <Major> <Minor> <Sektoren>
+→ kann nicht gesetzt werden
+→ Zeigt die Anzahl der definierten Sektoren
+				
+**blkio.service_bytes **
+→ Wertebereich: <Major> <Minor> <Operation> <Bytes>
+→ kann nicht gesetzt werden
+ → zeigt die Anzahl der Bytes an, die auf bestimmte Geräte einer von Prozessen Cgroup übertragen wurden
+        
+**blkio.io_serviced **
+→ Wertebereich: <Major> <Minor> <Operation> <Nummer.Major>
+→ kann nicht gesetzt werden
+→ Anzahl der I/O Operationen, die auf bestimmte Geräte von einer Kontrollgruppe durchgeführt werden
+	
+**blkio.io_serivce_time **
+→ Wertebereich: <Major> <Minor> <Operation> <Zeit>
+→ kann nicht gesetz werden
+→ Zeitspanne zwischen Anfrage und Abschluss einer I/O Operation
+						
+**blkio.io_wait_time**
+ → Wertebereich: <Major>, <MInor>, <Operation> ,<bytes.major>
+→ kann nicht gesetzt werden
+→ zeigt die Zeit an die auf den Service des Scheduler Ques gewartet wird
+	
+**blkio.io_merged **
+→ Wertebereich: <Anzahl der Anfragen>, <Operartion>
+→ kann nicht gesetzt werten
+→ Anzahl der BIOS Anfragen die in die für eine Kontrollgruppe zusammengeführt werden
+	
+**blkio.io_queued**
+→ Wertebereich: <Anzahl der Anfragen> <Operationen>
+→ kann nicht gesetzt werden
+→ Anzahl der Anfragen die in der Warteschlange stehen
+
+**blkio.avg_queue_size **
+→ kann nicht gesetzt werden
+→ nur verfügbar falls ''CONFIG_DEBUG_BLK_GROUP=y ''als Konfigurationsoption gesetzt wurde
+→ Warteschlange für die I/O Operation einer Kontrollgruppe seit deren Bestehen
+						
+**blkio.group_wait_time** 
+→ kann nicht gesetzt werden
+→ nur verfügbar wenn ''CONFIG_DEBUG_BLK_GROUP=y ''als Konfigurationsoption gessetzt wurde
+→ Gesamtdaeuer in Nanosekunden die eine Kontrollgruppe auf die Zusteilung eines Zeitfensters ihrere Warteschlange wartet
+→ Bericht wird aktuallisiert wenn eine Queue für deise Kontrollgruppe ein Zeitfenster erhält
+→  die Wartezeit bezieht sich auf die Länge deer Wartzeit auf das vorherige Zeitfenseter
+
+**blkio.empty_time **
+→ kann nicht gesetzt werden
+→ nur verfügbar wenn ''CONFIG_DEBUG_BLK_GROUP=y ''als Konfigurationsoption gessetzt wurde
+→ Gesamtdauer die eine Kontrollgruppe ohne Anfragen
+→ Bericht wird aktuallisiert wenn eine Kontrollgruppe eine Anfrage erhalten hat
+	 
+**blkio.idle_time **
+→ kann nicht gesetzt werden
+→  nur verfügbar wenn ''CONFIG_DEBUG_BLK_GROUP=y ''als Konfigurationsoption gessetzt wurde
+→ Gesamtdauer in Nanosekunden die der Scheduler für eine Kontrollgruppe untätig bleibt
+→ Der Bericht wir immer dann aktualisiert, wenn eine Cgroup nicht länger untätig ist
+	
+**blkio.dequeue **
+→ kann nicht gesetzt werden
+→  nur verfügbar wenn ''CONFIG_DEBUG_BLK_GROUP=y ''als Konfigurationsoption gessetzt wurde
+→ wie oft I/O  Operation von einer Kontrollegurppe aus der Warteschlange entfernt wurde
+	
+**blkio.reset_stats **
+→ Wertebereich <Integer>
+→ zurücksetzen bisheriger Statitistiken für diese Cgroup

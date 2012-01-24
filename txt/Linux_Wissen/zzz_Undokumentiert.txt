@@ -33,6 +33,7 @@ Created Donnerstag 21 April 2011
 [ ] mkisofs
 [ ] rsync nicht komplett
 [ ] dump
+[ ] lxc
 
 === cool hacks ===
 +++

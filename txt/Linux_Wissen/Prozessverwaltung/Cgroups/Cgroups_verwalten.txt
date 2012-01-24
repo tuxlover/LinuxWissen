@@ -7,6 +7,7 @@ Created Dienstag 17 Januar 2012
 
 * In jeder Cgroup können für die entsprechenden Subsysteme gesetzt werden
 
+=== Informationen zu Cgroups erhalten ===
 **vorhandene Cgroups anzeigen**
 ''cat /proc/cgroups''
 
@@ -19,6 +20,11 @@ Created Dienstag 17 Januar 2012
 
 **PID anzeigen, die einer CGroup zugeordnet ist:**
 ''cat /proc/PID/cgroup''
+
+**cgget <Cgroup>...**→ Parameter für bestimmte Kontrollgruppen anzeigen lassen
+				→ wird / als Parameter übergeben so werden Informationen über die Root Cgroup angezegt
+**-r <Parameter> **→ den Wert für den definierten Parameter anzeigen lassen, wobei Parameter auf eine Pseudeodatei verweist die Werte für ein Subsystem definiert 
+**-g <Subsystem> **→ den Wert den ein zugewiesenes Subsystem hat
 
 === Parameter für Subsysteme in Kontrollgruppen einstellen ===
 * entweder mit dem **cgset **Befehl oder durch beschreiben der Pseudodatei in die Kontrllgruppe der eingehängten Hierarchie:
@@ -88,12 +94,28 @@ dies würde den vim in die Gruppe mem_cpu Verlegen:
 → einen Befehl ausführen und ihn alsTask dieser Cgroup zuordnen
 **--sticky **→ auch alle Unterprozesse die dieser Befehl spawned dieser Cgroup zuordnen
 
-
 === Starten eines System Services in einer Cgroup ===
 * einem Service der durch **systemd **oder **sys-V-init **verwaltet wird, kann beim Starten einer Cgroup zugeordnet werden
 * dazu wird die Variable ''ControlGroup'' in einer der Konfigurationsdateien in //*/etc/sysconfig/<Dienst> gesetzt//
 **ControlGroup="<subsystem>:<CGroup>"**
 **CGROUP_DAEMON="<subsystem>:<Cgroup>" $$redhat**
-
 [[Linux Wissen:Booten:Dienste:systemd]]
 [[Linux Wissen:Booten:Dienste]]
+
+=== Löschen von Cgroups ===
+**cgdelelete <subsystem>,...|*:<Cgroup>**
+→ entfernen von Subsystemen und Cgroups
+**-r **rekursiv alle Untergruppen mit enfernen
+
+//Beispiel://
+Die Gruppe paul_hansen und deren Subsysteme cpu, und net_cls entfernen:
+''cgdelete cpu,net_cls:/paul_hansen''
+
+=== Entladen aller Cgroups ===
+**cgclear **→ entfernen aller Kontrollgruppen in allen Hierarchien
+              → zuweisen aller Prozesses zur Root Hierarchie Kontrollgruppe
+		→ aushängen der Subsysteme und löschen der Verzeichnisse
+		
+
+=== ACHTUNG: ===
+__Alle Angelegten Cgroups gehen unwiederurflich verloren. Wenn keine Konfigurationsdatei existiert, liegt die vollständige Restaurierung der Cgroups Kontrollstruktur beim Administrator.Wurden die Hierarchien manuell gemounted, so muss der Eintrag __///etc/mtab //__entfernt werden.__
