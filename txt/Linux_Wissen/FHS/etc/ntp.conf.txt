@@ -12,10 +12,12 @@ driftfile /var/lib/ntp/ntp.drift
 # NTP-Server
 server ptbtime1.ptb.de
 server ptbtime2.ptb.de
+server ptbtime3.ptp.de
 
 # Zugriff durch NTP-Server gestatten
 restrict ptbtime1.ptb.de
 restrict ptbtime2.ptb.de
+restrict ptbtime3.ptb.de
 
 # Zugriff vom localhost gestatten (ntpq -p)
 restrict 127.0.0.1

@@ -6,7 +6,8 @@ Creation-Date: 2012-01-13T23:08:39+01:00
 Created Freitag 13 Januar 2012
 
 CGroups bieten einen Mechanismus zum zerlegen und partitionieren von Tasks und ihrer möglicherweise gespawnten Prozesse in
-hierarchischen Gruppen. 
+hierarchischen Gruppen. Sie ermöglichen eine fein granulare Kontrolle über die Priorisierung, Überwachung von Prozessen die vom 
+Kernel gespawned werden.
 
 Paket //libcgroup1//
 

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-01T14:53:35+01:00
+
+====== net cls ======
+Created Mittwoch 01 Februar 2012
+
+* vergibt  //ClassID// Markierungen für Netzwerkpakete 
+* der Linux Traffic Controller kann Pakte die von diesem Paket aus gesendet weren zuordnen
+* Der Traffic Controller kann so konfiguriert werden, dass verschiedene Pakete verschiedenen Cgroups zugeornet werden kann
+
+**net_cls.classid**
+→ Wertebereich: einzelener Wert Hexadezimal
+→ verweist auf ein //Traffic Controle Handle//
+**(missing Link tc)**

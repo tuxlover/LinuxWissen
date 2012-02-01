@@ -79,6 +79,8 @@
 <li><strong>devices</strong></li>
 <li><a href="./freezer.html" title="freezer">freezer</a></li>
 <li><a href="./memory.html" title="memory">memory</a></li>
+<li><a href="./net_cls.html" title="net cls">net cls</a></li>
+<li><a href="./ns.html" title="ns">ns</a></li>
 </ul>
 <li><a href="../Cgroups_verwalten.html" title="Cgroups verwalten">Cgroups verwalten</a></li>
 <li><a href="../Hierarchien_verwalten.html" title="Hierarchien verwalten">Hierarchien verwalten</a></li>
@@ -110,7 +112,12 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<strong>devices.allow</strong><br>
+				<p>
+Created Dienstag 24 Januar 2012<br>
+</p>
+
+<p>
+<strong>devices.allow</strong><br>
 → Wertebereich: &lt;Type&gt; &lt;major&gt; &lt;minor&gt; &lt;access&gt;<br>
 → Geräte auf die Tasks einer Gruppe Zugriff haben dürfen<br>
 <a href="../../../FHS/dev/Linux_Allocated_Devices.html" title="Linux Wissen:FHS:dev:Linux Allocated Devices">Linux Wissen:FHS:dev:Linux Allocated Devices</a><br>
@@ -118,29 +125,44 @@
 <div style='padding-left: 30pt'>
 <strong>a </strong>→ character und block Geräte (all)<br>
 <strong>b </strong>→ ein Block Geräte wie ein Festplatte<br>
-<strong>c </strong>→ ein Zeichenorientiertes Gerät</div>
-<br>
+<strong>c </strong>→ ein Zeichenorientiertes Gerät<br>
+</div>
+</p>
+
+<p>
 → als &lt;access&gt; kann einer der folgenden Werte oder Kombination vergeben werden<br>
 <div style='padding-left: 30pt'>
 <strong>r </strong>→ erlaubt es den Tasks der Gruppe das Lesen von angegeben Gerät<br>
 <strong>w </strong>→ erlaubt es den Tasks der Gruppe das Schreiben auf das angegebene Gerät<br>
-<strong>m </strong>→ erlaubt es den Tasks Device-fiels zu erstellen die bisher nicht existieren</div>
-<br>
+<strong>m </strong>→ erlaubt es den Tasks Device-fiels zu erstellen die bisher nicht existieren<br>
+</div>
+</p>
+
+<p>
 → für &lt;Major&gt; oder &lt;Minor&gt; kann auch * als Globbing Parameter für alle gesetzt sein<br>
-<br>
+</p>
+
+<p>
 <em>Beispiel:</em><br>
 Niemand kann von /dev/sda1 lesen oder schreiben ausser Nobody<br>
 <code>cgset -r devices.allow="b 8 1 rwm" nobody</code><br>
-<br>
-Allen Tasks der Cgroup admin alles erlauben<br>
-<code>cgset -r devices.allow="a * * rwm" admin</code>
+</p>
 
+<p>
+Allen Tasks der Cgroup admin alles erlauben<br>
+<code>cgset -r devices.allow="a * * rwm" admin</code><br>
+</p>
+
+<p>
 <strong>devices.deny</strong><br>
 → wie devices.allow<br>
 → Geräte auf die Tasks einer Gruppe keinen Zugriff haben<br>
-<br>
-<strong>devices.list</strong>
-<strong>→ </strong>Listet die Devices für die Zugangskontrollen aktiviert sind
+</p>
+
+<p>
+<strong>devices.list</strong><br>
+<strong>→ </strong>Listet die Devices für die Zugangskontrollen aktiviert sind<br>
+</p>
 
 
 			<!-- End wiki content -->

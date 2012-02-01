@@ -62,4 +62,23 @@ __: Sie müssen __**memory.limits_in_bytes **__setzen, bevor es möglich  ist __
 → wie oft wurden Limits die durch  **memory.memsw_limits_in_bytes** gesetzt wurden, erreicht
 
 **memory.force.empty**
-**→ **
+**→ **kann nur gesetzt werden ,wenn diese Cgroup keinen Task besitzt
+→ Der Wert **0** gibt die verbrauchten Speicherseiten frei, die von dieser Cgroup verwendet wurden
+
+__Benutzten dieses Parameters bevor eine Cgroup entfernt wird.__
+
+**memory.swappiness**
+→ bestimmt die Tendenz mit dem der Kernel Prozesse und Threads dieser Cgroup in den Swap auslagert
+→ Wertebereich: 0 <= 60 <= N
+→ **60 **ist der Standardwert
+→ Werte kleiner als **60 **verringern die Tendenz dass Prozesse in den Swap ausgelagert werden
+→ Werte größer als **60 **erhöhen die Tendenz dass Prozesse in den Swap ausgelagert werden
+→ Werte größer als **100 **verbieten den Kernel vollständig Prozesse dieser Cgroup auszulagern
+→ der Wert kann nicht geändert werden für die Root-Cgroup dieser Hierarchie, sowie für Gruppen die weitere Kinder haben
+
+__Die globale Memroy Logik des Kernels liest keine Cgroup Restriktionen, daher werden Prozesse auch dann geswapped wenn nicht genügend physischer Speicher zur Verfügung steht.__
+
+**memory.use_hierarchie**
+→ Wertebereich: **0 **oder **1 **
+→ falls aktiviert wird das Subsystem versuchen, Speicher von ihren Kndernj zurückzugewinnen
+→ aktivert Wert = 1

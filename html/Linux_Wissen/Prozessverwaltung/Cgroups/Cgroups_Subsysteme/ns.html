@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>cpu</title>
+		<title>ns</title>
 		<meta name='Generator' content='Zim 0.54'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									cpu</h1>
+									ns</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -73,14 +73,14 @@
 <li><a href="../Cgroups_Subsysteme.html" title="Cgroups Subsysteme">Cgroups Subsysteme</a></li>
 <ul>
 <li><a href="./blkio.html" title="blkio">blkio</a></li>
-<li><strong>cpu</strong></li>
+<li><a href="./cpu.html" title="cpu">cpu</a></li>
 <li><a href="./cpuacct.html" title="cpuacct">cpuacct</a></li>
 <li><a href="./cpuset.html" title="cpuset">cpuset</a></li>
 <li><a href="./devices.html" title="devices">devices</a></li>
 <li><a href="./freezer.html" title="freezer">freezer</a></li>
 <li><a href="./memory.html" title="memory">memory</a></li>
 <li><a href="./net_cls.html" title="net cls">net cls</a></li>
-<li><a href="./ns.html" title="ns">ns</a></li>
+<li><strong>ns</strong></li>
 </ul>
 <li><a href="../Cgroups_verwalten.html" title="Cgroups verwalten">Cgroups verwalten</a></li>
 <li><a href="../Hierarchien_verwalten.html" title="Hierarchien verwalten">Hierarchien verwalten</a></li>
@@ -113,47 +113,17 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Dienstag 24 Januar 2012<br>
+Created Mittwoch 01 Februar 2012<br>
 </p>
 
 <p>
-<strong>cpu.shares </strong><br>
-<strong>→ </strong>Wertbereich: ganzzahliger Wert<br>
-→ bestimmt den relativen CPU-Zeit Anteil der einer Cgroup in Vergelich zu anderen zur verfügung stehet<br>
+<ul>
+<li>enschränken der Interprozesskomminikation</li>
+<li>bietet eine Möglichkeit Prozesse in seperate Namensräume zu gruppieren</li>
+<li>Innerhalb eines NS könenn Prozesse untereinander miteinander Kommunizieren aber Prozesse ausserhalb nicht</li>
+<li>Referenz als Container</li>
+</ul>
 </p>
-
-<p>
-<em>Beispiel:</em><br>
-Im folgenden Beispiel erhält die Cgroup schools2 dopelt soviel CPU Zeit wie school2 und school3 genausoviel wie schhool1<br>
-</p>
-<pre>
-cgset -r cpu.shares=1 schools1
-cgset -r cpu.shares=1 schools2
-cgset -r cpu.shares=2 schhols3
-</pre>
-
-<p>
-<strong>cpu.rt_runtime_us</strong><br>
-→ Wertebereich: &lt;ganzezahliger Bereich in Mikrosekunden&gt;<br>
-→ spezifiziert die längste kontinurierliche Zeitperiode für einen Task in dieser Kontollgruppe<br>
-→ verhindern dass Aufgaben on einer Kontrollgruppe CPU-Zeit für sich allein beanspruchen könnnen<br>
-</p>
-
-<p>
-<strong>cpu.rt_period_us</strong><br>
-→ Wertebereich: &lt;ganzzahliger Bereich in Mikrossekunden&gt;<br>
-→ spezifiziert wie häufig der Zugriff einer Kontrollgruppe auf CPU-Resourcen neu zugewiesen werden soll<br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-Allen Tasks Cgroup admin soll mindestens ein Zugriff vier von fünf Sekunden auf der CPU zugewiesen werden<br>
-<div style='padding-left: 30pt'>
-<code>cgset -r cpu.rt_runtime_us=40000 admin</code><br>
-<code>cgset -r cpu.rt_period_us=50000 admin</code><br>
-</div>
-</p>
-
 
 
 			<!-- End wiki content -->

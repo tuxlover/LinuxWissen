@@ -79,6 +79,8 @@
 <li><a href="./devices.html" title="devices">devices</a></li>
 <li><a href="./freezer.html" title="freezer">freezer</a></li>
 <li><strong>memory</strong></li>
+<li><a href="./net_cls.html" title="net cls">net cls</a></li>
+<li><a href="./ns.html" title="ns">ns</a></li>
 </ul>
 <li><a href="../Cgroups_verwalten.html" title="Cgroups verwalten">Cgroups verwalten</a></li>
 <li><a href="../Hierarchien_verwalten.html" title="Hierarchien verwalten">Hierarchien verwalten</a></li>
@@ -129,8 +131,8 @@
 <em>hierarchical_memory_limit </em>→ Speicherlimits für Hierarchien die das memory Subsystem benutzen<br>
 <em>hierarchical_memsw_limit </em>→ Speicher- und Swap Limit für Hierarchien die memory Subsystem benutzen<br>
 total_* <em>→ </em>Reports für diese Cgroup und alle ihre Kinder<br>
-<br>
 </div>
+	
 <em>Beispiel:</em>
 <code>cgget -r memory.stat /</code>
 
@@ -169,7 +171,26 @@ total_* <em>→ </em>Reports für diese Cgroup und alle ihre Kinder<br>
 → wie oft wurden Limits die durch  <strong>memory.memsw_limits_in_bytes</strong> gesetzt wurden, erreicht<br>
 <br>
 <strong>memory.force.empty</strong>
-<strong>→ </strong>
+<strong>→ </strong>kann nur gesetzt werden ,wenn diese Cgroup keinen Task besitzt<br>
+→ Der Wert <strong>0</strong> gibt die verbrauchten Speicherseiten frei, die von dieser Cgroup verwendet wurden<br>
+<br>
+<u>Benutzten dieses Parameters bevor eine Cgroup entfernt wird.</u>
+
+<strong>memory.swappiness</strong><br>
+→ bestimmt die Tendenz mit dem der Kernel Prozesse und Threads dieser Cgroup in den Swap auslagert<br>
+→ Wertebereich: 0 &lt;= 60 &lt;= N<br>
+→ <strong>60 </strong>ist der Standardwert<br>
+→ Werte kleiner als <strong>60 </strong>verringern die Tendenz dass Prozesse in den Swap ausgelagert werden<br>
+→ Werte größer als <strong>60 </strong>erhöhen die Tendenz dass Prozesse in den Swap ausgelagert werden<br>
+→ Werte größer als <strong>100 </strong>verbieten den Kernel vollständig Prozesse dieser Cgroup auszulagern<br>
+→ der Wert kann nicht geändert werden für die Root-Cgroup dieser Hierarchie, sowie für Gruppen die weitere Kinder haben<br>
+<br>
+<u>Die globale Memroy Logik des Kernels liest keine Cgroup Restriktionen, daher werden Prozesse auch dann geswapped wenn nicht genügend physischer Speicher zur Verfügung steht.</u>
+
+<strong>memory.use_hierarchie</strong><br>
+→ Wertebereich: <strong>0 </strong>oder <strong>1 </strong><br>
+→ falls aktiviert wird das Subsystem versuchen, Speicher von ihren Kndernj zurückzugewinnen<br>
+→ aktivert Wert = 1<br>
 
 
 			<!-- End wiki content -->

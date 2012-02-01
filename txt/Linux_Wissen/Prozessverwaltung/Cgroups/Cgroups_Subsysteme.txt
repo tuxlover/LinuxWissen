@@ -48,9 +48,11 @@ __Subsysteme sind Kernel Module die auch kurz Controller heißen.__
 **net_cls **
 → makieren von Netzwerkpaketen eines bestimmten **Tasks **
 → dabei wir ein //Class Identifier //eingesetzt um Paktete aus eineme **Task **einer bestimmten Cgroup zu identifiezieren
+[[+net cls]]
 
 **ns **
 → Namensraum Subsystem
+[[+ns]]
 
 === Pflichtparameter ===
 * einige der Subsysteme besitzen Pflichtparameter die gesetzt werden müssen, um diese Subsysteme zu verwenden

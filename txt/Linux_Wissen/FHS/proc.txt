@@ -47,6 +47,8 @@ Created Dienstag 19 April 2011
 
 ***/proc/cmdline **→ Kommandozeilenargumente die beim Booten dem Kernel übergeben wurden
 
+***/proc/self/ **→ Pseudodateisystem dass auf Informationen zum aktuell laufenden Scruot oder Programm enthält
+
 ***/proc/kmsg **→ Protokolldatei des Kernels
 
 ***/proc/partitions **→ Alle bekannten Partitionen

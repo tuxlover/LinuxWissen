@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-01T15:09:22+01:00
+
+====== ns ======
+Created Mittwoch 01 Februar 2012
+
+* enschränken der Interprozesskomminikation
+* bietet eine Möglichkeit Prozesse in seperate Namensräume zu gruppieren
+* Innerhalb eines NS könenn Prozesse untereinander miteinander Kommunizieren aber Prozesse ausserhalb nicht
+* Referenz als Container

@@ -9,52 +9,52 @@ Created Freitag 22 April 2011
 → low-level kopieren von Datenblöcken und Dateisysteme
 → Bytewesises Auslesen von Datenströmen eines Dateisystems
 
-**dd if=/dev/sdX of=/mnt/Backup/sdX.dump **
+''dd if=/dev/sdX of=/mnt/Backup/sdX.dump ''
 → erstellt eine Abbilddatei von /dev/sdX als Datei unter /mnt/Backup/sdX.dump
 
-**dd if=/mnt/Backup/sdX.dump of=/dev/sdX **
+''dd if=/mnt/Backup/sdX.dump of=/dev/sdX ''
 → spielt das Image zurück
 
-**dd if=/dev/sdX of=/dev/sdY conv=notrunc**
+''dd if=/dev/sdX of=/dev/sdY conv=notrunc''
 → Spiegeln einer Partition auf eine andere
 → **conv=notrunc** bewirkt hier dass die Quellpartition /dev/sdX als eine ganze Datei übertragen werden soll
 → das Quelldateisystem sollte dazu asugehängt oder nur lesbar eingehängt sein 
 
-**dd if=/dev/sda of=/mnt/Backup/mbr_sda.dump bs=512 count=1 **
+''dd if=/dev/sda of=/mnt/Backup/mbr_sda.dump bs=512 count=1 ''
 → sichert den MBR
 
-**dd if=/mnt/Backup/mbr_sda.dump if=/dev/sda **
+''dd if=/mnt/Backup/mbr_sda.dump if=/dev/sda ''
 → stellt den MBR wieder her
 
-**dd if=/dev/sda of=/mnt/Backup/bootloader.dump bs=446 count=1**
+''dd if=/dev/sda of=/mnt/Backup/bootloader.dump bs=446 count=1''
 → sichert den Bootloader
 
-**dd if=/dev/sr0 of=/home/User/dvd.iso **
+''dd if=/dev/sr0 of=/home/User/dvd.iso ''
 → erstelle ein Iso von der Dvd
 
-**dd if=/dev/sdX of=/dev/sdY bs=1 count=66 skip=446 seek=446 **
+''dd if=/dev/sdX of=/dev/sdY bs=1 count=66 skip=446 seek=446 ''
 → Partitionstabelle (nur Partitionen 1 bis 4) auf andere Platte direkt kopieren (sdX -> sdY) 
 
-**dd if=/dev/zero of=/dev/sdX bs=1 count=64 seek=446**
+''dd if=/dev/zero of=/dev/sdX bs=1 count=64 seek=446''
 → Partitionstabelle löschen
 
-**echo -en "\x55\xaa" | dd of=/dev/sdX bs=1 count=2 seek=510**
+''echo -en "\x55\xaa" | dd of=/dev/sdX bs=1 count=2 seek=510''
 → MBR-Signatur wieder mit 0x55 0xAA beschreiben ( MBR wieder gültig machen) 
 
-**dd if=/dev/zero of=file.leer bs=1M count=1024**
+''dd if=/dev/zero of=file.leer bs=1M count=1024''
 → erzeugen einer 1 GB großen Datei die mit Nullen gefüllt ist
 
-**dd if=/dev/zero of=file.sparse count=0 obs=1 seek=1G**
+''dd if=/dev/zero of=file.sparse count=0 obs=1 seek=1G''
 → erzeugt eine 1GB große Datei, also einer Datei ohne Inhalt
 → benutzen Sie **stat (missing link) **um den Unterschied anzeigen zu lassen
 
-**dd if=/dev/urandom of=file.zufall bs=1M count=1024**
+''dd if=/dev/urandom of=file.zufall bs=1M count=1024''
 → Eine 1 GB große Datei mit Zufallsbytes erzeugen
 
-**dd if=/dev/sdX of=/dev/null bs=4k count=1000**
+''dd if=/dev/sdX of=/dev/null bs=4k count=1000''
 → testen einer Festplatte /dev/sdX
 
-**dd if=/dev/sdX bs=8K | ssh <RECHNER> "dd of=/dev/sdY bs=8K"**
+''dd if=/dev/sdX bs=8K | ssh <RECHNER> "dd of=/dev/sdY bs=8K"''
 → Festplatte sdX remote auf dem <RECHNER> klonen
 **(missing Link ssh)**
 

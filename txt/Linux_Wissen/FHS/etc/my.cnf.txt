@@ -45,6 +45,9 @@ socket = /var/run/mysql/mysql.sock
 #Error Log Datei für den Server
 log-error = /var/log/mysql/error.log
 
+#Die IP Adresse auf dem der Server auf Verbindungen horscht
+bind-address = <Hostnam>|<IP>
+
 #Zeitzone die Mysql für die Verwaltung der Zeit in der Datenbank benötigt
 #Wird diese Variable nicht gesetzt wird der Wert des Betriebssystem verwendet
 system_time_zone = <TZ>|SYSTEM

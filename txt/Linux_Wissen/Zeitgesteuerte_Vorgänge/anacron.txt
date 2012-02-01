@@ -19,3 +19,4 @@ Created Sonntag 06 November 2011
 //Beispiel://
 ''anacron -t myanacrontab -T && echo "ok"''
 → überprüfen ob eine erstelle anacrontab valide ist9
+[[Linux Wissen:FHS:etc:anacrontab]]

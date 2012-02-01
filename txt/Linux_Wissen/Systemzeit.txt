@@ -56,6 +56,7 @@ Created Mittwoch 14 September 2011
 Anweichungen vom ntp server  in Millisekunden wird /__pool.ntp.org __**→ **ist der Server Pool der ntp-Dienste bereitstellt
 weitere Informationen **man ntp **und **/usr/share/doc/packages/ntp-doc **bei installierter Dokumentation aus /usr/share/ntp-doc
 [[Linux Wissen:Systemzeit:ntp]]
+[[FHS:etc:ntp.conf]]
 
 == Das Stratum ==
 * gibt an wie weit der Server von der nächsthöheren Time Synchronisation entfernt ist

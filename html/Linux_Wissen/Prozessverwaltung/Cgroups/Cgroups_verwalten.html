@@ -101,124 +101,192 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>In jeder Cgroup können für die entsprechenden Subsysteme gesetzt werden</li>
+				<p>
+Created Dienstag 17 Januar 2012<br>
+</p>
+
+<p>
+<ul>
+<li>In jeder Cgroup können für die entsprechenden Subsysteme gesetzt werden</li>
+</ul>
+</p>
 
 <h4>Informationen zu Cgroups erhalten</h4>
-<strong>vorhandene Cgroups anzeigen</strong>
-<code>cat /proc/cgroups</code>
+<p>
+<strong>vorhandene Cgroups anzeigen</strong><br>
+<code>cat /proc/cgroups</code><br>
+</p>
 
+<p>
 <strong>lscgroup </strong>→ auflisten aller vorhandenen Cgroups<br>
-<a href="../../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a>
+<a href="../../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a><br>
+</p>
 
-<strong>Kontrollgruppe anzeigen die zu einem Prozess gehört</strong>
-<code>ps -O cgroups</code>
-<a href="../ps.html" title="Prozessverwaltung:ps">Prozessverwaltung:ps</a>
+<p>
+<strong>Kontrollgruppe anzeigen die zu einem Prozess gehört</strong><br>
+<code>ps -O cgroups</code><br>
+<a href="../ps.html" title="Prozessverwaltung:ps">Prozessverwaltung:ps</a><br>
+</p>
 
-<strong>PID anzeigen, die einer CGroup zugeordnet ist:</strong>
-<code>cat /proc/PID/cgroup</code>
+<p>
+<strong>PID anzeigen, die einer CGroup zugeordnet ist:</strong><br>
+<code>cat /proc/PID/cgroup</code><br>
+</p>
 
+<p>
 <strong>cgget &lt;Cgroup&gt;...</strong>→ Parameter für bestimmte Kontrollgruppen anzeigen lassen<br>
 <div style='padding-left: 120pt'>
 → wird / als Parameter übergeben so werden Informationen über die Root Cgroup angezegt<br>
 </div>
 <strong>-r &lt;Parameter&gt; </strong>→ den Wert für den definierten Parameter anzeigen lassen, wobei Parameter auf eine Pseudeodatei verweist die Werte für ein Subsystem definiert <br>
 <strong>-g &lt;Subsystem&gt; </strong>→ den Wert den ein zugewiesenes Subsystem hat<br>
-<br>
+</p>
+
 <h4>Parameter für Subsysteme in Kontrollgruppen einstellen</h4>
+<p>
+<ul>
 <li>entweder mit dem <strong>cgset </strong>Befehl oder durch beschreiben der Pseudodatei in die Kontrllgruppe der eingehängten Hierarchie:</li>
-<strong>echo &lt;Wert&gt; &gt; &lt;Hierarchie&gt;/&lt;Cgroup&gt;/&lt;Subsystem&gt;.&lt;Parameter&gt;</strong>
+</ul>
+<strong>echo &lt;Wert&gt; &gt; &lt;Hierarchie&gt;/&lt;Cgroup&gt;/&lt;Subsystem&gt;.&lt;Parameter&gt;</strong><br>
+</p>
 
-<em>Beispiel:</em>
-<code>echo 0-1 &gt; /cgroups/cpuset/groupA/cpuset.cpus</code>
+<p>
+<em>Beispiel:</em><br>
+<code>echo 0-1 &gt; /cgroups/cpuset/groupA/cpuset.cpus</code><br>
+</p>
 
+<p>
 <strong>cgset &lt;Subsystem&gt;.&lt;Parameter&gt;=&lt;wert&gt; &lt;Cgroup Pfad relativ zur Hierarchie&gt; | /</strong><br>
 → Setzen von Subsystemparametern <br>
 → der Ausführende muss über die entsprechenden Berechtigungen für diese Cgroup verfügen<br>
 <strong>→ </strong>wenn als Pfad / verwendet wird, wird der Parameter für die Rootgruppe dieser Hierarchie gesetzt<br>
 <strong>-r </strong>→ rekursiv anwenden<br>
-<strong>--copy-from &lt;Quelle Cgroup Pfad&gt;  &lt;Ziel Quellcodepfad&gt;</strong>
+<strong>--copy-from &lt;Quelle Cgroup Pfad&gt;  &lt;Ziel Quellcodepfad&gt;</strong><br>
+</p>
 
 <h4>ACHTUNG:</h4>
-<u>Für die Root-CGroup einer Hierarchie können nur spezifische Werte gesetzt werden. Alle Der Root Gruppe Unterliegenden Gruppen hängen von den Basis Subsystems Einstellungen der Root-Cgroup ab.</u>
+<p>
+<u>Für die Root-CGroup einer Hierarchie können nur spezifische Werte gesetzt werden. Alle Der Root Gruppe Unterliegenden Gruppen hängen von den Basis Subsystems Einstellungen der Root-Cgroup ab.</u><br>
+</p>
 
+<p>
 <em>Beispiele:</em><br>
 Für die Cgroup httpd_min innerhalb der <em>cpuacct</em> beinhaltenden Hierarchie deb Parameter <em>usage</em> festlegen<br>
 <code>cgset -r cpuacct.usage=0 httpd_min</code><br>
-<br>
+</p>
+
+<p>
 Rekursiv für die Root-Gruppe einer Hierarchie den <em>cpuacct.usage </em>Parameter setzen<br>
-<u>Da jedes Subsystem nur einmal verwendet werden kann, ist auch klar welche Hierarchie angesprochen wird</u>
-<a href="./Regeln.html" title="Regeln">Regeln</a>
+<u>Da jedes Subsystem nur einmal verwendet werden kann, ist auch klar welche Hierarchie angesprochen wird</u><br>
+<a href="./Regeln.html" title="Regeln">Regeln</a><br>
 <code>cgset -r cpuacct.usage=0 /</code><br>
-<br>
+</p>
+
+<p>
 Gesetzte Parameter aus einer Cgroup in eine andere Cgroup kopieren<br>
-<code>cgset --copy-from httpd_min/ httpd_user/</code>
-<a href="./Cgroups_erstellen_und_l%C3%B6schen.html" title="Cgroups erstellen und löschen">Cgroups erstellen und löschen</a>
-<a href="../../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a>
+<code>cgset --copy-from httpd_min/ httpd_user/</code><br>
+<a href="./Cgroups_erstellen_und_l%C3%B6schen.html" title="Cgroups erstellen und löschen">Cgroups erstellen und löschen</a><br>
+<a href="../../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
+</p>
 
 <h4>Ein bestehenden Prozess in eine CGroup verschieben</h4>
+<p>
+<ul>
 <li>durch verschieben der PID in die <em>tasks </em>Datei</li>
-<strong>echo &lt;PID&gt; &gt; &lt;absoluter Cgroup Pfad&gt;/tasks</strong>
+</ul>
+<strong>echo &lt;PID&gt; &gt; &lt;absoluter Cgroup Pfad&gt;/tasks</strong><br>
+</p>
 
-<em>Beispiel:</em>
-<code>echo 1242 &gt; /cgroups/mem_cpu/httpd_min/tasks</code> 
+<p>
+<em>Beispiel:</em><br>
+<code>echo 1242 &gt; /cgroups/mem_cpu/httpd_min/tasks</code> <br>
+</p>
 
+<p>
 <strong>cgclassify -g &lt;Subsystem&gt;,...|*:&lt;relativ zur Hierarchie glegener Pfad zur Cgroup&gt; &lt;PID&gt;,...</strong><br>
 → einen oder mehrere Prozesses mit den entsprechenden PIDs in eine Cgroup verschieben<br>
 <strong>--sticky </strong>→ Option muss vor einer PID stehen<br>
                 → alle Unterprozesses dieses Prozess werden der gleichen Cgroup zugeordnet<br>
-<br>
+</p>
+
+<p>
 <strong>--cancel-sticky </strong>→ Option muss vor einer PID stehen<br>
                              → alle Unterprozesse dieses Porzess sind nicht mehr länger dieser Cgroup zugehörig wie sein Vater<br>
-<br>
-<h4>ACHTUNG:</h4>
-<u>Falls der </u><strong>cgred </strong><u>Daemon läuft, werden Zuweisungen von</u> <strong>cgclassify </strong><u>die Einstellungen in</u> <em>*/etc/cgrules.conf </em><u>überschreiben.</u>
-<a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a>
-<a href="./cgconfig_und_cgred.html" title="cgconfig und cgred">cgconfig und cgred</a>
-<a href="../../FHS/etc/cgrules.conf.html" title="Linux Wissen:FHS:etc:cgrules.conf">Linux Wissen:FHS:etc:cgrules.conf</a>
+</p>
 
+<h4>ACHTUNG:</h4>
+<p>
+<u>Falls der </u><strong>cgred </strong><u>Daemon läuft, werden Zuweisungen von</u> <strong>cgclassify </strong><u>die Einstellungen in</u> <em>*/etc/cgrules.conf </em><u>überschreiben.</u><br>
+<a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a><br>
+<a href="./cgconfig_und_cgred.html" title="cgconfig und cgred">cgconfig und cgred</a><br>
+<a href="../../FHS/etc/cgrules.conf.html" title="Linux Wissen:FHS:etc:cgrules.conf">Linux Wissen:FHS:etc:cgrules.conf</a><br>
+</p>
+
+<p>
 <em>Beispiel: </em><br>
 Die Befehle der PID 1242 und 2310 in die Cgroup httpd_min verschieben, dazu wird 2310 auf sticky gesetzt<br>
-<code>cgclassify -g cpu,memory:httpd_min 1242 --sticky 2310</code>
+<code>cgclassify -g cpu,memory:httpd_min 1242 --sticky 2310</code><br>
+</p>
 
 <h4>Ein Prozess sofort in eine CGroup verschieben</h4>
+<p>
+<ul>
 <li>durch verwenden der $$ Variale und des <strong>echo </strong>Befehls</li>
-<strong>echo $$ &gt; &lt;absoluter Cgroups Pfad&gt;/tasks &amp;&amp; &lt;Befehl&gt; &lt;Optionen&gt; &lt;Parameter&gt;</strong>
+</ul>
+<strong>echo $$ &gt; &lt;absoluter Cgroups Pfad&gt;/tasks &amp;&amp; &lt;Befehl&gt; &lt;Optionen&gt; &lt;Parameter&gt;</strong><br>
+</p>
 
+<p>
 <em>Beispiel:</em><br>
 dies würde den vim in die Gruppe mem_cpu Verlegen:<br>
-<code>echo $$ /cgroups/system/mem_cpu/user1/tasks &amp;&amp; vim</code>
+<code>echo $$ /cgroups/system/mem_cpu/user1/tasks &amp;&amp; vim</code><br>
+</p>
 
+<p>
 <strong>cgexec -g &lt;Subsystem&gt;,...|*:&lt;relativ zur Hierarchie gelegener Pfad zur Cgroup&gt; &lt;Befehl&gt; &lt;Optionen&gt; &lt;Parameter&gt;</strong><br>
 → einen Befehl ausführen und ihn alsTask dieser Cgroup zuordnen<br>
 <strong>--sticky </strong>→ auch alle Unterprozesse die dieser Befehl spawned dieser Cgroup zuordnen<br>
-<br>
+</p>
+
 <h4>Starten eines System Services in einer Cgroup</h4>
+<p>
+<ul>
 <li>einem Service der durch <strong>systemd </strong>oder <strong>sys-V-init </strong>verwaltet wird, kann beim Starten einer Cgroup zugeordnet werden</li>
 <li>dazu wird die Variable <code>ControlGroup</code> in einer der Konfigurationsdateien in <em>*/etc/sysconfig/&lt;Dienst&gt; gesetzt</em></li>
-<strong>ControlGroup="&lt;subsystem&gt;:&lt;CGroup&gt;"</strong>
-<strong>CGROUP_DAEMON="&lt;subsystem&gt;:&lt;Cgroup&gt;" $$redhat</strong>
-<a href="../../Booten/Dienste/systemd.html" title="Linux Wissen:Booten:Dienste:systemd">Linux Wissen:Booten:Dienste:systemd</a>
-<a href="../../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a>
+</ul>
+<strong>ControlGroup="&lt;subsystem&gt;:&lt;CGroup&gt;"</strong><br>
+<strong>CGROUP_DAEMON="&lt;subsystem&gt;:&lt;Cgroup&gt;" $$redhat</strong><br>
+<a href="../../Booten/Dienste/systemd.html" title="Linux Wissen:Booten:Dienste:systemd">Linux Wissen:Booten:Dienste:systemd</a><br>
+<a href="../../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a><br>
+</p>
 
 <h4>Löschen von Cgroups</h4>
+<p>
 <strong>cgdelelete &lt;subsystem&gt;,...|*:&lt;Cgroup&gt;</strong><br>
 → entfernen von Subsystemen und Cgroups<br>
 <strong>-r </strong>rekursiv alle Untergruppen mit enfernen<br>
-<br>
+</p>
+
+<p>
 <em>Beispiel:</em><br>
 Die Gruppe paul_hansen und deren Subsysteme cpu, und net_cls entfernen:<br>
-<code>cgdelete cpu,net_cls:/paul_hansen</code>
+<code>cgdelete cpu,net_cls:/paul_hansen</code><br>
+</p>
 
 <h4>Entladen aller Cgroups</h4>
+<p>
 <strong>cgclear </strong>→ entfernen aller Kontrollgruppen in allen Hierarchien<br>
               → zuweisen aller Prozesses zur Root Hierarchie Kontrollgruppe<br>
 <div style='padding-left: 60pt'>
 → aushängen der Subsysteme und löschen der Verzeichnisse<br>
 </div>
+</p>
 		
 
 <h4>ACHTUNG:</h4>
-<u>Alle Angelegten Cgroups gehen unwiederurflich verloren. Wenn keine Konfigurationsdatei existiert, liegt die vollständige Restaurierung der Cgroups Kontrollstruktur beim Administrator.Wurden die Hierarchien manuell gemounted, so muss der Eintrag </u>/<em>etc/mtab </em><u>entfernt werden.</u>
+<p>
+<u>Alle Angelegten Cgroups gehen unwiederurflich verloren. Wenn keine Konfigurationsdatei existiert, liegt die vollständige Restaurierung der Cgroups Kontrollstruktur beim Administrator.Wurden die Hierarchien manuell gemounted, so muss der Eintrag </u>/<em>etc/mtab </em><u>entfernt werden.</u><br>
+</p>
 
 
 			<!-- End wiki content -->

@@ -36,3 +36,5 @@ __Interaktive Befehle:__
 **-c <Datei> **→ angeben einer alternativen Konfigurationsdatei
 **-f <Datei> **→ angeben einer alternativen Driftfile Datei, normalerweise ///var/lib/ntp/drift/ntp.drift//
 **-t <Key> **→ den Schlüssel zu den vertrauenswürdigen Schlüsseln in //*/etc/ntp.keys //hinzufügen
+
+[[Linux Wissen:FHS:etc:ntp.conf]]
