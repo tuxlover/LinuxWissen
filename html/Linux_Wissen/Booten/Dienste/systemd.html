@@ -128,26 +128,37 @@ Created Donnerstag 12 Januar 2012<br>
 <strong>&lt;Typ&gt; </strong><br>
 → kann ein <em>Socket</em>,<em>Target</em>, eine <em>Dateisystem Pfad</em>, ein <em>Gerät </em>, ein <em>mount </em>oder <em>automountpoint, timer </em>oder <em>Snapshot </em>sein<br>
 <strong>man 5 systemd.unit</strong><br>
+<a href="../../FHS/lib/lib%2B%2Bsystemd.html" title="Linux Wissen:FHS:lib:lib++systemd">Linux Wissen:FHS:lib:lib++systemd</a><br>
 </p>
 
 
 <h4>Systemdienste steuern</h4>
 <p>
-<strong>systemctl [start|stop|reload|restart|show  &lt;Unit&gt; ]  </strong><br>
+<strong>systemctl [start|stop|reload|restart| enable|disable show  &lt;Unit&gt; ]  </strong><br>
 → zum anzeigen und steuern von System Services<br>
+→ wenn ohne weitere Parmeter verwendet, wird so werden alle dienste angezeigt vom System versucht wurden zu starten<br>
 <strong>--no-pager </strong>→ die Ausgabe nicht nach less pipen <br>
 <strong>&lt;Starten und Veralten von Diensten&gt;</strong><br>
 </p>
+
 
 <p>
 <strong>&lt;Anzeigen und Filtern von Diensten&gt;</strong><br>
 → ohne weitere Arguemente wird systemctl die Units (systemd Units und Sys-V-Initscripte) und ihren Status anzeigen, als Pager wird less verwendet<br>
 → es wird angezeigt ob eine Unit erfolgreich gestartet wurde oder mit einem Fehler beendet wurde<br>
+<strong>--all </strong>→ Anzeigen aller vorhandenen Units im System und irhes satusses<br>
 </p>
 
 <p>
 <strong>systemctl status &lt;Unit&gt;</strong><br>
 → Anzeigen von detailierten Statusinformationen zu einer Unit<br>
+→ Gibt Laufzeitinformationen und detaillierte Fehlerinformationen aus<br>
+</p>
+
+<p>
+<u>TRICK:</u><br>
+Anzeigen ob ein Subsystem eine Unit gemounted hat:<br>
+<code>systemctl --all --no-pager |grep --color mounted</code><br>
 </p>
 
 <h4>Control Groups verwalten (CGroups)</h4>
@@ -156,10 +167,8 @@ Created Donnerstag 12 Januar 2012<br>
 → rekursive Baumansicht einer Linux CGroup, wenn nicht angegeben werden alle Cgrups aufgelisetet<br>
 → eine Liste von gültigen Cgroups erhält man durch <code>ls /sys/fs/cgroup</code><br>
 <a href="../../FHS/sys.html" title="Linux Wissen:FHS:sys">Linux Wissen:FHS:sys</a><br>
-<strong>(missing link Cgroups)</strong><br>
+<a href="../../Prozessverwaltung/Cgroups.html" title="Linux Wissen:Prozessverwaltung:Cgroups">Linux Wissen:Prozessverwaltung:Cgroups</a><br>
 </p>
-
-
 
 
 <p>
@@ -173,7 +182,7 @@ Created Donnerstag 12 Januar 2012<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>						<a href='../Dienste.html'>Linux Wissen:Booten:Dienste</a></li>						<a href='../../Prozessverwaltung/Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>
+				Backlinks:						<a href='../Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>						<a href='../Dienste.html'>Linux Wissen:Booten:Dienste</a></li>						<a href='../../Prozessverwaltung/Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>						<a href='../../FHS/lib/lib%2B%2Bsystemd.html'>Linux Wissen:FHS:lib:lib++systemd</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

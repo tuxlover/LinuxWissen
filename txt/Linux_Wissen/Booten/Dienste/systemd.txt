@@ -23,29 +23,36 @@ Created Donnerstag 12 Januar 2012
 **<Typ> **
 → kann ein //Socket//,//Target//, eine //Dateisystem Pfad//, ein //Gerät //, ein //mount //oder //automountpoint, timer //oder //Snapshot //sein
 **man 5 systemd.unit**
+[[Linux Wissen:FHS:lib:lib++systemd]]
 
 
 === Systemdienste steuern ===
-**systemctl [start|stop|reload|restart|show  <Unit> ]  **
+**systemctl [start|stop|reload|restart| enable|disable show  <Unit> ]  **
 → zum anzeigen und steuern von System Services
+→ wenn ohne weitere Parmeter verwendet, wird so werden alle dienste angezeigt vom System versucht wurden zu starten
 **--no-pager **→ die Ausgabe nicht nach less pipen 
 **<Starten und Veralten von Diensten>**
+
 
 **<Anzeigen und Filtern von Diensten>**
 → ohne weitere Arguemente wird systemctl die Units (systemd Units und Sys-V-Initscripte) und ihren Status anzeigen, als Pager wird less verwendet
 → es wird angezeigt ob eine Unit erfolgreich gestartet wurde oder mit einem Fehler beendet wurde
+**--all **→ Anzeigen aller vorhandenen Units im System und irhes satusses
 
 **systemctl status <Unit>**
 → Anzeigen von detailierten Statusinformationen zu einer Unit
+→ Gibt Laufzeitinformationen und detaillierte Fehlerinformationen aus
+
+__TRICK:__
+Anzeigen ob ein Subsystem eine Unit gemounted hat:
+''systemctl --all --no-pager |grep --color mounted''
 
 === Control Groups verwalten (CGroups) ===
 **systemd-cgls <Cgroup>**
 → rekursive Baumansicht einer Linux CGroup, wenn nicht angegeben werden alle Cgrups aufgelisetet
 → eine Liste von gültigen Cgroups erhält man durch ''ls /sys/fs/cgroup''
 [[Linux Wissen:FHS:sys]]
-**(missing link Cgroups)**
-
-
+[[Linux Wissen:Prozessverwaltung:Cgroups]]
 
 
 __ACHTUNG: Man verwechsle systemctl nicht mit sysctl.__

@@ -1,0 +1,221 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-06T16:27:59+01:00
+
+====== lib++systemd ======
+Created Montag 06 Februar 2012
+
+* systemd.service Unit
+++
+'''
+# die unit Sektion enthält alle information die unabhäng vom Typ der Unit sind
+[unit]
+Description=Diese Unit startet den Dienst xy
+Require=var-run.mount network.target time-sys.target
+RequieresOverridable=my-fancy.service
+Requisite=
+RequisiteOverridable=
+Wants=mysql.service host.target
+Conflicts=boo.service oops.service
+'''
+
+'''
+# als Typ kann ein service, socket, dvice, mount, automaount, swap, target, path, timer oder snapshot
+[<Typ>]
+'''
+
+	''...''
+++
+//[unit]//
+→ Direktiven die unabhängig vom Typ der Unit gestezt werden können
+	//Description= //
+	→ eine beschreibene Information die Auskunft über den Sinn und Zweck dieser Unit gibt
+
+	
+	//Requires=//
+	// → //Weitere Units die für das starten dieser Unit benötigt und automatisch gestartet werden, schlägt einer dieser Units fehl so wird der Dienst nicht 		  	    gestartet
+	
+	//RequiresOverridable= //
+	//→ //wie Requires, wird der Dienst jedoch vom Nutzer direkt aufgerufen und einer der hier stehenden Dienste schlägt fehl, so wird der Dienst dennoch gestartet
+	→ wird die Unit von einer anderen Unit angefordert und schlägt fehl. so wird diese Unit nicht gestartet
+	
+	//Requisite=//
+	→ wird von der Unit benötigt, aber nicht zusätzlich gestartet
+	→ ist einer der Units hiergelistet und nicht bereits gestart, wird der Aufruf dieser Transaktion fehlschlagen
+	
+	//Wants=//
+	→ Units die hier gelistet werden, können für die gesamte Transaktion gestartet werden
+	→ schlägt einer oder mehrere Aufrufe fehl oder ist der zu startende Dienst nicht verfügbar so wird die Transaktion trotzdem vollständig ausgeführt
+	
+	//BindTo=//
+	→ wie Requires, wird aber beim **Stoppen** der Unit für die Vervollständigung dieser Transaktion auch Units berücksichtigen die hier gelistet sind
+	
+	//Conflicts=//
+	→ Units in dieser Direktive werden nicht gestartet und befinden sich im Konflikt mit dieser Transaktion
+	→ läuft bereits einer der im Konflikt stehnden Transaktionen wird diese nicht ausgeführt
+	→ typisches Beispiel ist der postfix daemon der niemlas den exim oder sendmail daemon starten oder bereits laufen haben darf
+	
+	//Before|After=//
+	→ setzen der Reihenfolge von Units
+	→ Before=bar.serice bedeuted dass bar.service erst gestartet wird wenn diese Unit vollständig gestartet ist
+	→ After=bar.service bedeut dass bar.service vor der Unit vollständig gestartet wird
+	
+	//OnFailure=//
+	→ wenn diese Unit nicht gestartet werden kann, wird in der aufsteigende Reihenfolge eines der unter dieser Direktive gelistete Units für die 
+		Vervollständigung der Aktion gestartet 
+	
+	//OnFailureIsolat//e=true|false
+	→ benötigt OnFailure
+	→ wenn **true **wird dieser Prozess isoliert gestartet
+	
+	//IgnoreOnIsolate//=true|false
+	→ falls **true** wird wird diese Unit nicht gestoppt, falls eine andere Unit isoliiert wurde
+	
+	//IgnoreOnSnapshot=//true|false
+	→ falls **true** wird diese Unit bei einem Snapshot ignoriert
+	→ Standard ist **true** für device und snapshot units, **false** für alle anderen
+
+	
+	//AllowIsolate=//true|false
+	→ falls **true **kann dieser Befehl mit dem **systemctl isolate **Befehl genutzt werden
+[[Linux Wissen:Booten:Dienste:systemd]]
+	
+	//RefuseManualStart| RefuseManualStop//=true|false
+	→ falls **true** wird ein manuelles Starten oder Stoppen auf dem UserLevel  der Unit nicht erlaubt
+	→ die Unit darf nur von anderen Units gestartet|gestoppt werden um eine Transaktion erfolgereich zu beenden
+	
+	//JobTimeoutSec=//<N>
+	→ Clients die auf das Ende eines Jobs warten die von einer dieser Units beendet wurde
+	→ nach **N** Sekunden wird die Unit mit einem Timeout Fehler fehlschlagen
+
+//[Service] //→ Direktiven die nur von Units verwendet werden können, die einen Dienst anbieten
+	//Type=//
+	→ setzen des Typs der Service Unit
+		**simple**
+			→ Standardwert
+			→ es wird die //ExecStart// Direktive als  Hauptprozess interpretiert
+			→ falls dieser Dienst weitere Dienste benötigt müssen diese vorher gestartet werden
+			→ falls dieser Prozess weitere Kanäle für die Interprozesskommunikation anbietet sollte diese Sockets etc vorher gestartet werden
+		**forking**
+			→ es wird erwarted dass der in der //ExecStartDirektive //gestartete Dienst die **fork()** Funtkion des Systems aufruft
+			→ der Vaterprozess wird sich beenden, sobald alle Kanälle aktiiert und der Dienst vollständig gestartet ist
+			→ der Kindprozess wird als Hauptprozess weiter existieren und als Daemon laufen
+			→ Unix System Daemon Verhalten
+			→ //PIDFile// Direktive ist ausserdem sinnvoll
+		**oneshot**
+			→ dieser Prozess muss sich selbst beenden nachdem er einmal erfolgreich gestartet wurde, bevor weitere Units starten
+			→ die Direktive //RemainAfterExit //kann sinnvoll sein
+		**dbus**
+		→ hängt implizit von der Unit __dbus.socket__ ab
+		→ es wird erwartet dass der Daemon einen Namen im D-Bus Bussystem erhält
+		→ Name im D-Bus Bussystem wird durch die Direktive //BusName //festgelegt
+		**notify**
+		→ wie simple allerdings wird mittels des Systemaufrufs **sd_notify() **eine Nachricht senden
+		→ es wird erwartet dass eine Notifiaction über das Kernel Interface geschickt wird
+		→ //NofitfyAccess// sollte richtig konfiguriert sein
+	
+	//RemainAfterExit=true|false//
+	→ der Prozess wird als aktiv behandelt selbst wenn er bereits nicht mehr läuft
+	
+	//GuessMainPID=//true|false
+	→ soll die Prozess ID für diese Unit automatisch ermittelt werden
+	→ benötigt die Direktiven //Type=forking //und //PIDFile//
+	
+	//PIDFile//
+	→ absuluter Name der PID Datei 
+	→ wird benötigt von //Type=forking//
+
+	//BUSName //
+	→ erhält einen String der den Namen im Dbus System unter dem dieser Dienst angesprochen werden soll, erhält
+	→ wird benötigt von //Type=dbus//
+	
+	//ExecStart=//<Pfad> <Argumente> <Optionen>
+	→ der absolute Pfad inklusive Optionen und Argumente zum Starten des Prozess
+	
+	//ExecStartPre|ExecStartPost=//<Pfad> <Argumente> <Optionen>;...
+	→ zusätzliche Befehle die vor bzw. nach dem Start des Hauptprogramms gestartet werden sollen
+	→ mehrere Befehle in einer Reihe sind möglich
+
+	//ExecReload=// <Pfad> <Argumente> <Optionen>
+	→ der absolute Pfad inklusive Optionen und Argumente die beim Aufruf von **reload **verwendet werden sollen
+	
+	//ExecStop=//<Pfad> <Argumente> <Optionen>;...
+	→ der absulute Pfad inklusive Optionen und Argumente die beim stoppen des Dienstes verwendet wird
+	→ kann mehrere Kommandozeilen aufnhemen
+	
+	//ExecStopPost=//<Pfad> <Argumente> <Optionen>;...
+	→ der absolute Pfad inklusive Optionen und Argumenten nachdem die Unit duch //ExecStop// Befehl beendet wurde
+	→ mehrere Befehle in einer Reihe möglich	
+
+	//RestartSec=//<N>
+	→ die absolute Anzahl N in Sekunden die währende eines restart Vorgangs gewartet wird
+	
+	//TimeoutSec=<M>//
+	→ optional
+	→ Die Zeit während des Startens bzw. Stoppen des Dienstes
+	→ kann ein Daemon innerhalb dieser Zeit nicht gestartet werden, ist die Transaktion fehlgechlagen
+	
+	//Restart=//
+		**no **→ falls der Service beendet wird wird er nicht neugestartet
+		**on-success **→ der Service wird nur neu gestartet wenn er schon einmal erfogreich neu gestaret ist
+		**on-failure **→ der Service wird bei fehlerhaften Verhalten neu gestartet
+		**on-abort **→ der Service wird beim unerwarteten Abbruch neu gestartet
+		**always **→ der Service wird immer neugestartet wenn er beendet wurde, egal ob er erfolgreich beendet wurde oder nicht
+	
+	//SysVStartPriority=<N>//
+		→ ein Integer der die Start/Stop Priorität für System V Initscripts angibt
+		→ Werte von 0 bis 99 sind erlaubt
+		→ Für die Abwärtskompatibilität mit System-V-Init vorhanden
+	
+	//KillMode=//
+	→ sepzifiziert wie ein Service mit dem kill Signal kommuniziert
+	→ Prozessen wird erst signal SIGTERM und nach ablauf der //TimeoutSec// ein SIGKILL geschickt
+		**control-group **→ alle verbleibenden Prozesse die in der gleichen Cgroup wie dieser Service sind werden beendet, wenn dieser Dienst beendet wird
+		**process **→ nur der Hauptprozess wird beendet
+		**none → **kein Prozess wir das kill Signal geschickt 
+		
+	//KillSignal=//
+	→ gibt das Signal an welches zum  Killen eines Prozesses verwendet wird
+	
+	//SendSIGKILL=yes|no//
+	→ spetifiziert ob ein SIGKILL Signal nach //TimeoutSec //gesendet werden soll
+	
+[[Linux Wissen:Prozessverwaltung:kill]]
+[[Linux Wissen:Prozessverwaltung:Cgroups]]
+
+[Install]
+→ Wann wird dieser Dienst gestartet
+→ Unter welchen Umständen wird dieser Dienst gestartet
+→ welche Umstände müssen erfüllt sein, damit dieser Dienst startet
+	
+	//WantedBy=//
+	→ wird vom Befehl **systemctl enable <my.service> **gelesen
+	→ ein .target Unit die diese Unit anfordert
+	→ __TIPP__: ''ls /lib/systemd/system/*.target''
+	
+	//Also=//
+	→ weitere .targets die angefordert werden, wenn diese Unit gestaret wird
+	
+	//Alias=//
+	→ kann mehrfach verwendet werden und legt für jeden extra Namen eine symlink unter /etc/systemd/system/target
+
+**man 5 systemd.unit  systemd.service systemd.socket systemd.device systemd.mount systemd.automount**
+**       systemd.swap systemd.target systemd.path systemd.timer systemd.snapshot**
+
+
+//Beispiel://
+Das Beispiel für den abrtd
+++
+'''
+[Unit]
+Description=Daemon to detect crashing apps
+After=syslog.target
+
+[Service]
+ExecStart=/usr/sbin/abrtd
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+'''
+++

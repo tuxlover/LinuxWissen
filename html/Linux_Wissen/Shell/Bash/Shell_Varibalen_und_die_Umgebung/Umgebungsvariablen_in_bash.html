@@ -127,7 +127,14 @@ BASH_VERSION → Version der aktuellen bash<br>
 </p>
 
 <p>
-DIRSTACK → Der Wert des Verezeichnis Stack ( <a href="../../../Dateien_verwalten/Durch_Verzeichnisse_bewegen.html" title="Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen">Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen</a> )<br>
+CDPATH → wenn gesetzt kann es eine, oder durch : getrennt mehre Pfade enthalten, die zusätzlich zum aktullen nach Verzeichnissen durchsucht wird<br>
+<div style='padding-left: 60pt'>
+→ damit kann erreicht werden, dass man mit <strong>cd </strong>schneller in Verzeichenisse wechseln kann<br>
+</div>
+</p>
+
+<p>
+DIRSTACK → Der Wert des Verzeichnis Stack ( <a href="../../../Dateien_verwalten/Durch_Verzeichnisse_bewegen.html" title="Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen">Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen</a> )<br>
 </p>
 
 <p>
@@ -230,6 +237,8 @@ echo $user\'s shell is $shell;
 
 <p>
 <em>+++</em><br>
+Probleme mit find vermeiden:<br>
+<code>IFS=$'\n</code>'<br>
 </p>
 
 <p>

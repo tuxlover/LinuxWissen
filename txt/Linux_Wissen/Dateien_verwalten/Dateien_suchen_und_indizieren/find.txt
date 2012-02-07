@@ -82,6 +82,10 @@ __konvertiere alle ASCII Dateien von DOS in Unix Style__
 __Finde das Verzeichnis dass den meisten Platz auf der Platte/Partition verbraucht__
 ''find . -type d |xargs du -ms |sort -g''
 
+__Rekursiv den Inhalt eines Verzeichnisses auflisten__
+__Der IFS der hier gesetzt wird ermöglicht es dass leerzeichen in Dateinamen ignoriert werden und als solche mit übernommen__
+IFS=$'\n'; ''find /etc/ -printf "%p\n"''
+
 __finde defekte symbolische Links__
 ''for f in $(find / -type l -printf "%p \n"); do test -h "$f" && test -e "$f" || echo ""$f" broken";done''
 ''find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"''

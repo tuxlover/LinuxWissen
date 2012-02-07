@@ -13,7 +13,10 @@ BASHPID → PID der aktuell aufgerufenen Bash Shell
 
 BASH_VERSION → Version der aktuellen bash
 
-DIRSTACK → Der Wert des Verezeichnis Stack ( [[Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen]] )
+CDPATH → wenn gesetzt kann es eine, oder durch : getrennt mehre Pfade enthalten, die zusätzlich zum aktullen nach Verzeichnissen durchsucht wird
+		→ damit kann erreicht werden, dass man mit **cd **schneller in Verzeichenisse wechseln kann
+
+DIRSTACK → Der Wert des Verzeichnis Stack ( [[Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen]] )
 
 EDITOR → Der Standardeditor (vi, vim, emacs, pico, nano)
 
@@ -80,6 +83,8 @@ echo $user\'s shell is $shell;
 '''
 
 //+++//
+Probleme mit find vermeiden:
+''IFS=$'\n'''
 
 LINENO → verweist auf die aktuelle Anzahl der Zeilen der Bash in einem Shellscript
              → verweist auf die aktuelle Anzahl der Zeilen der bash im Terminalemulator

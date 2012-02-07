@@ -229,6 +229,12 @@ s=Unix Domain Socket<br>
 </p>
 
 <p>
+<u>Rekursiv den Inhalt eines Verzeichnisses auflisten</u><br>
+<u>Der IFS der hier gesetzt wird ermöglicht es dass leerzeichen in Dateinamen ignoriert werden und als solche mit übernommen</u><br>
+IFS=$'\n'; <code>find /etc/ -printf "%p\n"</code><br>
+</p>
+
+<p>
 <u>finde defekte symbolische Links</u><br>
 <code>for f in $(find / -type l -printf "%p \n"); do test -h "$f" &amp;&amp; test -e "$f" || echo ""$f" broken";done</code><br>
 <code>find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"</code><br>

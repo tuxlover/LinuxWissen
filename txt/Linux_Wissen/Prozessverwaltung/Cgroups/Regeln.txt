@@ -13,7 +13,7 @@ Created Dienstag 17 Januar 2012
 
 === Regel 2 ===
 * Eine einzelne **Hierarchie **kann mit __mehereren__ **Subsystemen** verknüpft. 
-{{~/Rule1.jpg}}
+{{../../../../Rule1.jpg}}
 __Es herscht eine linkseindeutige Relation zwischen Subsystem und Hierarchie.__
 
 //Beispiel://

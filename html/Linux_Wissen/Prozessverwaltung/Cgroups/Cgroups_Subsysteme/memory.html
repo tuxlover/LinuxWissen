@@ -112,8 +112,17 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>generien von automatischen Reports für Memory Resourcen für Tasks in diesen Cgroups</li>
+				<p>
+Created Dienstag 24 Januar 2012<br>
+</p>
 
+<p>
+<ul>
+<li>generien von automatischen Reports für Memory Resourcen für Tasks in diesen Cgroups</li>
+</ul>
+</p>
+
+<p>
 <strong>memory.stat</strong><br>
 → gibt Auskunft über Statistiken im Memory<br>
 <div style='padding-left: 30pt'>
@@ -132,50 +141,76 @@
 <em>hierarchical_memsw_limit </em>→ Speicher- und Swap Limit für Hierarchien die memory Subsystem benutzen<br>
 total_* <em>→ </em>Reports für diese Cgroup und alle ihre Kinder<br>
 </div>
+</p>
 	
-<em>Beispiel:</em>
-<code>cgget -r memory.stat /</code>
+<p>
+<em>Beispiel:</em><br>
+<code>cgget -r memory.stat /</code><br>
+</p>
 
+<p>
 <strong>memory.usage_in_bytes</strong><br>
 → der gesamte Speicherverbrauche aller Tasks in einer Cgroup<br>
-<br>
+</p>
+
+<p>
 <strong>memory.memsw.usage_in_bytes</strong><br>
 → der gesamte Speicherverbrauch inklusive Swap aller Tasks in einer Cgroup <br>
-<br>
+</p>
+
+<p>
 <strong>memory.max_usage_in_bytes</strong><br>
 → Bericht über die Maximale Menge die an Speicher verbraucht wurde <br>
-<br>
+</p>
+
+<p>
 <strong>memory.memsw.max_usage_in_bytes</strong><br>
 → Bericht über die Maximal Menge die an Speicher und Swap verbraucht wurde<br>
-<br>
+</p>
+
+<p>
 <strong>memory.limits_in_bytes</strong><br>
 → setzen des Maximalen Speichermenge des User-Memory inklusive File Cache<br>
 → wird kein Suffix angegeben wird von Bytes ausgegenaen, als Suffix kann aber k K, m M und g G verwendet werden<br>
 → die Root Cgroup kann nicht limitiert werden<br>
 → Der Wert <strong>-1 </strong>ist dazu da um existierende Limitierungen zu entfernen<br>
-<br>
+</p>
+
+<p>
 <strong>memory.memsw.limits_in_bytes</strong><br>
 → setzen des Maximalen Speichermenge inklusive Swap des User-Memory inklusive File Cache<br>
 → wird kein Suffix angegeben wird von Bytes ausgegenaen, als Suffix kann aber k K, m M und g G verwendet werden<br>
 → die Root Cgroup kann nicht limitiert werden<br>
 → Der Wert <strong>-1 </strong>ist dazu da um existierende Limitierungen zu entfernen<br>
-<br>
-<h4>ACHTUNG</h4>
-<u>: Sie müssen </u><strong>memory.limits_in_bytes </strong><u>setzen, bevor es möglich  ist </u><strong>memory.memsw.limits_in_bytes</strong><u> zu setzen. Diese Reihenfolge muss auch in der Datei </u><em>*/etc/cgconfig.conf </em><u> berücksichtigt werden.</u>
-<a href="../../../FHS/etc/cgconfig.conf.html" title="Linux Wissen:FHS:etc:cgconfig.conf">Linux Wissen:FHS:etc:cgconfig.conf</a>
+</p>
 
+<h4>ACHTUNG</h4>
+<p>
+<u>: Sie müssen </u><strong>memory.limits_in_bytes </strong><u>setzen, bevor es möglich  ist </u><strong>memory.memsw.limits_in_bytes</strong><u> zu setzen. Diese Reihenfolge muss auch in der Datei </u><em>*/etc/cgconfig.conf </em><u> berücksichtigt werden.</u><br>
+<a href="../../../FHS/etc/cgconfig.conf.html" title="Linux Wissen:FHS:etc:cgconfig.conf">Linux Wissen:FHS:etc:cgconfig.conf</a><br>
+</p>
+
+<p>
 <strong>memory.failcnt</strong><br>
 → wie oft wurden Limits die durch <strong>memory.limits_in_bytes </strong>gesetzt wurden, erreicht<br>
-<br>
+</p>
+
+<p>
 <strong>memory.memsw.failcnt</strong><br>
 → wie oft wurden Limits die durch  <strong>memory.memsw_limits_in_bytes</strong> gesetzt wurden, erreicht<br>
-<br>
-<strong>memory.force.empty</strong>
+</p>
+
+<p>
+<strong>memory.force.empty</strong><br>
 <strong>→ </strong>kann nur gesetzt werden ,wenn diese Cgroup keinen Task besitzt<br>
 → Der Wert <strong>0</strong> gibt die verbrauchten Speicherseiten frei, die von dieser Cgroup verwendet wurden<br>
-<br>
-<u>Benutzten dieses Parameters bevor eine Cgroup entfernt wird.</u>
+</p>
 
+<p>
+<u>Benutzten dieses Parameters bevor eine Cgroup entfernt wird.</u><br>
+</p>
+
+<p>
 <strong>memory.swappiness</strong><br>
 → bestimmt die Tendenz mit dem der Kernel Prozesse und Threads dieser Cgroup in den Swap auslagert<br>
 → Wertebereich: 0 &lt;= 60 &lt;= N<br>
@@ -184,13 +219,18 @@ total_* <em>→ </em>Reports für diese Cgroup und alle ihre Kinder<br>
 → Werte größer als <strong>60 </strong>erhöhen die Tendenz dass Prozesse in den Swap ausgelagert werden<br>
 → Werte größer als <strong>100 </strong>verbieten den Kernel vollständig Prozesse dieser Cgroup auszulagern<br>
 → der Wert kann nicht geändert werden für die Root-Cgroup dieser Hierarchie, sowie für Gruppen die weitere Kinder haben<br>
-<br>
-<u>Die globale Memroy Logik des Kernels liest keine Cgroup Restriktionen, daher werden Prozesse auch dann geswapped wenn nicht genügend physischer Speicher zur Verfügung steht.</u>
+</p>
 
+<p>
+<u>Die globale Memroy Logik des Kernels liest keine Cgroup Restriktionen, daher werden Prozesse auch dann geswapped wenn nicht genügend physischer Speicher zur Verfügung steht.</u><br>
+</p>
+
+<p>
 <strong>memory.use_hierarchie</strong><br>
 → Wertebereich: <strong>0 </strong>oder <strong>1 </strong><br>
 → falls aktiviert wird das Subsystem versuchen, Speicher von ihren Kndernj zurückzugewinnen<br>
 → aktivert Wert = 1<br>
+</p>
 
 
 			<!-- End wiki content -->

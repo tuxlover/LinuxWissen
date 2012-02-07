@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>lib++systemd</title>
+		<meta name='Generator' content='Zim 0.54'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									lib++systemd</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../FHS.html" title="FHS">FHS</a></li>
+<ul>
+<li><a href="../bin.html" title="bin">bin</a></li>
+<li><a href="../boot.html" title="boot">boot</a></li>
+<li><a href="../dev.html" title="dev">dev</a></li>
+<li><a href="../etc.html" title="etc">etc</a></li>
+<li><a href="../lib.html" title="lib">lib</a></li>
+<ul>
+<li><strong>lib++systemd</strong></li>
+</ul>
+<li><a href="../proc.html" title="proc">proc</a></li>
+<li><a href="../sbin.html" title="sbin">sbin</a></li>
+<li><a href="../sys.html" title="sys">sys</a></li>
+<li><a href="../usr.html" title="usr">usr</a></li>
+<li><a href="../var.html" title="var">var</a></li>
+</ul>
+<li><a href="../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../Networking.html" title="Networking">Networking</a></li>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../root.html" title="root">root</a></li>
+<li><a href="../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../X11.html" title="X11">X11</a></li>
+<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<li>systemd.service Unit</li>
+++<br>
+<pre>
+# die unit Sektion enthält alle information die unabhäng vom Typ der Unit sind
+[unit]
+Description=Diese Unit startet den Dienst xy
+Require=var-run.mount network.target time-sys.target
+RequieresOverridable=my-fancy.service
+Requisite=
+RequisiteOverridable=
+Wants=mysql.service host.target
+Conflicts=boo.service oops.service
+</pre>
+
+<pre>
+# als Typ kann ein service, socket, dvice, mount, automaount, swap, target, path, timer oder snapshot
+[&lt;Typ&gt;]
+</pre>
+
+<div style='padding-left: 30pt'>
+<code>...</code><br>
+</div>
+++<br>
+<em>[unit]</em><br>
+→ Direktiven die unabhängig vom Typ der Unit gestezt werden können<br>
+<div style='padding-left: 30pt'>
+<em>Description= </em><br>
+→ eine beschreibene Information die Auskunft über den Sinn und Zweck dieser Unit gibt<br>
+</div>
+
+	
+<div style='padding-left: 30pt'>
+<em>Requires=</em><br>
+<em> → </em>Weitere Units die für das starten dieser Unit benötigt und automatisch gestartet werden, schlägt einer dieser Units fehl so wird der Dienst nicht 		  	    gestartet<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>RequiresOverridable= </em><br>
+<em>→ </em>wie Requires, wird der Dienst jedoch vom Nutzer direkt aufgerufen und einer der hier stehenden Dienste schlägt fehl, so wird der Dienst dennoch gestartet<br>
+→ wird die Unit von einer anderen Unit angefordert und schlägt fehl. so wird diese Unit nicht gestartet<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>Requisite=</em><br>
+→ wird von der Unit benötigt, aber nicht zusätzlich gestartet<br>
+→ ist einer der Units hiergelistet und nicht bereits gestart, wird der Aufruf dieser Transaktion fehlschlagen<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>Wants=</em><br>
+→ Units die hier gelistet werden, können für die gesamte Transaktion gestartet werden<br>
+→ schlägt einer oder mehrere Aufrufe fehl oder ist der zu startende Dienst nicht verfügbar so wird die Transaktion trotzdem vollständig ausgeführt<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>BindTo=</em><br>
+→ wie Requires, wird aber beim <strong>Stoppen</strong> der Unit für die Vervollständigung dieser Transaktion auch Units berücksichtigen die hier gelistet sind<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>Conflicts=</em><br>
+→ Units in dieser Direktive werden nicht gestartet und befinden sich im Konflikt mit dieser Transaktion<br>
+→ läuft bereits einer der im Konflikt stehnden Transaktionen wird diese nicht ausgeführt<br>
+→ typisches Beispiel ist der postfix daemon der niemlas den exim oder sendmail daemon starten oder bereits laufen haben darf<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>Before|After=</em><br>
+→ setzen der Reihenfolge von Units<br>
+→ Before=bar.serice bedeuted dass bar.service erst gestartet wird wenn diese Unit vollständig gestartet ist<br>
+→ After=bar.service bedeut dass bar.service vor der Unit vollständig gestartet wird<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>OnFailure=</em><br>
+→ wenn diese Unit nicht gestartet werden kann, wird in der aufsteigende Reihenfolge eines der unter dieser Direktive gelistete Units für die <br>
+</div>
+<div style='padding-left: 60pt'>
+Vervollständigung der Aktion gestartet <br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>OnFailureIsolat</em>e=true|false<br>
+→ benötigt OnFailure<br>
+→ wenn <strong>true </strong>wird dieser Prozess isoliert gestartet<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>IgnoreOnIsolate</em>=true|false<br>
+→ falls <strong>true</strong> wird wird diese Unit nicht gestoppt, falls eine andere Unit isoliiert wurde<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>IgnoreOnSnapshot=</em>true|false<br>
+→ falls <strong>true</strong> wird diese Unit bei einem Snapshot ignoriert<br>
+→ Standard ist <strong>true</strong> für device und snapshot units, <strong>false</strong> für alle anderen<br>
+</div>
+
+	
+<div style='padding-left: 30pt'>
+<em>AllowIsolate=</em>true|false<br>
+→ falls <strong>true </strong>kann dieser Befehl mit dem <strong>systemctl isolate </strong>Befehl genutzt werden<br>
+</div>
+<a href="../../Booten/Dienste/systemd.html" title="Linux Wissen:Booten:Dienste:systemd">Linux Wissen:Booten:Dienste:systemd</a>
+	
+<div style='padding-left: 30pt'>
+<em>RefuseManualStart| RefuseManualStop</em>=true|false<br>
+→ falls <strong>true</strong> wird ein manuelles Starten oder Stoppen auf dem UserLevel  der Unit nicht erlaubt<br>
+→ die Unit darf nur von anderen Units gestartet|gestoppt werden um eine Transaktion erfolgereich zu beenden<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>JobTimeoutSec=</em>&lt;N&gt;<br>
+→ Clients die auf das Ende eines Jobs warten die von einer dieser Units beendet wurde<br>
+→ nach <strong>N</strong> Sekunden wird die Unit mit einem Timeout Fehler fehlschlagen<br>
+</div>
+
+<em>[Service] </em>→ Direktiven die nur von Units verwendet werden können, die einen Dienst anbieten<br>
+<div style='padding-left: 30pt'>
+<em>Type=</em><br>
+→ setzen des Typs der Service Unit<br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>simple</strong><br>
+</div>
+<div style='padding-left: 90pt'>
+→ Standardwert<br>
+→ es wird die <em>ExecStart</em> Direktive als  Hauptprozess interpretiert<br>
+→ falls dieser Dienst weitere Dienste benötigt müssen diese vorher gestartet werden<br>
+→ falls dieser Prozess weitere Kanäle für die Interprozesskommunikation anbietet sollte diese Sockets etc vorher gestartet werden<br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>forking</strong><br>
+</div>
+<div style='padding-left: 90pt'>
+→ es wird erwarted dass der in der <em>ExecStartDirektive </em>gestartete Dienst die <strong>fork()</strong> Funtkion des Systems aufruft<br>
+→ der Vaterprozess wird sich beenden, sobald alle Kanälle aktiiert und der Dienst vollständig gestartet ist<br>
+→ der Kindprozess wird als Hauptprozess weiter existieren und als Daemon laufen<br>
+→ Unix System Daemon Verhalten<br>
+→ <em>PIDFile</em> Direktive ist ausserdem sinnvoll<br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>oneshot</strong><br>
+</div>
+<div style='padding-left: 90pt'>
+→ dieser Prozess muss sich selbst beenden nachdem er einmal erfolgreich gestartet wurde, bevor weitere Units starten<br>
+→ die Direktive <em>RemainAfterExit </em>kann sinnvoll sein<br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>dbus</strong><br>
+→ hängt implizit von der Unit <u>dbus.socket</u> ab<br>
+→ es wird erwartet dass der Daemon einen Namen im D-Bus Bussystem erhält<br>
+→ Name im D-Bus Bussystem wird durch die Direktive <em>BusName </em>festgelegt<br>
+<strong>notify</strong><br>
+→ wie simple allerdings wird mittels des Systemaufrufs <strong>sd_notify() </strong>eine Nachricht senden<br>
+→ es wird erwartet dass eine Notifiaction über das Kernel Interface geschickt wird<br>
+→ <em>NofitfyAccess</em> sollte richtig konfiguriert sein<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>RemainAfterExit=true|false</em><br>
+→ der Prozess wird als aktiv behandelt selbst wenn er bereits nicht mehr läuft<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>GuessMainPID=</em>true|false<br>
+→ soll die Prozess ID für diese Unit automatisch ermittelt werden<br>
+→ benötigt die Direktiven <em>Type=forking </em>und <em>PIDFile</em><br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>PIDFile</em><br>
+→ absuluter Name der PID Datei <br>
+→ wird benötigt von <em>Type=forking</em><br>
+</div>
+
+<div style='padding-left: 30pt'>
+<em>BUSName </em><br>
+→ erhält einen String der den Namen im Dbus System unter dem dieser Dienst angesprochen werden soll, erhält<br>
+→ wird benötigt von <em>Type=dbus</em><br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>ExecStart=</em>&lt;Pfad&gt; &lt;Argumente&gt; &lt;Optionen&gt;<br>
+→ der absolute Pfad inklusive Optionen und Argumente zum Starten des Prozess<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>ExecStartPre|ExecStartPost=</em>&lt;Pfad&gt; &lt;Argumente&gt; &lt;Optionen&gt;;...<br>
+→ zusätzliche Befehle die vor bzw. nach dem Start des Hauptprogramms gestartet werden sollen<br>
+→ mehrere Befehle in einer Reihe sind möglich<br>
+</div>
+
+<div style='padding-left: 30pt'>
+<em>ExecReload=</em> &lt;Pfad&gt; &lt;Argumente&gt; &lt;Optionen&gt;<br>
+→ der absolute Pfad inklusive Optionen und Argumente die beim Aufruf von <strong>reload </strong>verwendet werden sollen<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>ExecStop=</em>&lt;Pfad&gt; &lt;Argumente&gt; &lt;Optionen&gt;;...<br>
+→ der absulute Pfad inklusive Optionen und Argumente die beim stoppen des Dienstes verwendet wird<br>
+→ kann mehrere Kommandozeilen aufnhemen<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>ExecStopPost=</em>&lt;Pfad&gt; &lt;Argumente&gt; &lt;Optionen&gt;;...<br>
+→ der absolute Pfad inklusive Optionen und Argumenten nachdem die Unit duch <em>ExecStop</em> Befehl beendet wurde<br>
+→ mehrere Befehle in einer Reihe möglich	<br>
+</div>
+
+<div style='padding-left: 30pt'>
+<em>RestartSec=</em>&lt;N&gt;<br>
+→ die absolute Anzahl N in Sekunden die währende eines restart Vorgangs gewartet wird<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>TimeoutSec=&lt;M&gt;</em><br>
+→ optional<br>
+→ Die Zeit während des Startens bzw. Stoppen des Dienstes<br>
+→ kann ein Daemon innerhalb dieser Zeit nicht gestartet werden, ist die Transaktion fehlgechlagen<br>
+<br>
+<em>Restart=</em><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>no </strong>→ falls der Service beendet wird wird er nicht neugestartet<br>
+<strong>on-success </strong>→ der Service wird nur neu gestartet wenn er schon einmal erfogreich neu gestaret ist<br>
+<strong>on-failure </strong>→ der Service wird bei fehlerhaften Verhalten neu gestartet<br>
+<strong>on-abort </strong>→ der Service wird beim unerwarteten Abbruch neu gestartet<br>
+<strong>always </strong>→ der Service wird immer neugestartet wenn er beendet wurde, egal ob er erfolgreich beendet wurde oder nicht<br>
+</div>
+<div style='padding-left: 30pt'>
+<br>
+<em>SysVStartPriority=&lt;N&gt;</em><br>
+</div>
+<div style='padding-left: 60pt'>
+→ ein Integer der die Start/Stop Priorität für System V Initscripts angibt<br>
+→ Werte von 0 bis 99 sind erlaubt<br>
+→ Für die Abwärtskompatibilität mit System-V-Init vorhanden<br>
+</div>
+<div style='padding-left: 30pt'>
+<br>
+<em>KillMode=</em><br>
+→ sepzifiziert wie ein Service mit dem kill Signal kommuniziert<br>
+→ Prozessen wird erst signal SIGTERM und nach ablauf der <em>TimeoutSec</em> ein SIGKILL geschickt<br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>control-group </strong>→ alle verbleibenden Prozesse die in der gleichen Cgroup wie dieser Service sind werden beendet, wenn dieser Dienst beendet wird<br>
+<strong>process </strong>→ nur der Hauptprozess wird beendet<br>
+<strong>none → </strong>kein Prozess wir das kill Signal geschickt <br>
+<br>
+</div>
+<div style='padding-left: 30pt'>
+<em>KillSignal=</em><br>
+→ gibt das Signal an welches zum  Killen eines Prozesses verwendet wird<br>
+<br>
+<em>SendSIGKILL=yes|no</em><br>
+→ spetifiziert ob ein SIGKILL Signal nach <em>TimeoutSec </em>gesendet werden soll<br>
+<br>
+</div>
+<a href="../../Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a>
+<a href="../../Prozessverwaltung/Cgroups.html" title="Linux Wissen:Prozessverwaltung:Cgroups">Linux Wissen:Prozessverwaltung:Cgroups</a><br>
+<br>
+[Install]<br>
+→ Wann wird dieser Dienst gestartet<br>
+→ Unter welchen Umständen wird dieser Dienst gestartet<br>
+→ welche Umstände müssen erfüllt sein, damit dieser Dienst startet<br>
+<div style='padding-left: 30pt'>
+<br>
+<em>WantedBy=</em><br>
+→ wird vom Befehl <strong>systemctl enable &lt;my.service&gt; </strong>gelesen<br>
+→ ein .target Unit die diese Unit anfordert<br>
+→ <u>TIPP</u>: <code>ls /lib/systemd/system/*.target</code><br>
+<br>
+<em>Also=</em><br>
+→ weitere .targets die angefordert werden, wenn diese Unit gestaret wird<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>Alias=</em><br>
+→ kann mehrfach verwendet werden und legt für jeden extra Namen eine symlink unter /etc/systemd/system/target<br>
+</div>
+
+<strong>man 5 systemd.unit  systemd.service systemd.socket systemd.device systemd.mount systemd.automount</strong>
+<strong>       systemd.swap systemd.target systemd.path systemd.timer systemd.snapshot</strong>
+
+
+<em>Beispiel:</em><br>
+Das Beispiel für den abrtd<br>
+++<br>
+<pre>
+[Unit]
+Description=Daemon to detect crashing apps
+After=syslog.target
+
+[Service]
+ExecStart=/usr/sbin/abrtd
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+</pre>
+++<br>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../../Booten/Dienste/systemd.html'>Linux Wissen:Booten:Dienste:systemd</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

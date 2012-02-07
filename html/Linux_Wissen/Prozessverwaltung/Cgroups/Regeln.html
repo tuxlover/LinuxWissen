@@ -101,32 +101,63 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>für die Erstellung von Hierarchien und Subsystemen müssen bestimmte Regeln gelten</li>
+				<p>
+Created Dienstag 17 Januar 2012<br>
+</p>
+
+
+<p>
+<ul>
+<li>für die Erstellung von Hierarchien und Subsystemen müssen bestimmte Regeln gelten</li>
+</ul>
+</p>
 
 <h4>Regel 1</h4>
+<p>
+<ul>
 <li>Ein <strong>Subsystem</strong> kann mit <u>genau einer</u> <strong>Hierarchie</strong> verknüpft sein. </li>
+</ul>
+</p>
 
 <h4>Regel 2</h4>
+<p>
+<ul>
 <li>Eine einzelne <strong>Hierarchie </strong>kann mit <u>mehereren</u> <strong>Subsystemen</strong> verknüpft. </li>
-<img src="../../../../Rule1.jpg" alt="">
-<u>Es herscht eine linkseindeutige Relation zwischen Subsystem und Hierarchie.</u>
+</ul>
+<img src="../../../Rule1.jpg" alt=""><br>
+<u>Es herscht eine linkseindeutige Relation zwischen Subsystem und Hierarchie.</u><br>
+</p>
 
-<em>Beispiel:</em>
+<p>
+<em>Beispiel:</em><br>
+<ul>
 <li>Das <strong>cpu</strong> Subsystem kann nur in der Hierarchie <em>cpu_mem </em>angelgelt werden. Gleichzeitig kann die Hierchie cpu_mem aber auch das Subsystem <strong>mem </strong>beinhalten.</li>
+</ul>
+</p>
 
 <h4>Regel 3</h4>
+<p>
+<ul>
 <li>Wird eine neue <strong>Hierarchie</strong> auf dem System erstellt, sind<strong> alle Tasks</strong> auf dem System<u> Mitglieder der standard CGroup</u> dieser <u>Hierarchie (</u><strong>Root Kontrollgruppe)</strong></li>
 <li>Jede <strong>Task</strong> kann<u> Mitglied in genau einer Cgroup </u><strong>dieser</strong> <strong>Hierarchie</strong> sein.</li>
 <li>Ein <strong>Taks</strong> kann in<u> Mitglied mehreren Cgroups sein</u>, wenn sich diese in <strong>verschiedenen Hierachien</strong> befinden.</li>
 <li>Wird ein <strong>Task</strong> <u>Mitglied einer anderen Cgroup in der </u><strong>gleichen Hierarchie</strong><u> zugeordnet</u>, wird sie aus der <strong>ursprünglichen Cgroup </strong>in <strong>dieser</strong> <strong>Hierarchie</strong> entfernt.</li>
 <li>Ein <strong>Taks</strong> kann <u>niemals Mitglied </u>in zwei <strong>Cgroups derselben Hierachie sein.</strong></li>
+</ul>
+</p>
 
+<p>
 <em>Beispiel:</em><br>
 Der Apache Webserver Daemon httpd ist als <strong>Task </strong>einer <u>Cgroup</u> in der <strong>Hierarchie</strong> <em>cpu_mem zugewiesen. </em>Gleichzeitig ist ein <strong>Taks</strong> mit einer <u>Cgroup</u> in der <strong>Hierarchie</strong> <em>net</em> verknüpft. <br>
-<br>
+</p>
+
 <h4>Regel 4</h4>
+<p>
+<ul>
 <li>Da jeder <strong>Taks </strong> ein Prozess ist, wird jeder neu erstellte Kindporzess dieses <strong>Task </strong>MItglied aller <u>Cgroups</u> wie dessen Vaterprozess.</li>
 <li>Der untergeordnete Prozess kann als <strong>Task</strong> anderen <u>Cgroups</u> zugewiesen werden, erbt aber immer die Eigenschaften seines Vaters und als solche auch seine <u>Cgroups</u>.</li>
+</ul>
+</p>
 
 
 			<!-- End wiki content -->
