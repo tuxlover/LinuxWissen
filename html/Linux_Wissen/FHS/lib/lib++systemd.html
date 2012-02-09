@@ -99,6 +99,12 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<li>systemd.service Unit</li>
+<li><u>nach dem Hinzufügen einer Unit muss </u><strong>systemctl daemon-reload </strong><u>ausgeführt werden </u></li>
+<li>Unit Files in <em>*/etc/systemd/system</em> werden vor <em>*/lib/systemd/system</em> gelesen</li>
+
+<h4>!ACHTUNG!: </h4>
+<u>Bearbeitet oder selber erstellte Units werden nach */etc/systemd/system gelegt</u><br>
+<br>
 ++<br>
 <pre>
 # die unit Sektion enthält alle information die unabhäng vom Typ der Unit sind
@@ -215,6 +221,8 @@ Vervollständigung der Aktion gestartet <br>
 → nach <strong>N</strong> Sekunden wird die Unit mit einem Timeout Fehler fehlschlagen<br>
 </div>
 
+
+<h5>Service Unit</h5>
 <em>[Service] </em>→ Direktiven die nur von Units verwendet werden können, die einen Dienst anbieten<br>
 <div style='padding-left: 30pt'>
 <em>Type=</em><br>
@@ -283,8 +291,9 @@ Vervollständigung der Aktion gestartet <br>
 <div style='padding-left: 30pt'>
 <em>ExecStart=</em>&lt;Pfad&gt; &lt;Argumente&gt; &lt;Optionen&gt;<br>
 → der absolute Pfad inklusive Optionen und Argumente zum Starten des Prozess<br>
+→ falls im chroot, muss hier der absolute Pfad aus sicht des chroot angegeben werden	<br>
 </div>
-	
+
 <div style='padding-left: 30pt'>
 <em>ExecStartPre|ExecStartPost=</em>&lt;Pfad&gt; &lt;Argumente&gt; &lt;Optionen&gt;;...<br>
 → zusätzliche Befehle die vor bzw. nach dem Start des Hauptprogramms gestartet werden sollen<br>
@@ -318,7 +327,9 @@ Vervollständigung der Aktion gestartet <br>
 → optional<br>
 → Die Zeit während des Startens bzw. Stoppen des Dienstes<br>
 → kann ein Daemon innerhalb dieser Zeit nicht gestartet werden, ist die Transaktion fehlgechlagen<br>
-<br>
+</div>
+	
+<div style='padding-left: 30pt'>
 <em>Restart=</em><br>
 </div>
 <div style='padding-left: 60pt'>
@@ -328,8 +339,8 @@ Vervollständigung der Aktion gestartet <br>
 <strong>on-abort </strong>→ der Service wird beim unerwarteten Abbruch neu gestartet<br>
 <strong>always </strong>→ der Service wird immer neugestartet wenn er beendet wurde, egal ob er erfolgreich beendet wurde oder nicht<br>
 </div>
+	
 <div style='padding-left: 30pt'>
-<br>
 <em>SysVStartPriority=&lt;N&gt;</em><br>
 </div>
 <div style='padding-left: 60pt'>
@@ -337,8 +348,8 @@ Vervollständigung der Aktion gestartet <br>
 → Werte von 0 bis 99 sind erlaubt<br>
 → Für die Abwärtskompatibilität mit System-V-Init vorhanden<br>
 </div>
+	
 <div style='padding-left: 30pt'>
-<br>
 <em>KillMode=</em><br>
 → sepzifiziert wie ein Service mit dem kill Signal kommuniziert<br>
 → Prozessen wird erst signal SIGTERM und nach ablauf der <em>TimeoutSec</em> ein SIGKILL geschickt<br>
@@ -347,30 +358,61 @@ Vervollständigung der Aktion gestartet <br>
 <strong>control-group </strong>→ alle verbleibenden Prozesse die in der gleichen Cgroup wie dieser Service sind werden beendet, wenn dieser Dienst beendet wird<br>
 <strong>process </strong>→ nur der Hauptprozess wird beendet<br>
 <strong>none → </strong>kein Prozess wir das kill Signal geschickt <br>
-<br>
 </div>
+		
 <div style='padding-left: 30pt'>
 <em>KillSignal=</em><br>
 → gibt das Signal an welches zum  Killen eines Prozesses verwendet wird<br>
-<br>
+</div>
+	
+<div style='padding-left: 30pt'>
 <em>SendSIGKILL=yes|no</em><br>
 → spetifiziert ob ein SIGKILL Signal nach <em>TimeoutSec </em>gesendet werden soll<br>
-<br>
 </div>
+	
+<div style='padding-left: 30pt'>
+<em>NotifyAccess</em><br>
+→ konfiguriert den Zugang des Services zum Socket der für die Übermittlung des Status zuständig ist (Status Notification Socket <strong>sd_notfiy()</strong>)<br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>none </strong>→ Status Updates des Daemon werden zurückgewiesen<br>
+<strong>main </strong>→ Nur Statusupdates vom Hauptprozess des Service werden angenommen<br>
+<strong>all </strong>→ Alle Statusupdates der Service  Cgroup werden akzeptiert <br>
+</div>
+		
+
+<h5>Setup eines Chroot</h5>
+<div style='padding-left: 30pt'>
+<em>RootDirectory=PATH</em><br>
+→ Pfad zum / des chroot<br>
+</div>
+	
+<div style='padding-left: 30pt'>
+<em>RootDirectoryStartOnly=</em><strong>no|yes</strong><br>
+<strong>→ </strong>wenn auf <strong>yes </strong>gestezt kann der Prozess nur im neuen Datenbaum unter <em>RootDirectory </em>existieren<br>
+</div>
+
+<div style='padding-left: 30pt'>
+InaccessibleDirectories=<br>
+→ implizites setzen der Verzeichnisse, die eine Unit niemals benutzen darf<br>
+</div>
+
 <a href="../../Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a>
 <a href="../../Prozessverwaltung/Cgroups.html" title="Linux Wissen:Prozessverwaltung:Cgroups">Linux Wissen:Prozessverwaltung:Cgroups</a><br>
 <br>
 [Install]<br>
 → Wann wird dieser Dienst gestartet<br>
 → Unter welchen Umständen wird dieser Dienst gestartet<br>
-→ welche Umstände müssen erfüllt sein, damit dieser Dienst startet<br>
+→ welche Trigger starten diesen Diensts<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
 <div style='padding-left: 30pt'>
-<br>
 <em>WantedBy=</em><br>
 → wird vom Befehl <strong>systemctl enable &lt;my.service&gt; </strong>gelesen<br>
 → ein .target Unit die diese Unit anfordert<br>
 → <u>TIPP</u>: <code>ls /lib/systemd/system/*.target</code><br>
-<br>
+</div>
+	
+<div style='padding-left: 30pt'>
 <em>Also=</em><br>
 → weitere .targets die angefordert werden, wenn diese Unit gestaret wird<br>
 </div>
@@ -383,6 +425,163 @@ Vervollständigung der Aktion gestartet <br>
 <strong>man 5 systemd.unit  systemd.service systemd.socket systemd.device systemd.mount systemd.automount</strong>
 <strong>       systemd.swap systemd.target systemd.path systemd.timer systemd.snapshot</strong>
 
+
+<h4>Konfigurieren der Umgebung in der eine Unit aktiviert wird</h4><br>
+→ diese Konfigurationsoptionen können auf <em>.service .mount .swap </em>und <em>.swap</em> Units angewandt werden<br>
+<div style='padding-left: 30pt'>
+<em>WorkingDirectory=</em><br>
+→ absoluter Pfad, beschreibt Arbeitsverzeichnis der auszuführenden Prozesse<br>
+<br>
+<em>RootDirectory=</em><br>
+→ absoluter Pfad zum Verzeichnis auf dem der <strong>chroot()</strong> Systemcall durchgeführt wird<br>
+→ <u>Achtung: Es ist sicherzistellen, dass alle benötigen Dateien können vom ausführenden Hauptprozess gesehen werden</u><br>
+<br>
+</div>
+<em>       User=</em>&lt;User&gt;<em>; Group=&lt;</em>Group&gt;<br>
+<div style='padding-left: 30pt'>
+→ setzen der Nutzer bzw der  Gruppe<br>
+→ Name oder GUD|UID<br>
+<br>
+<em>SupplementaryGroups=</em>&lt;Gruppe1&gt;,...<br>
+→ setzen der zusätzlichen Gruppen, die ein Prozess angehören soll<br>
+→ &lt;Gruppe&gt; kann entweder ein Gruppenname oder die GID sein<br>
+</div>
+<a href="../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a>
+
+<em>Nice=</em>&lt;-20&lt;=N&lt;=19&gt;<br>
+→ setzt den Nice Wert des Prozesse die von dieser Unit gestartet werden<br>
+<a href="../../Prozessverwaltung/Nice_Werte_kontrollieren.html" title="Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren">Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren</a>
+<div style='padding-left: 30pt'>
+<br>
+<em>UMask=7777</em><br>
+→ setzen der umask der von diesem Prozess erzeugten Dateien<br>
+→ Standard ist 0022<br>
+</div>
+<a href="../../Dateien_verwalten/Zugriffsrechte/Umask.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask">Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask</a>
+
+<div style='padding-left: 30pt'>
+<em>Environment=Var1=&lt;wert&gt; Var2=&lt;wer2&gt; ...</em><br>
+→ setzend er Umgebungsvariablen den dieser Prozess benutzen soll<br>
+→ duch Leerzeichen getrennte Liste von Variablen und ihren Werten<br>
+→ wird einer Variablen kein Wert zugeordnet, so wird die Variable als Leer initialisiert<br>
+<br>
+<em>EnvironmnetFile=</em>&lt;PathToFile&gt;<br>
+→ lesen der Umgebungsvariablen aus einer Textdatei<br>
+→ leere Zeilen oder Zeilen die mit # beginnen werden nicht vom Parser gelesen und zur Kommentierung genutzt werden<br>
+<br>
+<em>StandardInput=</em><br>
+→ konfigurieren des Standardeingabe Kanals der Unit<br>
+→ Standard ist <strong>null</strong><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>null </strong>→ StdIN wird mit /dev/null verbunden<br>
+<strong>tty </strong>→ StdIn wird mit dem tty verbunden wie er <em>TTYPath </em>konfiguriert wurde, der ausgeführte Prozess wird der kontorllierende Prozess dieses Terminals<br>
+<strong>tty-force</strong> → wie tty, es wird jedoch die Kontrolle des Prozesse an diesen TTY erzwungen, selbst dann wenn der Prozess einen andern kontrollierenden Prozess überschreibt<br>
+<strong>tty-fail </strong>→ wie tty, wenn jedoch ein anderer Prozess diesen TTY bereits kontrolliert, schlägt dieser Prozess fehl<br>
+<strong>socket </strong>→ nur in Socketaktivierung gültig, der Prozess wird an einen konfigurierten Socket gebunden<br>
+<br>
+</div>
+<div style='padding-left: 30pt'>
+<em>StandardOutput=</em><br>
+→ kofnigurieren des Standardausgabekanals der Unit<br>
+→ Standard ist <strong>syslog</strong><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>inherit </strong>→ StdOut ist das gleiche wie StdIn<br>
+<strong>null </strong>→ Stdout wird mit /dev/null verbunden<br>
+<strong>tty </strong>→ StdOut wird mit dem tty verbunden wie er in TTYPath konfiguriert wurde<br>
+<strong>syslog </strong>→ StdtOut wird mit dem syslog() daemon verbunden<br>
+<strong>kmsg </strong>→ StdOut wird mit dem Kernel Ring Buffer verbuden der mit <strong>dmesg </strong>abgefragt werden kann<br>
+<strong>syslog+console </strong>→ An den syslog Daemon und die Standard Fehlerkonsole senden<br>
+<strong>kmsg+console</strong> → An den Kernel Ring Buffer und die Standard Fehlerkonsole senden</div>
+
+<a href="../../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a>
+
+<div style='padding-left: 30pt'>
+<em>StandardError=</em><br>
+→ nimmt die gleichen Werte wie <em>StandardOutput </em>auf<br>
+→ <strong>inherit</strong> verwenden den gleichen Kanal wie <em>StandardOutput</em><br>
+<br>
+<em>TTYPath=&lt;/dev/ttyX|/dev/console&gt;</em><br>
+→ Pfad zum TTY<br>
+→ Standard ist /dev/console<br>
+<br>
+<em>SystlogIdentifier=</em><br>
+→ Spezifiziert den von <strong>syslog() </strong>verwendetden Identifier<br>
+→ Nur Sinnvoll mit der entrpchenden <em>StandardOutput </em>Konfiguration<br>
+→ Standard ist der Name des auszuführenden Prozeses<br>
+<br>
+<em>SyslogFacility=</em><strong>kern, user, mail, daemon, auth, syslog, lpr, news, uucp, cron, authpriv, ftp, local0, local1, local2, local3, local4, local5, local6 or local7</strong></div>
+
+<div style='padding-left: 30pt'>
+→ Spezifiziert die von <strong>syslog() </strong>verwendet Facility<br>
+<br>
+<em>SyslogLevel=</em><strong>emerg, alert, crit, err, warning, notice, info, debug</strong><br>
+→ Spezifiziert den Loglevel<br>
+→ Standard ist <strong>info</strong><br>
+</div>
+<a href="../etc/syslog.conf.html" title="FHS:etc:syslog.conf">FHS:etc:syslog.conf</a>
+
+<div style='padding-left: 30pt'>
+<em>SyslogPrefix=</em><strong>true|false</strong><br>
+→ wenn auf <strong>true </strong>gesetzt, wird der Prefix der in SyslogLevel spezifiziert wurde ebenfalls an <strong>kmesg </strong>oder <strong>syslog </strong>weitergegeben<br>
+<br>
+<em>TCPWrapName=</em><br>
+→ Name des Socket aktivierten Service durch TCP Wrapper<br>
+→ dieser Name wird vom <strong>tcpd </strong>genutzt um die Zugriffsberechtigungen der aktuellen Verbindung zu überprüfen</div>
+
+<div style='padding-left: 30pt'>
+<strong>(missing link tcpd)</strong><br>
+<br>
+</div>
+<em>       LimitCPU=, LimitFSIZE=, LimitDATA=, LimitSTACK=, LimitCORE=, LimitRSS=, LimitNOFILE=, LimitAS=, LimitNPROC=, LimitMEMLOCK=, LimitLOCKS=,</em>
+<em>       LimitSIGPENDING=, LimitMSGQUEUE=, LimitNICE=, LimitRTPRIO=, LimitRTTIME=</em>
+<div style='padding-left: 30pt'>
+→ Resourcen Limits die durch Cgroups gesteuert werden<br>
+<br>
+<em>ControlGroup=</em><strong>&lt;subsystem&gt;:/&lt;Pfad innerhalb der Hierarchie zur Cgroup&gt;</strong><br>
+→ festlegen der Cgroup die dieser Prozess zugehörig sein soll<br>
+<br>
+<em>ControlGroupModify=</em><strong>true|false</strong><br>
+→ falls <strong>true </strong>ist der unter <em>User</em> festgelegte Nutzer in der Lage neue SubCgroups dieser Cgroup zu erstellen und neue Prozesse zu diesen hinzuzufügen<br>
+→ dieses Verhalten implementiert <code>cgcreate -a </code><br>
+<br>
+<em>ControlGroupAttribute= &lt;Controler&gt; &lt;Wert&gt;</em><br>
+→ siehe </div>
+<a href="../../Prozessverwaltung/Cgroups/Cgroups_Subsysteme.html" title="Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme">Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme</a>
+<div style='padding-left: 30pt'>
+→ setzen von Attributen für ein Subsystem<br>
+→ Kann mehrfach Konfiguriert werden<br>
+</div>
+
+<em>Beispiel:</em>
+<code>ControlGroupAttribute=cpu.shares 512</code><br>
+<br>
+BlockIOReadBandwidth=, BlockIOWriteBandwidth=,BlockIOWeight=,DeviceAllow=, DeviceDeny=,MemoryLimit=, MemorySoftLimit=,CPUShares=<br>
+<br>
+<a href="../../Prozessverwaltung/Cgroups.html" title="Linux Wissen:Prozessverwaltung:Cgroups">Linux Wissen:Prozessverwaltung:Cgroups</a>
+
+<div style='padding-left: 30pt'>
+<em>       ReadWriteDirectories=, ReadOnlyDirectories=, InaccessibleDirectories=</em>&lt;PATH&gt;<br>
+</div>
+<div style='padding-left: 60pt'>
+→ setzen weiterer Restriktionen <br>
+→ als Argument wird ein absoluter Pfad gegesetzt für die entsprechende Restriktionen gelten<br>
+→ <u>Hinweis: Für Unterverzeichnisse müssen entrpchend eigene Richtilinien gesetzt werden, / ist nicht erlaubt</u><br>
+<br>
+<em>PrivateTmp=</em><strong>true|false</strong><br>
+→ falls auf <strong>true </strong>gesetzt, wird dieser Prozess temporäre Dateien in ein eigenes seperat eingehängtes temporäres Verzeichnis ablegen<br>
+<br>
+<em>PrivateNetwrok=</em><strong>true|false</strong><br>
+<strong>→ </strong>falls auf <strong>true </strong>wird ausser das lo device kein weiteres NIC bereit sein<br>
+<br>
+<em>MountFlags</em>=<strong>shared|slave|private</strong><br>
+<strong>shared </strong>→ weitere Spiegel des Mountpunktes sind erlaubt<br>
+<strong>slave</strong> → kann nur an den Master propagieren<br>
+<strong>private </strong>→ kann nicht proagieren</div>
+
+
+<strong>man 5 systemd.exec</strong>
 
 <em>Beispiel:</em><br>
 Das Beispiel für den abrtd<br>
@@ -400,6 +599,22 @@ Type=forking
 WantedBy=multi-user.target
 </pre>
 ++<br>
+<br>
+Beispiel für einen Prozess in einem  chroot:<br>
+++<br>
+<pre>
+[Unit]
+Description=A chroot()ed Service
+
+[Service]
+RootDirectory=/srv/chroot/foobar
+ExecStartPre=/usr/local/bin/setup-foobar-chroot.sh
+ExecStart=/usr/bin/foobard
+RootDirectoryStartOnly=yes
+</pre>
+    <code>InaccessibleDirectories=/home</code><br>
+++<br>
+<a href="../../Booten/Dienste/systemd/systemd-nspawn.html" title="Linux Wissen:Booten:Dienste:systemd:systemd-nspawn">Linux Wissen:Booten:Dienste:systemd:systemd-nspawn</a>
 
 
 			<!-- End wiki content -->

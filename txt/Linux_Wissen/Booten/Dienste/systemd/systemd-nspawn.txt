@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-09T16:34:37+01:00
+
+====== systemd-nspawn ======
+Created Donnerstag 09 Februar 2012
+
+* booten eines kleinen Dateicontainers auf dem Host System
+* zum debuggen und chrooten eines Prozesses
+* nutzt Container mit eigener PID und Dateisystem-ID
+* ermöglicht das Wechseln in ein anderes System 
+* schränkt die Kommuniaktion des Kernels auf rw ein (/sys /proc/sys)
+* einschränken der Netzwerkschnittstellen auf dei gelauscht werden kann
+* virtualiserit PID 1
+
+
+**systemctl-nspwan <Befehl>**
+**-D <PATH> → **Verzeichnis, dass als / für diesen Conatainer dienen soll 
+**-u <User> → **den Befehl als <User> ausführen, das Heimatverzeichnis im Container erstellen und in dieses Wechseln
+**--private-network **→ ausschalten der Netzwerkkommunikation in diesem Container
+
+
+__Beispiele:__
+Debian Container unter Fedora booten:
+'''
+yum install debootstrap
+debootstrap --arch=amd64 unstable debian-tree/
+systemd-nspawn -D debian-tree/
+'''
+
+Init 1 im Debian Container ausführen:
+''systemd-nspawn -D debian-tree/ /sbin/init''

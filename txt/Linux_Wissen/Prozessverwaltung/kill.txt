@@ -10,7 +10,7 @@ Created Donnerstag 21 April 2011
 Hinweis: kill -l listet alle die Signale auf über die Linux mit Prozessen kommunizieren kann
 
 //<SIGNAL>	<SIGNR>	Beschreibung//
-SIGHUP		1			hangup: beende alle Prozesse die Kindprozesse der aktuellen Shell sind
+SIGHUP		1			hangup: beende alle Prozesse die Kindprozesse der aktuellen Shell sindi,neustarten eines Daemons
 SIGINT		2			interrupt: <Strg+c> den Prozess unterbrechen
 SIGKILL		9			kill: beende Prozess ohne Rückfrage, offene Dateien werden nicht geschlossen
 SIGTREM		15			terminate: beende Prozess,offene Dateien werden vorher geschlosseen

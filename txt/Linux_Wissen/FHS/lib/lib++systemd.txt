@@ -6,6 +6,12 @@ Creation-Date: 2012-02-06T16:27:59+01:00
 Created Montag 06 Februar 2012
 
 * systemd.service Unit
+* __nach dem Hinzufügen einer Unit muss __**systemctl daemon-reload **__ausgeführt werden __
+* Unit Files in //*/etc/systemd/system// werden vor //*/lib/systemd/system// gelesen
+
+=== !ACHTUNG!:  ===
+__Bearbeitet oder selber erstellte Units werden nach */etc/systemd/system gelegt__
+
 ++
 '''
 # die unit Sektion enthält alle information die unabhäng vom Typ der Unit sind
@@ -88,6 +94,8 @@ Conflicts=boo.service oops.service
 	→ Clients die auf das Ende eines Jobs warten die von einer dieser Units beendet wurde
 	→ nach **N** Sekunden wird die Unit mit einem Timeout Fehler fehlschlagen
 
+
+== Service Unit ==
 //[Service] //→ Direktiven die nur von Units verwendet werden können, die einen Dienst anbieten
 	//Type=//
 	→ setzen des Typs der Service Unit
@@ -131,7 +139,8 @@ Conflicts=boo.service oops.service
 	
 	//ExecStart=//<Pfad> <Argumente> <Optionen>
 	→ der absolute Pfad inklusive Optionen und Argumente zum Starten des Prozess
-	
+	→ falls im chroot, muss hier der absolute Pfad aus sicht des chroot angegeben werden	
+
 	//ExecStartPre|ExecStartPost=//<Pfad> <Argumente> <Optionen>;...
 	→ zusätzliche Befehle die vor bzw. nach dem Start des Hauptprogramms gestartet werden sollen
 	→ mehrere Befehle in einer Reihe sind möglich
@@ -180,13 +189,30 @@ Conflicts=boo.service oops.service
 	//SendSIGKILL=yes|no//
 	→ spetifiziert ob ein SIGKILL Signal nach //TimeoutSec //gesendet werden soll
 	
+	//NotifyAccess//
+	→ konfiguriert den Zugang des Services zum Socket der für die Übermittlung des Status zuständig ist (Status Notification Socket **sd_notfiy()**)
+		**none **→ Status Updates des Daemon werden zurückgewiesen
+		**main **→ Nur Statusupdates vom Hauptprozess des Service werden angenommen
+		**all **→ Alle Statusupdates der Service  Cgroup werden akzeptiert 
+		
+
+== Setup eines Chroot ==
+	//RootDirectory=PATH//
+	→ Pfad zum / des chroot
+	
+	//RootDirectoryStartOnly=//**no|yes**
+	**→ **wenn auf **yes **gestezt kann der Prozess nur im neuen Datenbaum unter //RootDirectory //existieren
+
+	InaccessibleDirectories=
+	→ implizites setzen der Verzeichnisse, die eine Unit niemals benutzen darf
+
 [[Linux Wissen:Prozessverwaltung:kill]]
 [[Linux Wissen:Prozessverwaltung:Cgroups]]
 
 [Install]
 → Wann wird dieser Dienst gestartet
 → Unter welchen Umständen wird dieser Dienst gestartet
-→ welche Umstände müssen erfüllt sein, damit dieser Dienst startet
+→ welche Trigger starten diesen Diensts
 	
 	//WantedBy=//
 	→ wird vom Befehl **systemctl enable <my.service> **gelesen
@@ -202,6 +228,138 @@ Conflicts=boo.service oops.service
 **man 5 systemd.unit  systemd.service systemd.socket systemd.device systemd.mount systemd.automount**
 **       systemd.swap systemd.target systemd.path systemd.timer systemd.snapshot**
 
+
+=== Konfigurieren der Umgebung in der eine Unit aktiviert wird ===
+→ diese Konfigurationsoptionen können auf //.service .mount .swap //und //.swap// Units angewandt werden
+	//WorkingDirectory=//
+	→ absoluter Pfad, beschreibt Arbeitsverzeichnis der auszuführenden Prozesse
+	
+	//RootDirectory=//
+	→ absoluter Pfad zum Verzeichnis auf dem der **chroot()** Systemcall durchgeführt wird
+	→ __Achtung: Es ist sicherzistellen, dass alle benötigen Dateien können vom ausführenden Hauptprozess gesehen werden__
+	
+//       User=//<User>//; Group=<//Group>
+	→ setzen der Nutzer bzw der  Gruppe
+	→ Name oder GUD|UID
+	
+	//SupplementaryGroups=//<Gruppe1>,...
+	→ setzen der zusätzlichen Gruppen, die ein Prozess angehören soll
+	→ <Gruppe> kann entweder ein Gruppenname oder die GID sein
+[[Linux Wissen:Benutzer und Gruppen]]
+
+//Nice=//<-20<=N<=19>
+→ setzt den Nice Wert des Prozesse die von dieser Unit gestartet werden
+[[Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren]]
+	
+	//UMask=7777//
+	→ setzen der umask der von diesem Prozess erzeugten Dateien
+	→ Standard ist 0022
+[[Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask]]
+
+	//Environment=Var1=<wert> Var2=<wer2> ...//
+	→ setzend er Umgebungsvariablen den dieser Prozess benutzen soll
+	→ duch Leerzeichen getrennte Liste von Variablen und ihren Werten
+	→ wird einer Variablen kein Wert zugeordnet, so wird die Variable als Leer initialisiert
+	
+	//EnvironmnetFile=//<PathToFile>
+	→ lesen der Umgebungsvariablen aus einer Textdatei
+	→ leere Zeilen oder Zeilen die mit # beginnen werden nicht vom Parser gelesen und zur Kommentierung genutzt werden
+	
+	//StandardInput=//
+	→ konfigurieren des Standardeingabe Kanals der Unit
+	→ Standard ist **null**
+		**null **→ StdIN wird mit /dev/null verbunden
+		**tty **→ StdIn wird mit dem tty verbunden wie er //TTYPath //konfiguriert wurde, der ausgeführte Prozess wird der kontorllierende Prozess dieses Terminals
+		**tty-force** → wie tty, es wird jedoch die Kontrolle des Prozesse an diesen TTY erzwungen, selbst dann wenn der Prozess einen andern kontrollierenden Prozess überschreibt
+		**tty-fail **→ wie tty, wenn jedoch ein anderer Prozess diesen TTY bereits kontrolliert, schlägt dieser Prozess fehl
+		**socket **→ nur in Socketaktivierung gültig, der Prozess wird an einen konfigurierten Socket gebunden
+		
+	//StandardOutput=//
+	→ kofnigurieren des Standardausgabekanals der Unit
+	→ Standard ist **syslog**
+		**inherit **→ StdOut ist das gleiche wie StdIn
+		**null **→ Stdout wird mit /dev/null verbunden
+		**tty **→ StdOut wird mit dem tty verbunden wie er in TTYPath konfiguriert wurde
+		**syslog **→ StdtOut wird mit dem syslog() daemon verbunden
+		**kmsg **→ StdOut wird mit dem Kernel Ring Buffer verbuden der mit **dmesg **abgefragt werden kann
+		**syslog+console **→ An den syslog Daemon und die Standard Fehlerkonsole senden
+		**kmsg+console** → An den Kernel Ring Buffer und die Standard Fehlerkonsole senden
+
+[[Linux Wissen:Systemprotokollierung]]
+
+	//StandardError=//
+	→ nimmt die gleichen Werte wie //StandardOutput //auf
+	→ **inherit** verwenden den gleichen Kanal wie //StandardOutput//
+	
+	//TTYPath=</dev/ttyX|/dev/console>//
+	→ Pfad zum TTY
+	→ Standard ist /dev/console
+	
+	//SystlogIdentifier=//
+	→ Spezifiziert den von **syslog() **verwendetden Identifier
+	→ Nur Sinnvoll mit der entrpchenden //StandardOutput //Konfiguration
+	→ Standard ist der Name des auszuführenden Prozeses
+	
+	//SyslogFacility=//**kern, user, mail, daemon, auth, syslog, lpr, news, uucp, cron, authpriv, ftp, local0, local1, local2, local3, local4, local5, local6 or local7**
+
+	→ Spezifiziert die von **syslog() **verwendet Facility
+	
+	//SyslogLevel=//**emerg, alert, crit, err, warning, notice, info, debug**
+	→ Spezifiziert den Loglevel
+	→ Standard ist **info**
+[[FHS:etc:syslog.conf]]
+
+	//SyslogPrefix=//**true|false**
+	→ wenn auf **true **gesetzt, wird der Prefix der in SyslogLevel spezifiziert wurde ebenfalls an **kmesg **oder **syslog **weitergegeben
+	
+	//TCPWrapName=//
+	→ Name des Socket aktivierten Service durch TCP Wrapper
+	→ dieser Name wird vom **tcpd **genutzt um die Zugriffsberechtigungen der aktuellen Verbindung zu überprüfen
+
+	**(missing link tcpd)**
+	
+//       LimitCPU=, LimitFSIZE=, LimitDATA=, LimitSTACK=, LimitCORE=, LimitRSS=, LimitNOFILE=, LimitAS=, LimitNPROC=, LimitMEMLOCK=, LimitLOCKS=,//
+//       LimitSIGPENDING=, LimitMSGQUEUE=, LimitNICE=, LimitRTPRIO=, LimitRTTIME=//
+	→ Resourcen Limits die durch Cgroups gesteuert werden
+	
+	//ControlGroup=//**<subsystem>:/<Pfad innerhalb der Hierarchie zur Cgroup>**
+	→ festlegen der Cgroup die dieser Prozess zugehörig sein soll
+	
+	//ControlGroupModify=//**true|false**
+	→ falls **true **ist der unter //User// festgelegte Nutzer in der Lage neue SubCgroups dieser Cgroup zu erstellen und neue Prozesse zu diesen hinzuzufügen
+	→ dieses Verhalten implementiert ''cgcreate -a ''
+	
+	//ControlGroupAttribute= <Controler> <Wert>//
+	→ siehe 
+[[Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme]]
+	→ setzen von Attributen für ein Subsystem
+	→ Kann mehrfach Konfiguriert werden
+
+//Beispiel://
+''ControlGroupAttribute=cpu.shares 512''
+
+BlockIOReadBandwidth=, BlockIOWriteBandwidth=,BlockIOWeight=,DeviceAllow=, DeviceDeny=,MemoryLimit=, MemorySoftLimit=,CPUShares=
+
+[[Linux Wissen:Prozessverwaltung:Cgroups]]
+
+	//       ReadWriteDirectories=, ReadOnlyDirectories=, InaccessibleDirectories=//<PATH>
+		→ setzen weiterer Restriktionen 
+		→ als Argument wird ein absoluter Pfad gegesetzt für die entsprechende Restriktionen gelten
+		→ __Hinweis: Für Unterverzeichnisse müssen entrpchend eigene Richtilinien gesetzt werden, / ist nicht erlaubt__
+		
+		//PrivateTmp=//**true|false**
+		→ falls auf **true **gesetzt, wird dieser Prozess temporäre Dateien in ein eigenes seperat eingehängtes temporäres Verzeichnis ablegen
+		
+		//PrivateNetwrok=//**true|false**
+		**→ **falls auf **true **wird ausser das lo device kein weiteres NIC bereit sein
+		
+		//MountFlags//=**shared|slave|private**
+		**shared **→ weitere Spiegel des Mountpunktes sind erlaubt
+		**slave** → kann nur an den Master propagieren
+		**private **→ kann nicht proagieren
+
+
+**man 5 systemd.exec**
 
 //Beispiel://
 Das Beispiel für den abrtd
@@ -219,3 +377,19 @@ Type=forking
 WantedBy=multi-user.target
 '''
 ++
+
+Beispiel für einen Prozess in einem  chroot:
+++
+'''
+[Unit]
+Description=A chroot()ed Service
+
+[Service]
+RootDirectory=/srv/chroot/foobar
+ExecStartPre=/usr/local/bin/setup-foobar-chroot.sh
+ExecStart=/usr/bin/foobard
+RootDirectoryStartOnly=yes
+'''
+    ''InaccessibleDirectories=/home''
+++
+[[Linux Wissen:Booten:Dienste:systemd:systemd-nspawn]]

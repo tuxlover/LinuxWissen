@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-09T16:53:50+01:00
+
+====== systemd-analize ======
+Created Donnerstag 09 Februar 2012
+
+* Analysieren des systemd Daemon verhaltens
+
+**systemd-analize time|blame|plot**
+**time** → zeigt die benötigte Zeit vom Initilisieren bis zum volltändigen Systemstart
+**blame → **zeigt absteigende sortiert die Zeit die eine Unit brauchte um ihre Transaktion während des Bootens zu beenden
+**plot** → kann eine grafische Darstellung des Bootprozess ausgeben
+
+__TIPP: systemd-analize plot > boot.png erstellt ein grafischen Plot des Bootvorganges.__

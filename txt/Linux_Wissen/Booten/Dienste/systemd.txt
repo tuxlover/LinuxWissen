@@ -7,12 +7,14 @@ Created Donnerstag 12 Januar 2012
 
 * System- und Servicemanager für Linux
 * Parallelisierung von mehreren Diensten beim Booten
+* Starten von Diensten wenn sie benötigt werden
+* unnötige Dienste werden nicht gestartet
 * Nutzt DBUS - und Socketaktivierung
 * rückwärtskompatibel zu sys-V-init
 * rückwärtskompatibel mit LSB Init Scripts
 * verwaltet mounts und automounts (au)
 * kann Cgroups verwalten (Seit Kernel 2.6.35)
-* kann zum Abfragen von Informationen auch vom Nutzer ausgeführt werden (Vorteil oder Nachteil)
+* kann zum Abfragen von Informationen auch vom Nutzer ausgeführt werden
 
 === Units ===
 * Konfigurationsdatei die einen entsprechenden Dienst beschreibt
@@ -27,14 +29,66 @@ Created Donnerstag 12 Januar 2012
 
 
 === Systemdienste steuern ===
-**systemctl [start|stop|reload|restart| enable|disable show  <Unit> ]  **
+**systemctl [start|stop|kill|reload|restart| enable|disable show  <Unit> ]  | daemon-reload**
 → zum anzeigen und steuern von System Services
 → wenn ohne weitere Parmeter verwendet, wird so werden alle dienste angezeigt vom System versucht wurden zu starten
 **--no-pager **→ die Ausgabe nicht nach less pipen 
-**<Starten und Veralten von Diensten>**
+**--full **→ vollständige Ausgabe nach StdOut, nicht auf 80 Zeichen beschränken
+
+== <Statusinformationen anzeigen> ==
+**show <Unit>**
+→ detallierte Informationen zu einer Unit zeigen 
+
+== <Starten von Systemdiensten> ==
+**start <Unit>**
+→ diese Unit aktivieren
+→ dies entspricht dem manuellen Starten des Dienstes bei .service Units
+
+**enable <Unit>**
+→ dauerhaftes aktivieren der Unit
+→ dies entspricht dem **chkconfig add **bzw. **chkconfig on **Befehl
+[[chkconfig]]
+
+**reload **
+→ neu starten einer Unit
+→ dies entspricht dem neu laden des Daemons bei dem auch seine Konfiguration neu gelesen wird bei .service Units
+
+== <Anhalten von Systemdiensten> ==
+**stop <Unit> **
+→ diese Unit deaktiveren
+→ dies entpricht dem manuellen Anhalten des Dienstes bei .service Units
+
+**disable <Unit>**
+→ dauerhaftes deaktivieren einer Unit
+→ die entspricht dem **chkcontrol del  **bzw. **chkcontrol off **Befehel
+→ der Symlink zum Starten dieser Unit wird entsprechend entfernt und die Unit nicht mehr gestartet
+
+__TRICK: Den Service dauerhaft deaktiveren und nicht mehr reaktivierbar machen__
+''ln -s /dev/null /etc/systemd/system/foo.service''
+
+//Beispiel://
+deaktivieren des Dienstes mysipd
+''systemctl disable mysipd.service''
+
+== <Senden von Signalen> ==
+**kill <Name>.service **
+→ senden von SIGTERM an die entsprechende Service Unit
+→ senden von SIGTERM an den Hauptprozess und all seiner Kindprozesse
+→ soweit dies für diese Unit erlaubt ist, siehe [[Linux Wissen:FHS:lib:lib++systemd]]
+
+**kill -s <Signal> <Name>.service**
+→ senden eines anderen Signals als SIGTERM 
+[[Linux Wissen:Prozessverwaltung:kill]]
+
+**--kill-who=<main|control|all>**
+→ Signal an den Hauptprozess, den kontrolliereenden Prozess oder allen Prozessen senden
+
+//Beispiel://
+Neustarten des Apache auf die "harte" Tour
+''systemctl kill -s HUP --kill-who=main apache.service''
 
 
-**<Anzeigen und Filtern von Diensten>**
+== <Anzeigen und Filtern von Diensten> ==
 → ohne weitere Arguemente wird systemctl die Units (systemd Units und Sys-V-Initscripte) und ihren Status anzeigen, als Pager wird less verwendet
 → es wird angezeigt ob eine Unit erfolgreich gestartet wurde oder mit einem Fehler beendet wurde
 **--all **→ Anzeigen aller vorhandenen Units im System und irhes satusses
@@ -42,6 +96,11 @@ Created Donnerstag 12 Januar 2012
 **systemctl status <Unit>**
 → Anzeigen von detailierten Statusinformationen zu einer Unit
 → Gibt Laufzeitinformationen und detaillierte Fehlerinformationen aus
+
+== <Neu laden des Daemons> ==
+**systemctl daemon-reload**
+→ veranlassen des Daemons die Unit Files neu einzulesen
+→ bei veränderten Unit Files werden diese neugestartet
 
 __TRICK:__
 Anzeigen ob ein Subsystem eine Unit gemounted hat:
@@ -56,4 +115,5 @@ Anzeigen ob ein Subsystem eine Unit gemounted hat:
 
 
 __ACHTUNG: Man verwechsle systemctl nicht mit sysctl.__
-
+[[+systemd-nspawn]]
+[[+systemd-analize]]
