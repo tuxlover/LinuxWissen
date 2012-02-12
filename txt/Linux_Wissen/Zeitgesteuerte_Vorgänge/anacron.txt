@@ -12,7 +12,7 @@ Created Sonntag 06 November 2011
 **anacron **
 **-t <anacrontab> **→ diese Datei als Anacrontab einlesen
 **-f **→ sofort alle Befehle ausführe, Zeitstempel werden nicht berücksichtigt
-**-u **→ aktualisieren der Zeitstempel in //*/var/spool/anacron//
+**-u **→ aktualisieren der Zeitstempel in ///var/spool/anacron//
 **-s **→ Jobs nacheinander ausführen
 **-T **→ die Konfigurationsdatei testen
 

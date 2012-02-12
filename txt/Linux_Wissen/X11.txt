@@ -46,7 +46,7 @@ __Beispiel: (1024*768*24/8.388.608)=2,25 MB Pro X Anwendung __
 ***~/.xsessions** → Konfigurationsdatei für Nutzerspezifische Einstellungen beim Starten einer Client-Server Session 
 **~/.xsession-errors **→ Fehlerlog für die X-Session des aktuellen Nutzers
 
-=== Starten der grafischen Oberfläche  ===
+=== Starten der grafischen Oberfläche ===
 * das Zusammenspiel zwischen X-Server und X-Clients bezeichnet eine X-Session
 Bild: Starten einer X-Session
 {{../../X-starten.png}}
@@ -58,16 +58,16 @@ Bild: Starten einer X-Session
 * Einstellungen die der X-Server speichert und von diesem bereitgestellt werden
 * werden bei Bedarf vom X-Clients abgeholt und ausgewertet
 [[Linux Wissen:X11:xrdb]]
-* *** /etc/X11/apps-default/<Name> **→ stellt X Resourcen für das Programm <Name> zur Verfügung
+* ///etc/X11/apps-default/<Name>// → stellt X Resourcen für das Programm <Name> zur Verfügung
 							        → Systemweite Einstellungen für diese Resource festlegen
 
 
 === Konfigurieren der Tatstatur ===
-* ***/etc/X11/Xmodmap |*~/.Xmodmap **→ Konfigurieren des Tastaurlayouts für den X-Server
+* ///etc/X11/Xmodmap |~/.Xmodmap// → Konfigurieren des Tastaurlayouts für den X-Server
 
 === Konfigurieren von Fonts ===
 * Setup erfolgt entweder über die Konfigurationsdatei in der __Section "Files"__ oder durch die Konfigruation eines zentralen Font-Servers
-* Verezichnisse: //*/usr/share/fonts, */usr/share/X11/fonts, */opt/fonts, */usr/local/fonts//
+* Verezichnisse: ///usr/share/fonts, /usr/share/X11/fonts, /opt/fonts, /usr/local/fonts//
 * Endungen: .pfa, .pfb
 [[Linux Wissen:X11:xset]]
 

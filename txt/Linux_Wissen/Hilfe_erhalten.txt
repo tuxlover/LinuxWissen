@@ -20,4 +20,4 @@ Created Freitag 15 April 2011
 
 http://www.tldp.org
 
-*/usr/share/doc/
+///usr/share/doc///

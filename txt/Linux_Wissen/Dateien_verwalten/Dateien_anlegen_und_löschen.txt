@@ -16,7 +16,7 @@ Created Samstag 16 April 2011
 **-v **→ verbose
 __Hinweis: rmdir löscht nur leere Verzeichnisse. Verzeichnisse mit Inhalt müssen mir rm -r <DIR> gelöscht __
 
-**mktemp <Datei>XXXXX **→ erstelle eine temporäre Datei oder ein Verzeichnis in */tmp mit zufälligem Namen
+**mktemp <Datei>XXXXX **→ erstelle eine temporäre Datei oder ein Verzeichnis in ///tmp// mit zufälligem Namen
                                               → wobei die X eine Zufallsschablone ist
 **-d **→ ein Verzeichnis erstellen
 **-q **→ Quiete

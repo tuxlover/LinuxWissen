@@ -101,11 +101,13 @@ Created Donnerstag 08 Dezember 2011<br>
 <p>
 <ul>
 <li>erschwert es Root-Zugriff auf dem System zu erlangen</li>
-<li>Für Verzeichnisse auf die jeder Nutzer zugreifen darf, wie zum Beispiel */tmp kann man folgende Optionen verrwenden in </li>
+<li>Für Verzeichnisse auf die jeder Nutzer zugreifen darf, wie zum Beispiel /<em>tmp</em> kann man folgende Optionen verrwenden in </li>
 </ul>
-*/etc/fstab <a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a><br>
+/<em>etc/fstab</em> (<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a>)<br>
+++<br>
 <code>/dev/system/tmp      /tmp                 ext4       acl,user_xattr,nodev,noexc,nosuid        1 2</code><br>
 <code>/dev/system/home     /home                ext4       acl,user_xattr,nosuid,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 1 2</code><br>
+++<br>
 </p>
 
 <h2>Aufspüren von SUID und SGID Shellscripten</h2>

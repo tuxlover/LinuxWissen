@@ -106,9 +106,9 @@ Created Dienstag 19 April 2011<br>
 <strong>-s &lt;Login Shell&gt;</strong><br>
 <strong>-u &lt;UID&gt;</strong><br>
 <strong>-o </strong>→ in Zusammenhang mit mit -u, legt UID auch an, wenn UID schon vergeben ist<br>
-<strong>-m </strong>→ legt das Heimatverzeichnis des Nutzers an und kopiert Dateien aus *<strong>/etc/skel</strong><br>
+<strong>-m </strong>→ legt das Heimatverzeichnis des Nutzers an und kopiert Dateien aus /<em>etc/skel</em><br>
 <a href="../FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
-<strong>-k </strong>→ nur in Zusammenhang mit -m, alternatives *<strong>/etc/skel </strong> <br>
+<strong>-k </strong>→ nur in Zusammenhang mit -m, alternatives /<em>etc/skel  </em><br>
 <strong>--show-defaults |-D </strong>→ anzeigen und manipulieren der Stanardwerte<br>
 </p>
   
@@ -165,38 +165,37 @@ Created Dienstag 19 April 2011<br>
 <p>
 <strong>passwd -l &lt;Nutzer&gt;</strong><br>
 <strong>chage -E &lt;Datum&gt; &lt;Nutzer&gt;</strong><br>
-editieren der */etc/shadow durch setzen eines ! vor dem Kennwort Hash<br>
-editieren der */etc/passwd durch setzen eines * anstelle eines x in der zweiten Spalte<br>
+editieren der /<em>etc/shadow</em> durch setzen eines ! vor dem Kennwort Hash<br>
+editieren der<em> /etc/passwd</em> durch setzen eines * anstelle eines x in der zweiten Spalte<br>
 </p>
 
 <h4>Zugang freigeben</h4>
 <p>
 <strong>passwd -u &lt;Nutzer&gt;</strong><br>
 <strong>chage -E -1 &lt;Nutzer&gt;</strong><br>
-editieren der */etc/shadow und entfernen des ! vor dem Kennwort Hash<br>
-editieren der */ect/passwd und setzen eines x statt eines * in der zweiten Spalte<br>
+editieren der<em> /etc/shadow</em> und entfernen des ! vor dem Kennwort Hash<br>
+editieren der<em> /ect/passwd</em> und setzen eines x statt eines * in der zweiten Spalte<br>
 </p>
 
 <h4>Kennwortänderung höchstens alle N Tage</h4>
 <p>
 <strong>passwd -m N &lt;Nutzer&gt; </strong><br>
 <strong>chage -m N &lt;Nutzer&gt;</strong><br>
-editieren der */etc/shadow in der 4. Spalte<br>
+editieren der<em> /etc/shadow</em> in der 4. Spalte<br>
 </p>
 
 <h4>Frist nach Ablauf des Kennwortes</h4>
 <p>
 <strong>chage -I N &lt;Nutzer&gt;</strong><br>
-editieren der */etc/shadow in der 7. Spalte<br>
+editieren der /<em>etc/shadow </em>in der 7. Spalte<br>
 </p>
 
 <h4>Warnfrist bevor Kennwort abläuft</h4>
 <p>
 <strong>passwd -w N &lt;Nutzer&gt; </strong><br>
 <strong>chage -W N &lt;Nutzer&gt;</strong><br>
-editieren der */etc/shadow in der 6.Spalte<br>
+editieren der /<em>etc/shadow</em> in der 6.Spalte<br>
 </p>
-
 
 
 			<!-- End wiki content -->

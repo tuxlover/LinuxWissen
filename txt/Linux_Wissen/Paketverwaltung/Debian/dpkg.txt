@@ -39,7 +39,7 @@ __Hinweis: MIt __**dpkg -l|grep ^rc.* **kann man sich Pakete anzeigen lassen von
 **dpkg-source -x <Paket>.dsc **→ der zu Paket passenden Quelldateien 
 
 **debsums <Paket> **→ Überprüfen der Intigrität eines installierten Paketes
-*/var/lib/dpkg/info 
+///var/lib/dpkg/info //
 [[Linux Wissen:FHS:var]]
 
 **dpkg-reconfigure <Paket> **→ eine neue Konfiguration für ein installiertes <Paket> erstellen

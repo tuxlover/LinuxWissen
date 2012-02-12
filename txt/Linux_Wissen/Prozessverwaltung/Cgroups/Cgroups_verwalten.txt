@@ -73,7 +73,7 @@ Gesetzte Parameter aus einer Cgroup in eine andere Cgroup kopieren
                              → alle Unterprozesse dieses Porzess sind nicht mehr länger dieser Cgroup zugehörig wie sein Vater
 
 === ACHTUNG: ===
-__Falls der __**cgred **__Daemon läuft, werden Zuweisungen von__ **cgclassify **__die Einstellungen in__ //*/etc/cgrules.conf //__überschreiben.__
+__Falls der __**cgred **__Daemon läuft, werden Zuweisungen von__ **cgclassify **__die Einstellungen in__ ///etc/cgrules.conf //__überschreiben.__
 [[Prozessverwaltung]]
 [[cgconfig und cgred]]
 [[Linux Wissen:FHS:etc:cgrules.conf]]

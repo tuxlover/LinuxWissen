@@ -114,11 +114,11 @@ Created Dienstag 19 April 2011<br>
 </p>
 
 <p>
-<strong>lokal				</strong>*/etc */bin */sbin */lib		*/dev */var/log<br>
+<strong>lokal				</strong>/<em>etc /bin /sbin /lib		/dev /var/log</em><br>
 </p>
 
 <p>
-<strong>remote			</strong>*/usr */opt				*/home */var/mail<br>
+<strong>remote			</strong>/<em>usr /opt				/home /var/mail</em><br>
 </p>
 
 
@@ -129,44 +129,44 @@ Created Dienstag 19 April 2011<br>
 
 <h2>Dateibaum</h2>
 <p>
-*<strong>/bin </strong>→ wichtige ausführbare Dateien, die jeder gültige Benutzer ausführen können muss<br>
+/<em>bin </em>→ wichtige ausführbare Dateien, die jeder gültige Benutzer ausführen können muss<br>
           → diese Programme sind wichtig um grundlegende Funktionalität bereitzustellen<br>
 </p>
 
 <p>
-*<strong>/boot </strong>→ Dateien die zum Booten des Systems benötigt werden<br>
+/<em>boot</em> → Dateien die zum Booten des Systems benötigt werden<br>
 </p>
 
 <p>
-*<strong>/sbin </strong> → wichtige ausführbare Dateien, die nur root ausführen können muss und darf<br>
+/<em>sbin</em>  → wichtige ausführbare Dateien, die nur root ausführen können muss und darf<br>
              → diese Programme sind wichtig um grundlegende Funktionalität bereitzustellen<br>
 </p>
 
 <p>
-*<strong>/lib </strong>→ Shared Libraries<br>
+/<em>lib</em> → Shared Libraries<br>
 <a href="./Bibliotheken.html" title="Linux Wissen:Bibliotheken">Linux Wissen:Bibliotheken</a><br>
 </p>
 
 <p>
-*<strong>/dev </strong>→ Gerätedateien<br>
+/<em>dev</em> → Gerätedateien<br>
 </p>
 
 <p>
-*<strong>/etc </strong>→ Konfigurationsdateien<br>
+/<em>etc</em> → Konfigurationsdateien<br>
 </p>
 
 <p>
-*<strong>/opt </strong>→ Software von einem Drittanbieter / nicht offiziell unterstützter Vendor<br>
+/<em>opt </em>→ Software von einem Drittanbieter / nicht offiziell unterstützter Vendor<br>
 </p>
 
 <p>
-*<strong>/usr </strong>→ Unix System resources<br>
+/<em>usr</em> → Unix System resources<br>
           → zusätzliche Dateien die die Basisfunktionalität erweitern<br>
           → zusätzliche System resourcen die jeder Nutzen soll<br>
 </p>
 
 <p>
-*<strong>/proc </strong>→ vom Kernel erzeugtes Dateisystem <br>
+/<em>proc </em>→ vom Kernel erzeugtes Dateisystem <br>
              → enthält Kerneleinstellungen die Onthefly verändert werden kann<br>
 <div style='padding-left: 30pt'>
      → enthält Informationen über das System die vom Kernel erkannt wurden<br>
@@ -174,15 +174,15 @@ Created Dienstag 19 April 2011<br>
 </p>
 	
 <p>
-*<strong>/sys </strong>→ Sicht auf die aktuelle Hardware aus Kernelsicht und Sterungsschicht<br>
+/<em>sys</em> → Sicht auf die aktuelle Hardware aus Kernelsicht und Sterungsschicht<br>
 </p>
 
 <p>
-*<strong>/var </strong>→ varible Dateien, die vom System benötigt oder von im System befindliche Programmen benötigt werden<br>
+/<em>var</em> → varible Dateien, die vom System benötigt oder von im System befindliche Programmen benötigt werden<br>
 </p>
 
 <p>
-*<strong>/tmp </strong>→ temporäre Datenbanken die von anderen Programmen benötigt werden<br>
+/<em>tmp</em> → temporäre Datenbanken die von anderen Programmen benötigt werden<br>
 <div style='padding-left: 30pt'>
    → Im Gegensatz zu Windows empfiehlt es sich nicht diese Dateien von Hand zu löschen<br>
    → KDE und Gnome schreiben wichtige Dateien hier hin<br>
@@ -190,7 +190,7 @@ Created Dienstag 19 April 2011<br>
 </p>
 	
 <p>
-*<strong>/srv </strong>→ Dateien die von verschiedenen Servern angeboten werden <br>
+<em>*/srv</em> → Dateien die von verschiedenen Servern angeboten werden <br>
 <div style='padding-left: 30pt'>
 <strong>/www </strong>→ Dateien des Apache<br>
 <strong>/tomcatX </strong>→ Dateien für den tomcat Servlet Container<br>
@@ -198,23 +198,23 @@ Created Dienstag 19 April 2011<br>
 </p>
 	
 <p>
-*<strong>/media </strong>→ wechselbare Medien (Cds Dvds Usbsticks) werden hier gemounted<br>
+/<em>media</em> → wechselbare Medien (Cds Dvds Usbsticks) werden hier gemounted<br>
 </p>
 
 <p>
-*<strong>/mnt </strong>→ Zugriff auf andere Datenträger zum Beispiel, zum Beispiel gemountete Platte|Partition<br>
+/<em>mnt</em> → Zugriff auf andere Datenträger zum Beispiel, zum Beispiel gemountete Platte|Partition<br>
 </p>
 
 <p>
-*<strong>/home </strong>→ Heimatverzeichnisse der Benutzer im System ausser root<br>
+/<em>home</em> → Heimatverzeichnisse der Benutzer im System ausser root<br>
 </p>
 
 <p>
-*<strong>/root </strong>→ Heimatverzeichnis von root   <a href="./root.html" title="Linux Wissen:root">Linux Wissen:root</a><br>
+/<em>root </em>→ Heimatverzeichnis von root   <a href="./root.html" title="Linux Wissen:root">Linux Wissen:root</a><br>
 </p>
 
 <p>
-*<strong>/lost+found </strong>→ Dateien die beim Wiederherstellen von <strong>e2fsck </strong>wiederhergestellt wurden<br>
+/<em>lost+found</em> → Dateien die beim Wiederherstellen von <strong>e2fsck </strong>wiederhergestellt wurden<br>
  <a href="./Partitionen_und_Dateisysteme/Dateisysteme.html" title="Linux Wissen:Partitionen und Dateisysteme:Dateisysteme">Linux Wissen:Partitionen und Dateisysteme:Dateisysteme</a><br>
 </p>
 

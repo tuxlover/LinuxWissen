@@ -21,7 +21,7 @@ options rotate
 //nameserver//
 → IP-Adrssen der einzelnen Namserver die vom Resolver befragt werden
 → Die Nameserver werden in der gelisteteten Reihenfolge befragt, maximal dürfen 3 eingetragen sein
-→ ist die Datei nicht vorhanden oder enthält keine Einträge wird der lokale Host //*/etc/hosts //befragt
+→ ist die Datei nicht vorhanden oder enthält keine Einträge wird der lokale Host ///etc/hosts //befragt
  [[hosts]]
 → eine reine Resolver Datei enthält keine Einträge die auf den lokalen Host verweist
 

@@ -10,19 +10,19 @@ Created Montag 25 April 2011
 * Insallierte Dateien können dank der Paketdatenbank besser verwaltet werden.
 * Alte Konfigurationsdateien bleiben bei der Deinistallation ohne Angabe sie zu löschen erhalten.
 
-*/usr/src/packages/SOURCES 
+///usr/src/packages/SOURCES //
 → Sourcecode, Patches und andere Dateien die als Rpm erstellt werden sollen
 
-*/usr/src/packages/SPECS 
+///usr/src/packages/SPECS //
 → Specfiles, erhalten die Bauanleitung für Rpms
 
-*/usr/src/packages/RPMS 
+///usr/src/packages/RPMS //
 → fertig erstellte Rpms werden hier erstellt
 
-*/usr/src/packages/BUILD
+///usr/src/packages/BUILD//
 → auspacken und übersetzen der Quellen
 
-*/usr/src/packages/BUILDROOT
+///usr/src/packages/BUILDROOT//
 → hier werden Programme und Dateien testweise installiert
 [[Linux Wissen:FHS:usr]]
 
@@ -48,7 +48,7 @@ Möglicherweise müssen Patches erstellt werden oder weitere Dateien erstellt we
 
 **(4) **Signieren des Paketes
 (4.1) **gpg --gen-key** erstllen eines Privaten Schlüssels **(missing link)**
-(4.2) anpassen der Datei */etc/rpm/macros:
+(4.2) anpassen der Datei ///etc/rpm/macros//:
 	++
 	       // %_signature gpg//
 	//        %_gpg_path <Pfad zum .gpg Verzeichnis>//

@@ -13,5 +13,5 @@ Andromeda
 '''
 
 +++		
-//*/etc/hosts //muss entsprechend konfiguriert sein
+///etc/hosts //muss entsprechend konfiguriert sein
 [[hosts]]

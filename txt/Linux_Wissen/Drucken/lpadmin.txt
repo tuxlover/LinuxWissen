@@ -6,7 +6,7 @@ Creation-Date: 2011-09-27T19:18:53+02:00
 Created Dienstag 27 September 2011
 
 * Administrationstool zum Konfigurieren des Drucker Servers auf der Kommandozeile
-* die entsprechenden Einträge könen auch in den Konfigurationsdateien //*/etc/cups/cupsd.conf, */etc/classes.conf //und //*/etc/cups/printers.conf//
+* die entsprechenden Einträge könen auch in den Konfigurationsdateien ///etc/cups/cupsd.conf, /etc/classes.conf //und ///etc/cups/printers.conf//
 [[Linux Wissen:FHS:etc:cups]]
 
 **lpadmin → **Admonistartion von Druckerklassen und Drucker

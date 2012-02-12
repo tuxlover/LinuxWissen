@@ -7,9 +7,9 @@ Created Sonntag 24 April 2011
 
 **modprobe <Modulname> **→ läd ein Kernelmodul mit dem Namen <Modulname>
 					           → Modulabhängigkeiten werden aufgelöst
-					           → Modulname muss unter */lib/modules/$(uname -r) liegen
+					           → Modulname muss unter ///lib/modules/$(uname -r)// liegen
 **-c **→ dumpen der aktuellen Konfiguration im Format der /etc/modprobe.conf 
-**-C **→ überschreiben der */etc/modprobe.d | */etc/modprobe.conf 
+**-C **→ überschreiben der// /etc/modprobe.d | /etc/modprobe.conf //
 [[Linux Wissen:FHS:etc:modprobe.conf]]
 **-n **→ nichts machen
 **-s **→ Fehler an den Syslog Daemon schicken und nicht nach StdErr
@@ -27,7 +27,7 @@ Created Sonntag 24 April 2011
 **-O <Datei> **→ schreiben eines Binary Blobs der anzeigt was in den Kernel geladen wurde
 **-q **→ Fehlermeldung unterdrücken
 **-s **→ Nachrichten an den Syslog Daemon übergeben
-**(missing link Syslog)**
+[[Linux Wissen:Systemprotokollierung]]
 
 //Beispiel://
 **insmod -n -m /lib/modules/$(uname -r)/module.ko**
@@ -46,7 +46,7 @@ MODPATH → Umgebungsvariable die den Pfad von Modulen des aktuellen Kernels ent
 → listen der Module die zum angegeben <Wildcard> passen
 → wird <Wildcard> nicht angeben wird eine liste aller Module ausgegeben
 
-**lsmod **→ Auflisten der aktuell geladenen Module aus */proc/modules ( [[Linux Wissen:FHS:proc]] )
+**lsmod **→ Auflisten der aktuell geladenen Module aus ///proc/modules// ( [[Linux Wissen:FHS:proc]] )
 >> <Name des Moduls>       <Größe in Kb>   <UseCount>      <Welche anderen Module>
 
 **modinfo <Module> **→ Informationen zum <Module> einholen

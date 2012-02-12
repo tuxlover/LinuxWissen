@@ -107,8 +107,8 @@ Created Freitag 13 Januar 2012<br>
 
 <p>
 CGroups bieten einen Mechanismus zum zerlegen und partitionieren von Tasks und ihrer möglicherweise gespawnten Prozesse in<br>
-hierarchischen Gruppen. Sie ermöglichen eine fein granulare Kontrolle über die Priorisierung, Überwachung von Prozessen die vom <br>
-Kernel gespawned werden.<br>
+hierarchischen Gruppen. Dies ermöglicht eine fein granulare Kontrolle über die Priorisierung, Überwachung von Prozessen die vom <br>
+Kernel geboren werden.<br>
 </p>
 
 <p>
@@ -155,7 +155,7 @@ Eine Sammlung von Prozessen: <br>
 <ul>
 <li>Kernel Modul dass Limitationen und Isolationen für Resourcen verwaltet</li>
 <li>bietet die Möpglichkeit Resourcen und Eigenschaften einer Prozessgruppe zu verändern </li>
-<li>die vom Kernel unterstützten Subsysteme können in der Datei <em>*/proc/cgroups</em> erfragt werden</li>
+<li>die vom Kernel unterstützten Subsysteme können in der Datei /<em>proc/cgroups</em> erfragt werden</li>
 <li>Resource Controller:</li>
 <ul>
 <li>cpu scheduler</li>
@@ -163,7 +163,7 @@ Eine Sammlung von Prozessen: <br>
 <li>disk I/O</li>
 <li>network,</li>
 </ul>
-<li>Isolationen und besondere Sterungs Subsysteme:</li>
+<li>Isolationen und besondere Steuerungs Subsysteme:</li>
 <ul>
 <li>cpuset </li>
 <li>namespace</li>
@@ -185,7 +185,7 @@ Eine Sammlung von Prozessen: <br>
 <p>
 <ul>
 <li>erlaubt Zugriff auf Cgroups auf Userlevel Ebene um Gruppen zu erzeugen und Subsysteme zu verwalten</li>
-<li>Mountpoints für virtuelle Cgroups Dateisystem kann unter <em>*/sys/fs/cgroups </em>eingeshen werden</li>
+<li>Mountpoints für virtuelle Cgroups Dateisystem kann unter /<em>sys/fs/cgroups </em>eingeshen werden</li>
 </ul>
 </p>
 
@@ -193,7 +193,7 @@ Eine Sammlung von Prozessen: <br>
 <p>
 <ul>
 <li>Systemdienst zum persistenten erstellen von CGroups und verwalten deren Subsysteme</li>
-<li>liest die Datei <em>*/etc/cgconfig.conf</em></li>
+<li>liest die Datei /<em>etc/cgconfig.conf</em></li>
 </ul>
 <a href="./Cgroups/cgconfig_und_cgred.html" title="+cgconfig und cgred">+cgconfig und cgred</a><br>
 <a href="../Booten/Dienste.html" title="Linux Wissen:Booten:Dienste">Linux Wissen:Booten:Dienste</a><br>
@@ -220,7 +220,7 @@ Eine Sammlung von Prozessen: <br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>						<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../Booten/Dienste/systemd.html'>Linux Wissen:Booten:Dienste:systemd</a></li>						<a href='../FHS/lib/lib%2B%2Bsystemd.html'>Linux Wissen:FHS:lib:lib++systemd</a></li>
+				Backlinks:						<a href='../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../Booten/Dienste/systemd.html'>Linux Wissen:Booten:Dienste:systemd</a></li>						<a href='../FHS/lib/lib%2B%2Bsystemd.html'>Linux Wissen:FHS:lib:lib++systemd</a></li>						<a href='../FHS/sys.html'>Linux Wissen:FHS:sys</a></li>						<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

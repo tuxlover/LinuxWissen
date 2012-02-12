@@ -38,7 +38,7 @@ Created Mittwoch 20 Juli 2011
 **now + N minutes|hours|days**
 → von jetzt an in N Minuten
 
-*/usr/share/doc/packages/at/timespec → weitere Zeitformatierungen
+///usr/share/doc/packages/at/timespec// → weitere Zeitformatierungen
 
 **atrm N  **
 → löschen des Jobs mit der Jobnummer N

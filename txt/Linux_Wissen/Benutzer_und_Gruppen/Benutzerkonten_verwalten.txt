@@ -15,9 +15,9 @@ Created Dienstag 19 April 2011
 **-s <Login Shell>**
 **-u <UID>**
 **-o **→ in Zusammenhang mit mit -u, legt UID auch an, wenn UID schon vergeben ist
-**-m **→ legt das Heimatverzeichnis des Nutzers an und kopiert Dateien aus ***/etc/skel**
+**-m **→ legt das Heimatverzeichnis des Nutzers an und kopiert Dateien aus ///etc/skel//
 [[Linux Wissen:FHS:etc]]
-**-k **→ nur in Zusammenhang mit -m, alternatives ***/etc/skel ** 
+**-k **→ nur in Zusammenhang mit -m, alternatives ///etc/skel  //
 **--show-defaults |-D **→ anzeigen und manipulieren der Stanardwerte
   
  **usermod <User>** → Einstellungen für <User> ändern
@@ -56,26 +56,25 @@ __Hinweis:find / -uid <UID> -delete entfernt alle von <User> angelegten oder zug
 === Zugang sperren: ===
 **passwd -l <Nutzer>**
 **chage -E <Datum> <Nutzer>**
-editieren der */etc/shadow durch setzen eines ! vor dem Kennwort Hash
-editieren der */etc/passwd durch setzen eines * anstelle eines x in der zweiten Spalte
+editieren der ///etc/shadow// durch setzen eines ! vor dem Kennwort Hash
+editieren der// /etc/passwd// durch setzen eines * anstelle eines x in der zweiten Spalte
 
 === Zugang freigeben ===
 **passwd -u <Nutzer>**
 **chage -E -1 <Nutzer>**
-editieren der */etc/shadow und entfernen des ! vor dem Kennwort Hash
-editieren der */ect/passwd und setzen eines x statt eines * in der zweiten Spalte
+editieren der// /etc/shadow// und entfernen des ! vor dem Kennwort Hash
+editieren der// /ect/passwd// und setzen eines x statt eines * in der zweiten Spalte
 
 === Kennwortänderung höchstens alle N Tage ===
 **passwd -m N <Nutzer> **
 **chage -m N <Nutzer>**
-editieren der */etc/shadow in der 4. Spalte
+editieren der// /etc/shadow// in der 4. Spalte
 
 === Frist nach Ablauf des Kennwortes ===
 **chage -I N <Nutzer>**
-editieren der */etc/shadow in der 7. Spalte
+editieren der ///etc/shadow //in der 7. Spalte
 
 === Warnfrist bevor Kennwort abläuft ===
 **passwd -w N <Nutzer> **
 **chage -W N <Nutzer>**
-editieren der */etc/shadow in der 6.Spalte
-
+editieren der ///etc/shadow// in der 6.Spalte

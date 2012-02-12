@@ -5,188 +5,188 @@ Creation-Date: 2011-04-19T02:00:50+02:00
 ====== etc ======
 Created Dienstag 19 April 2011
 
-***/etc/at.allow **→ Liste der Nutzer die at benutzen dürfen
-***/etc/at.deny **→ Liste der Nutzer die at nicht benutzen dürfen
+///etc/at.allow// → Liste der Nutzer die at benutzen dürfen
+///etc/at.deny// → Liste der Nutzer die at nicht benutzen dürfen
 → .allow wird zuerst gelesen
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 [[Linux Wissen:Zeitgesteuerte Vorgänge:at]]
 
 
-***/etc/cron.allow **→ Liste der Nutzer die cron benutzen dürfen
-***/etc/cron.deny **→ Liste der Nutzer die cron nicht benutzen dürfen
+///etc/cron.allow //→ Liste der Nutzer die cron benutzen dürfen
+///etc/cron.deny// → Liste der Nutzer die cron nicht benutzen dürfen
 → .allow wird zuerst gelesen
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 [[Linux Wissen:Zeitgesteuerte Vorgänge:crontab]]
-***/etc/crontab **
+///etc/crontab //
 → vom System auszuführende periodische Dienste
 → unter $$SUSE$$ ist hier ein Script eingetragen, welches dafür sorgt dass die anderen Systemordner systematische abgearbeitet werden
-***/etc/cron.d **→ alles was nicht täglich, wöchentlich, stündlch, monatlich oder wöschentlich vom System ausgeführt wird
-***/etc/cron.daily **→ Shellscripte die einmal täglich ausgeführt werden
-***/etc/cron.hourly **→ Shellscripte die einmal stündlich ausgeführt werden
-***/etc/cron.monthly **→ Shellscripte die einmal monatlich ausgeführt werden
-***/etc/cron.weekly **→ Shellscripte die einmal wöchentlich ausgeführt werden
-***/etc/anacrontab **→ Konfiguration des anacron Daemons ([[+anacrontab]])
+///etc/cron.d //→ alles was nicht täglich, wöchentlich, stündlch, monatlich oder wöschentlich vom System ausgeführt wird
+///etc/cron.daily// → Shellscripte die einmal täglich ausgeführt werden
+///etc/cron.hourly// → Shellscripte die einmal stündlich ausgeführt werden
+///etc/cron.monthly// → Shellscripte die einmal monatlich ausgeführt werden
+///etc/cron.weekly// → Shellscripte die einmal wöchentlich ausgeführt werden
+///etc/anacrontab// → Konfiguration des anacron Daemons ([[+anacrontab]])
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 
-***/etc/cgconfig.conf **→ Konfigurationsdatei für den cgcnfig Daemon 
+///etc/cgconfig.conf //→ Konfigurationsdatei für den cgcnfig Daemon 
 				      → zur Erstellung persistenter Cgroups
 [[Linux Wissen:Prozessverwaltung:Cgroups]] 
 [[+cgconfig.conf]]
 [[Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred]]
 
-***/etc/fstab **→ alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften
+///etc/fstab// → alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften
 [[Linux Wissen:FHS:etc:fstab]]
 
-***/etc/gitconfig **→ globale Konfigurationsdatei für Git
+///etc/gitconfig// → globale Konfigurationsdatei für Git
 [[+gitconfig]]
 
-***/etc/lilo.conf **→ Konfiguratonsdatei für den Bootloader LILO
+///etc/lilo.conf// → Konfiguratonsdatei für den Bootloader LILO
 [[Linux Wissen:FHS:etc:lilo.conf]]
 
-***/etc/mtab **→ alle momentan eingehängten Dateisysteme
-***/etc/hosts **→ Konfiguration der lokalen DNS Auflösung
-***/etc/inittab **→ Konfigurationsdatei für den Start von Linux 
+///etc/mtab //→ alle momentan eingehängten Dateisysteme
+///etc/hosts// → Konfiguration der lokalen DNS Auflösung
+///etc/inittab //→ Konfigurationsdatei für den Start von Linux 
 
-***/etc/init.d/rc.x **→ Scripte die im Runlevel x ausgeführt werden
+///etc/init.d/rc.x// → Scripte die im Runlevel x ausgeführt werden
 			     → links aus dem Übergeordneten Elternverzeichnis ***/etc/init.d/** 
 [[Linux Wissen:Booten]]
 [[Linux Wissen:FHS:etc:init.d++Script]]
 
-***/etc/ld.so.conf **→ Konfigurationdati für den dynamischen Linker
-***/etc/ld.so.cache **→ Cache für den dynamischen Linker
+///etc/ld.so.conf //→ Konfigurationdati für den dynamischen Linker
+///etc/ld.so.cache //→ Cache für den dynamischen Linker
  [[Linux Wissen:Bibliotheken:dynamische Bibliotheken]]
 
-** */etc/localtime **→ konfigurieren der lokalen Zeitzone
- ***/etc/timezone → **Zeitzone festlegen
- ***/etc/ntp.conf **→ Konfigurieren des ntpd
+// /etc/localtime// → konfigurieren der lokalen Zeitzone
+// /etc/timezone//** → **Zeitzone festlegen
+// /etc/ntp.conf// → Konfigurieren des ntpd
 [[Linux Wissen:Systemzeit]]
 [[Linux Wissen:FHS:etc:ntp.conf]]
 
-***/etc/issue **→ Begrüßungstext der vor der Anmeldung angezeigt werden
-***/etc/motd **→ Begrüßungstext der nach der Anmeldung angezeigt werden
+///etc/issue// → Begrüßungstext der vor der Anmeldung angezeigt werden
+///etc/motd// → Begrüßungstext der nach der Anmeldung angezeigt werden
 
-***/etc/modprobe.conf **→ Liste der zu ladenden Module während des systmstarts
+///etc/modprobe.conf //→ Liste der zu ladenden Module während des systmstarts
 					 → Konfiguration der zu ladentdeen module
 					 → kann auch aufgeteilt sein in einzelne Dateien **modprobe.d/**
 					→ in **modprobe.d/local.conf **können eigenen Module eingetragen werden
 
-**/etc/modules.conf **→ Liste verwendeter Kernelmoduel (veraltet)
+///etc/modules.conf //→ Liste verwendeter Kernelmoduel (veraltet)
 
-***/etc/nologin **→ Wenn angelegt kann sich niemand ausser root am System anmelden
+///etc/nologin //→ Wenn angelegt kann sich niemand ausser root am System anmelden
                          → wird von **PAM **ausgewertet **(missing link)**           
 
-***/etc**/**passwd **→ Nutzer inklusive Gruppenzugehörigkeit und Shell sind hier festgelegt 
+///etc/passwd //→ Nutzer inklusive Gruppenzugehörigkeit und Shell sind hier festgelegt 
 [[Linux Wissen:FHS:etc:passwd]]
 
-***/etc/shadow **→ enthält verschlüsselte Passwörter und ihre Einstellungen
+///etc/shadow// → enthält verschlüsselte Passwörter und ihre Einstellungen
 
-***/etc/skel/ **→ Dateien die beim Anlegen eines neuen Nutzers in dessen Heimatverzeichnis kopiert werden
+///etc/skel/// → Dateien die beim Anlegen eines neuen Nutzers in dessen Heimatverzeichnis kopiert werden
 
-***/etc/group **→ Gruppen und zugehröige GID und ihr angehörende Nutzer 
+///etc/group// → Gruppen und zugehröige GID und ihr angehörende Nutzer 
 [[Linux Wissen:FHS:etc:group]]
 
-***/etc/security/limits.conf**
+///etc/security/limits.conf//
 [[Linux Wissen:FHS:etc:security++limits.conf]]
 
-***/etc/foremost.conf **
+///etc/foremost.conf //
 [[Linux Wissen:FHS:etc:foremost.conf]]
 
-***/etc/udev/ **→ Konfigurattion des Udev Daemons
-		**udev.conf **→ globale Konfiguration (logging, loglevel)
-		**rules.d/ **→ Verzeichnis für Udev-Regeln die beim Start des Daemons gelesen werden
+///etc/udev/// → Konfigurattion des Udev Daemons
+		//udev.conf// → globale Konfiguration (logging, loglevel)
+		//rules.d/ //→ Verzeichnis für Udev-Regeln die beim Start des Daemons gelesen werden
 
-***/etc/apt/sources **→ nur bei $Debian$, Liste von Bezugsquellen für das **apt-get** Paketmanagement
+///etc/apt/sources// → nur bei $Debian$, Liste von Bezugsquellen für das **apt-get** Paketmanagement
 [[Linux Wissen:FHS:etc:apt++soruces.lst]]
 [[Linux Wissen:Paketverwaltung:Debian:apt]]
 
-***/rpm/ **→ Scripte und globale Macors die von der Paketverwaltung **rpm **benötigt werden
-	**macros **→ Konfigurationsdatei für global verfügbare Macros
+///rpm/ //→ Scripte und globale Macors die von der Paketverwaltung **rpm **benötigt werden
+	//macros// → Konfigurationsdatei für global verfügbare Macros
 
 [[Linux Wissen:Paketverwaltung:Rpm]]
-***/etc/yum/repos.d **→ Konfigurationsdateien für einzelne Yum Repos
-***/etc/yum.conf **→ globale Konfigurationsdateien für yum 
+///etc/yum/repos.d// → Konfigurationsdateien für einzelne Yum Repos
+///etc/yum.conf// → globale Konfigurationsdateien für yum 
 [[Linux Wissen:Paketverwaltung:Rpm:yum]]
 
-***/etc/my.cnf **→ Konfigurationsatei für den Mysql Server und den Mysql Clients
+///etc/my.cnf //→ Konfigurationsatei für den Mysql Server und den Mysql Clients
 [[Linux Wissen:SQL:Mysql Server]]
 [[Linux Wissen:FHS:etc:my.cnf]]
 
-***/etc/services → **mappt Ports an den **inetd** bzw. **xinetd** bzw an den syscall //getserverbyname()//
+///etc/services//** → **mappt Ports an den **inetd** bzw. **xinetd** bzw an den syscall //getserverbyname()//
 [[Linux Wissen:FHS:etc:services]]
-***/etc/ethers **→ Konfigurieren des Arp Caches
+///etc/ethers //→ Konfigurieren des Arp Caches
 [[Linux Wissen:FHS:etc:ethers]]
-***/etc/resolv.conf **→ Einstellungen für die lokale Namensauflösung
-***/etc/hosts **→ lokale Auflösung von Rechnernamen auf IP-Adressen ist eine Tabellenförmige Datei die IP-Adressen ihren Hosts zuweist
+///etc/resolv.conf// → Einstellungen für die lokale Namensauflösung
+///etc/hosts// → lokale Auflösung von Rechnernamen auf IP-Adressen ist eine Tabellenförmige Datei die IP-Adressen ihren Hosts zuweist
 [[+hosts]]
-***/etc/nsswich.conf **→ festlegen der Reihenfolge in der Abfragen durchgeführt werden 
+///etc/nsswich.conf //→ festlegen der Reihenfolge in der Abfragen durchgeführt werden 
 			          → NIS Datenbanken (missing link NIS)
 [[Linux Wissen:Networking:Dienste:DNS]]
 [[+nsswitch.conf]]
 
-***/etc/inetd.conf **→ Konfigurieren des Internet Daemin **inetd**
+///etc/inetd.conf// → Konfigurieren des Internet Daemin **inetd**
 [[+inetd.conf]]
-***/etc/xinetd.conf || /etc/xinetd.d **→ Konfigurieren des xinetd
+///etc/xinetd.conf //**|| **///etc/xinetd.d //→ Konfigurieren des xinetd
 [[+xinetd.conf]]
 
-***/etc/protocols **→ mappen von Protokollnummern auf ihr Protokoll
+///etc/protocols //→ mappen von Protokollnummern auf ihr Protokoll
 [[+protocols]]
 
-***/etc/hosts.allow **→ explizit vom TCP Wrapper **tcpd **erlaubte Dienste
+///etc/hosts.allow// → explizit vom TCP Wrapper **tcpd **erlaubte Dienste
 [[+hosts.allow]]
-***/etc/hosts.deny **→ explizit vom TCP Wrapper **tcpd **nicht zulässige Dienste
+///etc/hosts.deny //→ explizit vom TCP Wrapper **tcpd **nicht zulässige Dienste
 [[+hosts.deny]]
 
-***/etc/syslog.conf **→ Konfiguration für den **syslogd **
-***/etc/rsyslog.conf **→ Konfiguration für den neueren **syslogd **(rsyslog)
+///etc/syslog.conf// → Konfiguration für den **syslogd **
+///etc/rsyslog.conf //→ Konfiguration für den neueren **syslogd **(rsyslog)
 [[Linux Wissen:Systemprotokollierung]]
 __Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
 
-***/etc/logrotate.conf **→ Konfiguration des Logrotierungsdinestes
+///etc/logrotate.conf// → Konfiguration des Logrotierungsdinestes
 [[Linux Wissen:FHS:etc:logrotate.conf]]
 
-***/etc/systemd/ → **Konfigurationsdateien des Sys-V-Init komaptiblen systemd die zur Laufzeit benötigt werden
-	**system/ **→ Verzeichnis in dem die von systemd genutzten Units abgelegt werden
+///etc/systemd/ //**→ **Konfigurationsdateien des Sys-V-Init komaptiblen systemd die zur Laufzeit benötigt werden
+	//system/ //→ Verzeichnis in dem die von systemd genutzten Units abgelegt werden
+[[+systemd++system++my.typ]]
+///etc/sysconfig/ //**→ **Konfigurationsdateien die für die einzelnen Dienste  spezifische Umgebungsvariablen setzen 
 
-***/etc/sysconfig/ → **Konfigurationsdateien die für die einzelnen Dienste  spezifische Umgebungsvariablen setzen 
-
-***/etc/termcap**
+///etc/termcap//
 → obsolete Datenbank die von **tput **benutzt wird
 [[Linux Wissen:Systemprogrammierung:Shellscripting:tput]]
 
-***/etc/X11 → **Einstellungen für den X-Server
-	***/etc/X11/xdm → **Einstellungen und Resources für den X-Displaymanager
+///etc/X11//** → **Einstellungen für den X-Server
+	///etc/X11/xdm//** → **Einstellungen und Resources für den X-Displaymanager
 					[[Linux Wissen:FHS:etc:X11++xdm]]
-	***/etc/X11/kdm | */etc/kdm **→ Konfigurationsdatei für kdm **kcontrol**
-	***/etc/X11/gdm | */etc/gdm** → Konfigurationsdatei für den gdm **gdmconfig**
-	***/etc/X11/twm | */etc/twm **→ Konfigurationsdatei für den TWM (Tiny Windows Manager) des LXDE
-	*** /etc/X11/apps-default/<Name> **→ stellt X Resourcen für das Programm <Name> zur Verfügung
+	///etc/X11/kdm | /etc/kdm// → Konfigurationsdatei für kdm **kcontrol**
+	///etc/X11/gdm | /etc/gdm// → Konfigurationsdatei für den gdm **gdmconfig**
+	///etc/X11/twm | /etc/twm// → Konfigurationsdatei für den TWM (Tiny Windows Manager) des LXDE
+	///etc/X11/apps-default/<Name>// → stellt X Resourcen für das Programm <Name> zur Verfügung
 							        → Systemweite Einstellungen für diese Resource festlegen
-	***/etc/X11/Xmodmap |*~/.Xmodmap **→ Konfigurieren des Tastaurlayouts für den X-Server
+	///etc/X11/Xmodmap |*~/.Xmodmap// → Konfigurieren des Tastaurlayouts für den X-Server
 
-***/etc/X11/xorg.conf →** Konfigurationsdatei für X11 bis X11R6
-***/etc/X11/xorg.conf.d → **Konfigurationsdateien im X11R6 Stil aufgesplittet nach Section und Device
-***/etc/X11/Xsession.d → **Konfigurationsdateien für X11 ab X11R7
+///etc/X11/xorg.conf //**→** Konfigurationsdatei für X11 bis X11R6
+///etc/X11/xorg.conf.d//** → **Konfigurationsdateien im X11R6 Stil aufgesplittet nach Section und Device
+///etc/X11/Xsession.d //**→ **Konfigurationsdateien für X11 ab X11R7
 			           → enthält eine Reihe von Scripten die beim Starten einer X-Session ausgeführt werden
 [[Linux Wissen:FHS:etc:Xorg.conf]]
 
-***/etc/hosts.lpd **→  Eine Liste von Hosts die über diesen DruckerServer mit Druckern kommunizieren dürfen
+///etc/hosts.lpd //→  Eine Liste von Hosts die über diesen DruckerServer mit Druckern kommunizieren dürfen
 	[[+hosts.lpd]]
-***/etc/cups/mime.types **→  Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden
+///etc/cups/mime.types// →  Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden
 					→ Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden
 					→ wie wird zum Beispiel ein Pdf behandelt
-***/etc/cups/classes.conf **→ definieren von  verschiedenen lokalen Drucker Klassen
+///etc/cups/classes.conf //→ definieren von  verschiedenen lokalen Drucker Klassen
 [[+cups:cups++classes.conf]]
-***/etc/cups/printers.conf **//→ //enthält die Konfiguration für die einzelnen Drucker
+///etc/cups/printers.conf// //→ //enthält die Konfiguration für die einzelnen Drucker
 [[+cups:cups++printers.conf]]
-***/etc/cups/ppd **→ hierher wird für jeden konfigurierten Drucker eine **ppd **Datei aus dem Verzeichnis //*/usr/share/cups/model // kopiert
+///etc/cups/ppd //→ hierher wird für jeden konfigurierten Drucker eine **ppd **Datei aus dem Verzeichnis //*/usr/share/cups/model // kopiert
 [[usr:usr++share++cups++model]]
-***/etc/cups//cupsd.conf **→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)
+///etc/cups//cupsd.conf //→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)
 [[+cups:cups++cupsd.conf]]
 [[Linux Wissen:Drucken]]
 
-***/etc/ssh **→ Dateien für das Cleintseitige und Serverseitige Konfigurieren von SSH
+///etc/ssh// → Dateien für das Cleintseitige und Serverseitige Konfigurieren von SSH
 
-***/etc/smb.conf **→ Samba Konfigurationsdatei
+///etc/smb.conf// → Samba Konfigurationsdatei
 
 
-***/etc/zypp/zypper.conf → **Zypper Konfigurationsdatei
+///etc/zypp/zypper.conf//** → **Zypper Konfigurationsdatei

@@ -7,9 +7,9 @@ Created Montag 06 Februar 2012
 
 * systemd.service Unit
 * __nach dem Hinzufügen einer Unit muss __**systemctl daemon-reload **__ausgeführt werden __
-* Unit Files in //*/etc/systemd/system// werden vor //*/lib/systemd/system// gelesen
+* Unit Files in ///etc/systemd/system// werden vor ///lib/systemd/system// gelesen
 
-=== !ACHTUNG!:  ===
+=== !ACHTUNG!: ===
 __Bearbeitet oder selber erstellte Units werden nach */etc/systemd/system gelegt__
 
 ++
@@ -111,7 +111,7 @@ Conflicts=boo.service oops.service
 			→ Unix System Daemon Verhalten
 			→ //PIDFile// Direktive ist ausserdem sinnvoll
 		**oneshot**
-			→ dieser Prozess muss sich selbst beenden nachdem er einmal erfolgreich gestartet wurde, bevor weitere Units starten
+			→ dieser Prozess muss sich selbst beenden nachdem er einmal erfolgreich gestartet wurde, bevor weitere Units startet
 			→ die Direktive //RemainAfterExit //kann sinnvoll sein
 		**dbus**
 		→ hängt implizit von der Unit __dbus.socket__ ab
@@ -315,8 +315,8 @@ Conflicts=boo.service oops.service
 	//TCPWrapName=//
 	→ Name des Socket aktivierten Service durch TCP Wrapper
 	→ dieser Name wird vom **tcpd **genutzt um die Zugriffsberechtigungen der aktuellen Verbindung zu überprüfen
-
-	**(missing link tcpd)**
+[[Linux Wissen:Networking:xinetd]]
+[[FHS:etc:inetd.conf]]
 	
 //       LimitCPU=, LimitFSIZE=, LimitDATA=, LimitSTACK=, LimitCORE=, LimitRSS=, LimitNOFILE=, LimitAS=, LimitNPROC=, LimitMEMLOCK=, LimitLOCKS=,//
 //       LimitSIGPENDING=, LimitMSGQUEUE=, LimitNICE=, LimitRTPRIO=, LimitRTTIME=//

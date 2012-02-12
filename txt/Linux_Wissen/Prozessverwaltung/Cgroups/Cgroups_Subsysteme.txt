@@ -33,7 +33,7 @@ __Subsysteme sind Kernel Module die auch kurz Controller heißen.__
 [[+cpuset]]
 
 **devices**
-→ erlauben/verbieten des Zugriffs von **Tasks **auf bestimmte Geräte in //*/dev//
+→ erlauben/verbieten des Zugriffs von **Tasks **auf bestimmte Geräte in ///dev//
 [[+devices]]
 
 **freezer**

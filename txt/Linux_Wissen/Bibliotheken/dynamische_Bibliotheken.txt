@@ -9,7 +9,7 @@ Created Sonntag 24 April 2011
 {{../../../linker.png}}
 
 **ldconfig **
-→ aktualisieren des Bibliothekenspeichers */etc/ld.so.cache aus der Datei */etc/ld.so.conf oder LD_LIBRARY_PATH
+→ aktualisieren des Bibliothekenspeichers// /etc/ld.so.cache// aus der Datei ///etc/ld.so.conf //oder LD_LIBRARY_PATH
 [[Linux Wissen:FHS:etc]]
 **-v **→ verbose
 **-N **→ aktualisiert nur Links zu den Bibliotheken
@@ -18,7 +18,7 @@ Created Sonntag 24 April 2011
 **-f <DATEI> **→ eine andere <Datei> als Konfigurationsdatei bestimmen 
 **-C <DATEI> **→ eine andere <DATEI> als Cache bestimmen
 **-r <DIR> **→ das angegebene Verzeichnis als / behandeln
-**-p **→ anzeigen des Inhalts von */etc/ld.so.cache
+**-p **→ anzeigen des Inhalts von// /etc/ld.so.cache//
 
 __Hinweis: Mit __**ldconfig -p |grep <LIB> **__kann man herausfinden ob eine <LIB> dem System bekannt ist.__
 
@@ -28,7 +28,7 @@ __Hinweis: Mit __**ldconfig -p |grep <LIB> **__kann man herausfinden ob eine <LI
 **--only-keep-debug **→ das Gegenteil von **--strip-debug**, seperaten erzeugen von Debugging Symbolen
 **-v **→ verbose
 
-*/lib/libc.so.6
+///lib/libc.so.6//
 [[Linux Wissen:Bibliotheken:dynamische Bibliotheken]]
  
 **ldd **→ gibt Informationen über die zur Laufzeit benötigten Programme

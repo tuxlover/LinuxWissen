@@ -17,8 +17,8 @@ $Suse, Fedorra, Mandriva,Redhat$
 __Hinweis: Pakete mit der Endung .src, .nosrc enthalten keine Installierbaren Programme sondern ledigliche ein Specfile und die dazugehörenden Quellen. Das Paket nosrc enthält lediglich eine Spec Datei.__
 [[Linux Wissen:Paketverwaltung:Rpm:Pakete bauen]]
 
-*/usr/lib/rpm → Scripte und Distributionsspezifische Macros
-*/etc/rpm → Konfigurationsdateien und globale Macros
+///usr/lib/rpm// → Scripte und Distributionsspezifische Macros
+///etc/rpm// → Konfigurationsdateien und globale Macros
 [[Linux Wissen:FHS:etc]]
 [[Linux Wissen:FHS:usr]]
 

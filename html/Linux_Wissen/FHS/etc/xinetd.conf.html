@@ -171,7 +171,7 @@ service &lt;Dienst&gt;
 <p>
 <em>defaults{}</em><br>
 →  Einstellungen die für alle Dienste gelten<br>
-→ wenn es mehrere Konfigurationsdateien gibt, steht diese Direktive in <em>*/etc/xinetd.conf </em><br>
+→ wenn es mehrere Konfigurationsdateien gibt, steht diese Direktive in /<em>etc/xinetd.conf </em><br>
 </p>
 
 <p>
@@ -191,7 +191,7 @@ service &lt;Dienst&gt;
 </div>
 <div style='padding-left: 90pt'>
 <em>INTERNAL </em><strong>→ </strong>dieser Dienst wird durch den xinetd intern zur Verfügung gestellt<br>
-<em>UNLISTED </em>→ dieser Dienst ist nicht in der <em>*/etc/services </em>verzeichnet<br>
+<em>UNLISTED </em>→ dieser Dienst ist nicht in der /<em>etc/services </em>verzeichnet<br>
 <em>RPC </em>→ es handelt sich um einen RPC-Dienst<br>
 </div>
 <div style='padding-left: 60pt'>
@@ -207,7 +207,7 @@ service &lt;Dienst&gt;
 <em>protocol</em><br>
 </div>
 <div style='padding-left: 90pt'>
-→ der definierte Wert muss in <em>*/etc/protocols </em>stehen (<a href="./protocols.html" title="protocols">protocols</a>)<br>
+→ der definierte Wert muss in /<em>etc/protocols </em>stehen (<a href="./protocols.html" title="protocols">protocols</a>)<br>
 </div>
 </p>
 
@@ -290,11 +290,11 @@ service &lt;Dienst&gt;
 </div>
                                → 0.0.0.0 definiert alle bekannten Hosts<br>
 <div style='padding-left: 30pt'>
-                       → einen Netzwerknamen der in der Datei <em>*/etc/networks </em> definiert ist   <br>
+                       → einen Netzwerknamen der in der Datei /<em>etc/networks </em> definiert ist   <br>
                        → einen Adressbereich wird wie folgt definiert: a<em>a</em>.b.c.{1,3,45}<br>
 </div>
 <div style='padding-left: 90pt'>
-        → einen Hostnamen der in der */<em>etc/hosts</em> steht  <br>
+        → einen Hostnamen der in der /<em>etc/hosts</em> steht  <br>
         → IP-Adresse mit einer dazugehörigen Netzmaske in CIDR 187.43.212.128/24 <br>
 </div>
 <div style='padding-left: 60pt'>
@@ -321,7 +321,7 @@ yes → Dienst ist grunsätzlich deaktiviert<br>
 <em>disabled </em><br>
 </div>
 <div style='padding-left: 90pt'>
-→ nur in defaults Abschnitt der <em>*/ect/xinetd.conf</em><br>
+→ nur in defaults Abschnitt der /<em>ect/xinetd.conf</em><br>
 → ngabe einer Liste von Diensten die beim Start des xinetd nicht aktiviert werden<br>
 </div>
 </p>
@@ -363,7 +363,7 @@ yes → Dienst ist grunsätzlich deaktiviert<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Networking.html'>Linux Wissen:Networking</a></li>						<a href='../../Drucken/cups-lpd.html'>Linux Wissen:Drucken:cups-lpd</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='../../Drucken/cups-lpd.html'>Linux Wissen:Drucken:cups-lpd</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Networking.html'>Linux Wissen:Networking</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -7,7 +7,7 @@ Created Dienstag 20 September 2011
 
 * ermöglicht Verwaltung einer Authentifizierung am X-Server über einen// MIT-MAGiC-COOKIE-1//
 * Verbesserung von **xhost **
-* Die Cookies für verschiedene Displays werden in //*~/.Xauthority //des Servers abgelegt **(xauth -v)**
+* Die Cookies für verschiedene Displays werden in //~/.Xauthority //des Servers abgelegt **(xauth -v)**
 * die Variable //Xauthority //definiert den Ort für die Xauthority datei
 * Wird benötigt um auf entfernten Rechnern über SSH einen X-Client zu starten
 

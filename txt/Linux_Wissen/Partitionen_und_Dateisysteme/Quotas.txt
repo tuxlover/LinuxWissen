@@ -36,7 +36,7 @@ Quotas werden unterhalb des Mountpoints in den Dateien //aquota.user //und //aqu
 **(1)** nachinstallieren der entsprechenden Pakte 
 [[Linux Wissen:Paketverwaltung]]
 
-**(2) **eintragen der entsprechenden Mountoptionen in die */etc/fstab (usrquota, grpquota)
+**(2) **eintragen der entsprechenden Mountoptionen in die ///etc/fstab// (usrquota, grpquota)
 [[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
 [[Linux Wissen:FHS:etc:fstab]]
 

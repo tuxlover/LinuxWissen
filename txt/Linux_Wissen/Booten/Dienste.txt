@@ -19,7 +19,7 @@ Created Sonntag 24 April 2011
 **reload **→ liest die vom Dienst benötigten Konfigurationsdateien neu ein
 **restart **→ den Dienst neu starten, entspricht **stop && restart**
 
-=== Hinzufügen eines Dienstes zu einem Runlevel  ===
+=== Hinzufügen eines Dienstes zu einem Runlevel ===
 **insserv**
 **chkconfig**
 [[Linux Wissen:Booten:Dienste:chkconfig]]
@@ -47,7 +47,7 @@ __Hinweis: Um einen eigenen Dienst zu erstellen muss unter /etc/init.d/<Dienst> 
 → ohne Optionen wird PID zurückgegeben
 
 **chekproc **→ siehe **pidofproc **$$SUSE$$
-**-p <PIDFILE> **→ ein anders PIDFILE als unter */var/run/daemon.pid 
+**-p <PIDFILE> **→ ein anders PIDFILE als unter ///var/run/daemon.pid //
 [[Linux Wissen:FHS:var]]
 **-n **→ einen Kernelthread verfolgen
 

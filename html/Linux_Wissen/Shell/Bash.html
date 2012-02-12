@@ -76,6 +76,7 @@
 <li><a href="./Bash/Emacs_Modus.html" title="Emacs Modus">Emacs Modus</a></li>
 <li><a href="./Bash/Funktionen.html" title="Funktionen">Funktionen</a></li>
 <li><a href="./Bash/History.html" title="History">History</a></li>
+<li><a href="./Bash/inputrc.html" title="inputrc">inputrc</a></li>
 <li><a href="./Bash/Optionen_f%C3%BCr_die_Bash.html" title="Optionen für die Bash">Optionen für die Bash</a></li>
 <li><a href="./Bash/Shell_Varibalen_und_die_Umgebung.html" title="Shell Varibalen und die Umgebung">Shell Varibalen und die Umgebung</a></li>
 </ul>
@@ -106,28 +107,40 @@
 Created Freitag 15 April 2011<br>
 </p>
 
-<h2>Reihenfolge in der nach .profile gesucht wird:</h2>
+<h3>Reihenfolge in der nach .profile gesucht wird:</h3>
 <p>
-*/etc/profile → *~/.bash_profile →  *~/.bash_login  → *~/.profile<br>
+/<em>etc/profile → ~/.bash_profile →  ~/.bash_login  → ~/.profile</em><br>
 </p>
 
 <p>
-*~/.profile | */etc/profile → Einstellungen für Nutzer | Global für bash als Login Shell<br>
+<em>~/.profile | /etc/profile </em>→ Einstellungen für Nutzer | Global für bash als Login Shell<br>
                                        → festlegen von   <strong>umask ( </strong><a href="../Dateien_verwalten/Zugriffsrechte/Umask.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask">Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask</a> )<br>
                                        → festlegen der Umgebungsvariablen und der Tastaturbelegung<br>
 </p>
 
 <p>
-*~/.bashrc | */etc/bash.bashrc → bashspezifische Konfigurationseinstellungen für Nutzer | Global<br>
+<em>~/.bashrc | /etc/bash.bashrc</em> → bashspezifische Konfigurationseinstellungen für Nutzer | Global<br>
                                                  → setzen von Aliassen, Programmen und Funktionen die beim aufrufen der Shell<br>
                                                      ausgeführt werden soll.<br>
 </p>
 
 <p>
-*~/.bash_logout → Befehle und Variablen und Funktionen die beim Abmelden aus bash ausgeführt werden sollen<br>
+<em>~/.bash_logout </em>→ Befehle und Variablen und Funktionen die beim Abmelden aus bash ausgeführt- oder gesetzt werden sollen<br>
 </p>
 
-<h2>Buildins</h2>
+<h3>Steuerung durch Tastenkombinationen</h3>
+<p>
+<ul>
+<li>Es gibt zwei Modi mit der Bash gesteuert werden kann</li>
+<li>Tastenkombinationen können angepasst global in der /<em>etc/inputrc </em>oder für einzelene Nutzer in der <em>~/.imputrc</em> angepasst werden</li>
+</ul>
+emacs-Mode: <code>set -o emacs</code><br>
+vim-Mode: <code>set -o vi</code><br>
+<a href="./Bash/inputrc.html" title="+inputrc">+inputrc</a><br>
+<a href="./Bash/Emacs_Modus.html" title="+Emacs Modus">+Emacs Modus</a><br>
+</p>
+
+<h3>Buildins</h3>
 <p>
 <ul>
 <li>Befehle die von der Shell selbst zur Verfügung gestellt werden</li>
@@ -139,7 +152,7 @@ Created Freitag 15 April 2011<br>
 <a href="./Bash/Emacs_Modus.html" title="Linux Wissen:Shell:Bash:Emacs Modus">Linux Wissen:Shell:Bash:Emacs Modus</a><br>
 </p>
 
-<h2>Extern ausführbare Befehle</h2>
+<h3>Extern ausführbare Befehle</h3>
 <p>
 <ul>
 <li>Shell startet diese Programme durch Aufrufen ihres Namens aus PATH </li>
@@ -147,14 +160,14 @@ Created Freitag 15 April 2011<br>
 <a href="./Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a><br>
 </p>
 
-<h2>Überprüfen ob ein Kommando ein Buildin oder ein externer Befehl ist</h2>
+<h3>Überprüfen ob ein Kommando ein Buildin oder ein externer Befehl ist</h3>
 <p>
 <strong>type &lt;Befehlsname&gt; </strong>→ gibt an ob ein Befehl ein Buildin, Alias  oder ein externer Befehl ist<br>
                                         → mögliche Rückgabewerte: hashed, Pfad/zu/bin, is Shell buildin, is aliased to ...<br>
 <strong>-a </strong>→ gibt alle passenden aus<br>
 </p>
 
-<h2>Hashing</h2>
+<h3>Hashing</h3>
 <p>
 <ul>
 <li>Abspeichern der bereits aufgerufenen Programme in einem Cache</li>
@@ -163,7 +176,7 @@ Created Freitag 15 April 2011<br>
 <strong>-r </strong>→ löschen des Hashcaches<br>
 </p>
 
-<h2>Sonderzeichen</h2>
+<h3>Sonderzeichen</h3>
 <p>
 <ul>
 <li>Zeichen die für die Shell eine Sonderinterpretation haben müssen mindestens durch \ maskiert werden</li>
@@ -171,7 +184,7 @@ Created Freitag 15 April 2011<br>
 </ul>
 </p>
 
-<h2>Maskieren</h2>
+<h3>Maskieren</h3>
 <p>
 <strong>"mein text" </strong>→ "" maskiert Leerzeichen und Steuerzeichen aber keine Sonderzeichen<br>
 <strong>'mein $text' </strong>→ '' maskiert Steuerzeichen und Sonderzeichen <br>
@@ -183,9 +196,13 @@ Created Freitag 15 April 2011<br>
 <u>Hinweis: mkdir "verzeichnis 22" erzeugt ein Verzeichnis mit Namen: verzeichnis 22</u><br>
 </p>
 
-<h2>Subshell einen Befehl mitgeben</h2>
+<h3>Subshell einen Befehl mitgeben</h3>
 <p>
 <strong>bash -c &lt;Befehl&gt;</strong><br>
+</p>
+
+<p>
+<a href="../Systemprogrammierung/Shellscripting/Debugging.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Debugging">Linux Wissen:Systemprogrammierung:Shellscripting:Debugging</a><br>
 </p>
 
 
@@ -194,7 +211,7 @@ Created Freitag 15 April 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Hilfe_erhalten.html'>Linux Wissen:Hilfe erhalten</a></li>						<a href='../Shell.html'>Linux Wissen:Shell</a></li>						<a href='../Dateien_verwalten/Zugriffsrechte/Umask.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask</a></li>
+				Backlinks:						<a href='../Shell.html'>Linux Wissen:Shell</a></li>						<a href='../Dateien_verwalten/Zugriffsrechte/Umask.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask</a></li>						<a href='../Systemprogrammierung/Shellscripting/Debugging.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Debugging</a></li>						<a href='../Hilfe_erhalten.html'>Linux Wissen:Hilfe erhalten</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -5,7 +5,7 @@ Creation-Date: 2011-10-29T16:18:39+02:00
 ====== vi /gitconfig ======
 Created Samstag 29 Oktober 2011
 
-* Neben der globalen Konfigurationsdatei sollten Nutzerkonfigurationen stets unter *~/.gitconfig vorgenommen werden
+* Neben der globalen Konfigurationsdatei sollten Nutzerkonfigurationen stets unter// ~/.gitconfig// vorgenommen werden
 * alle einstellungen können auch mit **git config **vorgenommen werden ([[Linux Wissen:git Vesionskontrolle:git config]])
 +++
 '''

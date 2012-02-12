@@ -12,7 +12,7 @@ Created Dienstag 01 November 2011
 	* **--global **mit einem nicht richtig gesetzten $HOME Verzeichnis ausgeführt wird
 
 **git config <Optionen> [<Sektion>.<Variable> <Wert>]  **[[Linux Wissen:FHS:etc:gitconfig]]
-**--global **→ editieren der Konfigurationsdatei des aktullen Nutzers unter //*~/.gitconfig//
+**--global **→ editieren der Konfigurationsdatei des aktullen Nutzers unter //~/.gitconfig//
 **--local **→ editieren der Konfigurationsdatei für das aktuelle Prokject
 **--system **→ editieren der Konfigurationsdatei für alle (Systemweit)
 **--add **→ hinzufügen eines Wertes

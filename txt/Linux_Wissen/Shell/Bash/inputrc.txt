@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-11T22:42:53+01:00
+
+====== inputrc ======
+Created Samstag 11 Februar 2012
+
+* Die Datei lebt entweder unter //~/.inputrc //oder unter ///etc/inputrc//
+* Steuert das Verhalten der Shell Spezialtasten und Tastenkombinationen

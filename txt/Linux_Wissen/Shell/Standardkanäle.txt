@@ -39,7 +39,7 @@ __Hinweis: zwischen den { }  muss ein Leerzeichen sehen__
 === Achtung!: ===
 <Befehl> 2>&1 > <Datei> leitet __nicht__ in die <Datei> um
 
-*/dev/fd/N → Dateidiskriptor N
+///dev/fd/N// → Dateidiskriptor N
 
 ===== Pipes =====
 **<programm1>|<programm2> **→ <programm2> nimmt seine Eingabeargumente aus der Ausgabe  von

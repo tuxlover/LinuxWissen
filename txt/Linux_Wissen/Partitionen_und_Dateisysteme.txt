@@ -35,7 +35,7 @@ Logisch:
 * **smartctl**
 [[Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge]]
 
-*/proc/partitions 
+///proc/partitions //
 [[Linux Wissen:FHS:proc]]
 
 === Partitionstypen: ===
@@ -60,9 +60,10 @@ fd → Linux RAID
 
 ===== Mounten =====
 * einhängen eines Dateisystems in das System, so dass auf dieses zugegriffen werden kann
-* automatisch mittels */etc/fstab, mindestens / muss während des Bootens eingehängt werden
+* automatisch mittels// /etc/fstab//, mindestens / muss während des Bootens eingehängt werden
 [[Linux Wissen:FHS:etc:fstab]]
-* manuelle mittles **mount **
+* manuell mittles **mount **
+* herausfinden ob ein Verzeichnis als Mountpoint benutzt wird mit **findmnt**
 [[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
 
 === Mountpoint ===
@@ -75,14 +76,14 @@ Eine UUID (Universal Unique Identifier) ist einem Gerät zugewiesene eindeutige 
 **blkid [</dev/sdX>] **→ Informationen über UUID, typ des Dateissystems anzeigen
                                      → wird ein spezielles Gerät angegeben, werden nur Informationen für    
 
-__Hinweis: UUID und Labels können für die */etc/fstab in der ersten Zeile verwendet.__
+__Hinweis: UUID und Labels können für die /etc/fstab in der ersten Zeile verwendet.__
 __( __[[Linux Wissen:FHS:etc:fstab]] )
 
 **e2label /dev/sdX <LABEL> **→ das Gerät /dev/sdX erhält das <LABEL>
 
 **tune2fs -U random /dev/sdX **→ ein neues zufälliges Label erzeugen
 
-*/dev/by-uuid/ 
+///dev/by-uuid/ //
 
 ==== Swap ====
 * Ist der Auslagerungsspeicher auf der Festplatte für den Kernel

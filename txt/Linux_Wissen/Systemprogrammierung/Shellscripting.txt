@@ -82,6 +82,7 @@ __Hinweis: Bash rundet die Ergebnisse immer ab.__
 * Wird von einem Kindprozess an die aktuelle Shell übergeben
 * Der Befehl **exit **beendet ein Script und gibt einen Wert an den Vaterprozess des Scriptes weiter.
 [[Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status]]
+[[+Debugging]]
 
 ===== Test =====
 * der **test **Befehl ist ein Bash Buildin

@@ -23,7 +23,7 @@ Created Mittwoch 29 Juni 2011
 [[Linux Wissen:SQL:Mysql Server:Mysql Daemon]]
 
 === mysql Konfiguration ===
-***/etc/my.cnf ; ~/.my.cnf**
+///etc/my.cnf ; ~/.my.cnf//
 [[Linux Wissen:FHS:etc:my.cnf]]
 → mysql Konfigurationsdatei für den Server und den Clients
 → beim Start werden alle Konfigurationsdsateien unter $MYSQL_HOME eingelesen
@@ -34,7 +34,7 @@ Created Mittwoch 29 Juni 2011
 	* Benutzung in einem chroot
 	* Benutzung unterschiedlicher Charactersets
 
-***/usr/share/mysql/my-{huge,large,medium,small}.cnf **
+///usr/share/mysql/my-{huge,large,medium,small}.cnf //
 → Beispielkonfigurationsdateien die entsprechend angepasst und kopiert werden können
 → die Angabe der Größe bezieht sich auf den zu verwendeneden RAM
 	* huge (1-2G RAM)
@@ -42,18 +42,18 @@ Created Mittwoch 29 Juni 2011
 	* medium (zwischen 32 und 64M Ram)
 	* small (kleiner als 64 M Ram)
 
-***/usr/bin/mysql_secure_installation**
+**/usr/bin/mysql_secure_installation**
 → kann zur Sicheren Konfiguraion des mysql Server und der Clients verwendet werden
 
 === mysql Logfile ===
-***/var/log/mysql **
+///var/log/mysql //
 → enthält Logdateien für den Server
 
 === PID File ===
-***/var/run/mysql/mysqld.pid**
+///var/run/mysql/mysqld.pid//
 
 === mysql Datafiles ===
-*/var/lib/mysql/<Datenbank>
+///var/lib/mysql/<Datenbank>//
 	MYISAM Storage Engine
 		→ .MYD → Data File
 		→ .FRM → Table File

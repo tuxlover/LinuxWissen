@@ -129,9 +129,9 @@ N → nach Verstreichen von N Minuten herunterfahren<br>
 <h4>Shutdown Prozess Ablauf</h4>
 <p>
 <strong>(1) </strong>Mitteilung an die Nutzer über den bevorstehenden Shutdown nach N Minuten<br>
-<strong>(2) </strong>Es wird eine leere Datei */etc/nologin angelegt, die über <strong>PAM</strong> <strong>(missing link)</strong> das Anmelden ausser für root 	        verbietet<br>
+<strong>(2) </strong>Es wird eine leere Datei /<em>etc/nologin</em> angelegt, die über <strong>PAM</strong> <strong>(missing link)</strong> das Anmelden ausser für root verbietet<br>
 <a href="../FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
-<strong>(3) </strong>Alle Dienste werden entsprchend */etc/init.d/rc.0 beendet<br>
+<strong>(3) </strong>Alle Dienste werden entsprchend /<em>etc/init.d/rc.0 </em>beendet<br>
 <strong>(4) </strong>Senden von Signal 15 (SIGTERM) an noch verbleibende Prozesse<br>
 <strong>(5) </strong>Senden von Signal 9 (SIGKILL) an noch verbleibende Prozesse<br>
 <a href="../Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a><br>

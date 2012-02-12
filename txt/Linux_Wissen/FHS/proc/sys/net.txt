@@ -5,11 +5,15 @@ Creation-Date: 2011-04-19T03:37:12+02:00
 ====== net ======
 Created Dienstag 19 April 2011
 
-***/proc/sys/net/802 **→ Daten zum E802 Protokoll
-***/proc/sys/net/core **→ Einstellungen zum Netzwerk
-***/proc/sys/net/ethernet/ **→ Unterverzeichniss mit Daten zum Ethernet Protokoll
+///proc/sys/net/802 //→ Daten zum E802 Protokoll
 
-***/proc/sys/net/ipv4|ipv6/conf **→ weitere Verzeichnisse zu jedem im System befindlichen Netzwerkgerät
-***/proc/sys/net/ipv4|ipv6/accept_redirects **→ kernel akzeptiert icmp Pakete nicht
-***/proc/sys/net/ipv4|ipv6/accept_source_route **→ 1 in falle von Routern, 0 sonst
+///proc/sys/net/core// → Einstellungen zum Netzwerk
+
+///proc/sys/net/ethernet/ //→ Unterverzeichniss mit Daten zum Ethernet Protokoll
+
+///proc/sys/net/ipv4|ipv6/conf// → weitere Verzeichnisse zu jedem im System befindlichen Netzwerkgerät
+
+///proc/sys/net/ipv4|ipv6/accept_redirects// → kernel akzeptiert icmp Pakete nicht
+
+///proc/sys/net/ipv4|ipv6/accept_source_route// → 1 in falle von Routern, 0 sonst
  

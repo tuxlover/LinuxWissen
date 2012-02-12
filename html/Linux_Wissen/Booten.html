@@ -128,7 +128,7 @@ rw → veranlasst den Kernel die /-Partiton mit Schreibberechtigungne einzuhäng
 </p>
 
 <p>
-init=&lt;Programm&gt; → startet das Programm anstelle von <strong>/sbin/init</strong><br>
+init=&lt;Programm&gt; → startet das Programm anstelle von /<em>sbin/init</em><br>
 init=/bin/sh → startet eine Minimale Shell ohne Jobkontrolle<br>
 <a href="./Booten/Init.html" title="Linux Wissen:Booten:Init">Linux Wissen:Booten:Init</a><br>
 </p>
@@ -183,30 +183,30 @@ nosmp → Abschalten des Symmetischen Multiprozessing wenn meherere Kerne|CPUs v
 
 <p>
 <strong>(2)</strong> Falls das System zusätzliche Partitionen wie /boot oder /usr beinhalten werden diese nun einghängt<br>
-<strong>      mount /dev/sdX{1,5,6} /mnt/system/{boot,usr,tmp}</strong><br>
+<code>      mount /dev/sdX{1,5,6} /mnt/system/{boot,usr,tmp}</code><br>
 </p>
 
 <p>
-<strong>(3) mount -o bind /dev /mnt/system/dev</strong><br>
+<strong>(3) </strong><code>mount -o bind /dev /mnt/system/dev</code><br>
 </p>
 
 <p>
-<strong>(4) mount -o bind /sys /mnt/system/sys</strong><br>
+<strong>(4) </strong><code>mount -o bind /sys /mnt/system/sys</code><br>
 </p>
 
 <p>
-<strong>(5) *mount -o bind /proc /mnt/system/proc</strong><br>
+<strong>(5) </strong><code>mount -o bind /proc /mnt/system/proc</code><br>
 <a href="./Partitionen_und_Dateisysteme/Mounten.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten">Linux Wissen:Partitionen und Dateisysteme:Mounten</a><br>
 </p>
 
 <p>
 <strong>(6)</strong> erstellen der /etc/mtab auf dem chroot system<br>
-<strong>    cp /mnt/proc/mounts /mnt/system/etc/mtab</strong><br>
+    <code>cp /mnt/proc/mounts /mnt/system/etc/mtab</code><br>
 </p>
 
 <p>
 <strong>(7)</strong> kopieren der resolv.conf falls Netzzugriff benötigt wird<br>
-<strong>    cp /etc/resolv.conf /mnt/system/etc/resolv.conf</strong><br>
+<code>    cp /etc/resolv.conf /mnt/system/etc/resolv.conf</code><br>
 </p>
 
 <p>
@@ -224,7 +224,7 @@ nosmp → Abschalten des Symmetischen Multiprozessing wenn meherere Kerne|CPUs v
 <h4>System V und der Init Prozess</h4>
 <p>
 <ul>
-<li><strong>/sbin/init mit PID 1</strong></li>
+<li>/<em>sbin/init </em><strong>mit PID 1</strong></li>
 <li><strong>runlevel</strong></li>
 <li>über einen <em>Runlevel</em> wird der Zustand in dem sich ein System befindet definiert</li>
 </ul>
@@ -237,7 +237,7 @@ nosmp → Abschalten des Symmetischen Multiprozessing wenn meherere Kerne|CPUs v
 <p>
 <a href="./Booten/Init.html" title="Linux Wissen:Booten:Init">Linux Wissen:Booten:Init</a><br>
 <ul>
-<li>Runelvel werden in der */etc/inittab definiert</li>
+<li>Runelvel werden in der /<em>etc/inittab </em>definiert</li>
 </ul>
 <a href="./FHS/etc/inittab.html" title="Linux Wissen:FHS:etc:inittab">Linux Wissen:FHS:etc:inittab</a><br>
 </p>
@@ -246,12 +246,12 @@ nosmp → Abschalten des Symmetischen Multiprozessing wenn meherere Kerne|CPUs v
 <p>
 a) Durch Anhängen an die Bootoptionen des Grub|LiLO Startbildschirms<br>
 <strong>-s </strong>→ starten des Runlevels S, single wird das entsprechende Runlevel gestartet<br>
-<strong>-b </strong>→ starten des Runlevels S, ohne die */etc/inittab zu lesen<br>
+<strong>-b </strong>→ starten des Runlevels S, ohne die /<em>etc/inittab</em> zu lesen<br>
 </p>
 
 <p>
 b) Durch eintragen von <br>
-<strong>init=/bin/sh </strong>wird eine Rootshell ohne Passwortabfrage gestartet. Dabei wird der init Prozess durch die Shell /bin/sh ersetzt. Eine Verarbeitung der Datei */etc/inittab findet nicht statt<br>
+<strong>init=/bin/sh </strong>wird eine Rootshell ohne Passwortabfrage gestartet. Dabei wird der init Prozess durch die Shell /bin/sh ersetzt. Eine Verarbeitung der Datei /<em>etc/inittab</em> findet nicht statt<br>
 </p>
 
 <h4>Dienste</h4>
@@ -260,7 +260,7 @@ b) Durch eintragen von <br>
 <li>bieten eine Funktion an die als Daemon im Hintergrund läuft</li>
 <li>Serverprozesse</li>
 </ul>
-*/etc/init.d/&lt;Dienst&gt; → Startscript für einen Dienst<br>
+/<em>etc/init.d/&lt;Dienst&gt;</em> → Startscript für einen Dienst<br>
 <strong>/etc/init.d/&lt;Dienst&gt; start|stop|status|reload|restart</strong><br>
 <ul>
 <li><strong>start_daemon</strong></li>

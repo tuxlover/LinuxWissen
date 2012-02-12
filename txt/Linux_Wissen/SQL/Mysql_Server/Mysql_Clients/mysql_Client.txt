@@ -68,7 +68,7 @@ Created Mittwoch 09 November 2011
 
 **-S|--socket =<PATH> **
 → festlegen des Pfades zum Socket
-→ */tmp/mysqld.sock wird als Standardsocket verwendet
+→ ///tmp/mysqld.sock// wird als Standardsocket verwendet
 → nur mit //--protocol=Socket//
 
 **-h|--host [IP|FQDN|localhost]**

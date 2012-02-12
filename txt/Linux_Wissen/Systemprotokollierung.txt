@@ -12,39 +12,39 @@ Created Sonntag 24 April 2011
 === Wichtige Dateien ===
 * jede Distribution hat diverse Unterschiede, wo welche Logeinträge standardmäßig vorgenommen werden
 $$SUSE$$:
-	//*/var/log/messages //**→ **Protokollierung des Kernel Ring Buffers, 
+	///var/log/messages //**→ **Protokollierung des Kernel Ring Buffers, 
 			              → Protokollierung des Bootprozesses
 	
-	*///var/log/firewall //→ Protokollierung des SUSE Firewall
+	///var/log/firewall //→ Protokollierung des SUSE Firewall
 	
-	//*/var/log/warn //**→ **Warnungen des Systems oder vom System benutzte Programme, zum Beispiel warnungen der Gonme-Desktop Session
+	///var/log/warn //**→ **Warnungen des Systems oder vom System benutzte Programme, zum Beispiel warnungen der Gonme-Desktop Session
 	
-	//*/var/log/NetworkManager //**→ **Warnungen des Network Manager, sofern dieser benutz wird
+	///var/log/NetworkManager //**→ **Warnungen des Network Manager, sofern dieser benutz wird
 
 $$Fedora$$:
-	//*/var/log/messages //**→ **Protokollierung des Kernel Ring Buffers
+	///var/log/messages //**→ **Protokollierung des Kernel Ring Buffers
 				       → Protokollierung des Bootprozesses
 	
-	//*/var/log/cron //**→ **Protokollierung des Cron Daemons
+	///var/log/cron //**→ **Protokollierung des Cron Daemons
 	
-	//*/var/log/secure //→ Portokollierung von SELinux
+	///var/log/secure //→ Portokollierung von SELinux
 				  → Protokollierung der Firewall
 	
-	//*/var/log/maillog //→ Protokollierung des Mailer Daemons (MDA,MTA)
+	///var/log/maillog //→ Protokollierung des Mailer Daemons (MDA,MTA)
 	(missing link MDA,MTA)
 
 $$Debian$$, $$Ubuntu$$:
-	//*/var/log/syslog → //Protokollierung der vom **syslogd **erzeugten Meldungen 
+	///var/log/syslog → //Protokollierung der vom **syslogd **erzeugten Meldungen 
 	
-	//*/var/log/debug → //Fehlermeldungen von Programmen zum Debuggen
+	///var/log/debug → //Fehlermeldungen von Programmen zum Debuggen
 	
-	//*/var/log/messages //**→** Protokollierung des Kernel Ring Buffers
+	///var/log/messages //**→** Protokollierung des Kernel Ring Buffers
 
 __Hinweis: Auf Servern sollte /var auf eine andere Partition oder einen anderen Rechner ausgelagert werden.__
 
 === Der Syslog Daemon ===
-* **syslogd **Daemon erhält seine Nachrichten über das Socket //*/dev/log//
-* wird über den //*/etc/syslog.conf //oder //*/etc/rsyslog.conf //konfiguriert
+* **syslogd **Daemon erhält seine Nachrichten über das Socket ///dev/log//
+* wird über den ///etc/syslog.conf //oder ///etc/rsyslog.conf //konfiguriert
 [[Linux Wissen:FHS:etc:syslog.conf]]
 __Hinweis: Nach dem editieren der Konfigurationsdatei muss der syslogd die Konfigurationsdatei neu lesen__
 ''kill -1 rsyslogd ''bzw. ''kill -1 syslogd''** → **den **syslogd **zwingen sein Konfiguration neu zu lesen
@@ -60,7 +60,7 @@ __Hinweis: Nach dem editieren der Konfigurationsdatei muss der syslogd die Konfi
 === Fehler beim Booten analysieren ===
 * **dmesg ** Kernel logging Informationen
 * ///proc/kmsg//  enthält die Nachrichten die vom Kernel ausgegeben werden
-* Der Daemon **klogd** kümmert sich um die Weiterleitung an den Daemon **syslogd<**
+* Der Daemon **klogd** kümmert sich um die Weiterleitung an den Daemon **syslogd**
 [[Linux Wissen:Systemprotokollierung:dmesg]]
 
 **dmesg|less** --> analysieren der kompletten Systemnachrichten auch die im frühen Bootstadium

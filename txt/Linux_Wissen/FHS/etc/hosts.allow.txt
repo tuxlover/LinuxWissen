@@ -10,7 +10,7 @@ Created Freitag 23 September 2011
 * Dienst wird für diesen Rechner gestatet
 * wird ein Dienst hier erlaubt wird nicht weiter in ///etc/hosts.deny //geprüft ob es Einschränkungen für den Dienst gibt
 * wird vom **tcpd **und vom **xinetd** ausgewertet
-* Die Dienste für die die Regeln gelten sollen, müssen in der //*/etc/inetd.conf//  fesgelegt werden 
+* Die Dienste für die die Regeln gelten sollen, müssen in der ///etc/inetd.conf//  fesgelegt werden 
 [[inetd.conf]]
 
 __Hinweis: !!! Ist keine der beiden Dateien vorhanden gelten beide Dateien als leer und es dürfen alle alles !!!__
@@ -19,14 +19,14 @@ __!!! Der Zugriff wird dann Protokolliert !!!__
 __Hinweis: Benutzen Sie __**tcpdchk **__um die Korrektheit dieser Dateien zu überprüfen.__
 [[Linux Wissen:Networking:Tools:tcpdchk]]
 
-BeispielSkelleteon für //*/etc/hosts.allow //und ///etc/hosts.deny//
+BeispielSkelleteon für ///etc/hosts.allow //und ///etc/hosts.deny//
 +++
 ''<Dienstliste> : <Hosts> : <weitere Einträge> [:<Option1>] [:<Option2> [:<shell-befehl>]''
 +++
 * Jede Direktive ist in einer Tabelle in Spalten durch : zu trennen
 
 //<Diensteliste>//
-→ durch Kommata getrennte Liste von Diensten die in *///etc/inetd.conf //spezifiziert wurde ([[inetd.conf]])
+→ durch Kommata getrennte Liste von Diensten die in ///etc/inetd.conf //spezifiziert wurde ([[inetd.conf]])
 → das Schlüsselwort //ALL //bezeichnet alle bekannten Dienste
 
 //<Optionen>//

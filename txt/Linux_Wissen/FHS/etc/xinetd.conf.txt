@@ -29,7 +29,7 @@ service <Dienst>
 
 //defaults{}//
 →  Einstellungen die für alle Dienste gelten
-→ wenn es mehrere Konfigurationsdateien gibt, steht diese Direktive in //*/etc/xinetd.conf //
+→ wenn es mehrere Konfigurationsdateien gibt, steht diese Direktive in ///etc/xinetd.conf //
 
 //service <Dienste>{}//
 → Einstellungen für den entsprechen Dienst
@@ -40,13 +40,13 @@ service <Dienst>
 	→ Attribute die den Dienst näher beschreiben und Restriktionen und Optionen für diesen erhalten:
 		//type //
 			//INTERNAL //**→ **dieser Dienst wird durch den xinetd intern zur Verfügung gestellt
-			//UNLISTED //→ dieser Dienst ist nicht in der //*/etc/services //verzeichnet
+			//UNLISTED //→ dieser Dienst ist nicht in der ///etc/services //verzeichnet
 			//RPC //→ es handelt sich um einen RPC-Dienst
 		//socket_type//
 			//stream,dgram,raw,seqpacket (//[[inetd.conf]])
 
 		//protocol//
-			→ der definierte Wert muss in //*/etc/protocols //stehen ([[protocols]])
+			→ der definierte Wert muss in ///etc/protocols //stehen ([[protocols]])
 
 		//wait//
 			//yes //→ Dienst wird nur einmal gestartet, wartet auf das Ende des Dienstes bevor ein neuer Prozess gestartet wird
@@ -81,9 +81,9 @@ service <Dienst>
 		//only_from → //Liste von Hosts denen es erlaubt ist, eine Verbindung zum Dienst herzustellen
 	                       → 172.16.12.5 definiert einen bestimmten Host 137.42.0.0 alle Hosts deren IP mit 137.42 beginnen
                                → 0.0.0.0 definiert alle bekannten Hosts
-	                       → einen Netzwerknamen der in der Datei //*/etc/networks // definiert ist   
+	                       → einen Netzwerknamen der in der Datei ///etc/networks // definiert ist   
 	                       → einen Adressbereich wird wie folgt definiert: a//a//.b.c.{1,3,45}
-			        → einen Hostnamen der in der *///etc/hosts// steht  
+			        → einen Hostnamen der in der ///etc/hosts// steht  
 			        → IP-Adresse mit einer dazugehörigen Netzmaske in CIDR 187.43.212.128/24 
 		//no_access //→ Liste von Hosts, denen der Zugriff grundsätzlich nicht gestattet ist
 				→ Beschreibeung der Hosts erfolggt wie bei //only_from//
@@ -94,7 +94,7 @@ service <Dienst>
 			//no → //Dinest ist grundsätzlich aktiviert 
 			→ kann gesetzt werden um einen Dienst kruzfristig zu stoppen und den Zugriff darauf zu verwehren
 		//disabled //
-			→ nur in defaults Abschnitt der //*/ect/xinetd.conf//
+			→ nur in defaults Abschnitt der ///ect/xinetd.conf//
 			→ ngabe einer Liste von Diensten die beim Start des xinetd nicht aktiviert werden
 
 <Operator>

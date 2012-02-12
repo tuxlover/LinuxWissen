@@ -9,7 +9,7 @@ __Hinweise:__
 Kann nur in den MBR installiert werden.
 nach eine Änderung der Konfigurationsdatei muss **lilo **aufgerufen werden.
 
-*/etc/lilo.conf 
+///etc/lilo.conf //
 [[Linux Wissen:FHS:etc:lilo.conf]]
 
 === Ferhlemeldungen in LILO ===

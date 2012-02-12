@@ -5,7 +5,7 @@ Creation-Date: 2011-09-23T15:05:48+02:00
 ====== Drucken ======
 Created Freitag 23 September 2011
 
-* //*/dev/lpX //ist die Geräteatei, die auf die entsprechenden Drucker verweist
+* ///dev/lpX //ist die Geräteatei, die auf die entsprechenden Drucker verweist
 * Jeder Druckauftrag der an einen Drucker gesendet wird, ist ein Job und wird mit einer eindeutigen Nummer bei 1 beginnend durchnummeriert
 * Jobs können in Klassen aufgeteil werden, jede Klasse kann einem oder mehrere Jobs zugewiesen werden
 http://localhost:631/help
@@ -19,8 +19,8 @@ SPOOL == Simultaneous Peripherial Operation On Line
 * **lpd**
 * BSD-Überbleibsl, durch CUPS weitgehend abgelöst
 * ansteuern von lokalen (parallel|seriell) angeschlossenen Druckern
-* //*/etc/pritncap //**→ **definiert die auf einem Rechner zur Verfügung gestellten Warteschlangen und Drucker
-* //*/var/spool/lpd //→ die Druckerwarteschlange
+* **→ **definiert die auf einem Rechner zur Verfügung gestellten Warteschlangen und Drucker
+/etc/pritncap * ///var/spool/lpd //→ die Druckerwarteschlange
 [[FHS:var:spool]]
 
 === CUPS (Common Unix Printing System) ===
@@ -32,15 +32,15 @@ SPOOL == Simultaneous Peripherial Operation On Line
 	* sprcht IPP
 	* stellt Dokumentation bereit
 	* unter http://localhost:631 anprechbar 
-* //*/usr/share/cups/model //enthält die .ppd Druckerbeschreibungsdateien ([[FHS:usr:usr++share++cups++model]])
-* //*/var/log/cups/access_log // → Loggen von Zugriffen auf den Cups Drucker Server
+* ///usr/share/cups/model //enthält die .ppd Druckerbeschreibungsdateien ([[FHS:usr:usr++share++cups++model]])
+* ///var/log/cups/access_log // → Loggen von Zugriffen auf den Cups Drucker Server
 * ///var/log/cups/error_log// → Loggen von Fehlern des Cups Drucker Servers 
 * **cups-lpd**
 [[+cups-lpd]]
 
 
 == Client Befehle zum Drucken ==
-* **cat <Datei> > /dev/lpX **→ die Datei wird direkt an das Gerät //*/dev/lpX// gesendet
+* **cat <Datei> > /dev/lpX **→ die Datei wird direkt an das Gerät ///dev/lpX// gesendet
 	                              → setzt allerdings eine Formatierung vorraus, die der Drucker versteht (ASCII, UTF-8)
 					        [[Lokalisierung]]
 					→ kein Programm oder User kann gleichzeitig drucken
@@ -63,7 +63,7 @@ SPOOL == Simultaneous Peripherial Operation On Line
 	* **-c **→ Anhalten und löschen
 * **accept <Printer>|reject <Printer> **einen neuen Druckauftrag in der aktuellen Queue akzeptieren|ablehnen  
 	**-r **→ einen Grund angeben
-* **lppasswd **→ ändern des Passwortes es muss die Direktive //AuthType //auf //Digest// in //*/etc/cupsd.conf //gesetzt sein
+* **lppasswd **→ ändern des Passwortes es muss die Direktive //AuthType //auf //Digest// in ///etc/cupsd.conf //gesetzt sein
 * **lpc (line printer control) **zum Steuern diverser Druckoptionen
 * **lpinfo **zum Anzeigen von Informationen von (nicht zwingend) installierten Druckergeräten
 	* **-v **→ verfügbare Anschlusstypen
@@ -76,16 +76,16 @@ __Trick: Anzeigen aller PPD Dateien für einen  bestimmten Drucker: __**lpinfo -
 
 == Cups Konfiguartionsdateien ==
 http://localhost:631
-* */etc/hosts.lpd → eine Liste von Hosts, die über diesen Druckerserver mit dem Drucker kommunizieren dürfen
+* /etc/hosts.lpd → eine Liste von Hosts, die über diesen Druckerserver mit dem Drucker kommunizieren dürfen
 [[FHS:etc:hosts.lpd]]
-* //*/etc/cups/mime.types → //Bestimmung des Datentyps der gedruckt wird
-* //*/etc/cups/classes.conf //→ definieren von  verschiedenen lokalen Drucker Klassen
+* ///etc/cups/mime.types → //Bestimmung des Datentyps der gedruckt wird
+* ///etc/cups/classes.conf //→ definieren von  verschiedenen lokalen Drucker Klassen
 [[FHS:etc:cups:cups++classes.conf]]
-//*/etc/cups/mime.convs// → Bestimmung der Filterprogramme zur Umwandlung verschiedener Format 
-//*/etc/cups/printers.conf → //enthält die Konfiguration für die einzelnen Drucker
+///etc/cups/mime.convs// → Bestimmung der Filterprogramme zur Umwandlung verschiedener Format 
+///etc/cups/printers.conf → //enthält die Konfiguration für die einzelnen Drucker
 [[FHS:etc:cups:cups++printers.conf]]
-//*/etc/cups/ppd/ //→ für jeden vom Server verwatleteten Drucker wird die PPD-Datei aus //*/usr/share/cups/model// hierherkopiert
+///etc/cups/ppd/ //→ für jeden vom Server verwatleteten Drucker wird die PPD-Datei aus ///usr/share/cups/model// hierherkopiert
  [[FHS:usr:usr++share++cups++model]]
-//*/etc/cups//cupsd.conf //→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)
+///etc/cups//cupsd.conf //→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)
 [[FHS:etc:cups:cups++cupsd.conf]]
 [[FHS:etc]]

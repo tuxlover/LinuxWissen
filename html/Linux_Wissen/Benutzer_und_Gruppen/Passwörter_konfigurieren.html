@@ -98,21 +98,21 @@ Created Dienstag 19 April 2011<br>
 <strong>passwd &lt;User&gt; </strong>→ Passwort als root für &lt;User&gt; ändern<br>
 <strong>-S &lt;User&gt; </strong>→ Passworteinstellungen anzeigen<br>
 <strong>-Sa </strong>→ Passworteinstellungen für alle anzeigen<br>
-<strong>-e </strong>→ Benutzer wird gezwungen beim nächsten Login ein Passwort zu vergeben, setzt das 3.Feld in */etc/shadow ( <a href="./Konfigurationsdateien.html" title="Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien">Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien</a> ) auf 0<br>
+<strong>-e </strong>→ Benutzer wird gezwungen beim nächsten Login ein Passwort zu vergeben, setzt das 3.Feld in /<em>etc/shadow</em> ( <a href="./Konfigurationsdateien.html" title="Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien">Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien</a> ) auf 0<br>
 </p>
 
 <p>
-<strong>pwconv </strong>→ trägt alle Passworthashes, die in der */etc/passwd stehen in die */etc/shadow ein<br>
-<strong>-P &lt;Pfad&gt; </strong>→ einen alternativen Pfad für die */etc/shadow angeben<br>
+<strong>pwconv </strong>→ trägt alle Passworthashes, die in der<em> /etc/passwd</em> stehen in die /<em>etc/shadow </em>ein<br>
+<strong>-P &lt;Pfad&gt; </strong>→ einen alternativen Pfad für die<em> /etc/shadow</em> angeben<br>
 </p>
 
 <p>
-<strong>pwunconv </strong>→ trägt alle Passworthases die in der */etc/shadow  stehen in die */etc/passwd ein<br>
-<strong>-P &lt;Pfad&gt; </strong>→ einen alternativen &lt;Pfad&gt; für die */etc/passwd angeben<br>
+<strong>pwunconv </strong>→ trägt alle Passworthases die in der /<em>etc/shadow </em> stehen in die /<em>etc/passwd </em>ein<br>
+<strong>-P &lt;Pfad&gt; </strong>→ einen alternativen &lt;Pfad&gt; für die /<em>etc/passwd</em> angeben<br>
 </p>
 
 <p>
-<strong>pwck </strong>→ überprüft die Dateien */etc/passwd und */etc/shadow auf Fehler und ungenutzten Einträgen<br>
+<strong>pwck </strong>→ überprüft die Dateien<em> /etc/passwd</em> und /<em>etc/shadow</em> auf Fehler und ungenutzten Einträgen<br>
 <strong>-s </strong>→ sortieren der Passwortdatei<br>
 <strong>-p &lt;Pfad&gt; </strong>→ suche nach den beiden Passwortdateien unter &lt;Pfad&gt;<br>
 </p>

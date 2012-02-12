@@ -101,14 +101,14 @@ Created Freitag 22 April 2011<br>
 
 <p>
 <strong>mount &lt;Blockgerät&gt; &lt;Mountpoint&gt; </strong>→ hängt das &lt;Blockgerät&gt; in den &lt;Mountpoint&gt; ein<br>
-<strong>-a </strong>alle Geräte die in der */etc/fstab  (<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a>) eingetragen sind<br>
+<strong>-a </strong>alle Geräte die in der /<em>etc/fstab</em>  (<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a>) eingetragen sind<br>
 <strong>--bind </strong>→ ein &lt;Blockgerät&gt; auf zwei verschiedene &lt;Mountpoint&gt;s setzen<br>
 <strong>-o &lt;optionen&gt;,... </strong>→ weitere Optionen für mount angeben<br>
 </p>
 
 <p>
-<em>&lt;Optionen&gt; (können auch in */etc/fstab vergeben werden </em><a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a> )<br>
-<em>auto</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dateisystem wird  iterativ aus */proc/filesystems ermittlet ( <a href="../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a> )<br>
+<em>&lt;Optionen&gt; (können auch in /etc/fstab vergeben werden </em><a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a> )<br>
+<em>auto</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dateisystem wird  iterativ aus /<em>proc/filesystems</em> ermittlet ( <a href="../FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a> )<br>
 <em>noauto</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dateisystem wird nicht automatisch eingehängt<br>
 <em>acl</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACLs aktivieren<br>
 <em>async</em> 		I/O zwischen Dateisystemen und RAM ist asynchron<br>
@@ -150,7 +150,7 @@ no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreib
 <p>
 <strong>mount &lt;Mountpoint&gt;|&lt;Device&gt; </strong>→ es reicht einer der beiden Argumente anzugeben, <br>
 <div style='padding-left: 210pt'>
-      → falls es einen Eintrag */etc/fstab gibt ( <br>
+      → falls es einen Eintrag /<em>etc/fstab</em> gibt ( <br>
 </div>
 <a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a> )<br>
 </p>
@@ -164,10 +164,10 @@ no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreib
 <div style='padding-left: 240pt'>
  → Es reicht das &lt;Device&gt; oder den &lt;Mountpoint&gt; anzugeben<br>
 </div>
-<strong>-n </strong>→ die Einträge aus */etc/mtab nicht entfernen<br>
+<strong>-n </strong>→ die Einträge aus /<em>etc/mtab</em> nicht entfernen<br>
 <strong>-r </strong>→ falls das Aushängen fehlschlägt, versuche es ro einzuhängen<br>
 <strong>-d </strong>→ falls das Gerät ein Loop Gerät war, wird es das loop_Gerät zur Benutzung freigeben<br>
-<strong>-a </strong>→ alle Geräte in */etc/mtab ( <a href="../FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a> ) aushängen<br>
+<strong>-a </strong>→ alle Geräte in /<em>etc/mtab</em> ( <a href="../FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a> ) aushängen<br>
 <strong>-l </strong>→ Entfernen des Datei Dateisystems aus der Hierarchie, entferne und führe Cleanup wenn das Dateisystem<br>
 <div style='padding-left: 30pt'>
  unbschäftigt ist<br>
@@ -176,8 +176,13 @@ no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreib
 </p>
 
 <p>
-<u>Hinweis: --fake kann verwendet werden um ein Dateisystem aus */etc/mtab auszutragen.</u><br>
+<u>Hinweis: --fake kann verwendet werden um ein Dateisystem aus</u><em> /etc/mtab</em><u> auszutragen.</u><br>
 </p>
+
+<p>
+<strong>findmnt [&lt;Mountpunkt&gt;|&lt;Gerät&gt;]</strong><br>
+</p>
+
 
 
 			<!-- End wiki content -->
@@ -185,7 +190,7 @@ no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreib
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>						<a href='../Booten.html'>Linux Wissen:Booten</a></li>						<a href='./Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>						<a href='../Dateien_verwalten/Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>						<a href='../Dateien_verwalten/Dateiattribute.html'>Linux Wissen:Dateien verwalten:Dateiattribute</a></li>						<a href='../FHS/etc/fstab.html'>Linux Wissen:FHS:etc:fstab</a></li>						<a href='../FHS/etc/cgconfig.conf.html'>Linux Wissen:FHS:etc:cgconfig.conf</a></li>						<a href='../Prozessverwaltung/Cgroups/Hierarchien_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Hierarchien verwalten</a></li>
+				Backlinks:						<a href='../Dateien_verwalten/Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>						<a href='../Dateien_verwalten/Dateiattribute.html'>Linux Wissen:Dateien verwalten:Dateiattribute</a></li>						<a href='../FHS/etc/fstab.html'>Linux Wissen:FHS:etc:fstab</a></li>						<a href='../FHS/etc/cgconfig.conf.html'>Linux Wissen:FHS:etc:cgconfig.conf</a></li>						<a href='../Prozessverwaltung/Cgroups/Hierarchien_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Hierarchien verwalten</a></li>						<a href='../Booten.html'>Linux Wissen:Booten</a></li>						<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>						<a href='./Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

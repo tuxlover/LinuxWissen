@@ -15,7 +15,7 @@ Created Sonntag 24 April 2011
 **-v **→ ausführliche Ausgabe
 **-vv **→ noch ausführlicher
 **-vvv **→ noch viel ausführlicher
-**-n **→ nicht die Datenbank unter */usr/share/pci.ids
+**-n **→ nicht die Datenbank unter// /usr/share/pci.ids//
 [[Linux Wissen:FHS:usr]]
 **-t **→ zeige die Geräteabhängigeiten einzelner PCI-Geräte in einer Baumansicht
 **-d **→ dump der PCI Geräte Daten direkt aus den Geräten

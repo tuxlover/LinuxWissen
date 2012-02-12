@@ -7,21 +7,21 @@ Created Dienstag 19 April 2011
 
 
 
-***/etc/passwd **[[Linux Wissen:FHS:etc:passwd]]
+///etc/passwd //[[Linux Wissen:FHS:etc:passwd]]
 
 
-***/etc/shells**
+///etc/shells//
 → Liste der Shells die für einen Nutzer mittels **chsh **als Login gesetzt werden kann 
 
-***/etc/shadow**[[Linux Wissen:FHS:etc:shadow]]
+///etc/shadow// [[Linux Wissen:FHS:etc:shadow]]
 
 
-***/etc/group **[[Linux Wissen:FHS:etc:group]]
+///etc/group// [[Linux Wissen:FHS:etc:group]]
 
 
-***/etc/login.defs**
+///etc/login.defs//
 → Standardkonfiguration für die login Programmtools **pwdutils**
 
-***/etc/default/useradd **
+///etc/default/useradd //
 → Standardeinstellungen für **useradd**
  

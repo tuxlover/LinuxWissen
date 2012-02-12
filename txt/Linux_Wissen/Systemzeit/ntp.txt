@@ -35,6 +35,6 @@ __Interaktive Befehle:__
 **-g **→ verlangt den Zeitabgleich auch dann, wenn die Zeit mehr als 1000 Sekunden abweicht
 **-c <Datei> **→ angeben einer alternativen Konfigurationsdatei
 **-f <Datei> **→ angeben einer alternativen Driftfile Datei, normalerweise ///var/lib/ntp/drift/ntp.drift//
-**-t <Key> **→ den Schlüssel zu den vertrauenswürdigen Schlüsseln in //*/etc/ntp.keys //hinzufügen
+**-t <Key> **→ den Schlüssel zu den vertrauenswürdigen Schlüsseln in ///etc/ntp.keys //hinzufügen
 
 [[Linux Wissen:FHS:etc:ntp.conf]]

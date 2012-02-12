@@ -43,5 +43,5 @@ __Hinweis: Umgebungsvariablen sind Shellvariablen aber nicht umgekehrt. Die Auss
 **echo $VAR** → zeigt den Inhalt der Varibalen VAR an
 
 ===== Anzeigen des aktuellen virtuellen Geräts =====
-**tty **→ zeigt das unter */dev gemappte Gerät an auf der das Terminal lauscht
+**tty **→ zeigt das unter ///dev// gemappte Gerät an auf der das Terminal lauscht
 man b

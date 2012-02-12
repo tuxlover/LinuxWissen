@@ -30,7 +30,7 @@ Der Aufruf von **su - **, **login ** und **ssh **gibt der Shell als erstes ein *
 
 ===== Interaktive Shell =====
 Shell reagiert auf Nutzeinagben und gibt Statusmeldungen zurück
-* einlesen der Shellspezifischen Konfiguraionsdateien des Benutzers wie zum Beispiel *~/.bashrc 
+* einlesen der Shellspezifischen Konfiguraionsdateien des Benutzers wie zum Beispiel// ~/.bashrc //
 
 ===== Nichtinteraktive Shell =====
 * Ein Shellscript wird ohnen Nutzerintervention ausgeführt 

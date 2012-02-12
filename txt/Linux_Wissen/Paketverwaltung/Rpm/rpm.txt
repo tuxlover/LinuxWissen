@@ -5,7 +5,7 @@ Creation-Date: 2011-04-25T23:56:46+02:00
 ====== rpm ======
 Created Montag 25 April 2011
 
-*/var/lib/rpm → Paketdatenbank
+///var/lib/rpm //→ Paketdatenbank
 [[Linux Wissen:FHS:var]]
 — 
 **rpm **→ Installieren und Verwalten von Rpm Paketen
@@ -75,7 +75,7 @@ __Paket deinstallieren, auch wenn man den Namen nicht mehr weiß.__
 === Ein Quellpaket übersetzen ===
 **rpmbuild --rebuild <Paket>.src.rpm **
 → ein Quellpaket wird erneut übersetzt
-→ fertig gebaute Pakte findet man in */usr/src/packages/RPMS
+→ fertig gebaute Pakte findet man in ///usr/src/packages/RPMS//
 [[Linux Wissen:FHS:usr]]
 [[Linux Wissen:Paketverwaltung:Rpm:Pakete bauen]]
 

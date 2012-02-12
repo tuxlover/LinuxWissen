@@ -152,7 +152,7 @@ irc             			Port 6668       udp<br>
 
 <p>
 <ul>
-<li><em>*/etc/services </em>mappt die Ports an den <strong>inetd (nicht initd) </strong>oder <strong>xinetd</strong> oder einen anderen vom <em>getserverbyname() </em>syscall verwendet</li>
+<li>/<em>etc/services </em>mappt die Ports an den <strong>inetd (nicht initd) </strong>oder <strong>xinetd</strong> oder einen anderen vom <em>getserverbyname() </em>syscall verwendet</li>
 </ul>
 <a href="./FHS/etc/services.html" title="Linux Wissen:FHS:etc:services">Linux Wissen:FHS:etc:services</a><br>
 </p>
@@ -244,12 +244,12 @@ irc             			Port 6668       udp<br>
 <li>es wird nur ein Daemon benötigt der auf bestimmten Ports lauscht</li>
 <li>spart UTTCMS</li>
 <li>spart RAM</li>
-<li><em>*/etc/inetd.conf (</em><a href="./FHS/etc/inetd.conf.html" title="FHS:etc:inetd.conf">FHS:etc:inetd.conf</a>)</li>
+<li>/<em>etc/inetd.conf (</em><a href="./FHS/etc/inetd.conf.html" title="FHS:etc:inetd.conf">FHS:etc:inetd.conf</a>)</li>
 </ul>
 <li><strong>xinetd </strong>vereintlicht die Konfiguration von <strong>inetd </strong>und <strong>tcpd </strong></li>
 <ul>
-<li>die Konfiguration befindet sich entweder für jeden Dienst einzeln in <em>*/etc/xinetd.d/mydienst.conf</em></li>
-<li>oder in <em>*/etc/xinetd.conf (</em><a href="./FHS/etc/xinetd.conf.html" title="FHS:etc:xinetd.conf">FHS:etc:xinetd.conf</a>)</li>
+<li>die Konfiguration befindet sich entweder für jeden Dienst einzeln in /<em>etc/xinetd.d/mydienst.conf</em></li>
+<li>oder in /<em>etc/xinetd.conf (</em><a href="./FHS/etc/xinetd.conf.html" title="FHS:etc:xinetd.conf">FHS:etc:xinetd.conf</a>)</li>
 </ul>
 </ul>
 <a href="./Networking/xinetd.html" title="+xinetd">+xinetd</a><br>
@@ -261,18 +261,18 @@ irc             			Port 6668       udp<br>
 <li>Dienst zur Steuerung Zugangsbeschränkungen für bestimmte Dienste</li>
 <li>erfolgt ein Zugriffsversuch auf einen Dienst, startet der <strong>inetd </strong>den <strong>tcpd</strong></li>
 <li>prüft ob ein Rechner berechtigt ist, einen bestimmten Dienst auszuführen</li>
-<li><em>*/etc/hosts.allow </em>ist die Konfigurationsdatei für explizit erlaubte Dienste</li>
+<li>/<em>etc/hosts.allow </em>ist die Konfigurationsdatei für explizit erlaubte Dienste</li>
 </ul>
 <a href="./FHS/etc/hosts.allow.html" title="FHS:etc:hosts.allow">FHS:etc:hosts.allow</a><br>
 <ul>
-<li><em>*/etc/hosts.deny </em>ist die Konfigurationsdatei für explizit verbotene Dienste</li>
+<li>/<em>etc/hosts.deny </em>ist die Konfigurationsdatei für explizit verbotene Dienste</li>
 </ul>
 <a href="./FHS/etc/hosts.deny.html" title="FHS:etc:hosts.deny">FHS:etc:hosts.deny</a><br>
 </p>
 
 <h4>Netzwerkkarten und Treiber mit Udev konfigurieren</h4>
 <p>
-<em>*/etc/udev/rules.d/70-persistent-net-rules </em>hält Informationen über die von <strong>udev </strong>gesteuerten Netzwerkkarten und wird erzeugt von <em>*/lib/udev/write_net_rules</em><br>
+/<em>etc/udev/rules.d/70-persistent-net-rules </em>hält Informationen über die von <strong>udev </strong>gesteuerten Netzwerkkarten und wird erzeugt von /<em>lib/udev/write_net_rules</em><br>
 +++<br>
 <em>SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="00:13:ce:b4:9f:57", ATTR{type}=="1", KERNEL=="eth*", NAME="eth1"</em><br>
 +++<br>
@@ -285,8 +285,8 @@ irc             			Port 6668       udp<br>
 <p>
 <ul>
 <li><strong>echo 0|1 &gt; /proc/sys/net/ipv4/ip_forward </strong>→ deaktivieren|aktivieren von IP-Forwarding</li>
-<li>$$SUSE$$ <em>*/etc/sysconfig/sysctl </em>in der Variablen <em>IP-FORWARDING=yes|no </em>eintragen</li>
-<li>$$Debian$$ <em>*/etc/network/options </em>in der Variablen <em>ip_forward=yes|no  </em>eintragen </li>
+<li>$$SUSE$$ /<em>etc/sysconfig/sysctl </em>in der Variablen <em>IP-FORWARDING=yes|no </em>eintragen</li>
+<li>$$Debian$$ /<em>etc/network/options </em>in der Variablen <em>ip_forward=yes|no  </em>eintragen </li>
 </ul>
 </p>
 

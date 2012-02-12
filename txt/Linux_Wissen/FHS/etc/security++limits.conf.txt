@@ -5,7 +5,7 @@ Creation-Date: 2011-04-21T14:50:32+02:00
 ====== security++limits.conf ======
 Created Donnerstag 21 April 2011
 
-***/etc/security/limits.conf**
+///etc/security/limits.conf//
 ++
 '''
 #Jede Zeile beschreibt ein gesteztes Limit für einen Nutzer in der Form

@@ -31,5 +31,5 @@ Created Donnerstag 21 April 2011
 //Coredump ausschalten//
 ''ulimit -H -c 0 - -''
 
-*/etc/security/limits.conf
+///etc/security/limits.conf//
 [[Linux Wissen:FHS:etc:security++limits.conf]]

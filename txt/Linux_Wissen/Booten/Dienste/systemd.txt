@@ -20,13 +20,13 @@ Created Donnerstag 12 Januar 2012
 * Konfigurationsdatei die einen entsprechenden Dienst beschreibt
 * beschreibt einen von Systemd zu verwaltenden Dienst, Socket oder Gerät oder ein System-V-Init Script
 
-* aktive Units findet man unter //*/etc/systemd/system //
-* alle Units die das System installiert hat aber nicht genutzt werden findet man unter //*/lib/systemd/system/<Name>.<Typ>//
+* aktive Units findet man unter ///etc/systemd/system //
+* alle Units die das System installiert hat aber nicht genutzt werden findet man unter ///lib/systemd/system/<Name>.<Typ>//
 **<Typ> **
 → kann ein //Socket//,//Target//, eine //Dateisystem Pfad//, ein //Gerät //, ein //mount //oder //automountpoint, timer //oder //Snapshot //sein
 **man 5 systemd.unit**
 [[Linux Wissen:FHS:lib:lib++systemd]]
-
+[[Linux Wissen:FHS:lib:lib++systemd]]
 
 === Systemdienste steuern ===
 **systemctl [start|stop|kill|reload|restart| enable|disable show  <Unit> ]  | daemon-reload**

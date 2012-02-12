@@ -14,7 +14,7 @@ Created Samstag 23 April 2011
 **-t <Typ> **→ siehe Manpage, den Typ festlegen 
 **-T **→ Setze einen Zeitstempel für den Namen des Ausgabeverzeichnisses
 **-Q **→ nicht verbose
-**-c <Konfigurationsdatei> **→ diese Konfiguration anstelle der die in */etc/foremost liegt
+**-c <Konfigurationsdatei> **→ diese Konfiguration anstelle der die in ///etc/foremost// liegt
 
 
 */etc/foremost.conf

@@ -20,9 +20,9 @@ modified → eine oder mehrere Veränderung wurde nicht in der Git Datenbank ges
 
 
 ===== Setup =====
-//*/etc/gitconfig // → globale Konfigurationsdatei für git
-//*~/.gitconfig// → nutzerspezifische Konfigurationen für git
-
+///etc/gitconfig // → globale Konfigurationsdatei für git
+//~/.gitconfig// → nutzerspezifische Konfigurationen für git
+[[FHS:etc:gitconfig]]
 
 ===== General use =====
 **git <Modul> <Optionen <Parameter>**

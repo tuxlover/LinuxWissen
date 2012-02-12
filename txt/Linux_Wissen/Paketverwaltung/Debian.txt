@@ -34,5 +34,5 @@ $Debian, Ubuntu, Knoppix, Xandros, Sidux$
 * **aptitude**
 * **apt-get** 
 [[Linux Wissen:Paketverwaltung:Debian:apt]]
-* Die Liste von Bezugsquelle von Debianquellen kann unter */etc/apt/sources.lst konfiguriert werden
+* Die Liste von Bezugsquelle von Debianquellen kann unter ///etc/apt/sources.lst// konfiguriert werden
 [[Linux Wissen:FHS:etc:apt++soruces.lst]]

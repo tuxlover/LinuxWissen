@@ -73,7 +73,7 @@ __Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vorde
 	* **ulimit**
 [[Linux Wissen:Prozessverwaltung:ulimit]]
 
-*/etc/security/limits.conf
+///etc/security/limits.conf//
 [[Linux Wissen:FHS:etc:security++limits.conf]]
 
 ==== CGroups ====

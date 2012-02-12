@@ -7,9 +7,9 @@ Created Sonntag 24 April 2011
 
 **/sbin/init <Rrunlevel>|<q|Q> **
 → in das entsprechende Runlevel wechseln
-→ dabei werden die in der */etc/inittab angegebenen Scripte entsprechend des Runlevels ausgeführt
+→ dabei werden die in der ///etc/inittab// angegebenen Scripte entsprechend des Runlevels ausgeführt
 **-t N **→ zwischen dem Senden von SIGTERM und SIGKILL N Sekunden verstreichen lassen
-wird der Parmeter q|Q verwendet wird ein erneuetes einlesen der */etc/inittab erzwungen
+wird der Parmeter q|Q verwendet wird ein erneuetes einlesen der ///etc/inittab// erzwungen
 [[Linux Wissen:Prozessverwaltung:kill]]
 [[Linux Wissen:FHS:etc:inittab]]
 

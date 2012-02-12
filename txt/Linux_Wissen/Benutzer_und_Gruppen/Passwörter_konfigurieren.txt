@@ -9,14 +9,14 @@ Created Dienstag 19 April 2011
 **passwd <User> **→ Passwort als root für <User> ändern
 **-S <User> **→ Passworteinstellungen anzeigen
 **-Sa **→ Passworteinstellungen für alle anzeigen
-**-e **→ Benutzer wird gezwungen beim nächsten Login ein Passwort zu vergeben, setzt das 3.Feld in */etc/shadow ( [[Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien]] ) auf 0
+**-e **→ Benutzer wird gezwungen beim nächsten Login ein Passwort zu vergeben, setzt das 3.Feld in ///etc/shadow// ( [[Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien]] ) auf 0
 
-**pwconv **→ trägt alle Passworthashes, die in der */etc/passwd stehen in die */etc/shadow ein
-**-P <Pfad> **→ einen alternativen Pfad für die */etc/shadow angeben
+**pwconv **→ trägt alle Passworthashes, die in der// /etc/passwd// stehen in die ///etc/shadow //ein
+**-P <Pfad> **→ einen alternativen Pfad für die// /etc/shadow// angeben
 
-**pwunconv **→ trägt alle Passworthases die in der */etc/shadow  stehen in die */etc/passwd ein
-**-P <Pfad> **→ einen alternativen <Pfad> für die */etc/passwd angeben
+**pwunconv **→ trägt alle Passworthases die in der ///etc/shadow // stehen in die ///etc/passwd //ein
+**-P <Pfad> **→ einen alternativen <Pfad> für die ///etc/passwd// angeben
 
-**pwck **→ überprüft die Dateien */etc/passwd und */etc/shadow auf Fehler und ungenutzten Einträgen
+**pwck **→ überprüft die Dateien// /etc/passwd// und ///etc/shadow// auf Fehler und ungenutzten Einträgen
 **-s **→ sortieren der Passwortdatei
 **-p <Pfad> **→ suche nach den beiden Passwortdateien unter <Pfad>

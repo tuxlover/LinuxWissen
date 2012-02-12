@@ -5,7 +5,7 @@ Creation-Date: 2011-04-15T15:46:15+02:00
 ====== History ======
 Created Freitag 15 April 2011
 
-* wird in der Datei *~/.bash_history abgelegt
+* wird in der Datei //~/.bash_history// abgelegt
 * zum durchsuchen der zuletzt ausgeführten Befehle
 
 **history [N]**→ gibt die komplette Liste aller zuletzt eingegebenen Befehle aus
@@ -15,7 +15,7 @@ Created Freitag 15 April 2011
 ===== Emacs Modus Befehle zur Steuerung der History =====
 [[Linux Wissen:Shell:Bash:Emacs Modus]]
 
-===== Umgebungsvariablen der Bash History  =====
+===== Umgebungsvariablen der Bash History =====
  [[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]]
 
 ===== Steuerung der History =====

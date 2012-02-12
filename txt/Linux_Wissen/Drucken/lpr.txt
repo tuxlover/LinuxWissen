@@ -14,7 +14,7 @@ Created Freitag 23 September 2011
 **-C|-J|-T <Name> **→ setzen eines Jobnamesn
 **-# N **→ N Anzahl Kopien  erstellen
 **-h **→ keine Banner drucken
-**-l **→ Datei ohne der in //*/usr/share/cups/model //festgelegten Formatierung drucken
+**-l **→ Datei ohne der in ///usr/share/cups/model //festgelegten Formatierung drucken
 **-o <Druckoption> **→ angeben einer Druckoption, **man lp** zeigt alle möglichen Druckoptionen
 **-r **→ nachdem die Datei ausgedruckt wurde, wird sie gelöscht
 **-m **→ eine Mail an den Nutzer senden,sobald der Druckauftrag abgeschlossen ist
@@ -31,7 +31,7 @@ Created Freitag 23 September 2011
 == Einige Parameter für dei Verwendung mit -o ==
 **media=<typ> ** → Papiergröße
 		       → gültige Werte sind zum Beispiel A4, USLetter
-			→ genaue Werte für den Drucler ergeben sich aus den .ppd Dateien in //*/usr/share/cups/model//
+			→ genaue Werte für den Drucler ergeben sich aus den .ppd Dateien in ///usr/share/cups/model//
 
 **landscape **→ drucken im Querformat
 

@@ -9,11 +9,11 @@ Created Montag 25 April 2011
 **apt-get <Aktion> **
 → Tool zum Holen, Installieren und Verwalten von Debian Paketen aus einem zentralen Repository
 → Abhängigkeiten werden aufgelöst
-→ Repositories werden in */etc/apt/sources.lst konfiguriert
+→ Repositories werden in ///etc/apt/sources.lst// konfiguriert
 [[Linux Wissen:FHS:etc:apt++soruces.lst]]
  
 //<Aktion>//
-**update **→ aktualisieren der Informationen über verfügbare Paket aus */etc/apt/sources.lst
+**update **→ aktualisieren der Informationen über verfügbare Paket aus ///etc/apt/sources.lst//
 
 **install <Paket1>,... **→ holen von <Paket> aus dem Repository, und installieren 
 
@@ -22,7 +22,7 @@ Created Montag 25 April 2011
 **upgrade **→ einspielen aller verfügbaren Updates aus dem Repository
 
 **dist-upgrade **→ aktuallisieren einer bestehende Version auf die nächste, dazu muss eventuell die 3. Spalte in der 
-*/etc/apt/sources.lst angepasst werden, wenn man zum Beispiel von //main // auf //testing // upgraden will
+///etc/apt/sources.lst// angepasst werden, wenn man zum Beispiel von //main // auf //testing // upgraden will
 
 **source <Paket> **→ holen der zu <Paket> gehörenden Dateien
 — 

@@ -5,7 +5,7 @@ Creation-Date: 2011-04-23T23:41:58+02:00
 ====== GRUB ======
 Created Samstag 23 April 2011
 
-*/etc/grub/menu.lst
+///etc/grub/menu.lst//
 [[Linux Wissen:FHS:boot:grub++menu.lst]]
 
 **grub** → ruft die Grubshell auf, in der grunb installiert oder repariert werden kann

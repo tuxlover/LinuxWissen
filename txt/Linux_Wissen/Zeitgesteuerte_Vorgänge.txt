@@ -11,35 +11,37 @@ Created Mittwoch 20 Juli 2011
 * einen bestimmten Jobs zu einem bestimmten Zeitpunkt ausfüren
 * Unter $$SUSE$$ muss die Grupper //trusted //dem entsprechenden Nutzer der at ausführen will zugeordnet sein
 * Der at Daemon (atd) muss laufen um **at **gesteuerte Jobs ausführen zu können
-* Aufträge werden in// */var/spool/atjobs //abgelegt
+* Aufträge werden in// /var/spool/atjobs //abgelegt
 [[+at]]
 [[+atd]]
 
 == Rechte ==
-* falls eine Datei */etc/at.allow dürfen nur Nutzer die in dieser Datei aufgelistet sind den **atd** benutzen dürfen
-* falls eine Datei */etc/at.allow nicht existiert, aber eine Datei */etc/at.deny dann dürfen die Nutzer die in */etc/at.deny stehen den **atd **nicht benutzen
-* existieren beide Datein */etc/at.allow, */etc/at.deny wird nur die Datei */etc/at.allow ausgewertet
+* falls eine Datei ///etc/at.allow// dürfen nur Nutzer die in dieser Datei aufgelistet sind den **atd** benutzen dürfen
+* falls eine Datei ///etc/at.allow// nicht existiert, aber eine Datei ///etc/at.deny// dann dürfen die Nutzer die in ///etc/at.deny// stehen den **atd **nicht benutzen
+* existieren beide Datein ///etc/at.allow, /etc/at.deny// wird nur die Datei ///etc/at.allow// ausgewertet
 [[Linux Wissen:FHS:etc]]
 
 ==== cron ====
 * wiederholtes Ausführen von zeitgesteuerten Jobs
 * Der cron-Daemon muss laufen 
-* falls vor dem Cronbefehl kein - steht, wird der ausgeführte Cronjob vom Syslogd **(missing link syslogd)** protokolliert
-* cronjobs werden entweder für den einzelnen Nutzer mit dem Befehl **crontab** verwaltet oder bei den System Cron-Jobs unter */etc direkt editiert
-* wird eine crontab in //*/etc/cron.d/ //angelegt, so handelt es sich um eine systemcrontab und der nutzer muss hnter den Zeitmarken (* * * * * ) angegeben werden
+* falls vor dem Cronbefehl kein - steht, wird der ausgeführte Cronjob vom Syslogd protokolliert (
+[[Systemprotokollierung]])
+* Nutzer Crontabs liegen unter ///var/spool/cron/tabs/<User> //
+* cronjobs werden entweder für den einzelnen Nutzer mit dem Befehl **crontab** verwaltet oder bei den System Cron-Jobs unter// /etc// direkt editiert
+* wird eine crontab //in /etc/cron.d/ //angelegt, so handelt es sich um eine systemcrontab und der nutzer muss hnter den Zeitmarken (* * * * * ) angegeben werden
 [[+crontab]]
 
 === !Achtung! ===
 Es gibt verschiedene cron-Implementierungen
 zum Beispiel **vixie-cron** oder **cronie**
 
-//*/var/spool/cron/tabs $$SUSE$$//
-//*/var/spool/cron $$Fedora$$//
-//*/var/spool/cronatbs $$Debian$$ $$Ubuntu$$//
+///var/spool/cron/tabs $$SUSE$$//
+///var/spool/cron $$Fedora$$//
+///var/spool/cronatbs $$Debian$$ $$Ubuntu$$//
 → Crontabs der Nutzer
 
 
-*/etc/cron.d|cron.daily|cron.weekly|cron.hourly|cron.monthly
+///etc/cron.d|cron.daily|cron.weekly|cron.hourly|cron.monthly//
 → Shellscripte die vom System ausgeführt werden
 [[Linux Wissen:FHS:etc]]
 
@@ -47,21 +49,21 @@ Syntax einer Crontab:
 [[Linux Wissen:FHS:var:spool:crontab]]
 
 == Rechte ==
-* falls eine Datei */etc/cron.allow dürfen nur Nutzer die in dieser Datei aufgelistet sind den **crond** benutzen dürfen
-* falls eine Datei */etc/cron.allow nicht existiert, aber eine Datei */etc/cron.deny dann dürfen die Nutzer die in */etc/cron.deny stehen den **crond **nicht benutzen
-* existieren beide Datein */etc/cron.allow, */etc/cron.deny wird nur die Datei */etc/cron.allow ausgewertet
+* falls eine Datei ///etc/cron.allow// dürfen nur Nutzer die in dieser Datei aufgelistet sind den **crond** benutzen dürfen
+* falls eine Datei// /etc/cron.allow// nicht existiert, aber eine Datei// /etc/cron.deny //dann dürfen die Nutzer die in// /etc/cron.deny// stehen den **crond **nicht benutzen
+* existieren beide Datein// /etc/cron.allow//,// /etc/cron.deny// wird nur die Datei ///etc/cron.allow// ausgewertet
 
 
 === anacron ===
 * wird vom Programm **/usr/sbin/anacron **ausgeführt
 [[+anacron]]
-• muss meistens nachinstalliert werden und gehört nicht zum Umfang dazu
+* muss meistens nachinstalliert werden und gehört nicht zum Umfang dazu
 * wiederholtes Ausführen von zeitgestierten in unregelmäßigen Zeitabständen
-* Es muss ein Konfigurationsscript in //*/etc/cron.hourly/0anacron  //existieren, hier kann der **anacron** Daemon konfiguriert werden
-* in der Datei //*/etc/anacrontab //werden die Jobs für **anacron **konfiguriert (
+* Es muss ein Konfigurationsscript in ///etc/cron.hourly/0anacron  //existieren, hier kann der **anacron** Daemon konfiguriert werden
+* in der Datei ///etc/anacrontab //werden die Jobs für **anacron **konfiguriert (
 [[FHS:etc:anacrontab]])
 
-//*/var/spool/anacron/daily//
-//*/var/spool/anacron/weekly//
-//*/var/spool/anacron/monthly//
+///var/spool/anacron/daily//
+///var/spool/anacron/weekly//
+///var/spool/anacron/monthly//
 → Zeitstempel die die Ausführung des nächsten Cronjobs angeben

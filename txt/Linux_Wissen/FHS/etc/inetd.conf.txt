@@ -10,7 +10,7 @@ Created Freitag 23 September 2011
 (**killall -1 inetd, service inetd reload|restart**) 
 [[Linux Wissen:Prozessverwaltung:kill]]
 [[Linux Wissen:Booten:Dienste]]
-* die Dienste werden zusätzlich von der Datei */etc/services gemappt
+* die Dienste werden zusätzlich von der Datei ///etc/services// gemappt
 [[services]]
 
 +++
@@ -26,7 +26,7 @@ ftp             stream          tcp             nowait          root            
 
 //<Dienstname>//
 → identifiziert den Dienst durch Angabe der Portnummer oder des Dienstnamens
-→ Bei Angabe des Namens muss dieser in der Datei //*/etc/services //definiert sein
+→ Bei Angabe des Namens muss dieser in der Datei ///etc/services //definiert sein
 
 //<Sockettyp>//
 → beschreibt den Dienst des geöffneten Sockets
@@ -39,7 +39,7 @@ ftp             stream          tcp             nowait          root            
 
 //<Protokoll>//
 → verwendetes Protokoll der den Dienst anspricht 
-→ Portokollnamen müssen in //*/etc/protocols// definiert sein  ([[protocols]])
+→ Portokollnamen müssen in ///etc/protocols// definiert sein  ([[protocols]])
  
 //<Parallelität> //
 → bezieht sich nur auf UDP muss aber immer mit angegeben werden

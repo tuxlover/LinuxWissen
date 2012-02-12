@@ -10,8 +10,8 @@ $Alle Rpm basierten Distributionen$
 Für $Suse$ nicht empfholen. **zypper** verwenden.
 [[Linux Wissen:Paketverwaltung:Rpm:zypper]]
 
-*/etc/yum/repos.d → Konfigurationsdateien für einzelne Yum Repos
-*/etc/yum.conf → globale Konfigurationsdateien für yum 
+///etc/yum/repos.d //→ Konfigurationsdateien für einzelne Yum Repos
+///etc/yum.conf //→ globale Konfigurationsdateien für yum 
 **(repos.d missing link)**
 
 **yum <Globale Option> <Aktion> <Aktionsoptionen>** 

@@ -17,7 +17,7 @@ Created Freitag 15 April 2011
 **+"se nu"** → öffne Datei mit Zeilennummerrierung
 **+"<Befehle>" **→ öffne vi und führe dabei  anschließend <Befehle> aus  
 
-* vim lässt sich in der *~/.vimrc konfigurieren
+* vim lässt sich in der //~/.vimrc// konfigurieren
 
 ===== Kommando-Modus =====
 * Jede Taste stellt einen Befehl oder eine Folge von Befehlen dar

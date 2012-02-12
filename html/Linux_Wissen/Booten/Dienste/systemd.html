@@ -99,7 +99,13 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>System- und Servicemanager für Linux</li>
+				<p>
+Created Donnerstag 12 Januar 2012<br>
+</p>
+
+<p>
+<ul>
+<li>System- und Servicemanager für Linux</li>
 <li>Parallelisierung von mehreren Diensten beim Booten</li>
 <li>Starten von Diensten wenn sie benötigt werden</li>
 <li>unnötige Dienste werden nicht gestartet</li>
@@ -109,108 +115,156 @@
 <li>verwaltet mounts und automounts (au)</li>
 <li>kann Cgroups verwalten (Seit Kernel 2.6.35)</li>
 <li>kann zum Abfragen von Informationen auch vom Nutzer ausgeführt werden</li>
+</ul>
+</p>
 
 <h4>Units</h4>
+<p>
+<ul>
 <li>Konfigurationsdatei die einen entsprechenden Dienst beschreibt</li>
 <li>beschreibt einen von Systemd zu verwaltenden Dienst, Socket oder Gerät oder ein System-V-Init Script</li>
+</ul>
+</p>
 
-<li>aktive Units findet man unter <em>*/etc/systemd/system </em></li>
-<li>alle Units die das System installiert hat aber nicht genutzt werden findet man unter <em>*/lib/systemd/system/&lt;Name&gt;.&lt;Typ&gt;</em></li>
+<p>
+<ul>
+<li>aktive Units findet man unter /<em>etc/systemd/system </em></li>
+<li>alle Units die das System installiert hat aber nicht genutzt werden findet man unter /<em>lib/systemd/system/&lt;Name&gt;.&lt;Typ&gt;</em></li>
+</ul>
 <strong>&lt;Typ&gt; </strong><br>
 → kann ein <em>Socket</em>,<em>Target</em>, eine <em>Dateisystem Pfad</em>, ein <em>Gerät </em>, ein <em>mount </em>oder <em>automountpoint, timer </em>oder <em>Snapshot </em>sein<br>
-<strong>man 5 systemd.unit</strong>
-<a href="../../FHS/lib/lib%2B%2Bsystemd.html" title="Linux Wissen:FHS:lib:lib++systemd">Linux Wissen:FHS:lib:lib++systemd</a>
-
+<strong>man 5 systemd.unit</strong><br>
+<a href="../../FHS/lib/lib%2B%2Bsystemd.html" title="Linux Wissen:FHS:lib:lib++systemd">Linux Wissen:FHS:lib:lib++systemd</a><br>
+<a href="../../FHS/lib/lib%2B%2Bsystemd.html" title="Linux Wissen:FHS:lib:lib++systemd">Linux Wissen:FHS:lib:lib++systemd</a><br>
+</p>
 
 <h4>Systemdienste steuern</h4>
+<p>
 <strong>systemctl [start|stop|kill|reload|restart| enable|disable show  &lt;Unit&gt; ]  | daemon-reload</strong><br>
 → zum anzeigen und steuern von System Services<br>
 → wenn ohne weitere Parmeter verwendet, wird so werden alle dienste angezeigt vom System versucht wurden zu starten<br>
 <strong>--no-pager </strong>→ die Ausgabe nicht nach less pipen <br>
 <strong>--full </strong>→ vollständige Ausgabe nach StdOut, nicht auf 80 Zeichen beschränken<br>
-<br>
+</p>
+
 <h5>&lt;Statusinformationen anzeigen&gt;</h5>
+<p>
 <strong>show &lt;Unit&gt;</strong><br>
 → detallierte Informationen zu einer Unit zeigen <br>
-<br>
+</p>
+
 <h5>&lt;Starten von Systemdiensten&gt;</h5>
+<p>
 <strong>start &lt;Unit&gt;</strong><br>
 → diese Unit aktivieren<br>
 → dies entspricht dem manuellen Starten des Dienstes bei .service Units<br>
-<br>
+</p>
+
+<p>
 <strong>enable &lt;Unit&gt;</strong><br>
 → dauerhaftes aktivieren der Unit<br>
 → dies entspricht dem <strong>chkconfig add </strong>bzw. <strong>chkconfig on </strong>Befehl<br>
-<a href="./chkconfig.html" title="chkconfig">chkconfig</a>
+<a href="./chkconfig.html" title="chkconfig">chkconfig</a><br>
+</p>
 
+<p>
 <strong>reload </strong><br>
 → neu starten einer Unit<br>
 → dies entspricht dem neu laden des Daemons bei dem auch seine Konfiguration neu gelesen wird bei .service Units<br>
-<br>
+</p>
+
 <h5>&lt;Anhalten von Systemdiensten&gt;</h5>
+<p>
 <strong>stop &lt;Unit&gt; </strong><br>
 → diese Unit deaktiveren<br>
 → dies entpricht dem manuellen Anhalten des Dienstes bei .service Units<br>
-<br>
+</p>
+
+<p>
 <strong>disable &lt;Unit&gt;</strong><br>
 → dauerhaftes deaktivieren einer Unit<br>
 → die entspricht dem <strong>chkcontrol del  </strong>bzw. <strong>chkcontrol off </strong>Befehel<br>
 → der Symlink zum Starten dieser Unit wird entsprechend entfernt und die Unit nicht mehr gestartet<br>
-<br>
-<u>TRICK: Den Service dauerhaft deaktiveren und nicht mehr reaktivierbar machen</u>
-<code>ln -s /dev/null /etc/systemd/system/foo.service</code>
+</p>
 
+<p>
+<u>TRICK: Den Service dauerhaft deaktiveren und nicht mehr reaktivierbar machen</u><br>
+<code>ln -s /dev/null /etc/systemd/system/foo.service</code><br>
+</p>
+
+<p>
 <em>Beispiel:</em><br>
 deaktivieren des Dienstes mysipd<br>
-<code>systemctl disable mysipd.service</code>
+<code>systemctl disable mysipd.service</code><br>
+</p>
 
 <h5>&lt;Senden von Signalen&gt;</h5>
+<p>
 <strong>kill &lt;Name&gt;.service </strong><br>
 → senden von SIGTERM an die entsprechende Service Unit<br>
 → senden von SIGTERM an den Hauptprozess und all seiner Kindprozesse<br>
-→ soweit dies für diese Unit erlaubt ist, siehe <a href="../../FHS/lib/lib%2B%2Bsystemd.html" title="Linux Wissen:FHS:lib:lib++systemd">Linux Wissen:FHS:lib:lib++systemd</a>
+→ soweit dies für diese Unit erlaubt ist, siehe <a href="../../FHS/lib/lib%2B%2Bsystemd.html" title="Linux Wissen:FHS:lib:lib++systemd">Linux Wissen:FHS:lib:lib++systemd</a><br>
+</p>
 
+<p>
 <strong>kill -s &lt;Signal&gt; &lt;Name&gt;.service</strong><br>
 → senden eines anderen Signals als SIGTERM <br>
-<a href="../../Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a>
+<a href="../../Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill">Linux Wissen:Prozessverwaltung:kill</a><br>
+</p>
 
+<p>
 <strong>--kill-who=&lt;main|control|all&gt;</strong><br>
 → Signal an den Hauptprozess, den kontrolliereenden Prozess oder allen Prozessen senden<br>
-<br>
+</p>
+
+<p>
 <em>Beispiel:</em><br>
 Neustarten des Apache auf die "harte" Tour<br>
-<code>systemctl kill -s HUP --kill-who=main apache.service</code>
+<code>systemctl kill -s HUP --kill-who=main apache.service</code><br>
+</p>
 
 
-<h5>&lt;Anzeigen und Filtern von Diensten&gt;</h5><br>
+<h5>&lt;Anzeigen und Filtern von Diensten&gt;</h5>
+<p>
 → ohne weitere Arguemente wird systemctl die Units (systemd Units und Sys-V-Initscripte) und ihren Status anzeigen, als Pager wird less verwendet<br>
 → es wird angezeigt ob eine Unit erfolgreich gestartet wurde oder mit einem Fehler beendet wurde<br>
 <strong>--all </strong>→ Anzeigen aller vorhandenen Units im System und irhes satusses<br>
-<br>
+</p>
+
+<p>
 <strong>systemctl status &lt;Unit&gt;</strong><br>
 → Anzeigen von detailierten Statusinformationen zu einer Unit<br>
 → Gibt Laufzeitinformationen und detaillierte Fehlerinformationen aus<br>
-<br>
+</p>
+
 <h5>&lt;Neu laden des Daemons&gt;</h5>
+<p>
 <strong>systemctl daemon-reload</strong><br>
 → veranlassen des Daemons die Unit Files neu einzulesen<br>
 → bei veränderten Unit Files werden diese neugestartet<br>
-<br>
+</p>
+
+<p>
 <u>TRICK:</u><br>
 Anzeigen ob ein Subsystem eine Unit gemounted hat:<br>
-<code>systemctl --all --no-pager |grep --color mounted</code>
+<code>systemctl --all --no-pager |grep --color mounted</code><br>
+</p>
 
 <h4>Control Groups verwalten (CGroups)</h4>
+<p>
 <strong>systemd-cgls &lt;Cgroup&gt;</strong><br>
 → rekursive Baumansicht einer Linux CGroup, wenn nicht angegeben werden alle Cgrups aufgelisetet<br>
-→ eine Liste von gültigen Cgroups erhält man durch <code>ls /sys/fs/cgroup</code>
-<a href="../../FHS/sys.html" title="Linux Wissen:FHS:sys">Linux Wissen:FHS:sys</a>
-<a href="../../Prozessverwaltung/Cgroups.html" title="Linux Wissen:Prozessverwaltung:Cgroups">Linux Wissen:Prozessverwaltung:Cgroups</a>
+→ eine Liste von gültigen Cgroups erhält man durch <code>ls /sys/fs/cgroup</code><br>
+<a href="../../FHS/sys.html" title="Linux Wissen:FHS:sys">Linux Wissen:FHS:sys</a><br>
+<a href="../../Prozessverwaltung/Cgroups.html" title="Linux Wissen:Prozessverwaltung:Cgroups">Linux Wissen:Prozessverwaltung:Cgroups</a><br>
+</p>
 
 
-<u>ACHTUNG: Man verwechsle systemctl nicht mit sysctl.</u>
-<a href="./systemd/systemd-nspawn.html" title="+systemd-nspawn">+systemd-nspawn</a>
-<a href="./systemd/systemd-analize.html" title="+systemd-analize">+systemd-analize</a>
+<p>
+<u>ACHTUNG: Man verwechsle systemctl nicht mit sysctl.</u><br>
+<a href="./systemd/systemd-nspawn.html" title="+systemd-nspawn">+systemd-nspawn</a><br>
+<a href="./systemd/systemd-analize.html" title="+systemd-analize">+systemd-analize</a><br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -218,7 +272,7 @@ Anzeigen ob ein Subsystem eine Unit gemounted hat:<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>						<a href='../Dienste.html'>Linux Wissen:Booten:Dienste</a></li>						<a href='../../Prozessverwaltung/Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>						<a href='../../FHS/lib/lib%2B%2Bsystemd.html'>Linux Wissen:FHS:lib:lib++systemd</a></li>
+				Backlinks:						<a href='../Dienste.html'>Linux Wissen:Booten:Dienste</a></li>						<a href='../Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>						<a href='../../FHS/lib/lib%2B%2Bsystemd.html'>Linux Wissen:FHS:lib:lib++systemd</a></li>						<a href='../../Prozessverwaltung/Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

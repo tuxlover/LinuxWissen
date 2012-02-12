@@ -6,12 +6,12 @@ Creation-Date: 2011-04-22T11:52:42+02:00
 Created Freitag 22 April 2011
 
 **mount <Blockgerät> <Mountpoint> **→ hängt das <Blockgerät> in den <Mountpoint> ein
-**-a **alle Geräte die in der */etc/fstab  ([[Linux Wissen:FHS:etc:fstab]]) eingetragen sind
+**-a **alle Geräte die in der ///etc/fstab//  ([[Linux Wissen:FHS:etc:fstab]]) eingetragen sind
 **--bind **→ ein <Blockgerät> auf zwei verschiedene <Mountpoint>s setzen
 **-o <optionen>,... **→ weitere Optionen für mount angeben
 
-//<Optionen> (können auch in */etc/fstab vergeben werden //[[Linux Wissen:FHS:etc:fstab]] )
-//auto//		Dateisystem wird  iterativ aus */proc/filesystems ermittlet ( [[Linux Wissen:FHS:proc]] )
+//<Optionen> (können auch in /etc/fstab vergeben werden //[[Linux Wissen:FHS:etc:fstab]] )
+//auto//		Dateisystem wird  iterativ aus ///proc/filesystems// ermittlet ( [[Linux Wissen:FHS:proc]] )
 //noauto//		Dateisystem wird nicht automatisch eingehängt
 //acl//			ACLs aktivieren
 //async// 		I/O zwischen Dateisystemen und RAM ist asynchron
@@ -40,19 +40,22 @@ no//dev		//Dieses Dateisystem erlaubt __keinen__ Zugriff und das Schreiben auf z
 **mount -o remount,ro /platte **→ Remount von /platte readonly
 
 **mount <Mountpoint>|<Device> **→ es reicht einer der beiden Argumente anzugeben, 
-							      → falls es einen Eintrag */etc/fstab gibt ( 
+							      → falls es einen Eintrag ///etc/fstab// gibt ( 
 [[Linux Wissen:FHS:etc:fstab]] )
  
 __Hinweis:__ ''mount -o loop,ro mycd.iso /home/iso'' __hängt ein Iso ein.__
 
 **umount <Mountpoint>|<Device> **→ hängt das <Device> aus. 
 								 → Es reicht das <Device> oder den <Mountpoint> anzugeben
-**-n **→ die Einträge aus */etc/mtab nicht entfernen
+**-n **→ die Einträge aus ///etc/mtab// nicht entfernen
 **-r **→ falls das Aushängen fehlschlägt, versuche es ro einzuhängen
 **-d **→ falls das Gerät ein Loop Gerät war, wird es das loop_Gerät zur Benutzung freigeben
-**-a **→ alle Geräte in */etc/mtab ( [[Linux Wissen:FHS:etc]] ) aushängen
+**-a **→ alle Geräte in ///etc/mtab// ( [[Linux Wissen:FHS:etc]] ) aushängen
 **-l **→ Entfernen des Datei Dateisystems aus der Hierarchie, entferne und führe Cleanup wenn das Dateisystem
 	 unbschäftigt ist
 **--fake **→ ruft nicht den Sytemcall auf, um das Dateisystem tatsächlich auszuhängen
 
-__Hinweis: --fake kann verwendet werden um ein Dateisystem aus */etc/mtab auszutragen.__
+__Hinweis: --fake kann verwendet werden um ein Dateisystem aus__// /etc/mtab//__ auszutragen.__
+
+**findmnt [<Mountpunkt>|<Gerät>]**
+

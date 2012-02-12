@@ -6,8 +6,8 @@ Creation-Date: 2012-01-13T23:08:39+01:00
 Created Freitag 13 Januar 2012
 
 CGroups bieten einen Mechanismus zum zerlegen und partitionieren von Tasks und ihrer möglicherweise gespawnten Prozesse in
-hierarchischen Gruppen. Sie ermöglichen eine fein granulare Kontrolle über die Priorisierung, Überwachung von Prozessen die vom 
-Kernel gespawned werden.
+hierarchischen Gruppen. Dies ermöglicht eine fein granulare Kontrolle über die Priorisierung, Überwachung von Prozessen die vom 
+Kernel geboren werden.
 
 Paket //libcgroup1//
 
@@ -37,13 +37,13 @@ Eine Sammlung von Prozessen:
 Über ein Subystem oder Controler  kann man Beschränkungen durch Parameter für eine entsprechende cgroup setzen
 * Kernel Modul dass Limitationen und Isolationen für Resourcen verwaltet
 * bietet die Möpglichkeit Resourcen und Eigenschaften einer Prozessgruppe zu verändern 
-* die vom Kernel unterstützten Subsysteme können in der Datei //*/proc/cgroups// erfragt werden
+* die vom Kernel unterstützten Subsysteme können in der Datei ///proc/cgroups// erfragt werden
 * Resource Controller:
 	* cpu scheduler
 	* memory
 	* disk I/O
 	* network,
-* Isolationen und besondere Sterungs Subsysteme:
+* Isolationen und besondere Steuerungs Subsysteme:
 	* cpuset 
 	* namespace
 	* freezer
@@ -57,11 +57,11 @@ Eine Sammlung von Prozessen:
 
 === Virtuelles Cgroup Dateisystem ===
 * erlaubt Zugriff auf Cgroups auf Userlevel Ebene um Gruppen zu erzeugen und Subsysteme zu verwalten
-* Mountpoints für virtuelle Cgroups Dateisystem kann unter //*/sys/fs/cgroups //eingeshen werden
+* Mountpoints für virtuelle Cgroups Dateisystem kann unter ///sys/fs/cgroups //eingeshen werden
 
 ==== Der Dienst cgconfig ====
 * Systemdienst zum persistenten erstellen von CGroups und verwalten deren Subsysteme
-* liest die Datei //*/etc/cgconfig.conf//
+* liest die Datei ///etc/cgconfig.conf//
 [[+cgconfig und cgred]]
 [[Linux Wissen:Booten:Dienste]]
 [[Linux Wissen:FHS:etc:cgconfig.conf]]

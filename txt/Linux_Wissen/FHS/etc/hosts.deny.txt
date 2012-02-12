@@ -5,10 +5,10 @@ Creation-Date: 2011-09-23T12:47:54+02:00
 ====== hosts.deny ======
 Created Freitag 23 September 2011
 
-* explizit verbotener Dienst wird immer als zweites vom Paar */etc/hosts.allow und //*/etc/hosts.deny //angeschaut
+* explizit verbotener Dienst wird immer als zweites vom Paar /etc/hosts.allow und ///etc/hosts.deny //angeschaut
 * befindet sich nur die Datei ///etc/host.deny //wird nur diese ausgewertet
 * Dienst wird für diesen Rechner verboten
-* Die Dienste für die die Regeln gelten sollen, müssen in der //*/etc/inetd.conf//  fesgelegt werden 
+* Die Dienste für die die Regeln gelten sollen, müssen in der ///etc/inetd.conf//  fesgelegt werden 
 [[inetd.conf]]
 
 __Hinweis: !!! Ist keine der beiden Dateien vorhanden gelten beide Dateien als leer und es dürfen alle alles !!!__

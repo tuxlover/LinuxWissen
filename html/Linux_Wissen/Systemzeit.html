@@ -125,10 +125,10 @@ Created Mittwoch 14 September 2011<br>
 <h4>Zeitzone konfigurieren</h4>
 <p>
 <ul>
-<li>in<em> */etc/timezone</em> wird die Zeitzone für das System festgelegt, diese kann mittels <strong>zic -l &lt;LOCALTIME&gt; </strong>aus */usr/share/zoneinfo/ erstellt werden</li>
-<li>in <em>*/etc/sysconfig/clock</em> wird die Zeitzone für das System festgelegt $$SUSE$$, $$Fedorra$$</li>
-<li><em>*/etc/localtime</em> ist (falls vorhanden) ein symbolischer Link auf die Zeitzonendatei</li>
-<li><em>*/usr/share/zoneinfo/&lt;Land&gt;/&lt;Zeitzone&gt; </em>beinhaltet die Zeitzonendateien, diese können vom <strong>zic </strong>kopilliert und benutzt werden ( </li>
+<li>in<em> /etc/timezone</em> wird die Zeitzone für das System festgelegt, diese kann mittels <strong>zic -l &lt;LOCALTIME&gt; </strong>aus /usr/share/zoneinfo/ erstellt werden</li>
+<li>in /<em>etc/sysconfig/clock</em> wird die Zeitzone für das System festgelegt $$SUSE$$, $$Fedorra$$</li>
+<li>/<em>etc/localtime</em> ist (falls vorhanden) ein symbolischer Link auf die Zeitzonendatei</li>
+<li>/<em>usr/share/zoneinfo/&lt;Land&gt;/&lt;Zeitzone&gt; </em>beinhaltet die Zeitzonendateien, diese können vom <strong>zic </strong>kopilliert und benutzt werden ( </li>
 </ul>
 <a href="./FHS/etc/sysconfig%2B%2Bclock.html" title="Linux Wissen:FHS:etc:sysconfig++clock">Linux Wissen:FHS:etc:sysconfig++clock</a> )<br>
 <a href="./FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
@@ -162,7 +162,7 @@ Created Mittwoch 14 September 2011<br>
 
 <p>
 <strong>(2) </strong>Der von <strong>tzselect </strong>ausgegebene Wert kann als Wert für die Variable <em>TZ</em> oder in der entsprechenden Datei eingetragen werden <br>
-(<em>*/etc/timezone</em> oder <em>*/etc/sysconfig/clock</em>)<br>
+(/<em>etc/timezone</em> oder /<em>etc/sysconfig/clock</em>)<br>
 </p>
 
 <h4>Zeit synchronisieren mit NTP</h4>
@@ -171,7 +171,7 @@ Created Mittwoch 14 September 2011<br>
 <li>NTP == Netwrok Time Protocol</li>
 <li>kann zur Synchronisierung der lokalen Zeit mit einem zentralen Server eingerichtet werden</li>
 <li><strong>service ntpd start || /etc/init.d/ntpd start </strong>startet den ntpd</li>
-<li>Konfiruation in<em> */etc/ntp.conf</em></li>
+<li>Konfiruation in<em> /etc/ntp.conf</em></li>
 <li><em>var/lib/ntp/drift/ntp.drift </em>festgehalten</li>
 </ul>
 Anweichungen vom ntp server  in Millisekunden wird /<u>pool.ntp.org </u><strong>→ </strong>ist der Server Pool der ntp-Dienste bereitstellt<br>

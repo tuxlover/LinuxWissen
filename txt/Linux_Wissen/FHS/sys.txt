@@ -12,12 +12,13 @@ Grundlage biildet das Pseudodateisystem sysfs des Kernels 2.6.x
 * exportieren von Informationen zu bestimmter Hardware
 * wird komplett vom Kernel ausserhal des UserSpace verwaltet
 
-***/sys/bus/(pci,bus,scsi) **→ Geräte sortiert nach Anschlusstyp
+///sys/bus/(pci,bus,scsi)// → Geräte sortiert nach Anschlusstyp
 
-***/sys/block/ **→ Schnittstellen für Blockorientierte Geräte
+///sys/block/ //→ Schnittstellen für Blockorientierte Geräte
 
-***/sys/class/ **→ Schnittstellen für zeichenorienterte Geräte
+///sys/class/ //→ Schnittstellen für zeichenorienterte Geräte
 
-***/sys/bus/usb **→ vom Kernel gerneriertes usbfs Abbild 
+///sys/bus/usb// → vom Kernel gerneriertes usbfs Abbild 
 
-***/sys/fs/cgroup **→ Dateisystem das die Linux Kernel Contorl Groups auflistet **(missing link Cgroups)**
+///sys/fs/cgroup// → Dateisystem das die Linux Kernel Contorl Groups auflistet 
+[[Linux Wissen:Prozessverwaltung:Cgroups]]

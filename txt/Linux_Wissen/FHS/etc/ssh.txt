@@ -5,6 +5,6 @@ Creation-Date: 2011-09-27T20:56:59+02:00
 ====== ssh ======
 Created Dienstag 27 September 2011
 
-***/etc/ssh/ssh_known_hosts → **Systemweite Liste der bekannten HostKeys die  von diesem Rechner akzeptiert werden und denen vertraut wird
+///etc/ssh/ssh_known_hosts//** → **Systemweite Liste der bekannten HostKeys die  von diesem Rechner akzeptiert werden und denen vertraut wird
 [[+ssh++ssh known hosts]]
 

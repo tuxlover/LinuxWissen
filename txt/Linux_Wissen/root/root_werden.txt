@@ -23,15 +23,15 @@ Sollte ausschließlich zur Administration am System verwandt werden.
 
 * Nach der erfolgreicher Anmeldung ändert sich der Prompt von $ zu #
 
-*/etc/securetty definiert Terminals an denen sich root anmelden darf
+///etc/securetty //definiert Terminals an denen sich root anmelden darf
 
-*/var/log/messages gibt über erfolgreiche und fehlgeschlagene Anmeldeversuche aufschluss:
+///var/log/messages// gibt über erfolgreiche und fehlgeschlagene Anmeldeversuche aufschluss:
 //Besipiel//
 //Aug 28 22:31:48 Dickkopf su: (to root) l1zard on /dev/pts/3//
 //Aug 28 22:31:28 Dickkopf su: FAILED SU (to root) l1zard on /dev/pts/3 //
 
 **sudo <Befehl> **→ führt den Befehl als root aus ( [[Linux Wissen:Sicherheit:sudo]]) 
-**-u <User> **→ führt den Befehl als <User> aus sofern dieser laut */etc/sudoers die Berechtigung dazu hat
+**-u <User> **→ führt den Befehl als <User> aus sofern dieser laut ///etc/sudoers// die Berechtigung dazu hat
 
 __Tipp: alias getroot='su -'__
 

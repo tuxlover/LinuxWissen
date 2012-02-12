@@ -21,21 +21,20 @@ Created Sonntag 24 April 2011
 [[Linux Wissen:Hardware und Systeminformationen:sysstat]]
 
 === Geräte und Treiber ===
-* Unter */lib/modules/$(uname -r) befinden sich die vom Kernel als Module ladbaren Treiber.
+* Unter ///lib/modules/$(uname -r) //befinden sich die vom Kernel als Module ladbaren Treiber.
 [[Linux Wissen:FHS:lib]]
 [[Linux Wissen:Hardware und Systeminformationen:Module]]
-* Während des Systemsarts benötigte Treiber werden in der Datei */etc/modprobe.conf, */etc/modprobe.d verwaltet
+* Während des Systemsarts benötigte Treiber werden in der Datei ///etc/modprobe.conf, /etc/modprobe.d// verwaltet
 [[Linux Wissen:FHS:etc:modprobe.conf]]
-* Eine Liste aller zu ladenden Module kann unter */etc/modules.conf bei älteren Systemen eingesehen werden
-
+* Eine Liste aller zu ladenden Module kann unter ///etc/modules.conf// bei älteren Systemen eingesehen werden
 
 === IRQ ===
 Ein IRQ (Interupt Request) ist ein Signal dass an die CPU gesendet wird und den aktuellen Prozees unterbricht
 um auf ein externes Hardwareereignis zu lauschen und dieses zu bearbeiten.
 [[Linux Wissen:Hardware und Systeminformationen:IRQ]]
 
-*/proc/interrupts
-*/proc/dma
+///proc/interrupts//
+///proc/dma//
 [[Linux Wissen:FHS:proc]]
 
 === PCI ===
@@ -58,7 +57,7 @@ ehci_hcd --> Hilfsmodul für den USB 1.1 to 2.0 Controler
 * werden über Systembus gesteuert
 * kommunizieren über den BUS im ATAPI (Advanced Technology Atachment Protocol Interface)
 
-*/dev/hxX */dev/sdx → Gerätedatei
+* ///dev/hxX /dev/sdX //→ Gerätedatei
 [[Linux Wissen:FHS:dev]]
 
 === SCSI ===
@@ -97,9 +96,9 @@ Jedes SCSI Gerät lässt sich eindeutig durch das Quadrupel identifizieren:
 * sendet Informationen über Hardwareereigisse an den Nutzer
 
 === Udev ===
-* Daemon **udevd **zur dynamischen Geräteerzeugung lauscht */sys nach Geräten
-* Die Dateien */etc/udev/rules.d wird gelesen
-* Es werden Empfehlungen an den Kernel gegeben wie Geräte unter */dev verwaltet werden sollen
+* Daemon **udevd **zur dynamischen Geräteerzeugung lauscht ///sys// nach Geräten
+* Die Dateien// /etc/udev/rules.d //wird gelesen
+* Es werden Empfehlungen an den Kernel gegeben wie Geräte unter ///dev //verwaltet werden sollen
 Erstellen von Udev Regeln: 
 [[Linux Wissen:FHS:etc:udev++rules.d++99-myrule]]
 Konfiguration des Udev Daemon:

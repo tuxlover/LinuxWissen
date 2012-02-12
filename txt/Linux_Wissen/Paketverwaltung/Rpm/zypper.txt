@@ -10,9 +10,9 @@ Das Tool zypper ist seit Version 11.0 bei SuSE zur Paketverwaltung verwendet. Es
 ähnlichen Komfort wie zum Beislpiel aptitute oder apt-get. Auch hier werden Pakete in Repositories verwaltet.
 Ein Repositorie kann ein lokaler Pfad, oder eine Adresse auf einem entfernteen Webserver sein, der entweder 
 ftp oder http spricht und halten die Rpms oder auch delta.rpms vor.
-* */etc/zypp/zypper.conf (
+* ///etc/zypp/zypper.conf// (
 [[Linux Wissen:FHS:etc]]) ist die globale Konfigurationsdatei für Aussehen und Verhalten von zypper
-* */etc/zypp/zypp.conf ist die globale Konfigurationsdatei für das Verhalten beim Paketmanagemt
+* ///etc/zypp/zypp.conf //ist die globale Konfigurationsdatei für das Verhalten beim Paketmanagemt
 
 **zypper <Globale Optionen> <Aktion> <Aktionsoptionen>**
 
@@ -74,7 +74,7 @@ __Hinweis: Um eine Liste zu importieren: __**zypper ar -r Repo.repo**
 **-l **→ automatische Zustimmung von Nicht GPL Lizenzen
 **--recommends **→ auch empfohlende Pakete installieren
 **-D **→ nur testen, nichts machen
-**-download-only **→ nur nach */var/lib/zypp herunterladen
+**-download-only **→ nur nach ///var/lib/zypp// herunterladen
 **--download-in-advance **→ alle benötigen Pakete werden erst heruntergeladen und dann installieren
 
 **inr **→ Installieren von neuen Paketen, die von anderen Paketen vorgeschlagen werden
@@ -85,7 +85,7 @@ __Hinweis: Um eine Liste zu importieren: __**zypper ar -r Repo.repo**
 **-r <URI>|<Name> **→ nur dieses Repository laden
 **-l **→ automatische Zustimmung von Nicht GPL Lizenzen
 **--download-in-advance **→ alle benötigten Pakete erst herunterladen und dann instllieren
-**--download-only **→ nur nach */var/lib/zypp herunterladen
+**--download-only **→ nur nach// /var/lib/zypp// herunterladen
 **-D **→ nur testen, nichts machen
 
 __Hinweis: Für die aktualisierung via cronjob sollte immer __**--download-in-advance **__und __**-l **__verwendet werden__.

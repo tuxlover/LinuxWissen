@@ -9,10 +9,12 @@ Created Donnerstag 08 Dezember 2011
 
 ===== Einrichten von Secure Mountpoints =====
 * erschwert es Root-Zugriff auf dem System zu erlangen
-* Für Verzeichnisse auf die jeder Nutzer zugreifen darf, wie zum Beispiel */tmp kann man folgende Optionen verrwenden in 
-*/etc/fstab [[Linux Wissen:FHS:etc:fstab]]
+* Für Verzeichnisse auf die jeder Nutzer zugreifen darf, wie zum Beispiel ///tmp// kann man folgende Optionen verrwenden in 
+///etc/fstab// ([[Linux Wissen:FHS:etc:fstab]])
+++
 ''/dev/system/tmp      /tmp                 ext4       acl,user_xattr,nodev,noexc,nosuid        1 2''
 ''/dev/system/home     /home                ext4       acl,user_xattr,nosuid,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0 1 2''
+++
 
 ===== Aufspüren von SUID und SGID Shellscripten =====
 * Der folgende Befehl hilft dabei Shellscripte die ein SUID oder SGID Bit gesetzt haben, ausfindig zu machen:

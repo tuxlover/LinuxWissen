@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-11T19:13:18+01:00
+
+====== Debugging ======
+Created Samstag 11 Februar 2012
+
+* Bash bietetet ein paar Optionen die beim Aufruf eines Shellscriptes übergeben werden können um Verhaltesnweisen zu tracen
+* bash selber ist aber kein Debugger kann natürlich auch selber fehler enthalten
+[[Linux Wissen:Shell:Bash]]
+**-e **→ Stoppen bei der Rückgabe eines Wertes ungleich 0
+**-u → **Stoppen bei einer Variablen die nicht gesetzt ist
+**-x **→ komplettes tracen des Programm, dabei wird jeder Aufruf ausführlich auf dem Bildschirm ausgegeben

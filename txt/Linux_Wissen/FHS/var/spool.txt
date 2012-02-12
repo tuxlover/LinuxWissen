@@ -7,18 +7,18 @@ Created Mittwoch 20 Juli 2011
 
 * Ablage von Jobs und Nutzer Cron-Aufträge
 
-***/var/spool/atjobs**
-***/var/spool/atpool**
+///var/spool/atjobs//
+///var/spool/atpool//
 → Ablage von Nutzer at-Jobs
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 [[Linux Wissen:Zeitgesteuerte Vorgänge:at]]
 
-***/var/spool/cron/**
+///var/spool/cron///
 → Ablage von Nutzer cron-Jobs von **crontab**
 [[Linux Wissen:Zeitgesteuerte Vorgänge:crontab]]
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 [[Linux Wissen:FHS:var:spool:crontab]]
 
-***/var/spool/ldp**
+///var/spool/ldp//
 → die Druckerwarteschleife des **lpd**
 [[Linux Wissen:Drucken]]

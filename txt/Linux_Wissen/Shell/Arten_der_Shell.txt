@@ -6,7 +6,7 @@ Creation-Date: 2011-04-15T01:13:55+02:00
 Created Freitag 15 April 2011
 
 [[Linux Wissen:Benutzer und Gruppen:Konfigurationsdateien]]
-Die Datei */etc/shells sollte alle auf dem System validen Shells enthalten.
+Die Datei ///etc/shells// sollte alle auf dem System validen Shells enthalten.
 Einige Distributionen $$SUSE$$ tragen aber zum Beispiel hier auch die 
 Shells ein die potentiell verfügbar (noch nicht installiert) sind.
 

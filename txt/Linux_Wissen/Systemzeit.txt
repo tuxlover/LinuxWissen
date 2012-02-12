@@ -21,10 +21,10 @@ Created Mittwoch 14 September 2011
 * **hctosys **zum Abgleichen der Hardwareuhr mit der Systemzeit
 
 === Zeitzone konfigurieren ===
-* in// */etc/timezone// wird die Zeitzone für das System festgelegt, diese kann mittels **zic -l <LOCALTIME> **aus */usr/share/zoneinfo/ erstellt werden
-* in //*/etc/sysconfig/clock// wird die Zeitzone für das System festgelegt $$SUSE$$, $$Fedorra$$
-* //*/etc/localtime// ist (falls vorhanden) ein symbolischer Link auf die Zeitzonendatei
-* //*/usr/share/zoneinfo/<Land>/<Zeitzone> //beinhaltet die Zeitzonendateien, diese können vom **zic **kopilliert und benutzt werden ( 
+* in// /etc/timezone// wird die Zeitzone für das System festgelegt, diese kann mittels **zic -l <LOCALTIME> **aus /usr/share/zoneinfo/ erstellt werden
+* in ///etc/sysconfig/clock// wird die Zeitzone für das System festgelegt $$SUSE$$, $$Fedorra$$
+* ///etc/localtime// ist (falls vorhanden) ein symbolischer Link auf die Zeitzonendatei
+* ///usr/share/zoneinfo/<Land>/<Zeitzone> //beinhaltet die Zeitzonendateien, diese können vom **zic **kopilliert und benutzt werden ( 
 [[Linux Wissen:FHS:etc:sysconfig++clock]] )
 [[Linux Wissen:FHS:etc]]
 [[Linux Wissen:Systemzeit:zdump]]
@@ -45,13 +45,13 @@ Created Mittwoch 14 September 2011
 **(1) tzslect **aufrufen und Region und Land wählen
 
 **(2) **Der von **tzselect **ausgegebene Wert kann als Wert für die Variable //TZ// oder in der entsprechenden Datei eingetragen werden 
-(//*/etc/timezone// oder //*/etc/sysconfig/clock//)
+(///etc/timezone// oder ///etc/sysconfig/clock//)
 
 === Zeit synchronisieren mit NTP ===
 * NTP == Netwrok Time Protocol
 * kann zur Synchronisierung der lokalen Zeit mit einem zentralen Server eingerichtet werden
 * **service ntpd start || /etc/init.d/ntpd start **startet den ntpd
-* Konfiruation in// */etc/ntp.conf//
+* Konfiruation in// /etc/ntp.conf//
 * //var/lib/ntp/drift/ntp.drift //festgehalten
 Anweichungen vom ntp server  in Millisekunden wird /__pool.ntp.org __**→ **ist der Server Pool der ntp-Dienste bereitstellt
 weitere Informationen **man ntp **und **/usr/share/doc/packages/ntp-doc **bei installierter Dokumentation aus /usr/share/ntp-doc

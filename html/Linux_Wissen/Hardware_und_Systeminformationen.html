@@ -125,19 +125,18 @@ Created Sonntag 24 April 2011<br>
 <h4>Geräte und Treiber</h4>
 <p>
 <ul>
-<li>Unter */lib/modules/$(uname -r) befinden sich die vom Kernel als Module ladbaren Treiber.</li>
+<li>Unter /<em>lib/modules/$(uname -r) </em>befinden sich die vom Kernel als Module ladbaren Treiber.</li>
 </ul>
 <a href="./FHS/lib.html" title="Linux Wissen:FHS:lib">Linux Wissen:FHS:lib</a><br>
 <a href="./Hardware_und_Systeminformationen/Module.html" title="Linux Wissen:Hardware und Systeminformationen:Module">Linux Wissen:Hardware und Systeminformationen:Module</a><br>
 <ul>
-<li>Während des Systemsarts benötigte Treiber werden in der Datei */etc/modprobe.conf, */etc/modprobe.d verwaltet</li>
+<li>Während des Systemsarts benötigte Treiber werden in der Datei /<em>etc/modprobe.conf, /etc/modprobe.d</em> verwaltet</li>
 </ul>
 <a href="./FHS/etc/modprobe.conf.html" title="Linux Wissen:FHS:etc:modprobe.conf">Linux Wissen:FHS:etc:modprobe.conf</a><br>
 <ul>
-<li>Eine Liste aller zu ladenden Module kann unter */etc/modules.conf bei älteren Systemen eingesehen werden</li>
+<li>Eine Liste aller zu ladenden Module kann unter /<em>etc/modules.conf</em> bei älteren Systemen eingesehen werden</li>
 </ul>
 </p>
-
 
 <h4>IRQ</h4>
 <p>
@@ -147,8 +146,8 @@ um auf ein externes Hardwareereignis zu lauschen und dieses zu bearbeiten.<br>
 </p>
 
 <p>
-*/proc/interrupts<br>
-*/proc/dma<br>
+/<em>proc/interrupts</em><br>
+/<em>proc/dma</em><br>
 <a href="./FHS/proc.html" title="Linux Wissen:FHS:proc">Linux Wissen:FHS:proc</a><br>
 </p>
 
@@ -185,7 +184,9 @@ ehci_hcd --&gt; Hilfsmodul für den USB 1.1 to 2.0 Controler<br>
 </p>
 
 <p>
-*/dev/hxX */dev/sdx → Gerätedatei<br>
+<ul>
+<li>/<em>dev/hxX /dev/sdX </em>→ Gerätedatei</li>
+</ul>
 <a href="./FHS/dev.html" title="Linux Wissen:FHS:dev">Linux Wissen:FHS:dev</a><br>
 </p>
 
@@ -251,9 +252,9 @@ Jedes SCSI Gerät lässt sich eindeutig durch das Quadrupel identifizieren:<br>
 <h4>Udev</h4>
 <p>
 <ul>
-<li>Daemon <strong>udevd </strong>zur dynamischen Geräteerzeugung lauscht */sys nach Geräten</li>
-<li>Die Dateien */etc/udev/rules.d wird gelesen</li>
-<li>Es werden Empfehlungen an den Kernel gegeben wie Geräte unter */dev verwaltet werden sollen</li>
+<li>Daemon <strong>udevd </strong>zur dynamischen Geräteerzeugung lauscht /<em>sys</em> nach Geräten</li>
+<li>Die Dateien<em> /etc/udev/rules.d </em>wird gelesen</li>
+<li>Es werden Empfehlungen an den Kernel gegeben wie Geräte unter /<em>dev </em>verwaltet werden sollen</li>
 </ul>
 Erstellen von Udev Regeln: <br>
 <a href="./FHS/etc/udev%2B%2Brules.d%2B%2B99-myrule.html" title="Linux Wissen:FHS:etc:udev++rules.d++99-myrule">Linux Wissen:FHS:etc:udev++rules.d++99-myrule</a><br>

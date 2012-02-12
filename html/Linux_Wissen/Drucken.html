@@ -98,7 +98,7 @@ Created Freitag 23 September 2011<br>
 
 <p>
 <ul>
-<li><em>*/dev/lpX </em>ist die Geräteatei, die auf die entsprechenden Drucker verweist</li>
+<li>/<em>dev/lpX </em>ist die Geräteatei, die auf die entsprechenden Drucker verweist</li>
 <li>Jeder Druckauftrag der an einen Drucker gesendet wird, ist ein Job und wird mit einer eindeutigen Nummer bei 1 beginnend durchnummeriert</li>
 <li>Jobs können in Klassen aufgeteil werden, jede Klasse kann einem oder mehrere Jobs zugewiesen werden</li>
 </ul>
@@ -120,9 +120,9 @@ SPOOL == Simultaneous Peripherial Operation On Line<br>
 <li><strong>lpd</strong></li>
 <li>BSD-Überbleibsl, durch CUPS weitgehend abgelöst</li>
 <li>ansteuern von lokalen (parallel|seriell) angeschlossenen Druckern</li>
-<li><em>*/etc/pritncap </em><strong>→ </strong>definiert die auf einem Rechner zur Verfügung gestellten Warteschlangen und Drucker</li>
-<li><em>*/var/spool/lpd </em>→ die Druckerwarteschlange</li>
+<li><strong>→ </strong>definiert die auf einem Rechner zur Verfügung gestellten Warteschlangen und Drucker</li>
 </ul>
+/etc/pritncap * /<em>var/spool/lpd </em>→ die Druckerwarteschlange<br>
 <a href="./FHS/var/spool.html" title="FHS:var:spool">FHS:var:spool</a><br>
 </p>
 
@@ -139,8 +139,8 @@ SPOOL == Simultaneous Peripherial Operation On Line<br>
 <li>stellt Dokumentation bereit</li>
 <li>unter <a href="http://localhost:631" title="http://localhost:631">http://localhost:631</a> anprechbar </li>
 </ul>
-<li><em>*/usr/share/cups/model </em>enthält die .ppd Druckerbeschreibungsdateien (<a href="./FHS/usr/usr%2B%2Bshare%2B%2Bcups%2B%2Bmodel.html" title="FHS:usr:usr++share++cups++model">FHS:usr:usr++share++cups++model</a>)</li>
-<li><em>*/var/log/cups/access_log </em> → Loggen von Zugriffen auf den Cups Drucker Server</li>
+<li>/<em>usr/share/cups/model </em>enthält die .ppd Druckerbeschreibungsdateien (<a href="./FHS/usr/usr%2B%2Bshare%2B%2Bcups%2B%2Bmodel.html" title="FHS:usr:usr++share++cups++model">FHS:usr:usr++share++cups++model</a>)</li>
+<li>/<em>var/log/cups/access_log </em> → Loggen von Zugriffen auf den Cups Drucker Server</li>
 <li>/<em>var/log/cups/error_log</em> → Loggen von Fehlern des Cups Drucker Servers </li>
 <li><strong>cups-lpd</strong></li>
 </ul>
@@ -151,7 +151,7 @@ SPOOL == Simultaneous Peripherial Operation On Line<br>
 <h5>Client Befehle zum Drucken</h5>
 <p>
 <ul>
-<li><strong>cat &lt;Datei&gt; &gt; /dev/lpX </strong>→ die Datei wird direkt an das Gerät <em>*/dev/lpX</em> gesendet</li>
+<li><strong>cat &lt;Datei&gt; &gt; /dev/lpX </strong>→ die Datei wird direkt an das Gerät /<em>dev/lpX</em> gesendet</li>
 </ul>
 <div style='padding-left: 30pt'>
                               → setzt allerdings eine Formatierung vorraus, die der Drucker versteht (ASCII, UTF-8)<br>
@@ -198,7 +198,7 @@ SPOOL == Simultaneous Peripherial Operation On Line<br>
 <strong>-r </strong>→ einen Grund angeben<br>
 </div>
 <ul>
-<li><strong>lppasswd </strong>→ ändern des Passwortes es muss die Direktive <em>AuthType </em>auf <em>Digest</em> in <em>*/etc/cupsd.conf </em>gesetzt sein</li>
+<li><strong>lppasswd </strong>→ ändern des Passwortes es muss die Direktive <em>AuthType </em>auf <em>Digest</em> in /<em>etc/cupsd.conf </em>gesetzt sein</li>
 <li><strong>lpc (line printer control) </strong>zum Steuern diverser Druckoptionen</li>
 <li><strong>lpinfo </strong>zum Anzeigen von Informationen von (nicht zwingend) installierten Druckergeräten</li>
 <ul>
@@ -221,20 +221,20 @@ SPOOL == Simultaneous Peripherial Operation On Line<br>
 <p>
 <a href="http://localhost:631" title="http://localhost:631">http://localhost:631</a><br>
 <ul>
-<li>*/etc/hosts.lpd → eine Liste von Hosts, die über diesen Druckerserver mit dem Drucker kommunizieren dürfen</li>
+<li>/etc/hosts.lpd → eine Liste von Hosts, die über diesen Druckerserver mit dem Drucker kommunizieren dürfen</li>
 </ul>
 <a href="./FHS/etc/hosts.lpd.html" title="FHS:etc:hosts.lpd">FHS:etc:hosts.lpd</a><br>
 <ul>
-<li><em>*/etc/cups/mime.types → </em>Bestimmung des Datentyps der gedruckt wird</li>
-<li><em>*/etc/cups/classes.conf </em>→ definieren von  verschiedenen lokalen Drucker Klassen</li>
+<li>/<em>etc/cups/mime.types → </em>Bestimmung des Datentyps der gedruckt wird</li>
+<li>/<em>etc/cups/classes.conf </em>→ definieren von  verschiedenen lokalen Drucker Klassen</li>
 </ul>
 <a href="./FHS/etc/cups/cups%2B%2Bclasses.conf.html" title="FHS:etc:cups:cups++classes.conf">FHS:etc:cups:cups++classes.conf</a><br>
-<em>*/etc/cups/mime.convs</em> → Bestimmung der Filterprogramme zur Umwandlung verschiedener Format <br>
-<em>*/etc/cups/printers.conf → </em>enthält die Konfiguration für die einzelnen Drucker<br>
+/<em>etc/cups/mime.convs</em> → Bestimmung der Filterprogramme zur Umwandlung verschiedener Format <br>
+/<em>etc/cups/printers.conf → </em>enthält die Konfiguration für die einzelnen Drucker<br>
 <a href="./FHS/etc/cups/cups%2B%2Bprinters.conf.html" title="FHS:etc:cups:cups++printers.conf">FHS:etc:cups:cups++printers.conf</a><br>
-<em>*/etc/cups/ppd/ </em>→ für jeden vom Server verwatleteten Drucker wird die PPD-Datei aus <em>*/usr/share/cups/model</em> hierherkopiert<br>
+/<em>etc/cups/ppd/ </em>→ für jeden vom Server verwatleteten Drucker wird die PPD-Datei aus /<em>usr/share/cups/model</em> hierherkopiert<br>
  <a href="./FHS/usr/usr%2B%2Bshare%2B%2Bcups%2B%2Bmodel.html" title="FHS:usr:usr++share++cups++model">FHS:usr:usr++share++cups++model</a><br>
-<em>*/etc/cups</em>cupsd.conf //→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)<br>
+/<em>etc/cups</em>cupsd.conf //→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)<br>
 <a href="./FHS/etc/cups/cups%2B%2Bcupsd.conf.html" title="FHS:etc:cups:cups++cupsd.conf">FHS:etc:cups:cups++cupsd.conf</a><br>
 <a href="./FHS/etc.html" title="FHS:etc">FHS:etc</a><br>
 </p>
@@ -245,7 +245,7 @@ SPOOL == Simultaneous Peripherial Operation On Line<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='./FHS/var.html'>Linux Wissen:FHS:var</a></li>						<a href='./FHS/var/spool.html'>Linux Wissen:FHS:var:spool</a></li>						<a href='./FHS/etc/cups/cups%2B%2Bprinters.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a></li>						<a href='./FHS/etc/cups/cups%2B%2Bcupsd.conf.html'>Linux Wissen:FHS:etc:cups:cups++cupsd.conf</a></li>						<a href='./FHS/etc/cups/cups%2B%2Bclasses.conf.html'>Linux Wissen:FHS:etc:cups:cups++classes.conf</a></li>						<a href='./FHS/etc.html'>Linux Wissen:FHS:etc</a></li>
+				Backlinks:						<a href='./FHS/etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='./FHS/etc/cups/cups%2B%2Bprinters.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a></li>						<a href='./FHS/etc/cups/cups%2B%2Bcupsd.conf.html'>Linux Wissen:FHS:etc:cups:cups++cupsd.conf</a></li>						<a href='./FHS/etc/cups/cups%2B%2Bclasses.conf.html'>Linux Wissen:FHS:etc:cups:cups++classes.conf</a></li>						<a href='./FHS/var.html'>Linux Wissen:FHS:var</a></li>						<a href='./FHS/var/spool.html'>Linux Wissen:FHS:var:spool</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

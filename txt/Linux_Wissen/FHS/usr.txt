@@ -5,50 +5,50 @@ Creation-Date: 2011-04-19T02:17:00+02:00
 ====== usr ======
 Created Dienstag 19 April 2011
 
-***/usr/local **→ Aus  dem Quelltext übersetzte Software und die dazugehörnenden Dateien
-                   → unter **/usr/sbin, /usr/bin ** können auch eigenen Programme und Scripte liegen
+///usr/local //→ Aus  dem Quelltext übersetzte Software und die dazugehörnenden Dateien
+                   → unter ///usr/local/sbin, /usr/local/bin//  können auch eigenen Programme und Scripte liegen
 
-***/usr/bin ** → ausführbare Dateien, die jeder gültige Benutzer ausführen können soll
+///usr/bin//  → ausführbare Dateien, die jeder gültige Benutzer ausführen können soll
                  → diese Porgramme sind nicht notwendig um nur die grundlegende Funktionalität bereitzustellen
 
-***/usr/sbin **→ ausführbare Dateien, die nur root ausführen können soll
+///usr/sbin// → ausführbare Dateien, die nur root ausführen können soll
                   → diese Programme sind nicht notwendig um nur die grundlegende Funktionalität bereitzustellen
 
-***/usr/lib/ **→ Bibliotheken die nicht von Dateien in **/bin ** oder **/sbin **benötigt werden
-	**rpm/ **→ Scripte und Macros die von der Distribution definiert wurden und von **rpm **ausgewertet werden
+///usr/lib/// → Bibliotheken die nicht von Dateien in **/bin ** oder **/sbin **benötigt werden
+	//rpm//**/ **→ Scripte und Macros die von der Distribution definiert wurden und von **rpm **ausgewertet werden
 [[Linux Wissen:Paketverwaltung:Rpm]]
 
-***/usr/share **→ von der Rechnerarchitektur unabhängige Dateien
-	**pci.ids **→ Datenbank bekannter Geräte IDs für PCI Controler
+///usr/share// → von der Rechnerarchitektur unabhängige Dateien
+	//pci.ids// → Datenbank bekannter Geräte IDs für PCI Controler
 	
-***/usr/share/cups/model **→ die PPD Dateien die einen Drucker näher beschreiber 
+///usr/share/cups/model// → die PPD Dateien die einen Drucker näher beschreiber 
 [[+usr++share++cups++model]]
 
-***/usr/share/doc** → Dokumentation
+///usr/share/doc// → Dokumentation
 		              → Unter $$SUSE$$ findet man zusätzliche Documentaion unter **/usr/share/doc/packages**
 
-***/usr/share/fonts **→ Fonts für den X-Server
+///usr/share/fonts// → Fonts für den X-Server
 
-***/usr/share/man **→ Manual Pages
+///usr/share/man// → Manual Pages
 
-***/usr/share/info **→ Info Pages
+///usr/share/info// → Info Pages
 
-***/usr/share/kbd/keymaps **→ Keyboard Map Files
+///usr/share/kbd/keymaps// → Keyboard Map Files
 
-***/usr/share/locale/ → **Lokalisierungsdateien für die im System befindlichen Programme
-	**<LOC>/LC_MESSAGES → **Übersetzungen di e von den Programmen für die Notifikation an den Nutzer verwendet werden
-	**<LOC>/LC_TIME → **Zeiteinstellungen/ Zeitformate die von einem Program verwendet werden
+///usr/share/locale///** → **Lokalisierungsdateien für die im System befindlichen Programme
+	//<LOC>/LC_MESSAGES //**→ **Übersetzungen die von den Programmen für die Notifikation an den Nutzer verwendet werden
+	//<LOC>/LC_TIME //**→ **Zeiteinstellungen/ Zeitformate die von einem Program verwendet werden
 
-***/usr/share/zoneinfo **→ Zoninfo Dateien für die Zeitzonen
+///usr/share/zoneinfo → //Zoninfo Dateien für die Zeitzonen
 
-***/usr/src **→ Quellpakete
-		**/linux **→ link zu den linux kernel Quellen 
-		**/packages **→ Quellen und Specs für die Rpm Paketierung 
+///usr/src// → Quellpakete
+		///linux// → link zu den linux kernel Quellen 
+		///packages// → Quellen und Specs für die Rpm Paketierung 
 		[[Linux Wissen:Paketverwaltung:Rpm:Pakete bauen]]
-					**/SPECS **→ .spec Dateien für den Paketbau
-					**/RPMS **→ fertig gebaute Pakete
+					///SPECS// → .spec Dateien für den Paketbau
+					///RPMS// → fertig gebaute Pakete
 
-					/**SOURCES **→ Quellen die zum Bau von Paketen benötigt werden
-					**/BUILD **→ hier werden die Quellen entpackt und kompiliert
-					**/BUILDROOT **→ simmulieren des **/ **Verzeichnisses
-					**SRPMS **→ fertig gebaute .src.rpm Pakete
+					///SOURCES// → Quellen die zum Bau von Paketen benötigt werden
+					///BUILD// → hier werden die Quellen entpackt und kompiliert
+					///BUILDROOT// → simmulieren des **/ **Verzeichnisses
+					//SRPMS// → fertig gebaute .src.rpm Pakete

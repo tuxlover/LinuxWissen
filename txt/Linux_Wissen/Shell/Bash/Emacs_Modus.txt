@@ -71,3 +71,5 @@ Created Freitag 15 April 2011
 
 === Alt+b ===
 → ein Wort rückwärst bewegen
+
+[[inputrc]]

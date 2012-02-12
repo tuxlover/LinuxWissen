@@ -99,31 +99,45 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>booten eines kleinen Dateicontainers auf dem Host System</li>
+				<p>
+Created Donnerstag 09 Februar 2012<br>
+</p>
+
+<p>
+<ul>
+<li>booten eines kleinen Dateicontainers auf dem Host System</li>
 <li>zum debuggen und chrooten eines Prozesses</li>
 <li>nutzt Container mit eigener PID und Dateisystem-ID</li>
 <li>ermöglicht das Wechseln in ein anderes System </li>
 <li>schränkt die Kommuniaktion des Kernels auf rw ein (/sys /proc/sys)</li>
 <li>einschränken der Netzwerkschnittstellen auf dei gelauscht werden kann</li>
 <li>virtualiserit PID 1</li>
+</ul>
+</p>
 
 
-<strong>systemctl-nspwan &lt;Befehl&gt;</strong>
+<p>
+<strong>systemctl-nspwan &lt;Befehl&gt;</strong><br>
 <strong>-D &lt;PATH&gt; → </strong>Verzeichnis, dass als / für diesen Conatainer dienen soll <br>
 <strong>-u &lt;User&gt; → </strong>den Befehl als &lt;User&gt; ausführen, das Heimatverzeichnis im Container erstellen und in dieses Wechseln<br>
 <strong>--private-network </strong>→ ausschalten der Netzwerkkommunikation in diesem Container<br>
-<br>
-<br>
+</p>
+
+
+<p>
 <u>Beispiele:</u><br>
 Debian Container unter Fedora booten:<br>
+</p>
 <pre>
 yum install debootstrap
 debootstrap --arch=amd64 unstable debian-tree/
 systemd-nspawn -D debian-tree/
 </pre>
-<br>
+
+<p>
 Init 1 im Debian Container ausführen:<br>
-<code>systemd-nspawn -D debian-tree/ /sbin/init</code>
+<code>systemd-nspawn -D debian-tree/ /sbin/init</code><br>
+</p>
 
 
 			<!-- End wiki content -->

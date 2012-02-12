@@ -16,7 +16,7 @@ $$Debian$$ $$Ubuntu$$
 → eintragen von "//iface <ethN> inet static//" wenn DHCP nicht verwendet werden soll
 
 $$SUSE$$
-//*/etc/sysconfig/network//
+///etc/sysconfig/network//
 → eintragen von "//BOOTPROTO='dhcp'  //" um DHCP zu verwenden
 → eintragen von "//BOOTPROTP=// 'static' " um DHC nicht zu verwenden
 
