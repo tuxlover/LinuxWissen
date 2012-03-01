@@ -13,6 +13,7 @@ Created Samstag 16 April 2011
 **-u **→ kopiert nur wenn <Quelle> neuer als <Ziel> ist
 **-d **→ kopiert den Symbolischen Link aber nicht das Ziel auf den diese verweisen
 **-H **→ wenn Quelle symbolischen Link enthält kopier stattdessen das Ziel auf den diese verweisen
+**-n **→ bestehende Dateien nicht überschreiben
 **-v **→ verbose
 **-a **→ Kurzform von **-drp**    
 

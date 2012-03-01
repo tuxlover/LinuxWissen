@@ -54,7 +54,6 @@ for (( i=Startwert ; $i [ < | > | =] Stopwert ; Increment | Decrement ))
 	                <Aktion> $i                     
 	        done     
 	'''
-
 ++ 
 
 
@@ -83,7 +82,7 @@ __Hinweis: Schleifen können Ein- und Ausgabeumleitungen in den Schleifenkopf ü
 while read LINE
         do
                 echo "--$LINE--"
-        done < /etc/passwd
+        done < <(cat /etc/passwd)
 '''
 
 ++

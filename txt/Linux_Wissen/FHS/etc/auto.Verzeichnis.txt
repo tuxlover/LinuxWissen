@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-16T00:42:26+01:00
+
+====== auto.Verzeichnis ======
+Created Donnerstag 16 Februar 2012
+
+++
+'''
+#zum beispiel misc.media
+
+</Subpfad>      <Optionen>      :<Gerät>
+disk		-fstype=auto,rw,nodev,noexec,nosuid,async	:/dev/sdc1
+'''
+
+++
+**man 5 autofs**

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Zeitgesteuerte Vorgänge</title>
-		<meta name='Generator' content='Zim 0.54'>
+		<meta name='Generator' content='Zim 0.55'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -61,6 +61,7 @@
 <li><a href="./Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="./Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
 <li><a href="./Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="./Monitoring.html" title="Monitoring">Monitoring</a></li>
 <li><a href="./Networking.html" title="Networking">Networking</a></li>
 <li><a href="./Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
 <li><a href="./Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
@@ -89,68 +90,110 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>Jobs und Aufgaben zu einem bestimmten Zeitpunkt einmalig oder periodisch ausführen</li>
+				<p>
+Created Mittwoch 20 Juli 2011<br>
+</p>
+
+<p>
+<ul>
+<li>Jobs und Aufgaben zu einem bestimmten Zeitpunkt einmalig oder periodisch ausführen</li>
+</ul>
+</p>
 
 <h3>at</h3>
+<p>
+<ul>
 <li>einen bestimmten Jobs zu einem bestimmten Zeitpunkt ausfüren</li>
 <li>Unter $$SUSE$$ muss die Grupper <em>trusted </em>dem entsprechenden Nutzer der at ausführen will zugeordnet sein</li>
 <li>Der at Daemon (atd) muss laufen um <strong>at </strong>gesteuerte Jobs ausführen zu können</li>
 <li>Aufträge werden in<em> /var/spool/atjobs </em>abgelegt</li>
-<a href="./Zeitgesteuerte_Vorg%C3%A4nge/at.html" title="+at">+at</a>
-<a href="./Zeitgesteuerte_Vorg%C3%A4nge/atd.html" title="+atd">+atd</a>
+</ul>
+<a href="./Zeitgesteuerte_Vorg%C3%A4nge/at.html" title="+at">+at</a><br>
+<a href="./Zeitgesteuerte_Vorg%C3%A4nge/atd.html" title="+atd">+atd</a><br>
+</p>
 
 <h5>Rechte</h5>
-<li>falls eine Datei <em>/etc/at.allow</em> dürfen nur Nutzer die in dieser Datei aufgelistet sind den <strong>atd</strong> benutzen dürfen</li>
-<li>falls eine Datei <em>/etc/at.allow</em> nicht existiert, aber eine Datei <em>/etc/at.deny</em> dann dürfen die Nutzer die in <em>/etc/at.deny</em> stehen den <strong>atd </strong>nicht benutzen</li>
-<li>existieren beide Datein <em>/etc/at.allow, /etc/at.deny</em> wird nur die Datei <em>/etc/at.allow</em> ausgewertet</li>
-<a href="./FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a>
+<p>
+<ul>
+<li>falls eine Datei /<em>etc/at.allow</em> dürfen nur Nutzer die in dieser Datei aufgelistet sind den <strong>atd</strong> benutzen dürfen</li>
+<li>falls eine Datei /<em>etc/at.allow</em> nicht existiert, aber eine Datei /<em>etc/at.deny</em> dann dürfen die Nutzer die in /<em>etc/at.deny</em> stehen den <strong>atd </strong>nicht benutzen</li>
+<li>existieren beide Datein /<em>etc/at.allow, /etc/at.deny</em> wird nur die Datei /<em>etc/at.allow</em> ausgewertet</li>
+</ul>
+<a href="./FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
+</p>
 
 <h3>cron</h3>
+<p>
+<ul>
 <li>wiederholtes Ausführen von zeitgesteuerten Jobs</li>
 <li>Der cron-Daemon muss laufen </li>
 <li>falls vor dem Cronbefehl kein - steht, wird der ausgeführte Cronjob vom Syslogd protokolliert (</li>
+</ul>
 <a href="./Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a>)<br>
-<li>Nutzer Crontabs liegen unter <em>/var/spool/cron/tabs/&lt;User&gt; </em></li>
+<ul>
+<li>Nutzer Crontabs liegen unter /<em>var/spool/cron/tabs/&lt;User&gt; </em></li>
 <li>cronjobs werden entweder für den einzelnen Nutzer mit dem Befehl <strong>crontab</strong> verwaltet oder bei den System Cron-Jobs unter<em> /etc</em> direkt editiert</li>
 <li>wird eine crontab <em>in /etc/cron.d/ </em>angelegt, so handelt es sich um eine systemcrontab und der nutzer muss hnter den Zeitmarken (* * * * * ) angegeben werden</li>
-<a href="./Zeitgesteuerte_Vorg%C3%A4nge/crontab.html" title="+crontab">+crontab</a>
+</ul>
+<a href="./Zeitgesteuerte_Vorg%C3%A4nge/crontab.html" title="+crontab">+crontab</a><br>
+</p>
 
-<h4>!Achtung!</h4><br>
+<h4>!Achtung!</h4>
+<p>
 Es gibt verschiedene cron-Implementierungen<br>
-zum Beispiel <strong>vixie-cron</strong> oder <strong>cronie</strong>
+zum Beispiel <strong>vixie-cron</strong> oder <strong>cronie</strong><br>
+</p>
 
-<em>/var/spool/cron/tabs $$SUSE$$</em>
-<em>/var/spool/cron $$Fedora$$</em>
-<em>/var/spool/cronatbs $$Debian$$ $$Ubuntu$$</em><br>
+<p>
+/<em>var/spool/cron/tabs $$SUSE$$</em><br>
+/<em>var/spool/cron $$Fedora$$</em><br>
+/<em>var/spool/cronatbs $$Debian$$ $$Ubuntu$$</em><br>
 → Crontabs der Nutzer<br>
-<br>
-<br>
-<em>/etc/cron.d|cron.daily|cron.weekly|cron.hourly|cron.monthly</em><br>
+</p>
+
+
+<p>
+/<em>etc/cron.d|cron.daily|cron.weekly|cron.hourly|cron.monthly</em><br>
 → Shellscripte die vom System ausgeführt werden<br>
 <a href="./FHS/etc.html" title="Linux Wissen:FHS:etc">Linux Wissen:FHS:etc</a><br>
-<br>
+</p>
+
+<p>
 Syntax einer Crontab:<br>
-<a href="./FHS/var/spool/crontab.html" title="Linux Wissen:FHS:var:spool:crontab">Linux Wissen:FHS:var:spool:crontab</a>
+<a href="./FHS/var/spool/crontab.html" title="Linux Wissen:FHS:var:spool:crontab">Linux Wissen:FHS:var:spool:crontab</a><br>
+</p>
 
 <h5>Rechte</h5>
-<li>falls eine Datei <em>/etc/cron.allow</em> dürfen nur Nutzer die in dieser Datei aufgelistet sind den <strong>crond</strong> benutzen dürfen</li>
+<p>
+<ul>
+<li>falls eine Datei /<em>etc/cron.allow</em> dürfen nur Nutzer die in dieser Datei aufgelistet sind den <strong>crond</strong> benutzen dürfen</li>
 <li>falls eine Datei<em> /etc/cron.allow</em> nicht existiert, aber eine Datei<em> /etc/cron.deny </em>dann dürfen die Nutzer die in<em> /etc/cron.deny</em> stehen den <strong>crond </strong>nicht benutzen</li>
-<li>existieren beide Datein<em> /etc/cron.allow</em>,<em> /etc/cron.deny</em> wird nur die Datei <em>/etc/cron.allow</em> ausgewertet</li>
+<li>existieren beide Datein<em> /etc/cron.allow</em>,<em> /etc/cron.deny</em> wird nur die Datei /<em>etc/cron.allow</em> ausgewertet</li>
+</ul>
+</p>
 
 
 <h4>anacron</h4>
+<p>
+<ul>
 <li>wird vom Programm <strong>/usr/sbin/anacron </strong>ausgeführt</li>
-<a href="./Zeitgesteuerte_Vorg%C3%A4nge/anacron.html" title="+anacron">+anacron</a>
+</ul>
+<a href="./Zeitgesteuerte_Vorg%C3%A4nge/anacron.html" title="+anacron">+anacron</a><br>
+<ul>
 <li>muss meistens nachinstalliert werden und gehört nicht zum Umfang dazu</li>
 <li>wiederholtes Ausführen von zeitgestierten in unregelmäßigen Zeitabständen</li>
-<li>Es muss ein Konfigurationsscript in <em>/etc/cron.hourly/0anacron  </em>existieren, hier kann der <strong>anacron</strong> Daemon konfiguriert werden</li>
-<li>in der Datei <em>/etc/anacrontab </em>werden die Jobs für <strong>anacron </strong>konfiguriert (</li>
+<li>Es muss ein Konfigurationsscript in /<em>etc/cron.hourly/0anacron  </em>existieren, hier kann der <strong>anacron</strong> Daemon konfiguriert werden</li>
+<li>in der Datei /<em>etc/anacrontab </em>werden die Jobs für <strong>anacron </strong>konfiguriert (</li>
+</ul>
 <a href="./FHS/etc/anacrontab.html" title="FHS:etc:anacrontab">FHS:etc:anacrontab</a>)<br>
-<br>
-<em>/var/spool/anacron/daily</em>
-<em>/var/spool/anacron/weekly</em>
-<em>/var/spool/anacron/monthly</em><br>
+</p>
+
+<p>
+/<em>var/spool/anacron/daily</em><br>
+/<em>var/spool/anacron/weekly</em><br>
+/<em>var/spool/anacron/monthly</em><br>
 → Zeitstempel die die Ausführung des nächsten Cronjobs angeben<br>
+</p>
 
 
 			<!-- End wiki content -->

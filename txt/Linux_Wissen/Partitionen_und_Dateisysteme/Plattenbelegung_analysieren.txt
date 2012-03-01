@@ -13,6 +13,7 @@ Created Samstag 23 April 2011
 
 **du <Verzeichnis>**→ Eine Zusmmenfassung , wieviel jede Datei unterhalb eines <Verzeichnis>ses verbraucht
 **-s **→ Zusammenfassung, wiviel Speicherplatz wird insgesamt auf der Platte verbraucht
+**-i **→ Anzahl der I-Nodes auf dem Dateisystem genutzte und freie 
 **-h **→ in menschlich lesbarer Form ausgeben
 **-x **→ Verzeichnisse die sich auf einem anderem Dateisystem befinden werden ausgelassen
 **--exclude=<MUSTER> **→ Dateien die <Muster> entsprechend werden ausgeschlossen

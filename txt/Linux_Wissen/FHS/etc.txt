@@ -5,6 +5,9 @@ Creation-Date: 2011-04-19T02:00:50+02:00
 ====== etc ======
 Created Dienstag 19 April 2011
 
+///etc/auto.master//
+/etc/auto.<Verzeichnis>
+
 ///etc/at.allow// → Liste der Nutzer die at benutzen dürfen
 ///etc/at.deny// → Liste der Nutzer die at nicht benutzen dürfen
 → .allow wird zuerst gelesen

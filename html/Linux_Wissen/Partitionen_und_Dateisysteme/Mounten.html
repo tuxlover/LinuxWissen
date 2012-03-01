@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Mounten</title>
-		<meta name='Generator' content='Zim 0.54'>
+		<meta name='Generator' content='Zim 0.55'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -61,6 +61,7 @@
 <li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
 <li><a href="../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../Monitoring.html" title="Monitoring">Monitoring</a></li>
 <li><a href="../Networking.html" title="Networking">Networking</a></li>
 <li><a href="../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
 <li><a href="../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
@@ -68,6 +69,11 @@
 <li><a href="./Dateisysteme.html" title="Dateisysteme">Dateisysteme</a></li>
 <li><a href="./dd.html" title="dd">dd</a></li>
 <li><strong>Mounten</strong></li>
+<ul>
+<li><a href="./Mounten/Shared_Mount.html" title="Shared Mount">Shared Mount</a></li>
+<li><a href="./Mounten/Slave_Mount.html" title="Slave Mount">Slave Mount</a></li>
+<li><a href="./Mounten/Unbindable_Mount.html" title="Unbindable Mount">Unbindable Mount</a></li>
+</ul>
 <li><a href="./Partitionstypen.html" title="Partitionstypen">Partitionstypen</a></li>
 <li><a href="./Partitionswerkzeuge.html" title="Partitionswerkzeuge">Partitionswerkzeuge</a></li>
 <li><a href="./Plattenbelegung_analysieren.html" title="Plattenbelegung analysieren">Plattenbelegung analysieren</a></li>
@@ -101,9 +107,31 @@ Created Freitag 22 April 2011<br>
 
 <p>
 <strong>mount &lt;Blockgerät&gt; &lt;Mountpoint&gt; </strong>→ hängt das &lt;Blockgerät&gt; in den &lt;Mountpoint&gt; ein<br>
-<strong>-a </strong>alle Geräte die in der /<em>etc/fstab</em>  (<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a>) eingetragen sind<br>
+<strong>-a </strong><br>
+→ alle Geräte die in der /<em>etc/fstab</em>  (<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a>) eingetragen sind<br>
+</p>
+
+<p>
 <strong>--bind </strong>→ ein &lt;Blockgerät&gt; auf zwei verschiedene &lt;Mountpoint&gt;s setzen<br>
-<strong>-o &lt;optionen&gt;,... </strong>→ weitere Optionen für mount angeben<br>
+<strong>--rbind </strong><br>
+→ ein &lt;Blockgerät&gt; auf zwei verschiedene &lt;Mountpoints&gt; setzen, <br>
+→ bindet auch alle Mountpoints ein, die unter dem Original Mountpunkt eingehängt sind<br>
+</p>
+
+<p>
+ <a href="./Mounten/Shared_Mount.html" title="+Shared Mount">+Shared Mount</a><br>
+<a href="./Mounten/Slave_Mount.html" title="+Slave Mount">+Slave Mount</a><br>
+<a href="./Mounten/Unbindable_Mount.html" title="+Unbindable Mount">+Unbindable Mount</a><br>
+</p>
+
+<p>
+<strong>-o &lt;optionen&gt;,...</strong><br>
+ → weitere Optionen für mount angeben<br>
+</p>
+
+<p>
+<strong>--move &lt;MountpunktQuelle&gt; &lt;MountpunktZiel&gt; </strong><br>
+→ Mountpunkt verschieben<br>
 </p>
 
 <p>
@@ -129,9 +157,7 @@ no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreib
 <em>noexec		</em>verbiete dass Dateien auf deiesem Dateisystem ausgeführt werden dürfen<br>
 <em>suid			</em>erlaube dass Dateien mit mit SetUID Bit gesetzt werden dürfen<br>
 <em>nosuid</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dateien mit SetUID Bit dürfen nicht angelegt werden <br>
-<div style='padding-left: 90pt'>
-       <a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
-</div>
+<a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
 <em>rw 			</em>Das Dateisystem ist schreibbar, es dürfen Dateien darauf angelegt werden<br>
 <em>ro			</em>Das Dateisystem ist nur lesbar, es dürfen keine Dateien darauf angelegt werden<br>
 <em>user			</em>Nutzer kann das Dateisystem einhängen aber nur root oder der Nutzer der es eingehängt hat, darf es <br>
@@ -150,20 +176,22 @@ no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreib
 <p>
 <strong>mount &lt;Mountpoint&gt;|&lt;Device&gt; </strong>→ es reicht einer der beiden Argumente anzugeben, <br>
 <div style='padding-left: 210pt'>
-      → falls es einen Eintrag /<em>etc/fstab</em> gibt ( <br>
+      → falls es einen Eintrag /<em>etc/fstab</em> gibt<br>
 </div>
-<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a> )<br>
+<a href="../FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a><br>
+ <a href="./Mounten/Shared_Mount.html" title="+Shared Mount">+Shared Mount</a><br>
+<a href="./Mounten/Slave_Mount.html" title="+Slave Mount">+Slave Mount</a><br>
+<a href="./Mounten/Unbindable_Mount.html" title="+Unbindable Mount">+Unbindable Mount</a><br>
 </p>
- 
+
 <p>
 <u>Hinweis:</u> <code>mount -o loop,ro mycd.iso /home/iso</code> <u>hängt ein Iso ein.</u><br>
 </p>
 
 <p>
-<strong>umount &lt;Mountpoint&gt;|&lt;Device&gt; </strong>→ hängt das &lt;Device&gt; aus. <br>
-<div style='padding-left: 240pt'>
+<strong>umount &lt;Mountpoint&gt;|&lt;Device&gt; </strong><br>
+→ hängt das &lt;Device&gt; aus. <br>
  → Es reicht das &lt;Device&gt; oder den &lt;Mountpoint&gt; anzugeben<br>
-</div>
 <strong>-n </strong>→ die Einträge aus /<em>etc/mtab</em> nicht entfernen<br>
 <strong>-r </strong>→ falls das Aushängen fehlschlägt, versuche es ro einzuhängen<br>
 <strong>-d </strong>→ falls das Gerät ein Loop Gerät war, wird es das loop_Gerät zur Benutzung freigeben<br>
@@ -180,9 +208,27 @@ no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreib
 </p>
 
 <p>
-<strong>findmnt [&lt;Mountpunkt&gt;|&lt;Gerät&gt;]</strong><br>
+<strong>findmnt [&lt;Mountpunkt&gt;|&lt;Gerät&gt;] </strong><br>
+→ finden und auflisten von Mountpunkten innerhalb des Root Trees in Baumform<br>
+→ Anzeigen aller eingebundenen Geräte inklusive ihrer Mountoptionen und ihrer verwendeten Dateisysteme und Pseudodateisysteme<br>
+<strong>-k </strong>→ benutze /<em>proc/self/mountinfo </em>für das Auflisten<br>
+<strong>-s </strong>→ benutze /<em>etc/fstab</em><br>
+<strong>-m </strong>→ benutze /<em>etc/mtab</em><br>
+<strong>-l </strong>→ nicht als Baum anzeigen, liste nur auf<br>
+<strong>-f </strong>→ nur das erste gefundene Dateisystem ausgeben, nur sinnvoll mit Argument<br>
+<strong>-p </strong>→ überwachen von Mountpunkten. Wird ein Mountpunkt gepollt, wird eine Ausgabe nach StdtOut geschrieben<br>
+<strong>-o {ACTION, SOURCE, TARGET, OLD-TARGET, FSTYPE, OPTIONS, OLD-OPTIONS, VFS-OPTIONS,  FS-OPTIONS, LABEL UUID}</strong><br>
+→ Ausagbeformat formatieren<br>
+→ zwischen den Ausgabeparametern muss jeweils ein Komma stehen<br>
+<a href="./Dateisysteme.html" title="Dateisysteme">Dateisysteme</a><br>
+<a href="./Partitionstypen.html" title="Partitionstypen">Partitionstypen</a><br>
 </p>
 
+<p>
+<em>Beispiel:</em><br>
+Überprüfen ob in /media/disk etwas gemounted ist<br>
+<code>findmnt /media/disk; echo $?</code><br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -190,7 +236,7 @@ no<em>dev		</em>Dieses Dateisystem erlaubt <u>keinen</u> Zugriff und das Schreib
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Dateien_verwalten/Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>						<a href='../Dateien_verwalten/Dateiattribute.html'>Linux Wissen:Dateien verwalten:Dateiattribute</a></li>						<a href='../FHS/etc/fstab.html'>Linux Wissen:FHS:etc:fstab</a></li>						<a href='../FHS/etc/cgconfig.conf.html'>Linux Wissen:FHS:etc:cgconfig.conf</a></li>						<a href='../Prozessverwaltung/Cgroups/Hierarchien_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Hierarchien verwalten</a></li>						<a href='../Booten.html'>Linux Wissen:Booten</a></li>						<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>						<a href='./Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>
+				Backlinks:						<a href='../Partitionen_und_Dateisysteme.html'>Linux Wissen:Partitionen und Dateisysteme</a></li>						<a href='../Booten.html'>Linux Wissen:Booten</a></li>						<a href='./Quotas.html'>Linux Wissen:Partitionen und Dateisysteme:Quotas</a></li>						<a href='../Dateien_verwalten/Zugriffsrechte.html'>Linux Wissen:Dateien verwalten:Zugriffsrechte</a></li>						<a href='../Dateien_verwalten/Dateiattribute.html'>Linux Wissen:Dateien verwalten:Dateiattribute</a></li>						<a href='../FHS/etc/fstab.html'>Linux Wissen:FHS:etc:fstab</a></li>						<a href='../FHS/etc/cgconfig.conf.html'>Linux Wissen:FHS:etc:cgconfig.conf</a></li>						<a href='../Prozessverwaltung/Cgroups/Hierarchien_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Hierarchien verwalten</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

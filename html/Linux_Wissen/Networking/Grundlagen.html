@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Grundlagen</title>
-		<meta name='Generator' content='Zim 0.54'>
+		<meta name='Generator' content='Zim 0.55'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -61,10 +61,15 @@
 <li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
 <li><a href="../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../Monitoring.html" title="Monitoring">Monitoring</a></li>
 <li><a href="../Networking.html" title="Networking">Networking</a></li>
 <ul>
 <li><a href="./Dienste.html" title="Dienste">Dienste</a></li>
 <li><strong>Grundlagen</strong></li>
+<ul>
+<li><a href="./Grundlagen/OSI_Modell.html" title="OSI Modell">OSI Modell</a></li>
+<li><a href="./Grundlagen/TCP-IP-Referenzmodell.html" title="TCP-IP-Referenzmodell">TCP-IP-Referenzmodell</a></li>
+</ul>
 <li><a href="./Protokolle.html" title="Protokolle">Protokolle</a></li>
 <li><a href="./Tools.html" title="Tools">Tools</a></li>
 <li><a href="./xinetd.html" title="xinetd">xinetd</a></li>
@@ -101,6 +106,64 @@ Created Donnerstag 22 September 2011<br>
 <li>wobei der <em>Server</em> einen <strong>Dienst</strong> anzubieten hat, den der <em>Client </em>angefordert hat und vom <em>Client </em>genutzt wird</li>
 </ul>
 </p>
+
+<h4>OSI-Schichtenmodell</h4>
+<p>
+<ul>
+<li>Eine Schicht stellt ihre Dienste der darüberliegende Schicht zur Verfügung (http stellt Schnittstellen für html und php bereit)</li>
+<li>Umgekehrt nimmt eine Schicht die Dienste ihrer unterliegenden Schicht in Anspruch</li>
+<li>Für die Kommunikation zwischen den einzelenen Schichten werden Schnittstellen bereitgestellt</li>
+<li>Jede Schicht bietet Protokolle an, die für die Kommunikation innerhalb dieser Ebene genutzt werden</li>
+</ul>
+<a href="./Grundlagen/OSI_Modell.html" title="+OSI Modell">+OSI Modell</a><br>
+</p>
+
+<h4>TCP-IP-Refernenzmodell</h4>
+<p>
+<ul>
+<li>gilt ausschließlich für die TCP/IP Protokollfamilie</li>
+<li>verschmelzen der OSI Ebenen I und II, sowie V bis VII</li>
+</ul>
+<a href="./Grundlagen/TCP-IP-Referenzmodell.html" title="+TCP-IP-Referenzmodell">+TCP-IP-Referenzmodell</a><br>
+</p>
+
+<h4>RFC (Request for Comments)</h4>
+<p>
+<ul>
+<li>Dokumentation zur TCP/IP Protokollimplementation</li>
+<li>Jedes RFC hat einen Status der über Reife eines Protokolls informiert und einen State (Verwendungszweck) der über die Wichtigkeit in der Protokolspecifiaktion</li>
+</ul>
+informiert<br>
+</p>
+
+<p>
+<strong>Status:</strong><br>
+<div style='padding-left: 30pt'>
+<em>Proposed Standard	</em>Spezifikation des (künftigen Standards)<br>
+<em>Experimental			</em>befindet sich in der Testphase ausserhalt von Produktivumgebungen<br>
+<em>Draft Standard		</em>Vorstufe zum Standard, benötigt zwei von einander unabhängige Implementierungen<br>
+<em>Standard				</em>Anzuwendendes verbindliches Protokoll<br>
+<em>Informational			</em>lesenswerte Informationen<br>
+<em>Historic				</em>veraltet keine Verwendung<br>
+</div>
+</p>
+
+<p>
+<strong>State:</strong><br>
+<div style='padding-left: 30pt'>
+Required					zwingend benötigt<br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<em>Recommended/Suggested	</em>empfohlen<br>
+<em>Elective					</em>wahlweise (trägt zur Verbesserung oder Unterstützung eines bestehenden Protokolls bei)<br>
+<em>Limited Use				</em>eingeschränkt verwendebar<br>
+<em>Not recommended			</em>vorsicht!! <br>
+</div>
+</p>
+ 
 
 
 			<!-- End wiki content -->

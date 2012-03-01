@@ -26,7 +26,6 @@ Created Donnerstag 12 Januar 2012
 → kann ein //Socket//,//Target//, eine //Dateisystem Pfad//, ein //Gerät //, ein //mount //oder //automountpoint, timer //oder //Snapshot //sein
 **man 5 systemd.unit**
 [[Linux Wissen:FHS:lib:lib++systemd]]
-[[Linux Wissen:FHS:lib:lib++systemd]]
 
 === Systemdienste steuern ===
 **systemctl [start|stop|kill|reload|restart| enable|disable show  <Unit> ]  | daemon-reload**
@@ -34,6 +33,8 @@ Created Donnerstag 12 Januar 2012
 → wenn ohne weitere Parmeter verwendet, wird so werden alle dienste angezeigt vom System versucht wurden zu starten
 **--no-pager **→ die Ausgabe nicht nach less pipen 
 **--full **→ vollständige Ausgabe nach StdOut, nicht auf 80 Zeichen beschränken
+**--failed **→ Auflisten der Units deren Transaktion nicht beendet wurde
+**--all **→ alle Units auflisten, auch inaktive
 
 == <Statusinformationen anzeigen> ==
 **show <Unit>**
@@ -51,7 +52,7 @@ Created Donnerstag 12 Januar 2012
 
 **reload **
 → neu starten einer Unit
-→ dies entspricht dem neu laden des Daemons bei dem auch seine Konfiguration neu gelesen wird bei .service Units
+→ dies entspricht dem Neuladen des Daemons bei dem auch seine Konfiguration neu gelesen wird bei .service Units
 
 == <Anhalten von Systemdiensten> ==
 **stop <Unit> **

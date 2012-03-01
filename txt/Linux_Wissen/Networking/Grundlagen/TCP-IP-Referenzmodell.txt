@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-01T15:58:39+01:00
+
+====== TCP-IP-Referenzmodell ======
+Created Donnerstag 01 März 2012
+
+{{../../../../TCP-IP.png}}

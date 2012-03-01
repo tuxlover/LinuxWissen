@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-01T01:22:29+01:00
+
+====== Device Unit ======
+Created Donnerstag 01 März 2012
+
+//[Device]//
+→ enthält Informationen über Geräte die von **udev **gesteuert und eingerichtet  werden
+→ Device Units sind nach nach dem Gerät benannt, dass sie steuern (dev-sda1.device)
+[[Linux Wissen:Hardware und Systeminformationen:udevadm]]
+
+	//SYSTMED_WANTS=//
+

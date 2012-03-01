@@ -22,5 +22,6 @@ Created Sonntag 24 April 2011
 **vmstat **→ Informationen über Prozesse, Arbeitsspeicher, Paging, Block I/O 
 
 __Hinweis: Benutzen von watch vmstat.__
+[[Linux Wissen:Monitoring:watch]]
 
 **uptime **→ zeit die verstrichen ist, seit dem das System das letzte Mal hochgefahren wurde

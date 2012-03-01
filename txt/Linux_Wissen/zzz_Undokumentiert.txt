@@ -10,6 +10,7 @@ Created Donnerstag 21 April 2011
 [ ] iftop
 [ ] conky
 [ ] stat
+[ ] lsof
 [ ] extended Attributes
 [ ] mondo|mindi
 [ ] ddrescue
@@ -36,6 +37,8 @@ Created Donnerstag 21 April 2011
 [ ] lxc
 [ ] tc
 [ ] dbus
+[ ] apt braucht aufmerksamkeit
+[ ] aptitude ist nicht dokumentiert
 
 === cool hacks ===
 +++

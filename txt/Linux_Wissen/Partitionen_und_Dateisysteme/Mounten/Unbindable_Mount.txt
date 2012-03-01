@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-16T05:05:49+01:00
+
+====== Unbindable Mount ======
+Created Donnerstag 16 Februar 2012
+
+* dieser Mountpunkt kann nicht als Duplikat reflektiert werden
+
+**mount --make-unbindable <Mountpunkt>**
+→ <Mountpunt> als unbindable markieren
+**mount --make-runbindable <Mountpunkt>**
+→ <Mountpunkt> und alle Mountpunkte darunter rekursiv als unbindable markieren 
+
+== Workflow erstellen eines Unbindable  ==
+**(1) **Als Beispiel wird angenommen ///media //soll als unbindable markiert und um zu verhindern dass ///media //als Shared oder Slave Mountpunkt verwendet werden kann:
+	''mount --bind /media /media''
+	''mount --make-unbindable /media''
+	

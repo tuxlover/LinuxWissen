@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-16T01:22:46+01:00
+
+====== Shared Mount ======
+Created Donnerstag 16 Februar 2012
+
+* Zugreifen auf ein Dateisystem von mehreren Mountpunkten
+* erlaubt das erstellen einer exakten Replika 
+* Jeder Mount innerhalb des original Mountpunkt wird auch im Shared Mount gespiegelt
+
+**mount --make-shared <mount_point>**
+→ um einenen Shared Mountpunkt ohne Typänderung zu erstellen
+**mount --make-rshared <mount-point>**
+→ um einen Shared Mountpunkt mit Typ zu ändern zu erstellen
+**mount --make-private <mount-point>**
+→ um den Mountpoint wieder private zu machen
+→ es wird kein Mountpunkt mehr hierher reflektiert oder von hier reflektiert
+
+== Workflow Erstellen eines Shared Mountpunktes ==
+Angenommen es existieren zwei Mountpunkte ///media //und// /mnt// und es soll nun ///media// auf ///mnt// reflektiert werden
+
+**(1) **Markieren des Original Mountpunktes als Shared. Angenommen dies ist ist ///media// lautet der Befehl:
+	''mount --bind /media /media''
+	''mount --make-shared /media''
+	
+**(2) **Erstellen des Duplikates in ///mnt//:
+	''mount --bind /media /mnt''
+	
+**(3) **Nach jedem mounten eines Dateisystems unter ///media //wird dieses nun auch unter// /mnt// eingehängt 
+
+== Workflow erstellen eines Private Mountpunktes ==
+Angenommen es ist ///mnt //ein Shared  Mountpunkt wie oben erstellt (//Workflow Erstellen eines Shared Mountpunktes//)
+
+**(1) **Markieren des ///mnt //Verezichnis als Private
+''mount --make-private /mnt''
+Bisher propagierte Mountpunkte werden nicht geändert.
+
+

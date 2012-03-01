@@ -18,6 +18,9 @@ Created Freitag 15 April 2011
 
 //~/.bash_logout //→ Befehle und Variablen und Funktionen die beim Abmelden aus bash ausgeführt- oder gesetzt werden sollen
 
+__Hinweis: Wird bash mit den Optionen __**--nocrc **__bzw. __**--profile**__ aufgerufen, so wird die entsprechechenden Dateien nicht beim__
+starten eingelesen.
+
 ==== Steuerung durch Tastenkombinationen ====
 * Es gibt zwei Modi mit der Bash gesteuert werden kann
 * Tastenkombinationen können angepasst global in der ///etc/inputrc //oder für einzelene Nutzer in der //~/.imputrc// angepasst werden

@@ -19,6 +19,7 @@ Created Freitag 15 April 2011
 		**notify **→ sofort nach Beendigung des letzten Hindergrundjobs dessen Status ausgeben
 		**histexpand** → den ausgeführten Befehl mitsamt seiner Argumente in der History ablegen
 		**noexec **→ Befehle einlesen aber nicht ausführen
+		**noglob → **globbing für Dateinamen deaktivieren
 		**monitor **→ einschalten des Moniromodus mit Jobkontrolle
 		**xtrace **→ dasselbe wie +x|-x 
 		

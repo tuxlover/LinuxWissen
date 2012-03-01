@@ -62,6 +62,12 @@ __Paket deinstallieren, auch wenn man den Namen nicht mehr weiß.__
 === überprüfen ===
 **rpm -V <Paket>|-Va **→ verifizieren der von Paket installierten| aller Pakete installierten Dateien
 
+=== Makros überürüfen ===
+**rpm --eval %__macro **
+→ zeigt an zu welchem Wert ein Macro evaluiert wird
+**rpm --showrc **
+→ Anzeigen der globalen rc Datei
+
 === Signaturen ===
 **rpm --import <Pubkey> **→ importiert einen öffentlichen Schlüssel <Pubkey> in die Datenbank
 **rpm -K <Paket> **→ überprüfen der Signatur eines Paketes

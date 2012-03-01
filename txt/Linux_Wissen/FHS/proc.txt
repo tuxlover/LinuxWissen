@@ -39,6 +39,8 @@ Created Dienstag 19 April 2011
 
 ///proc/mounts// → Liste der eingängten Dateisysteme
 
+///proc/self/mountinfo //→ detaillierte Liste der eingehängten Dateisysteme
+
 ///proc/modules// → Informationen über die vom Kernel geladenen Module
 
 ///proc/scsi// → Informationen zu Scsi und Hostadapter

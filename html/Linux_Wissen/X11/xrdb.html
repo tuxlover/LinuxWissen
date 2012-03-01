@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>xrdb</title>
-		<meta name='Generator' content='Zim 0.54'>
+		<meta name='Generator' content='Zim 0.55'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -61,6 +61,7 @@
 <li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
 <li><a href="../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../Monitoring.html" title="Monitoring">Monitoring</a></li>
 <li><a href="../Networking.html" title="Networking">Networking</a></li>
 <li><a href="../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
 <li><a href="../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
@@ -76,8 +77,8 @@
 <li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
 <li><a href="../X11.html" title="X11">X11</a></li>
 <ul>
-<li><a href="./X-Displays.html" title="X-Displays">X-Displays</a></li>
 <li><a href="./xauth.html" title="xauth">xauth</a></li>
+<li><a href="./X-Displays.html" title="X-Displays">X-Displays</a></li>
 <li><a href="./xhost.html" title="xhost">xhost</a></li>
 <li><strong>xrdb</strong></li>
 <li><a href="./xset.html" title="xset">xset</a></li>
@@ -90,10 +91,19 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>Tool zum Verwalten der X-Resourcen</li>
-<li>wird von <em>/.xsessions </em>aufgerufen und lädt meist mittles <strong>xrdb /etc/X11/Xresources</strong> die entsprechende Resourcen in den X-Server</li>
-<li>die meisten X-Clients benutzen den Resourcenmanager und Screen Nutzer Einstellungen (Farbe, Fonts)</li>
+				<p>
+Created Mittwoch 21 September 2011<br>
+</p>
 
+<p>
+<ul>
+<li>Tool zum Verwalten der X-Resourcen</li>
+<li>wird von /<em>.xsessions </em>aufgerufen und lädt meist mittles <strong>xrdb /etc/X11/Xresources</strong> die entsprechende Resourcen in den X-Server</li>
+<li>die meisten X-Clients benutzen den Resourcenmanager und Screen Nutzer Einstellungen (Farbe, Fonts)</li>
+</ul>
+</p>
+
+<p>
 <strong>xrdb [&lt;Datei.conf&gt;] </strong>→ setzen und abfragen der Einstelungen des Resourcen Managers<br>
 <strong>-all </strong>→ alle Operationen werden auf die Einstellugen des Recourcen Managers und den Screen spezifischen Screen Resources auf jeden Screen des Display<br>
 <strong>-global </strong>→ Operation soll nur auf für die vom Resourcen Manager unabhängigen Einstellungne ausgeführt<br>
@@ -105,7 +115,8 @@
 </div>
 <strong>-help </strong>→ kurze Hilfe<br>
 <strong>-display &lt;Display&gt; </strong>→ X-Server der genutzt werden soll, falls zum Beispiel mehrere Bildschirme verwendet werden <br>
-                              → wiederspricht <strong>-all</strong> 
+                              → wiederspricht <strong>-all</strong> <br>
+</p>
  
 
 

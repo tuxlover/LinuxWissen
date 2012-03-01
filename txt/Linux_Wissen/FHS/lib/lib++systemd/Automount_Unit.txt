@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-01T01:18:41+01:00
+
+====== Automount Unit ======
+Created Donnerstag 01 März 2012
+
+//[Automount] //
+//→ Direktiven für eine Automount Unit//
+→ Automount Units müssen nach dem Verzeichnis benannt werden, dass sie kontrollieren
+→ Zu jeder Automount Unit muss eine Mount Unit existieren
+	
+	//Where=<Mountpunkt>//
+	→ Der absolute Pfad zum Mountpunkt
+	
+	//DirectoryMode=7777//
+	→ Die Berechtigungen mit dem der Mountpunkt angelegt wird
+	→ wenn nicht angegeben, ist der Wert 0755

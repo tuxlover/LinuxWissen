@@ -11,7 +11,7 @@ Created Donnerstag 21 April 2011
 
 **swapon /dev/sdX <Datei> **→ Swappartition aktivieren|einhängen für /dev/sdX
 						    → statt einer Gerätedatei kann auch eine reguäre Datei verwendet werden
-						[[Linux Wissen:Partitionen und Dateisysteme:Script Swapspeicher erweitern]]
+[[Linux Wissen:Partitionen und Dateisysteme:Script Swapspeicher erweitern]]
 **-a **→ alle in der ///etc/fstab //( [[Linux Wissen:FHS:etc:fstab]]) eingetrgenden Swapgeräte aktivieren
 **-s **→ liefert den Status des aktuellen Dateisystems
 

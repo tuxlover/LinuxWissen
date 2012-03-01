@@ -76,7 +76,7 @@ Eine UUID (Universal Unique Identifier) ist einem Gerät zugewiesene eindeutige 
 **blkid [</dev/sdX>] **→ Informationen über UUID, typ des Dateissystems anzeigen
                                      → wird ein spezielles Gerät angegeben, werden nur Informationen für    
 
-__Hinweis: UUID und Labels können für die /etc/fstab in der ersten Zeile verwendet.__
+__Hinweis: UUID und Labels können für die /etc/fstab in der ersten Zeile verwendet werden.__
 __( __[[Linux Wissen:FHS:etc:fstab]] )
 
 **e2label /dev/sdX <LABEL> **→ das Gerät /dev/sdX erhält das <LABEL>
@@ -101,6 +101,13 @@ __Hinweis: Kernel 2.4 beschränkt sich auf 8 zu maximal 2G, 2.6 auf 32 zu belieb
 * **dd**
 * **dd_rescue**
 [[Linux Wissen:Partitionen und Dateisysteme:dd]]
+
+===== Automounter =====
+* bei Zugriffsbedarf wird direkt beim Zugriff auf den entsprechenden Mountpunkt das konfigurierte Dateisystem eingehängt
+* dazu wird der Dienst **autofs **genutzt
+[[Booten:Dienste]]
+[[FHS:etc:auto.master]]
+[[FHS:etc:auto.Verzeichnis]]
 
 ===== Quotas =====
 * zum Beschränken der Dateien|Blöcke|Inodes die die ein Nutzer auf einem Dateisystem anlegen darf

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>cgrules.conf</title>
-		<meta name='Generator' content='Zim 0.54'>
+		<meta name='Generator' content='Zim 0.55'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -64,6 +64,8 @@
 <ul>
 <li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
+<li><a href="./auto.master.html" title="auto.master">auto.master</a></li>
+<li><a href="./auto.Verzeichnis.html" title="auto.Verzeichnis">auto.Verzeichnis</a></li>
 <li><a href="./cgconfig.conf.html" title="cgconfig.conf">cgconfig.conf</a></li>
 <li><strong>cgrules.conf</strong></li>
 <li><a href="./cups.html" title="cups">cups</a></li>
@@ -114,6 +116,7 @@
 <li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
 <li><a href="../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../Monitoring.html" title="Monitoring">Monitoring</a></li>
 <li><a href="../../Networking.html" title="Networking">Networking</a></li>
 <li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
 <li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
@@ -152,14 +155,18 @@ Created Mittwoch 18 Januar 2012<br>
 <code>horst 	blikio		/usr/%u</code><br>
 <code>* 	*		/usr/unpriv</code><br>
 ++<br>
-1. Spalte: Der Name eines Nutzers der zu einem Bestimmten Befehl gehört<br>
+<ol type="1" start="1">
+<li>Spalte: Der Name eines Nutzers der zu einem Bestimmten Befehl gehört</li>
+</ol>
  → Mit <strong>@Gruppe</strong> kann eine Gruppe anstelle eines Nutzers angegeben werden<br>
  → Mit <strong>% </strong>kann man auf den Namen in der Zeile davor referenziert werden<br>
 → Das Metazeichen * vereweist auf alle<br>
 </p>
 
 <p>
-2. Spalte: (Optinal) Befehl für den die Einschränkung gelten soll<br>
+<ol type="1" start="2">
+<li>Spalte: (Optinal) Befehl für den die Einschränkung gelten soll</li>
+</ol>
 → wird diese Spalte ausgelassen, so werden alle Prozesse für diesen Nutzer eingeschränkt<br>
 → der Befehl kann als absuluter Pfad, als PID oder als solches spezifiziert sein<br>
 → wird nur der Befehl angegeben muss dieser in <code>PATH</code> der verwendeten Shell sein<br>
@@ -167,13 +174,17 @@ Created Mittwoch 18 Januar 2012<br>
 </p>
 
 <p>
-3. Spalte:  Name der kontrollierenden Subsysteme in der entsprechenden Gruppe<br>
+<ol type="1" start="3">
+<li>Spalte:  Name der kontrollierenden Subsysteme in der entsprechenden Gruppe</li>
+</ol>
 → durch Komma getrennte Liste von Subsystemen die in eine Hierarchie eingehängt sind die auf die Cgroups in der 4. Spalte verweisen<br>
 → das Metazeichen * verweist auf alle<br>
 </p>
 
 <p>
-4. Spalte: Cgroup relativ zur Hierarchie<br>
+<ol type="1" start="4">
+<li>Spalte: Cgroup relativ zur Hierarchie</li>
+</ol>
 → folgende Stings werden durch ihre korspondierenden Namen expandiert:<br>
 <div style='padding-left: 30pt'>
 <strong>%u</strong> → Name des Nutzers, falls dieser nicht aufgelöst werden kann wird die UID verwendet<br>
@@ -196,7 +207,7 @@ Created Mittwoch 18 Januar 2012<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Prozessverwaltung/Cgroups/cgconfig_und_cgred.html'>Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred</a></li>						<a href='../../Prozessverwaltung/Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>
+				Backlinks:						<a href='../../Prozessverwaltung/Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>						<a href='../../Prozessverwaltung/Cgroups/cgconfig_und_cgred.html'>Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

@@ -27,6 +27,7 @@ Created Samstag 16 April 2011
 **-S **→ sortiert nach Größe
 **-X **→ sortiert nach Dateityp
 **-d <DIR> **→ nur Informationen über das Verzeichnis <DIR> nicht seinen Inhalt
+**-Q **→ Auflisten der Dateien und automatisches setzen von Doppelquoten
 
 __Hinweis: merke ls -lisah__
  

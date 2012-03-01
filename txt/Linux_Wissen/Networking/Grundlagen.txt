@@ -8,3 +8,37 @@ Created Donnerstag 22 September 2011
 === Client-Server-Modell ===
 * Kommunikationsmodell zwischen 2 Partnern
 * wobei der //Server// einen **Dienst** anzubieten hat, den der //Client //angefordert hat und vom //Client //genutzt wird
+
+=== OSI-Schichtenmodell ===
+* Eine Schicht stellt ihre Dienste der darüberliegende Schicht zur Verfügung (http stellt Schnittstellen für html und php bereit)
+* Umgekehrt nimmt eine Schicht die Dienste ihrer unterliegenden Schicht in Anspruch
+* Für die Kommunikation zwischen den einzelenen Schichten werden Schnittstellen bereitgestellt
+* Jede Schicht bietet Protokolle an, die für die Kommunikation innerhalb dieser Ebene genutzt werden
+[[+OSI Modell]]
+
+=== TCP-IP-Refernenzmodell ===
+* gilt ausschließlich für die TCP/IP Protokollfamilie
+* verschmelzen der OSI Ebenen I und II, sowie V bis VII
+[[+TCP-IP-Referenzmodell]]
+
+=== RFC (Request for Comments) ===
+* Dokumentation zur TCP/IP Protokollimplementation
+* Jedes RFC hat einen Status der über Reife eines Protokolls informiert und einen State (Verwendungszweck) der über die Wichtigkeit in der Protokolspecifiaktion
+informiert
+
+**Status:**
+	//Proposed Standard	//Spezifikation des (künftigen Standards)
+	//Experimental			//befindet sich in der Testphase ausserhalt von Produktivumgebungen
+	//Draft Standard		//Vorstufe zum Standard, benötigt zwei von einander unabhängige Implementierungen
+	//Standard				//Anzuwendendes verbindliches Protokoll
+	//Informational			//lesenswerte Informationen
+	//Historic				//veraltet keine Verwendung
+
+**State:**
+	Required					zwingend benötigt
+
+	//Recommended/Suggested	//empfohlen
+	//Elective					//wahlweise (trägt zur Verbesserung oder Unterstützung eines bestehenden Protokolls bei)
+	//Limited Use				//eingeschränkt verwendebar
+	//Not recommended			//vorsicht!! 
+ 

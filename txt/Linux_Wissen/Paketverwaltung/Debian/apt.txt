@@ -28,11 +28,19 @@ Created Montag 25 April 2011
 — 
 **apt-listbugs <Paket> **→ Eine Liste der für dieses Paket bekannten Fehler anzeigen
 
-**apt-build <Paket> **→ ein Paket aus dem Quellcode installieren um es für das System zu optimieren
+**apt-build <Paket> **→ ein Paket aus dem Quellcode installieren um es für das System zu optimiere
 
 — 
 **apt-cache <Aktion> **
 → durchsuchen der apt-Paketdatenbank
+
+—
+**apt-key <Aktion>**
+→ Signaturen für einzelen Pakete verwalten
+
+**apt-file**
+→ kann nach einer Datei suchen und das dazugehörige Paket anzeigen
+→ muss extra installiert werden
 
 //Aktion//
 **show <Paket> **→ Statusinfomationen über das <Paket> anzeigen

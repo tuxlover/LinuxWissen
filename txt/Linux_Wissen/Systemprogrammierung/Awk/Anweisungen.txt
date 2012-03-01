@@ -96,7 +96,7 @@ __Hinweis: Formatierunsoptionen lassen sich miteinander kombinieren.__
 ** AND(&&), OR(||), NOT(!)**
 
 === Vergleichsoperatoren ===
-**x <y **→  	  	Kleiner
+**x < y **→  	  	Kleiner
 **x <= y** → 	Kleiner oder gleich
 **x >y ** → 		Größer
 **x >= y **→ 	Größer oder gleich

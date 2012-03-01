@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2011-07-17T18:53:21+02:00
 
-	''wget''
+====== wget ======
 Created Sonntag 17 Juli 2011
 
 * unterbrochene Downloads können zu einem späteren Zeitpunkt fortgesetzt werden
@@ -19,6 +19,7 @@ Created Sonntag 17 Juli 2011
 **-p **→ läd zusätzlich zur Website CSS Stile, Bilder und andere zugehörige Dateien herunter
 **-k **→ die Links der Website wiederherstellen
 **-E **→ Scriptdateien (php, asp) in .html umwandeln
+**-e → **einen Befehl für das Verhalten nach der .wgetrc Befehlsliste ausführen
 **-Q Nm|k **→ die Größe des zu herunterladenden Materials auf N Megabyte|Kilobyte beschränken
 **-T | --timestamping **→ vergleicht den Zeitstempel einer bereits vorhandenen Datei
 				     → ist der Zeitstempel einer vorhandenen Datei älter wird die Datei aktualisiert
@@ -35,6 +36,7 @@ Created Sonntag 17 Juli 2011
 **-A **→  eine Liste von akzeptierten Dateien, dabei wird die typische Dateiendung als Parameter übergeben
 **-R **→ eine Liste von zurückzuweisenden Dateien, dabei wird die typische Dateiendung als Parameter übergeben
 **-L | --relative-links **→ nur relativen Links folgen
+**--no-parent **→ niemals in das Elternverzeichnis wechseln
 
 === Proxy Optionen ===
 **(missing link Proxies)**

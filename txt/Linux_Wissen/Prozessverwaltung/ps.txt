@@ -52,3 +52,4 @@ wie killall
 **-u **→ Besitzerwechsel anzeigen
 
 __Tipp benutzen Sie __**watch**__ um  Prozesse permanent zu beobachten.__
+[[Linux Wissen:Monitoring:watch]]

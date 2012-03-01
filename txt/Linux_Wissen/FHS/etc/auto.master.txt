@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-16T00:31:09+01:00
+
+====== auto.master ======
+Created Donnerstag 16 Februar 2012
+
+MASTER_MAP_NAME Konfigurationsvariable in der /etc/sysconfig/autofs
+++
+'''
+#mount-point [map-type[,format]:]map [options]
+
+/home   ldap    10.1.7.7:ou=home ou=autofs dc=foo dc=bar
+
+/media  /etc/auto.media --timeout 60 #nach 60 minuten automatisch wieder asuhängen wenn nciht eingehängt
+        #verweis auf /etc/auto.media
+        #Achtung: Wenn der Mountpunkt /media ist muss auch die datei auf /etc/auto.media verweisen
+
+/mnt    yp:/mnt.map
+
+#Freigabe für NFS
+Slarty  DONTPANIC.example.com:/home/Erde/
+'''
+
+++
+* Die map Datei kann ein lokales Verzeichnis, ein NIS-Datenbankdatei (//yp://) oder ein ldap-Server sein (//map-type: ldap map: servername:basedn//)
+
+**man 5 auto.master**

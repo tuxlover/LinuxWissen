@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Partitionen und Dateisysteme</title>
-		<meta name='Generator' content='Zim 0.54'>
+		<meta name='Generator' content='Zim 0.55'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -61,6 +61,7 @@
 <li><a href="./Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
 <li><a href="./Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
 <li><a href="./Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="./Monitoring.html" title="Monitoring">Monitoring</a></li>
 <li><a href="./Networking.html" title="Networking">Networking</a></li>
 <li><a href="./Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
 <li><strong>Partitionen und Dateisysteme</strong></li>
@@ -214,7 +215,7 @@ Eine UUID (Universal Unique Identifier) ist einem Gerät zugewiesene eindeutige 
 </p>
 
 <p>
-<u>Hinweis: UUID und Labels können für die /etc/fstab in der ersten Zeile verwendet.</u><br>
+<u>Hinweis: UUID und Labels können für die /etc/fstab in der ersten Zeile verwendet werden.</u><br>
 <u>( </u><a href="./FHS/etc/fstab.html" title="Linux Wissen:FHS:etc:fstab">Linux Wissen:FHS:etc:fstab</a> )<br>
 </p>
 
@@ -255,6 +256,17 @@ Eine UUID (Universal Unique Identifier) ist einem Gerät zugewiesene eindeutige 
 <li><strong>dd_rescue</strong></li>
 </ul>
 <a href="./Partitionen_und_Dateisysteme/dd.html" title="Linux Wissen:Partitionen und Dateisysteme:dd">Linux Wissen:Partitionen und Dateisysteme:dd</a><br>
+</p>
+
+<h2>Automounter</h2>
+<p>
+<ul>
+<li>bei Zugriffsbedarf wird direkt beim Zugriff auf den entsprechenden Mountpunkt das konfigurierte Dateisystem eingehängt</li>
+<li>dazu wird der Dienst <strong>autofs </strong>genutzt</li>
+</ul>
+<a href="./Booten/Dienste.html" title="Booten:Dienste">Booten:Dienste</a><br>
+<a href="./FHS/etc/auto.master.html" title="FHS:etc:auto.master">FHS:etc:auto.master</a><br>
+<a href="./FHS/etc/auto.Verzeichnis.html" title="FHS:etc:auto.Verzeichnis">FHS:etc:auto.Verzeichnis</a><br>
 </p>
 
 <h2>Quotas</h2>

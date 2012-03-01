@@ -1,0 +1,377 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Umgebung einer Unit</title>
+		<meta name='Generator' content='Zim 0.55'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									Umgebung einer Unit</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../../FHS.html" title="FHS">FHS</a></li>
+<ul>
+<li><a href="../../bin.html" title="bin">bin</a></li>
+<li><a href="../../boot.html" title="boot">boot</a></li>
+<li><a href="../../dev.html" title="dev">dev</a></li>
+<li><a href="../../etc.html" title="etc">etc</a></li>
+<li><a href="../../lib.html" title="lib">lib</a></li>
+<ul>
+<li><a href="../lib%2B%2Bsystemd.html" title="lib++systemd">lib++systemd</a></li>
+<ul>
+<li><a href="./Automount_Unit.html" title="Automount Unit">Automount Unit</a></li>
+<li><a href="./Device_Unit.html" title="Device Unit">Device Unit</a></li>
+<li><a href="./Mount_Unit.html" title="Mount Unit">Mount Unit</a></li>
+<li><strong>Umgebung einer Unit</strong></li>
+</ul>
+</ul>
+<li><a href="../../proc.html" title="proc">proc</a></li>
+<li><a href="../../sbin.html" title="sbin">sbin</a></li>
+<li><a href="../../sys.html" title="sys">sys</a></li>
+<li><a href="../../usr.html" title="usr">usr</a></li>
+<li><a href="../../var.html" title="var">var</a></li>
+</ul>
+<li><a href="../../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../../Monitoring.html" title="Monitoring">Monitoring</a></li>
+<li><a href="../../../Networking.html" title="Networking">Networking</a></li>
+<li><a href="../../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../../root.html" title="root">root</a></li>
+<li><a href="../../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../../X11.html" title="X11">X11</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Donnerstag 01 März 2012<br>
+</p>
+
+<h4>Konfigurieren der Umgebung in der eine Unit aktiviert wird</h4>
+<p>
+→ diese Konfigurationsoptionen können auf <em>.service .mount .swap </em>und <em>.swap</em> Units angewandt werden<br>
+<div style='padding-left: 30pt'>
+<em>WorkingDirectory=</em><br>
+→ absoluter Pfad, beschreibt Arbeitsverzeichnis der auszuführenden Prozesse<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>RootDirectory=</em><br>
+→ absoluter Pfad zum Verzeichnis auf dem der <strong>chroot()</strong> Systemcall durchgeführt wird<br>
+→ <u>Achtung: Es ist sicherzistellen, dass alle benötigen Dateien können vom ausführenden Hauptprozess gesehen werden</u><br>
+</div>
+</p>
+	
+<p>
+<em>       User=</em>&lt;User&gt;<em>; Group=&lt;</em>Group&gt;<br>
+<div style='padding-left: 30pt'>
+→ setzen der Nutzer bzw der  Gruppe<br>
+→ Name oder GUD|UID<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>SupplementaryGroups=</em>&lt;Gruppe1&gt;,...<br>
+→ setzen der zusätzlichen Gruppen, die ein Prozess angehören soll<br>
+→ &lt;Gruppe&gt; kann entweder ein Gruppenname oder die GID sein<br>
+</div>
+<a href="../../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a><br>
+</p>
+
+<p>
+<em>Nice=</em>&lt;-20&lt;=N&lt;=19&gt;<br>
+→ setzt den Nice Wert des Prozesse die von dieser Unit gestartet werden<br>
+<a href="../../../Prozessverwaltung/Nice_Werte_kontrollieren.html" title="Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren">Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren</a><br>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>UMask=7777</em><br>
+→ setzen der umask der von diesem Prozess erzeugten Dateien<br>
+→ Standard ist 0022<br>
+</div>
+<a href="../../../Dateien_verwalten/Zugriffsrechte/Umask.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask">Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask</a><br>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<em>Environment=Var1=&lt;wert&gt; Var2=&lt;wer2&gt; ...</em><br>
+→ setzend er Umgebungsvariablen den dieser Prozess benutzen soll<br>
+→ duch Leerzeichen getrennte Liste von Variablen und ihren Werten<br>
+→ wird einer Variablen kein Wert zugeordnet, so wird die Variable als Leer initialisiert<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>EnvironmnetFile=</em>&lt;PathToFile&gt;<br>
+→ lesen der Umgebungsvariablen aus einer Textdatei<br>
+→ leere Zeilen oder Zeilen die mit # beginnen werden nicht vom Parser gelesen und zur Kommentierung genutzt werden<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>StandardInput=</em><br>
+→ konfigurieren des Standardeingabe Kanals der Unit<br>
+→ Standard ist <strong>null</strong><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>null </strong>→ StdIN wird mit /dev/null verbunden<br>
+<strong>tty </strong>→ StdIn wird mit dem tty verbunden wie er <em>TTYPath </em>konfiguriert wurde, der ausgeführte Prozess wird der kontorllierende Prozess dieses Terminals<br>
+<strong>tty-force</strong> → wie tty, es wird jedoch die Kontrolle des Prozesse an diesen TTY erzwungen, selbst dann wenn der Prozess einen andern kontrollierenden Prozess überschreibt<br>
+<strong>tty-fail </strong>→ wie tty, wenn jedoch ein anderer Prozess diesen TTY bereits kontrolliert, schlägt dieser Prozess fehl<br>
+<strong>socket </strong>→ nur in Socketaktivierung gültig, der Prozess wird an einen konfigurierten Socket gebunden<br>
+</div>
+</p>
+		
+<p>
+<div style='padding-left: 30pt'>
+<em>StandardOutput=</em><br>
+→ kofnigurieren des Standardausgabekanals der Unit<br>
+→ Standard ist <strong>syslog</strong><br>
+</div>
+<div style='padding-left: 60pt'>
+<strong>inherit </strong>→ StdOut ist das gleiche wie StdIn<br>
+<strong>null </strong>→ Stdout wird mit /dev/null verbunden<br>
+<strong>tty </strong>→ StdOut wird mit dem tty verbunden wie er in TTYPath konfiguriert wurde<br>
+<strong>syslog </strong>→ StdtOut wird mit dem syslog() daemon verbunden<br>
+<strong>kmsg </strong>→ StdOut wird mit dem Kernel Ring Buffer verbuden der mit <strong>dmesg </strong>abgefragt werden kann<br>
+<strong>syslog+console </strong>→ An den syslog Daemon und die Standard Fehlerkonsole senden<br>
+<strong>kmsg+console</strong> → An den Kernel Ring Buffer und die Standard Fehlerkonsole senden<br>
+</div>
+</p>
+
+<p>
+<a href="../../../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung">Linux Wissen:Systemprotokollierung</a><br>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<em>StandardError=</em><br>
+→ nimmt die gleichen Werte wie <em>StandardOutput </em>auf<br>
+→ <strong>inherit</strong> verwenden den gleichen Kanal wie <em>StandardOutput</em><br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>TTYPath=&lt;/dev/ttyX|/dev/console&gt;</em><br>
+→ Pfad zum TTY<br>
+→ Standard ist /dev/console<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>SystlogIdentifier=</em><br>
+→ Spezifiziert den von <strong>syslog() </strong>verwendetden Identifier<br>
+→ Nur Sinnvoll mit der entrpchenden <em>StandardOutput </em>Konfiguration<br>
+→ Standard ist der Name des auszuführenden Prozeses<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>SyslogFacility=</em><strong>kern, user, mail, daemon, auth, syslog, lpr, news, uucp, cron, authpriv, ftp, local0, local1, local2, local3, local4, local5, local6 or local7</strong><br>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+→ Spezifiziert die von <strong>syslog() </strong>verwendet Facility<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>SyslogLevel=</em><strong>emerg, alert, crit, err, warning, notice, info, debug</strong><br>
+→ Spezifiziert den Loglevel<br>
+→ Standard ist <strong>info</strong><br>
+</div>
+<a href="../../etc/syslog.conf.html" title="FHS:etc:syslog.conf">FHS:etc:syslog.conf</a><br>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<em>SyslogPrefix=</em><strong>true|false</strong><br>
+→ wenn auf <strong>true </strong>gesetzt, wird der Prefix der in SyslogLevel spezifiziert wurde ebenfalls an <strong>kmesg </strong>oder <strong>syslog </strong>weitergegeben<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>TCPWrapName=</em><br>
+→ Name des Socket aktivierten Service durch TCP Wrapper<br>
+→ dieser Name wird vom <strong>tcpd </strong>genutzt um die Zugriffsberechtigungen der aktuellen Verbindung zu überprüfen<br>
+</div>
+<a href="../../../Networking/xinetd.html" title="Linux Wissen:Networking:xinetd">Linux Wissen:Networking:xinetd</a><br>
+<a href="../../etc/inetd.conf.html" title="FHS:etc:inetd.conf">FHS:etc:inetd.conf</a><br>
+</p>
+	
+<p>
+<em>       LimitCPU=, LimitFSIZE=, LimitDATA=, LimitSTACK=, LimitCORE=, LimitRSS=, LimitNOFILE=, LimitAS=, LimitNPROC=, LimitMEMLOCK=, LimitLOCKS=,</em><br>
+<em>       LimitSIGPENDING=, LimitMSGQUEUE=, LimitNICE=, LimitRTPRIO=, LimitRTTIME=</em><br>
+<div style='padding-left: 30pt'>
+→ Resourcen Limits die durch Cgroups gesteuert werden<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>ControlGroup=</em><strong>&lt;subsystem&gt;:/&lt;Pfad innerhalb der Hierarchie zur Cgroup&gt;</strong><br>
+→ festlegen der Cgroup die dieser Prozess zugehörig sein soll<br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>ControlGroupModify=</em><strong>true|false</strong><br>
+→ falls <strong>true </strong>ist der unter <em>User</em> festgelegte Nutzer in der Lage neue SubCgroups dieser Cgroup zu erstellen und neue Prozesse zu diesen hinzuzufügen<br>
+→ dieses Verhalten implementiert <code>cgcreate -a </code><br>
+</div>
+</p>
+	
+<p>
+<div style='padding-left: 30pt'>
+<em>ControlGroupAttribute= &lt;Controler&gt; &lt;Wert&gt;</em><br>
+→ siehe <br>
+</div>
+<a href="../../../Prozessverwaltung/Cgroups/Cgroups_Subsysteme.html" title="Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme">Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme</a><br>
+<div style='padding-left: 30pt'>
+→ setzen von Attributen für ein Subsystem<br>
+→ Kann mehrfach Konfiguriert werden<br>
+</div>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<code>ControlGroupAttribute=cpu.shares 512</code><br>
+</p>
+
+<p>
+BlockIOReadBandwidth=, BlockIOWriteBandwidth=,BlockIOWeight=,DeviceAllow=, DeviceDeny=,MemoryLimit=, MemorySoftLimit=,CPUShares=<br>
+</p>
+
+<p>
+<a href="../../../Prozessverwaltung/Cgroups.html" title="Linux Wissen:Prozessverwaltung:Cgroups">Linux Wissen:Prozessverwaltung:Cgroups</a><br>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<em>       ReadWriteDirectories=, ReadOnlyDirectories=, InaccessibleDirectories=</em>&lt;PATH&gt;<br>
+</div>
+<div style='padding-left: 60pt'>
+→ setzen weiterer Restriktionen <br>
+→ als Argument wird ein absoluter Pfad gegesetzt für die entsprechende Restriktionen gelten<br>
+→ <u>Hinweis: Für Unterverzeichnisse müssen entrpchend eigene Richtilinien gesetzt werden, / ist nicht erlaubt</u><br>
+</div>
+</p>
+		
+<p>
+<div style='padding-left: 60pt'>
+<em>PrivateTmp=</em><strong>true|false</strong><br>
+→ falls auf <strong>true </strong>gesetzt, wird dieser Prozess temporäre Dateien in ein eigenes seperat eingehängtes temporäres Verzeichnis ablegen<br>
+</div>
+</p>
+		
+<p>
+<div style='padding-left: 60pt'>
+<em>PrivateNetwrok=</em><strong>true|false</strong><br>
+<strong>→ </strong>falls auf <strong>true </strong>wird ausser das lo device kein weiteres NIC bereit sein<br>
+</div>
+</p>
+		
+<p>
+<div style='padding-left: 60pt'>
+<em>MountFlags</em>=<strong>shared|slave|private</strong><br>
+<strong>shared </strong>→ weitere Spiegel des Mountpunktes sind erlaubt<br>
+<strong>slave</strong> → kann nur an den Master propagieren<br>
+<strong>private </strong>→ kann nicht proagieren<br>
+</div>
+<a href="../../../Partitionen_und_Dateisysteme/Mounten/Shared_Mount.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten:Shared Mount">Linux Wissen:Partitionen und Dateisysteme:Mounten:Shared Mount</a><br>
+<a href="../../../Partitionen_und_Dateisysteme/Mounten/Slave_Mount.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten:Slave Mount">Linux Wissen:Partitionen und Dateisysteme:Mounten:Slave Mount</a><br>
+<a href="../../../Partitionen_und_Dateisysteme/Mounten/Unbindable_Mount.html" title="Linux Wissen:Partitionen und Dateisysteme:Mounten:Unbindable Mount">Linux Wissen:Partitionen und Dateisysteme:Mounten:Unbindable Mount</a><br>
+</p>
+
+<p>
+<strong>man 5 systemd.exec</strong><br>
+</p>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

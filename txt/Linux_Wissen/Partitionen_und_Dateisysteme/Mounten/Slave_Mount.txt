@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-16T02:33:10+01:00
+
+====== Slave Mount ======
+Created Donnerstag 16 Februar 2012
+
+* erlaubt das Erstellen eines beschräntken Mountpunkt Duplikats
+* Wenn ein Mountpunkt als Slave markiert ist, wird jeder Mounptunkt im Original auch in diesem reflektiert
+* Aber es wird kein Mountpunkt innerhalb des Origianals reflektiert wenn ein Dateisystem im Slave gemountet wird
+
+== Workflow Erstellen eines Slave Mountpunktes ==
+**(1) **Markieren des Original Mountpunktes als Shared. Angenommen dies ist ist ///media// lautet der Befehl:
+	''mount --bind /media /media''
+	''mount --make-shared /media''
+	
+**(2) **Erstellen des Duplikates in ///mnt//:
+	''mount --bind /media /mnt''
+	''mount --make-slave /mnt''
+	
+**(3) **Nach jedem mounten eines Dateisystems unter ///media //wird dieses nun auch unter// /mnt// eingehängt. Wird jedoch ein Dateisystem unter
+///mnt //eingehängt wird dies __nicht__ in das Original reflektiert 
+

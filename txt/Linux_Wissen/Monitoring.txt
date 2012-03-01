@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-16T06:08:05+01:00
+
+====== Monitoring ======
+Created Donnerstag 16 Februar 2012
+
+* Überwachen von Prozessen und Dateisystemen

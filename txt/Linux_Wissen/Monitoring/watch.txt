@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-02-16T06:08:26+01:00
+
+====== watch ======
+Created Donnerstag 16 Februar 2012
+
+* Programm periodisch ausführen und die Ausgabe nach StdOut schreiben
+
+**watch <Befehl>**
+→ <Befehl> wird periodisch ausgeführt
+→ um eine Pipe oder mehrere Programme zu verwenden muss der Befehl in '' gesetzt werden
+**-n |--interval <N> **
+→ Ausgabeintervall festlegen
+→ Standard ist alle 2 Sekunden
+**-d|--differences **
+→ hervorheben der Unterschiede der vorangegangenen Ausgabe
+**-t |--no-title**
+→ ausschalten des Headers
+
+//Beispiel://
+Anzahl der Dateiein in einem Verzeichnis überwachen
+''watch -d 'ls -l|wc -l'''

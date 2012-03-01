@@ -32,6 +32,7 @@ Created Donnerstag 21 April 2011
 
 **sfdisk -l **→ Auflisten vorhandener Platten, auch nicht eingehängter
 
+=== Gesundheit der Festplatte abfragen ===
 **smartctl /dev/sdX**→ Smart Werte der Festplatte auslesen
 **-H **→ den Gesundheitsstatus der Festplatte überprüfen
 **-i ** → Hardwareinformationen der Festplatte anzeigen  

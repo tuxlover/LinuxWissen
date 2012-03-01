@@ -30,3 +30,4 @@ Created Sonntag 24 April 2011
 **-p **→ ein Prozess mit dieser <PID> beobachten
 
 __Hinweis: Benutzen Sie __**watch**__ um Stattisktiken dauerhaft zu überwachen.__
+[[Linux Wissen:Monitoring:watch]]
