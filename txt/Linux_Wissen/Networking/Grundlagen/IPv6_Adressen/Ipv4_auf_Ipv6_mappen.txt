@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-07T00:10:21+01:00
+
+====== Ipv4 auf Ipv6 mappen ======
+Created Mittwoch 07 März 2012
+
+**RFC 6052**
+
+* der IPv4 Teil wird an den Schluss gehängt und stellen die letzten 32 Bit dar
+* die davorstehden 16 Bit werden druch FFFF markiert und geben an, dass es sich um eine Ipv4 Adresse handelt
+* die restlichen 80 Bit werden asugenullt
+
+//Beispiel//
+''192.168.128.12 → ::FFFF:192.168.128.12''
+
+=== 6to4 Adressen ===
+* für das Routing von Ipv6 Knoten über einen Ipv4 Netzwerk deren Zieladresse wiederum ein Ipv6 Knoten ist
+* Ipv4 Adresse wird an den führenden Stellen angehängt
+* Präfix: ''2002''
+* Die eingebette Ipv4 Adresse wird Hexadezimal dargestellt
+* darf keine Adressen aus dem Privaten Adresssraum beinhalten
+[[Grundlagen:IPv4 Adressen:Privater Adressraum]]
+
+Beispiel (aus der Wikipedia)
+'''
+100.200.100.200
+2002:64C8:64C8::
+'''
+
+
+=== Miredo Mechanismus ===
+**RFC4380**
+* Microsoft Teredo Mechanismus Clon
+* zur Überwindung des NAT und Eingliederung in ein Ipv6 Netzwerk
+* Umgeht die Ipv4-Firewall

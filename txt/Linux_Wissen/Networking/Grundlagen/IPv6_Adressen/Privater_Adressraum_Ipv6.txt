@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-07T01:23:43+01:00
+
+====== Privater Adressraum Ipv6 ======
+Created Mittwoch 07 März 2012
+
+* Private Adressen werden nicht an das Internet weitergeleitet
+* nach **RFC 4193 **werden die //Unique-local-Adressen //verwendet (Präfix: ''FD00::/8'')
+

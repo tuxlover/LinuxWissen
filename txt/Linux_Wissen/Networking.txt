@@ -15,12 +15,14 @@ ClassB			16 Bit				16.384				65.534				128.0.0.0  - 191.255.255.255
 ClassC			24 Bit				2^21				254					 192.0.0.0 - 223.255.255.255
 ClassD			-					-					-					224.0.0.0  - 239.255.255.255
 ClassE			-					-					-					240.0.0.0  - 254.255.255.255
-
+[[+Grundlagen:IPv4 Adressen:Netzmasken]]
+* Mit dem Tool **ipcalc **kann man Netzmasken berechenen
 
 === Privater IP-Adressbereich ===
 Class A 10.0.0.0 - 10.255.255.255
 Class B 127.16.0.0 - 172.31.255.255
 Class C 192.168.0.0 - 192.168.255.255
+[[+Grundlagen:IPv4 Adressen:Privater Adressraum]]
 
 === Wichtige Ports ===
 * well known Ports: 0 - 1023
@@ -57,7 +59,7 @@ __Achtung: Die Well Known Ports (0-1023) können nur von root geöffnet werden._
 
 === Tools ===
 * **arp **zum Maninpulieren und Überwachen des ARP-Caches im Kernelspace
-[[Linux Wissen:Networking:Protokolle:arp]]
+[[+Protokolle:ARP]]
 [[Linux Wissen:Networking:Tools:arp]]
 [[Linux Wissen:FHS:etc:ethers]]
 * **ifconfig **zum Verwalten von Hardwarenetzwerkschnittstellen

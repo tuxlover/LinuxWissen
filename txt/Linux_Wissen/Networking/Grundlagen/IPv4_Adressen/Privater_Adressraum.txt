@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-06T21:53:33+01:00
+
+====== Privater Adressraum ======
+Created Dienstag 06 März 2012
+
+* zum Aufbau privater nicht vom öffentlichen Internet verwendeten Adressen
+**RFC 1918**
+
+'''
+Class A 10.0.0.0 - 10.255.255.255
+Class B 127.16.0.0 - 172.31.255.255
+Class C 192.168.0.0 - 192.168.255.255
+'''
+
+
+=== Zeroconf ===
+Die Adressen von ''192.254.1.0 ''bis ''169.254.254.255 ''stehen für das sogenannte Zeroconf zur Verfügung
+→ Rechner können ohne DHCP miteinanader Kommunizieren
+→ keine DNS Server Adressierung 
+→ Die IP-Adressen werden nicht manuell vergeben 
+→ es wird das **ARIPA **Protokoll nach **RFC 3927 **angewandt
+→ wird vom **avahi-daemon** angeboten **(missing Link avahi Daemon)**

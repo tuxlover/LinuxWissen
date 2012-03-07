@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-07T01:29:12+01:00
+
+====== Präfixe ======
+Created Mittwoch 07 März 2012
+
+Eine Zusammenfassung einiger gebräuchlicher Präfixe für Ipv6
+
+''FF00/8		''Multicast Adressen 
+
+''FD00/8		''Unique Local Unicast privat verwaltet
+
+''FC00/8		''Unique Local Unicast reserviert
+
+''FE80/10		''Link Local Unicast Adressen
+
+''2000::/3	''Global Unicast	
+
+''2001::/32	''Terredo Adressen
+
+''2001:DB8::/32	für Dokumentationszwecke (wird nicht weitergeleitet)''
+
+''2002::::/16	''6to4
+
+''::		''kurzform der All Zero Adresse
+
+''::1/128		Local Host Adresse''
+[[Adresstypen]]
+[[Ipv4 auf Ipv6 mappen]]

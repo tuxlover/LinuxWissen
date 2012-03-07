@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-06T19:24:36+01:00
+
+====== NDP ======
+Created Dienstag 06 März 2012
+
+* Neighbor Discovery Protocol 
+* IPv6 spezifisch
+* automatische Konfiguration von IPv6-Adressen
+* Wegfall der Subnetzmasken (
+[[Networking:Grundlagen:IPv4 Adressen:Netzmasken]])
+* erleichterung der Fehlersuche durch ICMPv6 Status Nachrichten
+**RFC 3122,4861**
+
+=== Funktionsweise ===
+fragt alle Teinehmer im Netz nach der gesuchten IP-Adresse (Who has, neighbor solicitation)
+Rechner antwortet mit seiner eindeutigen IP-Adresse (tell ,neighbor advertisement)
+
+
+=== Caches ===
+**Destination Cache**
+→ Adressen bei denen innerhalb eines Intervalls eine Antwort erfolgte inklusive des nächstgelgenen Hop
+
+**Default Router List**
+→ Liste der erreichbaren Router innerhalb eines bestimmten Intervalls
+
+**Prefix List**
+→ Präfixe die im gleichen Netzsegment Gülitgkeit haben
+→ mit Ausnahme des eigenen Rechners
+
+**Neighbor Cache**
+→ Liste der Netzwerkteilnehmer mit denen innerhalb eines Intervalls erfolgreich kommuniziert wurde
+
+=== Duplicate IP Adress Detection ===
+Zwei Netzwerkknoten könnnen niemals die gleiche IP-Adresse bekommen
+
+=== Neighbor Unreachability Detection ===
+automatische Erkennenung nicht erreichbarer Knoten in eigenem Netzwerk
+
+=== Status Nachrichten ===
+**133 → **Anforderung von Nicht-Router-Knoten eines Router Advertisement von erreichbaren Router
+
+**134 **→ Router Antwort auf ein Router Advertisement 
+        → wird in festen Intervallen verschickt
+        → kann durch **133 **erzwungen werden
+
+**135 **→ MAC-Adress-Überprüfung des Nachbarn (Neighbor Solicitaion)
+
+**136 **→ Der Rechner ist erreichbar (Neighbor Advertisement)
+
+**137 **→ Router Redirect, ein neues Ziel ist nun als Router erreichbar

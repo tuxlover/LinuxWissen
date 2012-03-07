@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-02T17:13:03+01:00
+
+====== MAC Aressen ======
+Created Freitag 02 März 2012
+
+* Media Access Control List
+* eindeutige Adresse die jedem Gerät eindeutig zugeordnet ist (zumindest theoretisch)
+* wird bei der Herstellung des Gerätes vergeben
+
+=== Aufbau  ===
+* besteht aus 6 hexadezimalen Bytes
+**AA AA AA **XX XX XX
+→ die ersten drei Bytes werden vom Hersteller festgelgt
+→ die erstlichen drei Bytes stellen den Identifikationsteil dar
+
+=== Broadcast MAC-Adresse ===
+* die Broadcast MAC-Adrsesse innerhal eines erreichbaren Netzwerksegmentes ist immer
+**ff:ff:ff:ff:ff:ff**
+
+   

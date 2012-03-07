@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-06T20:10:48+01:00
+
+====== IPv4 Adressen ======
+Created Dienstag 06 März 2012
+
+* 32 Bit lange Adresse zu vier Oktettts 
+
+• Jedes Oktett besteht aus 8 Elementen aus dem Bereich {0,1}
+   1       1     1     0  1   1  1  0  . 1 1 1 0 1 1 1 0 . 1 1 1 0 1 0 1 1 . 1 1 1 0 0 1 1 0 
+**[128  64  32  16  8  4  2  1  ]**
+
+• Umrechnung der Werte in IP-Adressen 
+  228.238.235.228 (vom Beispiel oben) 
+
+* Zusätzlich wird durch die Netzwerkklasse /Subnetzmaske der Host- und der Netzanteil in dieser Adressse bestimmt
+**RFC 791, 1349**
+
+=== Netzwerkklassen ===
+**Klasse			Netzanteil			Anzahl Netze		Anzahl-Hosts		Adressen**
+ClassA			8 Bit				0-128				2^34 - 2			0.0.0.0      - 127.255.255.255
+ClassB			16 Bit				16.384				65.534				128.0.0.0  - 191.255.255.255				
+ClassC			24 Bit				2^21				254					 192.0.0.0 - 223.255.255.255
+ClassD			-					-					-					224.0.0.0  - 239.255.255.255
+ClassE			-					-					-					240.0.0.0  - 254.255.255.255
+
+→ typischerweise ist in diesen Klassennetzen **das erst  Bit** des Hostteils für diie NetzID reserviert (zum Beispiel 192.168.128.0)
+→ typischerweise ist in diesen Klassennetzen **das letzte Bit** des Hostanteils für die Broadcastadresse reserviert ( zum Beispiel 192.168.128.255)
+
+=== Netzmasken ===
+[[+Netzmasken]]
+
+=== Privater Adressraum ===
+[[+Privater Adressraum]]
+
+=== Ipv4 Header ===
+[[+Ipv4 Packet]]

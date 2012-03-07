@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-07T01:43:47+01:00
+
+====== IP ======
+Created Mittwoch 07 März 2012
+
+* ermöglicht das Transportieren von Datagrammen über Netzwerkgrenzen hinweg
+* Verbindungslos
+{{../../../../IP-packet.png}}

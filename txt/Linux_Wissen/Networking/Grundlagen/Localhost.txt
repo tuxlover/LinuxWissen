@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-06T22:12:52+01:00
+
+====== Localhost ======
+Created Dienstag 06 März 2012
+
+* Lokale Schlefe wird verwendet wenn Client und Server der gleiche Rechner sind
+* Zugriff des X-Servers 
+* Zugriff von CUPS
+[[Linux Wissen:X11]]
+[[Linux Wissen:Drucken]]
+
+Typischerweise ist der Schnittstelle //lo //Loopback Adresse ''127.0.0.1 ''zugeordnet
+Es können ihr aber auch weitere Virtuelle IP-Adressen im Adressraum ''127.0.0.1 '' bis ''127.255.255.255 ''zugewiesen werden
+Für IPv6 ist dieser Adressraum durch ''::1/28 ''definiert
+
+== !Achtung! ==
+Durch Zuweisen von Diensten die nicht auf eine externe IP lauschen sollen auf eine Loopbackadresse kann die Sicherheit erhöht
+werden.

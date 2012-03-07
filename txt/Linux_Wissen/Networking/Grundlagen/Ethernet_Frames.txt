@@ -1,0 +1,40 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-02T18:30:20+01:00
+
+====== Ethernet Frames ======
+Created Freitag 02 März 2012
+
+* OSI Layer 2
+* unabhäng vom Netzwerkprotokoll
+* Standardlänge sind 1518/1522 Bytes lang
+
+{{../../../../EthernetFrames.png}}
+**Präambel**
+→ 7 Byte aus wechselnden eine wechselnden Bitfolge zum Synchronisieren der Endgeräte
+→ noch aus Kompatibilitätsgründen vorhanden
+
+**SFD**
+→ Start Frame Delimiter
+→ noch aus Kompatibilitätsgründen vorhanden
+
+**MAC Adresse des Ziels**
+
+**MAC Adresse der Quelle**
+
+**VLAN-Tag**
+→ kennzeichnet virtuelle Netzwerke
+
+**Typ**
+→ spezifiziert das in der darüberliegen Protokollschicht verwendete Netzwerkprotokoll
+	//0x0800 //**→ IPv4**
+	//0x86DD  → //**IPv6**
+	//0x0806 → //**ARP**
+
+**PAD**
+→ sind die restlichen Bytes die nicht von den Nutzdaten verwendet werden
+→ 1500 -PAD =Nutzdaten
+
+**FCS**
+→ Frame Check Sequence
+→ über ein CRC Prüfsumme wird die Korrektheit des Frames sichergestellt

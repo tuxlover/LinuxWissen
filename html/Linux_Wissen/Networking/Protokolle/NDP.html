@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>NDP</title>
+		<meta name='Generator' content='Zim 0.55'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									NDP</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../Monitoring.html" title="Monitoring">Monitoring</a></li>
+<li><a href="../../Networking.html" title="Networking">Networking</a></li>
+<ul>
+<li><a href="../Dienste.html" title="Dienste">Dienste</a></li>
+<li><a href="../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
+<li><a href="../Protokolle.html" title="Protokolle">Protokolle</a></li>
+<ul>
+<li><a href="./ARP.html" title="ARP">ARP</a></li>
+<li><a href="./IP.html" title="IP">IP</a></li>
+<li><strong>NDP</strong></li>
+</ul>
+<li><a href="../Tools.html" title="Tools">Tools</a></li>
+<li><a href="../xinetd.html" title="xinetd">xinetd</a></li>
+</ul>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../root.html" title="root">root</a></li>
+<li><a href="../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../X11.html" title="X11">X11</a></li>
+<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Dienstag 06 März 2012<br>
+</p>
+
+<p>
+<ul>
+<li>Neighbor Discovery Protocol </li>
+<li>IPv6 spezifisch</li>
+<li>automatische Konfiguration von IPv6-Adressen</li>
+<li>Wegfall der Subnetzmasken (</li>
+</ul>
+<a href="../Grundlagen/IPv4_Adressen/Netzmasken.html" title="Networking:Grundlagen:IPv4 Adressen:Netzmasken">Networking:Grundlagen:IPv4 Adressen:Netzmasken</a>)<br>
+<ul>
+<li>erleichterung der Fehlersuche durch ICMPv6 Status Nachrichten</li>
+</ul>
+<strong>RFC 3122,4861</strong><br>
+</p>
+
+<h4>Funktionsweise</h4>
+<p>
+fragt alle Teinehmer im Netz nach der gesuchten IP-Adresse (Who has, neighbor solicitation)<br>
+Rechner antwortet mit seiner eindeutigen IP-Adresse (tell ,neighbor advertisement)<br>
+</p>
+
+
+<h4>Caches</h4>
+<p>
+<strong>Destination Cache</strong><br>
+→ Adressen bei denen innerhalb eines Intervalls eine Antwort erfolgte inklusive des nächstgelgenen Hop<br>
+</p>
+
+<p>
+<strong>Default Router List</strong><br>
+→ Liste der erreichbaren Router innerhalb eines bestimmten Intervalls<br>
+</p>
+
+<p>
+<strong>Prefix List</strong><br>
+→ Präfixe die im gleichen Netzsegment Gülitgkeit haben<br>
+→ mit Ausnahme des eigenen Rechners<br>
+</p>
+
+<p>
+<strong>Neighbor Cache</strong><br>
+→ Liste der Netzwerkteilnehmer mit denen innerhalb eines Intervalls erfolgreich kommuniziert wurde<br>
+</p>
+
+<h4>Duplicate IP Adress Detection</h4>
+<p>
+Zwei Netzwerkknoten könnnen niemals die gleiche IP-Adresse bekommen<br>
+</p>
+
+<h4>Neighbor Unreachability Detection</h4>
+<p>
+automatische Erkennenung nicht erreichbarer Knoten in eigenem Netzwerk<br>
+</p>
+
+<h4>Status Nachrichten</h4>
+<p>
+<strong>133 → </strong>Anforderung von Nicht-Router-Knoten eines Router Advertisement von erreichbaren Router<br>
+</p>
+
+<p>
+<strong>134 </strong>→ Router Antwort auf ein Router Advertisement <br>
+        → wird in festen Intervallen verschickt<br>
+        → kann durch <strong>133 </strong>erzwungen werden<br>
+</p>
+
+<p>
+<strong>135 </strong>→ MAC-Adress-Überprüfung des Nachbarn (Neighbor Solicitaion)<br>
+</p>
+
+<p>
+<strong>136 </strong>→ Der Rechner ist erreichbar (Neighbor Advertisement)<br>
+</p>
+
+<p>
+<strong>137 </strong>→ Router Redirect, ein neues Ziel ist nun als Router erreichbar<br>
+</p>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../Grundlagen/IPv6_Adressen/Adresstypen.html'>Linux Wissen:Networking:Grundlagen:IPv6 Adressen:Adresstypen</a></li>						<a href='../Protokolle.html'>Linux Wissen:Networking:Protokolle</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-06T23:28:50+01:00
+
+====== Adresstypen ======
+Created Dienstag 06 März 2012
+
+* Jedes NIC benötigt mindest eine Unicast Adresse
+* Einer NIC kann mehrere Ipv6 Adressen zugewiesen werden
+* Für jede Netzwerkadresse kann gleichzeitig Unicast, Multicast undAnycast verwendet werden
+* Ene UnicastAdresse kann mehreren Schnittstellen zugewiesen werden und dadruch wegfall des Loadbalancers
+* Ein Netzwerkknoten (Host ) kann über jede der in einem Netzwerk zulässigen Unicast Adressen angesprochen werden
+
+
+=== Unicast Adressen ===
+Zur eindeutigen Identifizierung eines Netzwerkknotens (Hosts)
+* //globale Unicast Adressen //werden über das Internet geroutet (Präfix ''2000::/3'')
+* Link Local Unicast Adressen werden nur im lokalen Netz verwendet und nicht durch das Internet geroutet (Präfix: ''FE80::/10'')
+* Jede Netzwerkschnittstelle benötigt ihre eigene Link Lokal Adresse damit sie sich gegenüber anderen Knoten authentifizieren kann
+[[Networking:Protokolle:NDP]]
+
+=== Anycast Adressen ===
+Eine Unicast Adresse die meherern Netzwerkknoten zugeordnet ist bezeichnet man als Anycast Adresse
+* verfügen über den gleichen Präfix
+* zur Lastverteilung und Bildung von Redundanzen 
+* bei Router mit gemeinsamer Anycast Adresse werden Pakete an den nächstgünstigen Router geleitet
+* Interface Identifer sind alle Bits auf 0 gesetzt
+**RFC 2526**
+
+=== Multicast Adressen ===
+* zum synchronen Kommunizieren zwischen Netzwerkknoten
+* adressieren von Netzwerkschnitstellengruppen
+* Ein Paket an eine Multicast adresse erreicht alle Netzwerkschnittstellen
+* Eine Netzwerkschnittstlle kann mehrere Multicast Adressen haben
+* Anstelle des Interface Identifiers gibt es einen Group identifier
+* Mutlicast Adressen haben den Präfix ''FF00::/8''

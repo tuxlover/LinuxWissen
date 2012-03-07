@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Ipv4 auf Ipv6 mappen</title>
+		<meta name='Generator' content='Zim 0.55'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									Ipv4 auf Ipv6 mappen</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../../Monitoring.html" title="Monitoring">Monitoring</a></li>
+<li><a href="../../../Networking.html" title="Networking">Networking</a></li>
+<ul>
+<li><a href="../../Dienste.html" title="Dienste">Dienste</a></li>
+<li><a href="../../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
+<ul>
+<li><a href="../Ethernet_Frames.html" title="Ethernet Frames">Ethernet Frames</a></li>
+<li><a href="../IPv4_Adressen.html" title="IPv4 Adressen">IPv4 Adressen</a></li>
+<li><a href="../IPv6_Adressen.html" title="IPv6 Adressen">IPv6 Adressen</a></li>
+<ul>
+<li><a href="./Adresstypen.html" title="Adresstypen">Adresstypen</a></li>
+<li><strong>Ipv4 auf Ipv6 mappen</strong></li>
+<li><a href="./Pr%C3%A4fixe.html" title="Präfixe">Präfixe</a></li>
+<li><a href="./Privater_Adressraum_Ipv6.html" title="Privater Adressraum Ipv6">Privater Adressraum Ipv6</a></li>
+</ul>
+<li><a href="../Localhost.html" title="Localhost">Localhost</a></li>
+<li><a href="../MAC_Aressen.html" title="MAC Aressen">MAC Aressen</a></li>
+<li><a href="../OSI_Modell.html" title="OSI Modell">OSI Modell</a></li>
+<li><a href="../TCP-IP-Referenzmodell.html" title="TCP-IP-Referenzmodell">TCP-IP-Referenzmodell</a></li>
+</ul>
+<li><a href="../../Protokolle.html" title="Protokolle">Protokolle</a></li>
+<li><a href="../../Tools.html" title="Tools">Tools</a></li>
+<li><a href="../../xinetd.html" title="xinetd">xinetd</a></li>
+</ul>
+<li><a href="../../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../../root.html" title="root">root</a></li>
+<li><a href="../../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../../X11.html" title="X11">X11</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Mittwoch 07 März 2012<br>
+</p>
+
+<p>
+<strong>RFC 6052</strong><br>
+</p>
+
+<p>
+<ul>
+<li>der IPv4 Teil wird an den Schluss gehängt und stellen die letzten 32 Bit dar</li>
+<li>die davorstehden 16 Bit werden druch FFFF markiert und geben an, dass es sich um eine Ipv4 Adresse handelt</li>
+<li>die restlichen 80 Bit werden asugenullt</li>
+</ul>
+</p>
+
+<p>
+<em>Beispiel</em><br>
+<code>192.168.128.12 → ::FFFF:192.168.128.12</code><br>
+</p>
+
+<h4>6to4 Adressen</h4>
+<p>
+<ul>
+<li>für das Routing von Ipv6 Knoten über einen Ipv4 Netzwerk deren Zieladresse wiederum ein Ipv6 Knoten ist</li>
+<li>Ipv4 Adresse wird an den führenden Stellen angehängt</li>
+<li>Präfix: <code>2002</code></li>
+<li>Die eingebette Ipv4 Adresse wird Hexadezimal dargestellt</li>
+<li>darf keine Adressen aus dem Privaten Adresssraum beinhalten</li>
+</ul>
+<a href="../IPv4_Adressen/Privater_Adressraum.html" title="Grundlagen:IPv4 Adressen:Privater Adressraum">Grundlagen:IPv4 Adressen:Privater Adressraum</a><br>
+</p>
+
+<p>
+Beispiel (aus der Wikipedia)<br>
+</p>
+<pre>
+100.200.100.200
+2002:64C8:64C8::
+</pre>
+
+
+<h4>Miredo Mechanismus</h4>
+<p>
+<strong>RFC4380</strong><br>
+<ul>
+<li>Microsoft Teredo Mechanismus Clon</li>
+<li>zur Überwindung des NAT und Eingliederung in ein Ipv6 Netzwerk</li>
+<li>Umgeht die Ipv4-Firewall</li>
+</ul>
+</p>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='./Pr%C3%A4fixe.html'>Linux Wissen:Networking:Grundlagen:IPv6 Adressen:Präfixe</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

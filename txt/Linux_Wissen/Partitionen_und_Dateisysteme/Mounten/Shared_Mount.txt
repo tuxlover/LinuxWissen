@@ -36,4 +36,6 @@ Angenommen es ist ///mnt //ein Shared  Mountpunkt wie oben erstellt (//Workflow 
 ''mount --make-private /mnt''
 Bisher propagierte Mountpunkte werden nicht geändert.
 
+**(2) **Aushängen des Shared Mount
+''umount /mnt''
 

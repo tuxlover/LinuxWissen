@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-09-22T14:49:53+02:00
+
+====== ARP ======
+Created Donnerstag 22 September 2011
+
+* Adress Resolution Protokoll 
+* ermitteln der MAC-Adresse zu einer IPv4-Adresse
+* manuelle Zuweisung einer MAC-Adresse 
+* ist ein Ethernet Frame
+[[Networking:Grundlagen:Ethernet Frames]]
+
+=== Funktionsweise ===
+ARP fragt alle Teinehmer im Netz nach der gesuchten IP-Adresse (Who has MAC)
+Der Rechner mit der Adresse antwortet mit der seiner  konfigurierten IP-Adresse (tell IP)
+Beide Rechner speichern die erfolgreiche Anfrage in ihrem Arp Cache
+Rechner denen diese IP-Adresse nicht zugewiesen ist, verwerfen dieses Paket
+
+

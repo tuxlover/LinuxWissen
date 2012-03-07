@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-06T22:25:57+01:00
+
+====== IPv6 Adressen ======
+Created Dienstag 06 März 2012
+
+* Problem der IPv4 Adressknappheit beheben (2^128 Adressen)
+* zustandslose automatische Konfiguration von Adressen
+* 128 Bit Länge
+* Integriertes IPsec **(missing link IPsec, VPN)**
+* kein NAT (Network Adress Translation) mehr Notwendig **(missing Link NAT)**
+* Vereinfachung von QOS und Multicast
+**RFC 2460,4291,5095.5722,5871,5952,6052**
+
+=== Bestandteiler einer Ipv6 Adresse ===
+**FFFF:FFFF:FFFF:                       FFFF:               FFFF:FFFF:FFFF:FFFF**
+Standortpräfiix			    Subnetz-ID	Schnittstellen-ID
+
+Der **Standaortpräfix **kennzeichnet den Adressraum (die ersten 3 Quadrupel entsprechen 48 Bits)
+**Subnet-ID **zum Unterteilen von Breeichen (die ersten 2 Dupel entsprechen 16 Bit)
+**Interface-ID** kennzeichnet die Schnittstelle	(die verbleibenden 64 Bit )             
+[[+Präfixe]]
+
+=== Darstellung ===
+Eine IPv6 Adresse besteht aus 8 byte durch '':'' getrennte zu je 16 Bit in Hexadezimaler Darstellung
+* Die Grundform ''ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff''
+* führende Nullen in einem Block dürfen weggelassen werden
+* aufeinanderfolgende Blöcke mit Wert 0 dürfen ausgelassen werden und durch : abgetrennt (jedoch nur einmal pro Adresse erlaubt)
+* bei der Adressierung über die URL werden IPv6 in eckigen Klammern notiert, Portnummern werden ausserhalb der Klammern angegeben 
+
+//Beispiel//
+Verkürzung von IP Adressen
+00000:ba43:00000:0000:2456:00000:889f:efab kann als ''ba43::2456:0000:889f''  verkürzt geschrieben werden
+Adressiern von Localhost Cups imim browser
+''http://[::1]:631''
+
+=== Adresstypen ===
+* Unicast, Multicast, Anycast
+[[+Adresstypen]]
+
+
+=== Loopback Adresse ===
+''::1/128''
+
+=== Privater Adressraum ===
+* werden nicht an das Internet weitergeroutet
+[[+Privater Adressraum Ipv6]]

@@ -21,6 +21,18 @@ Created Donnerstag 22 September 2011
 * verschmelzen der OSI Ebenen I und II, sowie V bis VII
 [[+TCP-IP-Referenzmodell]]
 
+=== Netzwerkadressierungen ===
+* Hardwareadressen werden mit dem Adress Resoltion Protocol (arp) auf IP-Adressen gemappt 
+[[+MAC Aressen]]
+[[Protokolle:ARP]]
+* MAC Adressen gehören zum Layer 2 des OSI Modells
+* Internetprotkolladressen gehören zum Layer 3
+
+=== Ethernet Frames ===
+* Datensegmente die Protokollunabhängig vom Sender zum Empfänger gelangen 
+* Layer 2 OSI
+[[+Ethernet Frames]]
+
 === RFC (Request for Comments) ===
 * Dokumentation zur TCP/IP Protokollimplementation
 * Jedes RFC hat einen Status der über Reife eines Protokolls informiert und einen State (Verwendungszweck) der über die Wichtigkeit in der Protokolspecifiaktion
@@ -42,3 +54,9 @@ informiert
 	//Limited Use				//eingeschränkt verwendebar
 	//Not recommended			//vorsicht!! 
  
+
+=== IPv4-Adressen ===
+* 32 Bit zu je vier Oktetts
+* Werde werden von Binär in dezimal umgerechnet (0 bis 255)
+* besteht aus Host-Anteil, Netzteil durch Subnetzmasken Spezifkiation
+[[+IPv4 Adressen]]

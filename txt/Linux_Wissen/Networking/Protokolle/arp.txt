@@ -1,8 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2011-09-22T14:49:53+02:00
-
-====== arp ======
-Created Donnerstag 22 September 2011
-
-* Adress Resolution Protokoll 
