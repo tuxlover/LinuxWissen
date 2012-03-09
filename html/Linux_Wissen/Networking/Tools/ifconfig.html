@@ -70,10 +70,12 @@
 <li><a href="../Tools.html" title="Tools">Tools</a></li>
 <ul>
 <li><a href="./arp.html" title="arp">arp</a></li>
+<li><a href="./dhcpdump.html" title="dhcpdump">dhcpdump</a></li>
 <li><a href="./DNS-Lookup.html" title="DNS-Lookup">DNS-Lookup</a></li>
 <li><strong>ifconfig</strong></li>
 <li><a href="./ifup_und_ifdown.html" title="ifup und ifdown">ifup und ifdown</a></li>
 <li><a href="./ip.html" title="ip">ip</a></li>
+<li><a href="./ipcalc.html" title="ipcalc">ipcalc</a></li>
 <li><a href="./netstat.html" title="netstat">netstat</a></li>
 <li><a href="./nmap.html" title="nmap">nmap</a></li>
 <li><a href="./ping.html" title="ping">ping</a></li>
@@ -115,16 +117,26 @@ Created Donnerstag 22 September 2011<br>
 <strong>/sbin/ifconfig</strong> <br>
 → anzeigen und konfigurieren von Netzwerkschnittstellen<br>
 → zuweisen von IP,Hardwaretyp, MAC, Broadcast, Netzmaske, IP-Adresse<br>
+<strong>-a </strong>→ Auslesen der MAC Adresse<br>
+</p>
+
+<p>
+<strong>ifconfig eth0 hw ether &lt;MAC&gt;</strong><br>
+→ anpassen der MAC Adresse<br>
+<a href="../Grundlagen/MAC_Aressen.html" title="Networking:Grundlagen:MAC Aressen">Networking:Grundlagen:MAC Aressen</a><br>
 </p>
 
 <p>
 <strong>ifconfig eth0 &lt;IP-Adresse&gt; up </strong><br>
 → weist dem Gerät eth0 die &lt;IP-Adresse&gt; zu und aktiviert die Karte zur Benutzung<br>
+<a href="../Grundlagen/IPv4_Adressen.html" title="Networking:Grundlagen:IPv4 Adressen">Networking:Grundlagen:IPv4 Adressen</a><br>
+<a href="../Grundlagen/IPv6_Adressen.html" title="Networking:Grundlagen:IPv6 Adressen">Networking:Grundlagen:IPv6 Adressen</a><br>
 </p>
 
 <p>
 <strong>ifconfig eth0 &lt;IP-Adresse&gt; netmask &lt;Netzmaske&gt; broadcast &lt;Broadcast Adresse&gt; </strong><br>
 → zuweisen ener neuen Broadcastadresse sowie Netzmaske<br>
+<a href="../Grundlagen/IPv4_Adressen/Netzmasken.html" title="Networking:Grundlagen:IPv4 Adressen:Netzmasken">Networking:Grundlagen:IPv4 Adressen:Netzmasken</a><br>
 </p>
 
 <p>

@@ -21,6 +21,7 @@ Created Donnerstag 22 September 2011
 
 	**<Object>**
 		**link **→ physikalische oder logische Netzwerkadresse
+		**neigh **→ arp Einträge verwalten
 		**addr **→ IPv4 oder IPv6 Adresse
 		**neighbour **→ Kernel arp Cache
 		**route **→ Routing Tabellen
@@ -36,7 +37,9 @@ Created Donnerstag 22 September 2011
 		**show **→ Anzeigen
 		**set up **→ anschalten
 		**set down **→ ausschalten
-		
+		**change **→ änderen
+		**reachable **→ Erreichbarkeit überprüfen		
+
 //Beispiele://
 ''ip addr add local <IP>/<CIDR> dev <ethN> brd + [label <ethN:r>]''
 → Netzwerkkarte <ethN> die IP mit der entsprechenden Netzmaske zuweisen mit Broadcastadresse entsprechend der NetzID
@@ -45,3 +48,7 @@ Created Donnerstag 22 September 2011
 ''ip link set up dev <ethN>''**   → **NIC <ethN> hochfahren
 ''ip link set down dev <ethN>'' → NIC <ethN> herunterafahren
 ''ip a'' → auflisten aller NICs
+
+[[Networking:Grundlagen:IPv4 Adressen]]
+[[Networking:Grundlagen:IPv6 Adressen]]
+[[Networking:Grundlagen:MAC Aressen]]

@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-09T01:10:16+01:00
+
+====== dhcpdump ======
+Created Freitag 09 März 2012
+
+* zum Dumpen von DHCP Paketen
+* nutzt das Tool **tcpdump**
+[[tcpdump]]
+
+**dhcpdump **
+**-i <Interfaces> **
+→ Interface für das gedumpt werden soll, wird keins angegeben wird das aktuell aktive verwendet
+→ Debian spezifische Option
+**-h <RegEx> **→ Filterregeln übergeben
+
+//Beispiel://
+Auf eth1 dumpen und nach Den ersten 3 Bytes der MAC Adresses 00:01:43:42:23:2E filtern
+dhcpdump -i eth1 -h ^00:01:43
+
+Bei $$SUSE muss die Ausgabe von **tcpdump **nach **dhcpdump **umgeleitet werden
+''tcpdump -i eth0''
+
+>>  
+''---------------------------------------------------------------------------''
+''  TIME: 14:38:46.495266''
+''    IP: > (c4:3d:c7:97:89:29) > BOOTP/DHCP (00:90:4b:6e:ad:98)''
+''    OP: 2 (BOOTPREPLY)''
+'' HTYPE: 1 (Ethernet)''
+''  HLEN: 6''
+''  HOPS: 0''
+''   XID: 031d7a05''
+''  SECS: 0''
+'' FLAGS: 0''
+''CIADDR: 0.0.0.0''
+''YIADDR: 192.168.44.98''
+''SIADDR: 0.0.0.0''
+''GIADDR: 0.0.0.0''
+''CHADDR: 00:90:4b:6e:ad:98:00:00:00:00:00:00:00:00:00:00''
+'' SNAME: .''
+'' FNAME: .''
+''OPTION:  53 (  1) DHCP message type         5 (DHCPACK)''
+''OPTION:   1 (  4) Subnet mask               255.255.255.0''
+''OPTION:   3 (  4) Routers                   192.168.44.1''
+''OPTION:   6 (  8) DNS server                192.168.44.1,192.168.44.1''
+''OPTION:  15 (  3) Domainname                lan''
+''OPTION:  51 (  4) IP address leasetime      600 (10m)''
+''OPTION:  26 (  2) Interface MTU             1500''
+''OPTION:  54 (  4) Server identifier         192.168.44.1''
+''---------------------------------------------------------------------------''

@@ -67,6 +67,8 @@
 <li><a href="../Dienste.html" title="Dienste">Dienste</a></li>
 <li><a href="../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
 <ul>
+<li><a href="./avahi.html" title="avahi">avahi</a></li>
+<li><a href="./DNS.html" title="DNS">DNS</a></li>
 <li><a href="./Ethernet_Frames.html" title="Ethernet Frames">Ethernet Frames</a></li>
 <li><strong>IPv4 Adressen</strong></li>
 <ul>
@@ -105,41 +107,67 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>32 Bit lange Adresse zu vier Oktettts </li>
-<div style='padding-left: 0pt'>
-<br>
-• Jedes Oktett besteht aus 8 Elementen aus dem Bereich {0,1}<br>
-</div>
+				<p>
+Created Dienstag 06 März 2012<br>
+</p>
+
+<p>
+<ul>
+<li>32 Bit lange Adresse zu vier Oktettts </li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>Jedes Oktett besteht aus 8 Elementen aus dem Bereich {0,1}</li>
+</ul>
    1       1     1     0  1   1  1  0  . 1 1 1 0 1 1 1 0 . 1 1 1 0 1 0 1 1 . 1 1 1 0 0 1 1 0 <br>
-<strong>[128  64  32  16  8  4  2  1  ]</strong>
-<div style='padding-left: 0pt'>
-<br>
-• Umrechnung der Werte in IP-Adressen <br>
-</div>
+<strong>[128  64  32  16  8  4  2  1  ]</strong><br>
+</p>
+
+<p>
+<ul>
+<li>Umrechnung der Werte in IP-Adressen </li>
+</ul>
   228.238.235.228 (vom Beispiel oben) <br>
-<br>
+</p>
+
+<p>
+<ul>
 <li>Zusätzlich wird durch die Netzwerkklasse /Subnetzmaske der Host- und der Netzanteil in dieser Adressse bestimmt</li>
-<strong>RFC 791, 1349</strong>
+</ul>
+<strong>RFC 791, 1349</strong><br>
+</p>
 
 <h4>Netzwerkklassen</h4>
+<p>
 <strong>Klasse			Netzanteil			Anzahl Netze		Anzahl-Hosts		Adressen</strong><br>
 ClassA			8 Bit				0-128				2^34 - 2			0.0.0.0      - 127.255.255.255<br>
 ClassB			16 Bit				16.384				65.534				128.0.0.0  - 191.255.255.255				<br>
 ClassC			24 Bit				2^21				254					 192.0.0.0 - 223.255.255.255<br>
 ClassD			-					-					-					224.0.0.0  - 239.255.255.255<br>
 ClassE			-					-					-					240.0.0.0  - 254.255.255.255<br>
-<br>
+</p>
+
+<p>
 → typischerweise ist in diesen Klassennetzen <strong>das erst  Bit</strong> des Hostteils für diie NetzID reserviert (zum Beispiel 192.168.128.0)<br>
 → typischerweise ist in diesen Klassennetzen <strong>das letzte Bit</strong> des Hostanteils für die Broadcastadresse reserviert ( zum Beispiel 192.168.128.255)<br>
-<br>
+</p>
+
 <h4>Netzmasken</h4>
-<a href="./IPv4_Adressen/Netzmasken.html" title="+Netzmasken">+Netzmasken</a>
+<p>
+<a href="./IPv4_Adressen/Netzmasken.html" title="+Netzmasken">+Netzmasken</a><br>
+</p>
 
 <h4>Privater Adressraum</h4>
-<a href="./IPv4_Adressen/Privater_Adressraum.html" title="+Privater Adressraum">+Privater Adressraum</a>
+<p>
+<a href="./IPv4_Adressen/Privater_Adressraum.html" title="+Privater Adressraum">+Privater Adressraum</a><br>
+</p>
 
 <h4>Ipv4 Header</h4>
-<a href="./IPv4_Adressen/Ipv4_Packet.html" title="+Ipv4 Packet">+Ipv4 Packet</a>
+<p>
+<a href="./IPv4_Adressen/Ipv4_Packet.html" title="+Ipv4 Packet">+Ipv4 Packet</a><br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -147,7 +175,7 @@ ClassE			-					-					-					240.0.0.0  - 254.255.255.255<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Grundlagen.html'>Linux Wissen:Networking:Grundlagen</a></li>
+				Backlinks:						<a href='../Grundlagen.html'>Linux Wissen:Networking:Grundlagen</a></li>						<a href='../Tools/ip.html'>Linux Wissen:Networking:Tools:ip</a></li>						<a href='../Tools/ifconfig.html'>Linux Wissen:Networking:Tools:ifconfig</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

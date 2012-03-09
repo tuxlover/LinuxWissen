@@ -8,12 +8,20 @@ Created Donnerstag 22 September 2011
 **/sbin/ifconfig** 
 → anzeigen und konfigurieren von Netzwerkschnittstellen
 → zuweisen von IP,Hardwaretyp, MAC, Broadcast, Netzmaske, IP-Adresse
+**-a **→ Auslesen der MAC Adresse
+
+**ifconfig eth0 hw ether <MAC>**
+→ anpassen der MAC Adresse
+[[Networking:Grundlagen:MAC Aressen]]
 
 **ifconfig eth0 <IP-Adresse> up **
 → weist dem Gerät eth0 die <IP-Adresse> zu und aktiviert die Karte zur Benutzung
+[[Networking:Grundlagen:IPv4 Adressen]]
+[[Networking:Grundlagen:IPv6 Adressen]]
 
 **ifconfig eth0 <IP-Adresse> netmask <Netzmaske> broadcast <Broadcast Adresse> **
 → zuweisen ener neuen Broadcastadresse sowie Netzmaske
+[[Networking:Grundlagen:IPv4 Adressen:Netzmasken]]
 
 **ifconfig eth0:1 <IP-Adresse> **
 → zuweisen eines Aliasses für eth0 auf einer Pseudodvice eth1 mit einer neuen IP-Adresse

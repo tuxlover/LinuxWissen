@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-08T10:52:36+01:00
+
+====== ipcalc ======
+Created Donnerstag 08 März 2012
+
+* Tool zum Berechnen von IP Adressen und Subnetzmasken
+
+**ipcalc [IP-Adressse/CIDR] [IP-AdresseN - IP-AdresseM]**
+
+//Beispiel://
+Angeben der CIDR Notation:
+''ipcalc 192.168.128.0 - 192.168.128.14''
+
+Subnetzmasken von CIDR in Dezimal umwandel
+''ipcalc /27''

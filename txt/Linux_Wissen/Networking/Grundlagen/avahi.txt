@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-09T14:16:19+01:00
+
+====== avahi ======
+Created Freitag 09 März 2012
+
+* ist der zerofconf Daemon der es ermöglicht Geräte ohne Netzwerkgeräte oder DHCP zu verbinden
+* setzt lokalen Netzwerkeinstellungen und unter anderem auch die IP Adresse für das Loopback Gerät
+

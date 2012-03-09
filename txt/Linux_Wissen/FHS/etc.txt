@@ -191,5 +191,16 @@ __Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.__
 
 ///etc/smb.conf// → Samba Konfigurationsdatei
 
+///etc/network/interfaces//
+/etc/networks
+[[+interfaces]]
 
+///etc/dhclient.conf | /etc/dhcp/dhclient.conf//
+→ Clientseitige Konfiguraion des DHCP
+[[+dhclient.conf]]
+[[Linux Wissen:Networking:Protokolle:DHCP]]
+///etc/dhcpd.conf |/etc/dhcp/dhcpd.conf//
+→ Serverseitige Konfiguration des DHCP
+[[+dhcpd.conf]]
+[[Linux Wissen:Networking:Protokolle:DHCP]]
 ///etc/zypp/zypper.conf//** → **Zypper Konfigurationsdatei

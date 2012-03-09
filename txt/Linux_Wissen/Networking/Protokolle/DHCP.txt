@@ -1,0 +1,69 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-08T15:11:24+01:00
+
+====== DHCP ======
+Created Donnerstag 08 März 2012
+
+* Dynamic Host Configuration Protocol
+* Dient zur zentralen Vergabe von IP Adressen und Netzwerkeinstellungen
+* dadurch wird eine einfachere Verwaltung von Netzwerkclients ermöglicht
+* für jedes Subnetz muss ein eigenen DHCP Server betrieben werden
+* Router der verschienden Subnetze verknüpft und DHCP nutztz muss als DHCP-Relay konfiguriert sein
+
+
+=== Ports ===
+Clients: Port 68
+Server: Port 69
+
+=== Paketbeschreibung ===
+1. **1 Byte op **→  dhcpoffer; dhcprequest, dhcpbootrequest
+2. **1 Byte htype **→ Netzwerktyp 
+3. **1 Byte hlen **→ Länge der Hardwareadresse
+4. **1 Byte hops **→ Zahl der DHCP Relay Agenten
+5. **4 Byte xid **→ Transaktion ID
+6. **2 Byte secs **→ abgelaufene Leasetime
+7. **2 Byte flags **→ Gültigkeit beim Client
+8. **4 Byte ciaddr **→ IP Adresse des Clients
+9. **4 Byte yiaddr** → zugeteilte IP-Adresse
+10. **4 Byte siaddr ** → IP Adresse des DHCP Servers
+11. **4 Byte giaddr **→ IP Adresse des DHCP  Relay Routers
+12. **16 Byte chaddr **→ MAC Adresse des Clients
+13. **64 Byte sname → **Hostnam DHCP Server (Optional)
+14. **128 Byte file **→ Dateinamen des BOOTP Images 
+[[BOOTP]]
+15. **312 Byte options** → zusätzliche Optionen
+
+
+=== Zuweisungsoptionen ===
+* IP-Adresse für Clients
+* Netzwerkmaske und Subnetzmaske
+* Default Gateway für Clients
+* WINS Server für Microsoft 
+* DNS Server
+* Zeit und NTP Server
+[[Linux Wissen:Systemzeit:ntp]]
+**(missing Link NTP Server)**
+* Proxy Konfiguration 
+
+**RFC 2131,2132,3315,3342,3396,3942,4361,4833,5494**
+
+=== Lease ===
+''Der Server vergibt für eine bestimmte Zeitspanne eine Adressse aus dem Adresspool. Diese bleibt für einen bestimmten''
+Zeitraum aktuell. (**Leasetime**)
+
+=== Aufbau und Konfiguration ===
+* Vergabe durch den Dhcpd **(missing link)**
+Clientseitig: [[Linux Wissen:FHS:etc:dhclient.conf]]
+Serverseitig: [[Linux Wissen:FHS:etc:dhcpd.conf]]
+[[Networking:Tools:dhcpdump]]
+
+**$$Debian Ubunt$$**
+///etc/network/interfaces//
+* eintragen von ''iface <ethN> inet dhcp ''→ dhcp verwenden
+* eintragen von ''iface <ethN> inect statitc ''→ dhcp nicht verwenden
+
+**$SUSE$$**
+///etc/sysconfig/network //
+* ''BOOTPROTO='dhcp' → ''dhcp verwenden
+* ''BOOTPROTO='static' ''→ dhcp nicht verwenden

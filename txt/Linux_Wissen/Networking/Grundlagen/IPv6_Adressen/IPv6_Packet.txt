@@ -1,0 +1,39 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-07T22:05:27+01:00
+
+====== IPv6 Packet ======
+Created Mittwoch 07 März 2012
+
+{{../../../../../Ipv6_pcket.png}}
+
+**Version**
+→ 4 Bits
+→ IP Protokollversion Version 6
+
+**Traffic Class**
+→ 8 Bits
+→ Quality of Service und Kennzeichnung der Priorität
+
+**Flow Label**
+→ 20 Bits
+→ **RFC 3697**
+
+**Payload Lenght**
+→ 16 Bit
+→ Länge der Daten
+
+**Nex Header**
+→ 8 Bit
+→ Welches Protokoll wird für die darüber liegende Schicht angeboten
+
+**Hop Limit**
+→ Anzahl der Maximalen Rooter Sprünge
+→ Wird der Wert überschritten, so wird das Paket verworfen
+→ bei Jedem Router verringert sich der Wert um genau 1
+
+**Absender Adresse**
+→ 128 Bit Lange Ipv6 Adresse
+
+**Adresse Ziel**
+→ 128 Bit Lange Ipv6 Adresse

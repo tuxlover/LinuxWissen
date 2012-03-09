@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-08T14:46:40+01:00
+
+====== interfaces ======
+Created Donnerstag 08 März 2012
+
+* Diese Datei ist Distributionsabhängig
+* bei Debian Squeeze befindet sich diese in ///etc/network/interfaces//
+* bei SUSE heißt diese Datei /etc/networks
+* Konfigurationsdatei für **ifup **
+
+=== !!ACHTUNG!!  ===
+__Bei openSUSE wird die Konfiguration des Netzwerkes und ihere Schnittstellen in der Datei /etc/sysconfig/network/*.cfg vorgenomen.__
+[[Linux Wissen:Networking:Tools:ifup und ifdown]]
+
+++
+'''
+auto lo eth0
+deny hotplug wlan0
+
+mapping eth0
+scrript /usr/local/sbin/interface_configure.sh
+map HOME eth0-home
+map SERVER eth0-server
+
+iface eth0-home inet static
+address 192.168.1..1
+netmask 255.255.255.0
+up 
+
+iface eth0-server net dhcp
+'''
+
+++
+//Beispiele für Debian findet man in /usr/doc/ifdown/examples//
+
+**man 5 interfaces**

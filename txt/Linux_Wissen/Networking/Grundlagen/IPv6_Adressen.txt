@@ -46,3 +46,6 @@ Adressiern von Localhost Cups imim browser
 === Privater Adressraum ===
 * werden nicht an das Internet weitergeroutet
 [[+Privater Adressraum Ipv6]]
+
+=== IPv6 Packet ===
+[[+IPv6 Packet]]

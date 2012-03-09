@@ -70,10 +70,12 @@
 <li><a href="../Tools.html" title="Tools">Tools</a></li>
 <ul>
 <li><a href="./arp.html" title="arp">arp</a></li>
+<li><a href="./dhcpdump.html" title="dhcpdump">dhcpdump</a></li>
 <li><a href="./DNS-Lookup.html" title="DNS-Lookup">DNS-Lookup</a></li>
 <li><a href="./ifconfig.html" title="ifconfig">ifconfig</a></li>
 <li><a href="./ifup_und_ifdown.html" title="ifup und ifdown">ifup und ifdown</a></li>
 <li><strong>ip</strong></li>
+<li><a href="./ipcalc.html" title="ipcalc">ipcalc</a></li>
 <li><a href="./netstat.html" title="netstat">netstat</a></li>
 <li><a href="./nmap.html" title="nmap">nmap</a></li>
 <li><a href="./ping.html" title="ping">ping</a></li>
@@ -137,6 +139,7 @@ Created Donnerstag 22 September 2011<br>
 </div>
 <div style='padding-left: 60pt'>
 <strong>link </strong>→ physikalische oder logische Netzwerkadresse<br>
+<strong>neigh </strong>→ arp Einträge verwalten<br>
 <strong>addr </strong>→ IPv4 oder IPv6 Adresse<br>
 <strong>neighbour </strong>→ Kernel arp Cache<br>
 <strong>route </strong>→ Routing Tabellen<br>
@@ -158,9 +161,11 @@ Created Donnerstag 22 September 2011<br>
 <strong>show </strong>→ Anzeigen<br>
 <strong>set up </strong>→ anschalten<br>
 <strong>set down </strong>→ ausschalten<br>
+<strong>change </strong>→ änderen<br>
+<strong>reachable </strong>→ Erreichbarkeit überprüfen		<br>
 </div>
 </p>
-		
+
 <p>
 <em>Beispiele:</em><br>
 <code>ip addr add local &lt;IP&gt;/&lt;CIDR&gt; dev &lt;ethN&gt; brd + [label &lt;ethN:r&gt;]</code><br>
@@ -172,6 +177,12 @@ Created Donnerstag 22 September 2011<br>
 <code>ip link set up dev &lt;ethN&gt;</code><strong>   → </strong>NIC &lt;ethN&gt; hochfahren<br>
 <code>ip link set down dev &lt;ethN&gt;</code> → NIC &lt;ethN&gt; herunterafahren<br>
 <code>ip a</code> → auflisten aller NICs<br>
+</p>
+
+<p>
+<a href="../Grundlagen/IPv4_Adressen.html" title="Networking:Grundlagen:IPv4 Adressen">Networking:Grundlagen:IPv4 Adressen</a><br>
+<a href="../Grundlagen/IPv6_Adressen.html" title="Networking:Grundlagen:IPv6 Adressen">Networking:Grundlagen:IPv6 Adressen</a><br>
+<a href="../Grundlagen/MAC_Aressen.html" title="Networking:Grundlagen:MAC Aressen">Networking:Grundlagen:MAC Aressen</a><br>
 </p>
 
 

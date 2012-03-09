@@ -67,6 +67,8 @@
 <li><a href="../../Dienste.html" title="Dienste">Dienste</a></li>
 <li><a href="../../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
 <ul>
+<li><a href="../avahi.html" title="avahi">avahi</a></li>
+<li><a href="../DNS.html" title="DNS">DNS</a></li>
 <li><a href="../Ethernet_Frames.html" title="Ethernet Frames">Ethernet Frames</a></li>
 <li><a href="../IPv4_Adressen.html" title="IPv4 Adressen">IPv4 Adressen</a></li>
 <ul>
@@ -112,6 +114,87 @@ Created Mittwoch 07 März 2012<br>
 <p>
 <img src="../../../../Ipv4_pcket.png" alt=""><br>
 </p>
+
+<p>
+<strong>Version </strong><br>
+→ die ersten 4 Bit geben die Protokollversion , hier IPv4<br>
+</p>
+
+<p>
+<strong>IHL </strong><br>
+→ 4 Bit Lännge des IP Headers<br>
+</p>
+
+<p>
+<strong>TOS (Type of Service)</strong><br>
+→ 8 Bit die über Eigenschaften und Priorität<br>
+</p>
+
+<p>
+<strong>Lenght</strong><br>
+→16 Bit, in der die Länge des Datensegments propagiert wird<br>
+</p>
+
+<p>
+<strong>Identifikation</strong><br>
+→ 16 Bit, in der die Pakete nummeriert werden <br>
+</p>
+
+<p>
+<strong>Flags</strong><br>
+→ Bit 0 fest<br>
+→ Bit 1 → 0 →  Fragementierung erlaubt<br>
+             → 1 →  Fragmentierung nicht erlaubt<br>
+→ Bit 2 → 0 → letztes bzw. einziges Fragment<br>
+             → 1 → weitere Fragmente folgen<br>
+</p>
+
+<p>
+<strong>Fragment Offset</strong><br>
+→ 13 Bit für die Positionsangabe von Fragmenten<br>
+</p>
+
+<p>
+<strong>TTL (TIME TO LIVE)</strong><br>
+→ 8 Bit <br>
+→ Lebensdauer eines Paketes<br>
+→ bei jedem Router wird die TTL um eins vermindert<br>
+→ besitzt ein Paket eine TTL von 0 wird es vom Router verworfen<br>
+</p>
+
+<p>
+<strong>Protokoll</strong><br>
+→ 8 Bit<br>
+→ Welches Protokoll wird für die darüber liegenden Schicht angeboten<br>
+→ Werte sind gemäß <strong>RFC 3232</strong> in einer Datenbank hinterlegt<br>
+</p>
+
+<p>
+<strong>Header Prüfsumme</strong><br>
+→ 16 Bit<br>
+→ Prüfsumme für den Header<br>
+</p>
+
+<p>
+<strong>IP-Adresse des Senders</strong><br>
+→ 32 Bit lange IP-Adresse des Absenders<br>
+</p>
+
+<p>
+<strong>IP-Adresse des Empfängers</strong><br>
+→ 32 Bit lange IP-Adresse des Empfängers<br>
+</p>
+
+<p>
+<strong>Optionen</strong><br>
+→ Routing Optionen zur Diagnose<br>
+</p>
+
+<p>
+<strong>Padding</strong><br>
+→ Füllbits um die Länge des Headers zu erreichen<br>
+</p>
+ 
 
 
 			<!-- End wiki content -->

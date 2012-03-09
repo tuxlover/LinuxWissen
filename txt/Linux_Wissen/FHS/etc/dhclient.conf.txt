@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-03-09T00:35:07+01:00
+
+====== dhclient.conf ======
+Created Freitag 09 März 2012
+
+* Client Konfiguration des ISC dhcpclients
+* folgenden Eigenschaften können durch Direktiven vom Client gestzt werden:
+	+ Protocol timing
+	+ Serverinformationen die angefordert werden sollen
+	
+++
+'''
+# Zeit die vergangen sein muss bis der Client entscheidet dass der Server nicht erreichbar ist
+# Standard sind hier 60 Sekunden
+timeout 120;
+
+# Zeit die bis zum nächsten Verbindungsversuch zum dhcp Client abgewartet wird
+retry 30;
+
+# Zeit die gewartet werden soll, bis ein Client versucht seine alte Adresse zu erhalten
+reboot 10;
+
+# Falls mehere DHCP-Server anwesend sind, die Zeit nach der nach einem gültigen Lease keine weiteren Versuche mehr 
+# stattfinden
+# Zeit nach dem der erste Lease gültig ist und nicht auf weitere Server gewartet wird
+select-timeout 5;
+
+# Zeit zwischen dem ersten und dem zweiten Versuch den DHCP Server um ein gültiges Lease zu bitten.
+initial-interval 5;
+
+# folgende Server werden zurückgewiesen
+reject 122.123.879.0/23
+
+
+# das request statement legt fest was abgefragt werden soll
+# das requires statemant welche Parameter unbedingt benötigt werden, wird einer davon nicht gefunden
+
+interface eth0 {
+request 		subnet-mask,broadcast-adress,routers
+requeries	subnet-mask,broadcast-adress,routers
+}
+'''
+	 
+++
+**man 5 dhclient.conf**
+

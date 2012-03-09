@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>dhclient.conf</title>
+		<meta name='Generator' content='Zim 0.55'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									dhclient.conf</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../FHS.html" title="FHS">FHS</a></li>
+<ul>
+<li><a href="../bin.html" title="bin">bin</a></li>
+<li><a href="../boot.html" title="boot">boot</a></li>
+<li><a href="../dev.html" title="dev">dev</a></li>
+<li><a href="../etc.html" title="etc">etc</a></li>
+<ul>
+<li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
+<li><a href="./apt%2B%2Bsoruces.lst.html" title="apt++soruces.lst">apt++soruces.lst</a></li>
+<li><a href="./auto.master.html" title="auto.master">auto.master</a></li>
+<li><a href="./auto.Verzeichnis.html" title="auto.Verzeichnis">auto.Verzeichnis</a></li>
+<li><a href="./cgconfig.conf.html" title="cgconfig.conf">cgconfig.conf</a></li>
+<li><a href="./cgrules.conf.html" title="cgrules.conf">cgrules.conf</a></li>
+<li><a href="./cups.html" title="cups">cups</a></li>
+<li><strong>dhclient.conf</strong></li>
+<li><a href="./dhcpd.conf.html" title="dhcpd.conf">dhcpd.conf</a></li>
+<li><a href="./ethers.html" title="ethers">ethers</a></li>
+<li><a href="./foremost.conf.html" title="foremost.conf">foremost.conf</a></li>
+<li><a href="./fstab.html" title="fstab">fstab</a></li>
+<li><a href="./gitconfig.html" title="gitconfig">gitconfig</a></li>
+<li><a href="./group.html" title="group">group</a></li>
+<li><a href="./hosts.html" title="hosts">hosts</a></li>
+<li><a href="./hosts.allow.html" title="hosts.allow">hosts.allow</a></li>
+<li><a href="./hosts.deny.html" title="hosts.deny">hosts.deny</a></li>
+<li><a href="./hosts.lpd.html" title="hosts.lpd">hosts.lpd</a></li>
+<li><a href="./inetd.conf.html" title="inetd.conf">inetd.conf</a></li>
+<li><a href="./init.d%2B%2BScript.html" title="init.d++Script">init.d++Script</a></li>
+<li><a href="./inittab.html" title="inittab">inittab</a></li>
+<li><a href="./interfaces.html" title="interfaces">interfaces</a></li>
+<li><a href="./lilo.conf.html" title="lilo.conf">lilo.conf</a></li>
+<li><a href="./logrotate.conf.html" title="logrotate.conf">logrotate.conf</a></li>
+<li><a href="./modprobe.conf.html" title="modprobe.conf">modprobe.conf</a></li>
+<li><a href="./my.cnf.html" title="my.cnf">my.cnf</a></li>
+<li><a href="./nsswitch.conf.html" title="nsswitch.conf">nsswitch.conf</a></li>
+<li><a href="./ntp.conf.html" title="ntp.conf">ntp.conf</a></li>
+<li><a href="./passwd.html" title="passwd">passwd</a></li>
+<li><a href="./protocols.html" title="protocols">protocols</a></li>
+<li><a href="./resolv.conf.html" title="resolv.conf">resolv.conf</a></li>
+<li><a href="./security%2B%2Blimits.conf.html" title="security++limits.conf">security++limits.conf</a></li>
+<li><a href="./services.html" title="services">services</a></li>
+<li><a href="./shadow.html" title="shadow">shadow</a></li>
+<li><a href="./smb.conf.html" title="smb.conf">smb.conf</a></li>
+<li><a href="./ssh.html" title="ssh">ssh</a></li>
+<li><a href="./sysconfig%2B%2Bclock.html" title="sysconfig++clock">sysconfig++clock</a></li>
+<li><a href="./syslog.conf.html" title="syslog.conf">syslog.conf</a></li>
+<li><a href="./systemd%2B%2Bsystem%2B%2Bmy.typ.html" title="systemd++system++my.typ">systemd++system++my.typ</a></li>
+<li><a href="./udev%2B%2Brules.d%2B%2B99-myrule.html" title="udev++rules.d++99-myrule">udev++rules.d++99-myrule</a></li>
+<li><a href="./udev%2B%2Budev.conf.html" title="udev++udev.conf">udev++udev.conf</a></li>
+<li><a href="./X11%2B%2Bxdm.html" title="X11++xdm">X11++xdm</a></li>
+<li><a href="./xinetd.conf.html" title="xinetd.conf">xinetd.conf</a></li>
+<li><a href="./Xorg.conf.html" title="Xorg.conf">Xorg.conf</a></li>
+</ul>
+<li><a href="../lib.html" title="lib">lib</a></li>
+<li><a href="../proc.html" title="proc">proc</a></li>
+<li><a href="../sbin.html" title="sbin">sbin</a></li>
+<li><a href="../sys.html" title="sys">sys</a></li>
+<li><a href="../usr.html" title="usr">usr</a></li>
+<li><a href="../var.html" title="var">var</a></li>
+</ul>
+<li><a href="../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../Monitoring.html" title="Monitoring">Monitoring</a></li>
+<li><a href="../../Networking.html" title="Networking">Networking</a></li>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../root.html" title="root">root</a></li>
+<li><a href="../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../X11.html" title="X11">X11</a></li>
+<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Freitag 09 März 2012<br>
+</p>
+
+<p>
+<ul>
+<li>Client Konfiguration des ISC dhcpclients</li>
+<li>folgenden Eigenschaften können durch Direktiven vom Client gestzt werden:</li>
+</ul>
+<div style='padding-left: 30pt'>
++ Protocol timing<br>
++ Serverinformationen die angefordert werden sollen<br>
+</div>
+</p>
+	
+<p>
+++<br>
+</p>
+<pre>
+# Zeit die vergangen sein muss bis der Client entscheidet dass der Server nicht erreichbar ist
+# Standard sind hier 60 Sekunden
+timeout 120;
+
+# Zeit die bis zum nächsten Verbindungsversuch zum dhcp Client abgewartet wird
+retry 30;
+
+# Zeit die gewartet werden soll, bis ein Client versucht seine alte Adresse zu erhalten
+reboot 10;
+
+# Falls mehere DHCP-Server anwesend sind, die Zeit nach der nach einem gültigen Lease keine weiteren Versuche mehr 
+# stattfinden
+# Zeit nach dem der erste Lease gültig ist und nicht auf weitere Server gewartet wird
+select-timeout 5;
+
+# Zeit zwischen dem ersten und dem zweiten Versuch den DHCP Server um ein gültiges Lease zu bitten.
+initial-interval 5;
+
+# folgende Server werden zurückgewiesen
+reject 122.123.879.0/23
+
+
+# das request statement legt fest was abgefragt werden soll
+# das requires statemant welche Parameter unbedingt benötigt werden, wird einer davon nicht gefunden
+
+interface eth0 {
+request 		subnet-mask,broadcast-adress,routers
+requeries	subnet-mask,broadcast-adress,routers
+}
+</pre>
+	 
+<p>
+++<br>
+<strong>man 5 dhclient.conf</strong><br>
+</p>
+
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Networking/Protokolle/DHCP.html'>Linux Wissen:Networking:Protokolle:DHCP</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

@@ -5,10 +5,12 @@ Creation-Date: 2011-07-18T00:30:49+02:00
 ====== Protokolle ======
 Created Montag 18 Juli 2011
 
-* ARP  [[+ARP]]
-* NDP [[+NDP]]
-* IP  
-[[+IP]]
+* [[+ARP]]
+* [[+NDP]]
+* [[+IP]]
+* [[+DHCP]]
+* [[+BOOTP]]
+
 * HTTP  
 * HTTPS
 * IPP

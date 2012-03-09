@@ -6,3 +6,56 @@ Creation-Date: 2012-03-07T02:14:53+01:00
 Created Mittwoch 07 März 2012
 
 {{../../../../../Ipv4_pcket.png}}
+
+**Version **
+→ die ersten 4 Bit geben die Protokollversion , hier IPv4
+
+**IHL **
+→ 4 Bit Lännge des IP Headers
+
+**TOS (Type of Service)**
+→ 8 Bit die über Eigenschaften und Priorität
+
+**Lenght**
+→16 Bit, in der die Länge des Datensegments propagiert wird
+
+**Identifikation**
+→ 16 Bit, in der die Pakete nummeriert werden 
+
+**Flags**
+→ Bit 0 fest
+→ Bit 1 → 0 →  Fragementierung erlaubt
+             → 1 →  Fragmentierung nicht erlaubt
+→ Bit 2 → 0 → letztes bzw. einziges Fragment
+             → 1 → weitere Fragmente folgen
+
+**Fragment Offset**
+→ 13 Bit für die Positionsangabe von Fragmenten
+
+**TTL (TIME TO LIVE)**
+→ 8 Bit 
+→ Lebensdauer eines Paketes
+→ bei jedem Router wird die TTL um eins vermindert
+→ besitzt ein Paket eine TTL von 0 wird es vom Router verworfen
+
+**Protokoll**
+→ 8 Bit
+→ Welches Protokoll wird für die darüber liegenden Schicht angeboten
+→ Werte sind gemäß **RFC 3232** in einer Datenbank hinterlegt
+
+**Header Prüfsumme**
+→ 16 Bit
+→ Prüfsumme für den Header
+
+**IP-Adresse des Senders**
+→ 32 Bit lange IP-Adresse des Absenders
+
+**IP-Adresse des Empfängers**
+→ 32 Bit lange IP-Adresse des Empfängers
+
+**Optionen**
+→ Routing Optionen zur Diagnose
+
+**Padding**
+→ Füllbits um die Länge des Headers zu erreichen
+ 

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>DHCP</title>
+		<meta name='Generator' content='Zim 0.55'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+			
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+		
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+				<h1><a href="./Home.html" class="notebook">Notes:</a>
+			
+				
+									DHCP</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen">Linux Wissen</a></li>
+<ul>
+<li><a href="../../Accessabillity.html" title="Accessabillity">Accessabillity</a></li>
+<li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen">Benutzer und Gruppen</a></li>
+<li><a href="../../Bibliotheken.html" title="Bibliotheken">Bibliotheken</a></li>
+<li><a href="../../Booten.html" title="Booten">Booten</a></li>
+<li><a href="../../Dateien_verwalten.html" title="Dateien verwalten">Dateien verwalten</a></li>
+<li><a href="../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik">Datenrettung und Forensik</a></li>
+<li><a href="../../Drucken.html" title="Drucken">Drucken</a></li>
+<li><a href="../../Emacs_Editor.html" title="Emacs Editor">Emacs Editor</a></li>
+<li><a href="../../FHS.html" title="FHS">FHS</a></li>
+<li><a href="../../Filterprogramme.html" title="Filterprogramme">Filterprogramme</a></li>
+<li><a href="../../git_Vesionskontrolle.html" title="git Vesionskontrolle">git Vesionskontrolle</a></li>
+<li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen">Hardware und Systeminformationen</a></li>
+<li><a href="../../Hilfe_erhalten.html" title="Hilfe erhalten">Hilfe erhalten</a></li>
+<li><a href="../../Lokalisierung.html" title="Lokalisierung">Lokalisierung</a></li>
+<li><a href="../../Monitoring.html" title="Monitoring">Monitoring</a></li>
+<li><a href="../../Networking.html" title="Networking">Networking</a></li>
+<ul>
+<li><a href="../Dienste.html" title="Dienste">Dienste</a></li>
+<li><a href="../Grundlagen.html" title="Grundlagen">Grundlagen</a></li>
+<li><a href="../Protokolle.html" title="Protokolle">Protokolle</a></li>
+<ul>
+<li><a href="./ARP.html" title="ARP">ARP</a></li>
+<li><a href="./BOOTP.html" title="BOOTP">BOOTP</a></li>
+<li><strong>DHCP</strong></li>
+<li><a href="./IP.html" title="IP">IP</a></li>
+<li><a href="./NDP.html" title="NDP">NDP</a></li>
+</ul>
+<li><a href="../Tools.html" title="Tools">Tools</a></li>
+<li><a href="../xinetd.html" title="xinetd">xinetd</a></li>
+</ul>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
+<li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
+<li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
+<li><a href="../../root.html" title="root">root</a></li>
+<li><a href="../../Shell.html" title="Shell">Shell</a></li>
+<li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<li><a href="../../SQL.html" title="SQL">SQL</a></li>
+<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
+<li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
+<li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
+<li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools">Web Fetch Tools</a></li>
+<li><a href="../../X11.html" title="X11">X11</a></li>
+<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Donnerstag 08 März 2012<br>
+</p>
+
+<p>
+<ul>
+<li>Dynamic Host Configuration Protocol</li>
+<li>Dient zur zentralen Vergabe von IP Adressen und Netzwerkeinstellungen</li>
+<li>dadurch wird eine einfachere Verwaltung von Netzwerkclients ermöglicht</li>
+<li>für jedes Subnetz muss ein eigenen DHCP Server betrieben werden</li>
+<li>Router der verschienden Subnetze verknüpft und DHCP nutztz muss als DHCP-Relay konfiguriert sein</li>
+</ul>
+</p>
+
+
+<h4>Ports</h4>
+<p>
+Clients: Port 68<br>
+Server: Port 69<br>
+</p>
+
+<h4>Paketbeschreibung</h4>
+<p>
+<ol type="1" start="1">
+<li><strong>1 Byte op </strong>→  dhcpoffer; dhcprequest, dhcpbootrequest</li>
+<li><strong>1 Byte htype </strong>→ Netzwerktyp </li>
+<li><strong>1 Byte hlen </strong>→ Länge der Hardwareadresse</li>
+<li><strong>1 Byte hops </strong>→ Zahl der DHCP Relay Agenten</li>
+<li><strong>4 Byte xid </strong>→ Transaktion ID</li>
+<li><strong>2 Byte secs </strong>→ abgelaufene Leasetime</li>
+<li><strong>2 Byte flags </strong>→ Gültigkeit beim Client</li>
+<li><strong>4 Byte ciaddr </strong>→ IP Adresse des Clients</li>
+<li><strong>4 Byte yiaddr</strong> → zugeteilte IP-Adresse</li>
+<li><strong>4 Byte siaddr </strong> → IP Adresse des DHCP Servers</li>
+<li><strong>4 Byte giaddr </strong>→ IP Adresse des DHCP  Relay Routers</li>
+<li><strong>16 Byte chaddr </strong>→ MAC Adresse des Clients</li>
+<li><strong>64 Byte sname → </strong>Hostnam DHCP Server (Optional)</li>
+<li><strong>128 Byte file </strong>→ Dateinamen des BOOTP Images </li>
+</ol>
+<a href="./BOOTP.html" title="BOOTP">BOOTP</a><br>
+<ol type="1" start="15">
+<li><strong>312 Byte options</strong> → zusätzliche Optionen</li>
+</ol>
+</p>
+
+
+<h4>Zuweisungsoptionen</h4>
+<p>
+<ul>
+<li>IP-Adresse für Clients</li>
+<li>Netzwerkmaske und Subnetzmaske</li>
+<li>Default Gateway für Clients</li>
+<li>WINS Server für Microsoft </li>
+<li>DNS Server</li>
+<li>Zeit und NTP Server</li>
+</ul>
+<a href="../../Systemzeit/ntp.html" title="Linux Wissen:Systemzeit:ntp">Linux Wissen:Systemzeit:ntp</a><br>
+<strong>(missing Link NTP Server)</strong><br>
+<ul>
+<li>Proxy Konfiguration </li>
+</ul>
+</p>
+
+<p>
+<strong>RFC 2131,2132,3315,3342,3396,3942,4361,4833,5494</strong><br>
+</p>
+
+<h4>Lease</h4>
+<p>
+<code>Der Server vergibt für eine bestimmte Zeitspanne eine Adressse aus dem Adresspool. Diese bleibt für einen bestimmten</code><br>
+Zeitraum aktuell. (<strong>Leasetime</strong>)<br>
+</p>
+
+<h4>Aufbau und Konfiguration</h4>
+<p>
+<ul>
+<li>Vergabe durch den Dhcpd <strong>(missing link)</strong></li>
+</ul>
+Clientseitig: <a href="../../FHS/etc/dhclient.conf.html" title="Linux Wissen:FHS:etc:dhclient.conf">Linux Wissen:FHS:etc:dhclient.conf</a><br>
+Serverseitig: <a href="../../FHS/etc/dhcpd.conf.html" title="Linux Wissen:FHS:etc:dhcpd.conf">Linux Wissen:FHS:etc:dhcpd.conf</a><br>
+<a href="../Tools/dhcpdump.html" title="Networking:Tools:dhcpdump">Networking:Tools:dhcpdump</a><br>
+</p>
+
+<p>
+<strong>$$Debian Ubunt$$</strong><br>
+/<em>etc/network/interfaces</em><br>
+<ul>
+<li>eintragen von <code>iface &lt;ethN&gt; inet dhcp </code>→ dhcp verwenden</li>
+<li>eintragen von <code>iface &lt;ethN&gt; inect statitc </code>→ dhcp nicht verwenden</li>
+</ul>
+</p>
+
+<p>
+<strong>$SUSE$$</strong><br>
+/<em>etc/sysconfig/network </em><br>
+<ul>
+<li><code>BOOTPROTO='dhcp' → </code>dhcp verwenden</li>
+<li><code>BOOTPROTO='static' </code>→ dhcp nicht verwenden</li>
+</ul>
+</p>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+				Backlinks:						<a href='../Protokolle.html'>Linux Wissen:Networking:Protokolle</a></li>						<a href='../../FHS/etc.html'>Linux Wissen:FHS:etc</a></li>
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>
