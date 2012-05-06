@@ -19,7 +19,10 @@ Created Sonntag 24 April 2011
 **--show-config <UDI> **→ zeige Informationen zum Gerät mit der entsprechenden UDI
 **--dumb-db **→ dumpen der Hardwaredatenbank
 
-**vmstat **→ Informationen über Prozesse, Arbeitsspeicher, Paging, Block I/O 
+**vmstat [N]**→ Informationen über Prozesse, Arbeitsspeicher, Paging, Block I/O 
+**N → **aktualisiere die Ausgabe alle N Sekunden
+**-m **→ Anzeigen der Slapinfo
+**-a **→ Anzeigen von Benutzten/Unbenutzten Arbeitsspeicher
 
 __Hinweis: Benutzen von watch vmstat.__
 [[Linux Wissen:Monitoring:watch]]

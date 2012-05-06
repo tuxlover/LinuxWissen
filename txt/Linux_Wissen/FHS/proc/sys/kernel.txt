@@ -15,7 +15,7 @@ Created Dienstag 19 April 2011
 
 ///proc/sys/kernel/hostname //→ der Rechnername
 
-///proc/sys/kernel/modprobe// → Zugriffspfad zum Programm dass die Moduel nachläd
+///proc/sys/kernel/modprobe// → Zugriffspfad zum Programm dass die Module nachläd
 
 ///proc/sys/kernel/osrelease //→ Version des Kernels
 

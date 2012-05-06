@@ -15,6 +15,7 @@ Created Mittwoch 29 Juni 2011
 
 === Starten und Stoppen des Daemons ===
 **service mysql start**
+**systemctl start mysql.service**
 → Startet den Daemon
 → benötigt Rootrechte
 → Dauerhafftes hinzufügen mittels **chkconfig** oder **update-rc.d**

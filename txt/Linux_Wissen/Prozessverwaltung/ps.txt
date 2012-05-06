@@ -33,9 +33,38 @@ Gnu Optionen:
 **--forest **→ die Prozesshierarchie als Baum anzeigen
 
 **ps axo stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm** → Prozessinformationsausgabe formatieren
-//Beispiel://
-Alle Prozesse anzeigen
-''ps -ef''
+
+//Beispiele://
+//Alle Prozesse anzeigen//
+'''
+ps -ef 
+ps -A
+ps ax
+ps axu
+'''
+
+
+//Alle Prozesse anzeigen (long Format Ausgabe)//
+''ps -Al''
+
+//Alle Prozesse anzeigen inklusiver übergebener Parameter und Optionen//
+''ps -AlF''
+
+//Alle Prozesse inklusive Threads// 
+ps -AlFH
+
+//Threads nach Prozessen auflisten//
+''ps -AlLm''
+
+//Prozesse des Users Tux anzeigen//
+ps -U Tux -u Tux u
+
+//Nur die Prozesse des Mysqld anzeigen//
+//ps -C mysqld -o pid=//
+
+//Anzeigen des Namens von Prozess ID 1://
+ ''ps -p 1 -o comm=''
+''>> systemd''
 
 __Tipp: kill SIGNAL $(ps -A|awk '/<Name>/{print $1}' → alle Prozesse mit <Name> ein <SIGNAL> senden__
 wie killall
@@ -53,3 +82,17 @@ wie killall
 
 __Tipp benutzen Sie __**watch**__ um  Prozesse permanent zu beobachten.__
 [[Linux Wissen:Monitoring:watch]]
+
+
+**pgrep <Name> → **Alle Pids anzeigen die zu einem/oder mehrern Prozessen gehören die auf <Name> matchen
+**-u <User> **→ Ausgabe auf einen bestimmten User beschränken 
+                  → durch Kommata getrennte Namen werden wie  Oder behandelt
+                 → durch Leerzeichen getrennte Namen werden wie And behandelt  
+
+
+__Tricks:__
+anzeigen der Top 10 CPU Verbraucher
+''ps auxf | sort -nr -k 3 | head -10''
+
+anzeigen der Top10 Memory Verbraucher
+ps auxf | sort -nr -k 4 | head -10

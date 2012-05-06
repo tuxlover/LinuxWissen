@@ -15,7 +15,7 @@ Created Sonntag 17 Juli 2011
 → um Dateien komplett zum offline lesen herunterzuladen, muss **-p **verwendet werden
 **-c|--continue **→ abgebrochene Downloads von URL|URI wieder aufnehmen
 **-t N **→ abgebrochenen Downloads **N **mal wiederversuchen
-**--retry-confused **→ bei einem "connection refused" wird ein neuer Versuch gestartet
+**--retry-connrefused **→ bei einem "connection refused" wird ein neuer Versuch gestartet
 **-p **→ läd zusätzlich zur Website CSS Stile, Bilder und andere zugehörige Dateien herunter
 **-k **→ die Links der Website wiederherstellen
 **-E **→ Scriptdateien (php, asp) in .html umwandeln

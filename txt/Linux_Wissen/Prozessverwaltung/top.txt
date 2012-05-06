@@ -11,12 +11,14 @@ Created Donnerstag 21 April 2011
 **-n N** → stopt das Programm nach N durchläufen
 
 ===== Navigation innerhalb von top =====
+**f → **interaktive Hilfe
 **h** → Hilfe
 **k **→ Signal an Prozess senden
 **r **→ renice ( [[Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren]] )
+**A → **Sortieren des Verbrauchs nach verschiedenen Facilities
 **t l m **→ Zusammenfassung für Load Avg, Task, CPU Stats, Speicherinfomationen an|ausschalten
 **d,s  **→ Updateintervall setzen
- 
+ **z → **Farbe an/aus
 
 //Beispiel://
 ''top -d 4 -n 2''  zeigt das Programm ( Sekunden lang an mit je 2 Durchläufen

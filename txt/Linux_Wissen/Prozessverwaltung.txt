@@ -40,6 +40,7 @@ __Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vorde
 ===== Prozessinformationen einholen =====
 * **ps**
 * **pstree** 
+* **pgrep**
 [[Linux Wissen:Prozessverwaltung:ps]]
 
 * **top**

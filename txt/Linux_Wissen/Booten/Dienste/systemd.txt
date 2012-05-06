@@ -115,6 +115,6 @@ Anzeigen ob ein Subsystem eine Unit gemounted hat:
 [[Linux Wissen:Prozessverwaltung:Cgroups]]
 
 
-__ACHTUNG: Man verwechsle systemctl nicht mit sysctl.__
+__ACHTUNG: Man verwechsle systemctl nicht mit sysctl. __**(missing link sysctl)**
 [[+systemd-nspawn]]
 [[+systemd-analize]]

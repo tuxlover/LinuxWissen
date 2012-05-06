@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>ps</title>
-		<meta name='Generator' content='Zim 0.55'>
+		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -135,9 +135,54 @@ Gnu Optionen:<br>
 
 <p>
 <strong>ps axo stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm</strong> → Prozessinformationsausgabe formatieren<br>
-<em>Beispiel:</em><br>
-Alle Prozesse anzeigen<br>
-<code>ps -ef</code><br>
+</p>
+
+<p>
+<em>Beispiele:</em><br>
+<em>Alle Prozesse anzeigen</em><br>
+</p>
+<pre>
+ps -ef 
+ps -A
+ps ax
+ps axu
+</pre>
+
+
+<p>
+<em>Alle Prozesse anzeigen (long Format Ausgabe)</em><br>
+<code>ps -Al</code><br>
+</p>
+
+<p>
+<em>Alle Prozesse anzeigen inklusiver übergebener Parameter und Optionen</em><br>
+<code>ps -AlF</code><br>
+</p>
+
+<p>
+<em>Alle Prozesse inklusive Threads</em> <br>
+ps -AlFH<br>
+</p>
+
+<p>
+<em>Threads nach Prozessen auflisten</em><br>
+<code>ps -AlLm</code><br>
+</p>
+
+<p>
+<em>Prozesse des Users Tux anzeigen</em><br>
+ps -U Tux -u Tux u<br>
+</p>
+
+<p>
+<em>Nur die Prozesse des Mysqld anzeigen</em><br>
+<em>ps -C mysqld -o pid=</em><br>
+</p>
+
+<p>
+<em>Anzeigen des Namens von Prozess ID 1:</em><br>
+ <code>ps -p 1 -o comm=</code><br>
+<code>&gt;&gt; systemd</code><br>
 </p>
 
 <p>
@@ -164,12 +209,32 @@ wie killall<br>
 </p>
 
 
+<p>
+<strong>pgrep &lt;Name&gt; → </strong>Alle Pids anzeigen die zu einem/oder mehrern Prozessen gehören die auf &lt;Name&gt; matchen<br>
+<strong>-u &lt;User&gt; </strong>→ Ausgabe auf einen bestimmten User beschränken <br>
+                  → durch Kommata getrennte Namen werden wie  Oder behandelt<br>
+                 → durch Leerzeichen getrennte Namen werden wie And behandelt  <br>
+</p>
+
+
+<p>
+<u>Tricks:</u><br>
+anzeigen der Top 10 CPU Verbraucher<br>
+<code>ps auxf | sort -nr -k 3 | head -10</code><br>
+</p>
+
+<p>
+anzeigen der Top10 Memory Verbraucher<br>
+ps auxf | sort -nr -k 4 | head -10<br>
+</p>
+
+
 			<!-- End wiki content -->
 			</div>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>						<a href='./Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>
+				Backlinks:						<a href='./Cgroups/Cgroups_verwalten.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups verwalten</a></li>						<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

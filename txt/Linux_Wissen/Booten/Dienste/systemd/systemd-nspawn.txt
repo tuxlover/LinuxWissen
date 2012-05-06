@@ -10,7 +10,7 @@ Created Donnerstag 09 Februar 2012
 * nutzt Container mit eigener PID und Dateisystem-ID
 * ermöglicht das Wechseln in ein anderes System 
 * schränkt die Kommuniaktion des Kernels auf rw ein (/sys /proc/sys)
-* einschränken der Netzwerkschnittstellen auf dei gelauscht werden kann
+* einschränken der Netzwerkschnittstellen auf die gelauscht werden kann
 * virtualiserit PID 1
 
 

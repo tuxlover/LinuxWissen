@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2011-04-19T15:53:51+02:00
 
-====== Zugriffsrechte ======
+======  Zugriffsrechte ======
 Created Dienstag 19 April 2011
 
 ===== Rechte Oktal =====
@@ -15,7 +15,7 @@ t = 1ugo  → Sticky Bit
 		→ nur der Eigentümer kann die Datei löschen, alle anderen dürfen aber schreiben und lesen 
                → Beachte :> <Datei>( [[Linux Wissen:Shell:Standardkanäle]] )
 		→ die Datei wird im Speicher vorgehalten und nicht ausgelagert oder zurückgeschrieben
-		→ beim großen T wird 
+		→ beim großen T wird  
 
 
 S = 2ugo → SetGID Bit 
