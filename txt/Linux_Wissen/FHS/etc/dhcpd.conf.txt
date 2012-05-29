@@ -7,7 +7,7 @@ Created Freitag 09 März 2012
 
 * nach dem Editieren der Konfigurationsdatei muss der Server neu gestartet werden
 * um Fehler aufzuspüren benutzt man **dhcpdump**
-[[Linux Wissen:Networking:Tools:dhcpdump]]
+Linux Wissen:Networking:Tools:dhcpdump
 ++
 '''
 # Standard Lease Time in Sekunden
@@ -44,5 +44,5 @@ fixed address 192.168.0.33;
 
 ++
 
-== !!Achtung!!  ==
+== !!Achtung!! ==
 beachten der Klammerung und das Semikolon am Ende jeder Direktive.

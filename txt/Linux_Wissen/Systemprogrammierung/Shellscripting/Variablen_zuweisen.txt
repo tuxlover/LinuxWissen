@@ -16,7 +16,7 @@ Created Dienstag 26 April 2011
 → Weist einem Array Variablen zu
 
 **unset VAR** →  löschen der Variablen VAR
-[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]]
+Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung
 
 **VAR[n]=val **
 →  Weist dem **n**-ten Element des Arrays **VAR **den Wert **val **zu. 

@@ -7,7 +7,7 @@ Created Freitag 23 September 2011
 
 __Hinweis: nach dem Bearbeiten oder Neuerstellen einer Konfigurationsdatei muus__
 __der Dienst mittles __**killall -1 xinetd **__oder __**service  xinetd restart **__seine Konfiguration neu einlesen.__
-[[Linux Wissen:Prozessverwaltung:kill]]
+Linux Wissen:Prozessverwaltung:kill
 
 Aufbau der xinetd.conf:
 +++
@@ -52,7 +52,7 @@ service <Dienst>
 			//yes //→ Dienst wird nur einmal gestartet, wartet auf das Ende des Dienstes bevor ein neuer Prozess gestartet wird
 			//no //→ Dienst darf mehrmals aufgerufen werden (multi threated)
 		//user//
-			→ gibt den Nutzer an, mit dessen Rechten der Dienst gestartet wird ([[Linux Wissen:Benutzer und Gruppen]])
+			→ gibt den Nutzer an, mit dessen Rechten der Dienst gestartet wird (Linux Wissen:Benutzer und Gruppen)
 
 		//instamces//
 			→ impliziert //wait=no //und sollte immer konfiguriert werden, wenn //wait=no// verwendet wird

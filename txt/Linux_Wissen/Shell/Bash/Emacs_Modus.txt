@@ -6,7 +6,7 @@ Creation-Date: 2011-04-15T15:39:13+02:00
 Created Freitag 15 April 2011
 
 === Strg+c ===
-→ Befehl abbrechen, Signal STOP Senden ( [[Shell:Jobkontrolle]] )
+→ Befehl abbrechen, Signal STOP Senden ( Shell:Jobkontrolle )
 
 === Strg+d ===
 → den Eingabestrom beenden 
@@ -16,7 +16,7 @@ Created Freitag 15 April 2011
 === Strg+z ===
 → Befehl unterbrechen, anhalten aber nicht beenden
                 → danach kann mittels **fg **und **bg ** der Befehl in der Vorder- | Hintergrund gestellt werden
-[[Shell:Jobkontrolle]]
+Shell:Jobkontrolle
 ----
 ----
 
@@ -31,7 +31,7 @@ Created Freitag 15 April 2011
 === Strg+g ===
 → durchsuchen der Shellhistory beenden 
 ----
-[[Linux Wissen:Shell:Bash:History]]
+Linux Wissen:Shell:Bash:History
 
 === Strg+w ===
 → lösche ein Wort von rechts nach links (<<)

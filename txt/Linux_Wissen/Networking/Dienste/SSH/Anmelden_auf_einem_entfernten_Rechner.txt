@@ -20,7 +20,7 @@ __Achtung: Nur das Überprüfen des Hostskeys gewährleistet dass keiner die Ver
 
  //~/.ssh/knonw_hosts //→ öffentliche Schlüssel die vom Nutzer akzeptiert werden und denen der Nutzer vertraut
 ///etc/ssh/ssh_known_hosts //→ Systemweite Liste der bekannten HostKeys die  von diesem Rechner akzeptiert werden und denen vertraut wird
-[[Linux Wissen:FHS:etc:ssh:ssh++ssh known hosts]]
+Linux Wissen:FHS:etc:ssh:ssh++ssh known hosts
 
 __Trick: Einen Befehl auf mehereren PCs ausführen:__
 +++

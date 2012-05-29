@@ -8,7 +8,7 @@ Created Donnerstag 01 März 2012
 //[Device]//
 → enthält Informationen über Geräte die von **udev **gesteuert und eingerichtet  werden
 → Device Units sind nach nach dem Gerät benannt, dass sie steuern (dev-sda1.device)
-[[Linux Wissen:Hardware und Systeminformationen:udevadm]]
+Linux Wissen:Hardware und Systeminformationen:udevadm
 
 	//SYSTMED_WANTS=//
 

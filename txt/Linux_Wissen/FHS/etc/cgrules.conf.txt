@@ -23,7 +23,7 @@ Created Mittwoch 18 Januar 2012
 → wird diese Spalte ausgelassen, so werden alle Prozesse für diesen Nutzer eingeschränkt
 → der Befehl kann als absuluter Pfad, als PID oder als solches spezifiziert sein
 → wird nur der Befehl angegeben muss dieser in ''PATH'' der verwendeten Shell sein
-[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]]
+Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash
 
 3. Spalte:  Name der kontrollierenden Subsysteme in der entsprechenden Gruppe
 → durch Komma getrennte Liste von Subsystemen die in eine Hierarchie eingehängt sind die auf die Cgroups in der 4. Spalte verweisen

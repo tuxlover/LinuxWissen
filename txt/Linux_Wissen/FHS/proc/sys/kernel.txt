@@ -9,7 +9,7 @@ Created Dienstag 19 April 2011
 
 ///proc/sys/kernel/ctr-alt-del// → Was passiert beim Druck auf Strg-Alt-Entf 
                                                    → einzustellen in ///etc/inittab//
-[[Linux Wissen:FHS:etc:inittab]]
+Linux Wissen:FHS:etc:inittab
 
 ///proc/sys/kernel/domainname// → der NIS **(missing link) **Domainname des Rechners
 

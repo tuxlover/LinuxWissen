@@ -15,8 +15,8 @@ Created Dienstag 17 Januar 2012
 //Beispiel://
 ''mount -t cgroup -o cpu,cpuset,memory cpu_mem /cgroup/cpu_mmem'' 
 
-[[Linux Wissen:Dateien verwalten:Dateien anlegen und löschen]]
-[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+Linux Wissen:Dateien verwalten:Dateien anlegen und löschen
+Linux Wissen:Partitionen und Dateisysteme:Mounten
 
 __Hinweis: Entsprechen können Hierarchien wieder durch unmounten entfernt werden. Hierarchieen die andere Cgroup Kontrollgruppen dieser Hierarchie__
 __verwenden, verbleiben aktiv im Kernel.__

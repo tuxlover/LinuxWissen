@@ -35,4 +35,4 @@ __!!! Der Zugriff wird dann Protokolliert !!!__
 → alle Dienste werden verboten, ausser die von der Domaine private.example.com kommen
 
 __Hinweis: Benutzen Sie __**tcpdchk **__um die Korrektheit dieser Dateien zu überprüfen.__
-[[Linux Wissen:Networking:Tools:tcpdchk]]
+Linux Wissen:Networking:Tools:tcpdchk

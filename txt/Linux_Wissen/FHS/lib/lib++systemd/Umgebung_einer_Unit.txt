@@ -21,16 +21,16 @@ Created Donnerstag 01 März 2012
 	//SupplementaryGroups=//<Gruppe1>,...
 	→ setzen der zusätzlichen Gruppen, die ein Prozess angehören soll
 	→ <Gruppe> kann entweder ein Gruppenname oder die GID sein
-[[Linux Wissen:Benutzer und Gruppen]]
+Linux Wissen:Benutzer und Gruppen
 
 //Nice=//<-20<=N<=19>
 → setzt den Nice Wert des Prozesse die von dieser Unit gestartet werden
-[[Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren]]
+Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren
 	
 	//UMask=7777//
 	→ setzen der umask der von diesem Prozess erzeugten Dateien
 	→ Standard ist 0022
-[[Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask]]
+Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask
 
 	//Environment=Var1=<wert> Var2=<wer2> ...//
 	→ setzend er Umgebungsvariablen den dieser Prozess benutzen soll
@@ -61,7 +61,7 @@ Created Donnerstag 01 März 2012
 		**syslog+console **→ An den syslog Daemon und die Standard Fehlerkonsole senden
 		**kmsg+console** → An den Kernel Ring Buffer und die Standard Fehlerkonsole senden
 
-[[Linux Wissen:Systemprotokollierung]]
+Linux Wissen:Systemprotokollierung
 
 	//StandardError=//
 	→ nimmt die gleichen Werte wie //StandardOutput //auf
@@ -83,7 +83,7 @@ Created Donnerstag 01 März 2012
 	//SyslogLevel=//**emerg, alert, crit, err, warning, notice, info, debug**
 	→ Spezifiziert den Loglevel
 	→ Standard ist **info**
-[[FHS:etc:syslog.conf]]
+FHS:etc:syslog.conf
 
 	//SyslogPrefix=//**true|false**
 	→ wenn auf **true **gesetzt, wird der Prefix der in SyslogLevel spezifiziert wurde ebenfalls an **kmesg **oder **syslog **weitergegeben
@@ -91,8 +91,8 @@ Created Donnerstag 01 März 2012
 	//TCPWrapName=//
 	→ Name des Socket aktivierten Service durch TCP Wrapper
 	→ dieser Name wird vom **tcpd **genutzt um die Zugriffsberechtigungen der aktuellen Verbindung zu überprüfen
-[[Linux Wissen:Networking:xinetd]]
-[[FHS:etc:inetd.conf]]
+Linux Wissen:Networking:xinetd
+FHS:etc:inetd.conf
 	
 //       LimitCPU=, LimitFSIZE=, LimitDATA=, LimitSTACK=, LimitCORE=, LimitRSS=, LimitNOFILE=, LimitAS=, LimitNPROC=, LimitMEMLOCK=, LimitLOCKS=,//
 //       LimitSIGPENDING=, LimitMSGQUEUE=, LimitNICE=, LimitRTPRIO=, LimitRTTIME=//
@@ -107,7 +107,7 @@ Created Donnerstag 01 März 2012
 	
 	//ControlGroupAttribute= <Controler> <Wert>//
 	→ siehe 
-[[Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme]]
+Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme
 	→ setzen von Attributen für ein Subsystem
 	→ Kann mehrfach Konfiguriert werden
 
@@ -116,7 +116,7 @@ Created Donnerstag 01 März 2012
 
 BlockIOReadBandwidth=, BlockIOWriteBandwidth=,BlockIOWeight=,DeviceAllow=, DeviceDeny=,MemoryLimit=, MemorySoftLimit=,CPUShares=
 
-[[Linux Wissen:Prozessverwaltung:Cgroups]]
+Linux Wissen:Prozessverwaltung:Cgroups
 
 	//       ReadWriteDirectories=, ReadOnlyDirectories=, InaccessibleDirectories=//<PATH>
 		→ setzen weiterer Restriktionen 
@@ -133,8 +133,8 @@ BlockIOReadBandwidth=, BlockIOWriteBandwidth=,BlockIOWeight=,DeviceAllow=, Devic
 		**shared **→ weitere Spiegel des Mountpunktes sind erlaubt
 		**slave** → kann nur an den Master propagieren
 		**private **→ kann nicht proagieren
-[[Linux Wissen:Partitionen und Dateisysteme:Mounten:Shared Mount]]
-[[Linux Wissen:Partitionen und Dateisysteme:Mounten:Slave Mount]]
-[[Linux Wissen:Partitionen und Dateisysteme:Mounten:Unbindable Mount]]
+Linux Wissen:Partitionen und Dateisysteme:Mounten:Shared Mount
+Linux Wissen:Partitionen und Dateisysteme:Mounten:Slave Mount
+Linux Wissen:Partitionen und Dateisysteme:Mounten:Unbindable Mount
 
 **man 5 systemd.exec**

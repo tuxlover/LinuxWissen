@@ -9,7 +9,7 @@ Created Dienstag 06 März 2012
 * IPv6 spezifisch
 * automatische Konfiguration von IPv6-Adressen
 * Wegfall der Subnetzmasken (
-[[Networking:Grundlagen:IPv4 Adressen:Netzmasken]])
+Networking:Grundlagen:IPv4 Adressen:Netzmasken)
 * erleichterung der Fehlersuche durch ICMPv6 Status Nachrichten
 **RFC 3122,4861**
 

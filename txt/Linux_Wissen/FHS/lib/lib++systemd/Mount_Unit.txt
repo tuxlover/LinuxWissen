@@ -8,12 +8,12 @@ Created Donnerstag 01 März 2012
 //[Mount]//
 → falls in der ///etc/fstab //**comment=systemd.mount **eingetragen ist, wird systemd eine Abhängigkeit vom Typ //Wants// für remote-fs.target|local-fs.target erstellen
 → Einstellungen in /etc/fstab wird jedoch bevorzugt behandelt
-[[FHS:etc:fstab]]
+FHS:etc:fstab
 
 	//What=<Pfad zur Gerätedatei>//
 	→ Der absolute Pfad zu einer der Gerätedateien in /dev
 
-[[FHS:dev]]
+FHS:dev
 	
 	//Where=<Mountpunkt>//
 	→ Der absolute Pfad zum Mountpunkt
@@ -25,7 +25,7 @@ Created Donnerstag 01 März 2012
 	→ Die Berechtigungen mit dem der Mountpunkt angelegt wird
 	→ wenn nicht angegeben, ist der Wert 0755
 
-[[Linux Wissen:Dateien verwalten:Zugriffsrechte]]
+Linux Wissen:Dateien verwalten:Zugriffsrechte
 
 	//Options=//
 	→ Optionen die von **man mount** verstanden werden

@@ -17,7 +17,7 @@ __Hinweis: !!! Ist keine der beiden Dateien vorhanden gelten beide Dateien als l
 __!!! Der Zugriff wird dann Protokolliert !!!__
 
 __Hinweis: Benutzen Sie __**tcpdchk **__um die Korrektheit dieser Dateien zu überprüfen.__
-[[Linux Wissen:Networking:Tools:tcpdchk]]
+Linux Wissen:Networking:Tools:tcpdchk
 
 BeispielSkelleteon für ///etc/hosts.allow //und ///etc/hosts.deny//
 +++
@@ -38,7 +38,7 @@ BeispielSkelleteon für ///etc/hosts.allow //und ///etc/hosts.deny//
 	//linger N //**→ **gibt an wie lange nach Verbindungsende versucht wird Dateien weiter zu übertragen
 	//banners <Pfad> //**→ **sendet die unter <Pfad> führende Datei als Nachricht
 	//nice N //→ setzen des Nicewertes für den Netzwerkdienstes ( 
-[[Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren]] )
+Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren )
 	//user <benutzer>.<gruppen> //→ festlegen des vom  Netzwerkdienst zu nutzende Nutzers.Gruppe
 	//setenv <Variable> <Wert> //→ setzen einer Umgebungsvariablen
 	//twist //→ Programm das statt des angeforderten Dienstes aufgerufen wird und beim **Client** ausgeführt wird 

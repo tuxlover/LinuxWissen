@@ -16,20 +16,21 @@ Created Montag 18 April 2011
 
 **<Optionen>:**
 **-name '<Muster>'**→  sucht nach Dateinamen auf die <Muster> passt, 
-[[Linux Wissen:Shell:Wildcards]] 
-[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke]]
+Linux Wissen:Shell:Wildcards 
+Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke
 **-type <[b][c][d][f][l][p][s]> **→ die Datei ist vom Dateityp:
 										b=blockorientiertes Gerät **(missing Link)**
 										--
 										d=Verzeichnis
 										f=normale Datei  
-								[[Linux Wissen:Dateien verwalten:Dateien anlegen und löschen]] 
+								Linux Wissen:Dateien verwalten:Dateien anlegen und löschen 
 										--
 										l=symbolischer Link  
-								[[Linux Wissen:Dateien verwalten:Links]] 
+								Linux Wissen:Dateien verwalten:Links 
 										p=FIFO Pipe
 										s=Unix Domain Socket
 **-user|-group <Name> **→ nach Dateien suchen die dem Nutzer <Name> bzw. der Gruppe <Name> gehören
+**_nouser|-nogroup **→ alle Dateien die zu keiner Nutzer/keiner Gruppe gehören
 **-size +|-<b|c|k|M|G> **→ suche nach Dateien mit mindest so groß wie|kleiner als in 512-byte blocks|bites|kilobites|	
 					      Megabites|Gigabites
 **-perm **→ Suchen nach Berechtigunen, es können Okatale Werte und Symbolische Werte als Argument übergeben werden
@@ -93,4 +94,4 @@ __finde defekte symbolische Links__
 ''find  -L / -xtype l -ls  | awk 'NF > 12 {print $11}' | sort -u''
 
 __finde Dateien die das Setuid oder Setgid Bit gesetzt haben__
-''find / '(' -perm 4000 -o -perm 2000 ')' -type f -exec ls -lisah {} \''
+''find / '(' -perm 4000 -o -perm 2000 ')' -type f -exec ls -lisah {} \;''

@@ -11,7 +11,7 @@ Das Tool zypper ist seit Version 11.0 bei SuSE zur Paketverwaltung verwendet. Es
 Ein Repositorie kann ein lokaler Pfad, oder eine Adresse auf einem entfernteen Webserver sein, der entweder 
 ftp oder http spricht und halten die Rpms oder auch delta.rpms vor.
 * ///etc/zypp/zypper.conf// (
-[[Linux Wissen:FHS:etc]]) ist die globale Konfigurationsdatei für Aussehen und Verhalten von zypper
+Linux Wissen:FHS:etc) ist die globale Konfigurationsdatei für Aussehen und Verhalten von zypper
 * ///etc/zypp/zypp.conf //ist die globale Konfigurationsdatei für das Verhalten beim Paketmanagemt
 
 **zypper <Globale Optionen> <Aktion> <Aktionsoptionen>**

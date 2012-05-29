@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Funktionen</title>
+		<title>Optionen für Perl</title>
 		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Funktionen</h1>
+									Optionen für Perl</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -68,29 +68,21 @@
 <li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
 <li><a href="../../root.html" title="root">root</a></li>
 <li><a href="../../Shell.html" title="Shell">Shell</a></li>
-<ul>
-<li><a href="../Arten_der_Shell.html" title="Arten der Shell">Arten der Shell</a></li>
-<li><a href="../Aufrufen_der_Shell.html" title="Aufrufen der Shell">Aufrufen der Shell</a></li>
-<li><a href="../Bash.html" title="Bash">Bash</a></li>
-<ul>
-<li><a href="./Aliasse.html" title="Aliasse">Aliasse</a></li>
-<li><a href="./Emacs_Modus.html" title="Emacs Modus">Emacs Modus</a></li>
-<li><strong>Funktionen</strong></li>
-<li><a href="./History.html" title="History">History</a></li>
-<li><a href="./inputrc.html" title="inputrc">inputrc</a></li>
-<li><a href="./Optionen_f%C3%BCr_die_Bash.html" title="Optionen für die Bash">Optionen für die Bash</a></li>
-<li><a href="./Shell_Varibalen_und_die_Umgebung.html" title="Shell Varibalen und die Umgebung">Shell Varibalen und die Umgebung</a></li>
-</ul>
-<li><a href="../Befehle.html" title="Befehle">Befehle</a></li>
-<li><a href="../Jobkontrolle.html" title="Jobkontrolle">Jobkontrolle</a></li>
-<li><a href="../rbash.html" title="rbash">rbash</a></li>
-<li><a href="../Shells_und_Subshells_beenden.html" title="Shells und Subshells beenden">Shells und Subshells beenden</a></li>
-<li><a href="../Standardkan%C3%A4le.html" title="Standardkanäle">Standardkanäle</a></li>
-<li><a href="../Wildcards.html" title="Wildcards">Wildcards</a></li>
-</ul>
 <li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
 <li><a href="../../SQL.html" title="SQL">SQL</a></li>
 <li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<ul>
+<li><a href="../Awk.html" title="Awk">Awk</a></li>
+<li><a href="../C.html" title="C">C</a></li>
+<li><a href="../C%2B%2B.html" title="C++">C++</a></li>
+<li><a href="../Perl.html" title="Perl">Perl</a></li>
+<ul>
+<li><strong>Optionen für Perl</strong></li>
+</ul>
+<li><a href="../Python.html" title="Python">Python</a></li>
+<li><a href="../Sed.html" title="Sed">Sed</a></li>
+<li><a href="../Shellscripting.html" title="Shellscripting">Shellscripting</a></li>
+</ul>
 <li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
 <li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
 <li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
@@ -105,45 +97,11 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 15 Januar 2012<br>
+Created Dienstag 22 Mai 2012<br>
 </p>
 
 <p>
-<ul>
-<li>längere Befehle und Prozeduren </li>
-<li><em>bashrc </em>oder in derNutzerspezifischen <em>~/.bashrc</em> defineirt werden in der globalen</li>
-</ul>
-Linux Wissen:Systemprogrammierung:Shellscripting:Funktion<br>
-</p>
-
-<p>
-<strong>function &lt;Funktionsname&gt; </strong>→ definieren der Funktion<br>
-<a href="./Shell_Varibalen_und_die_Umgebung.html" title="Shell Varibalen und die Umgebung">Shell Varibalen und die Umgebung</a><br>
-</p>
-
-<p>
-<em>Beispiel</em><br>
-+++<br>
-</p>
-<pre>
-spwd () 
-{ 
-    ( IFS=/;
-    set $PWD;
-    if test $# -le 3; then
-        echo "$PWD";
-    else
-        eval echo \"..\${$(($#-1))}/\${$#}\";
-    fi )
-}
-</pre>
-
-<p>
-+++<br>
-</p>
-
-<p>
-mit <strong>set </strong>ohne Angabe einer Option können alle bekannten Funktionen angezeigt werden<br>
+<strong>-v </strong>→ Anzeigen der Versionsnummer<br>
 </p>
 
 
@@ -152,7 +110,7 @@ mit <strong>set </strong>ohne Angabe einer Option können alle bekannten Funktio
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:
+				Backlinks:						<a href='../Perl.html'>Linux Wissen:Systemprogrammierung:Perl</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

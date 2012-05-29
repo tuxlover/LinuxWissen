@@ -7,7 +7,7 @@ Created Freitag 13 Januar 2012
 
 * Beispiel Unit für den systemd 
 * selbsterstellte Units werden hierher kopiert
-[[FHS:lib:lib++systemd]]
+FHS:lib:lib++systemd
 +++
 '''
 [Unit]

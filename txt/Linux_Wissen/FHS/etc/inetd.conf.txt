@@ -8,8 +8,8 @@ Created Freitag 23 September 2011
 * Konfigurationsdatei des **inetd **Internet Daemons
 * nach Konfiguration des Daemons muss dieser mit SIGHUP Signal dazu veranlasst werden seine Konfiguration neu einzulesen
 (**killall -1 inetd, service inetd reload|restart**) 
-[[Linux Wissen:Prozessverwaltung:kill]]
-[[Linux Wissen:Booten:Dienste]]
+Linux Wissen:Prozessverwaltung:kill
+Linux Wissen:Booten:Dienste
 * die Dienste werden zusätzlich von der Datei ///etc/services// gemappt
 [[services]]
 

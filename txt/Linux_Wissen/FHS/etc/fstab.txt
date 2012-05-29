@@ -41,10 +41,10 @@ __Für mehr sicherheit sollte man folgende Mountoptionen für Verzeichnisse vors
 3. Spalte: Typ des Dateisystems
 
 4. Spalte: Bootoptionen, siehe mount
-[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+Linux Wissen:Partitionen und Dateisysteme:Mounten
 
 5. Spalte: kann 1 oder 0 sein und sagt dem **dump (missing link) **Befehl ob ein dump durchgeführt werden soll oder nicht. Ist dieser Wert 0 so wird dump keinen 
 Dateisystem dump druchführen.
 
 6. Spalte: Reihenfolge in der **fsck** den check durchführt. Falls dieser Wert auf 0 gesetzt wurde, führe keinen fsck durch.
-[[Linux Wissen:Partitionen und Dateisysteme:Dateisysteme]]
+Linux Wissen:Partitionen und Dateisysteme:Dateisysteme

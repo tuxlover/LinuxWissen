@@ -53,7 +53,7 @@ Created Dienstag 24 Januar 2012
 
 === ACHTUNG ===
 __: Sie müssen __**memory.limits_in_bytes **__setzen, bevor es möglich  ist __**memory.memsw.limits_in_bytes**__ zu setzen. Diese Reihenfolge muss auch in der Datei __//*/etc/cgconfig.conf //__ berücksichtigt werden.__
-[[Linux Wissen:FHS:etc:cgconfig.conf]]
+Linux Wissen:FHS:etc:cgconfig.conf
 
 **memory.failcnt**
 → wie oft wurden Limits die durch **memory.limits_in_bytes **gesetzt wurden, erreicht

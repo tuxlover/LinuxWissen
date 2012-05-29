@@ -10,9 +10,9 @@ Created Donnerstag 08 März 2012
 * bei SUSE heißt diese Datei /etc/networks
 * Konfigurationsdatei für **ifup **
 
-=== !!ACHTUNG!!  ===
+=== !!ACHTUNG!! ===
 __Bei openSUSE wird die Konfiguration des Netzwerkes und ihere Schnittstellen in der Datei /etc/sysconfig/network/*.cfg vorgenomen.__
-[[Linux Wissen:Networking:Tools:ifup und ifdown]]
+Linux Wissen:Networking:Tools:ifup und ifdown
 
 ++
 '''

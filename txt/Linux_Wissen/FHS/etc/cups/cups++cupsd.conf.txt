@@ -8,7 +8,7 @@ Created Dienstag 27 September 2011
 ///etc/cups/cupsd.conf//
 * Konfigurationsdatei des Druckerserver 
 * nach dem Editieren dieser Dateien muss der Drucker-Server mit **service cups restart **neu gestartet werden 
-[[Linux Wissen:Drucken]]
+Linux Wissen:Drucken
 +++
 '''
 LogLevel				warn
@@ -76,7 +76,7 @@ DefaultPolicy 		default
 			→ Standard ist ///var/log/cups/error_log//
 		//Path// → Pfad zur Logdatei 
 		//syslog //→ an den Syslog Daemon senden (
-[[Linux Wissen:Systemprotokollierung]])
+Linux Wissen:Systemprotokollierung)
 
 	//LogLevel → //Log-Level-Tiefe für das //ErrorLog//
 			→ Standrard ist warn

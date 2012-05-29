@@ -42,7 +42,7 @@ Server: Port 69
 * WINS Server für Microsoft 
 * DNS Server
 * Zeit und NTP Server
-[[Linux Wissen:Systemzeit:ntp]]
+Linux Wissen:Systemzeit:ntp
 **(missing Link NTP Server)**
 * Proxy Konfiguration 
 
@@ -54,9 +54,9 @@ Zeitraum aktuell. (**Leasetime**)
 
 === Aufbau und Konfiguration ===
 * Vergabe durch den Dhcpd **(missing link)**
-Clientseitig: [[Linux Wissen:FHS:etc:dhclient.conf]]
-Serverseitig: [[Linux Wissen:FHS:etc:dhcpd.conf]]
-[[Networking:Tools:dhcpdump]]
+Clientseitig: Linux Wissen:FHS:etc:dhclient.conf
+Serverseitig: Linux Wissen:FHS:etc:dhcpd.conf
+Networking:Tools:dhcpdump
 
 **$$Debian Ubunt$$**
 ///etc/network/interfaces//

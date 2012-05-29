@@ -15,13 +15,13 @@ Created Donnerstag 22 September 2011
 			M → Permanent
 			P → Published
 
-[[Networking:Protokolle:ARP]]
+Networking:Protokolle:ARP
 
 **-a **→ Ausgabe im BSD-Format <Broadcast> at <MAC> <Hwtype> on <Iface>
 **-d|--delete <Hostname>|<IP-Adresse> **→ löschen von Rechner aus dem Arp-Cache
 **-s|--set <Hostname>|<IP-Adresse> **→ hinzufügen zum Arp-Cache
 **-f |--file [<Datei>] → **setzen des Arp Caches aus Datei, wird <Datei> nicht angegben wird //*/etc/ethers// verwendet
-[[Linux Wissen:FHS:etc:ethers]]
+Linux Wissen:FHS:etc:ethers
 
 **arpwatch **
 → den Netzwerkverkehr auf gespoofte arp Pakete überwachen

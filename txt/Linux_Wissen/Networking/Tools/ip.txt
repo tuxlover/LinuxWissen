@@ -49,6 +49,6 @@ Created Donnerstag 22 September 2011
 ''ip link set down dev <ethN>'' → NIC <ethN> herunterafahren
 ''ip a'' → auflisten aller NICs
 
-[[Networking:Grundlagen:IPv4 Adressen]]
-[[Networking:Grundlagen:IPv6 Adressen]]
-[[Networking:Grundlagen:MAC Aressen]]
+Networking:Grundlagen:IPv4 Adressen
+Networking:Grundlagen:IPv6 Adressen
+Networking:Grundlagen:MAC Aressen

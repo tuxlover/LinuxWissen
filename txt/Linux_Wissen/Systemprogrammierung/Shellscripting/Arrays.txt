@@ -12,7 +12,7 @@ Created Montag 10 Oktober 2011
 
 **$**{**ARRAY[@]} **→ Zugriff auf ein Array, wie //"Wert1" "Wert2" "Wert3"//
 **${ARRAY[*]} → **Zugriff auf ein Array wie "//Wert1<IFS>WER2<IFS> ..."//, wobei IFS die Internal Field Seperator Variable ist 
-([[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]])
+(Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash)
 **${!ARRAY[@]}|${!ARRAY[*]}** → Zugriff auf die einzelen Indizies des Arrays
 
 **${#ARRAY[@]} **→ Die Länge des Arrays

@@ -10,8 +10,8 @@ Created Dienstag 17 Januar 2012
 === Ohne Tools ===
 * mit mkdir kann eine untergeordnet Cgroup erstellt werden
 * Die Rechte für die **tasks **Datei und die **Hierarchie** muss dann mit **chown** gesetzt werden
-[[Linux Wissen:Dateien verwalten:Dateien anlegen und löschen]]
-[[Linux Wissen:Dateien verwalten:Zugriffsrechte]]
+Linux Wissen:Dateien verwalten:Dateien anlegen und löschen
+Linux Wissen:Dateien verwalten:Zugriffsrechte
 
 **mkdir /<Cgroup Hierarchie>/<Group>**
 
@@ -31,7 +31,7 @@ Created Dienstag 17 Januar 2012
 **-g <Hierarchie>:<Cgroup Subpfad> **
 → durch Komma getrennte Liste on Cgroup und den dazugehörenden Subystemen
 → als <Cgroup Subpfad> wird ein relativ zu relativ zur Hierachie ,die mit diesem Subsystem verknüpft ist, Subpfad angegegeben
-[[Linux Wissen:Benutzer und Gruppen]]
+Linux Wissen:Benutzer und Gruppen
 
 //Beispiel://
 Erstellen einer Croup mit Namen httpd unter Verwendung der Hierarchien **cpu_limit** und **mem_limit**

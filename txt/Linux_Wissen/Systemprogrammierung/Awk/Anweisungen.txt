@@ -41,7 +41,7 @@ __Hinweis: Formatierunsoptionen lassen sich miteinander kombinieren.__
 → globales Ersetzen des Regilären Ausdrucks **r** durch einen String **s**, für einen Datenstrom** t**
  → gebe die Anzahl der Ersetzungen aus
 → wird **t **nicht mit angegeben , wird **$0 **verwendet
-[[Linux Wissen:Systemprogrammierung:Awk:Variablen]]
+Linux Wissen:Systemprogrammierung:Awk:Variablen
 
 ** gensub(r,s,h,[t]) **
 → ersetze den Regulären Ausdruck **r **durch String **s** an Anzahl des Matches **h **für einen Datenstrom **t ** 
@@ -105,6 +105,6 @@ __Hinweis: Formatierunsoptionen lassen sich miteinander kombinieren.__
 **x ~y **→ 		x entspricht der Regex y
 **x !~ y** → 		x entspricht nícht der Regex y
 
-[[Linux Wissen:Systemprogrammierung:Awk:Schleifen]]
-[[Linux Wissen:Systemprogrammierung:Awk:Variablen]]
-[[Linux Wissen:Systemprogrammierung:Awk:Funktionen]]
+Linux Wissen:Systemprogrammierung:Awk:Schleifen
+Linux Wissen:Systemprogrammierung:Awk:Variablen
+Linux Wissen:Systemprogrammierung:Awk:Funktionen

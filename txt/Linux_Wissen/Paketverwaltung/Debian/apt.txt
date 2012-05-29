@@ -10,7 +10,7 @@ Created Montag 25 April 2011
 → Tool zum Holen, Installieren und Verwalten von Debian Paketen aus einem zentralen Repository
 → Abhängigkeiten werden aufgelöst
 → Repositories werden in ///etc/apt/sources.lst// konfiguriert
-[[Linux Wissen:FHS:etc:apt++soruces.lst]]
+Linux Wissen:FHS:etc:apt++soruces.lst
  
 //<Aktion>//
 **update **→ aktualisieren der Informationen über verfügbare Paket aus ///etc/apt/sources.lst//

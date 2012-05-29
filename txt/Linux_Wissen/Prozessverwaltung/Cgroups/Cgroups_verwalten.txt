@@ -12,11 +12,11 @@ Created Dienstag 17 Januar 2012
 ''cat /proc/cgroups''
 
 **lscgroup **→ auflisten aller vorhandenen Cgroups
-[[Linux Wissen:FHS:proc]]
+Linux Wissen:FHS:proc
 
 **Kontrollgruppe anzeigen die zu einem Prozess gehört**
 ''ps -O cgroups''
-[[Prozessverwaltung:ps]]
+Prozessverwaltung:ps
 
 **PID anzeigen, die einer CGroup zugeordnet ist:**
 ''cat /proc/PID/cgroup''
@@ -55,7 +55,7 @@ __Da jedes Subsystem nur einmal verwendet werden kann, ist auch klar welche Hier
 Gesetzte Parameter aus einer Cgroup in eine andere Cgroup kopieren
 ''cgset --copy-from httpd_min/ httpd_user/''
 [[Cgroups erstellen und löschen]]
-[[Linux Wissen:Dateien verwalten:Zugriffsrechte]]
+Linux Wissen:Dateien verwalten:Zugriffsrechte
 
 === Ein bestehenden Prozess in eine CGroup verschieben ===
 * durch verschieben der PID in die //tasks //Datei
@@ -74,9 +74,9 @@ Gesetzte Parameter aus einer Cgroup in eine andere Cgroup kopieren
 
 === ACHTUNG: ===
 __Falls der __**cgred **__Daemon läuft, werden Zuweisungen von__ **cgclassify **__die Einstellungen in__ ///etc/cgrules.conf //__überschreiben.__
-[[Prozessverwaltung]]
+Prozessverwaltung
 [[cgconfig und cgred]]
-[[Linux Wissen:FHS:etc:cgrules.conf]]
+Linux Wissen:FHS:etc:cgrules.conf
 
 //Beispiel: //
 Die Befehle der PID 1242 und 2310 in die Cgroup httpd_min verschieben, dazu wird 2310 auf sticky gesetzt
@@ -99,8 +99,8 @@ dies würde den vim in die Gruppe mem_cpu Verlegen:
 * dazu wird die Variable ''ControlGroup'' in einer der Konfigurationsdateien in //*/etc/sysconfig/<Dienst> gesetzt//
 **ControlGroup="<subsystem>:<CGroup>"**
 **CGROUP_DAEMON="<subsystem>:<Cgroup>" $$redhat**
-[[Linux Wissen:Booten:Dienste:systemd]]
-[[Linux Wissen:Booten:Dienste]]
+Linux Wissen:Booten:Dienste:systemd
+Linux Wissen:Booten:Dienste
 
 === Löschen von Cgroups ===
 **cgdelelete <subsystem>,...|*:<Cgroup>**

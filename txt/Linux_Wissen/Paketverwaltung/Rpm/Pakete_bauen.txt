@@ -24,7 +24,7 @@ Created Montag 25 April 2011
 
 ///usr/src/packages/BUILDROOT//
 → hier werden Programme und Dateien testweise installiert
-[[Linux Wissen:FHS:usr]]
+Linux Wissen:FHS:usr
 
 **rpmbuild  **→ Tool zum erstellen eines Rpm Paketes
 ** -bb <Spec> **→ nur das Binärpaket erzeugen
@@ -39,7 +39,7 @@ Created Montag 25 April 2011
 
 == Workflow ein Paket bauen: ==
 **(1) **Specfile erstellen
-[[Linux Wissen:FHS:usr:src++packages++SPECS++beispiel.spec]]
+Linux Wissen:FHS:usr:src++packages++SPECS++beispiel.spec
 
 **(2) **Quellen anpassen. 
 Möglicherweise müssen Patches erstellt werden oder weitere Dateien erstellt werden, wie zum Beispiel .deskop Dateien.
@@ -60,4 +60,4 @@ Möglicherweise müssen Patches erstellt werden oder weitere Dateien erstellt we
 **gpg -a --export > <file>**
 **rpmsign --import <file>**
 
-[[Linux Wissen:Systemprogrammierung:Shellscripting]]
+Linux Wissen:Systemprogrammierung:Shellscripting

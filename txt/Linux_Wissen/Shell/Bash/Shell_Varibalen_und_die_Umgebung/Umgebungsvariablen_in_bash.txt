@@ -16,7 +16,7 @@ BASH_VERSION → Version der aktuellen bash
 CDPATH → wenn gesetzt kann es eine, oder durch : getrennt mehre Pfade enthalten, die zusätzlich zum aktullen nach Verzeichnissen durchsucht wird
 		→ damit kann erreicht werden, dass man mit **cd **schneller in Verzeichenisse wechseln kann
 
-DIRSTACK → Der Wert des Verzeichnis Stack ( [[Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen]] )
+DIRSTACK → Der Wert des Verzeichnis Stack ( Linux Wissen:Dateien verwalten:Durch Verzeichnisse bewegen )
 
 EDITOR → Der Standardeditor (vi, vim, emacs, pico, nano)
 
@@ -24,7 +24,7 @@ EUID → effektive UID
 
 FUNCNAME → Name der aktuell aufgerufenen Funktion
                    →  __Hinweis__: function () {echo FUNCNAME}; function
-[[Linux Wissen:Systemprogrammierung:Shellscripting:Funktion]]
+Linux Wissen:Systemprogrammierung:Shellscripting:Funktion
 
 GROUPS → Gruppenzugehörigkeit des momentanen Benutzers
 
@@ -46,11 +46,11 @@ __Tipp: Informationen zur aktullen Histroy erhalten: __''set|grep HIST''
 
 
 HISTTIMEFORMAT → Eine date Konforme formatierung die benutzt wird um zusätzlich anzuzeigen, wann welcher Befehl ausgegegen wurde
-[[Linux Wissen:Systemzeit:date]]
+Linux Wissen:Systemzeit:date
 //Beisspiel://
 //HISTTIMEFORMAT="%F-%M-%S -->"//
 ----
- [[Linux Wissen:Shell:Bash:History]]
+ Linux Wissen:Shell:Bash:History
 
 HOME → Heimatverzeichnis des momentanen Benutzers
 
@@ -112,10 +112,10 @@ PS1 → erstes Promptzeichen
 PS2 → zweites Promptzeichen
 
 PS3 → Drittes Promptzeichen. Wird angezeigt wenn in einer **select  **Schleife genutzt
-[[Linux Wissen:Systemprogrammierung:Shellscripting:select]]
+Linux Wissen:Systemprogrammierung:Shellscripting:select
 
 PS4 → viertes Promptzeichen. Wird angezeigt wen **set -x **verwendet wird 
-[[Linux Wissen:Shell:Bash:Optionen für die Bash]]
+Linux Wissen:Shell:Bash:Optionen für die Bash
 
 RANDOM → Variable die Zufallszahlen ausgibt
 
@@ -125,4 +125,4 @@ SHLVL → gibt die Tiefe der Verschachtelung der Shell an
 
 UID → UID des Nutzers der die Shell | das Script zuletzt aufgerufen hat
 
-SHELLOPTS → Array dass die Optionen angibt mit der Bash momentan läuft [[Bash:Optionen für die Bash]]
+SHELLOPTS → Array dass die Optionen angibt mit der Bash momentan läuft Bash:Optionen für die Bash

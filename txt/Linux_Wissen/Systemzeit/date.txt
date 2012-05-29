@@ -26,7 +26,7 @@ __Achtung: Für die Einstellung der Zeit beachten dass erst der Monat und dann d
 
 			**%d **→ Tag des Monats
 			**%a|%A **→ Wochentag
-			%V** → **Woche des Jahres beginned bei Monatag
+			**%V → **Woche des Jahres beginned bei Monatag
 			**%s **→ Sekunden seit dem 01.01. 1970
 
 **-d '<String>' **→ die Zeit durch einen beschreibenden Sting anzeigen lassen 

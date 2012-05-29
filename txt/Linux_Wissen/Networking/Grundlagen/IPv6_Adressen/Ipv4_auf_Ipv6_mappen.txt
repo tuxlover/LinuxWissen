@@ -20,7 +20,7 @@ Created Mittwoch 07 März 2012
 * Präfix: ''2002''
 * Die eingebette Ipv4 Adresse wird Hexadezimal dargestellt
 * darf keine Adressen aus dem Privaten Adresssraum beinhalten
-[[Grundlagen:IPv4 Adressen:Privater Adressraum]]
+Grundlagen:IPv4 Adressen:Privater Adressraum
 
 Beispiel (aus der Wikipedia)
 '''

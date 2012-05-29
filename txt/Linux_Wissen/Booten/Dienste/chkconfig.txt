@@ -13,7 +13,7 @@ $$SUSE$$
 **insserv /etc/init.d/<Dienst> **
 → fügt einen <Dienst> hinzu und löst dabei Startabhängigkeiten auf
 → ermittlen des Standardrunlevel wird aus den Scripten ermittelt
-[[Linux Wissen:FHS:etc:init.d++Script]]
+Linux Wissen:FHS:etc:init.d++Script
 — 
 
 **service <Dienst> on|off|status**
@@ -49,7 +49,7 @@ $$Redhad$$|$$Fedora$$|$$SUSE$$
 
 **chkconfig <Dienst> xinetd**
 → einen Xinetd Dienst konfigurieren
-[[Linux Wissen:Networking]]
+Linux Wissen:Networking
 
 == Konfiguration speichern und wiederherstellen ==
 **checkconfig -A > runlevels.save **→ die aktuelle Konfiguration speichern

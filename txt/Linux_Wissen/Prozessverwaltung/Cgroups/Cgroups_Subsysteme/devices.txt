@@ -8,7 +8,7 @@ Created Dienstag 24 Januar 2012
 **devices.allow**
 → Wertebereich: <Type> <major> <minor> <access>
 → Geräte auf die Tasks einer Gruppe Zugriff haben dürfen
-[[Linux Wissen:FHS:dev:Linux Allocated Devices]]
+Linux Wissen:FHS:dev:Linux Allocated Devices
 → als <Type> kann einer der folgenden Werte vergeben werden
 	**a **→ character und block Geräte (all)
 	**b **→ ein Block Geräte wie ein Festplatte

@@ -51,7 +51,7 @@ Created Freitag 23 September 2011
 	* sendet eine TCP-Verbindung URG , FIN und PUSH zum Zielport
 	* ein bestehendes Datagramm wird verworfen (URG) und es wird sofort auf die Antwort auf dem Zielhost mittels PUSH geschickt
 	* root-Rechte ( 
-[[Linux Wissen:root]]) sind erforderlich, weil neue Sockets erstellt werden müssen
+Linux Wissen:root) sind erforderlich, weil neue Sockets erstellt werden müssen
 **-p [U:N]|[T:N]|N **→ einen bestimmten Port N scannen
 				* UDP [U:N]
 				* TCP [T:N]

@@ -7,11 +7,11 @@ Created Dienstag 17 Januar 2012
 
 * **cgconfig **Daemon zum persistenten Erstellen und Verwalten von Cgroup Hierarchien
 * **cgred **Daemon zum Verschieben von Prozessen in die entpsrechenden Cgroup Hierarchien
-[[Linux Wissen:FHS:etc:cgconfig.conf]]
-[[Linux Wissen:FHS:etc:cgrules.conf]]
+Linux Wissen:FHS:etc:cgconfig.conf
+Linux Wissen:FHS:etc:cgrules.conf
 
 __Hinweis: Der Dienst ist nach der Installation nicht gestartet und muss gestartet und den persistenten Diensten hinzugefügt werden.__
-[[Linux Wissen:Booten:Dienste]]
+Linux Wissen:Booten:Dienste
 
 **cgconfig **
 
@@ -26,4 +26,4 @@ __Hinweis: Der Dienst ist nach der Installation nicht gestartet und muss gestart
 **-s <Fac> → **bestimmen einer Syslog Facility für den syslog Daemon
 **-q **→ keine Ausgabe nach StdOut oder StdErr
 **-Q **→ Logging deaktiviert
-[[Linux Wissen:Systemprotokollierung]]
+Linux Wissen:Systemprotokollierung

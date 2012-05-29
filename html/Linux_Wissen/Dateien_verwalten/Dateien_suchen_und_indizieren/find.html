@@ -128,8 +128,8 @@ Created Montag 18 April 2011<br>
 <p>
 <strong>&lt;Optionen&gt;:</strong><br>
 <strong>-name '&lt;Muster&gt;'</strong>→  sucht nach Dateinamen auf die &lt;Muster&gt; passt, <br>
-<a href="../../Shell/Wildcards.html" title="Linux Wissen:Shell:Wildcards">Linux Wissen:Shell:Wildcards</a> <br>
-<a href="./grep/Regul%C3%A4re_Ausdr%C3%BCcke.html" title="Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke">Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke</a><br>
+Linux Wissen:Shell:Wildcards <br>
+Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke<br>
 <strong>-type &lt;[b][c][d][f][l][p][s]&gt; </strong>→ die Datei ist vom Dateityp:<br>
 <div style='padding-left: 300pt'>
 b=blockorientiertes Gerät <strong>(missing Link)</strong><br>
@@ -138,20 +138,21 @@ d=Verzeichnis<br>
 f=normale Datei  <br>
 </div>
 <div style='padding-left: 240pt'>
-<a href="../Dateien_anlegen_und_l%C3%B6schen.html" title="Linux Wissen:Dateien verwalten:Dateien anlegen und löschen">Linux Wissen:Dateien verwalten:Dateien anlegen und löschen</a> <br>
+Linux Wissen:Dateien verwalten:Dateien anlegen und löschen <br>
 </div>
 <div style='padding-left: 300pt'>
 --<br>
 l=symbolischer Link  <br>
 </div>
 <div style='padding-left: 240pt'>
-<a href="../Links.html" title="Linux Wissen:Dateien verwalten:Links">Linux Wissen:Dateien verwalten:Links</a> <br>
+Linux Wissen:Dateien verwalten:Links <br>
 </div>
 <div style='padding-left: 300pt'>
 p=FIFO Pipe<br>
 s=Unix Domain Socket<br>
 </div>
 <strong>-user|-group &lt;Name&gt; </strong>→ nach Dateien suchen die dem Nutzer &lt;Name&gt; bzw. der Gruppe &lt;Name&gt; gehören<br>
+<strong>_nouser|-nogroup </strong>→ alle Dateien die zu keiner Nutzer/keiner Gruppe gehören<br>
 <strong>-size +|-&lt;b|c|k|M|G&gt; </strong>→ suche nach Dateien mit mindest so groß wie|kleiner als in 512-byte blocks|bites|kilobites|	<br>
 <div style='padding-left: 150pt'>
       Megabites|Gigabites<br>
@@ -245,7 +246,7 @@ IFS=$'\n'; <code>find /etc/ -printf "%p\n"</code><br>
 
 <p>
 <u>finde Dateien die das Setuid oder Setgid Bit gesetzt haben</u><br>
-<code>find / '(' -perm 4000 -o -perm 2000 ')' -type f -exec ls -lisah {} \</code><br>
+<code>find / '(' -perm 4000 -o -perm 2000 ')' -type f -exec ls -lisah {} \;</code><br>
 </p>
 
 
@@ -254,7 +255,7 @@ IFS=$'\n'; <code>find /etc/ -printf "%p\n"</code><br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shell/Standardkan%C3%A4le.html'>Linux Wissen:Shell:Standardkanäle</a></li>						<a href='../../Partitionen_und_Dateisysteme/Plattenbelegung_analysieren.html'>Linux Wissen:Partitionen und Dateisysteme:Plattenbelegung analysieren</a></li>						<a href='../Dateien_suchen_und_indizieren.html'>Linux Wissen:Dateien verwalten:Dateien suchen und indizieren</a></li>
+				Backlinks:						<a href='../Dateien_suchen_und_indizieren.html'>Linux Wissen:Dateien verwalten:Dateien suchen und indizieren</a></li>						<a href='../../Shell/Standardkan%C3%A4le.html'>Linux Wissen:Shell:Standardkanäle</a></li>						<a href='../../Partitionen_und_Dateisysteme/Plattenbelegung_analysieren.html'>Linux Wissen:Partitionen und Dateisysteme:Plattenbelegung analysieren</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

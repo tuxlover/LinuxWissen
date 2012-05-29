@@ -9,7 +9,7 @@ Created Donnerstag 22 September 2011
 * ermitteln der MAC-Adresse zu einer IPv4-Adresse
 * manuelle Zuweisung einer MAC-Adresse 
 * ist ein Ethernet Frame
-[[Networking:Grundlagen:Ethernet Frames]]
+Networking:Grundlagen:Ethernet Frames
 
 === Funktionsweise ===
 ARP fragt alle Teinehmer im Netz nach der gesuchten IP-Adresse (Who has MAC)

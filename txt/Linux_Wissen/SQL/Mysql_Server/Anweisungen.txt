@@ -26,7 +26,7 @@ Created Mittwoch 06 Juli 2011
 * Spaltennamen sind nicht Case Sensetive 
 * wirkt sich auch auf Alliasse aus
 in ///etc/my.cnf// eintragen
-[[Linux Wissen:FHS:etc:my.cnf]]
+Linux Wissen:FHS:etc:my.cnf
 ''lower_case_table=1|2''
 
 	1 → Namen von Tabellen sind nicht Case Sesetiv

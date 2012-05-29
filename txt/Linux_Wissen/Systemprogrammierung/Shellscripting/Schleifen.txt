@@ -28,7 +28,7 @@ for f in *
 ++
 
 __Tipp: Durchlaufen aller Postionsparameter, wie $@__
-[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Positions Parameter]]
+Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Positions Parameter
 ++
 //for i ; do something; done //
 ++

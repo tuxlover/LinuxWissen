@@ -13,10 +13,10 @@ Created Freitag 15 April 2011
 **-c **→ löschen der history
 
 ===== Emacs Modus Befehle zur Steuerung der History =====
-[[Linux Wissen:Shell:Bash:Emacs Modus]]
+Linux Wissen:Shell:Bash:Emacs Modus
 
 ===== Umgebungsvariablen der Bash History =====
- [[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash]]
+ Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Umgebungsvariablen in bash
 
 ===== Steuerung der History =====
 !! → den letzten Befehl wieder aufrufen

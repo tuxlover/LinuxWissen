@@ -13,8 +13,8 @@ Created Dienstag 24 Januar 2012
 → Wertebereich: <major> : <minor> 100-1000
 → relativer Anteil von Block I/O Zugriffszeit
 __→ auf die Leerzeichen achten!!__
-[[Linux Wissen:FHS:dev:Linux Allocated Devices]]
-[[Linux Wissen:Dateien verwalten:Verzeichnisse und Dateien auflisten]]
+Linux Wissen:FHS:dev:Linux Allocated Devices
+Linux Wissen:Dateien verwalten:Verzeichnisse und Dateien auflisten
 
 **blkio.time **
 → Wertebereich: <major> <minor> <Zeit in ms> 

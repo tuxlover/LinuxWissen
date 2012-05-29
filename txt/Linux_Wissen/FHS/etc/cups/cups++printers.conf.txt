@@ -6,7 +6,7 @@ Creation-Date: 2011-09-27T13:30:22+02:00
 Created Dienstag 27 September 2011
 
 ///etc/cups/printers.conf//
-[[Linux Wissen:Drucken]]
+Linux Wissen:Drucken
 //+++//
 '''
 <DefaultPrinter Hades>
@@ -48,7 +48,7 @@ Location	MTU88
 		//stop-printer //→ Den Drucker anhalten und den Job für später in der Queue behalten
 		
 	//Filter// → ein FIlterprogramm definieren wie in einer PPD-Datei (
-[[FHS:usr:usr++share++cups++model]])
+FHS:usr:usr++share++cups++model)
 
 //Info //→ beschreibt den Drucker genauer
 

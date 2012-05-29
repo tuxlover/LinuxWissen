@@ -7,7 +7,7 @@ Created Sonntag 15 Januar 2012
 
 * längere Befehle und Prozeduren 
 * //bashrc //oder in derNutzerspezifischen //~/.bashrc// defineirt werden in der globalen
-[[Linux Wissen:Systemprogrammierung:Shellscripting:Funktion]]
+Linux Wissen:Systemprogrammierung:Shellscripting:Funktion
 
 **function <Funktionsname> **→ definieren der Funktion
 [[Shell Varibalen und die Umgebung]]

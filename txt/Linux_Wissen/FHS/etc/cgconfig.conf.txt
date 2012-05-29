@@ -64,7 +64,7 @@ __Hineweis: Der Daemon muss nach dem ändern der Konfigurationsdatei neu gestart
 //Verwendete Befehle://
 	''mkdir <Cgroup Mountpunkt>''
 	''mount -t cgroup -o <Subsystem>,... <Name der Hierarchie> <Mountpunkt>''
-[[Linux Wissen:Partitionen und Dateisysteme:Mounten]]
+Linux Wissen:Partitionen und Dateisysteme:Mounten
 __Hinweis: EIn Mountpunkt kann mehereren Hierarchien zugewiesen sein.__
 
 
@@ -85,6 +85,6 @@ chown <perms_root>:<perms_group> <Mountpoint mount>/<Cgroup>/<Tasks>
 echo <Param Wert> > <Mountpoint mount>/<Cgroup>/Task/<Parameter>
 '''
 
-[[Linux Wissen:Benutzer und Gruppen]]
-[[Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme]]
+Linux Wissen:Benutzer und Gruppen
+Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme
 

@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-05-22T00:31:00+02:00
+
+====== Optionen für Perl ======
+Created Dienstag 22 Mai 2012
+
+**-v **→ Anzeigen der Versionsnummer

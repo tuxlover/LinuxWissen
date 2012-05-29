@@ -9,7 +9,7 @@ Created Donnerstag 28 April 2011
 === Anzeigen von Informationen zu einer Datei ===
 ''awk 'END{print NR}' <Datei> ''
 →  Anzahl der Zeilen einer <Datei>, **wc -l**
- [[Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren]]
+ Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren
 
 ''awk '{nw+=NF} END{print nw}' <Datei> ''
 →  Gesamtzahl der Wörter / Felder von Datei, **wc -w**
@@ -27,14 +27,14 @@ Created Donnerstag 28 April 2011
 ''awk 'NR == N' <Datei> ''
 →  Ausgabe der N-ten Zeile von Datei, wie** head -N|tail-1**
 → schnellere Laufzeit als die head tail Methode 
-[[Linux Wissen:Filterprogramme:head und tail]]
+Linux Wissen:Filterprogramme:head und tail
 
 ''awk 'NF > 4' <Datei> ''
 →  Ausgabe aller Zeilen mit mehr als 4 Felder / Wörter
 
 ''awk '/<Ausdruck>/ {++cnt} END {print cnt}' <Datei> ''
 →  Anzahl der Zeilen von <Datei> die auf <Ausdruck> passt,** grep -c**
-[[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep]]
+Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep
 
 ''awk 'NF > 0' <Datei> ''
 →   Jede Zeile ausgeben, die mindestens 1 Feld / Wort enthält
@@ -50,7 +50,7 @@ Created Donnerstag 28 April 2011
 
 ''awk { if (data($0)++ == 0); print } <Data> ''
 →  Ausgabe nur wenn die Eingabezeile zum ersten mal gesehen wurde, ein verbessertes **uniq**
-[[Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren]]
+Linux Wissen:Filterprogramme:Wörter zählen und Wörter sortieren
 
 ''awk '{ field = $NF }; END { print field }' <Datei>''
 → letztes Feld des letzten Records ausgeben

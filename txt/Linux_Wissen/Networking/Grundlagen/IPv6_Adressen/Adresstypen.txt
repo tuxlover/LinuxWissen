@@ -17,7 +17,7 @@ Zur eindeutigen Identifizierung eines Netzwerkknotens (Hosts)
 * //globale Unicast Adressen //werden über das Internet geroutet (Präfix ''2000::/3'')
 * Link Local Unicast Adressen werden nur im lokalen Netz verwendet und nicht durch das Internet geroutet (Präfix: ''FE80::/10'')
 * Jede Netzwerkschnittstelle benötigt ihre eigene Link Lokal Adresse damit sie sich gegenüber anderen Knoten authentifizieren kann
-[[Networking:Protokolle:NDP]]
+Networking:Protokolle:NDP
 
 === Anycast Adressen ===
 Eine Unicast Adresse die meherern Netzwerkknoten zugeordnet ist bezeichnet man als Anycast Adresse
