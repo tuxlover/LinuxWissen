@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>resolv.conf</title>
+		<title>apt.conf</title>
 		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									resolv.conf</h1>
+									apt.conf</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -63,7 +63,7 @@
 <li><a href="../etc.html" title="etc">etc</a></li>
 <ul>
 <li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
-<li><a href="./apt.conf.html" title="apt.conf">apt.conf</a></li>
+<li><strong>apt.conf</strong></li>
 <li><a href="./apt%2B%2Bpreferences.conf.html" title="apt++preferences.conf">apt++preferences.conf</a></li>
 <li><a href="./apt%2B%2Bsoruces.list.html" title="apt++soruces.list">apt++soruces.list</a></li>
 <li><a href="./auto.master.html" title="auto.master">auto.master</a></li>
@@ -94,7 +94,7 @@
 <li><a href="./ntp.conf.html" title="ntp.conf">ntp.conf</a></li>
 <li><a href="./passwd.html" title="passwd">passwd</a></li>
 <li><a href="./protocols.html" title="protocols">protocols</a></li>
-<li><strong>resolv.conf</strong></li>
+<li><a href="./resolv.conf.html" title="resolv.conf">resolv.conf</a></li>
 <li><a href="./security%2B%2Blimits.conf.html" title="security++limits.conf">security++limits.conf</a></li>
 <li><a href="./services.html" title="services">services</a></li>
 <li><a href="./shadow.html" title="shadow">shadow</a></li>
@@ -145,71 +145,252 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Freitag 23 September 2011<br>
-<ul>
-<li>Konfigrationsdatei für den lokalen Resolver</li>
-</ul>
+Created Freitag 01 Juni 2012<br>
 </p>
 
 <p>
-+++<br>
+<ul>
+<li>Hauptkonifgurationsdatei der apt-Toolsuite</li>
+<li>neuere Konfigurationen sind in mehreren Dateien /<em>etc/apt/apt.conf.d/01myconfig.</em></li>
+</ul>
+<div style='padding-left: 30pt'>
++ wobei 01config die erste Konfigurationsdatei ist die eingelesen wird<br>
+</div>
+++<br>
 </p>
 <pre>
-nameserver 192.168.10.1
-nameserver 192.168.0.99
+// Kommentare können entweder in einer
 
-search foo.example.com bar.example.com example.com
-sortlist 172.16.0.0 10.10.19.10
-options rotate
+/* oder in mehreren
+Zeilen stehen */
+
+// Konfigurationdirektiven werden innerhalb eines {} Baums durch die entsprechende Hauptdirektive definiert
+Direkttive {
 </pre>
+<pre style='padding-left: 60pt'>
+Unterdirektive 
+{
+</pre>
+<pre style='padding-left: 90pt'>
+Option "true";
+        };
+};
 
-<p>
-+++<br>
-<strong>Direktiven:</strong><br>
-<em>nameserver</em><br>
-→ IP-Adrssen der einzelnen Namserver die vom Resolver befragt werden<br>
-→ Die Nameserver werden in der gelisteteten Reihenfolge befragt, maximal dürfen 3 eingetragen sein<br>
-→ ist die Datei nicht vorhanden oder enthält keine Einträge wird der lokale Host /<em>etc/hosts </em>befragt<br>
- <a href="./hosts.html" title="hosts">hosts</a><br>
-→ eine reine Resolver Datei enthält keine Einträge die auf den lokalen Host verweist<br>
-</p>
+// Konfigurationsargumente können zusätzlich durch :: in ihrere Hierarchichen Struktur anegeben werden
+APT::Architecture "i386" anstelle von
+APT 
+{
+</pre>
+<pre style='padding-left: 30pt'>
+Architecture "i386"
 
-<p>
-<em>domain:</em><br>
-→ definiert den Standarddomainnamen<br>
-→ der Resolver hängt den Standarddomainnamen an den Hostnamen an, der keinen Punkt enthält<br>
-→ domainname: wird an den domainnamen angehängt &lt;domainname&gt;.foo.com<br>
-</p>
+};
 
-<p>
-<em>search:</em><br>
-→ Reihe von Domainnamen die vom Resolver durchsucht werden, wenn ein aufgerufener Hostname keinen Punkt enthält<br>
-→ search: wird vom Resolver angehängt &lt;search&gt;.foo.com<br>
-→ &lt;search&gt; und &lt;domain&gt; schließen einander aus. Der erste Eintrag gewinnt<br>
-</p>
+// Steuert das allgemeine Verhalten von Apt
+APT 
+{
+ // Standard Architetektur ist i386, Pakete dieser Architektiur werden bevorzugt behandelt
+Architecture "i386";
 
-<p>
-<em>sortlist Netzwerk/CIDR:</em><br>
-→ Adressen die vom sortlist Befehl aufgelöst werden, werden bevorzugt behandelt<br>
-→ werden mehrere Adressen empfangen, werden diese vom Resolver so umsortiert, dass diese zuerst durhcprobiert werden<br>
-→ kann genutzt werden, um Adressen im eigenen Netzwerk zu bevorzugen<br>
-</p>
+// weitere Architekturen die das System unterstützt
+Architectures "amd64";
+   
+// Standard Release das bevorzugt wird, falls mehr als eine Version eines Paketes vorhanden ist   
+    Default-Release "wheezy";
 
-<p>
-<em>options &lt;Option&gt; ... </em><br>
-<div style='padding-left: 60pt'>
- <em>debug</em> <em>→ </em>Debugging Modus Fehler werden nach StdtOut geschrieben<br>
-<em>timeout:n</em> <strong>→ </strong>setzen des TimeOuts für den Resolver<br>
-<em>attempts:n</em> <strong>→ </strong>wie oft soll die Anfrage wiederholt werden<br>
-<em>rotate</em> → verteile die Last gleichmäßig auf die eingetragenen Nameserver, frage nciht einzeln ab<br>
-<em>no-check-names</em> → deaktiviert Internet Host Table Specification<br>
-<em>inet6</em> → benutze IpV6<br>
-<em>ndots:n</em> → die maximale Anzahl erlaubter Punkte im Domainanmen<br>
-</div>
-</p>
+   
+ // gehaltene Pakete ignorieren
+   Ignore-Hold "true";
+   
+// beim Bereinigen Pakete auschließen|einschließen die nicht mehr aus dem Cache geladen werden können
+    Clean-Installed "true";
+
+// important und essential pakete werden in der Schlange so schnell wie möglich installiert
+   Immediate-Configure "true";
+   
+// Größe des für den apt Zwischenspeicher zur Verfügung gestellten Speicher
+Cache-Start "Angabe in Bytes"
+// Schrittweite in der der Cache erhöht werden soll, falls dieser nicht ausreicht
+Cache-Grow "Angabe in Bytes";
+// Maximale Größe des Caches;
+Cache-Limit "Angabe in Bytes"; 	 	
+	
+// Die folgenden Pakete nimals automatisch entfernen
+NeverAutoRemove  { "linux-image.*"; gnome-*; XServer-*; glibc* };
+
+	// Supdirektive für apt-get
+	// man apt-get
+	GET 
+		{
+                // In der Regel y als automatische Antwort annehmen ausser bei schwerwiegenden Fehlern
+		 Assume-Yes "true";
 		 
+		// kaputte Abhängigkeiten automatisch reparieren
+                // !! sollte nicht verwendet wwerden
+		Fix-Broken "false";
+		
+		// vermisste Abhängigkeiten Reparieren
+		Fix-Missing  "true";
+
+		};
+	
+	// Supdirektiven für apt-cache
+	// man apt-cache
+	CACHE 
+		{
+		};
+	
+	// Update verhalten steuern
+	Update 
+		{
+		};		
+
+	// Supdirektiven für apt-cdrom
+	// man apt-cdrom
+        // !! Hier keine Mount direktiven !!
+	CDROM 
+		{
+		};
+
+	
+};
+
+// ==  Steuert das Downloadverhalten von Apt. ==
+Acquire
+{
+
+</pre>
+<pre style='padding-left: 30pt'>
+// Anzahl der Versuche die apt versuchen wird ein Paket vom Server zu erhalten
+Retries "N";
+
+</pre>
+<pre style='padding-left: 30pt'>
+// Überprüfen der Release Datei auf einem Server um zu überprüfen ob ein Paket auf einem Spiegel möglicherweise veraltet ist
+Check-Valid-Until "true";
+
+// Zeitraum für Validdät von Paketen konfigurieren
+Max-ValidTime "Seconds";
+Min-ValidTime "Seconds";
+
+// Benutze Pdiffs um Pakete zu patchen anstatt sie bei einem update vollständig herunterzuladen
+</pre>
+<pre style='padding-left: 30pt'>
+  PDiffs "true";     // Versuche die Indexdatei zu erhalten
+  PDiffs::FileLimit "4"; // nicht mehr als 4 Diffs 
+  PDiffs::SizeLimit "50"; // Pdiiffs nicht benutzen wenn die gesamtzahl größer als 50 MB beträgt
+
+//Konfiguration der Downloadwarteschlange
+Que-Mode "host|access" // host= Eine Verbindung pro Zielrechner, acces=eine Verbindung pro URI 
+
+</pre>
+<pre style='padding-left: 30pt'>
+  // HTTP method configuration
+  http 
+  {
+    Proxy "http://127.0.0.1:3128";
+    Proxy::http.us.debian.org "DIRECT";  // Specific per-host setting
+    Timeout "120";
+    Pipeline-Depth "5";
+    AllowRedirect  "true";
+
+    // Cache Control. 
+    No-Cache "false";
+    Max-Age "86400";     // 1  Tag bei Index Dateien
+    No-Store "false";    // Verhindere das Aufbewahren von Archiven    
+    Dl-Limit "7";        // Maximale Download Rate in kb/s
+    User-Agent "Debian APT-HTTP/1.3";  
+  };
 
 
+// HTTPS Methode konfigurieren
+  https
+  {
+        Verify-Peer "false";
+        SslCert "/etc/apt/some.pem";
+        CaPath  "/etc/ssl/certs";
+        Verify-Host" "true";
+        AllowRedirect  "true";
+
+        Timeout "120";
+        AllowRedirect  "true";
+
+        // Cache Control. Note these do not work with Squid 2.0.2
+        No-Cache "false";
+        Max-Age "86400";      // 1  Tag bei Index Dateien
+        No-Store "false";     // Verhindere das Aufbewahren von Archiven
+        Dl-Limit "7";       // Maximale Download Rate in kb/s
+
+        User-Agent "Debian APT-CURL/1.0";
+  };
+
+
+  // Ftp Mehtode konfigurieren
+  ftp
+  {
+    Proxy "ftp://127.0.0.1/";
+    Proxy::http.us.debian.org "DIRECT"; // per-host setting
+
+       // Proxy konfigurieren
+</pre>
+<pre style='padding-left: 30pt'>
+    ProxyLogin
+    {
+       "USER $(PROXY_USER)";
+       "PASS $(PROXY_PASS)";
+       "USER $(SITE_USER)@$(SITE):$(SITE_PORT)";
+       "PASS $(SITE_PASS)";
+    };
+    
+    Timeout "120";
+    
+    /* Passive mode control, proxy, non-proxy and per-host. Pasv mode
+       wird verwendet falls möglich */
+    Passive "true";
+    Proxy::Passive "true";
+    Passive::http.us.debian.org "true"; // Specific per-host setting
+  };
+
+ // CD Rom konfigurieren
+  cdrom
+  {
+    // nutze automatische Erkennung für den Mount Point der CD Rom
+    AutoDetect "true";   
+   // falls vorhanden nutze nur CDROM
+    CdromOnly "true";
+    
+    // cdrom mountpoint (muss definiert sein, falls AutoDetect nicht genutzt wird)
+    mount "/cdrom";
+
+    // Weiter Optionen für cdrom
+    "/cdrom/"
+    {
+</pre>
+<pre style='padding-left: 30pt'>
+       Mount "sleep 1000";
+       UMount "sleep 500";
+    }
+  };
+
+ // Reihenfolge der zu holenden  Sprachpakete
+  Languages
+  {
+     // von der Umgebung durch LC Variablen festgelegte Sprache
+     "environment";
+     "de";
+     "en";
+     "none";
+     "fr";
+  };
+};
+
+};
+</pre>
+<p>
+++<br>
+<strong>man 5 apt.conf</strong><br>
+/<em>usr/share/doc/apt/examples</em>/<br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -217,7 +398,7 @@ options rotate
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Networking/Dienste/DNS.html'>Linux Wissen:Networking:Dienste:DNS</a></li>
+				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Paketverwaltung/Debian/apt.html'>Linux Wissen:Paketverwaltung:Debian:apt</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

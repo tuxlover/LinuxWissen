@@ -5,6 +5,19 @@ Creation-Date: 2011-04-25T22:30:04+02:00
 ====== apt ======
 Created Montag 25 April 2011
 
+APT_CONFIG → Umgebungsvariable zum festlegen von zusätzlichen Konfigurationsdateien
+
+* Das Verhalt von apt wird in der //*/etc/apt.conf //festgelegt
+[[Linux Wissen:FHS:etc:apt.conf]]
+
+* Bezugsquellen für Pakete werden in */etc/apt/sources.list festgelegt
+[[Linux Wissen:FHS:etc:apt++soruces.list]]
+
+* festlegen von Prioritäten einzelner Pakete
+* Einrichten von Prioritäten für bestimmte Paketquellen in //*/etc/apt/preferences.d//
+[[Linux Wissen:FHS:etc:apt++preferences.conf]]
+
+=== Installieren und Updaten ===
 — 
 **apt-get <Aktion> **
 → Tool zum Holen, Installieren und Verwalten von Debian Paketen aus einem zentralen Repository
@@ -21,18 +34,32 @@ Linux Wissen:FHS:etc:apt++soruces.lst
 
 **upgrade **→ einspielen aller verfügbaren Updates aus dem Repository
 
+**clean **→ apt läd Dateien nach ///var/cache/apt// herunter, bevor es Datei installiert, clean ermöglicht das säubern des caches
+
+**source <Source> **→ holen der Paketsourcen eines Pakets, muss in die //*/etc/apt/soruces.list //eingetragen sein
+
 **dist-upgrade **→ aktuallisieren einer bestehende Version auf die nächste, dazu muss eventuell die 3. Spalte in der 
 ///etc/apt/sources.lst// angepasst werden, wenn man zum Beispiel von //main // auf //testing // upgraden will
 
 **source <Paket> **→ holen der zu <Paket> gehörenden Dateien
+
+=== Infromationen zu Paketen ===
 — 
 **apt-listbugs <Paket> **→ Eine Liste der für dieses Paket bekannten Fehler anzeigen
 
-**apt-build <Paket> **→ ein Paket aus dem Quellcode installieren um es für das System zu optimiere
+**apt-build <Paket> **→ ein Paket aus dem Quellcode installieren um es für das System zu optimieren
 
 — 
 **apt-cache <Aktion> **
 → durchsuchen der apt-Paketdatenbank
+
+//<Aktion>//
+**show <Paket> **→ Statusinformationen zu einem Paket anzeigen
+
+**depends <Paket> **→ Abhängigkeiten eines Paktetes auflisten
+
+**rdepends <Paket> **→ Abhängigkeiten auflisten die von diesem Paket ausgehen
+
 
 —
 **apt-key <Aktion>**
@@ -42,14 +69,14 @@ Linux Wissen:FHS:etc:apt++soruces.lst
 → kann nach einer Datei suchen und das dazugehörige Paket anzeigen
 → muss extra installiert werden
 
-//Aktion//
-**show <Paket> **→ Statusinfomationen über das <Paket> anzeigen
+=== Verwalten von Repositories ===
 
-**depends <Paket> **→ Abhängigkeiten für ein <Paket> auflisten
 
-**rdepends <Paket> **→ alle von <Paket> abhängigen Pakete auflisten
+**apt-cdrom [<Opetionen>] add|ident**
+→ hinzufügen einer CDROM oder DVD als Installationsmedium
+**add **→ hinzufügen einer CDROM
+**ident **→ Anzeigen der Identität eines Mediums und Üperprüfung  auf Validität
 
-**stats **→ Informationen über den Paket cache
+**-d <PATH> **→ Einhängepunkt bestimmen
 — 
-
 

@@ -5,6 +5,9 @@ Creation-Date: 2011-04-24T16:57:03+02:00
 ====== Module ======
 Created Sonntag 24 April 2011
 
+MODPATH → Umgebungsvariable die den Pfad von Modulen des aktuellen Kernels enthalten kann
+		   → wird von **insmod **verwendet
+
 **modprobe <Modulname> **→ läd ein Kernelmodul mit dem Namen <Modulname>
 					           → Modulabhängigkeiten werden aufgelöst
 					           → Modulname muss unter ///lib/modules/$(uname -r)// liegen
@@ -39,9 +42,6 @@ Created Sonntag 24 April 2011
 **-s **→ Nachrichten an den Syslog Daemin übergben 
 
 === Informationen über Module ===
-MODPATH → Umgebungsvariable die den Pfad von Modulen des aktuellen Kernels enthalten kann
-		 → wird von **insmod **verwendet
-
 **modprobe** **-l [<Wildcard>] **
 → listen der Module die zum angegeben <Wildcard> passen
 → wird <Wildcard> nicht angeben wird eine liste aller Module ausgegeben

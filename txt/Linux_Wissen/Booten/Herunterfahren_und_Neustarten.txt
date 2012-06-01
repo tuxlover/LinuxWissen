@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2011-04-24T13:34:52+02:00
 
-====== Herunterfahren und Neustarten ======
+====== mHerunterfahren und Neustarten ======
 Created Sonntag 24 April 2011
 
 **shutdown <Option> <Time> "[<Nachricht>]"**
@@ -11,6 +11,7 @@ Created Sonntag 24 April 2011
   [[Linux Wissen:Benutzer und Gruppen]]
 **-h **→ system halt
 **-H **→ system halt bei __Systemd__
+**-P **→ Powerdown nach dem Halt (bei __systemd__)
 **-r **→ reboot
 **-c **→ letzte Aktion rückgängig machen
 **-k **→ nichts machen, testen von Scripten die ein Shutdown bewirken sollen

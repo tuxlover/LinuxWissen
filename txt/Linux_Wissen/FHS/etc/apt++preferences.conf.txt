@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-01T10:04:17+02:00
+
+====== apt++preferences.conf ======
+Created Freitag 01 Juni 2012
+
+* festlegen von Paketquellen Prioritäten
+* festlegen von Prioritäten einzelner Pakete
+* __Apt wird Pakete mit der höchsten Priorität (<= 1000) bevorzugt behandelt, es sei denn es ist bereits eine neuere Version installiert__
+* __Apt wird auch ältere Pakete installieren falls dessen Piroritäten (> 1000) ist__
+* __Apt wird Pakete mit einer Priorität ( < 0 ) niemals installieren__
+* Für jedes Repository kann ein zu bevorzugendes Paket festgelegt werden 
+
+=== Standardverhalten ===
+* Installierte Pakete haben die Priorität von 100
+* Nicht installierte Pakete haben die Prioritöt von : 
+	+500 wenn das Paket nicht installiert und nicht zum Zielrelease gehört
+	+ 990 wenn das Paket nicht installiert und zum Zielrelease gehören
+
+~> Pakete mit einer Prirorität < 0 werden nimeals Installiert. 
+~> Pakete mit Prioriät 0 <= N <= 100 werden nur installiert, falls keine andere Version bereits installiert ist
+~> Pakete mit Priorität 100 < N <= 500 werden nur installiert falls keine neuere Version als die vorhandene installiert sind
+~> Pakete mit Priorität 500 < N <= 990 werden nur installiert wenn keine neueren Versionen installiert installiert oder in anderen 
+      Distributionsquellen zur Verfügung gestellt werden
+~> Pakete mit Priorität 990 < N <= 1000 werden nur dann installier ,wenn die installierte Version nicht neuer ist
+~> Pakete mit der Priorität > 1000 werden immer installiert, sogar wenn apt dadruch gezwungen wird eine ältere Version zu downgraden
+
+++
+'''
+// Einige Beispiele
+
+Package: perl
+Pin: version 5.10*
+Pin-Priority: 1001
+
+// Package mit * referenziert auf alle Pakete
+Package: *
+Pin: release a=stable
+Pin-Priority: 900
+
+Package: *
+Pin: release o=Debian
+Pin-Priority: -10
+'''
+
+++
+**man apt_preferences**

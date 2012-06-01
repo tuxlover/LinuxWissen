@@ -1,0 +1,244 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-01T01:32:14+02:00
+
+====== apt.conf ======
+Created Freitag 01 Juni 2012
+
+* Hauptkonifgurationsdatei der apt-Toolsuite
+* neuere Konfigurationen sind in mehreren Dateien ///etc/apt/apt.conf.d/01myconfig.//
+	+ wobei 01config die erste Konfigurationsdatei ist die eingelesen wird
+++
+'''
+// Kommentare können entweder in einer
+
+/* oder in mehreren
+Zeilen stehen */
+
+// Konfigurationdirektiven werden innerhalb eines {} Baums durch die entsprechende Hauptdirektive definiert
+Direkttive {
+'''
+		'''
+		Unterdirektive 
+		{
+		'''
+			'''
+			Option "true";
+			        };
+			};
+			
+			// Konfigurationsargumente können zusätzlich durch :: in ihrere Hierarchichen Struktur anegeben werden
+			APT::Architecture "i386" anstelle von
+			APT 
+			{
+			'''
+	'''
+	Architecture "i386"
+	
+	};
+	
+	// Steuert das allgemeine Verhalten von Apt
+	APT 
+	{
+	 // Standard Architetektur ist i386, Pakete dieser Architektiur werden bevorzugt behandelt
+	Architecture "i386";
+	
+	// weitere Architekturen die das System unterstützt
+	Architectures "amd64";
+	   
+	// Standard Release das bevorzugt wird, falls mehr als eine Version eines Paketes vorhanden ist   
+	    Default-Release "wheezy";
+	
+	   
+	 // gehaltene Pakete ignorieren
+	   Ignore-Hold "true";
+	   
+	// beim Bereinigen Pakete auschließen|einschließen die nicht mehr aus dem Cache geladen werden können
+	    Clean-Installed "true";
+	
+	// important und essential pakete werden in der Schlange so schnell wie möglich installiert
+	   Immediate-Configure "true";
+	   
+	// Größe des für den apt Zwischenspeicher zur Verfügung gestellten Speicher
+	Cache-Start "Angabe in Bytes"
+	// Schrittweite in der der Cache erhöht werden soll, falls dieser nicht ausreicht
+	Cache-Grow "Angabe in Bytes";
+	// Maximale Größe des Caches;
+	Cache-Limit "Angabe in Bytes"; 	 	
+		
+	// Die folgenden Pakete nimals automatisch entfernen
+	NeverAutoRemove  { "linux-image.*"; gnome-*; XServer-*; glibc* };
+	
+		// Supdirektive für apt-get
+		// man apt-get
+		GET 
+			{
+	                // In der Regel y als automatische Antwort annehmen ausser bei schwerwiegenden Fehlern
+			 Assume-Yes "true";
+			 
+			// kaputte Abhängigkeiten automatisch reparieren
+	                // !! sollte nicht verwendet wwerden
+			Fix-Broken "false";
+			
+			// vermisste Abhängigkeiten Reparieren
+			Fix-Missing  "true";
+	
+			};
+		
+		// Supdirektiven für apt-cache
+		// man apt-cache
+		CACHE 
+			{
+			};
+		
+		// Update verhalten steuern
+		Update 
+			{
+			};		
+	
+		// Supdirektiven für apt-cdrom
+		// man apt-cdrom
+	        // !! Hier keine Mount direktiven !!
+		CDROM 
+			{
+			};
+	
+		
+	};
+	
+	// ==  Steuert das Downloadverhalten von Apt. ==
+	Acquire
+	{
+	
+	'''
+	'''
+	// Anzahl der Versuche die apt versuchen wird ein Paket vom Server zu erhalten
+	Retries "N";
+	
+	'''
+	'''
+	// Überprüfen der Release Datei auf einem Server um zu überprüfen ob ein Paket auf einem Spiegel möglicherweise veraltet ist
+	Check-Valid-Until "true";
+	
+	// Zeitraum für Validdät von Paketen konfigurieren
+	Max-ValidTime "Seconds";
+	Min-ValidTime "Seconds";
+	
+	// Benutze Pdiffs um Pakete zu patchen anstatt sie bei einem update vollständig herunterzuladen
+	'''
+	'''
+	  PDiffs "true";     // Versuche die Indexdatei zu erhalten
+	  PDiffs::FileLimit "4"; // nicht mehr als 4 Diffs 
+	  PDiffs::SizeLimit "50"; // Pdiiffs nicht benutzen wenn die gesamtzahl größer als 50 MB beträgt
+	
+	//Konfiguration der Downloadwarteschlange
+	Que-Mode "host|access" // host= Eine Verbindung pro Zielrechner, acces=eine Verbindung pro URI 
+	
+	'''
+	'''
+	  // HTTP method configuration
+	  http 
+	  {
+	    Proxy "http://127.0.0.1:3128";
+	    Proxy::http.us.debian.org "DIRECT";  // Specific per-host setting
+	    Timeout "120";
+	    Pipeline-Depth "5";
+	    AllowRedirect  "true";
+	
+	    // Cache Control. 
+	    No-Cache "false";
+	    Max-Age "86400";     // 1  Tag bei Index Dateien
+	    No-Store "false";    // Verhindere das Aufbewahren von Archiven    
+	    Dl-Limit "7";        // Maximale Download Rate in kb/s
+	    User-Agent "Debian APT-HTTP/1.3";  
+	  };
+	
+	
+	// HTTPS Methode konfigurieren
+	  https
+	  {
+	        Verify-Peer "false";
+	        SslCert "/etc/apt/some.pem";
+	        CaPath  "/etc/ssl/certs";
+	        Verify-Host" "true";
+	        AllowRedirect  "true";
+	
+	        Timeout "120";
+	        AllowRedirect  "true";
+	
+	        // Cache Control. Note these do not work with Squid 2.0.2
+	        No-Cache "false";
+	        Max-Age "86400";      // 1  Tag bei Index Dateien
+	        No-Store "false";     // Verhindere das Aufbewahren von Archiven
+	        Dl-Limit "7";       // Maximale Download Rate in kb/s
+	
+	        User-Agent "Debian APT-CURL/1.0";
+	  };
+	
+	
+	  // Ftp Mehtode konfigurieren
+	  ftp
+	  {
+	    Proxy "ftp://127.0.0.1/";
+	    Proxy::http.us.debian.org "DIRECT"; // per-host setting
+	
+	       // Proxy konfigurieren
+	'''
+	'''
+	    ProxyLogin
+	    {
+	       "USER $(PROXY_USER)";
+	       "PASS $(PROXY_PASS)";
+	       "USER $(SITE_USER)@$(SITE):$(SITE_PORT)";
+	       "PASS $(SITE_PASS)";
+	    };
+	    
+	    Timeout "120";
+	    
+	    /* Passive mode control, proxy, non-proxy and per-host. Pasv mode
+	       wird verwendet falls möglich */
+	    Passive "true";
+	    Proxy::Passive "true";
+	    Passive::http.us.debian.org "true"; // Specific per-host setting
+	  };
+	
+	 // CD Rom konfigurieren
+	  cdrom
+	  {
+	    // nutze automatische Erkennung für den Mount Point der CD Rom
+	    AutoDetect "true";   
+	   // falls vorhanden nutze nur CDROM
+	    CdromOnly "true";
+	    
+	    // cdrom mountpoint (muss definiert sein, falls AutoDetect nicht genutzt wird)
+	    mount "/cdrom";
+	
+	    // Weiter Optionen für cdrom
+	    "/cdrom/"
+	    {
+	'''
+	'''
+	       Mount "sleep 1000";
+	       UMount "sleep 500";
+	    }
+	  };
+	
+	 // Reihenfolge der zu holenden  Sprachpakete
+	  Languages
+	  {
+	     // von der Umgebung durch LC Variablen festgelegte Sprache
+	     "environment";
+	     "de";
+	     "en";
+	     "none";
+	     "fr";
+	  };
+	};
+	
+	};
+	'''
+
+
+++
+**man 5 apt.conf**
+///usr/share/doc/apt/examples///

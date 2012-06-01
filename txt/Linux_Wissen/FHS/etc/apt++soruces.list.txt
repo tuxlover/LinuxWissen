@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2011-04-25T22:32:42+02:00
+
+====== apt++soruces.list ======
+Created Montag 25 April 2011
+
+++
+'''
+deb http://ftp.de.debian.org/debian stable main        
+deb-src http://ftp.de.debian.org/debian stable main 
+deb http://security.debian.org/ stable/updates main  
+'''
+
+++
+1. Spalte: Typ (deb oder deb-src)
+2. Spalte: URL
+3. Release Pfad (stable, stable/updates, testing testing/updates, unstable, experimental)
+        testing == Squezze  →   v
+        stable == Lenny <-- <-- v wird zu
+        Unstable == Sid →  → ^ fließt ein in Testing
+        Oldstable == Etch →  Support läuft ab
+4. Supportlevel

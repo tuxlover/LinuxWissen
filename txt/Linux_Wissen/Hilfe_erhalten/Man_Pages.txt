@@ -42,7 +42,7 @@ BUGS (Fehler die aus dem Ansatz der Implementation des Programms folgen)
 
 **fetter Text**		l''iterale Angaben wie in der Anzeige''
 //kursiver Text			//ersetzen durch passendes Argument
-[-abc]				Ein oder mehrere Argumente innerhal der [ ] sind optional
+[-abc]				Ein oder mehrere Argumente innerhalb der [ ] sind optional
 -a|-b   				Optionen die durch | abgegrenzt sind, können nicht zusammen benutzt werden
 Argument... 			Argument kann wiederholt auftreten
 [Ausdruck]			gesamter Ausdruck innerhalb der [ ] kann wiederholt angegeben werden

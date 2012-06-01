@@ -98,9 +98,17 @@ Created Dienstag 19 April 2011
 		//udev.conf// → globale Konfiguration (logging, loglevel)
 		//rules.d/ //→ Verzeichnis für Udev-Regeln die beim Start des Daemons gelesen werden
 
+
+///etc/apt.conf //→ generelle Konfiguration von der apt Tools 
+[[+apt.conf]]
 ///etc/apt/sources// → nur bei $Debian$, Liste von Bezugsquellen für das **apt-get** Paketmanagement
-[[Linux Wissen:FHS:etc:apt++soruces.lst]]
+[[+apt++soruces.list]]
+
+/etc/apt/preferences.d → Konfiguration von Paketprioritäten in einezlnnen Dateien
+ /etc/apt/preferences → Konfiguraron von Paketprioritäten
+[[+apt++preferences.conf]]
 [[Linux Wissen:Paketverwaltung:Debian:apt]]
+
 
 ///rpm/ //→ Scripte und globale Macors die von der Paketverwaltung **rpm **benötigt werden
 	//macros// → Konfigurationsdatei für global verfügbare Macros

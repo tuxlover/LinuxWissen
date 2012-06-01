@@ -42,11 +42,12 @@ __Hinweis: Um einen eigenen Dienst zu erstellen muss unter /etc/init.d/<Dienst> 
 → dabei wird ein <PIDFILE> angegeben
 → es können auch Argumente und Optionen angefügt werden
 
-**pidofproc <Pfad zum Dienstprogramm> **
+**pidof <Pfad zum Dienstprogramm> **
 → Prozessinformationen zu einem bestimmten Dienst anzeigen
 → ohne Optionen wird PID zurückgegeben
+**-o <PID> **→ diese PID ignorieren, //%PPID// verweist auf die PID des Elternprozesses
 
-**chekproc **→ siehe **pidofproc **$$SUSE$$
+**chekproc **→ siehe **pidof **$$SUSE$$
 **-p <PIDFILE> **→ ein anders PIDFILE als unter ///var/run/daemon.pid //
 [[Linux Wissen:FHS:var]]
 **-n **→ einen Kernelthread verfolgen

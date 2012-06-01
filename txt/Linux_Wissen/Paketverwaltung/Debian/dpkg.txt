@@ -40,7 +40,7 @@ __Hinweis: MIt __**dpkg -l|grep ^rc.* **kann man sich Pakete anzeigen lassen von
 
 **debsums <Paket> **→ Überprüfen der Intigrität eines installierten Paketes
 ///var/lib/dpkg/info //
-Linux Wissen:FHS:var
+[[Linux Wissen:FHS:var]]
 
 **dpkg-reconfigure <Paket> **→ eine neue Konfiguration für ein installiertes <Paket> erstellen
 **-f |--frontend **→ ein anderes Frontend definieren (**man 7 debconf **im  Paket debconf-doc)

@@ -32,6 +32,12 @@ $$Redhad$$|$$Fedora$$|$$SUSE$$
 
 **-e **→ ermöglicht es die Konfiguration von dienstes wie in Yast Interaktiv zu bearbeiten
 
+**-d <Dienst> **→ dekativeren eines DIenstes
+
+**-a <Dienst> **→ aktivieren eines Dienstes
+
+**-t <Diesnst1> <Dienst2> **→ Prozess
+
 **checkconfig <Dienst>**
 → ohne weitere Optionen wird der Status für diesen <Dienst> abgefragt
 

@@ -12,3 +12,4 @@ Created Freitag 15 April 2011
 immer **exit**
 
 * **screen** → Tool zum Verwalten virtuellen Terminals
+[[+screen]]

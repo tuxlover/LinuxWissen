@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>resolv.conf</title>
+		<title>apt++soruces.list</title>
 		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									resolv.conf</h1>
+									apt++soruces.list</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -65,7 +65,7 @@
 <li><a href="./anacrontab.html" title="anacrontab">anacrontab</a></li>
 <li><a href="./apt.conf.html" title="apt.conf">apt.conf</a></li>
 <li><a href="./apt%2B%2Bpreferences.conf.html" title="apt++preferences.conf">apt++preferences.conf</a></li>
-<li><a href="./apt%2B%2Bsoruces.list.html" title="apt++soruces.list">apt++soruces.list</a></li>
+<li><strong>apt++soruces.list</strong></li>
 <li><a href="./auto.master.html" title="auto.master">auto.master</a></li>
 <li><a href="./auto.Verzeichnis.html" title="auto.Verzeichnis">auto.Verzeichnis</a></li>
 <li><a href="./cgconfig.conf.html" title="cgconfig.conf">cgconfig.conf</a></li>
@@ -94,7 +94,7 @@
 <li><a href="./ntp.conf.html" title="ntp.conf">ntp.conf</a></li>
 <li><a href="./passwd.html" title="passwd">passwd</a></li>
 <li><a href="./protocols.html" title="protocols">protocols</a></li>
-<li><strong>resolv.conf</strong></li>
+<li><a href="./resolv.conf.html" title="resolv.conf">resolv.conf</a></li>
 <li><a href="./security%2B%2Blimits.conf.html" title="security++limits.conf">security++limits.conf</a></li>
 <li><a href="./services.html" title="services">services</a></li>
 <li><a href="./shadow.html" title="shadow">shadow</a></li>
@@ -145,71 +145,33 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Freitag 23 September 2011<br>
-<ul>
-<li>Konfigrationsdatei für den lokalen Resolver</li>
-</ul>
+Created Montag 25 April 2011<br>
 </p>
 
 <p>
-+++<br>
+++<br>
 </p>
 <pre>
-nameserver 192.168.10.1
-nameserver 192.168.0.99
-
-search foo.example.com bar.example.com example.com
-sortlist 172.16.0.0 10.10.19.10
-options rotate
+deb http://ftp.de.debian.org/debian stable main        
+deb-src http://ftp.de.debian.org/debian stable main 
+deb http://security.debian.org/ stable/updates main  
 </pre>
 
 <p>
-+++<br>
-<strong>Direktiven:</strong><br>
-<em>nameserver</em><br>
-→ IP-Adrssen der einzelnen Namserver die vom Resolver befragt werden<br>
-→ Die Nameserver werden in der gelisteteten Reihenfolge befragt, maximal dürfen 3 eingetragen sein<br>
-→ ist die Datei nicht vorhanden oder enthält keine Einträge wird der lokale Host /<em>etc/hosts </em>befragt<br>
- <a href="./hosts.html" title="hosts">hosts</a><br>
-→ eine reine Resolver Datei enthält keine Einträge die auf den lokalen Host verweist<br>
+++<br>
+<ol type="1" start="1">
+<li>Spalte: Typ (deb oder deb-src)</li>
+<li>Spalte: URL</li>
+<li>Release Pfad (stable, stable/updates, testing testing/updates, unstable, experimental)</li>
+</ol>
+        testing == Squezze  →   v<br>
+        stable == Lenny &lt;-- &lt;-- v wird zu<br>
+        Unstable == Sid →  → ^ fließt ein in Testing<br>
+        Oldstable == Etch →  Support läuft ab<br>
+<ol type="1" start="4">
+<li>Supportlevel</li>
+</ol>
 </p>
-
-<p>
-<em>domain:</em><br>
-→ definiert den Standarddomainnamen<br>
-→ der Resolver hängt den Standarddomainnamen an den Hostnamen an, der keinen Punkt enthält<br>
-→ domainname: wird an den domainnamen angehängt &lt;domainname&gt;.foo.com<br>
-</p>
-
-<p>
-<em>search:</em><br>
-→ Reihe von Domainnamen die vom Resolver durchsucht werden, wenn ein aufgerufener Hostname keinen Punkt enthält<br>
-→ search: wird vom Resolver angehängt &lt;search&gt;.foo.com<br>
-→ &lt;search&gt; und &lt;domain&gt; schließen einander aus. Der erste Eintrag gewinnt<br>
-</p>
-
-<p>
-<em>sortlist Netzwerk/CIDR:</em><br>
-→ Adressen die vom sortlist Befehl aufgelöst werden, werden bevorzugt behandelt<br>
-→ werden mehrere Adressen empfangen, werden diese vom Resolver so umsortiert, dass diese zuerst durhcprobiert werden<br>
-→ kann genutzt werden, um Adressen im eigenen Netzwerk zu bevorzugen<br>
-</p>
-
-<p>
-<em>options &lt;Option&gt; ... </em><br>
-<div style='padding-left: 60pt'>
- <em>debug</em> <em>→ </em>Debugging Modus Fehler werden nach StdtOut geschrieben<br>
-<em>timeout:n</em> <strong>→ </strong>setzen des TimeOuts für den Resolver<br>
-<em>attempts:n</em> <strong>→ </strong>wie oft soll die Anfrage wiederholt werden<br>
-<em>rotate</em> → verteile die Last gleichmäßig auf die eingetragenen Nameserver, frage nciht einzeln ab<br>
-<em>no-check-names</em> → deaktiviert Internet Host Table Specification<br>
-<em>inet6</em> → benutze IpV6<br>
-<em>ndots:n</em> → die maximale Anzahl erlaubter Punkte im Domainanmen<br>
-</div>
-</p>
-		 
-
-
 
 
 			<!-- End wiki content -->
@@ -217,7 +179,7 @@ options rotate
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Networking/Dienste/DNS.html'>Linux Wissen:Networking:Dienste:DNS</a></li>
+				Backlinks:						<a href='../../Paketverwaltung/Debian.html'>Linux Wissen:Paketverwaltung:Debian</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Paketverwaltung/Debian/apt.html'>Linux Wissen:Paketverwaltung:Debian:apt</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

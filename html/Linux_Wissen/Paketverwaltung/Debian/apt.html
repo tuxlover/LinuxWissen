@@ -98,6 +98,33 @@ Created Montag 25 April 2011<br>
 </p>
 
 <p>
+APT_CONFIG → Umgebungsvariable zum festlegen von zusätzlichen Konfigurationsdateien<br>
+</p>
+
+<p>
+<ul>
+<li>Das Verhalt von apt wird in der <em>*/etc/apt.conf </em>festgelegt</li>
+</ul>
+<a href="../../FHS/etc/apt.conf.html" title="Linux Wissen:FHS:etc:apt.conf">Linux Wissen:FHS:etc:apt.conf</a><br>
+</p>
+
+<p>
+<ul>
+<li>Bezugsquellen für Pakete werden in */etc/apt/sources.list festgelegt</li>
+</ul>
+<a href="../../FHS/etc/apt%2B%2Bsoruces.list.html" title="Linux Wissen:FHS:etc:apt++soruces.list">Linux Wissen:FHS:etc:apt++soruces.list</a><br>
+</p>
+
+<p>
+<ul>
+<li>festlegen von Prioritäten einzelner Pakete</li>
+<li>Einrichten von Prioritäten für bestimmte Paketquellen in <em>*/etc/apt/preferences.d</em></li>
+</ul>
+<a href="../../FHS/etc/apt%2B%2Bpreferences.conf.html" title="Linux Wissen:FHS:etc:apt++preferences.conf">Linux Wissen:FHS:etc:apt++preferences.conf</a><br>
+</p>
+
+<h4>Installieren und Updaten</h4>
+<p>
 — <br>
 <strong>apt-get &lt;Aktion&gt; </strong><br>
 → Tool zum Holen, Installieren und Verwalten von Debian Paketen aus einem zentralen Repository<br>
@@ -124,18 +151,30 @@ Linux Wissen:FHS:etc:apt++soruces.lst<br>
 </p>
 
 <p>
+<strong>clean </strong>→ apt läd Dateien nach /<em>var/cache/apt</em> herunter, bevor es Datei installiert, clean ermöglicht das säubern des caches<br>
+</p>
+
+<p>
+<strong>source &lt;Source&gt; </strong>→ holen der Paketsourcen eines Pakets, muss in die <em>*/etc/apt/soruces.list </em>eingetragen sein<br>
+</p>
+
+<p>
 <strong>dist-upgrade </strong>→ aktuallisieren einer bestehende Version auf die nächste, dazu muss eventuell die 3. Spalte in der <br>
 /<em>etc/apt/sources.lst</em> angepasst werden, wenn man zum Beispiel von <em>main </em> auf <em>testing </em> upgraden will<br>
 </p>
 
 <p>
 <strong>source &lt;Paket&gt; </strong>→ holen der zu &lt;Paket&gt; gehörenden Dateien<br>
+</p>
+
+<h4>Infromationen zu Paketen</h4>
+<p>
 — <br>
 <strong>apt-listbugs &lt;Paket&gt; </strong>→ Eine Liste der für dieses Paket bekannten Fehler anzeigen<br>
 </p>
 
 <p>
-<strong>apt-build &lt;Paket&gt; </strong>→ ein Paket aus dem Quellcode installieren um es für das System zu optimiere<br>
+<strong>apt-build &lt;Paket&gt; </strong>→ ein Paket aus dem Quellcode installieren um es für das System zu optimieren<br>
 </p>
 
 <p>
@@ -143,6 +182,20 @@ Linux Wissen:FHS:etc:apt++soruces.lst<br>
 <strong>apt-cache &lt;Aktion&gt; </strong><br>
 → durchsuchen der apt-Paketdatenbank<br>
 </p>
+
+<p>
+<em>&lt;Aktion&gt;</em><br>
+<strong>show &lt;Paket&gt; </strong>→ Statusinformationen zu einem Paket anzeigen<br>
+</p>
+
+<p>
+<strong>depends &lt;Paket&gt; </strong>→ Abhängigkeiten eines Paktetes auflisten<br>
+</p>
+
+<p>
+<strong>rdepends &lt;Paket&gt; </strong>→ Abhängigkeiten auflisten die von diesem Paket ausgehen<br>
+</p>
+
 
 <p>
 —<br>
@@ -156,24 +209,20 @@ Linux Wissen:FHS:etc:apt++soruces.lst<br>
 → muss extra installiert werden<br>
 </p>
 
+<h4>Verwalten von Repositories</h4>
+
+
 <p>
-<em>Aktion</em><br>
-<strong>show &lt;Paket&gt; </strong>→ Statusinfomationen über das &lt;Paket&gt; anzeigen<br>
+<strong>apt-cdrom [&lt;Opetionen&gt;] add|ident</strong><br>
+→ hinzufügen einer CDROM oder DVD als Installationsmedium<br>
+<strong>add </strong>→ hinzufügen einer CDROM<br>
+<strong>ident </strong>→ Anzeigen der Identität eines Mediums und Üperprüfung  auf Validität<br>
 </p>
 
 <p>
-<strong>depends &lt;Paket&gt; </strong>→ Abhängigkeiten für ein &lt;Paket&gt; auflisten<br>
-</p>
-
-<p>
-<strong>rdepends &lt;Paket&gt; </strong>→ alle von &lt;Paket&gt; abhängigen Pakete auflisten<br>
-</p>
-
-<p>
-<strong>stats </strong>→ Informationen über den Paket cache<br>
+<strong>-d &lt;PATH&gt; </strong>→ Einhängepunkt bestimmen<br>
 — <br>
 </p>
-
 
 
 
