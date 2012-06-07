@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>cups</title>
+		<title>sudoers</title>
 		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									cups</h1>
+									sudoers</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -70,12 +70,7 @@
 <li><a href="./auto.Verzeichnis.html" title="auto.Verzeichnis">auto.Verzeichnis</a></li>
 <li><a href="./cgconfig.conf.html" title="cgconfig.conf">cgconfig.conf</a></li>
 <li><a href="./cgrules.conf.html" title="cgrules.conf">cgrules.conf</a></li>
-<li><strong>cups</strong></li>
-<ul>
-<li><a href="./cups/cups%2B%2Bclasses.conf.html" title="cups++classes.conf">cups++classes.conf</a></li>
-<li><a href="./cups/cups%2B%2Bcupsd.conf.html" title="cups++cupsd.conf">cups++cupsd.conf</a></li>
-<li><a href="./cups/cups%2B%2Bprinters.conf.html" title="cups++printers.conf">cups++printers.conf</a></li>
-</ul>
+<li><a href="./cups.html" title="cups">cups</a></li>
 <li><a href="./dhclient.conf.html" title="dhclient.conf">dhclient.conf</a></li>
 <li><a href="./dhcpd.conf.html" title="dhcpd.conf">dhcpd.conf</a></li>
 <li><a href="./ethers.html" title="ethers">ethers</a></li>
@@ -105,7 +100,7 @@
 <li><a href="./shadow.html" title="shadow">shadow</a></li>
 <li><a href="./smb.conf.html" title="smb.conf">smb.conf</a></li>
 <li><a href="./ssh.html" title="ssh">ssh</a></li>
-<li><a href="./sudoers.html" title="sudoers">sudoers</a></li>
+<li><strong>sudoers</strong></li>
 <li><a href="./sysconfig%2B%2Bclock.html" title="sysconfig++clock">sysconfig++clock</a></li>
 <li><a href="./syslog.conf.html" title="syslog.conf">syslog.conf</a></li>
 <li><a href="./systemd%2B%2Bsystem%2B%2Bmy.typ.html" title="systemd++system++my.typ">systemd++system++my.typ</a></li>
@@ -151,13 +146,72 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 25 September 2011<br>
+Created Mittwoch 06 Juni 2012<br>
+</p>
+
+<h4>!!Achtung!!:</h4>
+<p>
+Diese Datei sollte nur mit <strong>visudo </strong>bearbeittet werden.<br>
+<a href="../../Sicherheit/sudo.html" title="Linux Wissen:Sicherheit:sudo">Linux Wissen:Sicherheit:sudo</a><br>
 </p>
 
 <p>
-<a href="./cups/cups%2B%2Bclasses.conf.html" title="+cups++classes.conf">+cups++classes.conf</a><br>
-<a href="./cups/cups%2B%2Bcupsd.conf.html" title="+cups++cupsd.conf">+cups++cupsd.conf</a><br>
-<a href="./cups/cups%2B%2Bprinters.conf.html" title="+cups++printers.conf">+cups++printers.conf</a><br>
+<code>+++</code><br>
+</p>
+<pre>
+# *** Host alias specification ***
+# Host Aliasse können vergeben werden um mehrere auf einen Alias zu binden
+Host_Alias LOCALDOM = Rincewind, Ridcully, Stibber 
+# Es ist in aller Regel Sinnvoll für Laptops and Geräte die sich häiufgier in fremden 
+# Netzen befinden den Zugang auf den lokalen Host zu beschränken
+Host_Alias LOCAL = 127.0.0.1, Rincewind
+
+# *** Command alias specifcation ***
+# die folgende Befehle setzen aliasse für die Installation von neuen Programmen, sowie das aktualisieren 
+# von Programmen
+Cmnd_Alias UPDATE = /usr/bin/apt-get -y update, /usr/bin/apt-get -y upgrade, /usr/bin/apt-get clean
+Cmnd_Alias INSTALL_NEW= /usr/bin/apt-get install *, /usr/sbin/synaptic
+
+# *** User alias specification ***
+# ordnet dem Alias APTUSERS der Gruppe, sudo, dem Nutzer chris, dem Nutzer der uid 4223 und dem Nichtlinux user winadmin zu
+User_Alias APTUSERS = %sudo, chris, #4223, %:winadmin
+
+# *** Runas target User Specifcation ***
+# genau das gleiche wie bei User Alias
+Runas_Alias APACHE = %apache, apache, php, %php, #1022
+
+# *** Defaults specfication ***
+# Hier können einige Standards festgelegt werden
+Defaults        env_reset #in einer Umgebung mit minimalen Umgebungsvaribalen ausführen
+Defaults        mail_badpass #bei falschen Passwörtern mail an root
+
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" #als PATH variable secure_path setzen
+Defaults targetpw #immer nach dem Passwort des Target Users fragen 
+
+# user/%group hostname = (user) command
+chris LOCALDOM=(APACHE) ALL,sudoedit
+APTUSERS LOCAL=(root) UPDATE,INSTALL_NEW
+ 
+
+## Auch die Dateien aus diesem Verzeichnis lesen
+## (an dieser Stelle leitet das '#' keinen Kommentar ein
+#includedir /etc/sudoers.d
+</pre>
+
+<p>
+# ALL verweist auf Alle(!) dem System bekannten Ziele in dieser Gruppe<br>
+# sudoedit ist ein Speziellkommando um sudo -e zu erlauben<br>
++++<br>
+NOEXEC: Command1, Command2 <br>
+→ Spezifkation für die Befehlsliste<br>
+→ verhindert dass ein Programm weitere Shared Libraries aufruft, selbst wenn diese auf eine ander LD_SO_CONF verweist. <br>
+→ damit wird verhindert, dass andere Progame wie eine Shell ausgeführt werden kann<br>
+</p>
+
+<p>
+<strong>man 5 sudoers</strong><br>
+<a href="../../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a><br>
+<a href="../../Benutzer_und_Gruppen.html" title="Linux Wissen:Benutzer und Gruppen">Linux Wissen:Benutzer und Gruppen</a><br>
 </p>
 
 
@@ -166,7 +220,7 @@ Created Sonntag 25 September 2011<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Drucken/lpadmin.html'>Linux Wissen:Drucken:lpadmin</a></li>
+				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Sicherheit/sudo.html'>Linux Wissen:Sicherheit:sudo</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

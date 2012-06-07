@@ -1,0 +1,63 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-06T11:12:03+02:00
+
+====== sudoers ======
+Created Mittwoch 06 Juni 2012
+
+=== !!Achtung!!:  ===
+Diese Datei sollte nur mit **visudo **bearbeittet werden.
+[[Linux Wissen:Sicherheit:sudo]]
+
+''+++''
+'''
+# *** Host alias specification ***
+# Host Aliasse können vergeben werden um mehrere auf einen Alias zu binden
+Host_Alias LOCALDOM = Rincewind, Ridcully, Stibber 
+# Es ist in aller Regel Sinnvoll für Laptops and Geräte die sich häiufgier in fremden 
+# Netzen befinden den Zugang auf den lokalen Host zu beschränken
+Host_Alias LOCAL = 127.0.0.1, Rincewind
+
+# *** Command alias specifcation ***
+# die folgende Befehle setzen aliasse für die Installation von neuen Programmen, sowie das aktualisieren 
+# von Programmen
+Cmnd_Alias UPDATE = /usr/bin/apt-get -y update, /usr/bin/apt-get -y upgrade, /usr/bin/apt-get clean
+Cmnd_Alias INSTALL_NEW= /usr/bin/apt-get install *, /usr/sbin/synaptic
+
+# *** User alias specification ***
+# ordnet dem Alias APTUSERS der Gruppe, sudo, dem Nutzer chris, dem Nutzer der uid 4223 und dem Nichtlinux user winadmin zu
+User_Alias APTUSERS = %sudo, chris, #4223, %:winadmin
+
+# *** Runas target User Specifcation ***
+# genau das gleiche wie bei User Alias
+Runas_Alias APACHE = %apache, apache, php, %php, #1022
+
+# *** Defaults specfication ***
+# Hier können einige Standards festgelegt werden
+Defaults        env_reset #in einer Umgebung mit minimalen Umgebungsvaribalen ausführen
+Defaults        mail_badpass #bei falschen Passwörtern mail an root
+
+Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" #als PATH variable secure_path setzen
+Defaults targetpw #immer nach dem Passwort des Target Users fragen 
+
+# user/%group hostname = (user) command
+chris LOCALDOM=(APACHE) ALL,sudoedit
+APTUSERS LOCAL=(root) UPDATE,INSTALL_NEW
+ 
+
+## Auch die Dateien aus diesem Verzeichnis lesen
+## (an dieser Stelle leitet das '#' keinen Kommentar ein
+#includedir /etc/sudoers.d
+'''
+
+# ALL verweist auf Alle(!) dem System bekannten Ziele in dieser Gruppe
+# sudoedit ist ein Speziellkommando um sudo -e zu erlauben
++++
+NOEXEC: Command1, Command2 
+→ Spezifkation für die Befehlsliste
+→ verhindert dass ein Programm weitere Shared Libraries aufruft, selbst wenn diese auf eine ander LD_SO_CONF verweist. 
+→ damit wird verhindert, dass andere Progame wie eine Shell ausgeführt werden kann
+
+**man 5 sudoers**
+[[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]]
+[[Linux Wissen:Benutzer und Gruppen]]

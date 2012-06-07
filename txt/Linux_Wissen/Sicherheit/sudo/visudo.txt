@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-06T11:46:10+02:00
+
+====== visudo ======
+Created Mittwoch 06 Juni 2012
+
+* Dieses Programm sollte zum editieren der ///etc/sudoers //verwendet werden
+* Es legt für die Dauer des Editiervorgangs eine Kopie in ///tmp// an  
+* beim einer Fehlerhaften Datei wird diese nicht oder mit einer Warnung zurückgewiesen
+
+**visudo **→ Programm zum sicheren Editieren der ///etc/sudoers//
+**-c **→ nur die Datei überprfüen und gegebenenfalls einen Fehler zurückliefern
+**-s **→ Strict Mode, auch nicht genutzte und undefinierte Variablen und Aliasse als Fehler einstufen
+**-q **→ zusammen mit **-c, **sei leise, es wird nur ein Exit Code an die Shell zurückgeführt

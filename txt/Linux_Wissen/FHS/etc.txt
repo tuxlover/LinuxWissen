@@ -31,6 +31,10 @@ Created Dienstag 19 April 2011
 ///etc/anacrontab// → Konfiguration des anacron Daemons ([[+anacrontab]])
 [[Linux Wissen:Zeitgesteuerte Vorgänge]]
 
+///etc/sudoers → //Konfigurationsdatei für das sudo Kommando
+[[Linux Wissen:Sicherheit:sudo]]
+[[+sudoers]]
+
 ///etc/cgconfig.conf //→ Konfigurationsdatei für den cgcnfig Daemon 
 				      → zur Erstellung persistenter Cgroups
 [[Linux Wissen:Prozessverwaltung:Cgroups]] 

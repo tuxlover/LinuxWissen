@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Shell Varibalen und die Umgebung</title>
+		<title>visudo</title>
 		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Shell Varibalen und die Umgebung</h1>
+									visudo</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -68,31 +68,15 @@
 <li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
 <li><a href="../../root.html" title="root">root</a></li>
 <li><a href="../../Shell.html" title="Shell">Shell</a></li>
-<ul>
-<li><a href="../Arten_der_Shell.html" title="Arten der Shell">Arten der Shell</a></li>
-<li><a href="../Aufrufen_der_Shell.html" title="Aufrufen der Shell">Aufrufen der Shell</a></li>
-<li><a href="../Bash.html" title="Bash">Bash</a></li>
-<ul>
-<li><a href="./Aliasse.html" title="Aliasse">Aliasse</a></li>
-<li><a href="./Emacs_Modus.html" title="Emacs Modus">Emacs Modus</a></li>
-<li><a href="./Funktionen.html" title="Funktionen">Funktionen</a></li>
-<li><a href="./History.html" title="History">History</a></li>
-<li><a href="./inputrc.html" title="inputrc">inputrc</a></li>
-<li><a href="./Optionen_f%C3%BCr_die_Bash.html" title="Optionen für die Bash">Optionen für die Bash</a></li>
-<li><strong>Shell Varibalen und die Umgebung</strong></li>
-<ul>
-<li><a href="./Shell_Varibalen_und_die_Umgebung/Positions_Parameter.html" title="Positions Parameter">Positions Parameter</a></li>
-<li><a href="./Shell_Varibalen_und_die_Umgebung/Umgebungsvariablen_in_bash.html" title="Umgebungsvariablen in bash">Umgebungsvariablen in bash</a></li>
-</ul>
-</ul>
-<li><a href="../Befehle.html" title="Befehle">Befehle</a></li>
-<li><a href="../Jobkontrolle.html" title="Jobkontrolle">Jobkontrolle</a></li>
-<li><a href="../rbash.html" title="rbash">rbash</a></li>
-<li><a href="../Shells_und_Subshells_beenden.html" title="Shells und Subshells beenden">Shells und Subshells beenden</a></li>
-<li><a href="../Standardkan%C3%A4le.html" title="Standardkanäle">Standardkanäle</a></li>
-<li><a href="../Wildcards.html" title="Wildcards">Wildcards</a></li>
-</ul>
 <li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
+<ul>
+<li><a href="../Hostsecurity.html" title="Hostsecurity">Hostsecurity</a></li>
+<li><a href="../sudo.html" title="sudo">sudo</a></li>
+<ul>
+<li><a href="./sudo.html" title="sudo">sudo</a></li>
+<li><strong>visudo</strong></li>
+</ul>
+</ul>
 <li><a href="../../SQL.html" title="SQL">SQL</a></li>
 <li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
 <li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
@@ -108,78 +92,14 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Freitag 15 April 2011<br>
-</p>
+				<li>Dieses Programm sollte zum editieren der <em>/etc/sudoers </em>verwendet werden</li>
+<li>Es legt für die Dauer des Editiervorgangs eine Kopie in <em>/tmp</em> an  </li>
+<li>beim einer Fehlerhaften Datei wird diese nicht oder mit einer Warnung zurückgewiesen</li>
 
-<p>
-<strong>FOO=bar </strong>→ weist der Variablen Foo den Wert bar zu<br>
-</p>
-
-<h2>Shellvariablen</h2>
-<p>
-<ul>
-<li>nur in der aktuellen Shell oder Subshell oder Script sichtbar</li>
-</ul>
-</p>
-
-<h2>Umgebungsvariablen</h2>
-<p>
-<ul>
-<li>werden beim Starten eines Befehls an den Kindprozess weiter vererbt</li>
-<li>steuern das Verhalten von einigen Programmen und bash im besonderen</li>
-</ul>
-</p>
-
-<h2>Umgebungsvariablen deklarieren</h2>
-<p>
-<strong>export FOO=bar </strong>→ deklariert die Variable FOO mit dem Wert bar und exportiert diese als Umgebungsvariable<br>
-<strong>export FOO BAR VAR </strong>→ exportiert die Variablen FOO BAR und VAR als Umgebungsvariablen<br>
-</p>
-
-<h2>Umgebungsvariablen anzeigen</h2>
-<p>
-<strong>env </strong><br>
-<strong>export</strong><br>
-<strong>printenv VAR </strong>→ Inhalt einer Umgebungsvariable anzeigen<br>
-</p>
-
-<h2>Alle Shellvariablen anzeigen</h2>
-<p>
-<strong>set </strong>→ zeigt alle definierten Variablen und Funktionen an, die momentan in der Shell verwendet werden<br>
-</p>
-
-<p>
-<u>Hinweis: Umgebungsvariablen sind Shellvariablen aber nicht umgekehrt. Die Aussage ist nicht äquivalent.</u><br>
-</p>
-
-<h2>Ein Programm in einer veränderten Laufzeitumgebung starten</h2>
-<p>
-<strong>env &lt;Optionen&gt; &lt;Befehl&gt; </strong>→ ein Programm in einer angepassten Umgebung starten <br>
-<strong>-i </strong>→ Starte mit einer leeren Shellumgebung, keine Umgebungsvariable gesetzt<br>
-<strong>-u &lt;VAR&gt; </strong>→ entferne &lt;VAR&gt; temporär aus der Umgebung<br>
-</p>
-
-<h2>Unexportieren einer Variablen</h2>
-<p>
-<strong>export -n &lt;VAR&gt; </strong>→ unexportiert (negiert) die Variable VAR<br>
-</p>
-
-<h2>Löschen einer Varibalen</h2>
-<p>
-<strong>unset &lt;VAR&gt; </strong>→ löscht eine Shellvariable und damit auch Umgebungsvariablen<br>
-</p>
-
-<h2>Anzeigen des Inhalts von Shellvariablen</h2>
-<p>
-<strong>echo $VAR</strong> → zeigt den Inhalt der Varibalen VAR an<br>
-</p>
-
-<h2>Anzeigen des aktuellen virtuellen Geräts</h2>
-<p>
-<strong>tty </strong>→ zeigt das unter /<em>dev</em> gemappte Gerät an auf der das Terminal lauscht<br>
-man b<br>
-</p>
+<strong>visudo </strong>→ Programm zum sicheren Editieren der <em>/etc/sudoers</em>
+<strong>-c </strong>→ nur die Datei überprfüen und gegebenenfalls einen Fehler zurückliefern<br>
+<strong>-s </strong>→ Strict Mode, auch nicht genutzte und undefinierte Variablen und Aliasse als Fehler einstufen<br>
+<strong>-q </strong>→ zusammen mit <strong>-c, </strong>sei leise, es wird nur ein Exit Code an die Shell zurückgeführt
 
 
 			<!-- End wiki content -->
@@ -187,7 +107,7 @@ man b<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Bash.html'>Linux Wissen:Shell:Bash</a></li>						<a href='../../Systemprogrammierung/Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='./Funktionen.html'>Linux Wissen:Shell:Bash:Funktionen</a></li>						<a href='../../Hilfe_erhalten/Man_Pages.html'>Linux Wissen:Hilfe erhalten:Man Pages</a></li>						<a href='../../FHS/etc/sudoers.html'>Linux Wissen:FHS:etc:sudoers</a></li>
+				Backlinks:						<a href='../sudo.html'>Linux Wissen:Sicherheit:sudo</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

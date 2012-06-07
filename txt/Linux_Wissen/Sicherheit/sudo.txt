@@ -5,4 +5,14 @@ Creation-Date: 2011-04-15T01:05:31+02:00
 ====== sudo ======
 Created Freitag 15 April 2011
 
-sudoedit
+* Zugriff von Programmen auf einzelne Nutzer und Hosts innerhalb eines Netzwerks beschränken
+* Nutzer/Gruppe auf Host=(Als Target) darf die folgenden Befehle ausführen
+	''Nutzer/%Gruppe  HOST=(Targetuser/%TargetGruppe) Befehle''
+* dies wird in der Datei //*/etc/sudoers //festgelegt und sollte mit dem Befehl **visudo **bearbeitet werden
+* Zugriffe werden vom **syslog **protokolliert (
+[[Linux Wissen:Systemprotokollierung]])
+[[Linux Wissen:FHS:etc:sudoers]]
+[[+sudo]]
+[[+visudo]]
+
+

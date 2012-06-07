@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-06T11:46:32+02:00
+
+====== sudo ======
+Created Mittwoch 06 Juni 2012
+
+**sudo -u <TargetUser> <command>**
+→ Programmzugriff gemäß der Datei ///etc/sudoers //''anfragen''
+→ wird das Passwort des Ziel (Targets) richtig eingegeben und der Zugriff ist gemäß der Konfiguration gestattet wird das Programm ausgeführt
+**-k **→ zurücksetzen des Zugriffs
+**-e <Datei>**→ **sudoedit **
+**-l **→ auflisten der Nutzerspezifikation für den aus
+**-s **→ aufrufen einer Shell, nur wenn in der ///etc/sudoers// eine Shell (z.B. /bin/bash) erlaubt wurde
+
+
+
+**sudoedit <Datei>**
+
+→ zum editieren von Dateien als angegebener Nutzer
+→ sudoedit muss als Befehl in der ///etc/sudoers// freigegeben sein damit Nutzer **-e **benutzen können
+→ dabei wird der Editor verwendet der als Standardsystemeditor [ (///etc/alternatives//) eingetragen ist $$DEBIAN$$ ]

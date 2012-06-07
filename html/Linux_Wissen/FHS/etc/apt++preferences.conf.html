@@ -100,6 +100,7 @@
 <li><a href="./shadow.html" title="shadow">shadow</a></li>
 <li><a href="./smb.conf.html" title="smb.conf">smb.conf</a></li>
 <li><a href="./ssh.html" title="ssh">ssh</a></li>
+<li><a href="./sudoers.html" title="sudoers">sudoers</a></li>
 <li><a href="./sysconfig%2B%2Bclock.html" title="sysconfig++clock">sysconfig++clock</a></li>
 <li><a href="./syslog.conf.html" title="syslog.conf">syslog.conf</a></li>
 <li><a href="./systemd%2B%2Bsystem%2B%2Bmy.typ.html" title="systemd++system++my.typ">systemd++system++my.typ</a></li>
@@ -144,21 +145,34 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>festlegen von Paketquellen Prioritäten</li>
+				<p>
+Created Freitag 01 Juni 2012<br>
+</p>
+
+<p>
+<ul>
+<li>festlegen von Paketquellen Prioritäten</li>
 <li>festlegen von Prioritäten einzelner Pakete</li>
 <li><u>Apt wird Pakete mit der höchsten Priorität (&lt;= 1000) bevorzugt behandelt, es sei denn es ist bereits eine neuere Version installiert</u></li>
 <li><u>Apt wird auch ältere Pakete installieren falls dessen Piroritäten (&gt; 1000) ist</u></li>
 <li><u>Apt wird Pakete mit einer Priorität ( &lt; 0 ) niemals installieren</u></li>
 <li>Für jedes Repository kann ein zu bevorzugendes Paket festgelegt werden </li>
+</ul>
+</p>
 
 <h4>Standardverhalten</h4>
+<p>
+<ul>
 <li>Installierte Pakete haben die Priorität von 100</li>
 <li>Nicht installierte Pakete haben die Prioritöt von : </li>
+</ul>
 <div style='padding-left: 30pt'>
 +500 wenn das Paket nicht installiert und nicht zum Zielrelease gehört<br>
 + 990 wenn das Paket nicht installiert und zum Zielrelease gehören<br>
 </div>
-<br>
+</p>
+
+<p>
 ~&gt; Pakete mit einer Prirorität &lt; 0 werden nimeals Installiert. <br>
 ~&gt; Pakete mit Prioriät 0 &lt;= N &lt;= 100 werden nur installiert, falls keine andere Version bereits installiert ist<br>
 ~&gt; Pakete mit Priorität 100 &lt; N &lt;= 500 werden nur installiert falls keine neuere Version als die vorhandene installiert sind<br>
@@ -166,8 +180,11 @@
       Distributionsquellen zur Verfügung gestellt werden<br>
 ~&gt; Pakete mit Priorität 990 &lt; N &lt;= 1000 werden nur dann installier ,wenn die installierte Version nicht neuer ist<br>
 ~&gt; Pakete mit der Priorität &gt; 1000 werden immer installiert, sogar wenn apt dadruch gezwungen wird eine ältere Version zu downgraden<br>
-<br>
+</p>
+
+<p>
 ++<br>
+</p>
 <pre>
 // Einige Beispiele
 
@@ -184,9 +201,11 @@ Package: *
 Pin: release o=Debian
 Pin-Priority: -10
 </pre>
-<br>
+
+<p>
 ++<br>
-<strong>man apt_preferences</strong>
+<strong>man apt_preferences</strong><br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -194,7 +213,7 @@ Pin-Priority: -10
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='../../Paketverwaltung/Debian/apt.html'>Linux Wissen:Paketverwaltung:Debian:apt</a></li>
+				Backlinks:						<a href='../../Paketverwaltung/Debian/apt.html'>Linux Wissen:Paketverwaltung:Debian:apt</a></li>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>
