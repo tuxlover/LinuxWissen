@@ -3908,7 +3908,7 @@ Workflow:
 
 4 3) Signieren des Paketes mit **rpmsign --addsign --macros=/etc/rpm/macros <Paket>.rpm**
                                                            	
-4 4) Improtieren und der Signatur
+4 4) Importieren und der Signatur
 	**gpg -a --export > <file>**
 	**rpmsign --import <file>
 
@@ -4056,7 +4056,7 @@ __Debian Pakete bauen__
 -u --> den Besitzer auf unknown wechseln, anstelle von root:root
 
 Workflow:
-
+//HALTEMARKE//
 1) **apt-get -d source --> holt Qullpakete ohne sie zu entpacken
 		    --> enthält in der Regel drei Dateien die in das aktuellen Verezeichnis gelegt werden:
 				<programm.orig.tar.gz> --> Original Quellen des Programs
@@ -12066,6 +12066,7 @@ Workflow:
 
 	**cd ~/build_kernel**
 	**zcat /proc/config.gz > .config**	
+	**cat /boot/conifg-$(uname -r) > .config** $$DEBIAN$
 
 9 2) Klonen der aktuellen Kernelkonfiguration falls keine \\ /proc/config.gz \\ aber \\ /boot/config-<version> \\
 	** cd ~/build_kernel**
@@ -12418,7 +12419,7 @@ __String Matching__
 
 **udevadm info --query=all --name=<Gerät> --attribute-walk** --> zeigt an welche Regeln für <Gerät> vergeben werden können
 
-==Autofs==
+==Autofs/Autmount==
 + mounted das Dateisystem automatisch beim betreten des Verzeichnisses
 
 \\ /etc/auto.master \\ --> beschreibt die MountPunkte
@@ -12430,8 +12431,9 @@ __String Matching__
 
 /home	ldap	10.1.7.7 ou=home ou=autofs dc=foo dc=bar
 
-/misc	/etc/misc.auto	--timeout 60 #nach 60 minuten automatisch wieder asuhängen wenn nciht eingehängt
-        #verweis auf /etc/aut.misc 
+/media	/etc/auto.media	--timeout 60 #nach 60 minuten automatisch wieder asuhängen wenn nciht eingehängt
+        #verweis auf /etc/auto.media 
+	#Achtung: Wenn der Mountpunkt /media ist muss auch die datei auf /etc/auto.media verweisen
 
 /mnt	yp:/mnt.map
 
