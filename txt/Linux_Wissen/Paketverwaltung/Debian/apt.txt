@@ -29,6 +29,7 @@ Linux Wissen:FHS:etc:apt++soruces.lst
 **update **→ aktualisieren der Informationen über verfügbare Paket aus ///etc/apt/sources.lst//
 
 **install <Paket1>,... **→ holen von <Paket> aus dem Repository, und installieren 
+**-f|--fix-broken **→ defekte Abängigkeiten reparieren
 
 **remove <Paket1>,... **→ entfernen von <Paket> aus dem Repository 
 
@@ -70,6 +71,15 @@ Linux Wissen:FHS:etc:apt++soruces.lst
 → muss extra installiert werden
 
 === Verwalten von Repositories ===
+
+**apt-config **
+→ tool zum setzen von Konfigurationsoptionen in ///etc/apt/apt.conf //
+→ sollte auch immer verwenden werden um fehlerhafte Konfigurationen zu vermeiden
+[[Linux Wissen:FHS:etc:apt.conf]]
+**-o Direktive::Unterdirektive::Option <Wert> **→ setzen eines Wertes
+**-c <Datei> **→ Die Konfiguration in diese Datei schreiben 
+//Beispiel://
+''apt-config -o APT::GET::Assume-Yes "true" -c 99.users.conf''
 
 
 **apt-cdrom [<Opetionen>] add|ident**

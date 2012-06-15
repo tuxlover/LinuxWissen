@@ -69,6 +69,7 @@ Created Dienstag 19 April 2011
 [[Linux Wissen:Systemzeit]]
 [[Linux Wissen:FHS:etc:ntp.conf]]
 
+///etc/issue.net → //Begrüßungstext der vor der Anmeldung remote ausgeliefert wird
 ///etc/issue// → Begrüßungstext der vor der Anmeldung angezeigt werden
 ///etc/motd// → Begrüßungstext der nach der Anmeldung angezeigt werden
 

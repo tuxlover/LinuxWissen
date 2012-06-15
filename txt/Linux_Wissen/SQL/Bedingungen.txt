@@ -31,7 +31,7 @@ a% → a am Anfang und beliebige Zeichen
 %teilstring% → entspricht dem teilstring innerhal eines Stings
 
 //Beispiel://
-//select title from film where special_features LIKE 'B%';//
+''select title from film where special_features LIKE 'B%';''
 
 === Logische Operatoren ===
 

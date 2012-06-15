@@ -140,6 +140,7 @@ Linux Wissen:FHS:etc:apt++soruces.lst<br>
 
 <p>
 <strong>install &lt;Paket1&gt;,... </strong>→ holen von &lt;Paket&gt; aus dem Repository, und installieren <br>
+<strong>-f|--fix-broken </strong>→ defekte Abängigkeiten reparieren<br>
 </p>
 
 <p>
@@ -210,6 +211,17 @@ Linux Wissen:FHS:etc:apt++soruces.lst<br>
 </p>
 
 <h4>Verwalten von Repositories</h4>
+
+<p>
+<strong>apt-config </strong><br>
+→ tool zum setzen von Konfigurationsoptionen in /<em>etc/apt/apt.conf </em><br>
+→ sollte auch immer verwenden werden um fehlerhafte Konfigurationen zu vermeiden<br>
+<a href="../../FHS/etc/apt.conf.html" title="Linux Wissen:FHS:etc:apt.conf">Linux Wissen:FHS:etc:apt.conf</a><br>
+<strong>-o Direktive::Unterdirektive::Option &lt;Wert&gt; </strong>→ setzen eines Wertes<br>
+<strong>-c &lt;Datei&gt; </strong>→ Die Konfiguration in diese Datei schreiben <br>
+<em>Beispiel:</em><br>
+<code>apt-config -o APT::GET::Assume-Yes "true" -c 99.users.conf</code><br>
+</p>
 
 
 <p>

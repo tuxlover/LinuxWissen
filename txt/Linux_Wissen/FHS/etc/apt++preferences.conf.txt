@@ -18,12 +18,12 @@ Created Freitag 01 Juni 2012
 	+500 wenn das Paket nicht installiert und nicht zum Zielrelease gehört
 	+ 990 wenn das Paket nicht installiert und zum Zielrelease gehören
 
-~> Pakete mit einer Prirorität < 0 werden nimeals Installiert. 
+~> Pakete mit einer Prirorität < 0 werden niemals Installiert. 
 ~> Pakete mit Prioriät 0 <= N <= 100 werden nur installiert, falls keine andere Version bereits installiert ist
 ~> Pakete mit Priorität 100 < N <= 500 werden nur installiert falls keine neuere Version als die vorhandene installiert sind
 ~> Pakete mit Priorität 500 < N <= 990 werden nur installiert wenn keine neueren Versionen installiert installiert oder in anderen 
       Distributionsquellen zur Verfügung gestellt werden
-~> Pakete mit Priorität 990 < N <= 1000 werden nur dann installier ,wenn die installierte Version nicht neuer ist
+~> Pakete mit Priorität 990 < N <= 1000 werden nur dann installiert ,wenn die installierte Version nicht neuer ist
 ~> Pakete mit der Priorität > 1000 werden immer installiert, sogar wenn apt dadruch gezwungen wird eine ältere Version zu downgraden
 
 ++
@@ -42,7 +42,13 @@ Pin-Priority: 900
 Package: *
 Pin: release o=Debian
 Pin-Priority: -10
+
+# Always prefer debian security update
+Package: *
+Pin: origin "http://security.debian.org/"
+Pin-Priority: 992
 '''
+
 
 ++
 **man apt_preferences**
