@@ -22,3 +22,4 @@ Created Sonntag 09 Oktober 2011
 [[+Daemon]] (Ein Script als Daemon laufen lassen)
 [[+SelectYourWeapon]] (Ein Select Statement bauen)
 [[+string has path]] (Überprüfen ob ein String mit einem vorgeschriebenen Pfadnamen beginnt)
+[[+Battery control]] (Überprüfen und Erfragen des Batterie Status)

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Fortschrittsbalken</title>
+		<title>Battery control</title>
 		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Fortschrittsbalken</h1>
+									Battery control</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -93,12 +93,12 @@
 <ul>
 <li><a href="./Am_I__Root.html" title="Am I  Root">Am I  Root</a></li>
 <li><a href="./AreWeInteractive.html" title="AreWeInteractive">AreWeInteractive</a></li>
-<li><a href="./Battery_control.html" title="Battery control">Battery control</a></li>
+<li><strong>Battery control</strong></li>
 <li><a href="./Check_files.html" title="Check files">Check files</a></li>
 <li><a href="./Count_down.html" title="Count down">Count down</a></li>
 <li><a href="./Create_conf.html" title="Create conf">Create conf</a></li>
 <li><a href="./Daemon.html" title="Daemon">Daemon</a></li>
-<li><strong>Fortschrittsbalken</strong></li>
+<li><a href="./Fortschrittsbalken.html" title="Fortschrittsbalken">Fortschrittsbalken</a></li>
 <li><a href="./Have_we_Argruments.html" title="Have we Argruments">Have we Argruments</a></li>
 <li><a href="./Integer_Test.html" title="Integer Test">Integer Test</a></li>
 <li><a href="./Is_this_Programm_installed.html" title="Is this Programm installed">Is this Programm installed</a></li>
@@ -131,32 +131,35 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Montag 10 Oktober 2011<br>
+Created Dienstag 19 Juni 2012<br>
 </p>
 
-<p>
-fortschrittsbalken()<br>
-{<br>
-</p>
 <pre>
-echo -n $'____________________\r'
-for ((i = 0; i &lt; 20; i++))
+# function returns status information about the battery status
+battery ()
+{
+case "$1" in
+        # returns the percentage of battery charge when discharging
+        "load")
+                now=`cat /sys/class/power_supply/BAT0/energy_now`
+                full=`cat /sys/class/power_supply/BAT0/energy_full`
+                out=`echo $now/$full*100 | bc -l | cut -c 1-5`
+                echo "Charge: "$out"%" 
+                ;;
+
+        # returns the battery health. that is the percenatge of the maximal capacity
+        "health")
+                    design=`cat /sys/class/power_supply/BAT0/energy_full_design`
+                    current=`cat /sys/class/power_supply/BAT0/energy_full`
+                    out=`echo $current/$design*100 | bc -l | cut -c 1-5`
+                    echo "Capacity: "$out"%"
+                ;;
+
+        *) echo "Usage: battery load|health"
+esac
+}
 </pre>
-<pre style='padding-left: 30pt'>
-do
-</pre>
-<pre style='padding-left: 60pt'>
-echo -n "#"
-sleep 2
-...Befehle für $i
-</pre>
-<pre style='padding-left: 30pt'>
-done
-echo 
-</pre>
-<p>
-}<br>
-</p>
+
 
 
 			<!-- End wiki content -->
@@ -164,7 +167,7 @@ echo
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a></li>						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
+				Backlinks:						<a href='../Rezepte.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Rezepte</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

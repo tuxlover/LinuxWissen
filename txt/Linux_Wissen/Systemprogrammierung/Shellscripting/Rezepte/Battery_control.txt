@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-19T14:25:18+02:00
+
+====== Battery control ======
+Created Dienstag 19 Juni 2012
+
+'''
+# function returns status information about the battery status
+battery ()
+{
+case "$1" in
+        # returns the percentage of battery charge when discharging
+        "load")
+                now=`cat /sys/class/power_supply/BAT0/energy_now`
+                full=`cat /sys/class/power_supply/BAT0/energy_full`
+                out=`echo $now/$full*100 | bc -l | cut -c 1-5`
+                echo "Charge: "$out"%" 
+                ;;
+
+        # returns the battery health. that is the percenatge of the maximal capacity
+        "health")
+                    design=`cat /sys/class/power_supply/BAT0/energy_full_design`
+                    current=`cat /sys/class/power_supply/BAT0/energy_full`
+                    out=`echo $current/$design*100 | bc -l | cut -c 1-5`
+                    echo "Capacity: "$out"%"
+                ;;
+
+        *) echo "Usage: battery load|health"
+esac
+}
+'''
+
