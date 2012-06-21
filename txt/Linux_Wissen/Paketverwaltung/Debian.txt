@@ -16,14 +16,19 @@ $Debian, Ubuntu, Knoppix, Xandros, Sidux$
 
 ===== Entpacken eines Debain Pakets ohne es zu installieren =====
 * Debian Pakete sind als ar gepackt
-**ar -t <Paket.deb> **→ entpackt das Debian Paket und zerlegt es in seine Bestandteile
-				     → es erfolgt keine Installation
+**ar -t <Paket.deb> **→ zeigt den Inhalt des Debian Paket und zerlegt es in seine Bestandteile
+**ar -x <Paket.deb> **→ entpackt das Debian Paket und zerlegt es in seine Bestandteile
 
-//debian-binary //→ binäre ausführbare Dateien und Programmbibliotheken
+//debian-binary //→ Text Datei die die aktuelle Versionsnummer des Paketes bezeichnet
 [[Linux Wissen:Bibliotheken]]
 
-//control.gz //→ Anweisungen, die beschreiben was bei der Installation mit dem Paket geschehen soll
+//control.tar.gz //→ Anweisungen, die beschreiben was bei der Installation mit dem Paket geschehen soll
                 → typischerweise beinhaltet es Scripte, die vor und nach dem kopieren der Binärdateien ausgeführt werden
+	
+	//changelog → //beschreibt die Änderungen seit beginn des erstes Paketes
+	//control// → RFC 2822 konforme Datei die das Paket genau beschreibt und Metainformationen zum Paket enthält ([[+Metainformationen]])
+	//md5sums → //Liste der Dateien und ihre zugehörigen md5summen zur Überprüfung mit **debsums**
+
 
 //data.tar.gz → //Dateien die nicht binär sind (z.B.Icons,Scripte und Konfigurationsdateien)
 

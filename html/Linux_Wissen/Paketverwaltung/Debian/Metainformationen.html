@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>dpkg</title>
+		<title>Metainformationen</title>
 		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									dpkg</h1>
+									Metainformationen</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -68,8 +68,8 @@
 <li><a href="../Debian.html" title="Debian">Debian</a></li>
 <ul>
 <li><a href="./apt.html" title="apt">apt</a></li>
-<li><strong>dpkg</strong></li>
-<li><a href="./Metainformationen.html" title="Metainformationen">Metainformationen</a></li>
+<li><a href="./dpkg.html" title="dpkg">dpkg</a></li>
+<li><strong>Metainformationen</strong></li>
 <li><a href="./Pakete_bauen.html" title="Pakete bauen">Pakete bauen</a></li>
 </ul>
 <li><a href="../Rpm.html" title="Rpm">Rpm</a></li>
@@ -94,98 +94,53 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Montag 25 April 2011<br>
-</p>
+				<li>alle Informationen und Metainformationen befinden sich in der control Datei der control.tar.gz</li>
 
-<p>
-<strong>dpkg </strong>→ installieren und verwalten von Debian Paketen (.deb)<br>
-</p>
-
-<h4>installieren</h4>
-<p>
-<strong>-i |--install &lt;Paket&gt; </strong>→ installiert das Paket sofern alle Abhängigkeiten erfüllt wurden<br>
-<div style='padding-left: 30pt'>
-<strong>--force-depends </strong>→ überspringt die Überprüfung von benötigten Abhängigkeiten<br>
-<strong>--force-overwrite </strong>→ Im System bereits vorhandene Dateien werden überschrieben<br>
-</div>
-</p>
-
-<p>
-<ul>
-<li>Pakete können sich gegenseitig ausschließen </li>
-<li>virtuelle Abhängigkeiten: Paket hängt von einer einer Funktionalität ab, die von mehereren Paketen angeboten wird</li>
-</ul>
-</p>
-
-<h4>entfernen</h4>
-<p>
-<strong>-r |--remove &lt;Name&gt; </strong>→ entfernen von Paket &lt;Name&gt;. Konfigurationsdateien bleiben erhalten<br>
-<strong>-p|--purge &lt;Name&gt; </strong>→ entfernene von Paket &lt;Name&gt; inklusive der Konfigurationsdateien<br>
-<div style='padding-left: 30pt'>
-<strong>--force </strong>→ entferne trotz bestehender Abhängigkeiten<br>
-</div>
-</p>
+<strong>apt-cache show &lt;apt&gt; </strong>→ asnzeigen der Metainformationen zu einem Paket<br>
+<pre>
+&gt;&gt;
+Package: &lt;Name  des Paketes&gt;
+Tag: &lt;Tags die von 
+</pre>
+<strong>aptitude </strong>genutzt werden können&gt;<br>
+<pre>
+Section: &lt;Die Sektion des Paketes&gt;
+Version: &lt;Versionsnummer inklusive Versionsnummer der enthaltenen Software&gt;
+Installed-Size: &lt;Größe in kbites nach der Installation&gt;
+Maintainer: &lt;Der Verantwortliche für dieses Paket&gt;
+Architecture: &lt;Die verwendete Architektur des Systems&gt;
+Description: &lt;Beschreibung des Paketes&gt;
+Depends: &lt;Abhängigkeiten für die Funlktionsweise des Paktes von Nöten&gt;
+Pre-Depends: &lt;Abhängogkeiten für die Funktionsweise des Preinstall Scripts&gt;
+Recommends:	&lt;Pakete die die Funktionalität der Software verbsseren&gt; 
+Suggests: &lt;Pakete die die Funktionalität erhöhen und vereifachen&gt;
+Enhances: &lt;Das Paket verbessert folgende Pakete&gt;
+Conflicts: &lt;Das Paket darf nie mit folgenden Paketen zusamen installiert werden&gt;
+Breaks: &lt;Die Installation des Paketes führt zur Unnutzbarkeit der folgenden Pakete&gt;
+Provides: &lt;Das Paket bietet einen bestimmten Service ein Virtuelles Paket oder ein zusätzliches Paket an&gt;
+Replaces: &lt;Das Paket enthält Dateien die auch von folgenden anderen Paketen angeboten werden&gt;
+</pre>
 
 
-<h4>abfragen</h4>
-<p>
-<strong>-l|--list </strong>→ liste der Pakete anzeigen<br>
-<div style='padding-left: 30pt'>
-<em>ii </em>→ das Paket ist vollständig installiert<br>
-<em>un </em>→ Auf diesem System nicht installiert<br>
-<em>pn </em>→ Wurde von diesem System entfernt<br>
-<em>rc </em>→ nur noch Konfigurationsdateien  <br>
-</div>
-<strong>-s |--status &lt;Paket&gt; </strong>→ anzeigen des Status eines einzelnen Pakets<br>
-<strong>-L |--listfiles &lt;Paket&gt; </strong>→ anzeigen der Dateien die zu &lt;Paket gehören&gt;<br>
-<strong>-S|--search &lt;Datei&gt; </strong>→ zu welchem Paket gehört eine Datei<br>
-</p>
- 
-<p>
-<u>Hinweis: Mit </u><strong>dpkg -l|grep ^ii.* </strong>kann man sich installierte Pakete anzeigen lassen<br>
-</p>
+<h4>Tags</h4>
+<li>Jedem Paket kann ein Tag zugewiesen werden, Tags sind Individuell und kategorisieren das Paket</li>
+<li>kann vom Tool <strong>debtags, aptitude</strong> genutzt werden</li>
 
-<p>
-<u>Hinweis: MIt </u><strong>dpkg -l|grep ^rc.* </strong>kann man sich Pakete anzeigen lassen von denen noch Konfigurationsdatein übrig sind. <br>
-</p>
+<h4>Policy</h4>
+<li>Damit Virtuelle Pakete konsistenz genutzt werden können sind diese der Debian Policy folgend standardisiert</li>
 
-<h4>Quellcode zu einem Paket aus dem Debianarchiv erhalten</h4>
-<p>
-<strong>dpkg-source -x &lt;Paket&gt;.dsc </strong>→ der zu Paket passenden Quelldateien <br>
-</p>
-
-<p>
-<strong>debsums &lt;Paket&gt; </strong>→ Überprüfen der Intigrität eines installierten Paketes<br>
-/<em>var/lib/dpkg/info </em><br>
-<a href="../../FHS/var.html" title="Linux Wissen:FHS:var">Linux Wissen:FHS:var</a><br>
-</p>
-
-<p>
-<strong>dpkg-reconfigure &lt;Paket&gt; </strong>→ eine neue Konfiguration für ein installiertes &lt;Paket&gt; erstellen<br>
-<strong>-f |--frontend </strong>→ ein anderes Frontend definieren (<strong>man 7 debconf </strong>im  Paket debconf-doc)<br>
-DEBCONF_FRONTEND  <br>
-<strong>-p |--priority &lt;critical|high|medium|low </strong>→ festlegen der Deteiltiefe der Konfiguration<br>
-<div style='padding-left: 90pt'>
-<strong>critical</strong> → unbedingt zu beantwortende Fragen, nur critical wird abgefragt<br>
-<strong>high </strong>→ Fragen die bereits eine verünftige Voreinstellung benötigen, nur high und critical<br>
-<strong>medium </strong>→ Fragen die bereits eine vernünftige Voreinstellung haben, nur medium, high, critical<br>
-<strong>low </strong>→ Triviale Fragen mit meist funktionierenden Voreinstellungen, alle Fragen<br>
-</div>
-</p>
-			
-
-<h2>Verweiste Pakete</h2>
-<p>
-<ul>
-<li>Pakete die installiert sind, aber von keinem anderen Paket mehr benötigt werden und auch keine zusätzliche Funktionaliät anbieten.</li>
-</ul>
-</p>
-
-<p>
-<strong>deborphan </strong>→ spürt Pakete auf, die verweist sind<br>
-</p>
-
+<h4>Abhängigkeiten</h4>
+<li>Abhängigkeiten werden im <code>Depends</code> Feld der control erfragt</li>
+<li>wird von apt genutzt um die benötigten Abhängigkeiten aufzulösen in dem entsprechende Pakete installiert werden</li>
+<li>bei <code>Conflicts</code> oder <code>Breaks</code> wird der Administrator darauf hingewiesen und die Installation verweigert</li>
+<li>Jedes Paket kann in in seiner Versionsnummer angegeben werden (&lt;&lt; 1.2.3|&lt;= 1.2.3|= 1.2.3 | &gt;= 1.2.3)</li>
+= →  genau diese Version<br>
+&lt;&lt; → genau kleiner<br>
+&gt;&gt; → genau größer<br>
+&lt;= → größer oder gleich<br>
+&gt;= → kleiner oder gleich<br>
+| → oder<br>
+, → und<br>
 
 
 			<!-- End wiki content -->
@@ -193,7 +148,7 @@ DEBCONF_FRONTEND  <br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../../FHS/var.html'>Linux Wissen:FHS:var</a></li>						<a href='../Debian.html'>Linux Wissen:Paketverwaltung:Debian</a></li>
+				Backlinks:						<a href='../Debian.html'>Linux Wissen:Paketverwaltung:Debian</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

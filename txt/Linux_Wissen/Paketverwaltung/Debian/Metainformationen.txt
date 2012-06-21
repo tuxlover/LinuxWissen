@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-06-21T13:51:54+02:00
+
+====== Metainformationen ======
+Created Donnerstag 21 Juni 2012
+
+* alle Informationen und Metainformationen befinden sich in der control Datei der control.tar.gz
+
+**apt-cache show <apt> **→ asnzeigen der Metainformationen zu einem Paket
+'''
+>>
+Package: <Name  des Paketes>
+Tag: <Tags die von 
+'''
+**aptitude **genutzt werden können>
+'''
+Section: <Die Sektion des Paketes>
+Version: <Versionsnummer inklusive Versionsnummer der enthaltenen Software>
+Installed-Size: <Größe in kbites nach der Installation>
+Maintainer: <Der Verantwortliche für dieses Paket>
+Architecture: <Die verwendete Architektur des Systems>
+Description: <Beschreibung des Paketes>
+Depends: <Abhängigkeiten für die Funlktionsweise des Paktes von Nöten>
+Pre-Depends: <Abhängogkeiten für die Funktionsweise des Preinstall Scripts>
+Recommends:	<Pakete die die Funktionalität der Software verbsseren> 
+Suggests: <Pakete die die Funktionalität erhöhen und vereifachen>
+Enhances: <Das Paket verbessert folgende Pakete>
+Conflicts: <Das Paket darf nie mit folgenden Paketen zusamen installiert werden>
+Breaks: <Die Installation des Paketes führt zur Unnutzbarkeit der folgenden Pakete>
+Provides: <Das Paket bietet einen bestimmten Service ein Virtuelles Paket oder ein zusätzliches Paket an>
+Replaces: <Das Paket enthält Dateien die auch von folgenden anderen Paketen angeboten werden>
+'''
+
+
+=== Tags ===
+* Jedem Paket kann ein Tag zugewiesen werden, Tags sind Individuell und kategorisieren das Paket
+* kann vom Tool **debtags, aptitude** genutzt werden
+
+=== Policy ===
+* Damit Virtuelle Pakete konsistenz genutzt werden können sind diese der Debian Policy folgend standardisiert
+
+=== Abhängigkeiten ===
+* Abhängigkeiten werden im ''Depends'' Feld der control erfragt
+* wird von apt genutzt um die benötigten Abhängigkeiten aufzulösen in dem entsprechende Pakete installiert werden
+* bei ''Conflicts'' oder ''Breaks'' wird der Administrator darauf hingewiesen und die Installation verweigert
+* Jedes Paket kann in in seiner Versionsnummer angegeben werden (<< 1.2.3|<= 1.2.3|= 1.2.3 | >= 1.2.3)
+= →  genau diese Version
+<< → genau kleiner
+>> → genau größer
+<= → größer oder gleich
+>= → kleiner oder gleich
+| → oder
+, → und
