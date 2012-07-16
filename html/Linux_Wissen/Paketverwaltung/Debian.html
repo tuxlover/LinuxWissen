@@ -94,45 +94,70 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<a href="http://www.debian.org/" title="http://www.debian.org/">http://www.debian.org/</a><br>
+				<p>
+Created Montag 25 April 2011<br>
+<a href="http://www.debian.org/" title="http://www.debian.org/">http://www.debian.org/</a><br>
 $Debian, Ubuntu, Knoppix, Xandros, Sidux$<br>
-<br>
-<h2>Aufbau eines Debian Pakets</h2><br>
+</p>
+
+<h2>Aufbau eines Debian Pakets</h2>
+<p>
 &lt;programm&gt;_&lt;Version&gt;_&lt;Release&gt;-&lt;Arch&gt;.deb<br>
 <em>&lt;programm&gt; → </em>der Name des Programms,Bibliothek,...<br>
 <em>&lt;Version&gt; </em>→ Versionsnummer des &lt;Programm&gt; zugrundeliegenden Quellpakets<br>
 <em>&lt;Release&gt; </em>→ Das wievielte Mal wurde das Paket in dieser Version gebaut<br>
 <em>&lt;Arch&gt; </em>→ Die Architektur auf der dieses Paket installiert werden kann (i386, amd64,all,any)<br>
-<br>
+</p>
+
 <h2>Entpacken eines Debain Pakets ohne es zu installieren</h2>
+<p>
+<ul>
 <li>Debian Pakete sind als ar gepackt</li>
+</ul>
 <strong>ar -t &lt;Paket.deb&gt; </strong>→ zeigt den Inhalt des Debian Paket und zerlegt es in seine Bestandteile<br>
 <strong>ar -x &lt;Paket.deb&gt; </strong>→ entpackt das Debian Paket und zerlegt es in seine Bestandteile<br>
-<br>
-<em>debian-binary </em>→ Text Datei die die aktuelle Versionsnummer des Paketes bezeichnet<br>
-<a href="../Bibliotheken.html" title="Linux Wissen:Bibliotheken">Linux Wissen:Bibliotheken</a>
+</p>
 
+<p>
+<em>debian-binary </em>→ Text Datei die die aktuelle Versionsnummer des Paketes bezeichnet<br>
+<a href="../Bibliotheken.html" title="Linux Wissen:Bibliotheken">Linux Wissen:Bibliotheken</a><br>
+</p>
+
+<p>
 <em>control.tar.gz </em>→ Anweisungen, die beschreiben was bei der Installation mit dem Paket geschehen soll<br>
                 → typischerweise beinhaltet es Scripte, die vor und nach dem kopieren der Binärdateien ausgeführt werden<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</p>
+	
+<p>
 <div style='padding-left: 30pt'>
 <em>changelog → </em>beschreibt die Änderungen seit beginn des erstes Paketes<br>
 <em>control</em> → RFC 2822 konforme Datei die das Paket genau beschreibt und Metainformationen zum Paket enthält (<a href="./Debian/Metainformationen.html" title="+Metainformationen">+Metainformationen</a>)<br>
 <em>md5sums → </em>Liste der Dateien und ihre zugehörigen md5summen zur Überprüfung mit <strong>debsums</strong><br>
 </div>
+</p>
 
 
+<p>
 <em>data.tar.gz → </em>Dateien die nicht binär sind (z.B.Icons,Scripte und Konfigurationsdateien)<br>
-<br>
+</p>
+
 <h2>Verwalten von Software</h2>
+<p>
+<ul>
 <li><strong>dpkg</strong></li>
 <li><strong>debsums</strong></li>
-<a href="./Debian/dpkg.html" title="Linux Wissen:Paketverwaltung:Debian:dpkg">Linux Wissen:Paketverwaltung:Debian:dpkg</a>
+</ul>
+<a href="./Debian/dpkg.html" title="Linux Wissen:Paketverwaltung:Debian:dpkg">Linux Wissen:Paketverwaltung:Debian:dpkg</a><br>
+<ul>
 <li><strong>aptitude</strong></li>
 <li><strong>apt-get</strong> </li>
-<a href="./Debian/apt.html" title="Linux Wissen:Paketverwaltung:Debian:apt">Linux Wissen:Paketverwaltung:Debian:apt</a>
+</ul>
+<a href="./Debian/apt.html" title="Linux Wissen:Paketverwaltung:Debian:apt">Linux Wissen:Paketverwaltung:Debian:apt</a><br>
+<ul>
 <li>Die Liste von Bezugsquelle von Debianquellen kann unter /<em>etc/apt/sources.lst</em> konfiguriert werden</li>
-<a href="../FHS/etc/apt%2B%2Bsoruces.list.html" title="Linux Wissen:FHS:etc:apt++soruces.list">Linux Wissen:FHS:etc:apt++soruces.list</a>
+</ul>
+<a href="../FHS/etc/apt%2B%2Bsoruces.list.html" title="Linux Wissen:FHS:etc:apt++soruces.list">Linux Wissen:FHS:etc:apt++soruces.list</a><br>
+</p>
 
 
 			<!-- End wiki content -->

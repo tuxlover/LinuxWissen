@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Metainformationen</title>
+		<title>Python Interpreter</title>
 		<meta name='Generator' content='Zim 0.56'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -40,7 +40,7 @@
 				<h1><a href="./Home.html" class="notebook">Notes:</a>
 			
 				
-									Metainformationen</h1>
+									Python Interpreter</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -64,16 +64,6 @@
 <li><a href="../../Monitoring.html" title="Monitoring">Monitoring</a></li>
 <li><a href="../../Networking.html" title="Networking">Networking</a></li>
 <li><a href="../../Paketverwaltung.html" title="Paketverwaltung">Paketverwaltung</a></li>
-<ul>
-<li><a href="../Debian.html" title="Debian">Debian</a></li>
-<ul>
-<li><a href="./apt.html" title="apt">apt</a></li>
-<li><a href="./dpkg.html" title="dpkg">dpkg</a></li>
-<li><strong>Metainformationen</strong></li>
-<li><a href="./Pakete_bauen.html" title="Pakete bauen">Pakete bauen</a></li>
-</ul>
-<li><a href="../Rpm.html" title="Rpm">Rpm</a></li>
-</ul>
 <li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme">Partitionen und Dateisysteme</a></li>
 <li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung">Prozessverwaltung</a></li>
 <li><a href="../../root.html" title="root">root</a></li>
@@ -81,6 +71,18 @@
 <li><a href="../../Sicherheit.html" title="Sicherheit">Sicherheit</a></li>
 <li><a href="../../SQL.html" title="SQL">SQL</a></li>
 <li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung">Systemprogrammierung</a></li>
+<ul>
+<li><a href="../Awk.html" title="Awk">Awk</a></li>
+<li><a href="../C.html" title="C">C</a></li>
+<li><a href="../C%2B%2B.html" title="C++">C++</a></li>
+<li><a href="../Perl.html" title="Perl">Perl</a></li>
+<li><a href="../Python.html" title="Python">Python</a></li>
+<ul>
+<li><strong>Python Interpreter</strong></li>
+</ul>
+<li><a href="../Sed.html" title="Sed">Sed</a></li>
+<li><a href="../Shellscripting.html" title="Shellscripting">Shellscripting</a></li>
+</ul>
 <li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung">Systemprotokollierung</a></li>
 <li><a href="../../Systemzeit.html" title="Systemzeit">Systemzeit</a></li>
 <li><a href="../../Vim_Editor.html" title="Vim Editor">Vim Editor</a></li>
@@ -94,77 +96,21 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Donnerstag 21 Juni 2012<br>
-</p>
-
-<p>
-<ul>
-<li>alle Informationen und Metainformationen befinden sich in der control Datei der control.tar.gz</li>
-</ul>
-</p>
-
-<p>
-<strong>apt-cache show &lt;apt&gt; </strong>→ asnzeigen der Metainformationen zu einem Paket<br>
-</p>
-<pre>
-&gt;&gt;
-Package: &lt;Name  des Paketes&gt;
-Tag: &lt;Tags die von 
-</pre>
-<p>
-<strong>aptitude </strong>genutzt werden können&gt;<br>
-</p>
-<pre>
-Section: &lt;Die Sektion des Paketes&gt;
-Version: &lt;Versionsnummer inklusive Versionsnummer der enthaltenen Software&gt;
-Installed-Size: &lt;Größe in kbites nach der Installation&gt;
-Maintainer: &lt;Der Verantwortliche für dieses Paket&gt;
-Architecture: &lt;Die verwendete Architektur des Systems&gt;
-Description: &lt;Beschreibung des Paketes&gt;
-Depends: &lt;Abhängigkeiten für die Funlktionsweise des Paktes von Nöten&gt;
-Pre-Depends: &lt;Abhängogkeiten für die Funktionsweise des Preinstall Scripts&gt;
-Recommends:	&lt;Pakete die die Funktionalität der Software verbsseren&gt; 
-Suggests: &lt;Pakete die die Funktionalität erhöhen und vereifachen&gt;
-Enhances: &lt;Das Paket verbessert folgende Pakete&gt;
-Conflicts: &lt;Das Paket darf nie mit folgenden Paketen zusamen installiert werden&gt;
-Breaks: &lt;Die Installation des Paketes führt zur Unnutzbarkeit der folgenden Pakete&gt;
-Provides: &lt;Das Paket bietet einen bestimmten Service ein Virtuelles Paket oder ein zusätzliches Paket an&gt;
-Replaces: &lt;Das Paket enthält Dateien die auch von folgenden anderen Paketen angeboten werden&gt;
-</pre>
+				<li>Es gibt verschiedene Imlementierungen und Abarten von Python</li>
+<li>Der Standardinterpreter ist der sog. CPython Interpreter</li>
 
 
-<h4>Tags</h4>
-<p>
-<ul>
-<li>Jedem Paket kann ein Tag zugewiesen werden, Tags sind Individuell und kategorisieren das Paket</li>
-<li>kann vom Tool <strong>debtags, aptitude</strong> genutzt werden</li>
-</ul>
-</p>
-
-<h4>Policy</h4>
-<p>
-<ul>
-<li>Damit Virtuelle Pakete konsistenz genutzt werden können sind diese der Debian Policy folgend standardisiert</li>
-</ul>
-</p>
-
-<h4>Abhängigkeiten</h4>
-<p>
-<ul>
-<li>Abhängigkeiten werden im <code>Depends</code> Feld der control erfragt</li>
-<li>wird von apt genutzt um die benötigten Abhängigkeiten aufzulösen in dem entsprechende Pakete installiert werden</li>
-<li>bei <code>Conflicts</code> oder <code>Breaks</code> wird der Administrator darauf hingewiesen und die Installation verweigert</li>
-<li>Jedes Paket kann in in seiner Versionsnummer angegeben werden (&lt;&lt; 1.2.3|&lt;= 1.2.3|= 1.2.3 | &gt;= 1.2.3)</li>
-</ul>
-= →  genau diese Version<br>
-&lt;&lt; → genau kleiner<br>
-&gt;&gt; → genau größer<br>
-&lt;= → größer oder gleich<br>
-&gt;= → kleiner oder gleich<br>
-| → oder<br>
-, → und<br>
-</p>
+<h4>.py und .pyc</h4><br>
+→ Scripte / Programme werden in einer Datei mit Endung <em>.py </em>geschrieben<br>
+→ zur Laufzeit entsteht dann eine gleichnamige Datei mit der Endung .<em>pyc </em> welches den Byte Code enthält der von der Pyhton Virtual Machine (PVM) gelesen wird<br>
+→ bei jeder Änderung wird diese Datei neu erzeugt. Werden keine Änderungen vorgenommen wird gleich das .pyc Kompilat verwendet<br>
+<br>
+<br>
+Weitere:<br>
++ Jython → Byte Code übersetzung in Java Byte Code <br>
++ Iron Python → Implementierung des Python Interpreters in .NET bzw. Mono<br>
++ Psyco → Verbesserung der Python Laufzeit durch Erweiterung des Pyhton Byte Code Interpreters um einen Just in Time Compiler<br>
+ <br>
 
 
 			<!-- End wiki content -->
@@ -172,7 +118,7 @@ Replaces: &lt;Das Paket enthält Dateien die auch von folgenden anderen Paketen 
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-				Backlinks:						<a href='../Debian.html'>Linux Wissen:Paketverwaltung:Debian</a></li>
+				Backlinks:						<a href='../Python.html'>Linux Wissen:Systemprogrammierung:Python</a></li>
 			<!-- End Backlinks -->
 			</div>
 		</div>

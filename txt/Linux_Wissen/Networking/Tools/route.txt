@@ -28,16 +28,21 @@ von Routing Daemons wie **routed **oder **gated**
 **route add|del -host <Ip-Adresse> netmask dev <ethN>** →  Setzen|löschen einer Hostroute
 **route add default dev <ethN>** →  Setzen einer Default Gateway Route
 
+__Achtung: Die Angabe der Netzmaske ist nicht Fakultaitiv.__
+
 **route **→ Anzeigen der im Kernelspace verwalteten Routing Tabelle
           → äquivalent zu **netstat -r[n]** 
 **-n **→ Numerische Adressen anzeigen
 
 //Beispielausgabe://
 +++
-//>> Ziel            Router          Genmask         Flags Metric Ref    Use Iface//
-//192.168.128.0   *               255.255.255.0       U     1      0        0 eth0//
-//loopback        *               255.0.0.0           U     0      0        0      lo//
-//default         192.168.128.1   0.0.0.0             UG    0      0        0 eth0//
+'''
+>> Ziel            Router          Genmask         Flags Metric Ref    Use Iface
+192.168.128.0   *               255.255.255.0       U     1      0        0 eth0
+loopback        *               255.0.0.0           U     0      0        0      lo
+default         192.168.128.1   0.0.0.0             UG    0      0        0 eth0
+'''
+
 +++
 **<Ziel (Destination)> → **Zieladresse (Netzadresse, Satationsadresse, **standard **für alle Routen für die nichts anderes eingetragen wurde)
 <**Router (Gateway)> **→ Router für Paketweiterleitung, falls * werden Pakete nicht an andere Adressen weitergeleitet

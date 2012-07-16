@@ -77,6 +77,9 @@
 <li><a href="./C%2B%2B.html" title="C++">C++</a></li>
 <li><a href="./Perl.html" title="Perl">Perl</a></li>
 <li><strong>Python</strong></li>
+<ul>
+<li><a href="./Python/Python_Interpreter.html" title="Python Interpreter">Python Interpreter</a></li>
+</ul>
 <li><a href="./Sed.html" title="Sed">Sed</a></li>
 <li><a href="./Shellscripting.html" title="Shellscripting">Shellscripting</a></li>
 </ul>
@@ -93,10 +96,63 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Dienstag 26 April 2011<br>
-</p>
+				<li>Interpretierte Programmiersprache</li>
+<li>Fokussiert auf Lesbarkeit und Wartbarkeit des Codes</li>
+<li>gut geignet für <em>Rapid Prototyping</em></li>
+<li>Objektorientiert, Modular und Funktional</li>
+<li>kann flexibel in C/C++ integriert werden (<a href="./C%2B%2B.html" title="C++">C++</a> / <a href="./C.html" title="C">C</a> )</li>
+<li>kann mit Datenbanken (Mysql u.a.) kommunizieren (</li>
+<a href="../SQL.html" title="Linux Wissen:SQL">Linux Wissen:SQL</a> ) und lässt sich einfach in SQLite integrieren<br>
+<li>mod_python für den Apache Webserver <strong>(missing link: Apache)</strong></li>
 
+<a href="http://getpython3.com/diveintopython3/" title="http://getpython3.com/diveintopython3/">http://getpython3.com/diveintopython3/</a>
+<a href="http://www.python.org/" title="http://www.python.org/">http://www.python.org/</a>
+<a href="../../../../../usr/share/doc/python3.2/html/index.html" title="file:///usr/share/doc/python3.2/html/index.html">file:///usr/share/doc/python3.2/html/index.html</a>
+
+
+<h5>Dynamisch</h5>
+<li>Variablendeclaration nicht notwendig</li>
+<li>es gibt keine Datentypen wie Integer oder Strings. </li>
+<li>Welchen Typ ein Objekt hat hängt von seinem "Aussehen" ab</li>
+
+<h5>Automatisches Speichermanagement</h5>
+<li>Objekte werden von Python automatisch alociert</li>
+<li><em>garbage Collection </em>gibt Speicherplatz wieder frei wenn Objekte nicht mehr länger im Speicher gehalten werden müssen, weil das benötigte Objekt nicht länger benötigt wird</li>
+
+<h5>Programming-in-the-Large</h5>
+<li>Modularisierung</li>
+<li>Klassen und Exeptionhandling (Event- und Errorhandling)</li>
+
+<h5>Build-in object Typen</h5>
+<li>Python kennt <em>Listen, Dictionaries und Strings</em></li>
+<li>es kann auf diesen Objekten einfach und schnell operieren</li>
+
+<h5>Build-in Tools</h5>
+<li>bietet Klassen und Module für die meisten Standardalgorithmen und Verfahrensweisen</li>
+<li>Suchen und Sortieren</li>
+<li>eigene Library für Netzwerkprogrammierung und behandeln von Regulären Ausdrücken</li>
+
+<u>Achtung: Es gibt Unterschiede zwischen Python Version 2.x und Version 3.x</u>
+
+
+<h4>Ausführen von Python Code</h4>
+<a href="./Python/Python_Interpreter.html" title="+Python Interpreter">+Python Interpreter</a>
+
+<strong>python </strong><br>
+→ startet die Pyhton Shell in der Befehle und kleinere Python Programme interaktiv bearbeitet und ausprobiert werden <br>
+→ sinnvoll wenn man Buildins und Funktionen testen will<br>
+<br>
+<strong>#!/usr/bin/env python</strong><br>
+→ Sha Bang für python<br>
+→ sucht nach einem python Interpreter der in der verwendeten Shellumgebung gesetzt ist <br>
+(<a href="../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a>)<br>
+<br>
+<strong>pydoc &lt;Stichwort&gt;</strong><br>
+→ internes Python Tool zum Zugriff auf die Dokumentation<br>
+→ wenn ohne Optionen und mit &lt;Stichwort&gt; aufgerufen, wird die Hilfe für dieses &lt;Stichwort&gt; angezeigt<br>
+<strong>-k &lt;Schlüsselwort&gt; </strong>→ durchsuchen der Documentation nach Schlüsselwörter<br>
+<strong>-g </strong>→ Aufrufen einer grafischen Suchmaske (benötigt python-tk)<br>
+         <br>
 
 
 			<!-- End wiki content -->

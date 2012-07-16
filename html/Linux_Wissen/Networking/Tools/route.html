@@ -151,6 +151,10 @@ von Routing Daemons wie <strong>routed </strong>oder <strong>gated</strong><br>
 </p>
 
 <p>
+<u>Achtung: Die Angabe der Netzmaske ist nicht Fakultaitiv.</u><br>
+</p>
+
+<p>
 <strong>route </strong>→ Anzeigen der im Kernelspace verwalteten Routing Tabelle<br>
           → äquivalent zu <strong>netstat -r[n]</strong> <br>
 <strong>-n </strong>→ Numerische Adressen anzeigen<br>
@@ -159,10 +163,15 @@ von Routing Daemons wie <strong>routed </strong>oder <strong>gated</strong><br>
 <p>
 <em>Beispielausgabe:</em><br>
 +++<br>
-<em>&gt;&gt; Ziel            Router          Genmask         Flags Metric Ref    Use Iface</em><br>
-<em>192.168.128.0   *               255.255.255.0       U     1      0        0 eth0</em><br>
-<em>loopback        *               255.0.0.0           U     0      0        0      lo</em><br>
-<em>default         192.168.128.1   0.0.0.0             UG    0      0        0 eth0</em><br>
+</p>
+<pre>
+&gt;&gt; Ziel            Router          Genmask         Flags Metric Ref    Use Iface
+192.168.128.0   *               255.255.255.0       U     1      0        0 eth0
+loopback        *               255.0.0.0           U     0      0        0      lo
+default         192.168.128.1   0.0.0.0             UG    0      0        0 eth0
+</pre>
+
+<p>
 +++<br>
 <strong>&lt;Ziel (Destination)&gt; → </strong>Zieladresse (Netzadresse, Satationsadresse, <strong>standard </strong>für alle Routen für die nichts anderes eingetragen wurde)<br>
 &lt;<strong>Router (Gateway)&gt; </strong>→ Router für Paketweiterleitung, falls * werden Pakete nicht an andere Adressen weitergeleitet<br>

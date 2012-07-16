@@ -5,3 +5,60 @@ Creation-Date: 2011-04-26T20:01:32+02:00
 ====== Python ======
 Created Dienstag 26 April 2011
 
+* Interpretierte Programmiersprache
+* Fokussiert auf Lesbarkeit und Wartbarkeit des Codes
+* gut geignet für //Rapid Prototyping//
+* Objektorientiert, Modular und Funktional
+* kann flexibel in C/C++ integriert werden ([[C++]] / [[C]] )
+* kann mit Datenbanken (Mysql u.a.) kommunizieren (
+[[Linux Wissen:SQL]] ) und lässt sich einfach in SQLite integrieren
+* mod_python für den Apache Webserver **(missing link: Apache)**
+
+http://getpython3.com/diveintopython3/
+http://www.python.org/
+file:///usr/share/doc/python3.2/html/index.html
+
+
+== Dynamisch ==
+* Variablendeclaration nicht notwendig
+* es gibt keine Datentypen wie Integer oder Strings. 
+* Welchen Typ ein Objekt hat hängt von seinem "Aussehen" ab
+
+== Automatisches Speichermanagement ==
+* Objekte werden von Python automatisch alociert
+* //garbage Collection //gibt Speicherplatz wieder frei wenn Objekte nicht mehr länger im Speicher gehalten werden müssen, weil das benötigte Objekt nicht länger benötigt wird
+
+== Programming-in-the-Large ==
+* Modularisierung
+* Klassen und Exeptionhandling (Event- und Errorhandling)
+
+== Build-in object Typen ==
+* Python kennt //Listen, Dictionaries und Strings//
+* es kann auf diesen Objekten einfach und schnell operieren
+
+== Build-in Tools ==
+* bietet Klassen und Module für die meisten Standardalgorithmen und Verfahrensweisen
+* Suchen und Sortieren
+* eigene Library für Netzwerkprogrammierung und behandeln von Regulären Ausdrücken
+
+__Achtung: Es gibt Unterschiede zwischen Python Version 2.x und Version 3.x__
+
+
+=== Ausführen von Python Code ===
+[[+Python Interpreter]]
+
+**python **
+→ startet die Pyhton Shell in der Befehle und kleinere Python Programme interaktiv bearbeitet und ausprobiert werden 
+→ sinnvoll wenn man Buildins und Funktionen testen will
+
+**#!/usr/bin/env python**
+→ Sha Bang für python
+→ sucht nach einem python Interpreter der in der verwendeten Shellumgebung gesetzt ist 
+([[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]])
+
+**pydoc <Stichwort>**
+→ internes Python Tool zum Zugriff auf die Dokumentation
+→ wenn ohne Optionen und mit <Stichwort> aufgerufen, wird die Hilfe für dieses <Stichwort> angezeigt
+**-k <Schlüsselwort> **→ durchsuchen der Documentation nach Schlüsselwörter
+**-g **→ Aufrufen einer grafischen Suchmaske (benötigt python-tk)
+         

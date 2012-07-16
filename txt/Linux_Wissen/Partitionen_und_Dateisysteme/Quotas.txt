@@ -22,6 +22,7 @@ Quotas werden unterhalb des Mountpoints in den Dateien //aquota.user //und //aqu
 **-u <Nutzer> **→ die Quotas für <Nutzer> 
 **-g <Gruppe> **→ die Quotas für <Gruppe>
 **-f <filesystem> **→ Nur die Quotas für das angegebene Dateisystem editieren
+**-t **→ Die Grace Time (Gnadenfrist einstellen)
 
 **repquota -a|/dev/sdX **→ Quotas anzeigen lassen für das entsprechende Dateisystem
 					   → es wird der Inhalt der Dateien //aquota// ausgegeben
@@ -56,6 +57,8 @@ __Hinweis: Neuer sind journaled Quotas, die nach einem unsauberen Abschalten Quo
 **(8) quotacheck -avu **ausführen
 
 **(9) quotaon -avu **die Quotas einschalten
+
+**(10) [optional] edquota -t **nutzen um die Grace Time einzustellen
 
 __Hinweis: Mit dem InitScript /etc/init.d/boot.quota.restart können Quotas on the fly aktiviert werden__
 __Hinweis: Ab openSUSE 12.1 und Fedora 16 wird systemctl verwendet. __''systemctl restart quota.service ''**(missing link systemctl)**

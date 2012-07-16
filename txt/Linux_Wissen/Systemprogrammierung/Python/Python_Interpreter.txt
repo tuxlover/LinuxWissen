@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-07-16T17:15:50+02:00
+
+====== Python Interpreter ======
+Created Montag 16 Juli 2012
+
+* Es gibt verschiedene Imlementierungen und Abarten von Python
+* Der Standardinterpreter ist der sog. CPython Interpreter
+
+
+=== .py und .pyc ===
+→ Scripte / Programme werden in einer Datei mit Endung //.py //geschrieben
+→ zur Laufzeit entsteht dann eine gleichnamige Datei mit der Endung .//pyc // welches den Byte Code enthält der von der Pyhton Virtual Machine (PVM) gelesen wird
+→ bei jeder Änderung wird diese Datei neu erzeugt. Werden keine Änderungen vorgenommen wird gleich das .pyc Kompilat verwendet
+
+
+Weitere:
++ Jython → Byte Code übersetzung in Java Byte Code 
++ Iron Python → Implementierung des Python Interpreters in .NET bzw. Mono
++ Psyco → Verbesserung der Python Laufzeit durch Erweiterung des Pyhton Byte Code Interpreters um einen Just in Time Compiler
+ 
