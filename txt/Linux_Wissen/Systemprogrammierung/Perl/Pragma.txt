@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-10-30T12:29:24+01:00
+
+====== Pragma ======
+Created Dienstag 30 Oktober 2012
+
+* Pragmata in Perl geben an wann eine bestimmte Version (zum Beispiel Programmversion, Codierung etc.) verwendet werden soll
+* Sie wird durch ein **use**-Statement eingeleitet
+* Auch das **use **Statement wird durch ein SImikolon beendet
+
+//Beispiele://
+''Utf8 als Zeichenkodierung erzwingen''
+++
+''#!/usr/bin/env perl''
+use utf8;
+++
+
+Eine bestimmter Perl Version verlangen:
+++
+#!/usr/bin/env perl
+use 5.014;
+++

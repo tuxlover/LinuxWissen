@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-11-04T15:11:04+01:00
+
+====== Bool ======
+Created Sonntag 04 November 2012
+
+* können entweder Wahr (//True//) oder Falsch //(False)// sein
+* durch das verwenden der Funktion **bool** 
+* können statisch zugewisen werden  ([[Python:Variablen]]) oder als Rückgabewert einer Funktion
+* Das Benutzen von Quotings (' oder ") entfernt die Bedeutung der Variablen als Boolean und behandelt die Wörter wie Strings ([[Strings]])
+
+!__!Achtung!!: Die Wörter True und False sind für Python für diesen Datentyp reserviert.__ 
+
+//Beispiel://
+setzen eines Bool: 
+'''
+my_bool = True
+my_bool = bool(1) #entsrpicht True
+my_bool = bool(0) #entspricht False
+'''
+

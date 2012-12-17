@@ -33,6 +33,8 @@ Linux Wissen:FHS:etc:apt++soruces.lst
 
 **remove <Paket1>,... **→ entfernen von <Paket> aus dem Repository 
 
+**build-deb** **<Paket> **→ holen der Abhängigkeiten um ein Paket aus den Quellen zu bauen
+
 **upgrade **→ einspielen aller verfügbaren Updates aus dem Repository
 
 **clean **→ apt läd Dateien nach ///var/cache/apt// herunter, bevor es Datei installiert, clean ermöglicht das säubern des caches

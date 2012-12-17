@@ -42,3 +42,7 @@ __Beispiele:__
 //0 */2 * * * /bin/sh -x /root/chckscript %//
 //führt das Script chkscript alle zwei Stunden im Minutentackt aus//
 // * */2 * * * /bin/sh -x /root/chkscript %//
+
+Anstelle der Angabe von Zeitintervallen können auch die folgenden Spezialstrings verwendet werden:
+** @reboot**
+**@daily, @hourly, @weekly, @midnight, @monthly, @yearly**

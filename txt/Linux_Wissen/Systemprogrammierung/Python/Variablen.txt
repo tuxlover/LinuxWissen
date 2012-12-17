@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-16T19:24:33+01:00
+
+====== Variablen ======
+Created Sonntag 16 Dezember 2012
+
+* Identifier zum Speichern und Vorhalten von Werten
+* Variablen können manipuliert werden
+* Einer Variablen kann zu verschiedenen Zeitpunkten g
+* Rückgabewerte von Objekten und Funktionen können in Variablen gespeichert werden
+
+**Var = Value**
+
+Der Wert <Value> kann //statisch in das Programm integriert// werden oder //dynamisch// zur Laufzeit von Usereingaben, Funktionen oder Objekten zurückgegeben werden
+
+//Beispiele://
+einfach statische Zuweisung statischer Variablen:
+'''
+Reasignment einer Variable
+spam = 5
+sapm = "Whatever"
+
+my_variable = 10
+string = "hello"
+bool = True
+'''
+
+dynmaische Zuweisung von Variablen:
+	''box = get_box(mail)''
+	
+

@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-11-04T15:10:28+01:00
+
+====== Datentypen ======
+Created Sonntag 04 November 2012
+
+[[+Bool]]
+[[+Listen]]
+[[+Strings]]
+[[+Zahlen]]

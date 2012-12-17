@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-11-04T15:12:11+01:00
+
+====== Zahlen ======
+Created Sonntag 04 November 2012
+
+* Zahlen werden ohne Quoting (" ') deklariert
+* Ziffern die mit Quating (" ') deklariert weden werden als String ( [[Strings]] ) behandelt
+
+**Int **→ Positve oder Negative Ganzzahlige Werte 
+
+//Beispiel://
+''i = 10''
+
+**Float **→ Dezimalwerte die mit einem Punkt ( **. **)  die Nachkommaziffern angeben
+* wird eine Zahl mit 1 durch 1.0 deklariert, so wird sie als **Float **deklariert
+
+//Beispiel://
+'''
+f = 3.14159
+f  = 2.0
+'''
+
+

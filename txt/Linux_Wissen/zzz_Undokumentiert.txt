@@ -39,6 +39,7 @@ Created Donnerstag 21 April 2011
 [ ] dbus
 [ ] apt braucht aufmerksamkeit
 [ ] aptitude ist nicht dokumentiert
+[ ] fusebundle-generator
 
 === cool hacks ===
 +++
@@ -58,3 +59,6 @@ Created Donnerstag 21 April 2011
 
 === update der avg Virendatenbank aus einem Verzeichnis ===
 ''sudo avgupdate --path=<PATH>''
+
+=== Evolution Mails in mbox konvertieren ===
+ ''i=0; for mail in $(ls -1);do $((i+=1)); cat $mail|formail > $i.mbox; done''

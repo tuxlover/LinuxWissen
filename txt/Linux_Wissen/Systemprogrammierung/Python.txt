@@ -46,14 +46,16 @@ __Achtung: Es gibt Unterschiede zwischen Python Version 2.x und Version 3.x__
 
 === Ausführen von Python Code ===
 [[+Python Interpreter]]
+[[+Frozen Binaries]]
 
 **python **
 → startet die Pyhton Shell in der Befehle und kleinere Python Programme interaktiv bearbeitet und ausprobiert werden 
 → sinnvoll wenn man Buildins und Funktionen testen will
+→ kann zum testen von Konstrukten und Funktionen genutzt werden
 
 **#!/usr/bin/env python**
 → Sha Bang für python
-→ sucht nach einem python Interpreter der in der verwendeten Shellumgebung gesetzt ist 
+→ sucht nach einem Python Interpreter der in der verwendeten Shellumgebung gesetzt ist 
 ([[Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung]])
 
 **pydoc <Stichwort>**
@@ -62,3 +64,9 @@ __Achtung: Es gibt Unterschiede zwischen Python Version 2.x und Version 3.x__
 **-k <Schlüsselwort> **→ durchsuchen der Documentation nach Schlüsselwörter
 **-g **→ Aufrufen einer grafischen Suchmaske (benötigt python-tk)
          
+
+=== Whitespace, Einrückung und Python Syntax ===
+* Statements werden duch Abschluss einer Zeile durch ein Zeilentrennersymbol abgeschlossen
+
+
+=== Datentypen  ===
