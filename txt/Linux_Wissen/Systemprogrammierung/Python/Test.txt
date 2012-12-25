@@ -1,0 +1,84 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-25T22:22:03+01:00
+
+====== Test ======
+Created Dienstag 25 Dezember 2012
+
+* geben als Resultat immer ein Bool zurück
+* es wird zwichen gleichen Objekten verglichen
+* zusammen mit boolischen Oeratoren werden 
+[[Datentypen:Bool]]
+[[Datentypen:Strings]]
+[[Datentypen:Zahlen]]
+[[Operationen:boolische Operationen]]
+
+** A == B**
+→ testet auf Gleichheit 
+→ gibt **True **zurück wenn  beide Operanten gleich sind
+
+**A != B**
+→ teste auf Ungleichheit
+→ gibt **True **zurück wenn beide Operanten ungleich sind
+
+
+**n < m**
+→ vergleicht zwei Objekte vom Typ Zahl 
+→ **True **falls n kleiner als m ist
+
+**n > m **
+→ vergleicht zwei Objekte vom Typ Zahl
+→ **True **falls n größer als m ist
+
+**n <= m**
+→ vergleicht zwei Objekte vom Typ Zahl
+→ **True **falls n kleier oder gleich m ist
+→ respektive **>=**
+
+__!!Achtung:__ bei Strings wird die Stelle im Alphabet des ersten Zeichens von beiden Objekt vergleichen.
+
+==== Bedingungen und Verzweigungen ====
+
+=== if-Konstrukt ===
+* Ein Ausdruck wird mit **: **abgeschlossen
+* Der Codebock der evaluiert wird, falls eine Bedingung wahr ist, wird eingerückt
+++
+'''
+if <Ausdruck>:
+'''
+	'''
+	<Ausdruck gab True zurück>
+	else:
+	'''
+	'''
+	<Ausdruck gab False zurück>
+	'''
+
+++ 
+
+=== elif-Konstrukt ===
+* Ein Ausdruck wird wie beim reinen if Statement mit  **: **abgeschlossen
+* es werden meherere Bedingungen beginnend bei der ersten geprüft
+
+''++''
+'''
+if <Ausdruck1>:
+'''
+	'''
+	<Ausdruck1 gab True zurück>
+	elif <Ausdruck2>:
+	'''
+	'''
+	<Ausdruck2 gab True zurück>
+	...
+	elif <AusdruckN>:
+	'''
+	'''
+	<AusdruckN gab True zurück>
+	else:
+	'''
+	'''
+	<keiner der Ausdrücke gab True zurück>
+	'''
+
+++

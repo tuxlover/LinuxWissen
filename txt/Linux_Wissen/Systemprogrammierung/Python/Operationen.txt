@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-25T13:22:04+01:00
+
+====== Operationen ======
+Created Dienstag 25 Dezember 2012
+
+* In Python sind Operatioen **Funktionen** die auf bestimmten **Objekten einer Klasse **operieren und selbst wieder ein Objekt dieser Klasse oder ein Objekt einer anderen Klasse zurückgeben 
+* Diese Funktioneinen werden auch **Methoden** dieser Klasse genannant
+* Einige dieser Methoden werden aus Python aus **Modulen** importiert
+* manipulieren bestimmter Datentypen 
+[[Funktionen]]
+[[Module]]
+
+//Beispiel://
+* Importiert der Funktion (Methode) abs aus dem Modul (Klassse) math
+	''from math import abs''
+	''from datetime import datetime''
+* imporiteren der Klasse math
+	''import math''
+* aus der Klasse math alle möglichen Module importieren
+	''from sys import *''
+
+[[+arithmetische Operationen]]
+[[+String Operatoren]]

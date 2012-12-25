@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Zahlen</title>
+		<title>String Operatoren</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>Zahlen</h1>
+									<h1>String Operatoren</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -76,19 +76,16 @@
 <li><a href="../../Python.html" title="Python" class="page">Python</a></li>
 <ul>
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
-<ul>
-<li><a href="./Bool.html" title="Bool" class="page">Bool</a></li>
-<li><a href="./Datetime.html" title="Datetime" class="page">Datetime</a></li>
-<li><a href="./Dictionaries.html" title="Dictionaries" class="page">Dictionaries</a></li>
-<li><a href="./Listen.html" title="Listen" class="page">Listen</a></li>
-<li><a href="./Strings.html" title="Strings" class="page">Strings</a></li>
-<li><strong class="activepage">Zahlen</strong></li>
-</ul>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
 <li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
+<ul>
+<li><a href="./arithmetische_Operationen.html" title="arithmetische Operationen" class="page">arithmetische Operationen</a></li>
+<li><a href="./boolische_Operationen.html" title="boolische Operationen" class="page">boolische Operationen</a></li>
+<li><strong class="activepage">String Operatoren</strong></li>
+</ul>
 <li><a href="../Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
 <li><a href="../Test.html" title="Test" class="page">Test</a></li>
 <li><a href="../Variablen.html" title="Variablen" class="page">Variablen</a></li>
@@ -110,43 +107,114 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 04 November 2012<br>
+Created Dienstag 25 Dezember 2012<br>
 </p>
 
 <p>
 <ul>
-<li>Zahlen werden ohne Quoting (" ') deklariert</li>
-<li>Ziffern die mit Quating (" ') deklariert weden werden als String ( <a href="./Strings.html" title="Strings" class="page">Strings</a> ) behandelt</li>
+<li>Werden auf Datentypen des Typs String angwendet</li>
 </ul>
+<a href="../Datentypen/Strings.html" title="Python:Datentypen:Strings" class="page">Python:Datentypen:Strings</a><br>
+</p>
+
+<h4>String Formatierung</h4>
+<p>
+<strong>%s </strong>→ durch %s wird eine Liste von Varibalen refernziert, die dann für den Platzhalter %s eingesetzt wird<br>
 </p>
 
 <p>
-<strong>Int </strong>→ Positve oder Negative Ganzzahlige Werte <br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-<code>i = 10</code><br>
-</p>
-
-<p>
-<strong>Float </strong>→ Dezimalwerte die mit einem Punkt ( <strong>. </strong>)  die Nachkommaziffern angeben<br>
-<ul>
-<li>wird eine Zahl mit 1 durch 1.0 deklariert, so wird sie als <strong>Float </strong>deklariert</li>
-</ul>
+<strong>print %s,... (variable,...)</strong><br>
 </p>
 
 <p>
 <em>Beispiel:</em><br>
 </p>
 <pre>
-f = 3.14159
-f  = 2.0
+In [97]: camelot = "Camelot"
+In [98]: place = "place"
+In [99]: print "Let's not go to %s. This is a silly %s" % (camelot, place)
+Let's not go to Camelot. This is a silly place
 </pre>
 
+
 <p>
-<a href="../Operationen/arithmetische_Operationen.html" title="Python:Operationen:arithmetische Operationen" class="page">Python:Operationen:arithmetische Operationen</a><br>
+<strong>raw_input("Give a string!") </strong><br>
+→ Der Interpreter wartet auf eine Nutzereingabe<br>
+→ diese kann in eine Variable gespeichert werden<br>
 </p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [99]: print "Let's not go to %s. This is a silly %s" % (camelot, place)
+Let's not go to Camelot. This is a silly place
+
+In [100]: name = raw_input("What is your name?")
+What is your name?matthias
+
+In [101]: print name
+matthias
+</pre>
+
+
+
+<h4>Einfache Operationen</h4>
+<p>
+<strong>+ </strong><br>
+→ Wird + auf Strings angwendet werden zwei Strings mit einander verbunden<br>
+→ concatination<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [92]: print "I am"+" "+str(44)
+I am 44
+</pre>
+
+
+
+<p>
+<strong>len()</strong><br>
+→ gibt die Länge des Strings zurück<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [82]: parrot = "Norwegian Blue"
+
+In [83]: len(parrot)
+Out[83]: 14
+
+</pre>
+<p>
+<strong>lower() | upper() </strong><br>
+→ konvertiert klein in große Buchstaben und umgehrt<br>
+<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [87]: "I'm not yelling".upper()
+Out[87]: "I'M NOT YELLING"
+
+</pre>
+<p>
+<strong>str()</strong> <br>
+→ Wandelnd ein konvertierbares Objekt in ein String um<br>
+→ Explecit String Conversion	<br>
+<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [96]: print str(liste)
+['H', 'a', 'l', 'l', 'o']
+</pre>
+
+ 
 
 
 			<!-- End wiki content -->
@@ -154,7 +222,7 @@ f  = 2.0
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Operationen/arithmetische_Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen:arithmetische Operationen</a></li>						<a href='../Datentypen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen</a></li>						<a href='../../Python.html'>Linux Wissen:Systemprogrammierung:Python</a></li>						<a href='./Datetime.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Datetime</a></li>						<a href='../Test.html'>Linux Wissen:Systemprogrammierung:Python:Test</a></li>
+									<b>Backlinks:</b>						<a href='../Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen</a></li>						<a href='../Datentypen/Datetime.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Datetime</a></li>
 				<br><br>
 
 				

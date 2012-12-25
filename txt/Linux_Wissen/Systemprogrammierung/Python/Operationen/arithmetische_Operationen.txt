@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-25T13:22:27+01:00
+
+====== arithmetische Operationen ======
+Created Dienstag 25 Dezember 2012
+
+* werden auf Datentypen der Objektgruppe Zahl angewandt
+[[Python:Datentypen:Zahlen]]
+
+=== Einfache Operationen ===
+**+| - **→ einfache Addition | einfach Subtraktion
+//Beispiel://
+'''
+In [34]: 4+3
+Out[34]: 7
+'''
+
+*** | / **→ einfache Multiplikatiion | einfache Division
+      → bei der  Division wird immer abgerundet wenn die Funktion zwei Integer erhält 
+//Beispiel://
+'''
+In [32]: 3/4
+Out[32]: 0
+
+In [33]: 3/4.0
+Out[33]: 0.75
+'''
+
+
+
+**** **→ einfache Potenzzierung a hoch b
+//Beispiel://
+'''
+In [40]: 2**3
+Out[40]: 8
+'''
+
+
+**% **→ Modulo, Restklassenrechnung 
+    → Division mit Rest
+//Beispiel://
+'''
+In [41]: 4%2
+Out[41]: 0
+
+In [42]: 4%3
+Out[42]: 1
+'''
+

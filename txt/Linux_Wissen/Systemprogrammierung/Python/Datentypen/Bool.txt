@@ -10,7 +10,9 @@ Created Sonntag 04 November 2012
 * können statisch zugewisen werden  ([[Python:Variablen]]) oder als Rückgabewert einer Funktion
 * Das Benutzen von Quotings (' oder ") entfernt die Bedeutung der Variablen als Boolean und behandelt die Wörter wie Strings ([[Strings]])
 
-!__!Achtung!!: Die Wörter True und False sind für Python für diesen Datentyp reserviert.__ 
+__!!Achtung!!: Die Wörter True und False sind für Python für diesen Datentyp reserviert.__ 
+
+__!!Achtung!!: Wenn Booleans gemeint sind, darf keine Quotierung verwendet werden.__
 
 //Beispiel://
 setzen eines Bool: 

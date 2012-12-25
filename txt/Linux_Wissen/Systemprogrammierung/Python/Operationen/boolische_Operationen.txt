@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-25T22:41:02+01:00
+
+====== boolische Operationen ======
+Created Dienstag 25 Dezember 2012
+
+* logische Operatoren
+* können zu Ketten miteinander verknüpft werden
+* verwendet um logische Ausdrücke miteinander zu verknüpfen
+* für tests lassen sich so komplexere Abfragen konstruieren
+[[Python:Datentypen:Bool]]
+
+**A and B**
+→ gibt **True **zurück, falls beide Ausdrücke **A **und **B **wahr
+
+**A or B **
+→ gibt **False **zurück, falls beide Ausdrücke **A **und **B **flasch sind
+→ gibt **True **zurück, falls mindestens einer der beiden Ausdrücke wahr ist
+
+**not A**
+→ gibt **False **zurück falls **A **den Wert **True **hatte
+→ gibt **True **zurück falls **A **den Wert **False **hatte
+→ negiert einen Ausdruck
+
+
+=== Auswertungsreihenfolge ===
+* die Reihenfolge kann durch Nutzung von Klammerung **() **beeinflusst werden
+* Klammerungsausdrücke werden vor allen anderen Ausdrücken von innen nach außen aufgelöst
+
+**not **→ **and **→ **or**

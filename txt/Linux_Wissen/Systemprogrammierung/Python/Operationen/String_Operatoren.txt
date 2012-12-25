@@ -1,0 +1,86 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-25T13:22:39+01:00
+
+====== String Operatoren ======
+Created Dienstag 25 Dezember 2012
+
+* Werden auf Datentypen des Typs String angwendet
+[[Python:Datentypen:Strings]]
+
+=== String Formatierung ===
+**%s **→ durch %s wird eine Liste von Varibalen refernziert, die dann für den Platzhalter %s eingesetzt wird
+
+**print %s,... (variable,...)**
+
+//Beispiel://
+'''
+In [97]: camelot = "Camelot"
+In [98]: place = "place"
+In [99]: print "Let's not go to %s. This is a silly %s" % (camelot, place)
+Let's not go to Camelot. This is a silly place
+'''
+
+
+**raw_input("Give a string!") **
+→ Der Interpreter wartet auf eine Nutzereingabe
+→ diese kann in eine Variable gespeichert werden
+
+//Beispiel://
+'''
+In [99]: print "Let's not go to %s. This is a silly %s" % (camelot, place)
+Let's not go to Camelot. This is a silly place
+
+In [100]: name = raw_input("What is your name?")
+What is your name?matthias
+
+In [101]: print name
+matthias
+'''
+
+
+
+=== Einfache Operationen ===
+**+ **
+→ Wird + auf Strings angwendet werden zwei Strings mit einander verbunden
+→ concatination
+
+//Beispiel://
+'''
+In [92]: print "I am"+" "+str(44)
+I am 44
+'''
+
+
+
+**len()**
+→ gibt die Länge des Strings zurück
+
+//Beispiel://
+'''
+In [82]: parrot = "Norwegian Blue"
+
+In [83]: len(parrot)
+Out[83]: 14
+
+'''
+**lower() | upper() **
+→ konvertiert klein in große Buchstaben und umgehrt
+
+//Beispiel://
+'''
+In [87]: "I'm not yelling".upper()
+Out[87]: "I'M NOT YELLING"
+
+'''
+**str()** 
+→ Wandelnd ein konvertierbares Objekt in ein String um
+→ Explecit String Conversion	
+
+//Beispiel://
+'''
+In [96]: print str(liste)
+['H', 'a', 'l', 'l', 'o']
+'''
+
+ 

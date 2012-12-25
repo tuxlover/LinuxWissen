@@ -9,6 +9,10 @@ Created Sonntag 16 Dezember 2012
 * Variablen können manipuliert werden
 * Einer Variablen kann zu verschiedenen Zeitpunkten g
 * Rückgabewerte von Objekten und Funktionen können in Variablen gespeichert werden
+* Variablen können in Oprerationen auf sich selst referntzieren
+
+__ACHTUNG:__ Bei der Zuweisung von Werten ist auf die Einhaltung der Leerzeichen zu achten. EInige IDEs und Textditoren sehen die Nichteinhaltung dieser Regel als Fehler an. Obwohl Pythin selber diesen in den meisten 
+Fehlern übersehen und oder korigieren kann.
 
 **Var = Value**
 
@@ -19,7 +23,8 @@ einfach statische Zuweisung statischer Variablen:
 '''
 Reasignment einer Variable
 spam = 5
-sapm = "Whatever"
+spam = spam + 2
+spam = "Whatever"
 
 my_variable = 10
 string = "hello"
@@ -28,5 +33,3 @@ bool = True
 
 dynmaische Zuweisung von Variablen:
 	''box = get_box(mail)''
-	
-

@@ -8,6 +8,7 @@ Created Dienstag 26 April 2011
 * Interpretierte Programmiersprache
 * Fokussiert auf Lesbarkeit und Wartbarkeit des Codes
 * gut geignet für //Rapid Prototyping//
+* Interpretierte Programmiersprache
 * Objektorientiert, Modular und Funktional
 * kann flexibel in C/C++ integriert werden ([[C++]] / [[C]] )
 * kann mit Datenbanken (Mysql u.a.) kommunizieren (
@@ -43,6 +44,9 @@ file:///usr/share/doc/python3.2/html/index.html
 
 __Achtung: Es gibt Unterschiede zwischen Python Version 2.x und Version 3.x__
 
+**print "Hallo" #python 2.x**
+**print("Hallo") #python 3.x**
+
 
 === Ausführen von Python Code ===
 [[+Python Interpreter]]
@@ -67,6 +71,28 @@ __Achtung: Es gibt Unterschiede zwischen Python Version 2.x und Version 3.x__
 
 === Whitespace, Einrückung und Python Syntax ===
 * Statements werden duch Abschluss einer Zeile durch ein Zeilentrennersymbol abgeschlossen
+* Anstelle von Klammern werden Eirückungen genutzt um Sinneinheiten wie Schleifenkörper, Funktionskörper und 
+Objektkörper zu definieren
+
+=== Kommentare ===
+* durch die Verwendung des **#** wird eine einzelne Zeile kommentiert. Die Zeile //#!//  behält seine spezielle Bedeutung in *nix bei, in windows wird diese ignoriert
+* Meherer Zeilen gleichzeitig können mit 3 **""" doppelten Anführungzeichen **eingeleitet und beendet werden
+
+//Beispiel://
+Mehrere Zeilen Kommentar können für die Beschreibung des Programms oder der Funktion verwendet werden
+'''
+""" 
+Dono.py
+This program is used only to show you how comments work.
+the function takes nothing and gives nothing in return
+Version 0.1
+"""
+'''
 
 
-=== Datentypen  ===
+=== Datentypen ===
+//Bool//  ( [[+Datentypen:Bool]] )
+//Listen// ( [[+Datentypen:Listen]] )
+//Dictionaries// ( [[+Datentypen:Dictionaries]] )
+//Strings// ( [[+Datentypen:Strings]] )
+//Zahlen// ( [[+Datentypen:Zahlen]] )

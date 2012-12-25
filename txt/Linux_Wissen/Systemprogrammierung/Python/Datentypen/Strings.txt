@@ -5,4 +5,46 @@ Creation-Date: 2012-11-04T15:10:39+01:00
 ====== Strings ======
 Created Sonntag 04 November 2012
 
+* Strings sind Ketten von Buchstaben und Ziffern
+* Immutable Datentyp
 * Python unterscheidet bei tests zwischen Groß- und Kleinschreibung
+* Strings werden immer in doppelten "" oder einfachen '' Anführungszeichen definiert
+* jegliche Textein- oder Ausgabe wird vom Interpreter als String aufgefasst
+* Strings werden als eine Liste von Zeichen interpretiert
+* Auf Strings lassen die meisten der Operationen anwenden die sich auch auf Listen anewenden lassen
+
+
+=== \ Backslash ===
+Sonderzeichen müssen wie in bash mit \ gequotet
+
+=== " " vs. ' ' ===
+In " " werden alle Zeichen als Literale gesehen 
+In ' ' werden nur Buchstaben und Zahlen als Literale geshen. Sonderzeichen müssen mit \ gesondert Escaped werden
+
+//Beispiel://
+'''
+say_hello = "Hello World"
+help_me = 'Help me! I\'m repressed!'
+
+'''
+
+
+=== String Slicing ===
+**"String"[n:m:s]**
+→ Beginnend beim **Index n** (Es wird bei 0 gezählt)
+→ bis kurz vor **Index m** 
+→ mit einer Schrittweite **s**
+→ werden keine Werte gesetzt so wird der Standard von 2 verwendet
+
+//Beispiel://
+'''
+In [52]: "Hallo"[2:]
+Out[52]: 'llo'
+
+In [57]: "Luk und Betrug"[::2]
+Out[57]: 'LkudBtu'
+
+In [81]: "Hallo"[5::-1]
+Out[81]: 'ollaH'
+
+'''

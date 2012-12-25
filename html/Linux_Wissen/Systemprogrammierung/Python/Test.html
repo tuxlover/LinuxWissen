@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Variablen</title>
+		<title>Test</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>Variablen</h1>
+									<h1>Test</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -82,8 +82,8 @@
 <li><a href="./Module.html" title="Module" class="page">Module</a></li>
 <li><a href="./Operationen.html" title="Operationen" class="page">Operationen</a></li>
 <li><a href="./Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
-<li><a href="./Test.html" title="Test" class="page">Test</a></li>
-<li><strong class="activepage">Variablen</strong></li>
+<li><strong class="activepage">Test</strong></li>
+<li><a href="./Variablen.html" title="Variablen" class="page">Variablen</a></li>
 </ul>
 <li><a href="../Sed.html" title="Sed" class="page">Sed</a></li>
 <li><a href="../Shellscripting.html" title="Shellscripting" class="page">Shellscripting</a></li>
@@ -101,54 +101,83 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Sonntag 16 Dezember 2012<br>
-</p>
+				<li>geben als Resultat immer ein Bool zurück</li>
+<li>es wird zwichen gleichen Objekten verglichen</li>
+<li>zusammen mit boolischen Oeratoren werden </li>
+<a href="./Datentypen/Bool.html" title="Datentypen:Bool" class="page">Datentypen:Bool</a>
+<a href="./Datentypen/Strings.html" title="Datentypen:Strings" class="page">Datentypen:Strings</a>
+<a href="./Datentypen/Zahlen.html" title="Datentypen:Zahlen" class="page">Datentypen:Zahlen</a>
+<a href="./Operationen/boolische_Operationen.html" title="Operationen:boolische Operationen" class="page">Operationen:boolische Operationen</a>
 
-<p>
-<ul>
-<li>Identifier zum Speichern und Vorhalten von Werten</li>
-<li>Variablen können manipuliert werden</li>
-<li>Einer Variablen kann zu verschiedenen Zeitpunkten g</li>
-<li>Rückgabewerte von Objekten und Funktionen können in Variablen gespeichert werden</li>
-<li>Variablen können in Oprerationen auf sich selst referntzieren</li>
-</ul>
-</p>
+<strong> A == B</strong><br>
+→ testet auf Gleichheit <br>
+→ gibt <strong>True </strong>zurück wenn  beide Operanten gleich sind<br>
+<br>
+<strong>A != B</strong><br>
+→ teste auf Ungleichheit<br>
+→ gibt <strong>True </strong>zurück wenn beide Operanten ungleich sind<br>
+<br>
+<br>
+<strong>n &lt; m</strong><br>
+→ vergleicht zwei Objekte vom Typ Zahl <br>
+→ <strong>True </strong>falls n kleiner als m ist<br>
+<br>
+<strong>n &gt; m </strong><br>
+→ vergleicht zwei Objekte vom Typ Zahl<br>
+→ <strong>True </strong>falls n größer als m ist<br>
+<br>
+<strong>n &lt;= m</strong><br>
+→ vergleicht zwei Objekte vom Typ Zahl<br>
+→ <strong>True </strong>falls n kleier oder gleich m ist<br>
+→ respektive <strong>&gt;=</strong>
 
-<p>
-<u>ACHTUNG:</u> Bei der Zuweisung von Werten ist auf die Einhaltung der Leerzeichen zu achten. EInige IDEs und Textditoren sehen die Nichteinhaltung dieser Regel als Fehler an. Obwohl Pythin selber diesen in den meisten <br>
-Fehlern übersehen und oder korigieren kann.<br>
-</p>
+<u>!!Achtung:</u> bei Strings wird die Stelle im Alphabet des ersten Zeichens von beiden Objekt vergleichen.<br>
+<br>
+<h3>Bedingungen und Verzweigungen</h3>
 
-<p>
-<strong>Var = Value</strong><br>
-</p>
-
-<p>
-Der Wert &lt;Value&gt; kann <em>statisch in das Programm integriert</em> werden oder <em>dynamisch</em> zur Laufzeit von Usereingaben, Funktionen oder Objekten zurückgegeben werden<br>
-</p>
-
-<p>
-<em>Beispiele:</em><br>
-einfach statische Zuweisung statischer Variablen:<br>
-</p>
+<h4>if-Konstrukt</h4>
+<li>Ein Ausdruck wird mit <strong>: </strong>abgeschlossen</li>
+<li>Der Codebock der evaluiert wird, falls eine Bedingung wahr ist, wird eingerückt</li>
+++<br>
 <pre>
-Reasignment einer Variable
-spam = 5
-spam = spam + 2
-spam = "Whatever"
-
-my_variable = 10
-string = "hello"
-bool = True
+if &lt;Ausdruck&gt;:
 </pre>
+<pre style='padding-left: 30pt'>
+&lt;Ausdruck gab True zurück&gt;
+else:
+</pre>
+<pre style='padding-left: 30pt'>
+&lt;Ausdruck gab False zurück&gt;
+</pre>
+<br>
+++ <br>
+<br>
+<h4>elif-Konstrukt</h4>
+<li>Ein Ausdruck wird wie beim reinen if Statement mit  <strong>: </strong>abgeschlossen</li>
+<li>es werden meherere Bedingungen beginnend bei der ersten geprüft</li>
 
-<p>
-dynmaische Zuweisung von Variablen:<br>
-<div style='padding-left: 30pt'>
-<code>box = get_box(mail)</code><br>
-</div>
-</p>
+<code>++</code>
+<pre>
+if &lt;Ausdruck1&gt;:
+</pre>
+<pre style='padding-left: 30pt'>
+&lt;Ausdruck1 gab True zurück&gt;
+elif &lt;Ausdruck2&gt;:
+</pre>
+<pre style='padding-left: 30pt'>
+&lt;Ausdruck2 gab True zurück&gt;
+...
+elif &lt;AusdruckN&gt;:
+</pre>
+<pre style='padding-left: 30pt'>
+&lt;AusdruckN gab True zurück&gt;
+else:
+</pre>
+<pre style='padding-left: 30pt'>
+&lt;keiner der Ausdrücke gab True zurück&gt;
+</pre>
+<br>
+++<br>
 
 
 			<!-- End wiki content -->
@@ -156,7 +185,7 @@ dynmaische Zuweisung von Variablen:<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='./Datentypen/Bool.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Bool</a></li>
+									<i>No backlinks to this page.</i>
 				<br><br>
 
 				

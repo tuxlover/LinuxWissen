@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-25T13:27:48+01:00
+
+====== Funktionen ======
+Created Dienstag 25 Dezember 2012
+
+=== dot Notation ===
+* Funktionen die als Mehtoden auf bestimmte Objekt angwendet werden, sind teil der Klasse auf der Sie angwendet werden
+* als solche werden sie durch die Punkt Notation angesprochen, da sie eine neue Instanz des gleichen Objekts zurückgeben
+
+//Beispiel://

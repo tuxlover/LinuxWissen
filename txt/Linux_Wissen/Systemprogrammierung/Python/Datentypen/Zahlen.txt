@@ -22,4 +22,4 @@ f = 3.14159
 f  = 2.0
 '''
 
-
+[[Python:Operationen:arithmetische Operationen]]

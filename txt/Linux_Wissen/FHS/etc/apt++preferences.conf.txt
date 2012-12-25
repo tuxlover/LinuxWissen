@@ -7,7 +7,7 @@ Created Freitag 01 Juni 2012
 
 * festlegen von Paketquellen Prioritäten
 * festlegen von Prioritäten einzelner Pakete
-* __Apt wird Pakete mit der höchsten Priorität (<= 1000) bevorzugt behandelt, es sei denn es ist bereits eine neuere Version installiert__
+* __Apt wird Pakete mit der höchsten Priorität (<= 1000) bevorzugt behandeln, es sei denn es ist bereits eine neuere Version installiert__
 * __Apt wird auch ältere Pakete installieren falls dessen Piroritäten (> 1000) ist__
 * __Apt wird Pakete mit einer Priorität ( < 0 ) niemals installieren__
 * Für jedes Repository kann ein zu bevorzugendes Paket festgelegt werden 

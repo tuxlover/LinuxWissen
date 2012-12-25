@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Zahlen</title>
+		<title>arithmetische Operationen</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>Zahlen</h1>
+									<h1>arithmetische Operationen</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -76,19 +76,16 @@
 <li><a href="../../Python.html" title="Python" class="page">Python</a></li>
 <ul>
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
-<ul>
-<li><a href="./Bool.html" title="Bool" class="page">Bool</a></li>
-<li><a href="./Datetime.html" title="Datetime" class="page">Datetime</a></li>
-<li><a href="./Dictionaries.html" title="Dictionaries" class="page">Dictionaries</a></li>
-<li><a href="./Listen.html" title="Listen" class="page">Listen</a></li>
-<li><a href="./Strings.html" title="Strings" class="page">Strings</a></li>
-<li><strong class="activepage">Zahlen</strong></li>
-</ul>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
 <li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
+<ul>
+<li><strong class="activepage">arithmetische Operationen</strong></li>
+<li><a href="./boolische_Operationen.html" title="boolische Operationen" class="page">boolische Operationen</a></li>
+<li><a href="./String_Operatoren.html" title="String Operatoren" class="page">String Operatoren</a></li>
+</ul>
 <li><a href="../Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
 <li><a href="../Test.html" title="Test" class="page">Test</a></li>
 <li><a href="../Variablen.html" title="Variablen" class="page">Variablen</a></li>
@@ -110,43 +107,64 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 04 November 2012<br>
+Created Dienstag 25 Dezember 2012<br>
 </p>
 
 <p>
 <ul>
-<li>Zahlen werden ohne Quoting (" ') deklariert</li>
-<li>Ziffern die mit Quating (" ') deklariert weden werden als String ( <a href="./Strings.html" title="Strings" class="page">Strings</a> ) behandelt</li>
+<li>werden auf Datentypen der Objektgruppe Zahl angewandt</li>
 </ul>
+<a href="../Datentypen/Zahlen.html" title="Python:Datentypen:Zahlen" class="page">Python:Datentypen:Zahlen</a><br>
 </p>
 
+<h4>Einfache Operationen</h4>
 <p>
-<strong>Int </strong>→ Positve oder Negative Ganzzahlige Werte <br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-<code>i = 10</code><br>
-</p>
-
-<p>
-<strong>Float </strong>→ Dezimalwerte die mit einem Punkt ( <strong>. </strong>)  die Nachkommaziffern angeben<br>
-<ul>
-<li>wird eine Zahl mit 1 durch 1.0 deklariert, so wird sie als <strong>Float </strong>deklariert</li>
-</ul>
-</p>
-
-<p>
+<strong>+| - </strong>→ einfache Addition | einfach Subtraktion<br>
 <em>Beispiel:</em><br>
 </p>
 <pre>
-f = 3.14159
-f  = 2.0
+In [34]: 4+3
+Out[34]: 7
 </pre>
 
 <p>
-<a href="../Operationen/arithmetische_Operationen.html" title="Python:Operationen:arithmetische Operationen" class="page">Python:Operationen:arithmetische Operationen</a><br>
+*<strong> | / </strong>→ einfache Multiplikatiion | einfache Division<br>
+      → bei der  Division wird immer abgerundet wenn die Funktion zwei Integer erhält <br>
+<em>Beispiel:</em><br>
 </p>
+<pre>
+In [32]: 3/4
+Out[32]: 0
+
+In [33]: 3/4.0
+Out[33]: 0.75
+</pre>
+
+
+
+<p>
+**<strong> </strong>→ einfache Potenzzierung a hoch b<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [40]: 2**3
+Out[40]: 8
+</pre>
+
+
+<p>
+<strong>% </strong>→ Modulo, Restklassenrechnung <br>
+    → Division mit Rest<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [41]: 4%2
+Out[41]: 0
+
+In [42]: 4%3
+Out[42]: 1
+</pre>
+
 
 
 			<!-- End wiki content -->
@@ -154,7 +172,7 @@ f  = 2.0
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Operationen/arithmetische_Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen:arithmetische Operationen</a></li>						<a href='../Datentypen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen</a></li>						<a href='../../Python.html'>Linux Wissen:Systemprogrammierung:Python</a></li>						<a href='./Datetime.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Datetime</a></li>						<a href='../Test.html'>Linux Wissen:Systemprogrammierung:Python:Test</a></li>
+									<b>Backlinks:</b>						<a href='../Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen</a></li>						<a href='../Datentypen/Zahlen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Zahlen</a></li>
 				<br><br>
 
 				

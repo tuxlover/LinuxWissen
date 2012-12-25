@@ -1,0 +1,38 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-25T21:23:13+01:00
+
+====== Datetime ======
+Created Dienstag 25 Dezember 2012
+
+* ein verknüpfter Integerwert, der Zeit oder ein Datum angibt
+[[Zahlen]]
+* werden als Objekt der Klasse **datetime **aus der Bibliothek **datetime ** instanziert und müssen entsprechend importiert werden
+* das Objekt kann **nicht** direkt instanziert werden
+* datetime setz sich zusammen aus eine Reihe von vorformatierten Integer, über dot-Operatoren kann auf die einzelenen Werte zugegriffen werden
+
+**.month **→ Monat
+**.year **→ Jahr 
+**.day **→ Tag des 
+**.hour **→ Stunde des Tages
+**.minute **→ Minute in der Stunde
+
+
+//Beispiel://
+'''
+from datetime import datetime
+now = datetime.now()
+print now
+print "It is now+" "+"+str(now.hour)+":"+str(now.minute)
+'''
+
+* Kleine Binäruhr
+'''
+while True:
+    now = datetime.now()
+    print str(bin(now.hour))[2::]+":"+str(bin(now.minute))[2::]+"-"+str(bin(now.second))[2::]
+'''
+
+
+
+[[Python:Operationen:String Operatoren]]
