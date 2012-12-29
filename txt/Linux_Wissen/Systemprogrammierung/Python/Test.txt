@@ -37,6 +37,27 @@ Created Dienstag 25 Dezember 2012
 
 __!!Achtung:__ bei Strings wird die Stelle im Alphabet des ersten Zeichens von beiden Objekt vergleichen.
 
+
+ **A in | not in <Listenobjekt>**
+→ testet ob A im Listenobjekt enthalten ist
+
+
+//Beispiel://
+	''if first in "aeiou":''
+''	print "vowel"''
+
+'''
+In [10]: my_list = ["a","b","c","d","e"]
+
+In [11]: "hello" in my_list
+Out[11]: False
+
+In [12]: "e" in my_list
+Out[12]: True
+'''
+
+
+
 ==== Bedingungen und Verzweigungen ====
 
 === if-Konstrukt ===
@@ -49,11 +70,8 @@ if <Ausdruck>:
 	'''
 	<Ausdruck gab True zurück>
 	else:
-	'''
-	'''
 	<Ausdruck gab False zurück>
 	'''
-
 ++ 
 
 === elif-Konstrukt ===
@@ -67,18 +85,12 @@ if <Ausdruck1>:
 	'''
 	<Ausdruck1 gab True zurück>
 	elif <Ausdruck2>:
-	'''
-	'''
 	<Ausdruck2 gab True zurück>
 	...
 	elif <AusdruckN>:
-	'''
-	'''
 	<AusdruckN gab True zurück>
 	else:
-	'''
-	'''
 	<keiner der Ausdrücke gab True zurück>
 	'''
-
 ++
+

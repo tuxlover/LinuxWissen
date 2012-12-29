@@ -7,6 +7,7 @@ Created Sonntag 04 November 2012
 
 * Strings sind Ketten von Buchstaben und Ziffern
 * Immutable Datentyp
+* __Strings sind Listenobkjekte__
 * Python unterscheidet bei tests zwischen Groß- und Kleinschreibung
 * Strings werden immer in doppelten "" oder einfachen '' Anführungszeichen definiert
 * jegliche Textein- oder Ausgabe wird vom Interpreter als String aufgefasst
@@ -48,3 +49,5 @@ In [81]: "Hallo"[5::-1]
 Out[81]: 'ollaH'
 
 '''
+[[Python:Operationen:String Operatoren]]
+[[Python:Beispielprogramme:pyglatin]]

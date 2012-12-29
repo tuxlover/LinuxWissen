@@ -75,6 +75,7 @@
 <li><a href="../Perl.html" title="Perl" class="page">Perl</a></li>
 <li><a href="../Python.html" title="Python" class="page">Python</a></li>
 <ul>
+<li><a href="./Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
 <li><a href="./Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="./Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="./Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
@@ -105,6 +106,66 @@
 Created Dienstag 25 Dezember 2012<br>
 </p>
 
+<p>
+<ul>
+<li>Möglichkeiten Nutzereingaben abzufangen und zu verarbeiten </li>
+</ul>
+</p>
+
+
+<p>
+<strong>input(["Prompt"])</strong><br>
+→ liest Nutzereingaen von der Kommandozeile<br>
+→ Datentypen werden entpsrechend als solche behandelt, d.h. Strings müssen als solche durch " " vom Nutzer<br>
+kenntlich gemacht werden oder <strong>input() </strong>versucht eine entsprechend definierte Variable zu finden<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [1]: input("Geben sie eine zahl ein ")
+Geben sie eine zahl ein 42
+Out[1]: 42
+
+In [2]: var1 = "Hallo"
+
+In [3]: input("Geben SIe einen String ein ")
+Geben SIe einen String ein var1
+Out[3]: 'Hallo'
+
+In [4]: input("Geben SIe einen String ein ")
+Geben SIe einen String ein dsds
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+</pre>
+
+
+
+
+<p>
+<strong>raw_input(["&lt;Promp&gt;"])</strong><br>
+→ liest Nutzereingaben von der Kommandozeile<br>
+→ Nutzereingaben werden als String behandelt<br>
+→ kann Eingabefehler abfangen<br>
+→ Ein EOF wird als Fehler gesehen<br>
+→ der Funktion kann ein Prompt übergeben werden<br>
+→ Nutzereingaben können dann dazu genutzt werden um Inputströme zu verarbeiten<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+<code>original = raw_input("Enter the word you want to translate ")</code><br>
+</p>
+
+<pre>
+pirnt "Press any Key to continue..."
+raw_input()
+</pre>
+
+<p>
+<u>Trick</u>  Falls man ein Porgramm durch anklicken öffnet kann damit am Ende des Programms verhindert werden, dass sich das Programm schließt und <br>
+</p>
 
 
 			<!-- End wiki content -->

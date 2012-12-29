@@ -5,6 +5,60 @@ Creation-Date: 2012-12-25T13:27:48+01:00
 ====== Funktionen ======
 Created Dienstag 25 Dezember 2012
 
+* häufig genutzte Codesegemente werden in Funktionen gespeichert
+* Code wird leicheter Wartbar, fa bei Fehlern nur eine Funktion geändert werden muss
+* durch einen Aufruf (**Function Call**) wird diese Funktion dann im Code aufgerufen
+* Funktionen in einem Objekt werden **Methoden **genannt
+
+=== def ===
+* Funktionen werden in Python durch das Schlüsselwort **def **definiert
+* Der **Header **einer Funktion besteht aus aus dem //def Keyword, //dem //Name der Funktion//, alle Argumente die die Funktion übergeben bekommt in //() //und dem //:// um Python zu signalisieren, dass die Definition beendet ist
+* Der Funktionenkörper enthält den Algorithmus und den Rückgabewert **return-**Wert den die Funktion zurückgibt
+* Eine Funktion kann eine bestimmte Anzahl von Argumenten erhalten, dies wird durch Übergabe von Splash Argumenten //(*args) //erreicht
+* Funktionen werden auf Objekte durch ''function(<Argument>) ''aufgerufen 
+
+++
+'''
+def <Funktionsname>([<Argumente>,...]):
+'''
+	'''
+	["""<Beschreibung>"""]
+	....
+	return <Wert>
+	'''
+
+
+++
+
+//Beispiel://
+Definieren einer Funktion inklusive Rückgabewert:
+++
+'''
+In [20]: def quader(a):
+   ....:     return a**2
+   ....: 
+
+In [21]: print quader(4)
+16
+'''
+
+++
+
+Definieren einer Funktion die mehrere Argumente übergeben bekommt
+++
+'''
+def summe(*args):
+	
+'''
+''"""Die Summe aller Elemente"""''
+''	ergebnis = 0''
+''	for i in args:''
+''		ergebnis+=i''
+''	return ergebnis''
+	
+++
+
+
 === dot Notation ===
 * Funktionen die als Mehtoden auf bestimmte Objekt angwendet werden, sind teil der Klasse auf der Sie angwendet werden
 * als solche werden sie durch die Punkt Notation angesprochen, da sie eine neue Instanz des gleichen Objekts zurückgeben

@@ -75,6 +75,7 @@
 <li><a href="../Perl.html" title="Perl" class="page">Perl</a></li>
 <li><a href="../Python.html" title="Python" class="page">Python</a></li>
 <ul>
+<li><a href="./Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
 <li><a href="./Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="./Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="./Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
@@ -101,83 +102,133 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>geben als Resultat immer ein Bool zurück</li>
+				<p>
+Created Dienstag 25 Dezember 2012<br>
+</p>
+
+<p>
+<ul>
+<li>geben als Resultat immer ein Bool zurück</li>
 <li>es wird zwichen gleichen Objekten verglichen</li>
 <li>zusammen mit boolischen Oeratoren werden </li>
-<a href="./Datentypen/Bool.html" title="Datentypen:Bool" class="page">Datentypen:Bool</a>
-<a href="./Datentypen/Strings.html" title="Datentypen:Strings" class="page">Datentypen:Strings</a>
-<a href="./Datentypen/Zahlen.html" title="Datentypen:Zahlen" class="page">Datentypen:Zahlen</a>
-<a href="./Operationen/boolische_Operationen.html" title="Operationen:boolische Operationen" class="page">Operationen:boolische Operationen</a>
+</ul>
+<a href="./Datentypen/Bool.html" title="Datentypen:Bool" class="page">Datentypen:Bool</a><br>
+<a href="./Datentypen/Strings.html" title="Datentypen:Strings" class="page">Datentypen:Strings</a><br>
+<a href="./Datentypen/Zahlen.html" title="Datentypen:Zahlen" class="page">Datentypen:Zahlen</a><br>
+<a href="./Operationen/boolische_Operationen.html" title="Operationen:boolische Operationen" class="page">Operationen:boolische Operationen</a><br>
+</p>
 
+<p>
 <strong> A == B</strong><br>
 → testet auf Gleichheit <br>
 → gibt <strong>True </strong>zurück wenn  beide Operanten gleich sind<br>
-<br>
+</p>
+
+<p>
 <strong>A != B</strong><br>
 → teste auf Ungleichheit<br>
 → gibt <strong>True </strong>zurück wenn beide Operanten ungleich sind<br>
-<br>
-<br>
+</p>
+
+
+<p>
 <strong>n &lt; m</strong><br>
 → vergleicht zwei Objekte vom Typ Zahl <br>
 → <strong>True </strong>falls n kleiner als m ist<br>
-<br>
+</p>
+
+<p>
 <strong>n &gt; m </strong><br>
 → vergleicht zwei Objekte vom Typ Zahl<br>
 → <strong>True </strong>falls n größer als m ist<br>
-<br>
+</p>
+
+<p>
 <strong>n &lt;= m</strong><br>
 → vergleicht zwei Objekte vom Typ Zahl<br>
 → <strong>True </strong>falls n kleier oder gleich m ist<br>
-→ respektive <strong>&gt;=</strong>
+→ respektive <strong>&gt;=</strong><br>
+</p>
 
+<p>
 <u>!!Achtung:</u> bei Strings wird die Stelle im Alphabet des ersten Zeichens von beiden Objekt vergleichen.<br>
-<br>
+</p>
+
+
+<p>
+ <strong>A in | not in &lt;Listenobjekt&gt;</strong><br>
+→ testet ob A im Listenobjekt enthalten ist<br>
+</p>
+
+
+<p>
+<em>Beispiel:</em><br>
+<div style='padding-left: 30pt'>
+<code>if first in "aeiou":</code><br>
+</div>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;print "vowel"</code><br>
+</p>
+
+<pre>
+In [10]: my_list = ["a","b","c","d","e"]
+
+In [11]: "hello" in my_list
+Out[11]: False
+
+In [12]: "e" in my_list
+Out[12]: True
+</pre>
+
+
+
 <h3>Bedingungen und Verzweigungen</h3>
 
 <h4>if-Konstrukt</h4>
+<p>
+<ul>
 <li>Ein Ausdruck wird mit <strong>: </strong>abgeschlossen</li>
 <li>Der Codebock der evaluiert wird, falls eine Bedingung wahr ist, wird eingerückt</li>
+</ul>
 ++<br>
+</p>
 <pre>
 if &lt;Ausdruck&gt;:
 </pre>
 <pre style='padding-left: 30pt'>
 &lt;Ausdruck gab True zurück&gt;
 else:
-</pre>
-<pre style='padding-left: 30pt'>
 &lt;Ausdruck gab False zurück&gt;
 </pre>
-<br>
+<p>
 ++ <br>
 <br>
+</p>
 <h4>elif-Konstrukt</h4>
+<p>
+<ul>
 <li>Ein Ausdruck wird wie beim reinen if Statement mit  <strong>: </strong>abgeschlossen</li>
 <li>es werden meherere Bedingungen beginnend bei der ersten geprüft</li>
-
-<code>++</code>
+</ul>
+<br>
+<code>++</code><br>
+</p>
 <pre>
 if &lt;Ausdruck1&gt;:
 </pre>
 <pre style='padding-left: 30pt'>
 &lt;Ausdruck1 gab True zurück&gt;
 elif &lt;Ausdruck2&gt;:
-</pre>
-<pre style='padding-left: 30pt'>
 &lt;Ausdruck2 gab True zurück&gt;
 ...
 elif &lt;AusdruckN&gt;:
-</pre>
-<pre style='padding-left: 30pt'>
 &lt;AusdruckN gab True zurück&gt;
 else:
-</pre>
-<pre style='padding-left: 30pt'>
 &lt;keiner der Ausdrücke gab True zurück&gt;
 </pre>
-<br>
+<p>
 ++<br>
+<br>
+</p>
 
 
 			<!-- End wiki content -->

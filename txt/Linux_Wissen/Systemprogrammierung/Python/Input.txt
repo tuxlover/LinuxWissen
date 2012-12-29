@@ -5,3 +5,49 @@ Creation-Date: 2012-12-25T21:17:29+01:00
 ====== Input ======
 Created Dienstag 25 Dezember 2012
 
+* Möglichkeiten Nutzereingaben abzufangen und zu verarbeiten 
+
+
+**input(["Prompt"])**
+→ liest Nutzereingaen von der Kommandozeile
+→ Datentypen werden entpsrechend als solche behandelt, d.h. Strings müssen als solche durch " " vom Nutzer
+kenntlich gemacht werden oder **input() **versucht eine entsprechend definierte Variable zu finden
+
+//Beispiel://
+'''
+In [1]: input("Geben sie eine zahl ein ")
+Geben sie eine zahl ein 42
+Out[1]: 42
+
+In [2]: var1 = "Hallo"
+
+In [3]: input("Geben SIe einen String ein ")
+Geben SIe einen String ein var1
+Out[3]: 'Hallo'
+
+In [4]: input("Geben SIe einen String ein ")
+Geben SIe einen String ein dsds
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+'''
+
+
+
+
+**raw_input(["<Promp>"])**
+→ liest Nutzereingaben von der Kommandozeile
+→ Nutzereingaben werden als String behandelt
+→ kann Eingabefehler abfangen
+→ Ein EOF wird als Fehler gesehen
+→ der Funktion kann ein Prompt übergeben werden
+→ Nutzereingaben können dann dazu genutzt werden um Inputströme zu verarbeiten
+
+//Beispiel://
+''original = raw_input("Enter the word you want to translate ")''
+
+'''
+pirnt "Press any Key to continue..."
+raw_input()
+'''
+
+__Trick__  Falls man ein Porgramm durch anklicken öffnet kann damit am Ende des Programms verhindert werden, dass sich das Programm schließt und 

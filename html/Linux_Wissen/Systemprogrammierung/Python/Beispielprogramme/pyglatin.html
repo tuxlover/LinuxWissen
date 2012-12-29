@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>boolische Operationen</title>
+		<title>pyglatin</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>boolische Operationen</h1>
+									<h1>pyglatin</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -76,17 +76,15 @@
 <li><a href="../../Python.html" title="Python" class="page">Python</a></li>
 <ul>
 <li><a href="../Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
+<ul>
+<li><strong class="activepage">pyglatin</strong></li>
+</ul>
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
 <li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
-<ul>
-<li><a href="./arithmetische_Operationen.html" title="arithmetische Operationen" class="page">arithmetische Operationen</a></li>
-<li><strong class="activepage">boolische Operationen</strong></li>
-<li><a href="./String_Operatoren.html" title="String Operatoren" class="page">String Operatoren</a></li>
-</ul>
 <li><a href="../Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
 <li><a href="../Test.html" title="Test" class="page">Test</a></li>
 <li><a href="../Variablen.html" title="Variablen" class="page">Variablen</a></li>
@@ -108,48 +106,37 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Dienstag 25 Dezember 2012<br>
-</p>
-
-<p>
-<ul>
-<li>logische Operatoren</li>
-<li>können zu Ketten miteinander verknüpft werden</li>
-<li>verwendet um logische Ausdrücke miteinander zu verknüpfen</li>
-<li>für tests lassen sich so komplexere Abfragen konstruieren</li>
-</ul>
-<a href="../Datentypen/Bool.html" title="Python:Datentypen:Bool" class="page">Python:Datentypen:Bool</a><br>
-</p>
-
-<p>
-<strong>A and B</strong><br>
-→ gibt <strong>True </strong>zurück, falls beide Ausdrücke <strong>A </strong>und <strong>B </strong>wahr<br>
-</p>
-
-<p>
-<strong>A or B </strong><br>
-→ gibt <strong>False </strong>zurück, falls beide Ausdrücke <strong>A </strong>und <strong>B </strong>flasch sind<br>
-→ gibt <strong>True </strong>zurück, falls mindestens einer der beiden Ausdrücke wahr ist<br>
-</p>
-
-<p>
-<strong>not A</strong><br>
-→ gibt <strong>False </strong>zurück falls <strong>A </strong>den Wert <strong>True </strong>hatte<br>
-→ gibt <strong>True </strong>zurück falls <strong>A </strong>den Wert <strong>False </strong>hatte<br>
-→ negiert einen Ausdruck<br>
+Created Samstag 29 Dezember 2012<br>
 </p>
 
 
-<h4>Auswertungsreihenfolge</h4>
 <p>
-<ul>
-<li>die Reihenfolge kann durch Nutzung von Klammerung <strong>() </strong>beeinflusst werden</li>
-<li>Klammerungsausdrücke werden vor allen anderen Ausdrücken von innen nach außen aufgelöst</li>
-</ul>
+++<br>
 </p>
+<pre>
+#!/usr/bin/env python
 
+"""
+This program turns english words into pyglatin
+It is intended to be an exercise for lerning python
+"""
+
+pyg = "ay"
+
+print "Welcome to the English to Pyg Latin translator!"
+word = raw_input("Enter the word you want to translate ")
+word = word.lower()
+
+if len(word) != 0 and word.isalpha():
+	if word[0] in "aeiou":
+		print word + pyg
+	else:
+		print word[1::1]+word[0]+pyg
+else:
+	print "You hadn't given a string object."
+</pre>
 <p>
-<strong>not </strong>→ <strong>and </strong>→ <strong>or</strong><br>
+++<br>
 </p>
 
 
@@ -158,7 +145,7 @@ Created Dienstag 25 Dezember 2012<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Test.html'>Linux Wissen:Systemprogrammierung:Python:Test</a></li>
+									<b>Backlinks:</b>						<a href='../Datentypen/Strings.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Strings</a></li>
 				<br><br>
 
 				

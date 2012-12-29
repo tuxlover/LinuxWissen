@@ -75,6 +75,7 @@
 <li><a href="../Perl.html" title="Perl" class="page">Perl</a></li>
 <li><a href="../Python.html" title="Python" class="page">Python</a></li>
 <ul>
+<li><a href="./Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
 <li><a href="./Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="./Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><strong class="activepage">Funktionen</strong></li>
@@ -101,21 +102,65 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Dienstag 25 Dezember 2012<br>
-</p>
+				<li>häufig genutzte Codesegemente werden in Funktionen gespeichert</li>
+<li>Code wird leicheter Wartbar, fa bei Fehlern nur eine Funktion geändert werden muss</li>
+<li>durch einen Aufruf (<strong>Function Call</strong>) wird diese Funktion dann im Code aufgerufen</li>
+<li>Funktionen in einem Objekt werden <strong>Methoden </strong>genannt</li>
 
+<h4>def</h4>
+<li>Funktionen werden in Python durch das Schlüsselwort <strong>def </strong>definiert</li>
+<li>Der <strong>Header </strong>einer Funktion besteht aus aus dem <em>def Keyword, </em>dem <em>Name der Funktion</em>, alle Argumente die die Funktion übergeben bekommt in <em>() </em>und dem <em>:</em> um Python zu signalisieren, dass die Definition beendet ist</li>
+<li>Der Funktionenkörper enthält den Algorithmus und den Rückgabewert <strong>return-</strong>Wert den die Funktion zurückgibt</li>
+<li>Eine Funktion kann eine bestimmte Anzahl von Argumenten erhalten, dies wird durch Übergabe von Splash Argumenten <em>(*args) </em>erreicht</li>
+<li>Funktionen werden auf Objekte durch <code>function(&lt;Argument&gt;) </code>aufgerufen </li>
+<br>
+++<br>
+<pre>
+def &lt;Funktionsname&gt;([&lt;Argumente&gt;,...]):
+</pre>
+<pre style='padding-left: 30pt'>
+["""&lt;Beschreibung&gt;"""]
+....
+return &lt;Wert&gt;
+</pre>
+<br>
+<br>
+++<br>
+<br>
+<em>Beispiel:</em><br>
+Definieren einer Funktion inklusive Rückgabewert:<br>
+++<br>
+<pre>
+In [20]: def quader(a):
+   ....:     return a**2
+   ....: 
+
+In [21]: print quader(4)
+16
+</pre>
+<br>
+++<br>
+<br>
+Definieren einer Funktion die mehrere Argumente übergeben bekommt<br>
+++<br>
+<pre>
+def summe(*args):
+	
+</pre>
+<code>"""Die Summe aller Elemente"""</code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;ergebnis = 0</code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;for i in args:</code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ergebnis+=i</code>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;return ergebnis</code><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+++<br>
+<br>
+<br>
 <h4>dot Notation</h4>
-<p>
-<ul>
 <li>Funktionen die als Mehtoden auf bestimmte Objekt angwendet werden, sind teil der Klasse auf der Sie angwendet werden</li>
 <li>als solche werden sie durch die Punkt Notation angesprochen, da sie eine neue Instanz des gleichen Objekts zurückgeben</li>
-</ul>
-</p>
 
-<p>
-<em>Beispiel:</em><br>
-</p>
+<em>Beispiel:</em>
 
 
 			<!-- End wiki content -->

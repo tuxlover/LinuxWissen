@@ -75,6 +75,7 @@
 <li><a href="../../Perl.html" title="Perl" class="page">Perl</a></li>
 <li><a href="../../Python.html" title="Python" class="page">Python</a></li>
 <ul>
+<li><a href="../Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
@@ -216,13 +217,59 @@ In [96]: print str(liste)
 
  
 
+<h4>Testoperatoren</h4>
+<p>
+<strong>isalpha()</strong><br>
+→ gibt den Wert <strong>True </strong>zurück, falls der String des übergebenen Objects <u>ausschließlich</u> aus Buchstaben besteht<br>
+→ Wichtig: dieser Operator kann nur auf Strings angwendet werden<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [160]: str(5).isalpha()
+Out[160]: False
+
+
+In [162]: "Hallo".isalpha()
+Out[162]: True
+
+In [164]: "Hi -".isalpha()
+Out[164]: False
+</pre>
+
+<p>
+<strong>isdigit()</strong><br>
+→ gibt den Wert <strong>True </strong>zurück, falls der String des übergebenen Objekts ausschließlich aus Ziffern besteht<br>
+→ Wichtig: dieser Operator kann nur auf Strings angewendet werden<br>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+In [25]: my_string = "23"<br>
+In [26]: print my_string.isdigit()<br>
+True<br>
+</p>
+
+<p>
+In [27]: my_string = "23c"<br>
+In [28]: print my_string.isdigit()<br>
+False<br>
+</p>
+
+<p>
+<strong>islower() | isupper()</strong><br>
+→ gibt den Wert <strong>True </strong>zurück, falls der String Buchstaben enthält und nur aus Kleinbuchstaben|Großbuchstaben besteht<br>
+</p>
+
 
 			<!-- End wiki content -->
 			</div>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen</a></li>						<a href='../Datentypen/Datetime.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Datetime</a></li>
+									<b>Backlinks:</b>						<a href='../Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen</a></li>						<a href='../Datentypen/Datetime.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Datetime</a></li>						<a href='../Datentypen/Strings.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Strings</a></li>
 				<br><br>
 
 				

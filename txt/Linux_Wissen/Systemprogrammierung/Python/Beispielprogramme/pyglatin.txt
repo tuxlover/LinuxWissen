@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-12-29T20:05:56+01:00
+
+====== pyglatin ======
+Created Samstag 29 Dezember 2012
+
+
+++
+'''
+#!/usr/bin/env python
+
+"""
+This program turns english words into pyglatin
+It is intended to be an exercise for lerning python
+"""
+
+pyg = "ay"
+
+print "Welcome to the English to Pyg Latin translator!"
+word = raw_input("Enter the word you want to translate ")
+word = word.lower()
+
+if len(word) != 0 and word.isalpha():
+	if word[0] in "aeiou":
+		print word + pyg
+	else:
+		print word[1::1]+word[0]+pyg
+else:
+	print "You hadn't given a string object."
+'''
+++
