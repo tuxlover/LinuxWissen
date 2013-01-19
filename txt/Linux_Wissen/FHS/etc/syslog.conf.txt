@@ -20,7 +20,8 @@ kern.warn;*.err;authpriv.none |/dev/xconsole
 
 //+++//
 **<Kategorie>**
-	//authpriv //**→ **vertrauliche Meldungen der Sicherheitsdienste
+	//auth //→ Nachrichten die die Authentifizierung betreffen
+	//authpriv //→ vertrauliche Meldungen der Sicherheitsdienste
 	//cron //→ Meldungen von cron und at
 	//daemon// → Meldungen von Daemon ohne eigene Kategorie
 	//ftp// → Meldungen des **fdpd **Daemon

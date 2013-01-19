@@ -36,6 +36,11 @@ Created Donnerstag 12 Januar 2012
 **--failed **→ Auflisten der Units deren Transaktion nicht beendet wurde
 **--all **→ alle Units auflisten, auch inaktive
 
+=== Systemlogin Konfiguration ===
+**systemd-loginctl**
+[[+systemd-loginctl]]
+* Unter anderem kann in der Datei //systemd-logind.conf //mittels des Parameters ''NAUTOVTs'' festgelegt werden wieviele gettys gespawnd werden
+
 == <Statusinformationen anzeigen> ==
 **show <Unit>**
 → detallierte Informationen zu einer Unit zeigen 

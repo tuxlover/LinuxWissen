@@ -239,6 +239,19 @@ Linux Wissen:FHS:etc:apt++soruces.lst<br>
 </p>
 
 
+<h4>Tricks:</h4>
+<p>
+<ul>
+<li>find all packages installed from experimental</li>
+</ul>
+</p>
+<pre>
+aptitude -t experimental search -F '%p %?V %?v %?t' --disable-columns .|\
+grep -v none| \
+grep experimental| \
+awk '{if( $2 == $3) print $1}'
+</pre>
+
 
 			<!-- End wiki content -->
 			</div>

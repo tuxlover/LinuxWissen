@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>systemd-nspawn</title>
+		<title>systemd-loginctl</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>systemd-nspawn</h1>
+									<h1>systemd-loginctl</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -55,8 +55,8 @@
 <li><a href="../systemd.html" title="systemd" class="page">systemd</a></li>
 <ul>
 <li><a href="./systemd-analize.html" title="systemd-analize" class="page">systemd-analize</a></li>
-<li><a href="./systemd-loginctl.html" title="systemd-loginctl" class="page">systemd-loginctl</a></li>
-<li><strong class="activepage">systemd-nspawn</strong></li>
+<li><strong class="activepage">systemd-loginctl</strong></li>
+<li><a href="./systemd-nspawn.html" title="systemd-nspawn" class="page">systemd-nspawn</a></li>
 </ul>
 </ul>
 <li><a href="../../GRUB.html" title="GRUB" class="page">GRUB</a></li>
@@ -99,43 +99,33 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Donnerstag 09 Februar 2012<br>
+Created Samstag 19 Januar 2013<br>
 </p>
 
 <p>
-<ul>
-<li>booten eines kleinen Dateicontainers auf dem Host System</li>
-<li>zum debuggen und chrooten eines Prozesses</li>
-<li>nutzt Container mit eigener PID und Dateisystem-ID</li>
-<li>ermöglicht das Wechseln in ein anderes System </li>
-<li>schränkt die Kommuniaktion des Kernels auf rw ein (/sys /proc/sys)</li>
-<li>einschränken der Netzwerkschnittstellen auf die gelauscht werden kann</li>
-<li>virtualiserit PID 1</li>
-</ul>
+<strong>systemd-loginctl  &lt;Optionen&gt; &lt;command&gt;</strong><br>
+→ kann zur Überprüfung und Überwachung sowie zur Steuerung laufender Sitzungen genutzt werden<br>
+<strong>--no-pager </strong>→ keine Pager wie <strong>less</strong> oder <strong>more</strong> für die Ausgabe verwenden<br>
+<strong>-p &lt;Eigengschaften&gt; </strong>→ nach Eigenschaften filtern<br>
 </p>
 
-
 <p>
-<strong>systemctl-nspwan &lt;Befehl&gt;</strong><br>
-<strong>-D &lt;PATH&gt; → </strong>Verzeichnis, dass als / für diesen Conatainer dienen soll <br>
-<strong>-u &lt;User&gt; → </strong>den Befehl als &lt;User&gt; ausführen, das Heimatverzeichnis im Container erstellen und in dieses Wechseln<br>
-<strong>--private-network </strong>→ ausschalten der Netzwerkkommunikation in diesem Container<br>
+<strong>&lt;command&gt; </strong><br>
+<div style='padding-left: 30pt'>
+<strong>list-session</strong><br>
+<strong>show-session </strong>→ Informationen zur aktuellen Session anzeigen<br>
+<strong>lock-session|unlock-session ID </strong>→ sperrt die Sitzung für diese Session<br>
+<strong>terminate-session ID </strong>→ die Sietzung mit der ID sofort beenden<br>
+<strong>list-users </strong>→ Nutzer zeigen, die an den Sessions angemeldet sind<br>
+<strong>show-user &lt;User&gt; </strong>→ Informationen für einen bestimmten Nutzer anzeigen<br>
+</div>
 </p>
-
-
-<p>
-<u>Beispiele:</u><br>
-Debian Container unter Fedora booten:<br>
-</p>
-<pre>
-yum install debootstrap
-debootstrap --arch=amd64 unstable debian-tree/
-systemd-nspawn -D debian-tree/
-</pre>
+	 
 
 <p>
-Init 1 im Debian Container ausführen:<br>
-<code>systemd-nspawn -D debian-tree/ /sbin/init</code><br>
+<em>Beispiel:</em><br>
+zeige die Anzahl der erlaubten gettys für die Session mit der ID 1 an<br>
+<code>systemd-loginctl -p NAutoVTs show-session 1</code><br>
 </p>
 
 
@@ -144,7 +134,7 @@ Init 1 im Debian Container ausführen:<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../../../FHS/lib/lib%2B%2Bsystemd.html'>Linux Wissen:FHS:lib:lib++systemd</a></li>						<a href='../systemd.html'>Linux Wissen:Booten:Dienste:systemd</a></li>
+									<b>Backlinks:</b>						<a href='../systemd.html'>Linux Wissen:Booten:Dienste:systemd</a></li>
 				<br><br>
 
 				

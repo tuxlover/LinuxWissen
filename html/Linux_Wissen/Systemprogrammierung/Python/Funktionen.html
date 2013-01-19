@@ -102,19 +102,33 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>häufig genutzte Codesegemente werden in Funktionen gespeichert</li>
+				<p>
+Created Dienstag 25 Dezember 2012<br>
+</p>
+
+<p>
+<ul>
+<li>häufig genutzte Codesegemente werden in Funktionen gespeichert</li>
 <li>Code wird leicheter Wartbar, fa bei Fehlern nur eine Funktion geändert werden muss</li>
 <li>durch einen Aufruf (<strong>Function Call</strong>) wird diese Funktion dann im Code aufgerufen</li>
 <li>Funktionen in einem Objekt werden <strong>Methoden </strong>genannt</li>
+</ul>
+</p>
 
 <h4>def</h4>
+<p>
+<ul>
 <li>Funktionen werden in Python durch das Schlüsselwort <strong>def </strong>definiert</li>
 <li>Der <strong>Header </strong>einer Funktion besteht aus aus dem <em>def Keyword, </em>dem <em>Name der Funktion</em>, alle Argumente die die Funktion übergeben bekommt in <em>() </em>und dem <em>:</em> um Python zu signalisieren, dass die Definition beendet ist</li>
 <li>Der Funktionenkörper enthält den Algorithmus und den Rückgabewert <strong>return-</strong>Wert den die Funktion zurückgibt</li>
 <li>Eine Funktion kann eine bestimmte Anzahl von Argumenten erhalten, dies wird durch Übergabe von Splash Argumenten <em>(*args) </em>erreicht</li>
 <li>Funktionen werden auf Objekte durch <code>function(&lt;Argument&gt;) </code>aufgerufen </li>
-<br>
+</ul>
+</p>
+
+<p>
 ++<br>
+</p>
 <pre>
 def &lt;Funktionsname&gt;([&lt;Argumente&gt;,...]):
 </pre>
@@ -123,13 +137,13 @@ def &lt;Funktionsname&gt;([&lt;Argumente&gt;,...]):
 ....
 return &lt;Wert&gt;
 </pre>
-<br>
-<br>
+<p>
 ++<br>
 <br>
 <em>Beispiel:</em><br>
 Definieren einer Funktion inklusive Rückgabewert:<br>
 ++<br>
+</p>
 <pre>
 In [20]: def quader(a):
    ....:     return a**2
@@ -138,29 +152,41 @@ In [20]: def quader(a):
 In [21]: print quader(4)
 16
 </pre>
-<br>
+
+<p>
 ++<br>
-<br>
+</p>
+
+<p>
 Definieren einer Funktion die mehrere Argumente übergeben bekommt<br>
 ++<br>
+</p>
 <pre>
 def summe(*args):
 	
 </pre>
-<code>"""Die Summe aller Elemente"""</code>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;ergebnis = 0</code>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;for i in args:</code>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ergebnis+=i</code>
+<p>
+<code>"""Die Summe aller Elemente"""</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;ergebnis = 0</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;for i in args:</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ergebnis+=i</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;return ergebnis</code><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<div style='padding-left: 30pt'>
+<br>
+</div>
 ++<br>
 <br>
 <br>
+</p>
 <h4>dot Notation</h4>
+<p>
+<ul>
 <li>Funktionen die als Mehtoden auf bestimmte Objekt angwendet werden, sind teil der Klasse auf der Sie angwendet werden</li>
 <li>als solche werden sie durch die Punkt Notation angesprochen, da sie eine neue Instanz des gleichen Objekts zurückgeben</li>
-
-<em>Beispiel:</em>
+</ul>
+<br>
+<em>Beispiel:</em><br>
+</p>
 
 
 			<!-- End wiki content -->

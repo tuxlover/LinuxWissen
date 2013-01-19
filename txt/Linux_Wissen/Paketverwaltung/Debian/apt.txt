@@ -92,3 +92,12 @@ Linux Wissen:FHS:etc:apt++soruces.lst
 **-d <PATH> **→ Einhängepunkt bestimmen
 — 
 
+
+=== Tricks: ===
+* find all packages installed from experimental
+'''
+aptitude -t experimental search -F '%p %?V %?v %?t' --disable-columns .|\
+grep -v none| \
+grep experimental| \
+awk '{if( $2 == $3) print $1}'
+'''

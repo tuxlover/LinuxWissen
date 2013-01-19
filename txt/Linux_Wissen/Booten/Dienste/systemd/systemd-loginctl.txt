@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-19T14:24:30+01:00
+
+====== systemd-loginctl ======
+Created Samstag 19 Januar 2013
+
+**systemd-loginctl  <Optionen> <command>**
+→ kann zur Überprüfung und Überwachung sowie zur Steuerung laufender Sitzungen genutzt werden
+**--no-pager **→ keine Pager wie **less** oder **more** für die Ausgabe verwenden
+**-p <Eigengschaften> **→ nach Eigenschaften filtern
+
+**<command> **
+	**list-session**
+	**show-session **→ Informationen zur aktuellen Session anzeigen
+	**lock-session|unlock-session ID **→ sperrt die Sitzung für diese Session
+	**terminate-session ID **→ die Sietzung mit der ID sofort beenden
+	**list-users **→ Nutzer zeigen, die an den Sessions angemeldet sind
+	**show-user <User> **→ Informationen für einen bestimmten Nutzer anzeigen
+	 
+
+//Beispiel://
+zeige die Anzahl der erlaubten gettys für die Session mit der ID 1 an
+''systemd-loginctl -p NAutoVTs show-session 1''
