@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-21T21:50:33+01:00
+
+====== Listen Operationen ======
+Created Montag 21 Januar 2013
+
+* könenn nur auf Listenobjekte anwandt werden
+
+**len(<Liste>)**
+→ gibt die Anzahl der Items in einer Liste zurück
+→ Spezielle ist ein String eine Liste mit Buchstaben 
+
+**.append(<Objekt>)**
+→ fügt ein Objekt an die Liste an
+
+//Beispiel://
+''suitcase.append("Hut")''

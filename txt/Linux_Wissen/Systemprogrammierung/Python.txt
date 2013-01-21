@@ -68,6 +68,8 @@ __Achtung: Es gibt Unterschiede zwischen Python Version 2.x und Version 3.x__
 **-k <Schlüsselwort> **→ durchsuchen der Documentation nach Schlüsselwörter
 **-g **→ Aufrufen einer grafischen Suchmaske (benötigt python-tk)
          
+**import this**
+→ Spezielle referenz für den Python Interpreter
 
 === Whitespace, Einrückung und Python Syntax ===
 * Statements werden duch Abschluss einer Zeile durch ein Zeilentrennersymbol abgeschlossen

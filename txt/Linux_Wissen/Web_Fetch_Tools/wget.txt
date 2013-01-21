@@ -43,3 +43,8 @@ Created Sonntag 17 Juli 2011
 **-Y on|off || --proxy=on|off **→ herunterladen übber einen Proxy aktivieren
 **--proxy-user=<User> **→ <User> als anzumeldenden Nutzer wählen
 **--proxy-passwd=xxx **→ Passwort des Proxies
+
+
+//Beispiele://
+Eine Website mirrorn und die Links auch lokal folgbar machen
+''wegt -mk http://beispiel.de''

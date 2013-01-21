@@ -48,3 +48,27 @@ In [42]: 4%3
 Out[42]: 1
 '''
 
+
+**max(<Liste>) |  min (<Liste>)**
+→ gibt das Maximum oder das Minimum einer Liste von Zahlen zurück
+→ die Liste darf nur definierte Zahlentypen angeben 
+//Beispiel://
+'''
+In [27]: print max(9,12,223,21,-1)
+223
+'''
+
+'''
+In [28]: print min(9,12,223,21,-1)
+-1
+'''
+
+
+**abs(<Zahl>)**
+→ gibt den absoluten Betrag einer Zahl zurück
+//Beispiel://
+'''
+In [31]: abs(-42)
+Out[31]: 42
+'''
+

@@ -5,3 +5,36 @@ Creation-Date: 2012-11-04T15:11:15+01:00
 ====== Listen ======
 Created Sonntag 04 November 2012
 
+* können verschiedenen Datentypen des gleichen oder unterschiedlichen Datentyps in einer Variablen abgelegt werden
+* mutable Datentyp
+* Listen sind Listenobjekte
+[[Strings]]
+[[Python:Operationen:Listen Operationen]]
+
+* Listen werden erstellt durch:
+		//list_name = [item1, item2,...]//
+* [] ist eine leere Liste
+	→ wird oft für die Initialisierung eines Porgrams genutzt
+	
+	
+//Beispiel://
+''zoo_animals = ["pangolin","penguin","cow","ape"]''
+
+
+=== Zugriff über den Index eines Listenobjekts (access by index) ===
+**!!!**__Listen Indizies starten bei 0, nicht bei 1__**!!!**
+* Der Zugriff über Indiziees erfolgt durch:
+	//list_name[n]//
+	→ //n ist ein beliebiger Integer innerhalb des  Bildbereichs des Indexes//
+
+//Beispiel://
+'''
+# print pangolin
+print zoo_animals[0] 
+# print penguin
+print zoo_animals[1]
+# print cow
+print zoo_animals[2]
+# print ape
+print zoo_animals[3]
+'''

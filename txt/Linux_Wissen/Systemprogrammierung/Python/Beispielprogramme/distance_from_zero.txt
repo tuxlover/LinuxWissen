@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-21T21:24:35+01:00
+
+====== distance from zero ======
+Created Montag 21 Januar 2013
+
+++
+'''
+def distance_from_zero(n):
+'''
+	'''
+	if type)(n) == float or type(n) == int:
+	'''
+		'''
+		return abs(n)
+		'''
+	'''
+	else:
+	'''
+		'''
+		return "This isn't an integer or a float."
+		'''
+	'''
+	
+	
+	distance_from_zero(12)
+	distance_from_zero(-45.223)
+	distance_from_zero(A)
+	'''
+
+++

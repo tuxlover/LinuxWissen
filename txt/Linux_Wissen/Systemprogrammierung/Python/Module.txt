@@ -5,3 +5,48 @@ Creation-Date: 2012-12-25T13:35:41+01:00
 ====== Module ======
 Created Dienstag 25 Dezember 2012
 
+* Module werden mit dem Befehl **import **in das Hauptprogramm eingebunden
+* Ein Modul ist eine Klasse von Objekten die Definitionen für dessen Objekte sowie deren Funktionen und Variablen enhält
+[[Variablen]]
+[[Funktionen]]
+
+=== generischer Import ===
+* wenn ein Modul ohne Angabe welche Funktionen genutzt werden sollen importiert wird
+* generische Importe müssen immer explizit die Funktion aus dieser Klasse callen (also //math.sqrt(25)// anstelle von //sqrt(25//) )
+
+**import <modul>**
+
+//Beispiel://
+'''
+import math
+print math.sqrt(25)
+'''
+
+
+=== Funktionen importe (function imports) ===
+* Wenn ein Modul mit Angabe einer spezillen Funktion die weiteren Verlauf des Programs auch genutzt werden soll
+* im gegensatz zu den generischen Importen kann  bei direkten Importeieren von Funktionen aus Klassen die Funktion auch direkt gecallt werden. 
+
+**from <modul> import <function>**
+
+//Beispiel://
+'''
+from math import sqrt
+sqrt(25)
+'''
+ 
+
+=== Universelle Importe (universal imports) ===
+* Wenn alle Funktionen aus einem Modul importiert werden
+* es können alle Funktionen direkt genutzt werden
+* Funktionen die von einem früherem Import übernommen wurden und den gleichen Namen haben, werden überschrieben
+**!!!**__sollten aus Sicherheits und Performencegründen niemals verwendet in einem Programm verwendet werden !!!__
+
+**from <modul> import ***
+
+//Beispiel://
+'''
+from math import *
+sqrt(25)
+sin(pi/2)
+'''

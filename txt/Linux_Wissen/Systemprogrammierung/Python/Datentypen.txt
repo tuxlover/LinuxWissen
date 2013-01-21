@@ -11,3 +11,42 @@ Created Sonntag 04 November 2012
 [[+Zahlen]]
 [[+Dictionaries]]
 [[+Datetime]]
+
+
+**type(<Data>)**
+→ gibt den Datentyp des verwendeten Objekts zurück
+
+//Beispiel://
+'''
+In [32]: type(1)
+Out[32]: int
+
+In [33]: type(1.1)
+Out[33]: float
+
+In [34]: type("was ist das?")
+Out[34]: str
+
+In [35]: type(True)
+Out[35]: bool
+'''
+
+'''
+In [38]: type ({'Hello':'Hallo'})
+Out[38]: dict
+'''
+
+'''
+In [40]: type ((0b1,2,1,'d','s'))
+Out[40]: tuple
+
+In [47]: type([1,2,3])
+Out[47]: list
+
+In [45]: from datetime import datetime
+In [48]: type(datetime.now())
+Out[48]: datetime.datetime
+
+
+'''
+

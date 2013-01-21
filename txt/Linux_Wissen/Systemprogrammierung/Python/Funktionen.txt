@@ -12,10 +12,11 @@ Created Dienstag 25 Dezember 2012
 
 === def ===
 * Funktionen werden in Python durch das Schlüsselwort **def **definiert
-* Der **Header **einer Funktion besteht aus aus dem //def Keyword, //dem //Name der Funktion//, alle Argumente die die Funktion übergeben bekommt in //() //und dem //:// um Python zu signalisieren, dass die Definition beendet ist
+* Der **Header **einer Funktion besteht aus dem //def Keyword, //dem //Name der Funktion//, alle Argumente die die Funktion übergeben bekommt in //() //und dem //:// um Python zu signalisieren, dass die Definition beendet ist
 * Der Funktionenkörper enthält den Algorithmus und den Rückgabewert **return-**Wert den die Funktion zurückgibt
 * Eine Funktion kann eine bestimmte Anzahl von Argumenten erhalten, dies wird durch Übergabe von Splash Argumenten //(*args) //erreicht
 * Funktionen werden auf Objekte durch ''function(<Argument>) ''aufgerufen 
+
 
 ++
 '''
@@ -26,9 +27,24 @@ def <Funktionsname>([<Argumente>,...]):
 	....
 	return <Wert>
 	'''
+++
 
+=== Splat ===
+* Das Splat * Zeichen wird zusammen mit Argumenten verwendet wenn nicht einduetig festgelegt werden soll, wieviel Argumente eine Funktion übergeben bekommt
+* Konverntionell wird hier ***args** verwendet, aber jede andere Variablennamen der von Python nicht reserviert wird, ist erlaubt
 
 ++
+'''
+def Funktionsname>(*<Args>):
+'''
+	'''
+	["""<Beschreibung>"""]
+	...
+	return <Wert>
+	'''
+
+++
+
 
 //Beispiel://
 Definieren einer Funktion inklusive Rückgabewert:
@@ -40,6 +56,9 @@ In [20]: def quader(a):
 
 In [21]: print quader(4)
 16
+
+# function call
+quader(23)
 '''
 
 ++
@@ -49,18 +68,65 @@ Definieren einer Funktion die mehrere Argumente übergeben bekommt
 '''
 def summe(*args):
 	
+"""Die Summe aller Elemente"""
+	ergebnis = 0
+	for i in args:
+		ergebnis+=i
+	return ergebnis
+
+
+# funtion call
+summe(1,2,3,4,5,56,7)
 '''
-''"""Die Summe aller Elemente"""''
-''	ergebnis = 0''
-''	for i in args:''
-''		ergebnis+=i''
-''	return ergebnis''
-	
+
 ++
 
+=== Funktionenverschachtelung (I put a function in your function) ===
+* Eine Funktion kann widerrum eine oder mehrere andere Funktionen aufrufen
+* in diesem Fall erhält sie ihren EIngabewert von der aufrufenden Funktion
+
+++
+'''
+def add_one(n):
+'''
+	'''
+	return n +1 
+	
+	def mult_two(add_one):
+	return n * 2
+	
+	mult_two(2)
+	'''
+
+++
+
+++
+'''
+def by_three(number):
+'''
+	'''
+	if number%3 == 0:
+	'''
+		'''
+		return cube(number)
+		'''
+	'''
+	else:
+	'''
+		'''
+		return False
+		
+		def cube(n):
+		'''
+	'''
+	return by_three**3
+	'''
+ 
+++
 
 === dot Notation ===
 * Funktionen die als Mehtoden auf bestimmte Objekt angwendet werden, sind teil der Klasse auf der Sie angwendet werden
 * als solche werden sie durch die Punkt Notation angesprochen, da sie eine neue Instanz des gleichen Objekts zurückgeben
 
 //Beispiel://
+

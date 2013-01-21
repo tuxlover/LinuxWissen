@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-21T20:00:40+01:00
+
+====== Typenkonvertierung ======
+Created Montag 21 Januar 2013
+
+* In Python können Datentypen in andere Datentypen konvertiert werden
+
+**str(<Any>)**
+→ macht aus jedem Datentypen einen String
+→ String Operationen werden dadurch auf das Objekt anwendbar
+
+**bin(<Int>|<Hex>)**
+→ wandelt ein //Int //oder ein //Hex// in die entsprechende Binäre Zahl um
+
+**hex(<Int>|<bin>)**
+→ wandelt ein //Int // oder ein //Hex //in die entsprechende hexadezimale Zahl um

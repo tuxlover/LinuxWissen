@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Bool</title>
+		<title>Typenkonvertierung</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>Bool</h1>
+									<h1>Typenkonvertierung</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -77,19 +77,18 @@
 <ul>
 <li><a href="../Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
-<ul>
-<li><strong class="activepage">Bool</strong></li>
-<li><a href="./Datetime.html" title="Datetime" class="page">Datetime</a></li>
-<li><a href="./Dictionaries.html" title="Dictionaries" class="page">Dictionaries</a></li>
-<li><a href="./Listen.html" title="Listen" class="page">Listen</a></li>
-<li><a href="./Strings.html" title="Strings" class="page">Strings</a></li>
-<li><a href="./Zahlen.html" title="Zahlen" class="page">Zahlen</a></li>
-</ul>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
 <li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
+<ul>
+<li><a href="./arithmetische_Operationen.html" title="arithmetische Operationen" class="page">arithmetische Operationen</a></li>
+<li><a href="./boolische_Operationen.html" title="boolische Operationen" class="page">boolische Operationen</a></li>
+<li><a href="./Listen_Operationen.html" title="Listen Operationen" class="page">Listen Operationen</a></li>
+<li><a href="./String_Operatoren.html" title="String Operatoren" class="page">String Operatoren</a></li>
+<li><strong class="activepage">Typenkonvertierung</strong></li>
+</ul>
 <li><a href="../Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
 <li><a href="../Test.html" title="Test" class="page">Test</a></li>
 <li><a href="../Variablen.html" title="Variablen" class="page">Variablen</a></li>
@@ -111,36 +110,30 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 04 November 2012<br>
+Created Montag 21 Januar 2013<br>
 </p>
 
 <p>
 <ul>
-<li>können entweder Wahr (<em>True</em>) oder Falsch <em>(False)</em> sein</li>
-<li>durch das verwenden der Funktion <strong>bool</strong> </li>
-<li>können statisch zugewisen werden  (<a href="../Variablen.html" title="Python:Variablen" class="page">Python:Variablen</a>) oder als Rückgabewert einer Funktion</li>
-<li>Das Benutzen von Quotings (' oder ") entfernt die Bedeutung der Variablen als Boolean und behandelt die Wörter wie Strings (<a href="./Strings.html" title="Strings" class="page">Strings</a>)</li>
+<li>In Python können Datentypen in andere Datentypen konvertiert werden</li>
 </ul>
 </p>
 
 <p>
-<u>!!Achtung!!: Die Wörter True und False sind für Python für diesen Datentyp reserviert.</u> <br>
+<strong>str(&lt;Any&gt;)</strong><br>
+→ macht aus jedem Datentypen einen String<br>
+→ String Operationen werden dadurch auf das Objekt anwendbar<br>
 </p>
 
 <p>
-<u>!!Achtung!!: Wenn Booleans gemeint sind, darf keine Quotierung verwendet werden.</u><br>
+<strong>bin(&lt;Int&gt;|&lt;Hex&gt;)</strong><br>
+→ wandelt ein <em>Int </em>oder ein <em>Hex</em> in die entsprechende Binäre Zahl um<br>
 </p>
 
 <p>
-<em>Beispiel:</em><br>
-setzen eines Bool: <br>
+<strong>hex(&lt;Int&gt;|&lt;bin&gt;)</strong><br>
+→ wandelt ein <em>Int </em> oder ein <em>Hex </em>in die entsprechende hexadezimale Zahl um<br>
 </p>
-<pre>
-my_bool = True
-my_bool = bool(1) #entsrpicht True
-my_bool = bool(0) #entspricht False
-</pre>
-
 
 
 			<!-- End wiki content -->
@@ -148,7 +141,7 @@ my_bool = bool(0) #entspricht False
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Operationen/boolische_Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen:boolische Operationen</a></li>						<a href='../Test.html'>Linux Wissen:Systemprogrammierung:Python:Test</a></li>						<a href='../../Python.html'>Linux Wissen:Systemprogrammierung:Python</a></li>						<a href='../Datentypen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen</a></li>
+									<i>No backlinks to this page.</i>
 				<br><br>
 
 				

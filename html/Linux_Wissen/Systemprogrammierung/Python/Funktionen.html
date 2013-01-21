@@ -119,12 +119,13 @@ Created Dienstag 25 Dezember 2012<br>
 <p>
 <ul>
 <li>Funktionen werden in Python durch das Schlüsselwort <strong>def </strong>definiert</li>
-<li>Der <strong>Header </strong>einer Funktion besteht aus aus dem <em>def Keyword, </em>dem <em>Name der Funktion</em>, alle Argumente die die Funktion übergeben bekommt in <em>() </em>und dem <em>:</em> um Python zu signalisieren, dass die Definition beendet ist</li>
+<li>Der <strong>Header </strong>einer Funktion besteht aus dem <em>def Keyword, </em>dem <em>Name der Funktion</em>, alle Argumente die die Funktion übergeben bekommt in <em>() </em>und dem <em>:</em> um Python zu signalisieren, dass die Definition beendet ist</li>
 <li>Der Funktionenkörper enthält den Algorithmus und den Rückgabewert <strong>return-</strong>Wert den die Funktion zurückgibt</li>
 <li>Eine Funktion kann eine bestimmte Anzahl von Argumenten erhalten, dies wird durch Übergabe von Splash Argumenten <em>(*args) </em>erreicht</li>
 <li>Funktionen werden auf Objekte durch <code>function(&lt;Argument&gt;) </code>aufgerufen </li>
 </ul>
 </p>
+
 
 <p>
 ++<br>
@@ -140,6 +141,28 @@ return &lt;Wert&gt;
 <p>
 ++<br>
 <br>
+</p>
+<h4>Splat</h4>
+<p>
+<ul>
+<li>Das Splat * Zeichen wird zusammen mit Argumenten verwendet wenn nicht einduetig festgelegt werden soll, wieviel Argumente eine Funktion übergeben bekommt</li>
+<li>Konverntionell wird hier *<strong>args</strong> verwendet, aber jede andere Variablennamen der von Python nicht reserviert wird, ist erlaubt</li>
+</ul>
+<br>
+++<br>
+</p>
+<pre>
+def Funktionsname&gt;(*&lt;Args&gt;):
+</pre>
+<pre style='padding-left: 30pt'>
+["""&lt;Beschreibung&gt;"""]
+...
+return &lt;Wert&gt;
+</pre>
+<p>
+++<br>
+<br>
+<br>
 <em>Beispiel:</em><br>
 Definieren einer Funktion inklusive Rückgabewert:<br>
 ++<br>
@@ -151,6 +174,9 @@ In [20]: def quader(a):
 
 In [21]: print quader(4)
 16
+
+# function call
+quader(23)
 </pre>
 
 <p>
@@ -164,18 +190,70 @@ Definieren einer Funktion die mehrere Argumente übergeben bekommt<br>
 <pre>
 def summe(*args):
 	
+"""Die Summe aller Elemente"""
+	ergebnis = 0
+	for i in args:
+		ergebnis+=i
+	return ergebnis
+
+
+# funtion call
+summe(1,2,3,4,5,56,7)
+</pre>
+
+<p>
+++<br>
+</p>
+
+<h4>Funktionenverschachtelung (I put a function in your function)</h4>
+<p>
+<ul>
+<li>Eine Funktion kann widerrum eine oder mehrere andere Funktionen aufrufen</li>
+<li>in diesem Fall erhält sie ihren EIngabewert von der aufrufenden Funktion</li>
+</ul>
+</p>
+
+<p>
+++<br>
+</p>
+<pre>
+def add_one(n):
+</pre>
+<pre style='padding-left: 30pt'>
+return n +1 
+
+def mult_two(add_one):
+return n * 2
+
+mult_two(2)
 </pre>
 <p>
-<code>"""Die Summe aller Elemente"""</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;ergebnis = 0</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;for i in args:</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ergebnis+=i</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;return ergebnis</code><br>
-<div style='padding-left: 30pt'>
-<br>
-</div>
 ++<br>
 <br>
+++<br>
+</p>
+<pre>
+def by_three(number):
+</pre>
+<pre style='padding-left: 30pt'>
+if number%3 == 0:
+</pre>
+<pre style='padding-left: 60pt'>
+return cube(number)
+</pre>
+<pre style='padding-left: 30pt'>
+else:
+</pre>
+<pre style='padding-left: 60pt'>
+return False
+
+def cube(n):
+</pre>
+<pre style='padding-left: 30pt'>
+return by_three**3
+</pre>
+<p>
+++<br>
 <br>
 </p>
 <h4>dot Notation</h4>
@@ -186,6 +264,7 @@ def summe(*args):
 </ul>
 <br>
 <em>Beispiel:</em><br>
+<br>
 </p>
 
 
@@ -194,7 +273,7 @@ def summe(*args):
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='./Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen</a></li>
+									<b>Backlinks:</b>						<a href='./Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen</a></li>						<a href='./Module.html'>Linux Wissen:Systemprogrammierung:Python:Module</a></li>
 				<br><br>
 
 				
