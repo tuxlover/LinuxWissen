@@ -5,3 +5,33 @@ Creation-Date: 2012-12-25T13:06:37+01:00
 ====== Dictionaries ======
 Created Dienstag 25 Dezember 2012
 
+* Assozuiatives Array bei dem Werte durch ihre Schlüssel refernziert werden
+* werden durch //Key:Value// Paare indiziert
+* Insbesondere sind Listen spezielle Dictionaries mit aufsteigenden Indizies als// Keys//
+* Schlüssel müssen eindeutig sein, d.h. ein Name für einen Schlüssel darf nur einmal verwendet werden
+* Dictinaries können weitere Dictionaries oder Listen als ein Wert enthalten
+[[Listen]]
+* //Werte (Values) //werden durch ihre Schlüsselwerte (//Keys//) indiziert und referenziert
+* mutable
+* Iterierbar
+
+[[Python:Operationen:Dictionary Operationen]]
+
+* Dictionaries werden erstellt durch:
+	//dict = {'key':'value',...}//
+* //{}// ist ein leeres Dictionary
+
+//Beispiel://
+'''
+residents = { "Puffins" : 105, "Sloth" : 104, "Python" : 106 }
+
+In [63]: residents = { "Puffins" : 105, "Sloth" : 104, "Python" : 106 }
+
+In [64]: residents['Sloth']
+Out[64]: 104
+'''
+
+
+=== Werte anfügen ===
+* neue Werte können zu einem bestehenden Dictionary wie folgt hinzgefügt werden
+//dict['Wert'] = Value//

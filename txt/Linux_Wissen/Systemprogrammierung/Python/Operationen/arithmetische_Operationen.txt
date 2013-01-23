@@ -63,6 +63,7 @@ In [28]: print min(9,12,223,21,-1)
 -1
 '''
 
+  
 
 **abs(<Zahl>)**
 → gibt den absoluten Betrag einer Zahl zurück
@@ -70,5 +71,22 @@ In [28]: print min(9,12,223,21,-1)
 '''
 In [31]: abs(-42)
 Out[31]: 42
+
+
 '''
+
+**sum(<Liste>,<Start>)**
+→ iteriert über ein summierbares Listenonbjekt und gibt als Wert die Summe aller Listenobjekte zurück
+→ wir zusätzlich ein Satrtwert als Parameter übergeben, so wird dieser Wert zum gesamten Ergebnis dazuaddiert
+
+//Beispiel://
+'''
+In [43]: a = [1,2,3,4,5,6,7,8,9,10]
+
+In [44]: print sum(a,2)
+57
+'''
+
+ 
+
 

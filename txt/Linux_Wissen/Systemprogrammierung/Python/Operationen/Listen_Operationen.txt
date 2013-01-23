@@ -6,7 +6,59 @@ Creation-Date: 2013-01-21T21:50:33+01:00
 Created Montag 21 Januar 2013
 
 * könenn nur auf Listenobjekte anwandt werden
+* auf Listen kann das sogenannte Slicing angwendet werden
+[[Python:Datentypen:Listen]]
 
+=== Slicing ===
+* aus einem Listenobjekt wird eine  bestimmter Teil herausgeschnittet (//engl. slicing//)
+**list[<N>:<M>: <S> ]**
+→ beginnend beim index **N **bis //vor dem// Index **M **
+→ wird eine Schrittweite **S **angegeben wird entsprechend der Schrittweite Indexe übersprungen, negative Schrittweite geht Rückwärts
+→ wird eines der Elemente weggelassen, sow wird entsprechend der Standardwert benutzt, für
+	**N = 0**
+	**M = len(list - 1)**
+	**S = 1**
+
+//Beispiel://
+'''
+In [33] mylist1 = [0]
+In [34]: for i in range(1,11):
+    mylist1.append(i)   
+
+In [35]: mylist1
+Out[35]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+In [36]: print mylist1[10:0:-1]
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+In [37]: print mylist1[0:10:2]
+[0, 2, 4, 6, 8]
+
+In [38]: mylist1[:2]
+Out[38]: [0, 1]
+
+In [39]: mylist1[3:]
+Out[39]: [3, 4, 5, 6, 7, 8, 9, 10]
+'''
+
+
+
+=== Index verwalten ===
+
+**.index(<Item>)**
+→ gibt den Index des ersten vorkommenden Items zurück
+
+//Beispiel://
+'''
+In [48]: zoo = ["affe", "giraffe","elefant","löwe"]
+
+In [50]: zoo.index("löwe")
+Out[50]: 3
+'''
+
+
+
+=== Manipulation von Listen ===
 **len(<Liste>)**
 → gibt die Anzahl der Items in einer Liste zurück
 → Spezielle ist ein String eine Liste mit Buchstaben 
@@ -16,3 +68,51 @@ Created Montag 21 Januar 2013
 
 //Beispiel://
 ''suitcase.append("Hut")''
+
+**.pop(<Index>)**
+→ entfernt das Element dass auf den Index verweist aus der Liste
+
+//Beispiel://
+'''
+In [47]: suitcase = ["brille","hose","hemd","lampe"]
+
+In [48]: print suitcase
+['brille', 'hose', 'hemd', 'lampe']
+
+In [49]: suitcase.pop(2)
+Out[49]: 'hemd'
+
+In [50]: print suitcase
+['brille', 'hose', 'lampe']
+'''
+
+
+
+**.sort()**
+→ soritert die Items in der übergebenen Liste in absteigender Reihenfolge
+→ die sortierte Liste ersetzt die unsortierte Liste
+
+//Besipiel://
+'''
+In [61]: zoo.sort()
+
+In [62]: print zoo
+['affe', 'elefant', 'giraffe', 'löwe']
+'''
+
+
+**+ **
+→ zusammenfügen (concatination zweier oder meherer Listen)
+
+//Beispiel://
+'''
+n [71]: Liste2 = ["karl", "otto", "fred"]
+
+In [72]: Liste1 = ["host", "peter", "klaus"]
+
+In [73]: print Liste1+Liste2
+['host', 'peter', 'klaus', 'karl', 'otto', 'fred']
+'''
+
+
+

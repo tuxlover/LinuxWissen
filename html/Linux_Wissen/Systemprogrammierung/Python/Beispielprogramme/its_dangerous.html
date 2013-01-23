@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Datetime</title>
+		<title>its dangerous</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>Datetime</h1>
+									<h1>its dangerous</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -76,15 +76,12 @@
 <li><a href="../../Python.html" title="Python" class="page">Python</a></li>
 <ul>
 <li><a href="../Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
-<li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <ul>
-<li><a href="./Bool.html" title="Bool" class="page">Bool</a></li>
-<li><strong class="activepage">Datetime</strong></li>
-<li><a href="./Dictionaries.html" title="Dictionaries" class="page">Dictionaries</a></li>
-<li><a href="./Listen.html" title="Listen" class="page">Listen</a></li>
-<li><a href="./Strings.html" title="Strings" class="page">Strings</a></li>
-<li><a href="./Zahlen.html" title="Zahlen" class="page">Zahlen</a></li>
+<li><a href="./distance_from_zero.html" title="distance from zero" class="page">distance from zero</a></li>
+<li><strong class="activepage">its dangerous</strong></li>
+<li><a href="./pyglatin.html" title="pyglatin" class="page">pyglatin</a></li>
 </ul>
+<li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
@@ -112,55 +109,33 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Dienstag 25 Dezember 2012<br>
+Created Dienstag 22 Januar 2013<br>
 </p>
 
 <p>
-<ul>
-<li>ein verknüpfter Integerwert, der Zeit oder ein Datum angibt</li>
-</ul>
-<a href="./Zahlen.html" title="Zahlen" class="page">Zahlen</a><br>
-<ul>
-<li>werden als Objekt der Klasse <strong>datetime </strong>aus der Bibliothek <strong>datetime </strong> instanziert und müssen entsprechend importiert werden</li>
-<li>das Objekt kann <strong>nicht</strong> direkt instanziert werden</li>
-<li>datetime setz sich zusammen aus eine Reihe von vorformatierten Integer, über dot-Operatoren kann auf die einzelenen Werte zugegriffen werden</li>
-</ul>
-</p>
-
-<p>
-<strong>.month </strong>→ Monat<br>
-<strong>.year </strong>→ Jahr <br>
-<strong>.day </strong>→ Tag des <br>
-<strong>.hour </strong>→ Stunde des Tages<br>
-<strong>.minute </strong>→ Minute in der Stunde<br>
-</p>
-
-
-<p>
-<em>Beispiel:</em><br>
+++<br>
 </p>
 <pre>
-from datetime import datetime
-now = datetime.now()
-print now
-print "It is now+" "+"+str(now.hour)+":"+str(now.minute)
+inventory = {'gold' : 500,
+'pouch' : ['flint', 'twine', 'gemstone'], # Assigned a new list to 'pouch' key
+'backpack' : ['xylophone','dagger', 'bedroll','bread loaf']}
+
+# Adding a key 'burlap bag' and assigning a list to it
+inventory['burlap bag'] = ['apple', 'small ruby', 'three-toed sloth']
+
+# Sorting the list found under the key 'pouch'
+inventory['pouch'].sort() 
+# Here the dictionary access expression takes the place of a list name 
+
+# Your code here
+inventory['pocket'] = ['seashell', 'strange berry', 'lint']
+inventory['backpack'].sort()
+inventory['backpack'].remove('dagger')
+inventory['gold']+=50
 </pre>
 
 <p>
-<ul>
-<li>Kleine Binäruhr</li>
-</ul>
-</p>
-<pre>
-while True:
-    now = datetime.now()
-    print str(bin(now.hour))[2::]+":"+str(bin(now.minute))[2::]+"-"+str(bin(now.second))[2::]
-</pre>
-
-
-
-<p>
-<a href="../Operationen/String_Operatoren.html" title="Python:Operationen:String Operatoren" class="page">Python:Operationen:String Operatoren</a><br>
+++<br>
 </p>
 
 
@@ -169,7 +144,7 @@ while True:
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Datentypen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen</a></li>
+									<b>Backlinks:</b>						<a href='../Beispielprogramme.html'>Linux Wissen:Systemprogrammierung:Python:Beispielprogramme</a></li>
 				<br><br>
 
 				

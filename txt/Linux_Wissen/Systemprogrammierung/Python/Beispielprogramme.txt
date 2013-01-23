@@ -7,4 +7,4 @@ Created Samstag 29 Dezember 2012
 
 [[+pyglatin]](Zeigt wie einfache Stringoperatioen verarbeitet werden)
 [[+distance from zero]] (Einfacher Aufruf einer Funktion mit Verwendung von **type**)
-
+[[+its dangerous]] (Magie mit Dictionaries )

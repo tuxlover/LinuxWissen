@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Input</title>
+		<title>Schleifen</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>Input</h1>
+									<h1>Schleifen</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -79,11 +79,11 @@
 <li><a href="./Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="./Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="./Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
-<li><strong class="activepage">Input</strong></li>
+<li><a href="./Input.html" title="Input" class="page">Input</a></li>
 <li><a href="./Module.html" title="Module" class="page">Module</a></li>
 <li><a href="./Operationen.html" title="Operationen" class="page">Operationen</a></li>
 <li><a href="./Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
-<li><a href="./Schleifen.html" title="Schleifen" class="page">Schleifen</a></li>
+<li><strong class="activepage">Schleifen</strong></li>
 <li><a href="./Test.html" title="Test" class="page">Test</a></li>
 <li><a href="./Variablen.html" title="Variablen" class="page">Variablen</a></li>
 </ul>
@@ -104,68 +104,150 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Dienstag 25 Dezember 2012<br>
+Created Dienstag 22 Januar 2013<br>
 </p>
 
 <p>
 <ul>
-<li>Möglichkeiten Nutzereingaben abzufangen und zu verarbeiten </li>
+<li>können für Iterierbare Objekte wie <strong>Listen, Dictonaires </strong>und <strong>Strings </strong>verwendet werden</li>
+</ul>
+<a href="./Datentypen/Listen.html" title="Datentypen:Listen" class="page">Datentypen:Listen</a><br>
+<a href="./Datentypen/Strings.html" title="Datentypen:Strings" class="page">Datentypen:Strings</a><br>
+<a href="./Datentypen/Dictionaries.html" title="Datentypen:Dictionaries" class="page">Datentypen:Dictionaries</a><br>
+</p>
+
+<h4>Decrment / Increment</h4>
+<p>
+<ul>
+<li>Variblen oder Objekte müssen immer erst initialsiert werden</li>
 </ul>
 </p>
 
-
 <p>
-<strong>input(["Prompt"])</strong><br>
-→ liest Nutzereingaen von der Kommandozeile<br>
-→ Datentypen werden entpsrechend als solche behandelt, d.h. Strings müssen als solche durch " " vom Nutzer<br>
-kenntlich gemacht werden oder <strong>input() </strong>versucht eine entsprechend definierte Variable zu finden<br>
+<strong>+= </strong>Increment<br>
+<strong>-= </strong>Decrement<br>
+*<strong>= </strong>mulitplilkatives Increment<br>
+<strong>/=</strong> dividiertes increment<br>
 </p>
 
 <p>
 <em>Beispiel:</em><br>
 </p>
 <pre>
-In [1]: input("Geben sie eine zahl ein ")
-Geben sie eine zahl ein 42
-Out[1]: 42
+In [34]: a = 256
 
-In [2]: var1 = "Hallo"
 
-In [3]: input("Geben SIe einen String ein ")
-Geben SIe einen String ein var1
-Out[3]: 'Hallo'
-
-In [4]: input("Geben SIe einen String ein ")
-Geben SIe einen String ein dsds
----------------------------------------------------------------------------
-NameError                                 Traceback (most recent call last)
+In [36]: while a != 1:
+    a/=2
+    print a
+   ....:     
+128
+64
+32
+16
+8
+4
+2
+1
 </pre>
 
 
-
-
-<p>
-<strong>raw_input(["&lt;Promp&gt;"])</strong><br>
-→ liest Nutzereingaben von der Kommandozeile<br>
-→ Nutzereingaben werden als String behandelt<br>
-→ kann Eingabefehler abfangen<br>
-→ Ein EOF wird als Fehler gesehen<br>
-→ der Funktion kann ein Prompt übergeben werden<br>
-→ Nutzereingaben können dann dazu genutzt werden um Inputströme zu verarbeiten<br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-<code>original = raw_input("Enter the word you want to translate ")</code><br>
-</p>
 
 <pre>
-pirnt "Press any Key to continue..."
-raw_input()
+In [39]: while True:
+    i*=2
+    print i
+   ....:     
+2
+4
+8
+16
+32
+64
+128
+256
+512
+1024
+2048
+4096
 </pre>
 
+
+
+<h4>For Schleife:</h4>
 <p>
-<u>Trick</u>  Falls man ein Porgramm durch anklicken öffnet kann damit am Ende des Programms verhindert werden, dass sich das Programm schließt und <br>
+<strong>for </strong><br>
+<strong>!!! </strong><u>Es wird keine done Anweisung benötigt</u> <strong>!!!</strong><br>
+</p>
+
+<p>
+<ul>
+<li>über ein Listenobject</li>
+</ul>
+++<br>
+</p>
+<pre>
+for &lt;Var&gt; in &lt;Listenobjekt&gt;:
+</pre>
+<pre style='padding-left: 30pt'>
+do somethink with &lt;Var&gt;
+</pre>
+<p>
+++<br>
+<br>
+<ul>
+<li>über ein Dictionaryobjekt wird der index direct über den namen des Dcitionaries und den refernzierten Index angesprochen</li>
+</ul>
+<strong>!!!</strong> beim Schleifendurchlauf wird nicht auf die Ordnung geachtet <strong>!!!</strong> <br>
+++<br>
+</p>
+<pre>
+for &lt;wort&gt; in Dictionary:
+</pre>
+<pre style='padding-left: 30pt'>
+do something with Dictionary[&lt;Word&gt;]
+</pre>
+<p>
+++<br>
+<br>
+<br>
+<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [1]: dicto = {"a":1, "b":22, "c":454}
+In [3]: for word in dicto:
+    print dicto[word]
+   ...:     
+1
+22
+454
+</pre>
+
+
+<pre>
+d = {'foor*:'bar'}
+for word in d:
+   # es wird bar ausgeben
+</pre>
+<pre style='padding-left: 30pt'>
+print d[word]
+</pre>
+<p>
+<ul>
+<li>über die <strong>range</strong> Anweisung</li>
+</ul>
+++<br>
+</p>
+<pre>
+for number in range(&lt;start&gt;,&lt;stop&gt;+1):
+</pre>
+<pre style='padding-left: 30pt'>
+do somethin with number
+</pre>
+<p>
+++<br>
+<br>
 </p>
 
 

@@ -6,7 +6,9 @@ Creation-Date: 2012-11-04T15:11:15+01:00
 Created Sonntag 04 November 2012
 
 * können verschiedenen Datentypen des gleichen oder unterschiedlichen Datentyps in einer Variablen abgelegt werden
+* Als Item kann eine Liste an bielibiger Stelle wieder ein Liste enthalten
 * mutable Datentyp
+* Iterierbar
 * Listen sind Listenobjekte
 [[Strings]]
 [[Python:Operationen:Listen Operationen]]
@@ -19,6 +21,10 @@ Created Sonntag 04 November 2012
 	
 //Beispiel://
 ''zoo_animals = ["pangolin","penguin","cow","ape"]''
+
+# Die 3 x 3 Einheitsmatrix
+''In [74]: In = [[1,0,0],[0,1,0],[0,0,1]]''
+
 
 
 === Zugriff über den Index eines Listenobjekts (access by index) ===

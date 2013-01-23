@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-22T22:17:06+01:00
+
+====== Dictionary Operationen ======
+Created Dienstag 22 Januar 2013
+
+[[Python:Datentypen:Dictionaries]]
+**len() **
+→ gibt die Länge bzw. die Anzahl der //Key/Value// Paare zurück
+
+**del <Dictionary>['<Key'>]**
+→ entfernt den Schlüssel und den dazugehörigen Wert aus dem Dictionary basierend auf den Namen des **<Key>**
+
+**.remove('<Value>')**
+→ entfernt den Wert und den Schlüssel aus dem Dictionary basierend auf dem Wert **<Value>**

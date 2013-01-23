@@ -85,11 +85,13 @@
 <ul>
 <li><a href="./arithmetische_Operationen.html" title="arithmetische Operationen" class="page">arithmetische Operationen</a></li>
 <li><a href="./boolische_Operationen.html" title="boolische Operationen" class="page">boolische Operationen</a></li>
+<li><a href="./Dictionary_Operationen.html" title="Dictionary Operationen" class="page">Dictionary Operationen</a></li>
 <li><strong class="activepage">Listen Operationen</strong></li>
 <li><a href="./String_Operatoren.html" title="String Operatoren" class="page">String Operatoren</a></li>
 <li><a href="./Typenkonvertierung.html" title="Typenkonvertierung" class="page">Typenkonvertierung</a></li>
 </ul>
 <li><a href="../Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
+<li><a href="../Schleifen.html" title="Schleifen" class="page">Schleifen</a></li>
 <li><a href="../Test.html" title="Test" class="page">Test</a></li>
 <li><a href="../Variablen.html" title="Variablen" class="page">Variablen</a></li>
 </ul>
@@ -109,31 +111,119 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Montag 21 Januar 2013<br>
-</p>
+				<li>könenn nur auf Listenobjekte anwandt werden</li>
+<li>auf Listen kann das sogenannte Slicing angwendet werden</li>
+<a href="../Datentypen/Listen.html" title="Python:Datentypen:Listen" class="page">Python:Datentypen:Listen</a>
 
-<p>
-<ul>
-<li>könenn nur auf Listenobjekte anwandt werden</li>
-</ul>
-</p>
+<h4>Slicing</h4>
+<li>aus einem Listenobjekt wird eine  bestimmter Teil herausgeschnittet (<em>engl. slicing</em>)</li>
+<strong>list[&lt;N&gt;:&lt;M&gt;: &lt;S&gt; ]</strong><br>
+→ beginnend beim index <strong>N </strong>bis <em>vor dem</em> Index <strong>M </strong><br>
+→ wird eine Schrittweite <strong>S </strong>angegeben wird entsprechend der Schrittweite Indexe übersprungen, negative Schrittweite geht Rückwärts<br>
+→ wird eines der Elemente weggelassen, sow wird entsprechend der Standardwert benutzt, für<br>
+<div style='padding-left: 30pt'>
+<strong>N = 0</strong><br>
+<strong>M = len(list - 1)</strong><br>
+<strong>S = 1</strong><br>
+</div>
 
-<p>
+<em>Beispiel:</em>
+<pre>
+In [33] mylist1 = [0]
+In [34]: for i in range(1,11):
+    mylist1.append(i)   
+
+In [35]: mylist1
+Out[35]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+In [36]: print mylist1[10:0:-1]
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+In [37]: print mylist1[0:10:2]
+[0, 2, 4, 6, 8]
+
+In [38]: mylist1[:2]
+Out[38]: [0, 1]
+
+In [39]: mylist1[3:]
+Out[39]: [3, 4, 5, 6, 7, 8, 9, 10]
+</pre>
+
+
+
+<h4>Index verwalten</h4>
+
+<strong>.index(&lt;Item&gt;)</strong><br>
+→ gibt den Index des ersten vorkommenden Items zurück<br>
+<br>
+<em>Beispiel:</em>
+<pre>
+In [48]: zoo = ["affe", "giraffe","elefant","löwe"]
+
+In [50]: zoo.index("löwe")
+Out[50]: 3
+</pre>
+
+
+
+<h4>Manipulation von Listen</h4>
 <strong>len(&lt;Liste&gt;)</strong><br>
 → gibt die Anzahl der Items in einer Liste zurück<br>
 → Spezielle ist ein String eine Liste mit Buchstaben <br>
-</p>
-
-<p>
+<br>
 <strong>.append(&lt;Objekt&gt;)</strong><br>
 → fügt ein Objekt an die Liste an<br>
-</p>
+<br>
+<em>Beispiel:</em>
+<code>suitcase.append("Hut")</code>
 
-<p>
-<em>Beispiel:</em><br>
-<code>suitcase.append("Hut")</code><br>
-</p>
+<strong>.pop(&lt;Index&gt;)</strong><br>
+→ entfernt das Element dass auf den Index verweist aus der Liste<br>
+<br>
+<em>Beispiel:</em>
+<pre>
+In [47]: suitcase = ["brille","hose","hemd","lampe"]
+
+In [48]: print suitcase
+['brille', 'hose', 'hemd', 'lampe']
+
+In [49]: suitcase.pop(2)
+Out[49]: 'hemd'
+
+In [50]: print suitcase
+['brille', 'hose', 'lampe']
+</pre>
+
+
+
+<strong>.sort()</strong><br>
+→ soritert die Items in der übergebenen Liste in absteigender Reihenfolge<br>
+→ die sortierte Liste ersetzt die unsortierte Liste<br>
+<br>
+<em>Besipiel:</em>
+<pre>
+In [61]: zoo.sort()
+
+In [62]: print zoo
+['affe', 'elefant', 'giraffe', 'löwe']
+</pre>
+
+
+<strong>+ </strong><br>
+→ zusammenfügen (concatination zweier oder meherer Listen)<br>
+<br>
+<em>Beispiel:</em>
+<pre>
+n [71]: Liste2 = ["karl", "otto", "fred"]
+
+In [72]: Liste1 = ["host", "peter", "klaus"]
+
+In [73]: print Liste1+Liste2
+['host', 'peter', 'klaus', 'karl', 'otto', 'fred']
+</pre>
+
+
+
 
 
 			<!-- End wiki content -->

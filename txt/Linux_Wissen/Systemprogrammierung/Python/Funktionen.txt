@@ -29,6 +29,21 @@ def <Funktionsname>([<Argumente>,...]):
 	'''
 ++
 
+//Beispiel://
+'''
+In [54]: def adding(m,n):
+   ....:     return m+n
+   ....: 
+
+In [55]: print adding(m,n)
+3
+
+In [56]: print adding(8,10)
+18
+'''
+
+
+
 === Splat ===
 * Das Splat * Zeichen wird zusammen mit Argumenten verwendet wenn nicht einduetig festgelegt werden soll, wieviel Argumente eine Funktion übergeben bekommt
 * Konverntionell wird hier ***args** verwendet, aber jede andere Variablennamen der von Python nicht reserviert wird, ist erlaubt
@@ -42,8 +57,16 @@ def Funktionsname>(*<Args>):
 	...
 	return <Wert>
 	'''
-
 ++
+
+//Beispiel://
+''In [65]: def multisumme(*args):''
+''    return sum(args)''
+''   ....: ''
+
+''In [66]: multisumme(1,2,3)''
+''Out[66]: 6''
+
 
 
 //Beispiel://
@@ -97,7 +120,6 @@ def add_one(n):
 	
 	mult_two(2)
 	'''
-
 ++
 
 ++
@@ -121,7 +143,6 @@ def by_three(number):
 	'''
 	return by_three**3
 	'''
- 
 ++
 
 === dot Notation ===

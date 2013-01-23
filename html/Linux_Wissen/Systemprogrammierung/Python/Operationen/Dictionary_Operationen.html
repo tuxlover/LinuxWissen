@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Datetime</title>
+		<title>Dictionary Operationen</title>
 		<meta name='Generator' content='Zim 0.58'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>Datetime</h1>
+									<h1>Dictionary Operationen</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -77,19 +77,19 @@
 <ul>
 <li><a href="../Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
-<ul>
-<li><a href="./Bool.html" title="Bool" class="page">Bool</a></li>
-<li><strong class="activepage">Datetime</strong></li>
-<li><a href="./Dictionaries.html" title="Dictionaries" class="page">Dictionaries</a></li>
-<li><a href="./Listen.html" title="Listen" class="page">Listen</a></li>
-<li><a href="./Strings.html" title="Strings" class="page">Strings</a></li>
-<li><a href="./Zahlen.html" title="Zahlen" class="page">Zahlen</a></li>
-</ul>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
 <li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
+<ul>
+<li><a href="./arithmetische_Operationen.html" title="arithmetische Operationen" class="page">arithmetische Operationen</a></li>
+<li><a href="./boolische_Operationen.html" title="boolische Operationen" class="page">boolische Operationen</a></li>
+<li><strong class="activepage">Dictionary Operationen</strong></li>
+<li><a href="./Listen_Operationen.html" title="Listen Operationen" class="page">Listen Operationen</a></li>
+<li><a href="./String_Operatoren.html" title="String Operatoren" class="page">String Operatoren</a></li>
+<li><a href="./Typenkonvertierung.html" title="Typenkonvertierung" class="page">Typenkonvertierung</a></li>
+</ul>
 <li><a href="../Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
 <li><a href="../Schleifen.html" title="Schleifen" class="page">Schleifen</a></li>
 <li><a href="../Test.html" title="Test" class="page">Test</a></li>
@@ -112,55 +112,23 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Dienstag 25 Dezember 2012<br>
+Created Dienstag 22 Januar 2013<br>
 </p>
 
 <p>
-<ul>
-<li>ein verknüpfter Integerwert, der Zeit oder ein Datum angibt</li>
-</ul>
-<a href="./Zahlen.html" title="Zahlen" class="page">Zahlen</a><br>
-<ul>
-<li>werden als Objekt der Klasse <strong>datetime </strong>aus der Bibliothek <strong>datetime </strong> instanziert und müssen entsprechend importiert werden</li>
-<li>das Objekt kann <strong>nicht</strong> direkt instanziert werden</li>
-<li>datetime setz sich zusammen aus eine Reihe von vorformatierten Integer, über dot-Operatoren kann auf die einzelenen Werte zugegriffen werden</li>
-</ul>
+<a href="../Datentypen/Dictionaries.html" title="Python:Datentypen:Dictionaries" class="page">Python:Datentypen:Dictionaries</a><br>
+<strong>len() </strong><br>
+→ gibt die Länge bzw. die Anzahl der <em>Key/Value</em> Paare zurück<br>
 </p>
 
 <p>
-<strong>.month </strong>→ Monat<br>
-<strong>.year </strong>→ Jahr <br>
-<strong>.day </strong>→ Tag des <br>
-<strong>.hour </strong>→ Stunde des Tages<br>
-<strong>.minute </strong>→ Minute in der Stunde<br>
+<strong>del &lt;Dictionary&gt;['&lt;Key'&gt;]</strong><br>
+→ entfernt den Schlüssel und den dazugehörigen Wert aus dem Dictionary basierend auf den Namen des <strong>&lt;Key&gt;</strong><br>
 </p>
 
-
 <p>
-<em>Beispiel:</em><br>
-</p>
-<pre>
-from datetime import datetime
-now = datetime.now()
-print now
-print "It is now+" "+"+str(now.hour)+":"+str(now.minute)
-</pre>
-
-<p>
-<ul>
-<li>Kleine Binäruhr</li>
-</ul>
-</p>
-<pre>
-while True:
-    now = datetime.now()
-    print str(bin(now.hour))[2::]+":"+str(bin(now.minute))[2::]+"-"+str(bin(now.second))[2::]
-</pre>
-
-
-
-<p>
-<a href="../Operationen/String_Operatoren.html" title="Python:Operationen:String Operatoren" class="page">Python:Operationen:String Operatoren</a><br>
+<strong>.remove('&lt;Value&gt;')</strong><br>
+→ entfernt den Wert und den Schlüssel aus dem Dictionary basierend auf dem Wert <strong>&lt;Value&gt;</strong><br>
 </p>
 
 
@@ -169,7 +137,7 @@ while True:
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Datentypen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen</a></li>
+									<b>Backlinks:</b>						<a href='../Datentypen/Dictionaries.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Dictionaries</a></li>
 				<br><br>
 
 				

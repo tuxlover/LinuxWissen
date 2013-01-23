@@ -1,0 +1,123 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-01-22T21:27:13+01:00
+
+====== Schleifen ======
+Created Dienstag 22 Januar 2013
+
+* können für Iterierbare Objekte wie **Listen, Dictonaires **und **Strings **verwendet werden
+[[Datentypen:Listen]]
+[[Datentypen:Strings]]
+[[Datentypen:Dictionaries]]
+
+=== Decrment / Increment ===
+* Variblen oder Objekte müssen immer erst initialsiert werden
+
+**+= **Increment
+**-= **Decrement
+***= **mulitplilkatives Increment
+**/=** dividiertes increment
+
+//Beispiel://
+'''
+In [34]: a = 256
+
+
+In [36]: while a != 1:
+    a/=2
+    print a
+   ....:     
+128
+64
+32
+16
+8
+4
+2
+1
+'''
+
+
+
+'''
+In [39]: while True:
+    i*=2
+    print i
+   ....:     
+2
+4
+8
+16
+32
+64
+128
+256
+512
+1024
+2048
+4096
+'''
+
+
+
+=== For Schleife: ===
+**for **
+**!!! **__Es wird keine done Anweisung benötigt__ **!!!**
+
+* über ein Listenobject
+++
+'''
+for <Var> in <Listenobjekt>:
+'''
+	'''
+	do somethink with <Var>
+	'''
+++
+
+* über ein Dictionaryobjekt wird der index direct über den namen des Dcitionaries und den refernzierten Index angesprochen
+**!!!** beim Schleifendurchlauf wird nicht auf die Ordnung geachtet **!!!** 
+++
+'''
+for <wort> in Dictionary:
+'''
+	'''
+	do something with Dictionary[<Word>]
+	'''
+
+++
+
+
+
+//Beispiel://
+'''
+In [1]: dicto = {"a":1, "b":22, "c":454}
+In [3]: for word in dicto:
+    print dicto[word]
+   ...:     
+1
+22
+454
+'''
+
+
+'''
+d = {'foor*:'bar'}
+for word in d:
+   # es wird bar ausgeben
+'''
+	'''
+	print d[word]
+	'''
+
+
+
+* über die **range** Anweisung
+++
+'''
+for number in range(<start>,<stop>+1):
+'''
+	'''
+	do somethin with number
+	'''
+++
+
