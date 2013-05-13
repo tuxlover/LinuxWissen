@@ -11,6 +11,8 @@ Created Sonntag 24 April 2011
 = →  Zuweisungsoperator a=B
 ==|!= →  Vergleichsoperator a==B Matching
 
+**!!! **__Eine gültige Regel besteht immer aus einem Matchkey und einem Assignment Key__** !!!**
+
 === Matchkeys ===
 ACTION →  Event action
 
@@ -43,7 +45,7 @@ ATTR{key}
 →  Wert der sysfs zugewiesen wird
 
 TAG 
-→  Einem Gerät ein Taf zuweisen
+→  Einem Gerät ein Tag zuweisen
 
 RUN 
 →  Ein Programm ausführen

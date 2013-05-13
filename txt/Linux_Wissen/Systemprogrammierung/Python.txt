@@ -94,7 +94,7 @@ Version 0.1
 
 === Datentypen ===
 //Bool//  ( [[+Datentypen:Bool]] )
-//Listen// ( [[+Datentypen:Listen]] )
+//Listen// ( [[+Datentypen:Listen und Listenobjekte]] )
 //Dictionaries// ( [[+Datentypen:Dictionaries]] )
 //Strings// ( [[+Datentypen:Strings]] )
 //Zahlen// ( [[+Datentypen:Zahlen]] )

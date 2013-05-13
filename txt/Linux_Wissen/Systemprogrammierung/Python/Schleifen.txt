@@ -6,7 +6,7 @@ Creation-Date: 2013-01-22T21:27:13+01:00
 Created Dienstag 22 Januar 2013
 
 * können für Iterierbare Objekte wie **Listen, Dictonaires **und **Strings **verwendet werden
-[[Datentypen:Listen]]
+[[Datentypen:Listen und Listenobjekte]]
 [[Datentypen:Strings]]
 [[Datentypen:Dictionaries]]
 
@@ -83,7 +83,6 @@ for <wort> in Dictionary:
 	'''
 	do something with Dictionary[<Word>]
 	'''
-
 ++
 
 
@@ -108,9 +107,6 @@ for word in d:
 	'''
 	print d[word]
 	'''
-
-
-
 * über die **range** Anweisung
 ++
 '''

@@ -83,6 +83,10 @@ In [96]: print str(liste)
 ['H', 'a', 'l', 'l', 'o']
 '''
 
+
+**.join()**
+→ siehe Dictionary Operationen
+[[Dictionary Operationen]]
  
 
 === Testoperatoren ===

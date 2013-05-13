@@ -89,4 +89,7 @@ In [44]: print sum(a,2)
 
  
 
+**random.randint(N,M)**
+→ die Funktion wird aus dem Modul random importiert
+→ sie liefert einen Integerwert der zwischen einschließlich N und M liegt
 

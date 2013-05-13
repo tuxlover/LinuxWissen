@@ -1,0 +1,133 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-02-04T22:24:08+01:00
+
+====== battleship ======
+Created Montag 04 Februar 2013
+
+'''
+#!/usr/bin/env python
+
+"""
+This is a pretty boring board game.
+The goal is to guess a combination of row and column.
+This is just a lerning project.
+It's good to practice the whole index versus length thing.
+version: 0.3
+"""
+
+##### Defintions begin here
+### python module imports begin here
+from random import randint
+### python module imports end here
+
+### Variables predeclarations begin here
+size = input("How big should be the size of the board?")
+size = int(size)
+# have a 40% winning chance based on the board size and have at least one try
+tries = int(round((40 * (size ** 2))/ 100) + 1)
+print "Ready to go! You have"+" "+ str(tries)+" "+"tries."
+anykey = raw_input("Hit Enter key to continue!")
+answer = True
+board = []
+### Variables predeclarations end here
+
+### Functions begin here
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+def random_saying():
+	saying=randint(0,9)
+	if saying == 0:
+		return "Are you an idiot or what?"
+	elif saying == 1:
+		return "Oh god i whish i had your brain."
+	elif saying == 2:
+		return "Just shooting anywhere doesn't help you."
+	elif saying == 3:
+		return "Dude that's not the ocean."
+	elif saying == 4:
+		return "Think before you shoot!"
+	elif saying == 5:
+		return "Hmm. I would'nt shoot there!"
+	elif saying == 6:
+		return "All your base are belong to us."
+	elif saying == 7:
+		return "Ok if you want you can waste your tries."
+	elif saying == 8:
+		return "Go visit an eye doctor."
+	else:
+		return "Well I am sure there is something, but ..."
+
+
+def random_row(board):
+    return randint(0,len(board)-1)
+
+def random_col(board):
+    return randint(0,len(board[0])-1)
+
+def clear_board(board):
+	for i in  range(0,len(board)):
+		for j in range(0,len(board[i])):
+			if board[i][j] == 'X':
+				board[i][j] = 'O'
+	return board
+### Functions end here
+#### Defintions end here
+
+for x in range(0,size):
+      board.append(["O"] * size)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+
+
+while answer == True:
+
+# loop until the number of tries expires
+	for i in range(0,tries):
+
+		guess_row = input("Guess Row:")
+		guess_col = input("Guess Col:")
+
+		# when guess is not even a valid input print a error message
+		if guess_row < 0 or guess_row > len(board) or guess_col < 0 or guess_col > len(board):
+			print random_saying()
+			continue
+
+		if board[guess_row - 1][guess_col -1] == "X":
+			print "You already guessed that!"
+			continue
+
+		if ship_row + 1 == guess_row and ship_col + 1 == guess_col:
+			print "Congratulations! You sank my battleship at"+" "+str(ship_row +1)+","+str(ship_col +1)+"!"
+			break
+		else:
+			print "You missed my battleship!"
+			board[guess_row - 1][guess_col - 1]='X'
+			print print_board(board)
+			if i == 0:
+				print "Last shoot. Good luck."
+			else:
+				print "You have"+" "+str(tries-i-1)+" "+"tries left."
+	else:
+		print "You loose!"
+		print "I was hiding at"+" "+str(ship_row + 1)+","+str(ship_col + 1)
+
+	answer=raw_input("Want an other trie to defeat me? (y,n)")
+
+	# ask the user for an other trie
+	answer = answer.lower()
+	if answer != "y":
+		answer = False
+	else:
+		answer = True
+		clear_board(board)
+		ship_row = random_row(board)
+		ship_col = random_col(board)
+
+
+#TODO:
+#look for wrong input (not an integer)
+'''

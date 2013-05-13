@@ -54,6 +54,7 @@ Created Donnerstag 21 April 2011
 //cool.hacks@gmail.com//
 //+++//
 
+**gs -dNOPAUSE -sDEVICE=jpeg -r144 -sOutputFile=ausgabe.jpg <Eingabe> → **pdf to jpg
 **ffmpeg -i eingangsvideo.flv ausgangsvideo.avi  → **flv in avi
 
 

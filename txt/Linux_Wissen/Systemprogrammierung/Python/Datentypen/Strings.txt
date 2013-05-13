@@ -14,7 +14,7 @@ Created Sonntag 04 November 2012
 * Strings werden als eine Liste von Zeichen interpretiert
 * Auf Strings lassen die meisten der Operationen anwenden die sich auch auf Listen anewenden lassen
 
-[[Listen]]
+[[Listen und Listenobjekte]]
 
 === \ Backslash ===
 Sonderzeichen müssen wie in bash mit \ gequotet
@@ -52,3 +52,4 @@ Out[81]: 'ollaH'
 '''
 [[Python:Operationen:String Operatoren]]
 [[Python:Beispielprogramme:pyglatin]]
+[[Listen und Listenobjekte]]

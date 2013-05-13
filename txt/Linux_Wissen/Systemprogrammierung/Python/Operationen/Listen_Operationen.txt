@@ -7,7 +7,7 @@ Created Montag 21 Januar 2013
 
 * könenn nur auf Listenobjekte anwandt werden
 * auf Listen kann das sogenannte Slicing angwendet werden
-[[Python:Datentypen:Listen]]
+[[Python:Datentypen:Listen und Listenobjekte]]
 
 === Slicing ===
 * aus einem Listenobjekt wird eine  bestimmter Teil herausgeschnittet (//engl. slicing//)
@@ -69,6 +69,15 @@ Out[50]: 3
 //Beispiel://
 ''suitcase.append("Hut")''
 
+'''
+board = []
+for i in range(0,5):
+'''
+	'''
+	board.append("[O]"*5)
+	print board
+	>> [['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O']]
+	'''
 **.pop(<Index>)**
 → entfernt das Element dass auf den Index verweist aus der Liste
 
@@ -100,6 +109,29 @@ In [62]: print zoo
 ['affe', 'elefant', 'giraffe', 'löwe']
 '''
 
+**"<Seperator>".join()**
+→ zusammenfügen von iterierbaren Objekten
+→ jedes Daten-Objekt in der Liste|String|Dcitionary wird durch den Seperator getrennt zusammengefügt
+
+//Beispiel://
+'''
+In [10]: for row in board:
+    print "|".join(row)
+   ....:     
+O|O|O|O|O
+O|O|O|O|O
+O|O|O|O|O
+O|O|O|O|O
+O|O|O|O|O
+'''
+
+
+'''
+In [16]: print "-".join("Python")
+P-y-t-h-o-n
+'''
+
+
 
 **+ **
 → zusammenfügen (concatination zweier oder meherer Listen)
@@ -115,4 +147,9 @@ In [73]: print Liste1+Liste2
 '''
 
 
+*** **
+→ wiederholen von mehreren Listenobjekten
 
+//Beispiel//
+In [8]: print 23*"Python"
+PythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPython

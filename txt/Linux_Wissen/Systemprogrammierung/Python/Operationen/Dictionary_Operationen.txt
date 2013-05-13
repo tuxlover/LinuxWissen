@@ -14,3 +14,7 @@ Created Dienstag 22 Januar 2013
 
 **.remove('<Value>')**
 → entfernt den Wert und den Schlüssel aus dem Dictionary basierend auf dem Wert **<Value>**
+
+**.join()**
+→ siehe Dictionary Operationen
+[[Dictionary Operationen]]

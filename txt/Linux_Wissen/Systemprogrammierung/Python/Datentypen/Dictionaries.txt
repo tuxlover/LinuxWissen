@@ -10,7 +10,7 @@ Created Dienstag 25 Dezember 2012
 * Insbesondere sind Listen spezielle Dictionaries mit aufsteigenden Indizies als// Keys//
 * Schlüssel müssen eindeutig sein, d.h. ein Name für einen Schlüssel darf nur einmal verwendet werden
 * Dictinaries können weitere Dictionaries oder Listen als ein Wert enthalten
-[[Listen]]
+[[Listen und Listenobjekte]]
 * //Werte (Values) //werden durch ihre Schlüsselwerte (//Keys//) indiziert und referenziert
 * mutable
 * Iterierbar

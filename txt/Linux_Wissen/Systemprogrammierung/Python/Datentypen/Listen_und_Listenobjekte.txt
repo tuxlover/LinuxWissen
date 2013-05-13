@@ -1,0 +1,75 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2012-11-04T15:11:15+01:00
+
+====== Listen und Listenobjekte ======
+Created Sonntag 04 November 2012
+
+* können verschiedenen Datentypen des gleichen oder unterschiedlichen Datentyps in einer Variablen abgelegt werden
+* Als Item kann eine Liste an bielibiger Stelle wieder ein Liste enthalten
+* mutable Datentyp
+* Iterierbar
+* Listen sind Listenobjekte
+[[Strings]]
+[[Python:Operationen:Listen Operationen]]
+
+* Listen werden erstellt durch:
+		//list_name = [item1, item2,...]//
+* [] ist eine leere Liste
+	→ wird oft für die Initialisierung eines Porgrams genutzt
+	
+	
+//Beispiel://
+''zoo_animals = ["pangolin","penguin","cow","ape"]''
+
+# Die 3 x 3 Einheitsmatrix
+''In [74]: In = [[1,0,0],[0,1,0],[0,0,1]]''
+
+
+
+=== Zugriff über den Index eines Listenobjekts (access by index) ===
+**!!!**__Listen Indizies starten bei 0, nicht bei 1__**!!!**
+* Der Zugriff über Indiziees erfolgt durch:
+	//list_name[n]//
+	→ //n ist ein beliebiger Integer innerhalb des  Bildbereichs des Indexes//
+
+//Beispiel://
+'''
+# print pangolin
+print zoo_animals[0] 
+# print penguin
+print zoo_animals[1]
+# print cow
+print zoo_animals[2]
+# print ape
+print zoo_animals[3]
+'''
+
+
+=== Konkatination über Listenobjekte ===
+* alle Listenobjekte können mit dem **+** Operator zusammengefügt werden
+
+//Beispiel://
+'''
+In [1]: print "hello" + " " + "world!"
+hello world!
+'''
+
+
+'''
+In [3]: a = ["banane", "apfelsine"]
+In [4]: b = ["melone", "birne"]
+In [5]: c = a + b
+In [6]: print c
+['banane', 'apfelsine', 'melone', 'birne']
+'''
+
+
+
+=== Wiederholungsoperatorn über Listenobjekte ===
+* Listenobkjekte könen mit dem ***N **Operator n*mal wiederholt werden
+
+//Beispiel://
+In [17]: print 5*"OTTO"
+OTTOOTTOOTTOOTTOOTTO
+
