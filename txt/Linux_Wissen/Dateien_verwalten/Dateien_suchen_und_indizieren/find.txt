@@ -36,8 +36,8 @@ Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausd
 **-perm **→ Suchen nach Berechtigunen, es können Okatale Werte und Symbolische Werte als Argument übergeben werden
 **-executable **→ suchen nach Ausführbaren Dateien
 **-atime|-amin **→ Zugriffszeit in Tagen|Minuten
-**-mtime|mmin **→ Änderungszeit in Tagen|Minuten
-**-ctime|-cmin **→ letzte Änderung in Tagen|Minuten
+**-mtime|mmin **→ Änderungen an den Dateien in Tagen|Minuten
+**-ctime|-cmin **→ Änderungen an den Attributen Tagen|Minuten
 **-links <N> **→ suche nach Dateien deren Referenzzähler den angegebenen Zahlenwert hat
 **-inum <INODE> **→  finde  Verweise mit der entsprechenden I-Node Nummer 
 **-a **→ logisches AND
@@ -45,10 +45,10 @@ Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausd
 ! → Nicht
 **-exec <Befehl> {} \; **→ <Befehl> wird auf die gefundenen Dateien angwendet
 **-ok <Befehl> {} \;**→ wie -**exec** aber bei jeder gefundenen Datei wird um eine Bestätigung gefragt
-**-ls **→ gebe die Detaillierte Dateiinformationen aus
+**-ls **→ gebe die Detaillierte Dateiinformationen aus (ls -dils)
 **-delete **→ lösche gefundene Dateien
 
-//Beispiele;//
+//Beispiele://
 __Reguläre Dateien die mit my beginnen im aktuellen Verzeichnis finden und die erweiterte Dateiinformationen anzeigen__
 ''find . -iname 'my*' -type f -ls''
 

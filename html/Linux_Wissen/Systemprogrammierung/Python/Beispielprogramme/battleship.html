@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>battleship</title>
+		<meta name='Generator' content='Zim 0.60'>
+		<style type='text/css'>
+			a          { text-decoration: none      }
+			a:hover    { text-decoration: underline }
+			a:active   { text-decoration: underline }
+			strike     { color: grey                }
+			u          { text-decoration: none;
+			             background-color: yellow   }
+			tt         { color: #2e3436;            }
+			pre        { color: #2e3436;
+			             margin-left: 20px          }
+			h1         { text-align: center;
+			             color: #4e9a06             }
+			h2         { color: #4e9a06             }
+			h3         { color: #4e9a06             }
+			h4         { color: #4e9a06             }
+			h5         { color: #4e9a06             }
+			span.insen { color: grey                }
+			.page { max-width: 1000px;}
+			.menu{
+				float:left; width: 300px;
+			}
+
+			.content { padding-left: 320px;}
+			.notebook{font-variant: small-caps;
+					color:#4e9a06;
+					padding: 0px 20px;}
+			hr{clear:both;}
+		</style>
+
+	</head>
+	<body>
+		<div class="page">
+			<div class="heading">
+									<h1>battleship</h1>
+			</div>
+			<hr>
+			<div class="menu">
+				<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+<ul>
+<li><a href="../../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
+<li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
+<li><a href="../../../Bibliotheken.html" title="Bibliotheken" class="page">Bibliotheken</a></li>
+<li><a href="../../../Booten.html" title="Booten" class="page">Booten</a></li>
+<li><a href="../../../Dateien_verwalten.html" title="Dateien verwalten" class="page">Dateien verwalten</a></li>
+<li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik" class="page">Datenrettung und Forensik</a></li>
+<li><a href="../../../Drucken.html" title="Drucken" class="page">Drucken</a></li>
+<li><a href="../../../Emacs_Editor.html" title="Emacs Editor" class="page">Emacs Editor</a></li>
+<li><a href="../../../FHS.html" title="FHS" class="page">FHS</a></li>
+<li><a href="../../../Filterprogramme.html" title="Filterprogramme" class="page">Filterprogramme</a></li>
+<li><a href="../../../git_Vesionskontrolle.html" title="git Vesionskontrolle" class="page">git Vesionskontrolle</a></li>
+<li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen" class="page">Hardware und Systeminformationen</a></li>
+<li><a href="../../../Hilfe_erhalten.html" title="Hilfe erhalten" class="page">Hilfe erhalten</a></li>
+<li><a href="../../../Lokalisierung.html" title="Lokalisierung" class="page">Lokalisierung</a></li>
+<li><a href="../../../Monitoring.html" title="Monitoring" class="page">Monitoring</a></li>
+<li><a href="../../../Networking.html" title="Networking" class="page">Networking</a></li>
+<li><a href="../../../Paketverwaltung.html" title="Paketverwaltung" class="page">Paketverwaltung</a></li>
+<li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme" class="page">Partitionen und Dateisysteme</a></li>
+<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung" class="page">Prozessverwaltung</a></li>
+<li><a href="../../../root.html" title="root" class="page">root</a></li>
+<li><a href="../../../Shell.html" title="Shell" class="page">Shell</a></li>
+<li><a href="../../../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
+<li><a href="../../../SQL.html" title="SQL" class="page">SQL</a></li>
+<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
+<ul>
+<li><a href="../../Awk.html" title="Awk" class="page">Awk</a></li>
+<li><a href="../../C.html" title="C" class="page">C</a></li>
+<li><a href="../../C%2B%2B.html" title="C++" class="page">C++</a></li>
+<li><a href="../../Perl.html" title="Perl" class="page">Perl</a></li>
+<li><a href="../../Python.html" title="Python" class="page">Python</a></li>
+<ul>
+<li><a href="../Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
+<ul>
+<li><strong class="activepage">battleship</strong></li>
+<li><a href="./distance_from_zero.html" title="distance from zero" class="page">distance from zero</a></li>
+<li><a href="./its_dangerous.html" title="its dangerous" class="page">its dangerous</a></li>
+<li><a href="./pyglatin.html" title="pyglatin" class="page">pyglatin</a></li>
+</ul>
+<li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
+<li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
+<li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
+<li><a href="../Input.html" title="Input" class="page">Input</a></li>
+<li><a href="../Module.html" title="Module" class="page">Module</a></li>
+<li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
+<li><a href="../Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
+<li><a href="../Schleifen.html" title="Schleifen" class="page">Schleifen</a></li>
+<li><a href="../Test.html" title="Test" class="page">Test</a></li>
+<li><a href="../Variablen.html" title="Variablen" class="page">Variablen</a></li>
+</ul>
+<li><a href="../../Sed.html" title="Sed" class="page">Sed</a></li>
+<li><a href="../../Shellscripting.html" title="Shellscripting" class="page">Shellscripting</a></li>
+</ul>
+<li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
+<li><a href="../../../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
+<li><a href="../../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
+<li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
+<li><a href="../../../X11.html" title="X11" class="page">X11</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
+</ul>
+</ul>
+
+			</div>
+			<div class="content">
+			<!-- Wiki content -->
+				<p>
+Created Montag 04 Februar 2013<br>
+</p>
+
+<pre>
+#!/usr/bin/env python
+
+"""
+This is a pretty boring board game.
+The goal is to guess a combination of row and column.
+This is just a lerning project.
+It's good to practice the whole index versus length thing.
+version: 0.3
+"""
+
+##### Defintions begin here
+### python module imports begin here
+from random import randint
+### python module imports end here
+
+### Variables predeclarations begin here
+size = input("How big should be the size of the board?")
+size = int(size)
+# have a 40% winning chance based on the board size and have at least one try
+tries = int(round((40 * (size ** 2))/ 100) + 1)
+print "Ready to go! You have"+" "+ str(tries)+" "+"tries."
+anykey = raw_input("Hit Enter key to continue!")
+answer = True
+board = []
+### Variables predeclarations end here
+
+### Functions begin here
+def print_board(board):
+    for row in board:
+        print " ".join(row)
+
+def random_saying():
+	saying=randint(0,9)
+	if saying == 0:
+		return "Are you an idiot or what?"
+	elif saying == 1:
+		return "Oh god i whish i had your brain."
+	elif saying == 2:
+		return "Just shooting anywhere doesn't help you."
+	elif saying == 3:
+		return "Dude that's not the ocean."
+	elif saying == 4:
+		return "Think before you shoot!"
+	elif saying == 5:
+		return "Hmm. I would'nt shoot there!"
+	elif saying == 6:
+		return "All your base are belong to us."
+	elif saying == 7:
+		return "Ok if you want you can waste your tries."
+	elif saying == 8:
+		return "Go visit an eye doctor."
+	else:
+		return "Well I am sure there is something, but ..."
+
+
+def random_row(board):
+    return randint(0,len(board)-1)
+
+def random_col(board):
+    return randint(0,len(board[0])-1)
+
+def clear_board(board):
+	for i in  range(0,len(board)):
+		for j in range(0,len(board[i])):
+			if board[i][j] == 'X':
+				board[i][j] = 'O'
+	return board
+### Functions end here
+#### Defintions end here
+
+for x in range(0,size):
+      board.append(["O"] * size)
+
+ship_row = random_row(board)
+ship_col = random_col(board)
+
+
+while answer == True:
+
+# loop until the number of tries expires
+	for i in range(0,tries):
+
+		guess_row = input("Guess Row:")
+		guess_col = input("Guess Col:")
+
+		# when guess is not even a valid input print a error message
+		if guess_row &lt; 0 or guess_row &gt; len(board) or guess_col &lt; 0 or guess_col &gt; len(board):
+			print random_saying()
+			continue
+
+		if board[guess_row - 1][guess_col -1] == "X":
+			print "You already guessed that!"
+			continue
+
+		if ship_row + 1 == guess_row and ship_col + 1 == guess_col:
+			print "Congratulations! You sank my battleship at"+" "+str(ship_row +1)+","+str(ship_col +1)+"!"
+			break
+		else:
+			print "You missed my battleship!"
+			board[guess_row - 1][guess_col - 1]='X'
+			print print_board(board)
+			if i == 0:
+				print "Last shoot. Good luck."
+			else:
+				print "You have"+" "+str(tries-i-1)+" "+"tries left."
+	else:
+		print "You loose!"
+		print "I was hiding at"+" "+str(ship_row + 1)+","+str(ship_col + 1)
+
+	answer=raw_input("Want an other trie to defeat me? (y,n)")
+
+	# ask the user for an other trie
+	answer = answer.lower()
+	if answer != "y":
+		answer = False
+	else:
+		answer = True
+		clear_board(board)
+		ship_row = random_row(board)
+		ship_col = random_col(board)
+
+
+#TODO:
+#look for wrong input (not an integer)
+</pre>
+
+
+			<!-- End wiki content -->
+			</div>
+			<hr>
+			<!-- Backlinks -->
+			<div class="footer">
+									<i>No backlinks to this page.</i>
+				<br><br>
+
+				
+			<!-- End Backlinks -->
+			</div>
+		</div>
+	</body>
+</html>

@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Man Pages</title>
-		<meta name='Generator' content='Zim 0.58'>
+		<meta name='Generator' content='Zim 0.60'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -84,50 +84,29 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Freitag 15 April 2011<br>
-</p>
-
-<p>
-<ul>
-<li>werden meist mit dem dazugehörigen Programm installiert</li>
+				<li>werden meist mit dem dazugehörigen Programm installiert</li>
 <li>sind im groff Format geschrieben</li>
 <li>sind in Themengebiete (Sektionen unterteilt)</li>
-</ul>
-</p>
 
-<p>
 <strong>man &lt;n&gt; &lt;Befehl&gt;</strong> → ruft die n-te Handbuchseite zum &lt;Befehl&gt; auf<br>
                                      → wird n nicht mit angegben wird die erste aufgerufen die gefunden wird<br>
-</p>
-
-<p>
+<br>
 <strong>man -a &lt;Befehl&gt; </strong>→ zeigt alle Handbuchseiten von Befehl nacheinander an<br>
 <strong>man -l &lt;Mandatei&gt; </strong>→  &lt;Mandatei&gt; lesen die nicht der Datenbank steht<br>
 <strong>man -H&lt;Browser&gt; &lt;Befehl&gt; </strong>→ die Manpage von &lt;Befehl&gt; im angegebenen &lt;Browser&gt; lesen<br>
-</p>
-
-<p>
+<br>
 <u>Hinweis: </u><strong> ./configure --prefix=~/test &amp;&amp; make &amp;&amp; make install </strong>durchführen um anschließend erst einmal <br>
                die manpage mittels -l zu lesen.<br>
-</p>
-
-<p>
+<br>
 <strong>groff </strong>→ Programm das zum Betrachten von Manpages verwendet werden kann<br>
-</p>
-
-<h2>MANPATH</h2>
-<p>
+<br>
+<h2>MANPATH</h2><br>
 MANPATH → Umgebungsvariable ( <a href="../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung" class="page">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a> ) die Pfade durch :<br>
                      getrennt zu den Manpages angeben<br>
-</p>
-
-<p>
+<br>
 <strong>manpath </strong>→ Programm zum Konfigurieren falls MANPATH nicht gesetzt ist<br>
-</p>
-
-<h2>gAufbau einer Man Page</h2>
-<p>
+<br>
+<h2>gAufbau einer Man Page</h2><br>
 NAME (Kommandoname mit knapper Kurzbeschreibung)<br>
 SYNOPSIS (Beschreibung der Befehlssyntax)<br>
 DESCRIPTION (Ausführliche Beschreibung der Kommandowirkung)<br>
@@ -139,123 +118,78 @@ SEE ALSO (Querverweise auf verwandte Themen)<br>
 DIAGNOSTICS (Fehlermeldung und Interpretationen des Befehls)<br>
 COPYRIGHT (Autoren des Programms)<br>
 BUGS (Fehler die aus dem Ansatz der Implementation des Programms folgen)<br>
-</p>
-
-<p>
-<strong>fetter Text</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l<code>iterale Angaben wie in der Anzeige</code><br>
+<br>
+<strong>fetter Text</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l<code>iterale Angaben wie in der Anzeige</code>
 <em>kursiver Text			</em>ersetzen durch passendes Argument<br>
 [-abc]				Ein oder mehrere Argumente innerhalb der [ ] sind optional<br>
 -a|-b   				Optionen die durch | abgegrenzt sind, können nicht zusammen benutzt werden<br>
 Argument... 			Argument kann wiederholt auftreten<br>
 [Ausdruck]			gesamter Ausdruck innerhalb der [ ] kann wiederholt angegeben werden<br>
-</p>
-
+<br>
 <h2>Themengebiete der Man Pages</h2>
-<p>
-<ul>
 <li>Jede Man Page ist in Themenabschnitte 1 bis 9 und n unterteilt</li>
 <li>Zur jeder Man Page kann es eine Seite in den entsprechenden Themengebieten geben</li>
-</ul>
-</p>
-
-<p>
+<br>
 1 Benutzerkommandos die jeder Benutzer ausführen darf<br>
-</p>
-
-<p>
+<br>
 2 Systemcalls die an der Kernel geschickt werden können<br>
-</p>
-
-<p>
+<br>
 3 Funktionen der Programmiersprache C<br>
-</p>
-
-<p>
+<br>
 4 Gerätedateien und Treiber<br>
-</p>
-
-<p>
+<br>
 5 Konfigurationsdateien und Dateiformate<br>
-</p>
-
-<p>
+<br>
 6 Spiele<br>
-</p>
-
-<p>
+<br>
 7 Makros und Konventionen (ASCII Tabelle)<br>
-</p>
-
-<p>
+<br>
 8 Programme die nur von root benutzt werden sollen<br>
-</p>
-
-<p>
+<br>
 9 Funktionen des Kernels<br>
-</p>
-
-<p>
+<br>
 n neue Befehle<br>
-</p>
-
+<br>
 <h2>Navigieren in Man Pages</h2>
-<p>
-<ul>
 <li><strong>less </strong> wird als Pager für man Standardmäßig verwendet</li>
-</ul>
     <a href="../Dateien_verwalten/Dateien_betrachten.html" title="Linux Wissen:Dateien verwalten:Dateien betrachten" class="page">Linux Wissen:Dateien verwalten:Dateien betrachten</a><br>
-</p>
-
-<p>
+<br>
 Rückwärts suchen: /<br>
 Vorwärts suchen: ?<br>
-</p>
-
-<h4>Space</h4>
-<p>
+<br>
+<h4>Space</h4><br>
 → Seite vorblättern<br>
-</p>
-
-<h4>Alt+v</h4>
-<p>
+<br>
+<h4>Alt+v</h4><br>
 → eine Seite zurückblättern<br>
-</p>
-
-<h4>gg</h4>
-<p>
+<br>
+<h4>gg</h4><br>
 → zum Anfang der Manpage springen<br>
-</p>
-
-<h4>g&lt;N&gt;</h4>
-<p>
+<br>
+<h4>g&lt;N&gt;</h4><br>
 → zur Zeile N in der Manpage springen<br>
-</p>
-
-<h4>GG</h4>
-<p>
+<br>
+<h4>GG</h4><br>
 → zum Ende des Textes springen<br>
-</p>
-
-<h4>q</h4>
-<p>
+<br>
+<h4>q</h4><br>
 → verlassen der Man Page<br>
-</p>
-
-<h4>h</h4>
-<p>
+<br>
+<h4>h</h4><br>
 → kurze Hilfe zu less<br>
-</p>
-
+<br>
 <h2>Man Pages nach Namen durchsuchen</h2>
-<p>
-<strong>whatis &lt;Stichwort&gt;</strong><br>
-</p>
+<strong>whatis &lt;Stichwort&gt;</strong>
 
 <h2>Man Pages in Kurzbeschreibung durchsuchen</h2>
-<p>
-<strong>apropos &lt;Stichwort&gt;</strong><br>
-<strong>man -k &lt;Stichwort&gt;</strong><br>
-</p>
+<strong>apropos &lt;Stichwort&gt;</strong>
+<strong>man -k &lt;Stichwort&gt;</strong>
+
+<h2>Man Pages in Yelp|KDE</h2>
+<code>yelp info:man</code>
+<code>info:man</code><br>
+→ die Manpages für man in KDE bzw. Gnome aufrufen.<br>
+<br>
 
 
 			<!-- End wiki content -->

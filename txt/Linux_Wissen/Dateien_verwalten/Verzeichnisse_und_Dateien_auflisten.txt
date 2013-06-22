@@ -36,5 +36,5 @@ __Hinweis: Für das Verezeichnis /dev zeigt die Ausgabe von ls -l ledigleich Maj
 ^
 Blockgerät			             ^major,minor 
 [[Linux Wissen:FHS:dev:Linux Allocated Devices]]
-
+[[Dateien identifizieren]]
 

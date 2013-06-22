@@ -32,4 +32,6 @@ Created Montag 18 April 2011
 **-m **→ findet nur Manpages
   
 
-
+===== Praxisbeispiele =====
+* Beispiele für den praktischen Einsatz **xargs, find, grep**
+[[+Praxisbeispiele]]

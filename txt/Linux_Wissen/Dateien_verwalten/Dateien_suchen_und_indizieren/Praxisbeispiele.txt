@@ -1,0 +1,70 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-06-22T12:27:05+02:00
+
+====== Praxisbeispiele ======
+Created Samstag 22 Juni 2013
+
+__Nach Dateitypen suchen die durch eine Extension gekennzeichnet sind (Beispiel .pdf)__
+''find /home/ -iname '*.pdf'''
+
+=== ACHTUNG: ===
+** Hier ist auf die Schalter für Zeitangaben zu achten (ohne, - , +)**
+__Nach Dateien suchen, die innerhalb der letzten Minuten geändert wurden__
+''find ~ -mmin -60''
+
+__Nach Datien suchen die in der Minute geändert wurden, die vor 20 Minuten begonnen hatte__
+''find ~ -mmin 20''
+
+__Nach Dateien suchen deren Modifikation länger als 2 Stunden her ist__
+''find ~ -mmin +120''
+
+__Nach Dateien suchen die Innerhalb eines bestimmten Zeitraums geändert wurden__
+→ zum Beispile vor 10 bis 20 Minuten
+find ~ -mmin +10 -mmin -20
+
+__Nach Dateien suchen die vor 2 Tagen innerhalb der letzen 24 Stunden geändert wurden__
+''find /usr/ -mtime 2''
+
+__Dateien finden die kleiner oder gleich 1 GB sind__
+''find /usr -size -1G''
+
+__Dateien finden die 2 Gigagbyte aber nicht größer als 3 Gigabyte sind__
+''find /usr -size 2G''
+
+__Dateien finden die 10 Megabyte oder Größer sind__
+''find /root -size +10M''
+
+__Dateien finden mit logischer Klammerung. Nach einem Namen suchen der vom Typ Datei oder vom Typ Ordner ist__
+''find /bin /usr -name '*gcc' \(-type f -o -type d\)''
+
+__Dateien finden die neuer / nicht neuer als eine Referenzdatei sind__
+''find /etc -name '*.conf' -newer '/home/testuser/reference.conf' -ls''
+''find /etc -name '*.conf' -not -newer '/home/testuser/reference.conf' -ls''
+
+__Datein ignorieren die einem bestimmten Kriterim entsprechen__
+''find /usr -path '/usr/share/doc/' -prune -o -name '*python*' -print''
+
+__Bei der Suche Wechseldatenträger, Netzlaufwerke auszuschließen__
+''find / -xdev -name '*gcc'''
+
+__Beim Suchen nicht Rekursiv in ein Verszeichnis hinabsteigen__
+''find / -maxdepth 1 -name '/usr'''
+
+__Beim Suchen Rekursiv maximal noch ein weiteres Verzeichnis hinabsteigen__
+''find / maxdepth 2 -name '*gcc'''
+
+__Ausgeben der aktuellen Dateieigenschaften für ein gefundenes Element__
+find ~ -iname '*.pdf' -exec ls -lisah {} \;
+
+__Inhalte eines Verzeichnis der Größe nach Sortieren__
+''find / -xdev -ls |sort -n -k 7''
+
+__Dateien rekursiv nach einem Wort druchsuchen__
+''find /etc/ -name '*config'|xargs grep  --color 'linux'''
+
+__Dateien für den Puffer aufteilen, so dass nicht die Meldung kommt "Die Argumentenliste ist zu lang"__
+''find / -xdev -print0 2>/dev/null | xargs -0 ls -l''
+
+__Dateiberechtigungen finden und ändern__
+''find /usr/local -perm 777 -o -perm 666 -print0 |xargs -0r chmod 644''

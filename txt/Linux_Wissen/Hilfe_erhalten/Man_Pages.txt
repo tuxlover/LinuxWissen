@@ -105,3 +105,9 @@ Vorwärts suchen: ?
 ===== Man Pages in Kurzbeschreibung durchsuchen =====
 **apropos <Stichwort>**
 **man -k <Stichwort>**
+
+===== Man Pages in Yelp|KDE =====
+''yelp info:man''
+''info:man''
+→ die Manpages für man in KDE bzw. Gnome aufrufen.
+

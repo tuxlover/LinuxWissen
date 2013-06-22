@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Listen Operationen</title>
-		<meta name='Generator' content='Zim 0.58'>
+		<meta name='Generator' content='Zim 0.60'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
 			a:hover    { text-decoration: underline }
@@ -111,12 +111,23 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>könenn nur auf Listenobjekte anwandt werden</li>
+				<p>
+Created Montag 21 Januar 2013<br>
+</p>
+
+<p>
+<ul>
+<li>könenn nur auf Listenobjekte anwandt werden</li>
 <li>auf Listen kann das sogenannte Slicing angwendet werden</li>
-<a href="../Datentypen/Listen.html" title="Python:Datentypen:Listen" class="page">Python:Datentypen:Listen</a>
+</ul>
+<a href="../Datentypen/Listen_und_Listenobjekte.html" title="Python:Datentypen:Listen und Listenobjekte" class="page">Python:Datentypen:Listen und Listenobjekte</a><br>
+</p>
 
 <h4>Slicing</h4>
+<p>
+<ul>
 <li>aus einem Listenobjekt wird eine  bestimmter Teil herausgeschnittet (<em>engl. slicing</em>)</li>
+</ul>
 <strong>list[&lt;N&gt;:&lt;M&gt;: &lt;S&gt; ]</strong><br>
 → beginnend beim index <strong>N </strong>bis <em>vor dem</em> Index <strong>M </strong><br>
 → wird eine Schrittweite <strong>S </strong>angegeben wird entsprechend der Schrittweite Indexe übersprungen, negative Schrittweite geht Rückwärts<br>
@@ -126,8 +137,11 @@
 <strong>M = len(list - 1)</strong><br>
 <strong>S = 1</strong><br>
 </div>
+</p>
 
-<em>Beispiel:</em>
+<p>
+<em>Beispiel:</em><br>
+</p>
 <pre>
 In [33] mylist1 = [0]
 In [34]: for i in range(1,11):
@@ -153,10 +167,14 @@ Out[39]: [3, 4, 5, 6, 7, 8, 9, 10]
 
 <h4>Index verwalten</h4>
 
+<p>
 <strong>.index(&lt;Item&gt;)</strong><br>
 → gibt den Index des ersten vorkommenden Items zurück<br>
-<br>
-<em>Beispiel:</em>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
 <pre>
 In [48]: zoo = ["affe", "giraffe","elefant","löwe"]
 
@@ -167,20 +185,37 @@ Out[50]: 3
 
 
 <h4>Manipulation von Listen</h4>
+<p>
 <strong>len(&lt;Liste&gt;)</strong><br>
 → gibt die Anzahl der Items in einer Liste zurück<br>
 → Spezielle ist ein String eine Liste mit Buchstaben <br>
-<br>
+</p>
+
+<p>
 <strong>.append(&lt;Objekt&gt;)</strong><br>
 → fügt ein Objekt an die Liste an<br>
-<br>
-<em>Beispiel:</em>
-<code>suitcase.append("Hut")</code>
+</p>
 
+<p>
+<em>Beispiel:</em><br>
+<code>suitcase.append("Hut")</code><br>
+</p>
+
+<pre>
+board = []
+for i in range(0,5):
+</pre>
+<pre style='padding-left: 30pt'>
+board.append("[O]"*5)
+print board
+&gt;&gt; [['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O']]
+</pre>
+<p>
 <strong>.pop(&lt;Index&gt;)</strong><br>
 → entfernt das Element dass auf den Index verweist aus der Liste<br>
 <br>
-<em>Beispiel:</em>
+<em>Beispiel:</em><br>
+</p>
 <pre>
 In [47]: suitcase = ["brille","hose","hemd","lampe"]
 
@@ -196,11 +231,15 @@ In [50]: print suitcase
 
 
 
+<p>
 <strong>.sort()</strong><br>
 → soritert die Items in der übergebenen Liste in absteigender Reihenfolge<br>
 → die sortierte Liste ersetzt die unsortierte Liste<br>
-<br>
-<em>Besipiel:</em>
+</p>
+
+<p>
+<em>Besipiel:</em><br>
+</p>
 <pre>
 In [61]: zoo.sort()
 
@@ -208,11 +247,42 @@ In [62]: print zoo
 ['affe', 'elefant', 'giraffe', 'löwe']
 </pre>
 
+<p>
+<strong>"&lt;Seperator&gt;".join()</strong><br>
+→ zusammenfügen von iterierbaren Objekten<br>
+→ jedes Daten-Objekt in der Liste|String|Dcitionary wird durch den Seperator getrennt zusammengefügt<br>
+</p>
 
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [10]: for row in board:
+    print "|".join(row)
+   ....:     
+O|O|O|O|O
+O|O|O|O|O
+O|O|O|O|O
+O|O|O|O|O
+O|O|O|O|O
+</pre>
+
+
+<pre>
+In [16]: print "-".join("Python")
+P-y-t-h-o-n
+</pre>
+
+
+
+<p>
 <strong>+ </strong><br>
 → zusammenfügen (concatination zweier oder meherer Listen)<br>
-<br>
-<em>Beispiel:</em>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
 <pre>
 n [71]: Liste2 = ["karl", "otto", "fred"]
 
@@ -223,7 +293,16 @@ In [73]: print Liste1+Liste2
 </pre>
 
 
+<p>
+*<strong> </strong><br>
+→ wiederholen von mehreren Listenobjekten<br>
+</p>
 
+<p>
+<em>Beispiel</em><br>
+In [8]: print 23*"Python"<br>
+PythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPython<br>
+</p>
 
 
 			<!-- End wiki content -->
@@ -231,7 +310,7 @@ In [73]: print Liste1+Liste2
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Datentypen/Listen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Listen</a></li>
+									<b>Backlinks:</b>						<a href='../Datentypen/Listen_und_Listenobjekte.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Listen und Listenobjekte</a></li>
 				<br><br>
 
 				

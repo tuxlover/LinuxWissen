@@ -53,6 +53,7 @@ __Hinweis: zwischen den { }  muss ein Leerzeichen sehen__
 	   → oft im zusammenhang mit find
 **-0 **→ Argumente werden durch das Null Zeichen und nicht durch Leerzeichen getrennt
      → In zusammenhang mit **find -print0 **([[Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:find]])
+**[-r] **→ nur in Zusammenhang mit -0 oder mit Angabe eines Delimiters, wenn das Ausagbeprogramm nichts zurückgibt wird das Argument nicht ausgeführt
 **-a <Datei>  **→ Argumente aus <Datei> einlesen
 **-d <Delimiter> **→ den Trenner Setzen
 **-I** <Marker> → ersetze <Marker> mit der Liste der Argumente

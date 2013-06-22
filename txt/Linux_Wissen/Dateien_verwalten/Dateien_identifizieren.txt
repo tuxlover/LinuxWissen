@@ -8,3 +8,20 @@ Created Dienstag 19 April 2011
 * file zeigt den Dateityp basierend auf der MIME Datenbank */usr/share/misc/magic 
 
 **file <Datei> **→ zeigt den Dateityp der Datei an
+
+**stat <Datei> **→ zeigt für die Datei Attribute, Zugriffszeit, Modifikationszeit an
+[[Dateien suchen und indizieren:find]]
+[[Verzeichnisse und Dateien auflisten]]
+**-f **→ die Attribute bzgl. des Dateisystems auf dem sich die Datei befindet
+**-c **→ Formatierung der Ausgabe ändern
+	**%a → **Zugriffsrechte in Oktaler Form
+	**%A → **Zufriffsrechte in Symbolischer Form
+	**%n → **Name der Datei
+	**%u → **Userid 
+	**%U → **Username
+	**%g → **GID
+	**%G **→ Gruppenname
+	**%i **→ Inodenummer
+	**%m **→ Mountpinkt auf dem sich diese Datei befindet
+	
+	
