@@ -6,6 +6,8 @@ Creation-Date: 2011-04-15T21:38:22+02:00
 Created Freitag 15 April 2011
 
 **Strg+g **→ die aktuelle Zeile und den Status der Datei anzeigen
+**Strg+f **→ eine Seite vorwärts Blättern
+**Strg+b **→ eine Seite zurück Blättern 
 
 **j,k** → runter, hoch navigieren
 **l,h **→ rechts und links navigieren

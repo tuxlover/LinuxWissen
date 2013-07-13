@@ -104,16 +104,27 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<h2>Find</h2>
+				<p>
+Created Montag 18 April 2011<br>
+</p>
+
+<h2>Find</h2>
+<p>
+<ul>
 <li>Aufspüren von Dateien und Verzeichnissen aufgrund gewisser Eigenschaften</li>
 <li>Verarbeiten von Dateien die entsprechende Eigenschaften haben mit <strong>-exec </strong>(zum Beispiel ändern falscher Berechtigungen) </li>
+</ul>
+</p>
 
+<p>
 <strong>find &lt;PfadOptionen&gt; &lt;PFAD&gt; &lt;Optionen&gt; </strong>→ sucht im Pfad nach Dateien mit den durch Optionen festgelegten Eigenschaften<br>
-<strong>&lt;PfadOptionen&gt;:</strong>
+<strong>&lt;PfadOptionen&gt;:</strong><br>
 <strong>-L </strong>→ symbolischen Links folgen<br>
 <strong>-P </strong>→ symbolischen Links niemals folgen<br>
-<br>
-<strong>&lt;Optionen&gt;:</strong>
+</p>
+
+<p>
+<strong>&lt;Optionen&gt;:</strong><br>
 <strong>-name '&lt;Muster&gt;'</strong>→  sucht nach Dateinamen auf die &lt;Muster&gt; passt, <br>
 Linux Wissen:Shell:Wildcards <br>
 Linux Wissen:Dateien verwalten:Dateien suchen und indizieren:grep:Reguläre Ausdrücke<br>
@@ -158,54 +169,83 @@ s=Unix Domain Socket<br>
 <strong>-ok &lt;Befehl&gt; {} \;</strong>→ wie -<strong>exec</strong> aber bei jeder gefundenen Datei wird um eine Bestätigung gefragt<br>
 <strong>-ls </strong>→ gebe die Detaillierte Dateiinformationen aus (ls -dils)<br>
 <strong>-delete </strong>→ lösche gefundene Dateien<br>
-<br>
-<em>Beispiele:</em>
-<u>Reguläre Dateien die mit my beginnen im aktuellen Verzeichnis finden und die erweiterte Dateiinformationen anzeigen</u>
-<code>find . -iname 'my*' -type f -ls</code>
+</p>
 
-<u>Finde die Datei myfile und suche dabei nicht in proc und nicht in sys</u>
-<code>find / -path /proc -prune -o -path /sys -prune -o -type f -name myfile -print</code>
+<p>
+<em>Beispiele:</em><br>
+<u>Reguläre Dateien die mit my beginnen im aktuellen Verzeichnis finden und die erweiterte Dateiinformationen anzeigen</u><br>
+<code>find . -iname 'my*' -type f -ls</code><br>
+</p>
 
-<u>Alle Dateien MP3 und mp3 werden auf nur lesbar gesetzt</u>
-<code>find /home -iname "*.mp3" -type f -exec chmod 444 {} \;</code>
+<p>
+<u>Finde die Datei myfile und suche dabei nicht in proc und nicht in sys</u><br>
+<code>find / -path /proc -prune -o -path /sys -prune -o -type f -name myfile -print</code><br>
+</p>
 
-<u>Alle Dateien in Peters /home in ein tar.gz packen</u>
-<code>find /home/peter -type f -print0|xargs -0 tar cvfz peters_home.tar.gz</code>
+<p>
+<u>Alle Dateien MP3 und mp3 werden auf nur lesbar gesetzt</u><br>
+<code>find /home -iname "*.mp3" -type f -exec chmod 444 {} \;</code><br>
+</p>
 
-<u>Liste alle Verzeichnisse und Dateien auf nach der Anzahl des Typs im aktuellen Verzeichnis</u>
-<code>find ${*-.}  -type f |xargs file|awk -F, 'print $1'|awk '{$1=NULL;print $1}'|sort|uniq -c|sort -n</code>
+<p>
+<u>Alle Dateien in Peters /home in ein tar.gz packen</u><br>
+<code>find /home/peter -type f -print0|xargs -0 tar cvfz peters_home.tar.gz</code><br>
+</p>
 
-<u>Finde und lösche leere Verzeichnisse</u>
-<code>find . -type d -empty -print0|xargs -0 rmdir</code>
-<code>find . -type d -empty -ok rmdir {} \;</code>
+<p>
+<u>Liste alle Verzeichnisse und Dateien auf nach der Anzahl des Typs im aktuellen Verzeichnis</u><br>
+<code>find ${*-.}  -type f |xargs file|awk -F, 'print $1'|awk '{$1=NULL;print $1}'|sort|uniq -c|sort -n</code><br>
+</p>
+
+<p>
+<u>Finde und lösche leere Verzeichnisse</u><br>
+<code>find . -type d -empty -print0|xargs -0 rmdir</code><br>
+<code>find . -type d -empty -ok rmdir {} \;</code><br>
+</p>
  
-<u>Stelle die Verzeichnisstruktur als Baum dar</u>
-<code>find . -type d |sed -e "s/[^-][^\/]*\ |/g" -e "s/|\([^ ]\)/|-\1/"//</code>
+<p>
+<u>Stelle die Verzeichnisstruktur als Baum dar</u><br>
+<code>find . -type d |sed -e "s/[^-][^\/]*\ |/g" -e "s/|\([^ ]\)/|-\1/"//</code><br>
+</p>
 
-<u>Checksummen über alle Verzeichnisse berechnen die unter . liegen</u>
-<code>IFS=' ; for i in $(find . -type f -print); do sha256sum "$i"; done</code>
+<p>
+<u>Checksummen über alle Verzeichnisse berechnen die unter . liegen</u><br>
+<code>IFS=' ; for i in $(find . -type f -print); do sha256sum "$i"; done</code><br>
+</p>
 
-<u>Finde und ersetze .php3 files in .php files</u>
-<code>find . -name "*.php3" | sed 's/\(.*\).php3$/mv "&amp;" "\1.php"/'|sh</code>
+<p>
+<u>Finde und ersetze .php3 files in .php files</u><br>
+<code>find . -name "*.php3" | sed 's/\(.*\).php3$/mv "&amp;" "\1.php"/'|sh</code><br>
+</p>
 
-<u>konvertiere alle ASCII Dateien von DOS in Unix Style</u>
-<code>for f in $(find * -type f); do echo "dos2unix $f $f";done|sh</code>
+<p>
+<u>konvertiere alle ASCII Dateien von DOS in Unix Style</u><br>
+<code>for f in $(find * -type f); do echo "dos2unix $f $f";done|sh</code><br>
+</p>
 
-<u>Finde das Verzeichnis dass den meisten Platz auf der Platte/Partition verbraucht</u>
-<code>find . -type d |xargs du -ms |sort -g</code>
+<p>
+<u>Finde das Verzeichnis dass den meisten Platz auf der Platte/Partition verbraucht</u><br>
+<code>find . -type d |xargs du -ms |sort -g</code><br>
+</p>
 
-<u>Rekursiv den Inhalt eines Verzeichnisses auflisten</u>
+<p>
+<u>Rekursiv den Inhalt eines Verzeichnisses auflisten</u><br>
 <u>Der IFS der hier gesetzt wird ermöglicht es dass leerzeichen in Dateinamen ignoriert werden und als solche mit übernommen</u><br>
-IFS=$'\n'; <code>find /etc/ -printf "%p\n"</code>
+IFS=$'\n'; <code>find /etc/ -printf "%p\n"</code><br>
+</p>
 
-<u>finde defekte symbolische Links</u>
-<code>for f in $(find / -type l -printf "%p \n"); do test -h "$f" &amp;&amp; test -e "$f" || echo ""$f" broken";done</code>
-<code>find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"</code>
-<code>find / -type l -exec ls -L {} \;|grep "nicht möglich"</code>
-<code>find  -L / -xtype l -ls  | awk 'NF &gt; 12 {print $11}' | sort -u</code>
+<p>
+<u>finde defekte symbolische Links</u><br>
+<code>for f in $(find / -type l -printf "%p \n"); do test -h "$f" &amp;&amp; test -e "$f" || echo ""$f" broken";done</code><br>
+<code>find / -type l -print0|xargs -0 ls -L1|grep "nicht möglich"</code><br>
+<code>find / -type l -exec ls -L {} \;|grep "nicht möglich"</code><br>
+<code>find  -L / -xtype l -ls  | awk 'NF &gt; 12 {print $11}' | sort -u</code><br>
+</p>
 
-<u>finde Dateien die das Setuid oder Setgid Bit gesetzt haben</u>
-<code>find / '(' -perm 4000 -o -perm 2000 ')' -type f -exec ls -lisah {} \;</code>
+<p>
+<u>finde Dateien die das Setuid oder Setgid Bit gesetzt haben</u><br>
+<code>find / '(' -perm 4000 -o -perm 2000 ')' -type f -exec ls -lisah {} \;</code><br>
+</p>
 
 
 			<!-- End wiki content -->

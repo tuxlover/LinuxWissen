@@ -104,69 +104,113 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<u>Nach Dateitypen suchen die durch eine Extension gekennzeichnet sind (Beispiel .pdf)</u>
+				<p>
+Created Samstag 22 Juni 2013<br>
+</p>
+
+<p>
+<u>Nach Dateitypen suchen die durch eine Extension gekennzeichnet sind (Beispiel .pdf)</u><br>
 <code>find /home/ -iname '*.pdf</code>'<br>
-<br>
+</p>
+
 <h4>ACHTUNG:</h4>
-<strong> Hier ist auf die Schalter für Zeitangaben zu achten (ohne, - , +)</strong>
-<u>Nach Dateien suchen, die innerhalb der letzten Minuten geändert wurden</u>
-<code>find ~ -mmin -60</code>
+<p>
+<strong> Hier ist auf die Schalter für Zeitangaben zu achten (ohne, - , +)</strong><br>
+<u>Nach Dateien suchen, die innerhalb der letzten Minuten geändert wurden</u><br>
+<code>find ~ -mmin -60</code><br>
+</p>
 
-<u>Nach Datien suchen die in der Minute geändert wurden, die vor 20 Minuten begonnen hatte</u>
-<code>find ~ -mmin 20</code>
+<p>
+<u>Nach Datien suchen die in der Minute geändert wurden, die vor 20 Minuten begonnen hatte</u><br>
+<code>find ~ -mmin 20</code><br>
+</p>
 
-<u>Nach Dateien suchen deren Modifikation länger als 2 Stunden her ist</u>
-<code>find ~ -mmin +120</code>
+<p>
+<u>Nach Dateien suchen deren Modifikation länger als 2 Stunden her ist</u><br>
+<code>find ~ -mmin +120</code><br>
+</p>
 
+<p>
 <u>Nach Dateien suchen die Innerhalb eines bestimmten Zeitraums geändert wurden</u><br>
 → zum Beispile vor 10 bis 20 Minuten<br>
 find ~ -mmin +10 -mmin -20<br>
-<br>
-<u>Nach Dateien suchen die vor 2 Tagen innerhalb der letzen 24 Stunden geändert wurden</u>
-<code>find /usr/ -mtime 2</code>
+</p>
 
-<u>Dateien finden die kleiner oder gleich 1 GB sind</u>
-<code>find /usr -size -1G</code>
+<p>
+<u>Nach Dateien suchen die vor 2 Tagen innerhalb der letzen 24 Stunden geändert wurden</u><br>
+<code>find /usr/ -mtime 2</code><br>
+</p>
 
-<u>Dateien finden die 2 Gigagbyte aber nicht größer als 3 Gigabyte sind</u>
-<code>find /usr -size 2G</code>
+<p>
+<u>Dateien finden die kleiner oder gleich 1 GB sind</u><br>
+<code>find /usr -size -1G</code><br>
+</p>
 
-<u>Dateien finden die 10 Megabyte oder Größer sind</u>
-<code>find /root -size +10M</code>
+<p>
+<u>Dateien finden die 2 Gigagbyte aber nicht größer als 3 Gigabyte sind</u><br>
+<code>find /usr -size 2G</code><br>
+</p>
 
-<u>Dateien finden mit logischer Klammerung. Nach einem Namen suchen der vom Typ Datei oder vom Typ Ordner ist</u>
-<code>find /bin /usr -name '*gcc' \(-type f -o -type d\)</code>
+<p>
+<u>Dateien finden die 10 Megabyte oder Größer sind</u><br>
+<code>find /root -size +10M</code><br>
+</p>
 
-<u>Dateien finden die neuer / nicht neuer als eine Referenzdatei sind</u>
-<code>find /etc -name '*.conf' -newer '/home/testuser/reference.conf' -ls</code>
-<code>find /etc -name '*.conf' -not -newer '/home/testuser/reference.conf' -ls</code>
+<p>
+<u>Dateien finden mit logischer Klammerung. Nach einem Namen suchen der vom Typ Datei oder vom Typ Ordner ist</u><br>
+<code>find /bin /usr -name '*gcc' \(-type f -o -type d\)</code><br>
+</p>
 
-<u>Datein ignorieren die einem bestimmten Kriterim entsprechen</u>
-<code>find /usr -path '/usr/share/doc/' -prune -o -name '*python*' -print</code>
+<p>
+<u>Dateien finden die neuer / nicht neuer als eine Referenzdatei sind</u><br>
+<code>find /etc -name '*.conf' -newer '/home/testuser/reference.conf' -ls</code><br>
+<code>find /etc -name '*.conf' -not -newer '/home/testuser/reference.conf' -ls</code><br>
+</p>
 
-<u>Bei der Suche Wechseldatenträger, Netzlaufwerke auszuschließen</u>
+<p>
+<u>Datein ignorieren die einem bestimmten Kriterim entsprechen</u><br>
+<code>find /usr -path '/usr/share/doc/' -prune -o -name '*python*' -print</code><br>
+</p>
+
+<p>
+<u>Bei der Suche Wechseldatenträger, Netzlaufwerke auszuschließen</u><br>
 <code>find / -xdev -name '*gcc</code>'<br>
-<br>
-<u>Beim Suchen nicht Rekursiv in ein Verszeichnis hinabsteigen</u>
+</p>
+
+<p>
+<u>Beim Suchen nicht Rekursiv in ein Verszeichnis hinabsteigen</u><br>
 <code>find / -maxdepth 1 -name '/usr</code>'<br>
-<br>
-<u>Beim Suchen Rekursiv maximal noch ein weiteres Verzeichnis hinabsteigen</u>
+</p>
+
+<p>
+<u>Beim Suchen Rekursiv maximal noch ein weiteres Verzeichnis hinabsteigen</u><br>
 <code>find / maxdepth 2 -name '*gcc</code>'<br>
-<br>
+</p>
+
+<p>
 <u>Ausgeben der aktuellen Dateieigenschaften für ein gefundenes Element</u><br>
 find ~ -iname '*.pdf' -exec ls -lisah {} \;<br>
-<br>
-<u>Inhalte eines Verzeichnis der Größe nach Sortieren</u>
-<code>find / -xdev -ls |sort -n -k 7</code>
+</p>
 
-<u>Dateien rekursiv nach einem Wort druchsuchen</u>
+<p>
+<u>Inhalte eines Verzeichnis der Größe nach Sortieren</u><br>
+<code>find / -xdev -ls |sort -n -k 7</code><br>
+</p>
+
+<p>
+<u>Dateien rekursiv nach einem Wort druchsuchen</u><br>
 <code>find /etc/ -name '*config'|xargs grep  --color 'linux</code>'<br>
-<br>
-<u>Dateien für den Puffer aufteilen, so dass nicht die Meldung kommt "Die Argumentenliste ist zu lang"</u>
-<code>find / -xdev -print0 2&gt;/dev/null | xargs -0 ls -l</code>
+</p>
 
-<u>Dateiberechtigungen finden und ändern</u>
-<code>find /usr/local -perm 777 -o -perm 666 -print0 |xargs -0r chmod 644</code>
+<p>
+<u>Dateien für den Puffer aufteilen, so dass nicht die Meldung kommt "Die Argumentenliste ist zu lang"</u><br>
+<code>find / -xdev -print0 2&gt;/dev/null | xargs -0 ls -l</code><br>
+</p>
+
+<p>
+<u>Dateiberechtigungen finden und ändern</u><br>
+<code>find /usr/local -perm 777 -o -perm 666 -print0 |xargs -0r chmod 644</code><br>
+</p>
 
 
 			<!-- End wiki content -->
