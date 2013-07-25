@@ -26,6 +26,8 @@ print math.sqrt(25)
 === Funktionen importe (function imports) ===
 * Wenn ein Modul mit Angabe einer spezillen Funktion die weiteren Verlauf des Programs auch genutzt werden soll
 * im gegensatz zu den generischen Importen kann  bei direkten Importeieren von Funktionen aus Klassen die Funktion auch direkt gecallt werden. 
+* Jedes Mal wenn ein Import stattfindet wird der komplette Code erneut ausgeführt. 
+* Imports können nur einmal in jedem Modul verwendet werden (Nutzung der** reload **Funktion im Modul erneut auszuführen)
 
 **from <modul> import <function>**
 
@@ -50,3 +52,10 @@ from math import *
 sqrt(25)
 sin(pi/2)
 '''
+
+
+=== Relaod ===
+**from imp import reload**
+**reload(<Modul>)**
+→ das Modul erneut ausgeühren
+→ Vorrausetzung dafür ist dass es bereits einmal ausgeführt wurde
