@@ -94,7 +94,9 @@ Linux Wissen:FHS:etc:apt++soruces.lst
 
 
 === Tricks: ===
-* find all packages installed from experimental
+* find all packages installed in chronological order:
+	cat /var/log/dpkg.log* | grep "\ install\ " | sort
+* find all packages installed from experimental:
 '''
 aptitude -t experimental search -F '%p %?V %?v %?t' --disable-columns .|\
 grep -v none| \

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>systemd-nspawn</title>
+		<title>SysVinit to Systemd Sheet</title>
 		<meta name='Generator' content='Zim 0.60'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>systemd-nspawn</h1>
+									<h1>SysVinit to Systemd Sheet</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -56,8 +56,8 @@
 <ul>
 <li><a href="./systemd-analize.html" title="systemd-analize" class="page">systemd-analize</a></li>
 <li><a href="./systemd-loginctl.html" title="systemd-loginctl" class="page">systemd-loginctl</a></li>
-<li><strong class="activepage">systemd-nspawn</strong></li>
-<li><a href="./SysVinit_to_Systemd_Sheet.html" title="SysVinit to Systemd Sheet" class="page">SysVinit to Systemd Sheet</a></li>
+<li><a href="./systemd-nspawn.html" title="systemd-nspawn" class="page">systemd-nspawn</a></li>
+<li><strong class="activepage">SysVinit to Systemd Sheet</strong></li>
 </ul>
 </ul>
 <li><a href="../../GRUB.html" title="GRUB" class="page">GRUB</a></li>
@@ -99,45 +99,56 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Donnerstag 09 Februar 2012<br>
-</p>
+				<a href="http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet" title="http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet" class="http">http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet</a>)<br>
+<br>
+<h4>Service Starten / Stoppen / restarten</h4>
+<strong>service frobozz start</strong> 		<strong>systemctl start frobozz.service</strong> → Service starten<br>
+<strong>service frobozz stop 		systemctl stop frobozz.service</strong> → Service stoppen<br>
+<strong>service frobozz restart 		systemctl restart frobozz.service</strong> → service neustarten	<br>
+<strong>service frobozz reload 		systemctl reload frobozz.service</strong> 	→ service neustarten, laufende und wartenden Unterprozesse werden nicht angehalten<br>
+<strong>service frobozz condrestart 	systemctl condrestart frobozz.service </strong>→ service nur neustarten, falls dieser existiert<br>
+<br>
+<h4>Status eines Prozess erfragen</h4>
+<strong>service frobozz status 	systemctl status frobozz.service</strong> 
 
-<p>
-<ul>
-<li>booten eines kleinen Dateicontainers auf dem Host System</li>
-<li>zum debuggen und chrooten eines Prozesses</li>
-<li>nutzt Container mit eigener PID und Dateisystem-ID</li>
-<li>ermöglicht das Wechseln in ein anderes System </li>
-<li>schränkt die Kommuniaktion des Kernels auf rw ein (/sys /proc/sys)</li>
-<li>einschränken der Netzwerkschnittstellen auf die gelauscht werden kann</li>
-<li>virtualiserit PID 1</li>
-</ul>
-</p>
+<h4>Verfügbare Services anzeigen</h4>
+<strong>ls /etc/rc.d/init.d/ 	systemctl list-unit-files --type=service (preferred)</strong> 	<br>
+→ Services auflisten die auf dem System vorhanden sind<br>
+→ außerdem lassen sich mit <strong>ls /lib/systemd/system/*.service /etc/systemd/system/*.service </strong>alle Units angezeigt werden<br>
+<br>
+<h4>Services konfigurieren und warten</h4>
+<strong>chkconfig frobozz on 	systemctl enable frobozz.service</strong> → Service akivieren<br>
+<strong>chkconfig frobozz off 	systemctl disable frobozz.service</strong> → Service deaktiveren<br>
+<strong>chkconfig frobozz 	systemctl is-enabled frobozz.service</strong> → überprüfen ob <em>frozbozz</em> aktiviert ist oder nicht<br>
+<strong>chkconfig --list 	systemctl list-unit-files --type=service</strong> → gibt eine Liste aus die für jeden Service angib ob der Dienst läuft oder nicht<br>
+<strong>chkconfig frobozz --list 	ls /etc/systemd/system/*.wants/frobozz.service</strong> → Listet auf für welche Targets / Runlevels dieser Serviece konfigueriert ist	<br>
+<strong>chkconfig frobozz --add 	systemctl daemon-reload</strong> → neustarten des systemd daemons<br>
+<br>
+<br>
+Systemd benutzt <em>targets, </em>die ähnlich funktionieren wie <em>runlevels</em> aber ein wenig anders funtktionieren. Jedes <em>target</em> hat einen Namen anstelle von Ziffern und dient einem bestimmten Zweck. Einige <em>targets</em> sind so konfiguriert dass sie Services von anderen bestehdenden <em>targets </em>erben und zusätzliche Funktionen und Services anbieten können. Einige Systemd <em>targets</em> ahmen die bekannten gewöhnlchen <em>sysvinit</em> <em>runlevels</em> nach. Dies ermöglicht es weiterhin mit dem <strong>telinit RUNLEVEL </strong>zwischen den einzelnen <em>runlevels </em>zu wechseln. Systemd unterstützt die gebräuchlichesten <strong>0,1,3,5,6</strong> welche auf ein bestimmtes <em>target</em> gemappt sind. Nutzerdefinierte runlevels können durch anlegen eines neuen <em>Systemd targets </em>in  <em>/etc/systemd/system/$YOURTARGET</em> erstellt werden. <br>
+<br>
+<strong>Template</strong>: <em>/lib/systemd/system/graphical.target</em><br>
+<br>
+(1) Erstellen eines Verzeichenis <em>/etc/systemd/system/$YOURTARGET.wants</em><br>
+(2) Ersellen einen Symbolischen Link zu den Services die für dieses<em> target </em>aktiv sein soll<br>
+<br>
+<h4>Targets verwalten (ehemals runlevel)</h4>
 
+<strong>Sysvinit 		Runlevel 			Systemd Target</strong> 	<br>
+0 			runlevel0.target, 	poweroff.target 	<br>
+1, s, single 	unlevel1.target		rescue.target 	<br>
+3 			runlevel3.target 	multi-user.target 	<br>
+5 			runlevel5.target 	graphical.target 	<br>
+6 			runlevel6.target 	reboot.target<br>
+- 			emergency 	emergency.target 	<br>
+<br>
+<h4>Wechseln von Runlevels</h4>
 
-<p>
-<strong>systemctl-nspwan &lt;Befehl&gt;</strong><br>
-<strong>-D &lt;PATH&gt; → </strong>Verzeichnis, dass als / für diesen Conatainer dienen soll <br>
-<strong>-u &lt;User&gt; → </strong>den Befehl als &lt;User&gt; ausführen, das Heimatverzeichnis im Container erstellen und in dieses Wechseln<br>
-<strong>--private-network </strong>→ ausschalten der Netzwerkkommunikation in diesem Container<br>
-</p>
-
-
-<p>
-<u>Beispiele:</u><br>
-Debian Container unter Fedora booten:<br>
-</p>
-<pre>
-yum install debootstrap
-debootstrap --arch=amd64 unstable debian-tree/
-systemd-nspawn -D debian-tree/
-</pre>
-
-<p>
-Init 1 im Debian Container ausführen:<br>
-<code>systemd-nspawn -D debian-tree/ /sbin/init</code><br>
-</p>
+<strong>telinit 3 	systemctl isolate multi-user.target</strong> <br>
+→ in das entsprechende target / runlevel wechseln<br>
+<br>
+<strong>sed s/^id:.*:initdefault:/id:3:initdefault:/ 	ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target</strong> <br>
+→ den Standardrunlevel / target ändern<br>
 
 
 			<!-- End wiki content -->

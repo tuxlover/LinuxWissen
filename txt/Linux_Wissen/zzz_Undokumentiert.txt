@@ -10,7 +10,6 @@ Created Donnerstag 21 April 2011
 [ ] iftop
 [ ] conky
 [ ] stat
-[ ] lsof
 [ ] extended Attributes
 [ ] mondo|mindi
 [ ] ddrescue

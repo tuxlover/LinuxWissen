@@ -6,6 +6,7 @@ Creation-Date: 2012-12-25T13:35:41+01:00
 Created Dienstag 25 Dezember 2012
 
 * Module werden mit dem Befehl **import **in das Hauptprogramm eingebunden
+* Jedes Python Script ist ein Modul und kann später im Programm verwendet werden
 * Ein Modul ist eine Klasse von Objekten die Definitionen für dessen Objekte sowie deren Funktionen und Variablen enhält
 [[Variablen]]
 [[Funktionen]]
@@ -55,7 +56,15 @@ sin(pi/2)
 
 
 === Relaod ===
-**from imp import reload**
-**reload(<Modul>)**
+**reload '<Modulename>' [2.x]**
+
+**from imp import reload **
+**reload(<Modul>) [3.x]**
 → das Modul erneut ausgeühren
 → Vorrausetzung dafür ist dass es bereits einmal ausgeführt wurde
+
+=== Namespace eines Modules auslesen ===
+**dir(<Module>)**
+→ listet einen Tupel von Variablen und Funktionen die im Namespace des Moduls deklariert wurden.
+→ jedes Modul beinhaltet immer den Namespace von //__buildins_//
+

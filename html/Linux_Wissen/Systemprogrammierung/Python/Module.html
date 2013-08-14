@@ -103,18 +103,35 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<li>Module werden mit dem Befehl <strong>import </strong>in das Hauptprogramm eingebunden</li>
+				<p>
+Created Dienstag 25 Dezember 2012<br>
+</p>
+
+<p>
+<ul>
+<li>Module werden mit dem Befehl <strong>import </strong>in das Hauptprogramm eingebunden</li>
+<li>Jedes Python Script ist ein Modul und kann später im Programm verwendet werden</li>
 <li>Ein Modul ist eine Klasse von Objekten die Definitionen für dessen Objekte sowie deren Funktionen und Variablen enhält</li>
-<a href="./Variablen.html" title="Variablen" class="page">Variablen</a>
-<a href="./Funktionen.html" title="Funktionen" class="page">Funktionen</a>
+</ul>
+<a href="./Variablen.html" title="Variablen" class="page">Variablen</a><br>
+<a href="./Funktionen.html" title="Funktionen" class="page">Funktionen</a><br>
+</p>
 
 <h4>generischer Import</h4>
+<p>
+<ul>
 <li>wenn ein Modul ohne Angabe welche Funktionen genutzt werden sollen importiert wird</li>
 <li>generische Importe müssen immer explizit die Funktion aus dieser Klasse callen (also <em>math.sqrt(25)</em> anstelle von <em>sqrt(25</em>) )</li>
+</ul>
+</p>
 
-<strong>import &lt;modul&gt;</strong>
+<p>
+<strong>import &lt;modul&gt;</strong><br>
+</p>
 
-<em>Beispiel:</em>
+<p>
+<em>Beispiel:</em><br>
+</p>
 <pre>
 import math
 print math.sqrt(25)
@@ -122,14 +139,22 @@ print math.sqrt(25)
 
 
 <h4>Funktionen importe (function imports)</h4>
+<p>
+<ul>
 <li>Wenn ein Modul mit Angabe einer spezillen Funktion die weiteren Verlauf des Programs auch genutzt werden soll</li>
 <li>im gegensatz zu den generischen Importen kann  bei direkten Importeieren von Funktionen aus Klassen die Funktion auch direkt gecallt werden. </li>
 <li>Jedes Mal wenn ein Import stattfindet wird der komplette Code erneut ausgeführt. </li>
 <li>Imports können nur einmal in jedem Modul verwendet werden (Nutzung der<strong> reload </strong>Funktion im Modul erneut auszuführen)</li>
+</ul>
+</p>
 
-<strong>from &lt;modul&gt; import &lt;function&gt;</strong>
+<p>
+<strong>from &lt;modul&gt; import &lt;function&gt;</strong><br>
+</p>
 
-<em>Beispiel:</em>
+<p>
+<em>Beispiel:</em><br>
+</p>
 <pre>
 from math import sqrt
 sqrt(25)
@@ -137,14 +162,22 @@ sqrt(25)
  
 
 <h4>Universelle Importe (universal imports)</h4>
+<p>
+<ul>
 <li>Wenn alle Funktionen aus einem Modul importiert werden</li>
 <li>es können alle Funktionen direkt genutzt werden</li>
 <li>Funktionen die von einem früherem Import übernommen wurden und den gleichen Namen haben, werden überschrieben</li>
-<strong>!!!</strong><u>sollten aus Sicherheits und Performencegründen niemals verwendet in einem Programm verwendet werden !!!</u>
+</ul>
+<strong>!!!</strong><u>sollten aus Sicherheits und Performencegründen niemals verwendet in einem Programm verwendet werden !!!</u><br>
+</p>
 
+<p>
 <strong>from &lt;modul&gt; import </strong>*<br>
-<br>
-<em>Beispiel:</em>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
 <pre>
 from math import *
 sqrt(25)
@@ -153,10 +186,24 @@ sin(pi/2)
 
 
 <h4>Relaod</h4>
-<strong>from imp import reload</strong>
-<strong>reload(&lt;Modul&gt;)</strong><br>
+<p>
+<strong>reload '&lt;Modulename&gt;' [2.x]</strong><br>
+</p>
+
+<p>
+<strong>from imp import reload </strong><br>
+<strong>reload(&lt;Modul&gt;) [3.x]</strong><br>
 → das Modul erneut ausgeühren<br>
 → Vorrausetzung dafür ist dass es bereits einmal ausgeführt wurde<br>
+</p>
+
+<h4>Namespace eines Modules auslesen</h4>
+<p>
+<strong>dir(&lt;Module&gt;)</strong><br>
+→ listet einen Tupel von Variablen und Funktionen die im Namespace des Moduls deklariert wurden.<br>
+→ jedes Modul beinhaltet immer den Namespace von <em>__buildins_</em><br>
+</p>
+
 
 
 			<!-- End wiki content -->

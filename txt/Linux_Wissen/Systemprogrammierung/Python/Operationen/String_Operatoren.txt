@@ -11,7 +11,8 @@ Created Dienstag 25 Dezember 2012
 === String Formatierung ===
 **%s **→ durch %s wird eine Liste von Varibalen refernziert, die dann für den Platzhalter %s eingesetzt wird
 
-**print %s,... (variable,...)**
+**print %s,... (variable,...) 2.x / print() 3.x**
+→ In Python 3.x ist print eine Funktion
 
 //Beispiel://
 '''

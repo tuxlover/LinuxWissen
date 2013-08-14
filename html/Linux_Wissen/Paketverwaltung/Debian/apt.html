@@ -242,7 +242,13 @@ Linux Wissen:FHS:etc:apt++soruces.lst<br>
 <h4>Tricks:</h4>
 <p>
 <ul>
-<li>find all packages installed from experimental</li>
+<li>find all packages installed in chronological order:</li>
+</ul>
+<div style='padding-left: 30pt'>
+cat /var/log/dpkg.log* | grep "\ install\ " | sort<br>
+</div>
+<ul>
+<li>find all packages installed from experimental:</li>
 </ul>
 </p>
 <pre>
