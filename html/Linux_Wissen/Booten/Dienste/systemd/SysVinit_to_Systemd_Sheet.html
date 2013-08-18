@@ -99,41 +99,59 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<a href="http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet" title="http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet" class="http">http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet</a>)<br>
-<br>
+				<p>
+Created Mittwoch 14 August 2013<br>
+(original Seite <a href="http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet" title="http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet" class="http">http://fedoraproject.org/wiki/SysVinit_to_Systemd_Cheatsheet</a>)<br>
+</p>
+
 <h4>Service Starten / Stoppen / restarten</h4>
+<p>
 <strong>service frobozz start</strong> 		<strong>systemctl start frobozz.service</strong> → Service starten<br>
 <strong>service frobozz stop 		systemctl stop frobozz.service</strong> → Service stoppen<br>
 <strong>service frobozz restart 		systemctl restart frobozz.service</strong> → service neustarten	<br>
 <strong>service frobozz reload 		systemctl reload frobozz.service</strong> 	→ service neustarten, laufende und wartenden Unterprozesse werden nicht angehalten<br>
 <strong>service frobozz condrestart 	systemctl condrestart frobozz.service </strong>→ service nur neustarten, falls dieser existiert<br>
-<br>
+</p>
+
 <h4>Status eines Prozess erfragen</h4>
-<strong>service frobozz status 	systemctl status frobozz.service</strong> 
+<p>
+<strong>service frobozz status 	systemctl status frobozz.service</strong> <br>
+</p>
 
 <h4>Verfügbare Services anzeigen</h4>
+<p>
 <strong>ls /etc/rc.d/init.d/ 	systemctl list-unit-files --type=service (preferred)</strong> 	<br>
 → Services auflisten die auf dem System vorhanden sind<br>
 → außerdem lassen sich mit <strong>ls /lib/systemd/system/*.service /etc/systemd/system/*.service </strong>alle Units angezeigt werden<br>
-<br>
+</p>
+
 <h4>Services konfigurieren und warten</h4>
+<p>
 <strong>chkconfig frobozz on 	systemctl enable frobozz.service</strong> → Service akivieren<br>
 <strong>chkconfig frobozz off 	systemctl disable frobozz.service</strong> → Service deaktiveren<br>
 <strong>chkconfig frobozz 	systemctl is-enabled frobozz.service</strong> → überprüfen ob <em>frozbozz</em> aktiviert ist oder nicht<br>
 <strong>chkconfig --list 	systemctl list-unit-files --type=service</strong> → gibt eine Liste aus die für jeden Service angib ob der Dienst läuft oder nicht<br>
 <strong>chkconfig frobozz --list 	ls /etc/systemd/system/*.wants/frobozz.service</strong> → Listet auf für welche Targets / Runlevels dieser Serviece konfigueriert ist	<br>
 <strong>chkconfig frobozz --add 	systemctl daemon-reload</strong> → neustarten des systemd daemons<br>
-<br>
-<br>
-Systemd benutzt <em>targets, </em>die ähnlich funktionieren wie <em>runlevels</em> aber ein wenig anders funtktionieren. Jedes <em>target</em> hat einen Namen anstelle von Ziffern und dient einem bestimmten Zweck. Einige <em>targets</em> sind so konfiguriert dass sie Services von anderen bestehdenden <em>targets </em>erben und zusätzliche Funktionen und Services anbieten können. Einige Systemd <em>targets</em> ahmen die bekannten gewöhnlchen <em>sysvinit</em> <em>runlevels</em> nach. Dies ermöglicht es weiterhin mit dem <strong>telinit RUNLEVEL </strong>zwischen den einzelnen <em>runlevels </em>zu wechseln. Systemd unterstützt die gebräuchlichesten <strong>0,1,3,5,6</strong> welche auf ein bestimmtes <em>target</em> gemappt sind. Nutzerdefinierte runlevels können durch anlegen eines neuen <em>Systemd targets </em>in  <em>/etc/systemd/system/$YOURTARGET</em> erstellt werden. <br>
-<br>
-<strong>Template</strong>: <em>/lib/systemd/system/graphical.target</em><br>
-<br>
-(1) Erstellen eines Verzeichenis <em>/etc/systemd/system/$YOURTARGET.wants</em><br>
+</p>
+
+
+<p>
+Systemd benutzt <em>targets, </em>die ähnlich funktionieren wie <em>runlevels</em> aber ein wenig anders funtktionieren. Jedes <em>target</em> hat einen Namen anstelle von Ziffern und dient einem bestimmten Zweck. Einige <em>targets</em> sind so konfiguriert dass sie Services von anderen bestehdenden <em>targets </em>erben und zusätzliche Funktionen und Services anbieten können. Einige Systemd <em>targets</em> ahmen die bekannten gewöhnlchen <em>sysvinit</em> <em>runlevels</em> nach. Dies ermöglicht es weiterhin mit dem <strong>telinit RUNLEVEL </strong>zwischen den einzelnen <em>runlevels </em>zu wechseln. Systemd unterstützt die gebräuchlichesten <strong>0,1,3,5,6</strong> welche auf ein bestimmtes <em>target</em> gemappt sind. Nutzerdefinierte runlevels können durch anlegen eines neuen <em>Systemd targets </em>in  /<em>etc/systemd/system/$YOURTARGET</em> erstellt werden. <br>
+</p>
+
+<p>
+<strong>Template</strong>: /<em>lib/systemd/system/graphical.target</em><br>
+</p>
+
+<p>
+(1) Erstellen eines Verzeichenis /<em>etc/systemd/system/$YOURTARGET.wants</em><br>
 (2) Ersellen einen Symbolischen Link zu den Services die für dieses<em> target </em>aktiv sein soll<br>
-<br>
+</p>
+
 <h4>Targets verwalten (ehemals runlevel)</h4>
 
+<p>
 <strong>Sysvinit 		Runlevel 			Systemd Target</strong> 	<br>
 0 			runlevel0.target, 	poweroff.target 	<br>
 1, s, single 	unlevel1.target		rescue.target 	<br>
@@ -141,14 +159,19 @@ Systemd benutzt <em>targets, </em>die ähnlich funktionieren wie <em>runlevels</
 5 			runlevel5.target 	graphical.target 	<br>
 6 			runlevel6.target 	reboot.target<br>
 - 			emergency 	emergency.target 	<br>
-<br>
+</p>
+
 <h4>Wechseln von Runlevels</h4>
 
+<p>
 <strong>telinit 3 	systemctl isolate multi-user.target</strong> <br>
 → in das entsprechende target / runlevel wechseln<br>
-<br>
+</p>
+
+<p>
 <strong>sed s/^id:.*:initdefault:/id:3:initdefault:/ 	ln -sf /lib/systemd/system/multi-user.target /etc/systemd/system/default.target</strong> <br>
 → den Standardrunlevel / target ändern<br>
+</p>
 
 
 			<!-- End wiki content -->

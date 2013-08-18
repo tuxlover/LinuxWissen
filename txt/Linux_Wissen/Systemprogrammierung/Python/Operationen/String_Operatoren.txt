@@ -52,7 +52,9 @@ In [92]: print "I am"+" "+str(44)
 I am 44
 '''
 
-
+*****
+→ wird *** **auf Strings in verwendung mit einem Integer (einfache Zahl) verwendet, wird der String entsprechend oft wiederholt
+→ die ausnahme bildet die 0, sie macht aus einem bereits vorhandenen String einen leeren
 
 **len()**
 → gibt die Länge des Strings zurück
@@ -90,6 +92,35 @@ In [96]: print str(liste)
 [[Dictionary Operationen]]
  
 
+**.find() **
+→ den Beginn des Offset eines Strings finden
+
+//Beispiel://
+'''
+In [16]: s="laslakslakslklalala"
+
+In [17]: s.find("a")
+Out[17]: 1
+
+In [18]: s.find("laks")
+Out[18]: 3
+'''
+
+
+
+**.replace("<StringA>","<StringB>")**
+→ einen Teilstring suchen und durch eienen anderen ersetzen 
+
+
+//Beispiel://
+# siehe .find
+'''
+In [19]: s.replace("klal","yyzw")
+Out[19]: 'laslakslakslyyzwala'
+'''
+
+
+
 === Testoperatoren ===
 **isalpha()**
 → gibt den Wert **True **zurück, falls der String des übergebenen Objects __ausschließlich__ aus Buchstaben besteht
@@ -123,3 +154,5 @@ False
 
 **islower() | isupper()**
 → gibt den Wert **True **zurück, falls der String Buchstaben enthält und nur aus Kleinbuchstaben|Großbuchstaben besteht
+
+

@@ -7,7 +7,7 @@ Created Sonntag 04 November 2012
 
 * können verschiedenen Datentypen des gleichen oder unterschiedlichen Datentyps in einer Variablen abgelegt werden
 * Als Item kann eine Liste an bielibiger Stelle wieder ein Liste enthalten
-* mutable Datentyp
+* mutable Datentyp (außer Strings)
 * Iterierbar
 * Listen sind Listenobjekte
 [[Strings]]

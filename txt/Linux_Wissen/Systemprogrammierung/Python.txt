@@ -25,6 +25,9 @@ file:///usr/share/doc/python3.2/html/index.html
 * es gibt keine Datentypen wie Integer oder Strings. 
 * Welchen Typ ein Objekt hat hängt von seinem "Aussehen" ab
 
+== Polymorph ==
+* Operatoren / Statements sind ahängig von den Datentypen auf dem sie operieren
+
 == Automatisches Speichermanagement ==
 * Objekte werden von Python automatisch alociert
 * //garbage Collection //gibt Speicherplatz wieder frei wenn Objekte nicht mehr länger im Speicher gehalten werden müssen, weil das benötigte Objekt nicht länger benötigt wird

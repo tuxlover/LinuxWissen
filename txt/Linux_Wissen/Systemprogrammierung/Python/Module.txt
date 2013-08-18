@@ -7,6 +7,8 @@ Created Dienstag 25 Dezember 2012
 
 * Module werden mit dem Befehl **import **in das Hauptprogramm eingebunden
 * Jedes Python Script ist ein Modul und kann später im Programm verwendet werden
+* die größte Programmstruktur in Python sind Module
+* Module stellen einen Namenspace bereit, der aus Funktionen, Variablen und wiederum Klassen und Objekten bestehen kann
 * Ein Modul ist eine Klasse von Objekten die Definitionen für dessen Objekte sowie deren Funktionen und Variablen enhält
 [[Variablen]]
 [[Funktionen]]
@@ -55,6 +57,9 @@ sin(pi/2)
 '''
 
 
+=== !!Achtung!! ===
+**Beim importieren von eigenen Modulen nicht die Dateiendung .py verwenden beim Ausführen von exec allerdings schon**
+
 === Relaod ===
 **reload '<Modulename>' [2.x]**
 
@@ -63,8 +68,17 @@ sin(pi/2)
 → das Modul erneut ausgeühren
 → Vorrausetzung dafür ist dass es bereits einmal ausgeführt wurde
 
+=== Exec ===
+**exec(open('Module.py')).read()**
+→ der komplette Code von Module.py wird ausgeführt und erneut ausgeleen
+→ Exec führt den aktuell veränndeten Code on the fly aus / erneute importe sind nicht erforderlich
+→ überschreibt den vorhandenen Namespace wie **from**
+→ im Gegensatz zu **import **wird der Code bei jedem Aufruf von **exec()** erneut ausgeführt
+
 === Namespace eines Modules auslesen ===
 **dir(<Module>)**
 → listet einen Tupel von Variablen und Funktionen die im Namespace des Moduls deklariert wurden.
 → jedes Modul beinhaltet immer den Namespace von //__buildins_//
 
+=== !!!Warnung!!! ===
+**Namespaces könnnen sich gegenseititg überschreiben.**

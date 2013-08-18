@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-08-16T20:32:43+02:00
+
+====== Idle ======
+Created Freitag 16 August 2013
+
+* Idle ist die Standard IDE für Python
+* Debugger
+* Object Browser

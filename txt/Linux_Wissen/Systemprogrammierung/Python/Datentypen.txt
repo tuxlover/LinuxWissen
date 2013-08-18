@@ -50,3 +50,9 @@ Out[48]: datetime.datetime
 
 '''
 
+
+=== Immutable vs. Mutable ===
+* Immutable Objekte können nicht druch **Operationen** verändert werden 
+* mutable Objekte können druch **Operationen** verändert werden
+* Werte von Immutuable Objekte bleiben konstant in einem Modul
+* Operationen auf Immutable Datentypen erstellen ein neues Objekt

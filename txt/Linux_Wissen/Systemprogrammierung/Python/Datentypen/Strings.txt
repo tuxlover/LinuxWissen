@@ -33,10 +33,11 @@ help_me = 'Help me! I\'m repressed!'
 
 === String Slicing ===
 **"String"[n:m:s]**
-→ Beginnend beim **Index n** (Es wird bei 0 gezählt)
-→ bis kurz vor **Index m** 
+→ Beginnend beim **Index n** (Es wird bei 0 gezählt von links nach rechts)
+→ bis zum Offset **m** aber nicht enthalten
 → mit einer Schrittweite **s**
 → werden keine Werte gesetzt so wird der Standard von 2 verwendet
+→ negative Indexe zählen von rechts nach Links 
 
 //Beispiel://
 '''
@@ -48,6 +49,38 @@ Out[57]: 'LkudBtu'
 
 In [81]: "Hallo"[5::-1]
 Out[81]: 'ollaH'
+
+In [1]: s="spam"
+# der komplette String
+
+In [2]: s
+Out[2]: 'spam'
+# der komplette string
+
+In [3]: s[:1]
+Out[3]: 's'
+# nur den ersten (offset 1 )
+# gleiche wie s[0:1]
+
+In [4]: s[1:]
+Out[4]: 'pam'
+# alles ab offset 2 (index 1)
+
+In [5]: s[0:3]
+Out[5]: 'spa'
+# alles von offset 1 bis offset 3 ohne 4 (index 0 bis 2 ohne 3)
+
+In [6]: s[:3]
+Out[6]: 'spa'
+# dass selbe
+
+In [7]: s[:-1]
+Out[7]: 'spa'
+# ohne den letzten / rückwärts slicen
+
+In [8]: s[:]
+Out[8]: 'spam'
+# das gesamte Offset
 
 '''
 [[Python:Operationen:String Operatoren]]

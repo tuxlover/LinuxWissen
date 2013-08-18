@@ -79,6 +79,7 @@
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
+<li><a href="../Idle.html" title="Idle" class="page">Idle</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
 <li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
@@ -111,30 +112,16 @@
 			</div>
 			<div class="content">
 			<!-- Wiki content -->
-				<p>
-Created Dienstag 25 Dezember 2012<br>
-</p>
-
-<p>
-<ul>
-<li>Werden auf Datentypen des Typs String angwendet</li>
-</ul>
-<a href="../Datentypen/Strings.html" title="Python:Datentypen:Strings" class="page">Python:Datentypen:Strings</a><br>
-</p>
+				<li>Werden auf Datentypen des Typs String angwendet</li>
+<a href="../Datentypen/Strings.html" title="Python:Datentypen:Strings" class="page">Python:Datentypen:Strings</a>
 
 <h4>String Formatierung</h4>
-<p>
 <strong>%s </strong>→ durch %s wird eine Liste von Varibalen refernziert, die dann für den Platzhalter %s eingesetzt wird<br>
-</p>
-
-<p>
+<br>
 <strong>print %s,... (variable,...) 2.x / print() 3.x</strong><br>
 → In Python 3.x ist print eine Funktion<br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-</p>
+<br>
+<em>Beispiel:</em>
 <pre>
 In [97]: camelot = "Camelot"
 In [98]: place = "place"
@@ -143,15 +130,11 @@ Let's not go to Camelot. This is a silly place
 </pre>
 
 
-<p>
 <strong>raw_input("Give a string!") </strong><br>
 → Der Interpreter wartet auf eine Nutzereingabe<br>
 → diese kann in eine Variable gespeichert werden<br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-</p>
+<br>
+<em>Beispiel:</em>
 <pre>
 In [99]: print "Let's not go to %s. This is a silly %s" % (camelot, place)
 Let's not go to Camelot. This is a silly place
@@ -166,30 +149,24 @@ matthias
 
 
 <h4>Einfache Operationen</h4>
-<p>
 <strong>+ </strong><br>
 → Wird + auf Strings angwendet werden zwei Strings mit einander verbunden<br>
 → concatination<br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-</p>
+<br>
+<em>Beispiel:</em>
 <pre>
 In [92]: print "I am"+" "+str(44)
 I am 44
 </pre>
 
-
-
-<p>
+<strong>*</strong><br>
+→ wird <strong>* </strong>auf Strings in verwendung mit einem Integer (einfache Zahl) verwendet, wird der String entsprechend oft wiederholt<br>
+→ die ausnahme bildet die 0, sie macht aus einem bereits vorhandenen String einen leeren<br>
+<br>
 <strong>len()</strong><br>
 → gibt die Länge des Strings zurück<br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-</p>
+<br>
+<em>Beispiel:</em>
 <pre>
 In [82]: parrot = "Norwegian Blue"
 
@@ -197,47 +174,66 @@ In [83]: len(parrot)
 Out[83]: 14
 
 </pre>
-<p>
 <strong>lower() | upper() </strong><br>
 → konvertiert klein in große Buchstaben und umgehrt<br>
 <br>
-<em>Beispiel:</em><br>
-</p>
+<em>Beispiel:</em>
 <pre>
 In [87]: "I'm not yelling".upper()
 Out[87]: "I'M NOT YELLING"
 
 </pre>
-<p>
 <strong>str()</strong> <br>
 → Wandelnd ein konvertierbares Objekt in ein String um<br>
 → Explecit String Conversion	<br>
 <br>
-<em>Beispiel:</em><br>
-</p>
+<em>Beispiel:</em>
 <pre>
 In [96]: print str(liste)
 ['H', 'a', 'l', 'l', 'o']
 </pre>
 
 
-<p>
 <strong>.join()</strong><br>
 → siehe Dictionary Operationen<br>
-<a href="./Dictionary_Operationen.html" title="Dictionary Operationen" class="page">Dictionary Operationen</a><br>
-</p>
+<a href="./Dictionary_Operationen.html" title="Dictionary Operationen" class="page">Dictionary Operationen</a>
  
 
+<strong>.find() </strong><br>
+→ den Beginn des Offset eines Strings finden<br>
+<br>
+<em>Beispiel:</em>
+<pre>
+In [16]: s="laslakslakslklalala"
+
+In [17]: s.find("a")
+Out[17]: 1
+
+In [18]: s.find("laks")
+Out[18]: 3
+</pre>
+
+
+
+<strong>.replace("&lt;StringA&gt;","&lt;StringB&gt;")</strong><br>
+→ einen Teilstring suchen und durch eienen anderen ersetzen <br>
+<br>
+<br>
+<em>Beispiel:</em><br>
+# siehe .find<br>
+<pre>
+In [19]: s.replace("klal","yyzw")
+Out[19]: 'laslakslakslyyzwala'
+</pre>
+
+
+
 <h4>Testoperatoren</h4>
-<p>
 <strong>isalpha()</strong><br>
 → gibt den Wert <strong>True </strong>zurück, falls der String des übergebenen Objects <u>ausschließlich</u> aus Buchstaben besteht<br>
 → Wichtig: dieser Operator kann nur auf Strings angwendet werden<br>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-</p>
+<br>
+<em>Beispiel:</em>
 <pre>
 In [160]: str(5).isalpha()
 Out[160]: False
@@ -250,29 +246,23 @@ In [164]: "Hi -".isalpha()
 Out[164]: False
 </pre>
 
-<p>
 <strong>isdigit()</strong><br>
 → gibt den Wert <strong>True </strong>zurück, falls der String des übergebenen Objekts ausschließlich aus Ziffern besteht<br>
 → Wichtig: dieser Operator kann nur auf Strings angewendet werden<br>
-</p>
-
-<p>
+<br>
 <em>Beispiel:</em><br>
 In [25]: my_string = "23"<br>
 In [26]: print my_string.isdigit()<br>
 True<br>
-</p>
-
-<p>
+<br>
 In [27]: my_string = "23c"<br>
 In [28]: print my_string.isdigit()<br>
 False<br>
-</p>
-
-<p>
+<br>
 <strong>islower() | isupper()</strong><br>
 → gibt den Wert <strong>True </strong>zurück, falls der String Buchstaben enthält und nur aus Kleinbuchstaben|Großbuchstaben besteht<br>
-</p>
+<br>
+<br>
 
 
 			<!-- End wiki content -->

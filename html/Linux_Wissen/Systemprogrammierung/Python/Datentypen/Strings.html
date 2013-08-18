@@ -87,6 +87,7 @@
 </ul>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
+<li><a href="../Idle.html" title="Idle" class="page">Idle</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
 <li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
@@ -156,10 +157,11 @@ help_me = 'Help me! I\'m repressed!'
 <h4>String Slicing</h4>
 <p>
 <strong>"String"[n:m:s]</strong><br>
-→ Beginnend beim <strong>Index n</strong> (Es wird bei 0 gezählt)<br>
-→ bis kurz vor <strong>Index m</strong> <br>
+→ Beginnend beim <strong>Index n</strong> (Es wird bei 0 gezählt von links nach rechts)<br>
+→ bis zum Offset <strong>m</strong> aber nicht enthalten<br>
 → mit einer Schrittweite <strong>s</strong><br>
 → werden keine Werte gesetzt so wird der Standard von 2 verwendet<br>
+→ negative Indexe zählen von rechts nach Links <br>
 </p>
 
 <p>
@@ -175,6 +177,38 @@ Out[57]: 'LkudBtu'
 In [81]: "Hallo"[5::-1]
 Out[81]: 'ollaH'
 
+In [1]: s="spam"
+# der komplette String
+
+In [2]: s
+Out[2]: 'spam'
+# der komplette string
+
+In [3]: s[:1]
+Out[3]: 's'
+# nur den ersten (offset 1 )
+# gleiche wie s[0:1]
+
+In [4]: s[1:]
+Out[4]: 'pam'
+# alles ab offset 2 (index 1)
+
+In [5]: s[0:3]
+Out[5]: 'spa'
+# alles von offset 1 bis offset 3 ohne 4 (index 0 bis 2 ohne 3)
+
+In [6]: s[:3]
+Out[6]: 'spa'
+# dass selbe
+
+In [7]: s[:-1]
+Out[7]: 'spa'
+# ohne den letzten / rückwärts slicen
+
+In [8]: s[:]
+Out[8]: 'spam'
+# das gesamte Offset
+
 </pre>
 <p>
 <a href="../Operationen/String_Operatoren.html" title="Python:Operationen:String Operatoren" class="page">Python:Operationen:String Operatoren</a><br>
@@ -188,7 +222,7 @@ Out[81]: 'ollaH'
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Schleifen.html'>Linux Wissen:Systemprogrammierung:Python:Schleifen</a></li>						<a href='../Test.html'>Linux Wissen:Systemprogrammierung:Python:Test</a></li>						<a href='./Listen_und_Listenobjekte.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Listen und Listenobjekte</a></li>						<a href='./Zahlen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Zahlen</a></li>						<a href='./Bool.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Bool</a></li>						<a href='../Operationen/String_Operatoren.html'>Linux Wissen:Systemprogrammierung:Python:Operationen:String Operatoren</a></li>
+									<b>Backlinks:</b>						<a href='../../Python.html'>Linux Wissen:Systemprogrammierung:Python</a></li>						<a href='../Schleifen.html'>Linux Wissen:Systemprogrammierung:Python:Schleifen</a></li>						<a href='../Datentypen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen</a></li>						<a href='../Test.html'>Linux Wissen:Systemprogrammierung:Python:Test</a></li>						<a href='./Listen_und_Listenobjekte.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Listen und Listenobjekte</a></li>						<a href='./Zahlen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Zahlen</a></li>						<a href='./Bool.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Bool</a></li>						<a href='../Operationen/String_Operatoren.html'>Linux Wissen:Systemprogrammierung:Python:Operationen:String Operatoren</a></li>
 				<br><br>
 
 				
