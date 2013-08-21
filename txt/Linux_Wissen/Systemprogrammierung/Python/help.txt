@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-08-21T13:38:03+02:00
+
+====== help ======
+Created Mittwoch 21 August 2013
+
+* Teil von //Pydoc//
+* Die Hilfsfunktion in Python ähnlich der manpages in Linux
+* Mit der Hilfsfunktion kann man scih eine Übersicht bzw Hilfe zu einer bestimmten:
+	* Mehtode
+	* Objekt
+	* Paradigma
+
+**help()**
+→ die Übersicht aufrufen
+
+**help(<Name>)**
+→ gibt Hilfe zu Name
+

@@ -82,77 +82,9 @@ In [8]: s[:]
 Out[8]: 'spam'
 # das gesamte Offset
 
+
+
 '''
-=== String Formatierung ===
-→ als Ausdruck und als Mehtode angandt auf einen String
-→ Ein String wird aus einer Datenbank ausgelesen und ein anderer ist fest vorgegeben. Zum Bespiel ein Begrüßungstext
-
-"Hallo %s" % (var)
-
-//Beispiel://
-'''
-In [42]: var = "horst"
-
-In [43]: print("Meine name ist %s" % (var))
-Meine name ist horst
-'''
-
-
-[[Python:Beispielprogramme:hello]]
-
-.**format()**
-[[Python:Operationen:String Operatoren]]
-
-In [32]: 'Das ist hier ist eine %s Nachricht' % ('Spam')
-Out[32]: 'Das ist hier ist eine Spam Nachricht'
-
-=== Special Strings und Maskieren ===
-**\n **→ neue zeile
-**\t **→ ein Tab
-**\<Unicode Idendifier> **
-
-* Darf kein \ markiert werden so kann man den Schalter **r **(raw) verwenden.
-
-//Beispiel://
-'''
-In [65]: print("c:\text\new")
-c:	ext
-ew
-
-In [66]: print(r"c:\text\new")
-c:\text\new
-'''
-
-
-=== Pattern matching und Reguläre Expressions ===
-* wird durch das Modul **re** bereitgestellt  [[Python:Module:Wichtige Module]]
-
-**re.match(<Ausdruchk>)**
-
-**. **→ Matched gegen einen Character ausser **/n**
-
-^ → findet den Beginn des Strings
-
-**$** → markiert das Ende eines Strings
-
-*** **→ findet 0 oder mehrere Wiederholungen eines Characters
-
-**+ **→ findet einen oder mehrer Wiederholungen eines Characters
-
-**? **→ findet 0 oder 1 eine Wiederholung eines Strings
-
-**{m,n}** → findet **m **bis **n** Wiederholungen der Vorrangegeganenen RE
-**{m,n}? **→ bon greedy
-
-**\\ **→ Escaping von special Characters
-
-**[]** → ein Set von Characters
-
-**A|B **→ findet entweder A oder B
- 
-**(...)** → findet die RE in der entsprechenden Klammer
-
-
 [[Python:Operationen:String Operatoren]]
 [[Python:Beispielprogramme:pyglatin]]
 [[Listen und Listenobjekte]]

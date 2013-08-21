@@ -9,3 +9,4 @@ Created Samstag 29 Dezember 2012
 [[+distance from zero]] (Einfacher Aufruf einer Funktion mit Verwendung von **type**)
 [[+its dangerous]] (Magie mit Dictionaries )
 [[+battleship]] (Mein Implementation von battleship (Codecademy) zeigt wie Operationen auf Listen funktionieren)
+[[+hello]] (Interkatives hallo Welt Script. Zeigt den Umgang mit raw_input und Stringformatierung)

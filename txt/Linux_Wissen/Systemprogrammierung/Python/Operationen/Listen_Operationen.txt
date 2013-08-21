@@ -109,6 +109,10 @@ In [62]: print zoo
 ['affe', 'elefant', 'giraffe', 'löwe']
 '''
 
+**.reverse()**
+→ gibt das Listenobjekt in ungekherte Reihengolge aus
+→ diese Methode funktioniert nicht für Strings
+
 **"<Seperator>".join()**
 → zusammenfügen von iterierbaren Objekten
 → jedes Daten-Objekt in der Liste|String|Dcitionary wird durch den Seperator getrennt zusammengefügt
@@ -147,9 +151,21 @@ In [73]: print Liste1+Liste2
 '''
 
 
-*** **
+
 → wiederholen von mehreren Listenobjekten
 
 //Beispiel//
 In [8]: print 23*"Python"
 PythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPython
+
+
+=== Matrizen ===
+* Matrizen werden druch Listen von Listen erstellt.
+
+//Beispiel://
+In [2]: E = [[1,0,0],[0,1,0],[0,0,1]]
+
+In [3]: print(E)
+[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+
+Zugriff auf eine Zeile erfolgt dann über **M[<Index>] **bzw. auf eine einzelnes Element durch dopplete Indizierung. **M[i][j]**

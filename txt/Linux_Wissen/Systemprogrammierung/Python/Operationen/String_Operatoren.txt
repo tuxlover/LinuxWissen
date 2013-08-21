@@ -53,7 +53,7 @@ I am 44
 '''
 
 *****
-→ wird *** **auf Strings in verwendung mit einem Integer (einfache Zahl) verwendet, wird der String entsprechend oft wiederholt
+→ wird * auf Strings in verwendung mit einem Integer (einfache Zahl) verwendet, wird der String entsprechend oft wiederholt
 → die ausnahme bildet die 0, sie macht aus einem bereits vorhandenen String einen leeren
 
 **len()**
@@ -118,6 +118,50 @@ Out[18]: 3
 In [19]: s.replace("klal","yyzw")
 Out[19]: 'laslakslakslyyzwala'
 '''
+
+
+**.split('<Delimiter>')**
+→ Zerteilt einen String durch den angegebenen Delimiter und speichert ih n anschließen als Array
+
+//Beispiel://
+'''
+In [18]: line = "hahjhajshakjsajjjahajshajshjasajs"
+
+In [19]: line.split('a')
+Out[19]: ['h', 'hjh', 'jsh', 'kjs', 'jjj', 'h', 'jsh', 'jshj', 's', 'js']
+'''
+
+
+.**rstrip() | .strip() | strip()**
+→ entfernt Whitespace von rechts | links | oder von beiden Seiten
+→ entfernt nicht den vollständigen Whitespace
+
+//Beispiel://
+'''
+In [20]: string = "       a                    a          df fd         "
+
+In [21]: string.strip()
+Out[21]: 'a                    a          df fd'
+
+In [22]: string.lstrip()
+Out[22]: 'a                    a          df fd         '
+
+In [23]: string.rstrip()
+Out[23]: '       a                    a          df fd'
+'''
+
+
+**.format('<Platzhalter1>, <Platzhalter2>, <...>')**
+→ Formatierung vom Text duch Platzhalter
+→ **ACHTUNG: **Indexe starten bei 0
+
+
+//Beispiel://
+'''
+In [31]: 'Mein name ist {0} und ich wohne in {1}. Ich bin {2} alt.'.format('Horst','Kleinkuhkackerode','45')
+Out[31]: 'Mein name ist Horst und ich wohne in Kleinkuhkackerode. Ich bin 45 alt.'
+'''
+
 
 
 

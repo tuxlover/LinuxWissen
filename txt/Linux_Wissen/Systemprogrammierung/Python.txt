@@ -19,6 +19,8 @@ http://getpython3.com/diveintopython3/
 http://www.python.org/
 file:///usr/share/doc/python3.2/html/index.html
 
+[[+help]]
+[[+dir]]
 
 == Dynamisch ==
 * Variablendeclaration nicht notwendig

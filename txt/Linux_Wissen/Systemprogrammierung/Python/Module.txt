@@ -24,7 +24,7 @@ Created Dienstag 25 Dezember 2012
 import math
 print math.sqrt(25)
 '''
-
+[[+Wichtige Module]]
 
 === Funktionen importe (function imports) ===
 * Wenn ein Modul mit Angabe einer spezillen Funktion die weiteren Verlauf des Programs auch genutzt werden soll
@@ -78,7 +78,9 @@ sin(pi/2)
 === Namespace eines Modules auslesen ===
 **dir(<Module>)**
 → listet einen Tupel von Variablen und Funktionen die im Namespace des Moduls deklariert wurden.
+→ kann nur auf Module angewandt werden die bereits importiert wurden
 → jedes Modul beinhaltet immer den Namespace von //__buildins_//
+[[dir]]
 
 === !!!Warnung!!! ===
 **Namespaces könnnen sich gegenseititg überschreiben.**

@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Listen und Listenobjekte</title>
+		<title>hello</title>
 		<meta name='Generator' content='Zim 0.60'>
 		<style type='text/css'>
 			a          { text-decoration: none      }
@@ -37,7 +37,7 @@
 	<body>
 		<div class="page">
 			<div class="heading">
-									<h1>Listen und Listenobjekte</h1>
+									<h1>hello</h1>
 			</div>
 			<hr>
 			<div class="menu">
@@ -76,15 +76,14 @@
 <li><a href="../../Python.html" title="Python" class="page">Python</a></li>
 <ul>
 <li><a href="../Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
-<li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <ul>
-<li><a href="./Bool.html" title="Bool" class="page">Bool</a></li>
-<li><a href="./Datetime.html" title="Datetime" class="page">Datetime</a></li>
-<li><a href="./Dictionaries.html" title="Dictionaries" class="page">Dictionaries</a></li>
-<li><strong class="activepage">Listen und Listenobjekte</strong></li>
-<li><a href="./Strings.html" title="Strings" class="page">Strings</a></li>
-<li><a href="./Zahlen.html" title="Zahlen" class="page">Zahlen</a></li>
+<li><a href="./battleship.html" title="battleship" class="page">battleship</a></li>
+<li><a href="./distance_from_zero.html" title="distance from zero" class="page">distance from zero</a></li>
+<li><strong class="activepage">hello</strong></li>
+<li><a href="./its_dangerous.html" title="its dangerous" class="page">its dangerous</a></li>
+<li><a href="./pyglatin.html" title="pyglatin" class="page">pyglatin</a></li>
 </ul>
+<li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="../dir.html" title="dir" class="page">dir</a></li>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
@@ -115,115 +114,17 @@
 			<div class="content">
 			<!-- Wiki content -->
 				<p>
-Created Sonntag 04 November 2012<br>
+Created Mittwoch 21 August 2013<br>
 </p>
-
-<p>
-<ul>
-<li>können verschiedenen Datentypen des gleichen oder unterschiedlichen Datentyps in einer Variablen abgelegt werden</li>
-<li>Als Item kann eine Liste an bielibiger Stelle wieder ein Liste enthalten</li>
-<li>mutable Datentyp (außer Strings)</li>
-<li>Iterierbar</li>
-<li>Listen sind Listenobjekte</li>
-</ul>
-<a href="./Strings.html" title="Strings" class="page">Strings</a><br>
-<a href="../Operationen/Listen_Operationen.html" title="Python:Operationen:Listen Operationen" class="page">Python:Operationen:Listen Operationen</a><br>
-</p>
-
-<p>
-<ul>
-<li>Listen werden erstellt durch:</li>
-</ul>
-<div style='padding-left: 60pt'>
-<em>list_name = [item1, item2,...]</em><br>
-</div>
-<ul>
-<li>[] ist eine leere Liste</li>
-</ul>
-<div style='padding-left: 30pt'>
-→ wird oft für die Initialisierung eines Porgrams genutzt<br>
-</div>
-</p>
-	
-	
-<p>
-<em>Beispiel:</em><br>
-<code>zoo_animals = ["pangolin","penguin","cow","ape"]</code><br>
-</p>
-
-<p>
-# Die 3 x 3 Einheitsmatrix<br>
-<code>In [74]: In = [[1,0,0],[0,1,0],[0,0,1]]</code><br>
-</p>
-
-
-
-<h4>Zugriff über den Index eines Listenobjekts (access by index)</h4>
-<p>
-<strong>!!!</strong><u>Listen Indizies starten bei 0, nicht bei 1</u><strong>!!!</strong><br>
-<ul>
-<li>Der Zugriff über Indiziees erfolgt durch:</li>
-</ul>
-<div style='padding-left: 30pt'>
-<em>list_name[n]</em><br>
-→ <em>n ist ein beliebiger Integer innerhalb des  Bildbereichs des Indexes</em><br>
-</div>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-</p>
-<pre>
-# print pangolin
-print zoo_animals[0] 
-# print penguin
-print zoo_animals[1]
-# print cow
-print zoo_animals[2]
-# print ape
-print zoo_animals[3]
-</pre>
-
-
-<h4>Konkatination über Listenobjekte</h4>
-<p>
-<ul>
-<li>alle Listenobjekte können mit dem <strong>+</strong> Operator zusammengefügt werden</li>
-</ul>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-</p>
-<pre>
-In [1]: print "hello" + " " + "world!"
-hello world!
-</pre>
-
 
 <pre>
-In [3]: a = ["banane", "apfelsine"]
-In [4]: b = ["melone", "birne"]
-In [5]: c = a + b
-In [6]: print c
-['banane', 'apfelsine', 'melone', 'birne']
+#!/usr/bin/env python 
+
+print "Hallo, wie ist dein Name?"
+name = raw_input()
+
+print ("Hallo {0}".format(name))
 </pre>
-
-
-
-<h4>Wiederholungsoperatorn über Listenobjekte</h4>
-<p>
-<ul>
-<li>Listenobkjekte könen mit dem *<strong>N </strong>Operator n*mal wiederholt werden</li>
-</ul>
-</p>
-
-<p>
-<em>Beispiel:</em><br>
-In [17]: print 5*"OTTO"<br>
-OTTOOTTOOTTOOTTOOTTO<br>
-</p>
-
 
 
 			<!-- End wiki content -->
@@ -231,7 +132,7 @@ OTTOOTTOOTTOOTTOOTTO<br>
 			<hr>
 			<!-- Backlinks -->
 			<div class="footer">
-									<b>Backlinks:</b>						<a href='../../Python.html'>Linux Wissen:Systemprogrammierung:Python</a></li>						<a href='../Schleifen.html'>Linux Wissen:Systemprogrammierung:Python:Schleifen</a></li>						<a href='../Datentypen.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen</a></li>						<a href='./Dictionaries.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Dictionaries</a></li>						<a href='./Strings.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Strings</a></li>						<a href='../Operationen/Listen_Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen:Listen Operationen</a></li>
+									<b>Backlinks:</b>						<a href='../Beispielprogramme.html'>Linux Wissen:Systemprogrammierung:Python:Beispielprogramme</a></li>						<a href='../Datentypen/Strings.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Strings</a></li>
 				<br><br>
 
 				

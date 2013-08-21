@@ -85,8 +85,10 @@
 <li><strong class="activepage">Strings</strong></li>
 <li><a href="./Zahlen.html" title="Zahlen" class="page">Zahlen</a></li>
 </ul>
+<li><a href="../dir.html" title="dir" class="page">dir</a></li>
 <li><a href="../Frozen_Binaries.html" title="Frozen Binaries" class="page">Frozen Binaries</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
+<li><a href="../help.html" title="help" class="page">help</a></li>
 <li><a href="../Idle.html" title="Idle" class="page">Idle</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
@@ -210,6 +212,120 @@ Out[8]: 'spam'
 # das gesamte Offset
 
 </pre>
+<h4>String Formatierung</h4>
+<p>
+→ als Ausdruck und als Mehtode angandt auf einen String<br>
+→ Ein String wird aus einer Datenbank ausgelesen und ein anderer ist fest vorgegeben. Zum Bespiel ein Begrüßungstext<br>
+<br>
+"Hallo %s" % (var)<br>
+<br>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [42]: var = "horst"
+
+In [43]: print("Meine name ist %s" % (var))
+Meine name ist horst
+</pre>
+
+
+<p>
+<a href="../Beispielprogramme/hello.html" title="Python:Beispielprogramme:hello" class="page">Python:Beispielprogramme:hello</a><br>
+</p>
+
+<p>
+.<strong>format()</strong><br>
+<a href="../Operationen/String_Operatoren.html" title="Python:Operationen:String Operatoren" class="page">Python:Operationen:String Operatoren</a><br>
+</p>
+
+<p>
+In [32]: 'Das ist hier ist eine %s Nachricht' % ('Spam')<br>
+Out[32]: 'Das ist hier ist eine Spam Nachricht'<br>
+</p>
+
+<h4>Special Strings und Maskieren</h4>
+<p>
+<strong>\n </strong>→ neue zeile<br>
+<strong>\t </strong>→ ein Tab<br>
+<strong>\&lt;Unicode Idendifier&gt; </strong><br>
+</p>
+
+<p>
+<ul>
+<li>Darf kein \ markiert werden so kann man den Schalter <strong>r </strong>(raw) verwenden.</li>
+</ul>
+</p>
+
+<p>
+<em>Beispiel:</em><br>
+</p>
+<pre>
+In [65]: print("c:\text\new")
+c:	ext
+ew
+
+In [66]: print(r"c:\text\new")
+c:\text\new
+</pre>
+
+
+<h4>Pattern matching und Reguläre Expressions</h4>
+<p>
+<ul>
+<li>wird durch das Modul <strong>re</strong> bereitgestellt  <a href="../Module/Wichtige_Module.html" title="Python:Module:Wichtige Module" class="page">Python:Module:Wichtige Module</a></li>
+</ul>
+</p>
+
+<p>
+<strong>re.match(&lt;Ausdruchk&gt;)</strong><br>
+</p>
+
+<p>
+<strong>. </strong>→ Matched gegen einen Character ausser <strong>/n</strong><br>
+</p>
+
+<p>
+^ → findet den Beginn des Strings<br>
+</p>
+
+<p>
+<strong>$</strong> → markiert das Ende eines Strings<br>
+</p>
+
+<p>
+*<strong> </strong>→ findet 0 oder mehrere Wiederholungen eines Characters<br>
+</p>
+
+<p>
+<strong>+ </strong>→ findet einen oder mehrer Wiederholungen eines Characters<br>
+</p>
+
+<p>
+<strong>? </strong>→ findet 0 oder 1 eine Wiederholung eines Strings<br>
+</p>
+
+<p>
+<strong>{m,n}</strong> → findet <strong>m </strong>bis <strong>n</strong> Wiederholungen der Vorrangegeganenen RE<br>
+<strong>{m,n}? </strong>→ bon greedy<br>
+</p>
+
+<p>
+<strong>\\ </strong>→ Escaping von special Characters<br>
+</p>
+
+<p>
+<strong>[]</strong> → ein Set von Characters<br>
+</p>
+
+<p>
+<strong>A|B </strong>→ findet entweder A oder B<br>
+</p>
+ 
+<p>
+<strong>(...)</strong> → findet die RE in der entsprechenden Klammer<br>
+</p>
+
+
 <p>
 <a href="../Operationen/String_Operatoren.html" title="Python:Operationen:String Operatoren" class="page">Python:Operationen:String Operatoren</a><br>
 <a href="../Beispielprogramme/pyglatin.html" title="Python:Beispielprogramme:pyglatin" class="page">Python:Beispielprogramme:pyglatin</a><br>

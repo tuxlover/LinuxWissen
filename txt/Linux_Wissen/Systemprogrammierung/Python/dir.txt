@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-08-21T13:18:51+02:00
+
+====== dir ======
+Created Mittwoch 21 August 2013
+
+→ Zeigt Informationen über verwendbare Datentypen und Methoden an
+→ Zeigt Informationen über den Namespace eines Moduls an
+→ Sie ist selber Bestandteil von //__buildins__//
+
+**dir([<Argument>])**
+→ ohne Argument werden alle namen im monentan Scope geladen
+→ mit Argument wird der Namespace dieses Objektes in alphanumerischer Reihenfolge ausgegeben

@@ -28,3 +28,10 @@ Created Dienstag 25 Dezember 2012
 [[+Listen Operationen]]
 [[+String Operatoren]]
 [[+Typenkonvertierung]]
+
+=== Verketten von Operationen ===
+→ Pythin arbeitet Operationen von links nach rechts ab.
+
+== !!ACHTUNG!! ==
+Die Reihenfolge ist meistens kommutativ. Es ist nicht egal MehodeA().MethodeB() oder MehtodeB().MehtodeA() ausgeführt wird.
+
