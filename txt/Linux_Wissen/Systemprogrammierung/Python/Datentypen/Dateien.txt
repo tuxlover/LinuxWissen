@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-08-23T18:25:33+02:00
+
+====== Dateien ======
+Created Freitag 23 August 2013
+
+* Auch Dateien sind in Python Datentypen die durch die mehtode **open(<File>)** ins Leben gerufen werden
+* Es können Lesende und schreibenden Operationen auf Dateien ausgeführt werden
+* Dateien werden ebenfalls durch Variablen im Speicher allociert
+* Dateien sind Iterierbare Objekte und können Zeilenweise mit dem Schlüsselwort **line **iteriert werden
+* .**open(), .read(), .write(), .close()**
+
+[[Python:Operationen:Operationen auf Dateien]]

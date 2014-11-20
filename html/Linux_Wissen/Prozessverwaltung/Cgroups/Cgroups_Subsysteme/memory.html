@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>memory</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>memory</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>memory</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./freezer.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./net_cls.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -62,13 +76,13 @@
 <li><a href="../../../Networking.html" title="Networking" class="page">Networking</a></li>
 <li><a href="../../../Paketverwaltung.html" title="Paketverwaltung" class="page">Paketverwaltung</a></li>
 <li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme" class="page">Partitionen und Dateisysteme</a></li>
-<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung" class="page">Prozessverwaltung</a></li>
+<li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung" class="page">Prozessverwaltung</a>
 <ul>
-<li><a href="../../Cgroups.html" title="Cgroups" class="page">Cgroups</a></li>
+<li><a href="../../Cgroups.html" title="Cgroups" class="page">Cgroups</a>
 <ul>
 <li><a href="../cgconfig_und_cgred.html" title="cgconfig und cgred" class="page">cgconfig und cgred</a></li>
-<li><a href="../Cgroups_erstellen_und_l%C3%B6schen.html" title="Cgroups erstellen und löschen" class="page">Cgroups erstellen und löschen</a></li>
-<li><a href="../Cgroups_Subsysteme.html" title="Cgroups Subsysteme" class="page">Cgroups Subsysteme</a></li>
+<li><a href="../Cgroups_erstellen_und_löschen.html" title="Cgroups erstellen und löschen" class="page">Cgroups erstellen und löschen</a></li>
+<li><a href="../Cgroups_Subsysteme.html" title="Cgroups Subsysteme" class="page">Cgroups Subsysteme</a>
 <ul>
 <li><a href="./blkio.html" title="blkio" class="page">blkio</a></li>
 <li><a href="./cpu.html" title="cpu" class="page">cpu</a></li>
@@ -76,15 +90,19 @@
 <li><a href="./cpuset.html" title="cpuset" class="page">cpuset</a></li>
 <li><a href="./devices.html" title="devices" class="page">devices</a></li>
 <li><a href="./freezer.html" title="freezer" class="page">freezer</a></li>
-<li><strong class="activepage">memory</strong></li>
+<li><b>memory</b></li>
 <li><a href="./net_cls.html" title="net cls" class="page">net cls</a></li>
 <li><a href="./ns.html" title="ns" class="page">ns</a></li>
 </ul>
+</li>
 <li><a href="../Cgroups_verwalten.html" title="Cgroups verwalten" class="page">Cgroups verwalten</a></li>
 <li><a href="../Hierarchien_verwalten.html" title="Hierarchien verwalten" class="page">Hierarchien verwalten</a></li>
 <li><a href="../Regeln.html" title="Regeln" class="page">Regeln</a></li>
 </ul>
+</li>
+<li><a href="../../fuser.html" title="fuser" class="page">fuser</a></li>
 <li><a href="../../kill.html" title="kill" class="page">kill</a></li>
+<li><a href="../../lsof.html" title="lsof" class="page">lsof</a></li>
 <li><a href="../../Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste" class="page">Magic Sys-Abf Taste</a></li>
 <li><a href="../../Nice_Werte_kontrollieren.html" title="Nice Werte kontrollieren" class="page">Nice Werte kontrollieren</a></li>
 <li><a href="../../ps.html" title="ps" class="page">ps</a></li>
@@ -92,6 +110,7 @@
 <li><a href="../../top.html" title="top" class="page">top</a></li>
 <li><a href="../../ulimit.html" title="ulimit" class="page">ulimit</a></li>
 </ul>
+</li>
 <li><a href="../../../root.html" title="root" class="page">root</a></li>
 <li><a href="../../../Shell.html" title="Shell" class="page">Shell</a></li>
 <li><a href="../../../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
@@ -102,16 +121,23 @@
 <li><a href="../../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Dienstag 24 Januar 2012<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>memory <a name='Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme:memory'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Dienstag 24 Januar 2012
 </p>
 
 <p>
@@ -121,127 +147,132 @@ Created Dienstag 24 Januar 2012<br>
 </p>
 
 <p>
-<strong>memory.stat</strong><br>
+<b>memory.stat</b><br>
 → gibt Auskunft über Statistiken im Memory<br>
 <div style='padding-left: 30pt'>
-<em>cache </em>→ Page Cache inklusive tmpfs (shmem) in Bytes<br>
-<em>rss </em>→ anonymer und swap Cache, ohne tmpfs (shmem)<br>
-<em>mapped_file </em>→ Größe der im Specher gemappten mapped-files<br>
-<em>pgpin → </em>Anzahl der Speicherseiten im RAM<br>
-<em>pgpout </em>→ Anzahl der Speicherseiten die aus dem RAM geholt wurden<br>
-<em>swap </em>→ verbrauchter Swap  Speicher in Bytes<br>
-<em>active_anon </em>→ anoymer und swap-Cache auf aktiven LRU inklusive tmpfs (shmem)<br>
-<em>inactive_anon </em>→ anonymer und Swap-Cache auf inaktiven LRU inklusive tmpfs (shmem)<br>
-<em>active_file</em> → file-backed Memory auf aktiven LRU Listen<br>
-<em>inactive_file </em>→ file-backed Memory auf inaktiven LRU Listen<br>
-<em>unevictable → </em>Speicher der nicht wieder zurückgewonnen werden kann<br>
-<em>hierarchical_memory_limit </em>→ Speicherlimits für Hierarchien die das memory Subsystem benutzen<br>
-<em>hierarchical_memsw_limit </em>→ Speicher- und Swap Limit für Hierarchien die memory Subsystem benutzen<br>
-total_* <em>→ </em>Reports für diese Cgroup und alle ihre Kinder<br>
+<i>cache </i>→ Page Cache inklusive tmpfs (shmem) in Bytes<br>
+<i>rss </i>→ anonymer und swap Cache, ohne tmpfs (shmem)<br>
+<i>mapped_file </i>→ Größe der im Specher gemappten mapped-files<br>
+<i>pgpin → </i>Anzahl der Speicherseiten im RAM<br>
+<i>pgpout </i>→ Anzahl der Speicherseiten die aus dem RAM geholt wurden<br>
+<i>swap </i>→ verbrauchter Swap  Speicher in Bytes<br>
+<i>active_anon </i>→ anoymer und swap-Cache auf aktiven LRU inklusive tmpfs (shmem)<br>
+<i>inactive_anon </i>→ anonymer und Swap-Cache auf inaktiven LRU inklusive tmpfs (shmem)<br>
+<i>active_file</i> → file-backed Memory auf aktiven LRU Listen<br>
+<i>inactive_file </i>→ file-backed Memory auf inaktiven LRU Listen<br>
+<i>unevictable → </i>Speicher der nicht wieder zurückgewonnen werden kann<br>
+<i>hierarchical_memory_limit </i>→ Speicherlimits für Hierarchien die das memory Subsystem benutzen<br>
+<i>hierarchical_memsw_limit </i>→ Speicher- und Swap Limit für Hierarchien die memory Subsystem benutzen<br>
+total_* <i>→ </i>Reports für diese Cgroup und alle ihre Kinder
 </div>
 </p>
-	
+
 <p>
-<em>Beispiel:</em><br>
-<code>cgget -r memory.stat /</code><br>
+<i>Beispiel:</i><br>
+<tt>cgget -r memory.stat /</tt>
 </p>
 
 <p>
-<strong>memory.usage_in_bytes</strong><br>
-→ der gesamte Speicherverbrauche aller Tasks in einer Cgroup<br>
+<b>memory.usage_in_bytes</b><br>
+→ der gesamte Speicherverbrauche aller Tasks in einer Cgroup
 </p>
 
 <p>
-<strong>memory.memsw.usage_in_bytes</strong><br>
-→ der gesamte Speicherverbrauch inklusive Swap aller Tasks in einer Cgroup <br>
+<b>memory.memsw.usage_in_bytes</b><br>
+→ der gesamte Speicherverbrauch inklusive Swap aller Tasks in einer Cgroup 
 </p>
 
 <p>
-<strong>memory.max_usage_in_bytes</strong><br>
-→ Bericht über die Maximale Menge die an Speicher verbraucht wurde <br>
+<b>memory.max_usage_in_bytes</b><br>
+→ Bericht über die Maximale Menge die an Speicher verbraucht wurde 
 </p>
 
 <p>
-<strong>memory.memsw.max_usage_in_bytes</strong><br>
-→ Bericht über die Maximal Menge die an Speicher und Swap verbraucht wurde<br>
+<b>memory.memsw.max_usage_in_bytes</b><br>
+→ Bericht über die Maximal Menge die an Speicher und Swap verbraucht wurde
 </p>
 
 <p>
-<strong>memory.limits_in_bytes</strong><br>
+<b>memory.limits_in_bytes</b><br>
 → setzen des Maximalen Speichermenge des User-Memory inklusive File Cache<br>
 → wird kein Suffix angegeben wird von Bytes ausgegenaen, als Suffix kann aber k K, m M und g G verwendet werden<br>
 → die Root Cgroup kann nicht limitiert werden<br>
-→ Der Wert <strong>-1 </strong>ist dazu da um existierende Limitierungen zu entfernen<br>
+→ Der Wert <b>-1 </b>ist dazu da um existierende Limitierungen zu entfernen
 </p>
 
 <p>
-<strong>memory.memsw.limits_in_bytes</strong><br>
+<b>memory.memsw.limits_in_bytes</b><br>
 → setzen des Maximalen Speichermenge inklusive Swap des User-Memory inklusive File Cache<br>
 → wird kein Suffix angegeben wird von Bytes ausgegenaen, als Suffix kann aber k K, m M und g G verwendet werden<br>
 → die Root Cgroup kann nicht limitiert werden<br>
-→ Der Wert <strong>-1 </strong>ist dazu da um existierende Limitierungen zu entfernen<br>
+→ Der Wert <b>-1 </b>ist dazu da um existierende Limitierungen zu entfernen
 </p>
 
 <h4>ACHTUNG</h4>
+
 <p>
-<u>: Sie müssen </u><strong>memory.limits_in_bytes </strong><u>setzen, bevor es möglich  ist </u><strong>memory.memsw.limits_in_bytes</strong><u> zu setzen. Diese Reihenfolge muss auch in der Datei </u><em>*/etc/cgconfig.conf </em><u> berücksichtigt werden.</u><br>
-Linux Wissen:FHS:etc:cgconfig.conf<br>
+<u>: Sie müssen </u><b>memory.limits_in_bytes </b><u>setzen, bevor es möglich  ist </u><b>memory.memsw.limits_in_bytes</b><u> zu setzen. Diese Reihenfolge muss auch in der Datei </u><i>*/etc/cgconfig.conf </i><u> berücksichtigt werden.</u><br>
+Linux Wissen:FHS:etc:cgconfig.conf
 </p>
 
 <p>
-<strong>memory.failcnt</strong><br>
-→ wie oft wurden Limits die durch <strong>memory.limits_in_bytes </strong>gesetzt wurden, erreicht<br>
+<b>memory.failcnt</b><br>
+→ wie oft wurden Limits die durch <b>memory.limits_in_bytes </b>gesetzt wurden, erreicht
 </p>
 
 <p>
-<strong>memory.memsw.failcnt</strong><br>
-→ wie oft wurden Limits die durch  <strong>memory.memsw_limits_in_bytes</strong> gesetzt wurden, erreicht<br>
+<b>memory.memsw.failcnt</b><br>
+→ wie oft wurden Limits die durch  <b>memory.memsw_limits_in_bytes</b> gesetzt wurden, erreicht
 </p>
 
 <p>
-<strong>memory.force.empty</strong><br>
-<strong>→ </strong>kann nur gesetzt werden ,wenn diese Cgroup keinen Task besitzt<br>
-→ Der Wert <strong>0</strong> gibt die verbrauchten Speicherseiten frei, die von dieser Cgroup verwendet wurden<br>
+<b>memory.force.empty</b><br>
+<b>→ </b>kann nur gesetzt werden ,wenn diese Cgroup keinen Task besitzt<br>
+→ Der Wert <b>0</b> gibt die verbrauchten Speicherseiten frei, die von dieser Cgroup verwendet wurden
 </p>
 
 <p>
-<u>Benutzten dieses Parameters bevor eine Cgroup entfernt wird.</u><br>
+<u>Benutzten dieses Parameters bevor eine Cgroup entfernt wird.</u>
 </p>
 
 <p>
-<strong>memory.swappiness</strong><br>
+<b>memory.swappiness</b><br>
 → bestimmt die Tendenz mit dem der Kernel Prozesse und Threads dieser Cgroup in den Swap auslagert<br>
 → Wertebereich: 0 &lt;= 60 &lt;= N<br>
-→ <strong>60 </strong>ist der Standardwert<br>
-→ Werte kleiner als <strong>60 </strong>verringern die Tendenz dass Prozesse in den Swap ausgelagert werden<br>
-→ Werte größer als <strong>60 </strong>erhöhen die Tendenz dass Prozesse in den Swap ausgelagert werden<br>
-→ Werte größer als <strong>100 </strong>verbieten den Kernel vollständig Prozesse dieser Cgroup auszulagern<br>
-→ der Wert kann nicht geändert werden für die Root-Cgroup dieser Hierarchie, sowie für Gruppen die weitere Kinder haben<br>
+→ <b>60 </b>ist der Standardwert<br>
+→ Werte kleiner als <b>60 </b>verringern die Tendenz dass Prozesse in den Swap ausgelagert werden<br>
+→ Werte größer als <b>60 </b>erhöhen die Tendenz dass Prozesse in den Swap ausgelagert werden<br>
+→ Werte größer als <b>100 </b>verbieten den Kernel vollständig Prozesse dieser Cgroup auszulagern<br>
+→ der Wert kann nicht geändert werden für die Root-Cgroup dieser Hierarchie, sowie für Gruppen die weitere Kinder haben
 </p>
 
 <p>
-<u>Die globale Memroy Logik des Kernels liest keine Cgroup Restriktionen, daher werden Prozesse auch dann geswapped wenn nicht genügend physischer Speicher zur Verfügung steht.</u><br>
+<u>Die globale Memroy Logik des Kernels liest keine Cgroup Restriktionen, daher werden Prozesse auch dann geswapped wenn nicht genügend physischer Speicher zur Verfügung steht.</u>
 </p>
 
 <p>
-<strong>memory.use_hierarchie</strong><br>
-→ Wertebereich: <strong>0 </strong>oder <strong>1 </strong><br>
+<b>memory.use_hierarchie</b><br>
+→ Wertebereich: <b>0 </b>oder <b>1 </b><br>
 → falls aktiviert wird das Subsystem versuchen, Speicher von ihren Kndernj zurückzugewinnen<br>
-→ aktivert Wert = 1<br>
+→ aktivert Wert = 1
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<i>No backlinks to this page.</i>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Cgroups_Subsysteme.html'>Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

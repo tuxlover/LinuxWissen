@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Umgebung einer Unit</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Umgebung einer Unit</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Umgebung einer Unit</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./Mount_Unit.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='../../proc.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -52,28 +66,30 @@
 <li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik" class="page">Datenrettung und Forensik</a></li>
 <li><a href="../../../Drucken.html" title="Drucken" class="page">Drucken</a></li>
 <li><a href="../../../Emacs_Editor.html" title="Emacs Editor" class="page">Emacs Editor</a></li>
-<li><a href="../../../FHS.html" title="FHS" class="page">FHS</a></li>
+<li><a href="../../../FHS.html" title="FHS" class="page">FHS</a>
 <ul>
 <li><a href="../../bin.html" title="bin" class="page">bin</a></li>
 <li><a href="../../boot.html" title="boot" class="page">boot</a></li>
 <li><a href="../../dev.html" title="dev" class="page">dev</a></li>
 <li><a href="../../etc.html" title="etc" class="page">etc</a></li>
-<li><a href="../../lib.html" title="lib" class="page">lib</a></li>
+<li><a href="../../lib.html" title="lib" class="page">lib</a>
 <ul>
-<li><a href="../lib%2B%2Bsystemd.html" title="lib++systemd" class="page">lib++systemd</a></li>
+<li><a href="../lib++systemd.html" title="lib++systemd" class="page">lib++systemd</a>
 <ul>
 <li><a href="./Automount_Unit.html" title="Automount Unit" class="page">Automount Unit</a></li>
 <li><a href="./Device_Unit.html" title="Device Unit" class="page">Device Unit</a></li>
 <li><a href="./Mount_Unit.html" title="Mount Unit" class="page">Mount Unit</a></li>
-<li><strong class="activepage">Umgebung einer Unit</strong></li>
+<li><b>Umgebung einer Unit</b></li>
+</ul></li>
 </ul>
-</ul>
+</li>
 <li><a href="../../proc.html" title="proc" class="page">proc</a></li>
 <li><a href="../../sbin.html" title="sbin" class="page">sbin</a></li>
 <li><a href="../../sys.html" title="sys" class="page">sys</a></li>
 <li><a href="../../usr.html" title="usr" class="page">usr</a></li>
 <li><a href="../../var.html" title="var" class="page">var</a></li>
 </ul>
+</li>
 <li><a href="../../../Filterprogramme.html" title="Filterprogramme" class="page">Filterprogramme</a></li>
 <li><a href="../../../git_Vesionskontrolle.html" title="git Vesionskontrolle" class="page">git Vesionskontrolle</a></li>
 <li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen" class="page">Hardware und Systeminformationen</a></li>
@@ -94,284 +110,291 @@
 <li><a href="../../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Donnerstag 01 März 2012<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Umgebung einer Unit <a name='Linux Wissen:FHS:lib:lib++systemd:Umgebung einer Unit'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Donnerstag 01 März 2012
 </p>
 
 <h4>Konfigurieren der Umgebung in der eine Unit aktiviert wird</h4>
+
 <p>
-→ diese Konfigurationsoptionen können auf <em>.service .mount .swap </em>und <em>.swap</em> Units angewandt werden<br>
+→ diese Konfigurationsoptionen können auf <i>.service .mount .swap </i>und <i>.swap</i> Units angewandt werden<br>
 <div style='padding-left: 30pt'>
-<em>WorkingDirectory=</em><br>
-→ absoluter Pfad, beschreibt Arbeitsverzeichnis der auszuführenden Prozesse<br>
+<i>WorkingDirectory=</i><br>
+→ absoluter Pfad, beschreibt Arbeitsverzeichnis der auszuführenden Prozesse
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>RootDirectory=</em><br>
-→ absoluter Pfad zum Verzeichnis auf dem der <strong>chroot()</strong> Systemcall durchgeführt wird<br>
-→ <u>Achtung: Es ist sicherzistellen, dass alle benötigen Dateien können vom ausführenden Hauptprozess gesehen werden</u><br>
+<i>RootDirectory=</i><br>
+→ absoluter Pfad zum Verzeichnis auf dem der <b>chroot()</b> Systemcall durchgeführt wird<br>
+→ <u>Achtung: Es ist sicherzistellen, dass alle benötigen Dateien können vom ausführenden Hauptprozess gesehen werden</u>
 </div>
 </p>
-	
+
 <p>
-<em>       User=</em>&lt;User&gt;<em>; Group=&lt;</em>Group&gt;<br>
+<i>       User=</i>&lt;User&gt;<i>; Group=&lt;</i>Group&gt;<br>
 <div style='padding-left: 30pt'>
 → setzen der Nutzer bzw der  Gruppe<br>
-→ Name oder GUD|UID<br>
+→ Name oder GUD|UID
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>SupplementaryGroups=</em>&lt;Gruppe1&gt;,...<br>
+<i>SupplementaryGroups=</i>&lt;Gruppe1&gt;,...<br>
 → setzen der zusätzlichen Gruppen, die ein Prozess angehören soll<br>
-→ &lt;Gruppe&gt; kann entweder ein Gruppenname oder die GID sein<br>
+→ &lt;Gruppe&gt; kann entweder ein Gruppenname oder die GID sein
 </div>
-Linux Wissen:Benutzer und Gruppen<br>
+Linux Wissen:Benutzer und Gruppen
 </p>
 
 <p>
-<em>Nice=</em>&lt;-20&lt;=N&lt;=19&gt;<br>
+<i>Nice=</i>&lt;-20&lt;=N&lt;=19&gt;<br>
 → setzt den Nice Wert des Prozesse die von dieser Unit gestartet werden<br>
-Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren<br>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>UMask=7777</em><br>
-→ setzen der umask der von diesem Prozess erzeugten Dateien<br>
-→ Standard ist 0022<br>
-</div>
-Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask<br>
+Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>Environment=Var1=&lt;wert&gt; Var2=&lt;wer2&gt; ...</em><br>
+<i>UMask=7777</i><br>
+→ setzen der umask der von diesem Prozess erzeugten Dateien<br>
+→ Standard ist 0022
+</div>
+Linux Wissen:Dateien verwalten:Zugriffsrechte:Umask
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<i>Environment=Var1=&lt;wert&gt; Var2=&lt;wer2&gt; ...</i><br>
 → setzend er Umgebungsvariablen den dieser Prozess benutzen soll<br>
 → duch Leerzeichen getrennte Liste von Variablen und ihren Werten<br>
-→ wird einer Variablen kein Wert zugeordnet, so wird die Variable als Leer initialisiert<br>
+→ wird einer Variablen kein Wert zugeordnet, so wird die Variable als Leer initialisiert
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>EnvironmnetFile=</em>&lt;PathToFile&gt;<br>
+<i>EnvironmnetFile=</i>&lt;PathToFile&gt;<br>
 → lesen der Umgebungsvariablen aus einer Textdatei<br>
-→ leere Zeilen oder Zeilen die mit # beginnen werden nicht vom Parser gelesen und zur Kommentierung genutzt werden<br>
+→ leere Zeilen oder Zeilen die mit # beginnen werden nicht vom Parser gelesen und zur Kommentierung genutzt werden
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>StandardInput=</em><br>
+<i>StandardInput=</i><br>
 → konfigurieren des Standardeingabe Kanals der Unit<br>
-→ Standard ist <strong>null</strong><br>
+→ Standard ist <b>null</b>
 </div>
 <div style='padding-left: 60pt'>
-<strong>null </strong>→ StdIN wird mit /dev/null verbunden<br>
-<strong>tty </strong>→ StdIn wird mit dem tty verbunden wie er <em>TTYPath </em>konfiguriert wurde, der ausgeführte Prozess wird der kontorllierende Prozess dieses Terminals<br>
-<strong>tty-force</strong> → wie tty, es wird jedoch die Kontrolle des Prozesse an diesen TTY erzwungen, selbst dann wenn der Prozess einen andern kontrollierenden Prozess überschreibt<br>
-<strong>tty-fail </strong>→ wie tty, wenn jedoch ein anderer Prozess diesen TTY bereits kontrolliert, schlägt dieser Prozess fehl<br>
-<strong>socket </strong>→ nur in Socketaktivierung gültig, der Prozess wird an einen konfigurierten Socket gebunden<br>
+<b>null </b>→ StdIN wird mit /dev/null verbunden<br>
+<b>tty </b>→ StdIn wird mit dem tty verbunden wie er <i>TTYPath </i>konfiguriert wurde, der ausgeführte Prozess wird der kontorllierende Prozess dieses Terminals<br>
+<b>tty-force</b> → wie tty, es wird jedoch die Kontrolle des Prozesse an diesen TTY erzwungen, selbst dann wenn der Prozess einen andern kontrollierenden Prozess überschreibt<br>
+<b>tty-fail </b>→ wie tty, wenn jedoch ein anderer Prozess diesen TTY bereits kontrolliert, schlägt dieser Prozess fehl<br>
+<b>socket </b>→ nur in Socketaktivierung gültig, der Prozess wird an einen konfigurierten Socket gebunden
 </div>
 </p>
-		
+
 <p>
 <div style='padding-left: 30pt'>
-<em>StandardOutput=</em><br>
+<i>StandardOutput=</i><br>
 → kofnigurieren des Standardausgabekanals der Unit<br>
-→ Standard ist <strong>syslog</strong><br>
+→ Standard ist <b>syslog</b>
 </div>
 <div style='padding-left: 60pt'>
-<strong>inherit </strong>→ StdOut ist das gleiche wie StdIn<br>
-<strong>null </strong>→ Stdout wird mit /dev/null verbunden<br>
-<strong>tty </strong>→ StdOut wird mit dem tty verbunden wie er in TTYPath konfiguriert wurde<br>
-<strong>syslog </strong>→ StdtOut wird mit dem syslog() daemon verbunden<br>
-<strong>kmsg </strong>→ StdOut wird mit dem Kernel Ring Buffer verbuden der mit <strong>dmesg </strong>abgefragt werden kann<br>
-<strong>syslog+console </strong>→ An den syslog Daemon und die Standard Fehlerkonsole senden<br>
-<strong>kmsg+console</strong> → An den Kernel Ring Buffer und die Standard Fehlerkonsole senden<br>
+<b>inherit </b>→ StdOut ist das gleiche wie StdIn<br>
+<b>null </b>→ Stdout wird mit /dev/null verbunden<br>
+<b>tty </b>→ StdOut wird mit dem tty verbunden wie er in TTYPath konfiguriert wurde<br>
+<b>syslog </b>→ StdtOut wird mit dem syslog() daemon verbunden<br>
+<b>kmsg </b>→ StdOut wird mit dem Kernel Ring Buffer verbuden der mit <b>dmesg </b>abgefragt werden kann<br>
+<b>syslog+console </b>→ An den syslog Daemon und die Standard Fehlerkonsole senden<br>
+<b>kmsg+console</b> → An den Kernel Ring Buffer und die Standard Fehlerkonsole senden
 </div>
 </p>
 
 <p>
-Linux Wissen:Systemprotokollierung<br>
+Linux Wissen:Systemprotokollierung
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>StandardError=</em><br>
-→ nimmt die gleichen Werte wie <em>StandardOutput </em>auf<br>
-→ <strong>inherit</strong> verwenden den gleichen Kanal wie <em>StandardOutput</em><br>
+<i>StandardError=</i><br>
+→ nimmt die gleichen Werte wie <i>StandardOutput </i>auf<br>
+→ <b>inherit</b> verwenden den gleichen Kanal wie <i>StandardOutput</i>
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>TTYPath=&lt;/dev/ttyX|/dev/console&gt;</em><br>
+<i>TTYPath=&lt;/dev/ttyX|/dev/console&gt;</i><br>
 → Pfad zum TTY<br>
-→ Standard ist /dev/console<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>SystlogIdentifier=</em><br>
-→ Spezifiziert den von <strong>syslog() </strong>verwendetden Identifier<br>
-→ Nur Sinnvoll mit der entrpchenden <em>StandardOutput </em>Konfiguration<br>
-→ Standard ist der Name des auszuführenden Prozeses<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>SyslogFacility=</em><strong>kern, user, mail, daemon, auth, syslog, lpr, news, uucp, cron, authpriv, ftp, local0, local1, local2, local3, local4, local5, local6 or local7</strong><br>
+→ Standard ist /dev/console
 </div>
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-→ Spezifiziert die von <strong>syslog() </strong>verwendet Facility<br>
+<i>SystlogIdentifier=</i><br>
+→ Spezifiziert den von <b>syslog() </b>verwendetden Identifier<br>
+→ Nur Sinnvoll mit der entrpchenden <i>StandardOutput </i>Konfiguration<br>
+→ Standard ist der Name des auszuführenden Prozeses
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>SyslogLevel=</em><strong>emerg, alert, crit, err, warning, notice, info, debug</strong><br>
+<i>SyslogFacility=</i><b>kern, user, mail, daemon, auth, syslog, lpr, news, uucp, cron, authpriv, ftp, local0, local1, local2, local3, local4, local5, local6 or local7</b>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+→ Spezifiziert die von <b>syslog() </b>verwendet Facility
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<i>SyslogLevel=</i><b>emerg, alert, crit, err, warning, notice, info, debug</b><br>
 → Spezifiziert den Loglevel<br>
-→ Standard ist <strong>info</strong><br>
+→ Standard ist <b>info</b>
 </div>
-FHS:etc:syslog.conf<br>
+FHS:etc:syslog.conf
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>SyslogPrefix=</em><strong>true|false</strong><br>
-→ wenn auf <strong>true </strong>gesetzt, wird der Prefix der in SyslogLevel spezifiziert wurde ebenfalls an <strong>kmesg </strong>oder <strong>syslog </strong>weitergegeben<br>
+<i>SyslogPrefix=</i><b>true|false</b><br>
+→ wenn auf <b>true </b>gesetzt, wird der Prefix der in SyslogLevel spezifiziert wurde ebenfalls an <b>kmesg </b>oder <b>syslog </b>weitergegeben
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>TCPWrapName=</em><br>
+<i>TCPWrapName=</i><br>
 → Name des Socket aktivierten Service durch TCP Wrapper<br>
-→ dieser Name wird vom <strong>tcpd </strong>genutzt um die Zugriffsberechtigungen der aktuellen Verbindung zu überprüfen<br>
+→ dieser Name wird vom <b>tcpd </b>genutzt um die Zugriffsberechtigungen der aktuellen Verbindung zu überprüfen
 </div>
 Linux Wissen:Networking:xinetd<br>
-FHS:etc:inetd.conf<br>
+FHS:etc:inetd.conf
 </p>
-	
+
 <p>
-<em>       LimitCPU=, LimitFSIZE=, LimitDATA=, LimitSTACK=, LimitCORE=, LimitRSS=, LimitNOFILE=, LimitAS=, LimitNPROC=, LimitMEMLOCK=, LimitLOCKS=,</em><br>
-<em>       LimitSIGPENDING=, LimitMSGQUEUE=, LimitNICE=, LimitRTPRIO=, LimitRTTIME=</em><br>
+<i>       LimitCPU=, LimitFSIZE=, LimitDATA=, LimitSTACK=, LimitCORE=, LimitRSS=, LimitNOFILE=, LimitAS=, LimitNPROC=, LimitMEMLOCK=, LimitLOCKS=,</i><br>
+<i>       LimitSIGPENDING=, LimitMSGQUEUE=, LimitNICE=, LimitRTPRIO=, LimitRTTIME=</i><br>
 <div style='padding-left: 30pt'>
-→ Resourcen Limits die durch Cgroups gesteuert werden<br>
+→ Resourcen Limits die durch Cgroups gesteuert werden
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>ControlGroup=</em><strong>&lt;subsystem&gt;:/&lt;Pfad innerhalb der Hierarchie zur Cgroup&gt;</strong><br>
-→ festlegen der Cgroup die dieser Prozess zugehörig sein soll<br>
+<i>ControlGroup=</i><b>&lt;subsystem&gt;:/&lt;Pfad innerhalb der Hierarchie zur Cgroup&gt;</b><br>
+→ festlegen der Cgroup die dieser Prozess zugehörig sein soll
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>ControlGroupModify=</em><strong>true|false</strong><br>
-→ falls <strong>true </strong>ist der unter <em>User</em> festgelegte Nutzer in der Lage neue SubCgroups dieser Cgroup zu erstellen und neue Prozesse zu diesen hinzuzufügen<br>
-→ dieses Verhalten implementiert <code>cgcreate -a </code><br>
+<i>ControlGroupModify=</i><b>true|false</b><br>
+→ falls <b>true </b>ist der unter <i>User</i> festgelegte Nutzer in der Lage neue SubCgroups dieser Cgroup zu erstellen und neue Prozesse zu diesen hinzuzufügen<br>
+→ dieses Verhalten implementiert <tt>cgcreate -a </tt>
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>ControlGroupAttribute= &lt;Controler&gt; &lt;Wert&gt;</em><br>
-→ siehe <br>
+<i>ControlGroupAttribute= &lt;Controler&gt; &lt;Wert&gt;</i><br>
+→ siehe 
 </div>
 Linux Wissen:Prozessverwaltung:Cgroups:Cgroups Subsysteme<br>
 <div style='padding-left: 30pt'>
 → setzen von Attributen für ein Subsystem<br>
-→ Kann mehrfach Konfiguriert werden<br>
+→ Kann mehrfach Konfiguriert werden
 </div>
 </p>
 
 <p>
-<em>Beispiel:</em><br>
-<code>ControlGroupAttribute=cpu.shares 512</code><br>
+<i>Beispiel:</i><br>
+<tt>ControlGroupAttribute=cpu.shares 512</tt>
 </p>
 
 <p>
-BlockIOReadBandwidth=, BlockIOWriteBandwidth=,BlockIOWeight=,DeviceAllow=, DeviceDeny=,MemoryLimit=, MemorySoftLimit=,CPUShares=<br>
+BlockIOReadBandwidth=, BlockIOWriteBandwidth=,BlockIOWeight=,DeviceAllow=, DeviceDeny=,MemoryLimit=, MemorySoftLimit=,CPUShares=
 </p>
 
 <p>
-Linux Wissen:Prozessverwaltung:Cgroups<br>
+Linux Wissen:Prozessverwaltung:Cgroups
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>       ReadWriteDirectories=, ReadOnlyDirectories=, InaccessibleDirectories=</em>&lt;PATH&gt;<br>
+<i>       ReadWriteDirectories=, ReadOnlyDirectories=, InaccessibleDirectories=</i>&lt;PATH&gt;
 </div>
 <div style='padding-left: 60pt'>
 → setzen weiterer Restriktionen <br>
 → als Argument wird ein absoluter Pfad gegesetzt für die entsprechende Restriktionen gelten<br>
-→ <u>Hinweis: Für Unterverzeichnisse müssen entrpchend eigene Richtilinien gesetzt werden, / ist nicht erlaubt</u><br>
+→ <u>Hinweis: Für Unterverzeichnisse müssen entrpchend eigene Richtilinien gesetzt werden, / ist nicht erlaubt</u>
 </div>
 </p>
-		
+
 <p>
 <div style='padding-left: 60pt'>
-<em>PrivateTmp=</em><strong>true|false</strong><br>
-→ falls auf <strong>true </strong>gesetzt, wird dieser Prozess temporäre Dateien in ein eigenes seperat eingehängtes temporäres Verzeichnis ablegen<br>
+<i>PrivateTmp=</i><b>true|false</b><br>
+→ falls auf <b>true </b>gesetzt, wird dieser Prozess temporäre Dateien in ein eigenes seperat eingehängtes temporäres Verzeichnis ablegen
 </div>
 </p>
-		
+
 <p>
 <div style='padding-left: 60pt'>
-<em>PrivateNetwrok=</em><strong>true|false</strong><br>
-<strong>→ </strong>falls auf <strong>true </strong>wird ausser das lo device kein weiteres NIC bereit sein<br>
+<i>PrivateNetwrok=</i><b>true|false</b><br>
+<b>→ </b>falls auf <b>true </b>wird ausser das lo device kein weiteres NIC bereit sein
 </div>
 </p>
-		
+
 <p>
 <div style='padding-left: 60pt'>
-<em>MountFlags</em>=<strong>shared|slave|private</strong><br>
-<strong>shared </strong>→ weitere Spiegel des Mountpunktes sind erlaubt<br>
-<strong>slave</strong> → kann nur an den Master propagieren<br>
-<strong>private </strong>→ kann nicht proagieren<br>
+<i>MountFlags</i>=<b>shared|slave|private</b><br>
+<b>shared </b>→ weitere Spiegel des Mountpunktes sind erlaubt<br>
+<b>slave</b> → kann nur an den Master propagieren<br>
+<b>private </b>→ kann nicht proagieren
 </div>
 Linux Wissen:Partitionen und Dateisysteme:Mounten:Shared Mount<br>
 Linux Wissen:Partitionen und Dateisysteme:Mounten:Slave Mount<br>
-Linux Wissen:Partitionen und Dateisysteme:Mounten:Unbindable Mount<br>
+Linux Wissen:Partitionen und Dateisysteme:Mounten:Unbindable Mount
 </p>
 
 <p>
-<strong>man 5 systemd.exec</strong><br>
+<b>man 5 systemd.exec</b>
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<i>No backlinks to this page.</i>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

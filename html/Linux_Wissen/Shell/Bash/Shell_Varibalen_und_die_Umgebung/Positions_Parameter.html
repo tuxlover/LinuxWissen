@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Positions Parameter</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Positions Parameter</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Positions Parameter</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='../Shell_Varibalen_und_die_Umgebung.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./Umgebungsvariablen_in_bash.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -64,31 +78,33 @@
 <li><a href="../../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme" class="page">Partitionen und Dateisysteme</a></li>
 <li><a href="../../../Prozessverwaltung.html" title="Prozessverwaltung" class="page">Prozessverwaltung</a></li>
 <li><a href="../../../root.html" title="root" class="page">root</a></li>
-<li><a href="../../../Shell.html" title="Shell" class="page">Shell</a></li>
+<li><a href="../../../Shell.html" title="Shell" class="page">Shell</a>
 <ul>
 <li><a href="../../Arten_der_Shell.html" title="Arten der Shell" class="page">Arten der Shell</a></li>
 <li><a href="../../Aufrufen_der_Shell.html" title="Aufrufen der Shell" class="page">Aufrufen der Shell</a></li>
-<li><a href="../../Bash.html" title="Bash" class="page">Bash</a></li>
+<li><a href="../../Bash.html" title="Bash" class="page">Bash</a>
 <ul>
 <li><a href="../Aliasse.html" title="Aliasse" class="page">Aliasse</a></li>
 <li><a href="../Emacs_Modus.html" title="Emacs Modus" class="page">Emacs Modus</a></li>
 <li><a href="../Funktionen.html" title="Funktionen" class="page">Funktionen</a></li>
 <li><a href="../History.html" title="History" class="page">History</a></li>
 <li><a href="../inputrc.html" title="inputrc" class="page">inputrc</a></li>
-<li><a href="../Optionen_f%C3%BCr_die_Bash.html" title="Optionen für die Bash" class="page">Optionen für die Bash</a></li>
-<li><a href="../Shell_Varibalen_und_die_Umgebung.html" title="Shell Varibalen und die Umgebung" class="page">Shell Varibalen und die Umgebung</a></li>
+<li><a href="../Optionen_für_die_Bash.html" title="Optionen für die Bash" class="page">Optionen für die Bash</a></li>
+<li><a href="../Shell_Varibalen_und_die_Umgebung.html" title="Shell Varibalen und die Umgebung" class="page">Shell Varibalen und die Umgebung</a>
 <ul>
-<li><strong class="activepage">Positions Parameter</strong></li>
+<li><b>Positions Parameter</b></li>
 <li><a href="./Umgebungsvariablen_in_bash.html" title="Umgebungsvariablen in bash" class="page">Umgebungsvariablen in bash</a></li>
+</ul></li>
 </ul>
-</ul>
+</li>
 <li><a href="../../Befehle.html" title="Befehle" class="page">Befehle</a></li>
 <li><a href="../../Jobkontrolle.html" title="Jobkontrolle" class="page">Jobkontrolle</a></li>
 <li><a href="../../rbash.html" title="rbash" class="page">rbash</a></li>
 <li><a href="../../Shells_und_Subshells_beenden.html" title="Shells und Subshells beenden" class="page">Shells und Subshells beenden</a></li>
-<li><a href="../../Standardkan%C3%A4le.html" title="Standardkanäle" class="page">Standardkanäle</a></li>
+<li><a href="../../Standardkanäle.html" title="Standardkanäle" class="page">Standardkanäle</a></li>
 <li><a href="../../Wildcards.html" title="Wildcards" class="page">Wildcards</a></li>
 </ul>
+</li>
 <li><a href="../../../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
 <li><a href="../../../SQL.html" title="SQL" class="page">SQL</a></li>
 <li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
@@ -97,78 +113,92 @@
 <li><a href="../../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Freitag 15 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Positions Parameter <a name='Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung:Positions Parameter'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Freitag 15 April 2011
 </p>
 
 <p>
-$0 → Name der Shell | des Shellscripts<br>
+$0 → Name der Shell | des Shellscripts
 </p>
 
 <p>
 $1 $2 ${10} → ... Parameter die dem Script übergeben werden. $1 ist der 1. Parameter usw.<br>
-                    → ${10} muss die Zahl in geschweiften {} stehen<br>
+<div style='padding-left: 150pt'>
+→ ${10} muss die Zahl in geschweiften {} stehen
+</div>
 </p>
 
 <p>
-$# → Anzahl der übergebenen Elemente<br>
+$# → Anzahl der übergebenen Elemente
 </p>
 
 <p>
 $* → Alle Postions Parameter als ein einziges Wort <br>
-     → wie <strong>echo "$1 $2 ..."</strong><br>
+<div style='padding-left: 30pt'>
+ → wie <b>echo "$1 $2 ..."</b>
+</div>
 </p>
 
 <p>
 $@ → Alle Parameter geshen als ein Text, dabei wird jedes Argument einzeln interpretiert<br>
-      → wie <strong> echo "$1"; echo "$2"; ...</strong><br>
+<div style='padding-left: 30pt'>
+  → wie <b> echo "$1"; echo "$2"; ...</b>
+</div>
 </p>
 
 <p>
-$! → PID des letzten Hintergrundjobs<br>
+$! → PID des letzten Hintergrundjobs
 </p>
 
 <p>
-$- → Flags die dem Script | der Shell beim Aufruf durch <strong>set </strong> übergeben wurden ( <a href="../Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash" class="page">Linux Wissen:Shell:Bash:Optionen für die Bash</a> )<br>
+$- → Flags die dem Script | der Shell beim Aufruf durch <b>set </b> übergeben wurden ( <a href="../Optionen_für_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash" class="page">Linux Wissen:Shell:Bash:Optionen für die Bash</a> )
 </p>
 
 <p>
-$_ → letztes Argument des vorherigen Befehls<br>
+$_ → letztes Argument des vorherigen Befehls
 </p>
 
 <p>
-$? → exit Status des letzten Befehls, der zuletzt ausgeführten Funktion|Scripts|Befehls<br>
-</p>
- 
-<p>
-$$ → PID des gerade laufenen Scriptes | der gerade laufenden Shell<br>
+$? → exit Status des letzten Befehls, der zuletzt ausgeführten Funktion|Scripts|Befehls
 </p>
 
 <p>
-<strong>shift </strong>→ Positionsparameter nach links verschieben<br>
-          → aus $2 wird $1 und so weiter<br>
+$$ → PID des gerade laufenen Scriptes | der gerade laufenden Shell
 </p>
 
+<p>
+<b>shift </b>→ Positionsparameter nach links verschieben<br>
+<div style='padding-left: 60pt'>
+  → aus $2 wird $1 und so weiter
+</div>
+</p>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<i>No backlinks to this page.</i>
-				<br><br>
+	</div>
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<br />
+
+	<div class='page-footer'>
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

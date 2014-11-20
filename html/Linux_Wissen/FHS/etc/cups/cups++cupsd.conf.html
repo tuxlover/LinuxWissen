@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>cups++cupsd.conf</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>cups++cupsd.conf</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>cups++cupsd.conf</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./cups++classes.conf.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./cups++printers.conf.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -52,27 +66,28 @@
 <li><a href="../../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik" class="page">Datenrettung und Forensik</a></li>
 <li><a href="../../../Drucken.html" title="Drucken" class="page">Drucken</a></li>
 <li><a href="../../../Emacs_Editor.html" title="Emacs Editor" class="page">Emacs Editor</a></li>
-<li><a href="../../../FHS.html" title="FHS" class="page">FHS</a></li>
+<li><a href="../../../FHS.html" title="FHS" class="page">FHS</a>
 <ul>
 <li><a href="../../bin.html" title="bin" class="page">bin</a></li>
 <li><a href="../../boot.html" title="boot" class="page">boot</a></li>
 <li><a href="../../dev.html" title="dev" class="page">dev</a></li>
-<li><a href="../../etc.html" title="etc" class="page">etc</a></li>
+<li><a href="../../etc.html" title="etc" class="page">etc</a>
 <ul>
 <li><a href="../anacrontab.html" title="anacrontab" class="page">anacrontab</a></li>
 <li><a href="../apt.conf.html" title="apt.conf" class="page">apt.conf</a></li>
-<li><a href="../apt%2B%2Bpreferences.conf.html" title="apt++preferences.conf" class="page">apt++preferences.conf</a></li>
-<li><a href="../apt%2B%2Bsoruces.list.html" title="apt++soruces.list" class="page">apt++soruces.list</a></li>
+<li><a href="../apt++preferences.conf.html" title="apt++preferences.conf" class="page">apt++preferences.conf</a></li>
+<li><a href="../apt++soruces.list.html" title="apt++soruces.list" class="page">apt++soruces.list</a></li>
 <li><a href="../auto.master.html" title="auto.master" class="page">auto.master</a></li>
 <li><a href="../auto.Verzeichnis.html" title="auto.Verzeichnis" class="page">auto.Verzeichnis</a></li>
 <li><a href="../cgconfig.conf.html" title="cgconfig.conf" class="page">cgconfig.conf</a></li>
 <li><a href="../cgrules.conf.html" title="cgrules.conf" class="page">cgrules.conf</a></li>
-<li><a href="../cups.html" title="cups" class="page">cups</a></li>
+<li><a href="../cups.html" title="cups" class="page">cups</a>
 <ul>
-<li><a href="./cups%2B%2Bclasses.conf.html" title="cups++classes.conf" class="page">cups++classes.conf</a></li>
-<li><strong class="activepage">cups++cupsd.conf</strong></li>
-<li><a href="./cups%2B%2Bprinters.conf.html" title="cups++printers.conf" class="page">cups++printers.conf</a></li>
+<li><a href="./cups++classes.conf.html" title="cups++classes.conf" class="page">cups++classes.conf</a></li>
+<li><b>cups++cupsd.conf</b></li>
+<li><a href="./cups++printers.conf.html" title="cups++printers.conf" class="page">cups++printers.conf</a></li>
 </ul>
+</li>
 <li><a href="../dhclient.conf.html" title="dhclient.conf" class="page">dhclient.conf</a></li>
 <li><a href="../dhcpd.conf.html" title="dhcpd.conf" class="page">dhcpd.conf</a></li>
 <li><a href="../ethers.html" title="ethers" class="page">ethers</a></li>
@@ -85,7 +100,7 @@
 <li><a href="../hosts.deny.html" title="hosts.deny" class="page">hosts.deny</a></li>
 <li><a href="../hosts.lpd.html" title="hosts.lpd" class="page">hosts.lpd</a></li>
 <li><a href="../inetd.conf.html" title="inetd.conf" class="page">inetd.conf</a></li>
-<li><a href="../init.d%2B%2BScript.html" title="init.d++Script" class="page">init.d++Script</a></li>
+<li><a href="../init.d++Script.html" title="init.d++Script" class="page">init.d++Script</a></li>
 <li><a href="../inittab.html" title="inittab" class="page">inittab</a></li>
 <li><a href="../interfaces.html" title="interfaces" class="page">interfaces</a></li>
 <li><a href="../lilo.conf.html" title="lilo.conf" class="page">lilo.conf</a></li>
@@ -97,21 +112,22 @@
 <li><a href="../passwd.html" title="passwd" class="page">passwd</a></li>
 <li><a href="../protocols.html" title="protocols" class="page">protocols</a></li>
 <li><a href="../resolv.conf.html" title="resolv.conf" class="page">resolv.conf</a></li>
-<li><a href="../security%2B%2Blimits.conf.html" title="security++limits.conf" class="page">security++limits.conf</a></li>
+<li><a href="../security++limits.conf.html" title="security++limits.conf" class="page">security++limits.conf</a></li>
 <li><a href="../services.html" title="services" class="page">services</a></li>
 <li><a href="../shadow.html" title="shadow" class="page">shadow</a></li>
 <li><a href="../smb.conf.html" title="smb.conf" class="page">smb.conf</a></li>
 <li><a href="../ssh.html" title="ssh" class="page">ssh</a></li>
 <li><a href="../sudoers.html" title="sudoers" class="page">sudoers</a></li>
-<li><a href="../sysconfig%2B%2Bclock.html" title="sysconfig++clock" class="page">sysconfig++clock</a></li>
+<li><a href="../sysconfig++clock.html" title="sysconfig++clock" class="page">sysconfig++clock</a></li>
 <li><a href="../syslog.conf.html" title="syslog.conf" class="page">syslog.conf</a></li>
-<li><a href="../systemd%2B%2Bsystem%2B%2Bmy.typ.html" title="systemd++system++my.typ" class="page">systemd++system++my.typ</a></li>
-<li><a href="../udev%2B%2Brules.d%2B%2B99-myrule.html" title="udev++rules.d++99-myrule" class="page">udev++rules.d++99-myrule</a></li>
-<li><a href="../udev%2B%2Budev.conf.html" title="udev++udev.conf" class="page">udev++udev.conf</a></li>
-<li><a href="../X11%2B%2Bxdm.html" title="X11++xdm" class="page">X11++xdm</a></li>
+<li><a href="../systemd++system++my.typ.html" title="systemd++system++my.typ" class="page">systemd++system++my.typ</a></li>
+<li><a href="../udev++rules.d++99-myrule.html" title="udev++rules.d++99-myrule" class="page">udev++rules.d++99-myrule</a></li>
+<li><a href="../udev++udev.conf.html" title="udev++udev.conf" class="page">udev++udev.conf</a></li>
+<li><a href="../X11++xdm.html" title="X11++xdm" class="page">X11++xdm</a></li>
 <li><a href="../xinetd.conf.html" title="xinetd.conf" class="page">xinetd.conf</a></li>
 <li><a href="../Xorg.conf.html" title="Xorg.conf" class="page">Xorg.conf</a></li>
 </ul>
+</li>
 <li><a href="../../lib.html" title="lib" class="page">lib</a></li>
 <li><a href="../../proc.html" title="proc" class="page">proc</a></li>
 <li><a href="../../sbin.html" title="sbin" class="page">sbin</a></li>
@@ -119,6 +135,7 @@
 <li><a href="../../usr.html" title="usr" class="page">usr</a></li>
 <li><a href="../../var.html" title="var" class="page">var</a></li>
 </ul>
+</li>
 <li><a href="../../../Filterprogramme.html" title="Filterprogramme" class="page">Filterprogramme</a></li>
 <li><a href="../../../git_Vesionskontrolle.html" title="git Vesionskontrolle" class="page">git Vesionskontrolle</a></li>
 <li><a href="../../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen" class="page">Hardware und Systeminformationen</a></li>
@@ -139,26 +156,33 @@
 <li><a href="../../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Dienstag 27 September 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>cups++cupsd.conf <a name='Linux Wissen:FHS:etc:cups:cups++cupsd.conf'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Dienstag 27 September 2011
 </p>
 
 <p>
-/<em>etc/cups/cupsd.conf</em><br>
+/<i>etc/cups/cupsd.conf</i><br>
 <ul>
 <li>Konfigurationsdatei des Druckerserver </li>
-<li>nach dem Editieren dieser Dateien muss der Drucker-Server mit <strong>service cups restart </strong>neu gestartet werden </li>
+<li>nach dem Editieren dieser Dateien muss der Drucker-Server mit <b>service cups restart </b>neu gestartet werden </li>
 </ul>
 Linux Wissen:Drucken<br>
-+++<br>
++++
 </p>
 <pre>
 LogLevel				warn
@@ -176,22 +200,22 @@ BrowseLocalProtocols 	cups
 DefaultAuthType		 Basic
 
 &lt;Location /printers&gt;
-        Order Deny,Allow
-        Deny from all
-        Allow from 127.0.0.1
-        Allow from 192.168.123.0/24
+		Order Deny,Allow
+		Deny from all
+		Allow from 127.0.0.1
+		Allow from 192.168.123.0/24
 &lt;/Location&gt;
 
 &lt;Location /printers/newlp&gt;
-        Order allow,deny
-        Allow from 127.0.0.1
-        Allow from 192.168.123.0/24
-        Deny from 192.168.123.45
-        &lt;/Location&gt;
+		Order allow,deny
+		Allow from 127.0.0.1
+		Allow from 192.168.123.0/24
+		Deny from 192.168.123.45
+		&lt;/Location&gt;
 
 &lt;Policy default&gt;
   &lt;Limit Create-Job Print-Job Print-URI Validate-Job&gt;
-    Order deny,allow
+	Order deny,allow
   &lt;/Limit&gt;
 &lt;/Policy&gt;
 
@@ -201,47 +225,47 @@ DefaultPolicy 		default
 <p>
 +++<br>
 <ul>
-<li>Diese Datei kann auch über das Cups Web Interface<em> localhost:631  </em>editiert werden</li>
-<li>Innerhalb einer &lt;<em>Location  Name&gt; &lt;/Location&gt; Klasse</em> können Eigenschaften für die spezifizierte HTTP- oder andere Resource festgelegt werden</li>
+<li>Diese Datei kann auch über das Cups Web Interface<i> localhost:631  </i>editiert werden</li>
+<li>Innerhalb einer &lt;<i>Location  Name&gt; &lt;/Location&gt; Klasse</i> können Eigenschaften für die spezifizierte HTTP- oder andere Resource festgelegt werden</li>
 </ul>
 <div style='padding-left: 30pt'>
-<em>Order	→ </em>spezifizieren der Standard Zugriffskontrolle<br>
+<i>Order	→ </i>spezifizieren der Standard Zugriffskontrolle
 </div>
 <div style='padding-left: 60pt'>
-<em>allow,deny</em> → verweigere Zugriffe, danach prüfe den <em>Allow </em>Direktive und dann die <em>Deny </em>Direktive<br>
-<em>deny,allow </em>→ erlaube Zugriffe, danache prüfe die <em>Deny</em>  Direktive und dann die <em>Allow</em> Direktive	 <br>
+<i>allow,deny</i> → verweigere Zugriffe, danach prüfe den <i>Allow </i>Direktive und dann die <i>Deny </i>Direktive<br>
+<i>deny,allow </i>→ erlaube Zugriffe, danache prüfe die <i>Deny</i>  Direktive und dann die <i>Allow</i> Direktive	 
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<em>Allow |Deny</em> → angeben eines Hostnamens, einer IP-Adresse oder Netzwerkes, denen es erlaubt|verboten ist denen der Zugriff zum Cups Server gestattet ist<br>
+<i>Allow |Deny</i> → angeben eines Hostnamens, einer IP-Adresse oder Netzwerkes, denen es erlaubt|verboten ist denen der Zugriff zum Cups Server gestattet ist
 </div>
 <div style='padding-left: 60pt'>
-<em>from all</em><br>
-<em>from none</em><br>
-<em>from 192.128.1.11</em><br>
-<em>from 192.128.1.0/24</em><br>
-<em>from 192.128.1.0/255.255.255.0</em><br>
-<em>from 192.128.1.*</em><br>
-<em>from 6D4E:1234:D76F9:2987:FF23</em><br>
-<em>from *.firma.site</em><br>
+<i>from all</i><br>
+<i>from none</i><br>
+<i>from 192.128.1.11</i><br>
+<i>from 192.128.1.0/24</i><br>
+<i>from 192.128.1.0/255.255.255.0</i><br>
+<i>from 192.128.1.*</i><br>
+<i>from 6D4E:1234:D76F9:2987:FF23</i><br>
+<i>from *.firma.site</i>
 </div>
 </p>
 
 <p>
 <div style='padding-left: 60pt'>
-<em>from @LOCAL</em><br>
+<i>from @LOCAL</i>
 </div>
 </p>
 
 <p>
 <ul>
-<li>Innerhalb einer <em>&lt;Policy Name&gt; &lt;/Policy&gt; Klasse </em> können IPP ZugangsbeschränkungsLimits festgelegt werden</li>
+<li>Innerhalb einer <i>&lt;Policy Name&gt; &lt;/Policy&gt; Klasse </i> können IPP ZugangsbeschränkungsLimits festgelegt werden
 <ul>
-<li>innerhalb einer <em>&lt;Limit Name&gt; &lt;/Limit&gt; </em>können verschiedenen Limit-Subklassen definiert werden  </li>
+<li>innerhalb einer <i>&lt;Limit Name&gt; &lt;/Limit&gt; </i>können verschiedenen Limit-Subklassen definiert werden  </li>
 <li>(mehr steht in der CUPS Online Hilfe <a href="http://localhost:631/help/" title="http://localhost:631/help/" class="http">http://localhost:631/help/</a> )</li>
-</ul>
+</ul></li>
 </ul>
 </p>
 
@@ -250,131 +274,151 @@ DefaultPolicy 		default
 <li>weitere Direktiven:</li>
 </ul>
 <div style='padding-left: 30pt'>
-<em>ErrorLog </em>→ wo sollen Fehler geloggt<br>
+<i>ErrorLog </i>→ wo sollen Fehler geloggt
 </div>
 <div style='padding-left: 90pt'>
-→ Standard ist /<em>var/log/cups/error_log</em><br>
+→ Standard ist /<i>var/log/cups/error_log</i>
 </div>
 <div style='padding-left: 60pt'>
-<em>Path</em> → Pfad zur Logdatei <br>
-<em>syslog </em>→ an den Syslog Daemon senden (<br>
+<i>Path</i> → Pfad zur Logdatei <br>
+<i>syslog </i>→ an den Syslog Daemon senden (
 </div>
-Linux Wissen:Systemprotokollierung)<br>
+Linux Wissen:Systemprotokollierung)
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>LogLevel → </em>Log-Level-Tiefe für das <em>ErrorLog</em><br>
+<i>LogLevel → </i>Log-Level-Tiefe für das <i>ErrorLog</i>
 </div>
 <div style='padding-left: 90pt'>
-→ Standrard ist warn<br>
+→ Standrard ist warn
 </div>
 <div style='padding-left: 60pt'>
-<em>none|emerg|alert|cirt|error|warn|notice|info|debug|debug2</em><br>
+<i>none|emerg|alert|cirt|error|warn|notice|info|debug|debug2</i>
 </div>
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>SystemGroup </em>→ Spezifizieren der Systemadministartionsgruppe der es erlaubt ist, sich am cups Daemon zu authentifiezieren<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>Listen </em>→ angeben einer Netzwerkadresse oder eines Ports oder Sockets auf dem es dem Cups Daemon erlaubt ist auf Verbindungen zu horchen<br>
+<i>SystemGroup </i>→ Spezifizieren der Systemadministartionsgruppe der es erlaubt ist, sich am cups Daemon zu authentifiezieren
 </div>
 </p>
 
+<p>
+<div style='padding-left: 30pt'>
+<i>Listen </i>→ angeben einer Netzwerkadresse oder eines Ports oder Sockets auf dem es dem Cups Daemon erlaubt ist auf Verbindungen zu horchen
+</div>
+</p>
+
+<br>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>Browsing </em>→ diese Direktive kontorlliert ob der Drucker im Dateimanager sichtbar ist<br>
+<i>Browsing </i>→ diese Direktive kontorlliert ob der Drucker im Dateimanager sichtbar ist
 </div>
 <div style='padding-left: 60pt'>
-<em>on|off</em><br>
+<i>on|off</i>
 </div>
 </p>
-		
+
 <p>
 <div style='padding-left: 30pt'>
-<em>BrowseDeny|BrowseAllow </em>→ spezifizieren des Netzwerkes oder Systems von dem Browsing Pakete verboten|erlaubt sind<br>
+<i>BrowseDeny|BrowseAllow </i>→ spezifizieren des Netzwerkes oder Systems von dem Browsing Pakete verboten|erlaubt sind
 </div>
 <div style='padding-left: 180pt'>
-  <em>→ </em>es sollte ausserdem die Direktive <em>BrowseOrder</em> definiert sein<br>
+  <i>→ </i>es sollte ausserdem die Direktive <i>BrowseOrder</i> definiert sein
 </div>
 <div style='padding-left: 60pt'>
-<em>from all</em><br>
-<em>from none</em><br>
-<em>from 192.128.1.11</em><br>
-<em>from 192.128.1.0/24</em><br>
-<em>from *.firma.site</em><br>
+<i>from all</i><br>
+<i>from none</i><br>
+<i>from 192.128.1.11</i><br>
+<i>from 192.128.1.0/24</i><br>
+<i>from *.firma.site</i>
 </div>
 </p>
 
 <p>
 <div style='padding-left: 60pt'>
-<em>from @LOCAL</em><br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<em>BrowseOrder</em> → steuert die allow, deny Reihenfolge<br>
-</div>
-<div style='padding-left: 60pt'>
-<em>allow,deny </em>→ standardmäßige alle Browse Anfragen verbieten, dann überprüfe <em>BrowseAllow </em>und <em>BrowseDeny </em>Direktive<br>
-<em>deny,allow</em> → standardmäßig alle erlauben, dann überprüfe <em>BrowsDeny </em>und dann <em>BrowseAllow</em> Direktive<br>
+<i>from @LOCAL</i>
 </div>
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>BrowseProtocols </em>→ angeben des genutzten Protocolls, für das Druckerbrowsing im Dateibrowser<br>
+<i>BrowseOrder</i> → steuert die allow, deny Reihenfolge
 </div>
 <div style='padding-left: 60pt'>
-                       → diese Direktive muss geändert werden, wenn zum Beispiel <em>LDAP (missing link) </em>oder <em>Samba </em>(missing Link) verwendet wird<br>
+<i>allow,deny </i>→ standardmäßige alle Browse Anfragen verbieten, dann überprüfe <i>BrowseAllow </i>und <i>BrowseDeny </i>Direktive<br>
+<i>deny,allow</i> → standardmäßig alle erlauben, dann überprüfe <i>BrowsDeny </i>und dann <i>BrowseAllow</i> Direktive
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<i>BrowseProtocols </i>→ angeben des genutzten Protocolls, für das Druckerbrowsing im Dateibrowser
+</div>
+<div style='padding-left: 210pt'>
+   → diese Direktive muss geändert werden, wenn zum Beispiel <i>LDAP (missing link) </i>oder <i>Samba </i>(missing Link) verwendet wird
 </div>
 <div style='padding-left: 150pt'>
-→ meherere Protokolle können durch Leerzeichen angegegeben werden<br>
+→ meherere Protokolle können durch Leerzeichen angegegeben werden
 </div>
 <div style='padding-left: 60pt'>
-<em>all|none|cups|dnssd|ldap|lpd|slp|smb</em><br>
+<i>all|none|cups|dnssd|ldap|lpd|slp|smb</i>
 </div>
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>DefautltAuthType </em>→ Type der IPP Authentifizierung die einen Nutzernamen erfordern<br>
+<i>DefautltAuthType </i>→ Type der IPP Authentifizierung die einen Nutzernamen erfordern
 </div>
 <div style='padding-left: 60pt'>
-<em>Basic|BasicDigist|Digest|Negotiate</em><br>
+<i>Basic|BasicDigist|Digest|Negotiate</i>
 </div>
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<em>DefaultPolicy </em>→ welche Policy soll gelten, wenn für diesen Drucker bisher keine Policy gefunden wurde<br>
+<i>DefaultPolicy </i>→ welche Policy soll gelten, wenn für diesen Drucker bisher keine Policy gefunden wurde
 </div>
 </p>
+
+<p>
+weiter Direktiven werden in der Hilfe <a href="http://localhost:631/help/ref-cupsd-conf.html" title="http://localhost:631/help/ref-cupsd-conf.html" class="http">http://localhost:631/help/ref-cupsd-conf.html</a> beschrieben
+</p>
+
+
+	</div>
+
+	<br />
+
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../../../Drucken.html'>Linux Wissen:Drucken</a>
+
+		
+		
+
+		<a href='../../etc.html'>Linux Wissen:FHS:etc</a>
+
+		
+		
+
+		<a href='../cups.html'>Linux Wissen:FHS:etc:cups</a>
+
+		
+		
+
+		<a href='./cups++printers.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a>
+
+		<br /><br />
+
+	</div>
+
 	
-<p>
-weiter Direktiven werden in der Hilfe <a href="http://localhost:631/help/ref-cupsd-conf.html" title="http://localhost:631/help/ref-cupsd-conf.html" class="http">http://localhost:631/help/ref-cupsd-conf.html</a> beschrieben<br>
-</p>
 
+</div>
 
-
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../../../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../../etc.html'>Linux Wissen:FHS:etc</a></li>						<a href='./cups%2B%2Bprinters.conf.html'>Linux Wissen:FHS:etc:cups:cups++printers.conf</a></li>
-				<br><br>
-
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+</body>
 </html>

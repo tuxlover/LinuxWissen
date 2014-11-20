@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-09-06T17:08:51+02:00
+
+====== Sets ======
+Created Freitag 06 September 2013
+
+* Sets sind Mengen und können mit Mengenoperationen umghen
+* ungeordnete objekte
+* Immutable 
+* iterierbar
+
+=== Definieren von Sets ===
+* Sets können definiert werden durch den Set-Operator 
+	**set('foobar') **
+* durch Angabe des Inhalts und Zuweisung einer Variablen in geschweiften Klammern {}
+	**M = {1,2,3}**
+
+
+=== Mengenoperation ===
+* Auf Sets können die üblichen Mengenoperaationne ausgeführt werden
+ [[Python:Operationen:Sets Operationen]]
+
+//Beispiel://
+'''
+In [1]: M={"1","2","3"}
+
+In [2]: N= set("12a")
+
+In [3]: type(M)
+Out[3]: set
+'''
+

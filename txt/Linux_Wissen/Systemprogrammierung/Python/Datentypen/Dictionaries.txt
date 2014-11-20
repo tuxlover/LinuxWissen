@@ -14,24 +14,76 @@ Created Dienstag 25 Dezember 2012
 * //Werte (Values) //werden durch ihre Schlüsselwerte (//Keys//) indiziert und referenziert
 * mutable
 * Iterierbar
+* sind nicht sortiert (Es gibt aber eine Möglichkeit sie zu sortieren -> siehe dictionary operationen)
 
 [[Python:Operationen:Dictionary Operationen]]
 
+=== Definieren von Dictionaries ===
+
 * Dictionaries werden erstellt durch:
-	//dict = {'key':'value',...}//
+	**dict = {'key':'value',...}**
+* durch referenzierung eines neuen Keys 
+	**dict['key'] = '<Value>'**
+* durch Benutzen des **dict** Schlüsselwortes
+	**dict(<Key1>='<Value1>',...)**
 * //{}// ist ein leeres Dictionary
+
 
 //Beispiel://
 '''
-residents = { "Puffins" : 105, "Sloth" : 104, "Python" : 106 }
+In [13]: rucksack = {}
 
-In [63]: residents = { "Puffins" : 105, "Sloth" : 104, "Python" : 106 }
+In [14]: rucksack['torches'] = 3
 
-In [64]: residents['Sloth']
-Out[64]: 104
+In [15]: rucksack['healing potions'] = 1
+
+In [16]: rucksack['mana potions'] = 0
+
+In [17]: rucksack['letters'] = 'King Emanuel'
+
+In [18]: rucksack
+Out[18]: 
+{'healing potions': 1,
+ 'letters': 'King Emanuel',
+ 'mana potions': 0,
+ 'torches': 3}
 '''
+
+
+=== Nested Dictionaries ===
+* erlaubt das einbetten von Dictionaries i n Dictionaries oder von anderen Objekten in Dictionaries
+* dadruch können komplexe Datenstrukturen erschaffen werden
+
+//Beispiel://
+'''
+In [19]: infos = {'employer':{'name':'horst','surname':'kasten'},'vector':[1,0,0],'zahl':42}
+
+In [20]: infos
+Out[20]: 
+{'employer': {'name': 'horst', 'surname': 'kasten'},
+ 'vector': [1, 0, 0],
+ 'zahl': 42}
+'''
+
 
 
 === Werte anfügen ===
 * neue Werte können zu einem bestehenden Dictionary wie folgt hinzgefügt werden
 //dict['Wert'] = Value//
+
+**zip(<Liste der Keys>,<Liste der Werte>)**
+→ Mit zip können zwei Listen gleicher Länge zu einem Dictionary zusammengefügt werden
+
+=== Missing Keys ===
+* beim Abfragen von Werten die es nicht gibt, wird eine Fehlermeldung herusgegeben
+* Operationen auf Missing Keys können nicht ausgeführt werden
+* Python kann aber überprüfen ob eine Schlüssel vorhanden ist
+
+**if not 'key' in <Dict>:**
+	**print ('no value for key')**
+
+
+== Tipp: ==
+
+== Verwenden von solchen Anfragen in Schleifen um Fehler und für den Nutzer nichtssagende Fehlermeldungen. ==
+

@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Befehle</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Befehle</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Befehle</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='../Vim_Editor.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./python-jedi.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -70,122 +84,132 @@
 <li><a href="../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
 <li><a href="../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
 <li><a href="../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
-<li><a href="../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
+<li><a href="../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a>
 <ul>
-<li><strong class="activepage">Befehle</strong></li>
+<li><b>Befehle</b></li>
+<li><a href="./python-jedi.html" title="python-jedi" class="page">python-jedi</a></li>
 <li><a href="./Set.html" title="Set" class="page">Set</a></li>
 </ul>
+</li>
 <li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
+</ul></li>
 </ul>
-</ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Freitag 15 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Befehle <a name='Linux Wissen:Vim Editor:Befehle'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Freitag 15 April 2011
 </p>
 
 <p>
-<strong>Strg+g </strong>→ die aktuelle Zeile und den Status der Datei anzeigen<br>
-<strong>Strg+f </strong>→ eine Seite vorwärts Blättern<br>
-<strong>Strg+b </strong>→ eine Seite zurück Blättern <br>
+<b>Strg+g </b>→ die aktuelle Zeile und den Status der Datei anzeigen<br>
+<b>Strg+f </b>→ eine Seite vorwärts Blättern<br>
+<b>Strg+b </b>→ eine Seite zurück Blättern 
 </p>
 
 <p>
-<strong>j,k</strong> → runter, hoch navigieren<br>
-<strong>l,h </strong>→ rechts und links navigieren<br>
-<strong>gg</strong> → zum Anfang der Datei springen<br>
-<strong>G </strong>→ zum Ende der Datei springen<br>
-<strong>&lt;n&gt;g </strong>→ zur Zeile n springen<br>
-<strong>w </strong>→ zum Anfang des nächsten Wortes springen<br>
-<strong>e </strong>→ zum Ende des nächsten Wortes springen<br>
-<strong>0 </strong>→ zum Anfang der Zeile springen<br>
-<strong>$</strong> → zum Ende der Zeile springen<br>
+<b>j,k</b> → runter, hoch navigieren<br>
+<b>l,h </b>→ rechts und links navigieren<br>
+<b>gg</b> → zum Anfang der Datei springen<br>
+<b>G </b>→ zum Ende der Datei springen<br>
+<b>&lt;n&gt;g </b>→ zur Zeile n springen<br>
+<b>w </b>→ zum Anfang des nächsten Wortes springen<br>
+<b>e </b>→ zum Ende des nächsten Wortes springen<br>
+<b>0 </b>→ zum Anfang der Zeile springen<br>
+<b>$</b> → zum Ende der Zeile springen
 </p>
 
 <p>
-<strong>:q </strong>→ beenden ohne den Puffer zu speichern<br>
-<strong>:w </strong>→ Speichern<br>
-<strong>:q! </strong>→ Beenden und alle Änderungen verwerfen<br>
-<strong>:wq </strong>→ Speichern und beenden<br>
+<b>:q </b>→ beenden ohne den Puffer zu speichern<br>
+<b>:w </b>→ Speichern<br>
+<b>:q! </b>→ Beenden und alle Änderungen verwerfen<br>
+<b>:wq </b>→ Speichern und beenden
 </p>
 
 <p>
-<strong>v </strong>→ den Text "visuell hervorgehoben markieren"<br>
-<strong>y&lt;n&gt;&lt;Bewegung&gt; </strong>→ n Zeichen Bewegungn Text in den Zwischenspeicher kopieren<br>
-<strong>v &lt;Bewegung&gt; :w &lt;Dateiname&gt; </strong>→ den durch Bewegung markierten Text in Datei speichern <br>
+<b>v </b>→ den Text "visuell hervorgehoben markieren"<br>
+<b>y&lt;n&gt;&lt;Bewegung&gt; </b>→ n Zeichen Bewegungn Text in den Zwischenspeicher kopieren<br>
+<b>v &lt;Bewegung&gt; :w &lt;Dateiname&gt; </b>→ den durch Bewegung markierten Text in Datei speichern 
 </p>
 
 <p>
-<strong>&lt;n&gt;x </strong>→ löschen von n Zeichen<br>
-<strong>dd </strong>→ eine Zeile löschen und in den Zwischenspeicher ablegen<br>
-<strong>&lt;Bewegung&gt;&lt;n&gt;d </strong>→ löschen von n Zeichen Bewegung<br>
+<b>&lt;n&gt;x </b>→ löschen von n Zeichen<br>
+<b>dd </b>→ eine Zeile löschen und in den Zwischenspeicher ablegen<br>
+<b>&lt;Bewegung&gt;&lt;n&gt;d </b>→ löschen von n Zeichen Bewegung
 </p>
 
 <p>
-<strong>p </strong>→ den kopierten oder gelöschten Text einfügen<br>
+<b>p </b>→ den kopierten oder gelöschten Text einfügen
 </p>
 
 <p>
-<strong>i </strong>→ Text einfügen<br>
-<strong>a </strong>→ Text anfügen<br>
-<strong>A </strong>→ Text am Ende der Zeile einfügen<br>
+<b>i </b>→ Text einfügen<br>
+<b>a </b>→ Text anfügen<br>
+<b>A </b>→ Text am Ende der Zeile einfügen
 </p>
 
 <p>
-<strong>c </strong>→ Änderungen durchführen<br>
-<strong>ce </strong>→ Änderungen bis zum Ende eines Wortes durchführen<br>
+<b>c </b>→ Änderungen durchführen<br>
+<b>ce </b>→ Änderungen bis zum Ende eines Wortes durchführen
 </p>
 
 <p>
-<strong>R </strong>→ Text ersetzen<br>
-<strong>r &lt;Neuzeichen&gt; </strong>→ das Zeichen unter dem Cursor durch &lt;Neuzeichen&gt; ersetzen<br>
+<b>R </b>→ Text ersetzen<br>
+<b>r &lt;Neuzeichen&gt; </b>→ das Zeichen unter dem Cursor durch &lt;Neuzeichen&gt; ersetzen
 </p>
 
 <p>
-<strong>u</strong> → mache die vorherige Aktion rückgängig<br>
-<strong>U </strong>→ mache alle Aktionen rückgängig<br>
-<strong>Strg+r </strong>→ mache das Rückgängig machen <br>
+<b>u</b> → mache die vorherige Aktion rückgängig<br>
+<b>U </b>→ mache alle Aktionen rückgängig<br>
+<b>Strg+r </b>→ mache das Rückgängig machen 
 </p>
 
 <p>
-<strong>/&lt;Ausdruck&gt; </strong>→ Ausdruck im Text suchen, mit <strong>n </strong>zum nächsten gefundenen Ausdruck springen<br>
-<strong>% </strong>→ eine korrespondierende Klammer finden<br>
-<strong>:s/alt/neu</strong> <strong>&lt;Enter&gt;</strong> → einmal Wort alt durch das Wort neu in der aktuellen Zeile ersetzen<br>
-<strong>:s/alt/neu/g </strong>→ alle Wörter alt duch das Wort neu in der aktuellen Zeile ersetzen<br>
-<strong>:%s/alt/neu/gc</strong> → alle Wörter alt duch das Wort neu in gesamten Text ersetzen und dabei um Bestätigung fragen<br>
+<b>/&lt;Ausdruck&gt; </b>→ Ausdruck im Text suchen, mit <b>n </b>zum nächsten gefundenen Ausdruck springen<br>
+<b>% </b>→ eine korrespondierende Klammer finden<br>
+<b>:s/alt/neu</b> <b>&lt;Enter&gt;</b> → einmal Wort alt durch das Wort neu in der aktuellen Zeile ersetzen<br>
+<b>:s/alt/neu/g </b>→ alle Wörter alt duch das Wort neu in der aktuellen Zeile ersetzen<br>
+<b>:%s/alt/neu/gc</b> → alle Wörter alt duch das Wort neu in gesamten Text ersetzen und dabei um Bestätigung fragen
 </p>
 
 <p>
-<strong>:Sex → </strong>den S Explorer aufrufen<br>
+<b>:Sex → </b>den S Explorer aufrufen
 </p>
 
 <p>
-:<strong>tabnext </strong>→ durch Tabs vorwärts springen (erfordert -p)<br>
-<strong>:tabprevious → </strong>durch Tabs rückwärts springen (erfordert -p)<br>
+:<b>tabnext </b>→ durch Tabs vorwärts springen (erfordert -p)<br>
+<b>:tabprevious → </b>durch Tabs rückwärts springen (erfordert -p)
 </p>
-  
+
 <p>
-<strong>:! → </strong>Ein externes Programm aufrufen<br>
-    → mit % kann man sich auf das aktuelle Dokument als StdtIn beziehen<br>
+<b>:! → </b>Ein externes Programm aufrufen<br>
+<div style='padding-left: 30pt'>
+→ mit % kann man sich auf das aktuelle Dokument als StdtIn beziehen
+</div>
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<i>No backlinks to this page.</i>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

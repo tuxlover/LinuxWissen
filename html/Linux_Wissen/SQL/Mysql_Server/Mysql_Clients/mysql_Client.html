@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>mysql Client</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>mysql Client</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>mysql Client</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./mysqladmin.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./mysql_Client/DESCRIBE.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -66,7 +80,7 @@
 <li><a href="../../../root.html" title="root" class="page">root</a></li>
 <li><a href="../../../Shell.html" title="Shell" class="page">Shell</a></li>
 <li><a href="../../../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
-<li><a href="../../../SQL.html" title="SQL" class="page">SQL</a></li>
+<li><a href="../../../SQL.html" title="SQL" class="page">SQL</a>
 <ul>
 <li><a href="../../Bedingungen.html" title="Bedingungen" class="page">Bedingungen</a></li>
 <li><a href="../../Constraints.html" title="Constraints" class="page">Constraints</a></li>
@@ -74,16 +88,16 @@
 <li><a href="../../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="../../Design.html" title="Design" class="page">Design</a></li>
 <li><a href="../../Index.html" title="Index" class="page">Index</a></li>
-<li><a href="../../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln" class="page">Intigritätsregeln</a></li>
+<li><a href="../../Intigritätsregeln.html" title="Intigritätsregeln" class="page">Intigritätsregeln</a></li>
 <li><a href="../../Joins.html" title="Joins" class="page">Joins</a></li>
-<li><a href="../../Mysql_Server.html" title="Mysql Server" class="page">Mysql Server</a></li>
+<li><a href="../../Mysql_Server.html" title="Mysql Server" class="page">Mysql Server</a>
 <ul>
 <li><a href="../Anweisungen.html" title="Anweisungen" class="page">Anweisungen</a></li>
 <li><a href="../INFORMATION_SCHEMA.html" title="INFORMATION SCHEMA" class="page">INFORMATION SCHEMA</a></li>
-<li><a href="../Mysql_Clients.html" title="Mysql Clients" class="page">Mysql Clients</a></li>
+<li><a href="../Mysql_Clients.html" title="Mysql Clients" class="page">Mysql Clients</a>
 <ul>
 <li><a href="./mysqladmin.html" title="mysqladmin" class="page">mysqladmin</a></li>
-<li><strong class="activepage">mysql Client</strong></li>
+<li><b>mysql Client</b>
 <ul>
 <li><a href="./mysql_Client/DESCRIBE.html" title="DESCRIBE" class="page">DESCRIBE</a></li>
 <li><a href="./mysql_Client/EXPLAIN.html" title="EXPLAIN" class="page">EXPLAIN</a></li>
@@ -94,147 +108,162 @@
 <li><a href="./mysql_Client/SOURCE.html" title="SOURCE" class="page">SOURCE</a></li>
 <li><a href="./mysql_Client/USE.html" title="USE" class="page">USE</a></li>
 </ul>
+</li>
 <li><a href="./mysqldump.html" title="mysqldump" class="page">mysqldump</a></li>
 <li><a href="./mysqlimport.html" title="mysqlimport" class="page">mysqlimport</a></li>
 <li><a href="./mysqlshow.html" title="mysqlshow" class="page">mysqlshow</a></li>
 <li><a href="./Prompt.html" title="Prompt" class="page">Prompt</a></li>
 <li><a href="./Server_SQL_Modes.html" title="Server SQL Modes" class="page">Server SQL Modes</a></li>
 </ul>
+</li>
 <li><a href="../Mysql_Daemon.html" title="Mysql Daemon" class="page">Mysql Daemon</a></li>
 <li><a href="../Upgrade_des_Servers.html" title="Upgrade des Servers" class="page">Upgrade des Servers</a></li>
 </ul>
+</li>
 <li><a href="../../Normalisierung.html" title="Normalisierung" class="page">Normalisierung</a></li>
 <li><a href="../../Schemaanweisungen.html" title="Schemaanweisungen" class="page">Schemaanweisungen</a></li>
 <li><a href="../../UML.html" title="UML" class="page">UML</a></li>
 <li><a href="../../Views.html" title="Views" class="page">Views</a></li>
 </ul>
+</li>
 <li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
 <li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
 <li><a href="../../../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
 <li><a href="../../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Mittwoch 09 November 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>mysql Client <a name='Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Mittwoch 09 November 2011
 </p>
 
 <h5>Hilfe erhalten</h5>
+
 <p>
-<strong>help contents </strong><br>
+<b>help contents </b><br>
 → im Mysql Client zeigt die MySQL Referenz<br>
-<strong>help &lt;Keywords&gt;</strong><br>
-→ Hilfe zu einem Bestimmten <br>
+<b>help &lt;Keywords&gt;</b><br>
+→ Hilfe zu einem Bestimmten 
 </p>
 
 <p>
-<em>Beispiel:</em><br>
-<code>help GRANT</code><br>
+<i>Beispiel:</i><br>
+<tt>help GRANT</tt>
 </p>
 
 <h5>Nicht interaktiver Modus</h5>
+
 <p>
-<strong>mysql &lt; &lt;Schema.sql&gt;</strong><br>
+<b>mysql &lt; &lt;Schema.sql&gt;</b><br>
 → einlesen und ausführen von DDL und DML Anweisungen aus einer .sql Datei<br>
-→ wie <strong>SOURCE</strong><br>
+→ wie <b>SOURCE</b><br>
 → es dürfen nie zwei argument hintereinander verwendet werden<br>
-<a href="../../Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen" class="page">Linux Wissen:SQL:Datenanweisungen</a><br>
+<a href="../../Datenanweisungen.html" title="Linux Wissen:SQL:Datenanweisungen" class="page">Linux Wissen:SQL:Datenanweisungen</a>
 </p>
 
 <h5>Trick:</h5>
+
 <p>
-<strong>mysql &lt;|xargs cat &lt;Schema1.sql&gt; &lt;Schema2.sql&gt; ...</strong><br>
+<b>mysql &lt;|xargs cat &lt;Schema1.sql&gt; &lt;Schema2.sql&gt; ...</b>
 </p>
 
 <h5>die häufigsten Optionen</h5>
+
 <p>
-<strong>mysql [&lt;Database&gt;]</strong><br>
-<strong>-u |--user &lt;Nutzer&gt; </strong><br>
-→ mit diesem &lt;Nutzer&gt; an der Datenbank anmelden<br>
+<b>mysql [&lt;Database&gt;]</b><br>
+<b>-u |--user &lt;Nutzer&gt; </b><br>
+→ mit diesem &lt;Nutzer&gt; an der Datenbank anmelden
 </p>
 
 <p>
--<strong>p </strong><br>
+-<b>p </b><br>
 → frage nach einem Passwort<br>
-→ empfohlene Authentisierungsmethode !!!<br>
+→ empfohlene Authentisierungsmethode !!!
 </p>
 
 <p>
-<strong>--password  &lt;Password&gt;</strong><br>
+<b>--password  &lt;Password&gt;</b><br>
 → Passwort wird im Klartext übergeben<br>
-→ nicht empfohlen <br>
+→ nicht empfohlen 
 </p>
 
 <p>
-<strong>-D|--database &lt;Name&gt;</strong><br>
-→ beim Verbinden mit dem Server die Datenbank &lt;Name&gt; verwenden<br>
+<b>-D|--database &lt;Name&gt;</b><br>
+→ beim Verbinden mit dem Server die Datenbank &lt;Name&gt; verwenden
 </p>
 
 <p>
-<strong>-A </strong><br>
-→ Tab Complettion deaktivieren<br>
+<b>-A </b><br>
+→ Tab Complettion deaktivieren
 </p>
 
 <p>
-<strong>-E |--vertical</strong><br>
+<b>-E |--vertical</b><br>
 → vertikale Ausgabe der einzelnen Spalten<br>
-→ sinnvoll wenn zu erwarten ist, dass die Ausgabe nicht in das Terminal passt<br>
+→ sinnvoll wenn zu erwarten ist, dass die Ausgabe nicht in das Terminal passt
 </p>
 
 <p>
-<strong>-e </strong><br>
+<b>-e </b><br>
 → Statement direkt von der Kommandozeile absetzen<br>
-→ meherer Statements werden durch ein ; getrennt<br>
+→ meherer Statements werden durch ein ; getrennt
 </p>
 
 <p>
-<strong>--compress</strong><br>
-→ komprimiert Daten die zwischen Client und Server ausgetauscht werden<br>
+<b>--compress</b><br>
+→ komprimiert Daten die zwischen Client und Server ausgetauscht werden
 </p>
 
 <p>
-<strong>--default-character-set=Charstet</strong><br>
+<b>--default-character-set=Charstet</b><br>
 → Angeben des vom Client verwendeten Zeichensatzes<br>
-→ verwenden von <strong>SHOW CHARSET; </strong>um sich alle mögliche Zeichensätze anzeigen zu lassen<br>
-→ verwenden von<strong> SET CHARSET &lt;CHARSET&gt; </strong>um den Zeichensatz nachträglich festzulegen<br>
+→ verwenden von <b>SHOW CHARSET; </b>um sich alle mögliche Zeichensätze anzeigen zu lassen<br>
+→ verwenden von<b> SET CHARSET &lt;CHARSET&gt; </b>um den Zeichensatz nachträglich festzulegen
 </p>
 
 <p>
-<strong>--protocol [=TCP|=Socket] </strong><br>
+<b>--protocol [=TCP|=Socket] </b><br>
 → Festlegen des benutzten Protocols<br>
-→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird<br>
+→ Socket ist Standard und wird immer verwendet wenn nichts anderes angegeben wird
 </p>
 
 <p>
-<strong>--port=N</strong><br>
-→  festelgen des Ports über den eine Verbindung erfolgt<br>
+<b>--port=N</b><br>
+→  festelgen des Ports über den eine Verbindung erfolgt
 </p>
 
 <p>
-<strong>-S|--socket =&lt;PATH&gt; </strong><br>
+<b>-S|--socket =&lt;PATH&gt; </b><br>
 → festlegen des Pfades zum Socket<br>
-→ /<em>tmp/mysqld.sock</em> wird als Standardsocket verwendet<br>
-→ nur mit <em>--protocol=Socket</em><br>
+→ /<i>tmp/mysqld.sock</i> wird als Standardsocket verwendet<br>
+→ nur mit <i>--protocol=Socket</i>
 </p>
 
 <p>
-<strong>-h|--host [IP|FQDN|localhost]</strong><br>
+<b>-h|--host [IP|FQDN|localhost]</b><br>
 → festlegen des Serverdaemons zu dem eine Verbindung hergestellt werden soll<br>
-→ Standard ist <em>localhost</em><br>
-→ falls ein FQDN verwendet wird, muss (missing link FQDN) DNS konfiguriert sein<br>
+→ Standard ist <i>localhost</i><br>
+→ falls ein FQDN verwendet wird, muss (missing link FQDN) DNS konfiguriert sein
 </p>
 
 <p>
-<em>Beispiel:</em><br>
+<i>Beispiel:</i><br>
 öffnen der Datenbank <u>world</u> als Datenbanknutzer <u>root</u> auf dem Host <u>Magrathea</u> mit Passwortabfrage<br>
-<code>mysql -u root -p -h Magrathea world</code><br>
+<tt>mysql -u root -p -h Magrathea world</tt>
 </p>
 
 <p>
@@ -243,7 +272,7 @@ Created Mittwoch 09 November 2011<br>
 <li><u>Wird keine der Optionen --protocol, --port, -h oder -S verwendet, so wird ein Socket benutzt und ein Default</u></li>
 </ul>
 <div style='padding-left: 30pt'>
-<u>Wert für den Socket benutzt</u><br>
+<u>Wert für den Socket benutzt</u>
 </div>
 </p>
 
@@ -252,12 +281,12 @@ Created Mittwoch 09 November 2011<br>
 <li><u>Wird die Option --port verwendet, nicht aber --protocol und --host, wird ein Socket benutzt und ein Default Wert</u></li>
 </ul>
 <div style='padding-left: 30pt'>
-<u>für den Socket benutzt.</u><br>
+<u>für den Socket benutzt.</u>
 </div>
 </p>
 
 <p>
-•<u>Wird als Protocol TCP angegeben, erfolgt die Verbindung über TCP/IP</u><br>
+•<u>Wird als Protocol TCP angegeben, erfolgt die Verbindung über TCP/IP</u>
 </p>
 
 <p>
@@ -267,81 +296,91 @@ Created Mittwoch 09 November 2011<br>
 </p>
 
 <h5>mysql ssl Optionen</h5>
+
 <p>
-<strong>--ssl-ca=&lt;Datei&gt;</strong><br>
+<b>--ssl-ca=&lt;Datei&gt;</b><br>
 → Pfad zu vetrauenswürdigen SSL Certifcate Authorities<br>
-<strong>--ssl-capath=&lt;DIR&gt;</strong><br>
+<b>--ssl-capath=&lt;DIR&gt;</b><br>
 →  festelgen des Verzeichnisses für Dateien, die SSL Zertifikate im PEM Format enthalten<br>
-<strong>--ssl-cert=&lt;Datei&gt;</strong><br>
+<b>--ssl-cert=&lt;Datei&gt;</b><br>
 → Pfad zur Datei mit dem SSL Zertifikat<br>
-<strong>--ssl-cipher-list=&lt;sha1:aes...&gt; </strong><br>
+<b>--ssl-cipher-list=&lt;sha1:aes...&gt; </b><br>
 → Liste der Zulässigen Verschlüsselungsalgorithmen<br>
-<strong>--ssl-key=&lt;Datei&gt;</strong><br>
+<b>--ssl-key=&lt;Datei&gt;</b><br>
 → Angeben er SSL Schlüsseldatei<br>
-<strong>--ssl-verify-server-cert</strong><br>
+<b>--ssl-verify-server-cert</b><br>
 → Server Certifcates name ist derselbe wie der Hostname<br>
 <u>→ Schutz vor man in the middle</u><br>
-<strong>(missing link ssl)</strong><br>
+<b>(missing link ssl)</b>
 </p>
 
 <h5>mysql Client Befehle</h5>
+
 <p>
-<strong>; </strong>→ ein Statement beenden<br>
-<strong>\h</strong> → auflisten der Clientbefehle<br>
-<strong>\c </strong>→ Statement verwerfen und neuen mysql-Prompt setzen<br>
-<strong>\q </strong>→ <strong>mysql Client </strong>verlassen<br>
-<strong>\g | ; </strong>→ Befehlsterminator<br>
-<strong>\G → </strong>Befehlsterminator mit vertikaler Ausgabe<br>
-<strong>\T &lt;LOGFILE&gt;</strong>→ Logging einschalten und nach &lt;LOGFILE&gt; schreiben<br>
-<strong>\! &lt;Shell-Befehl&gt; </strong>→ Ausführen eines Shell Befehls im mysql Client<br>
+<b>; </b>→ ein Statement beenden<br>
+<b>\h</b> → auflisten der Clientbefehle<br>
+<b>\c </b>→ Statement verwerfen und neuen mysql-Prompt setzen<br>
+<b>\q </b>→ <b>mysql Client </b>verlassen<br>
+<b>\g | ; </b>→ Befehlsterminator<br>
+<b>\G → </b>Befehlsterminator mit vertikaler Ausgabe<br>
+<b>\T &lt;LOGFILE&gt;</b>→ Logging einschalten und nach &lt;LOGFILE&gt; schreiben<br>
+<b>\! &lt;Shell-Befehl&gt; </b>→ Ausführen eines Shell Befehls im mysql Client
 </p>
 
 <h5>mysql Client Statements</h5>
+
 <p>
 <a href="./mysql_Client/DESCRIBE.html" title="+DESCRIBE" class="page">+DESCRIBE</a><br>
 <a href="./mysql_Client/SOURCE.html" title="+SOURCE" class="page">+SOURCE</a><br>
 <a href="./mysql_Client/USE.html" title="+USE" class="page">+USE</a><br>
 <a href="./mysql_Client/SHOW.html" title="+SHOW" class="page">+SHOW</a><br>
-<a href="./mysql_Client/EXPLAIN.html" title="+EXPLAIN" class="page">+EXPLAIN</a><br>
+<a href="./mysql_Client/EXPLAIN.html" title="+EXPLAIN" class="page">+EXPLAIN</a>
 </p>
 
 <h5>mysql Funktionen</h5>
+
 <p>
-<a href="./mysql_Client/Funktionen.html" title="+Funktionen" class="page">+Funktionen</a><br>
+<a href="./mysql_Client/Funktionen.html" title="+Funktionen" class="page">+Funktionen</a>
 </p>
 
 <h5>Der Mysql Prompt</h5>
+
 <p>
 <ul>
 <li>In Mysql gibt es verschiedene Prompts die Indikator für verschiedene Stati sind</li>
 <li>gibt Informationen über den Status eines Statements</li>
 </ul>
-<a href="./Prompt.html" title="Prompt" class="page">Prompt</a><br>
+<a href="./Prompt.html" title="Prompt" class="page">Prompt</a>
 </p>
 
 <h5>Server SQL Modes</h5>
+
 <p>
 <ul>
 <li>setzt das Verhalten des SQL Servers zur Laufzeit</li>
 <li>darunter fallen bestimmte Such- und Sortieralgorihtmen</li>
-<li>wird durch setzen der Server variable <em>sql_mode gesetz</em></li>
+<li>wird durch setzen der Server variable <i>sql_mode gesetz</i></li>
 </ul>
-<code>SET sql_mode='&lt;Mode&gt;';</code><br>
-<a href="./Server_SQL_Modes.html" title="Server SQL Modes" class="page">Server SQL Modes</a><br>
+<tt>SET sql_mode='&lt;Mode&gt;';</tt><br>
+<a href="./Server_SQL_Modes.html" title="Server SQL Modes" class="page">Server SQL Modes</a>
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<i>No backlinks to this page.</i>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Mysql_Clients.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

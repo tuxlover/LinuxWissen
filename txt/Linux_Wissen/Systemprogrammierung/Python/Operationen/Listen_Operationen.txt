@@ -9,6 +9,8 @@ Created Montag 21 Januar 2013
 * auf Listen kann das sogenannte Slicing angwendet werden
 [[Python:Datentypen:Listen und Listenobjekte]]
 
+
+
 === Slicing ===
 * aus einem Listenobjekt wird eine  bestimmter Teil herausgeschnittet (//engl. slicing//)
 **list[<N>:<M>: <S> ]**
@@ -163,9 +165,76 @@ PythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPythonPy
 * Matrizen werden druch Listen von Listen erstellt.
 
 //Beispiel://
-In [2]: E = [[1,0,0],[0,1,0],[0,0,1]]
+''In [2]: E =[[ 1,0,0],[0,1,0],[0,0,1]]''
 
-In [3]: print(E)
-[[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+''In [3]: print(E)''
+''[1, 0, 0], [0, 1, 0], [0, 0, 1]''
 
 Zugriff auf eine Zeile erfolgt dann über **M[<Index>] **bzw. auf eine einzelnes Element durch dopplete Indizierung. **M[i][j]**
+Zugriff auf die Spalten der Matrix erfolgt über List Comprehensions **colA = [row[<Index>] for row in M ]**
+
+//Beispiel://
+'''
+In [6]: Ein = [[1,0,0],[0,1,0],[0,0,1]]
+
+In [7]: col0 = [row[0] for row in Ein]
+
+In [8]: col0
+Out[8]: [1, 0, 0]
+'''
+
+
+=== List Comprehensions ===
+* Operationen auf Listenobjekten die ein neues Objekt erzeugen und iterativen Objekten
+* Für jedes N-te Element in der Liste von Listen führe eine bestimmte Aktion durch
+* List Comprehensions erstellen neue Objekte
+
+//Beispiele://
+
+'''
+In [12]: M = [[1,0,0],[2,7,5],[0,0,2]]
+
+In [14]: [row[2] +1 for row in  M]
+Out[14]: [1, 6, 3]
+
+In [16]: [row[0] for row in M if row[0] % 2 == 0]
+Out[16]: [2, 0]
+
+#Die Summe der Quadrate von 1 bis 10 
+In [37]: sum([x**2 for x in list(range(1,11))])
+Out[37]: 385
+'''
+
+**list(range(M,N,S))**
+→ die **range** Methode kann  mit **list()** dazu verwendet werden automatisch listen zu generieren
+→ Wobei **M **der Startwert auch negativ sein kann, 
+→ es wird bis zu **N **gezählt aber ohne **N** 
+→ die Schrittweite **S**
+
+//Beispiel://
+'''
+In [19]: list(range(50,100,5))
+Out[19]: [50, 55, 60, 65, 70, 75, 80, 85, 90, 95]
+'''
+
+
+
+**map(<Funktion> <Objekt>)**
+→ Der Map Befehl erlaubt eine Funktion auf ein Iterierbares Object auszuführen
+→ Wende die Funktion auf Iterierbare Objete an solange bis alle Elemente verbraucht sind.
+
+//Beispiel://
+
+'''
+In [5]: vect = [1,2,3]
+
+In [9]: def adiere(integer):
+   ...:     integer = integer +1
+   ...:     return integer
+   ...: 
+
+In [11]: list(map(adiere, vect))
+Out[11]: [2, 3, 4]
+'''
+
+

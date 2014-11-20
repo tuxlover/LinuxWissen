@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Prozessverwaltung</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Prozessverwaltung</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Prozessverwaltung</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./Partitionen_und_Dateisysteme/Swap.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./Prozessverwaltung/Cgroups.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="./Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="./Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -62,10 +76,12 @@
 <li><a href="./Networking.html" title="Networking" class="page">Networking</a></li>
 <li><a href="./Paketverwaltung.html" title="Paketverwaltung" class="page">Paketverwaltung</a></li>
 <li><a href="./Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme" class="page">Partitionen und Dateisysteme</a></li>
-<li><strong class="activepage">Prozessverwaltung</strong></li>
+<li><b>Prozessverwaltung</b>
 <ul>
 <li><a href="./Prozessverwaltung/Cgroups.html" title="Cgroups" class="page">Cgroups</a></li>
+<li><a href="./Prozessverwaltung/fuser.html" title="fuser" class="page">fuser</a></li>
 <li><a href="./Prozessverwaltung/kill.html" title="kill" class="page">kill</a></li>
+<li><a href="./Prozessverwaltung/lsof.html" title="lsof" class="page">lsof</a></li>
 <li><a href="./Prozessverwaltung/Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste" class="page">Magic Sys-Abf Taste</a></li>
 <li><a href="./Prozessverwaltung/Nice_Werte_kontrollieren.html" title="Nice Werte kontrollieren" class="page">Nice Werte kontrollieren</a></li>
 <li><a href="./Prozessverwaltung/ps.html" title="ps" class="page">ps</a></li>
@@ -73,6 +89,7 @@
 <li><a href="./Prozessverwaltung/top.html" title="top" class="page">top</a></li>
 <li><a href="./Prozessverwaltung/ulimit.html" title="ulimit" class="page">ulimit</a></li>
 </ul>
+</li>
 <li><a href="./root.html" title="root" class="page">root</a></li>
 <li><a href="./Shell.html" title="Shell" class="page">Shell</a></li>
 <li><a href="./Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
@@ -83,16 +100,23 @@
 <li><a href="./Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="./Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="./X11.html" title="X11" class="page">X11</a></li>
-<li><a href="./Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="./Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="./zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Donnerstag 21 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Prozessverwaltung <a name='Linux Wissen:Prozessverwaltung'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Donnerstag 21 April 2011
 </p>
 
 <p>
@@ -104,45 +128,50 @@ Pseudoprozess (0) → ruft den Init Prozess (1) auf → Startet weitere Prozesse
 </p>
 
 <p>
-<strong>&lt;Strg+c&gt; </strong>→ Sendet Signal 15 SIGTERM an Prozess der in der aktuellen Shell im Vordergrund läuft<br>
-<strong>&lt;Strg+z&gt; </strong>→ Sendet Signal 20 SIGTSTP an Prozess der in der aktuellen Shell im Vordergrund läuft<br>
+<b>&lt;Strg+c&gt; </b>→ Sendet Signal 15 SIGTERM an Prozess der in der aktuellen Shell im Vordergrund läuft<br>
+<b>&lt;Strg+z&gt; </b>→ Sendet Signal 20 SIGTSTP an Prozess der in der aktuellen Shell im Vordergrund läuft
 </p>
 
 <h2>Jobs</h2>
+
 <p>
-<a href="./Shell/Jobkontrolle.html" title="Linux Wissen:Shell:Jobkontrolle" class="page">Linux Wissen:Shell:Jobkontrolle</a><br>
+<a href="./Shell/Jobkontrolle.html" title="Linux Wissen:Shell:Jobkontrolle" class="page">Linux Wissen:Shell:Jobkontrolle</a>
 </p>
 
 <h2>Kernelthreads</h2>
+
 <p>
 <ul>
 <li>Kindprozesse des Kernels die Hardwarenahe Aufgaben übernehmen</li>
 <li>werden zusammen mit dem Kernel im Ring 0 ausgeführt</li>
-<li>meistens in [] bei der Nutzung von <strong>ps ( </strong><a href="./Prozessverwaltung/ps.html" title="Linux Wissen:Prozessverwaltung:ps" class="page">Linux Wissen:Prozessverwaltung:ps</a> )</li>
+<li>meistens in [] bei der Nutzung von <b>ps ( </b><a href="./Prozessverwaltung/ps.html" title="Linux Wissen:Prozessverwaltung:ps" class="page">Linux Wissen:Prozessverwaltung:ps</a> )</li>
 <li>verbrauchen in der Prozesstabelle keinen zusätzlichen Speicher</li>
 <li>können keinen SIGKILL oder SIGTERM geschickt bekommen</li>
 </ul>
 </p>
 
 <p>
-<u>Hinweis:</u> <strong>ps -A u|awk '{ if($5 == 0){print }}' </strong><u>zeigt alle Kernel Threads an</u><br>
+<u>Hinweis:</u> <b>ps -A u|awk '{ if($5 == 0){print }}' </b><u>zeigt alle Kernel Threads an</u>
 </p>
 
+<br>
 
 <h2>Prozesszustände</h2>
+
 <p>
-<em>runnable </em>→ Prozess wartet auf Ausführung<br>
-<em>operating → </em>Prozess wird gerade von der CPU bearbeitet<br>
-<em>sleeping → </em>Prozess wartet auf einen anderen Prozess <em>→ runnable</em>, <em>sleeping</em><br>
-<em>end </em>→ Prozess wird beendet<br>
-<em>stopped</em> → Prozess wurde mit Signal 20 gestoppt<br>
+<i>runnable </i>→ Prozess wartet auf Ausführung<br>
+<i>operating → </i>Prozess wird gerade von der CPU bearbeitet<br>
+<i>sleeping → </i>Prozess wartet auf einen anderen Prozess <i>→ runnable</i>, <i>sleeping</i><br>
+<i>end </i>→ Prozess wird beendet<br>
+<i>stopped</i> → Prozess wurde mit Signal 20 gestoppt
 </p>
 
 <p>
-<u>Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vordergrund laufenden Prozesses.</u><br>
+<u>Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vordergrund laufenden Prozesses.</u>
 </p>
 
 <h2>Zombies</h2>
+
 <p>
 <ul>
 <li>Prozess ohne Elternprozess</li>
@@ -150,34 +179,37 @@ Pseudoprozess (0) → ruft den Init Prozess (1) auf → Startet weitere Prozesse
 </p>
 
 <h2>Prozessinformationen einholen</h2>
+
 <p>
 <ul>
-<li><strong>ps</strong></li>
-<li><strong>pstree</strong> </li>
-<li><strong>pgrep</strong></li>
+<li><b>ps</b></li>
+<li><b>pstree</b> </li>
+<li><b>pgrep</b></li>
 </ul>
-<a href="./Prozessverwaltung/ps.html" title="Linux Wissen:Prozessverwaltung:ps" class="page">Linux Wissen:Prozessverwaltung:ps</a><br>
+<a href="./Prozessverwaltung/ps.html" title="Linux Wissen:Prozessverwaltung:ps" class="page">Linux Wissen:Prozessverwaltung:ps</a>
 </p>
 
 <p>
 <ul>
-<li><strong>top</strong></li>
+<li><b>top</b></li>
 </ul>
-<a href="./Prozessverwaltung/top.html" title="Linux Wissen:Prozessverwaltung:top" class="page">Linux Wissen:Prozessverwaltung:top</a><br>
+<a href="./Prozessverwaltung/top.html" title="Linux Wissen:Prozessverwaltung:top" class="page">Linux Wissen:Prozessverwaltung:top</a>
 </p>
 
 <h2>Signale</h2>
+
 <p>
 <ul>
-<li><strong>kill</strong></li>
-<li><strong>killall</strong></li>
-<li><strong>nohup</strong></li>
+<li><b>kill</b></li>
+<li><b>killall</b></li>
+<li><b>nohup</b></li>
 </ul>
 <a href="./Prozessverwaltung/kill.html" title="Linux Wissen:Prozessverwaltung:kill" class="page">Linux Wissen:Prozessverwaltung:kill</a><br>
-<a href="./Systemprogrammierung/Shellscripting/Rezepte/Daemon.html" title="Systemprogrammierung:Shellscripting:Rezepte:Daemon" class="page">Systemprogrammierung:Shellscripting:Rezepte:Daemon</a><br>
+<a href="./Systemprogrammierung/Shellscripting/Rezepte/Daemon.html" title="Systemprogrammierung:Shellscripting:Rezepte:Daemon" class="page">Systemprogrammierung:Shellscripting:Rezepte:Daemon</a>
 </p>
 
 <h2>Prozessprioritäten</h2>
+
 <p>
 <ul>
 <li>jeder Prozess wird mit einem nice Wert gestartet</li>
@@ -185,73 +217,92 @@ Pseudoprozess (0) → ruft den Init Prozess (1) auf → Startet weitere Prozesse
 <li>je kleiner die Zahl desto höher die Priorität  </li>
 <li>init hat immer den nice Wet 0</li>
 <li>neue Prozesse wenn nicht anders angegen werden mit nice Wert +10 gestartet</li>
-<li><strong>nice</strong></li>
-<li><strong>renice</strong></li>
+<li><b>nice</b></li>
+<li><b>renice</b></li>
 </ul>
-<a href="./Prozessverwaltung/Nice_Werte_kontrollieren.html" title="Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren" class="page">Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren</a><br>
+<a href="./Prozessverwaltung/Nice_Werte_kontrollieren.html" title="Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren" class="page">Linux Wissen:Prozessverwaltung:Nice Werte kontrollieren</a>
 </p>
 
 <h2>Prozessresourcen</h2>
+
 <p>
 <ul>
 <li>Jeder Prozess belegt Resourcen auf dem Rechner:</li>
 </ul>
 <div style='padding-left: 150pt'>
 + den Zustand eines Programms im Speicher nach einem Absturz  (Größe des Coredumps)<br>
-+ ein bereitgestelltes Datensegment in dem Objekte abgelegt werden (Größe des Heaps)<br>
++ ein bereitgestelltes Datensegment in dem Objekte abgelegt werden (Größe des Heaps)
 </div>
-<div style='padding-left: 90pt'>
-               + Anzahl von offenen und verwendeten Dateien während der Ausführung<br>
+<div style='padding-left: 180pt'>
+   + Anzahl von offenen und verwendeten Dateien während der Ausführung
 </div>
-<div style='padding-left: 30pt'>
-                              +  Anzahl der zusätzliche aufgerufnenen Kindprozesse<br>
-</div>
-                                      + eine Anzahl Bytes im Arbeitsspeicher<br>
-<div style='padding-left: 90pt'>
-               + eine Anzahl an Zeit auf der CPU <br>
+<div style='padding-left: 150pt'>
+   +  Anzahl der zusätzliche aufgerufnenen Kindprozesse<br>
+   + eine Anzahl Bytes im Arbeitsspeicher<br>
+   + eine Anzahl an Zeit auf der CPU 
 </div>
 <ul style='padding-left: 30pt'>
-<li><strong>ulimit</strong></li>
+<li><b>ulimit</b></li>
 </ul>
-<a href="./Prozessverwaltung/ulimit.html" title="Linux Wissen:Prozessverwaltung:ulimit" class="page">Linux Wissen:Prozessverwaltung:ulimit</a><br>
+<a href="./Prozessverwaltung/ulimit.html" title="Linux Wissen:Prozessverwaltung:ulimit" class="page">Linux Wissen:Prozessverwaltung:ulimit</a>
 </p>
 
 <p>
-/<em>etc/security/limits.conf</em><br>
-<a href="./FHS/etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf" class="page">Linux Wissen:FHS:etc:security++limits.conf</a><br>
+/<i>etc/security/limits.conf</i><br>
+<a href="./FHS/etc/security++limits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf" class="page">Linux Wissen:FHS:etc:security++limits.conf</a>
+</p>
+
+<p>
+<ul>
+<li><b>fuser</b></li>
+</ul>
+<a href="./Prozessverwaltung/fuser.html" title="+fuser" class="page">+fuser</a>
+</p>
+
+<p>
+<ul>
+<li><b>losof</b></li>
+</ul>
+<a href="./Prozessverwaltung/lsof.html" title="+lsof" class="page">+lsof</a>
 </p>
 
 <h3>CGroups</h3>
+
 <p>
 <ul>
 <li>Prozesse können zu hierarschichen Bäumen gruppiert werden, diese werden als CGroups bezeichnet</li>
-<li>Diese Gruppen können mit einem <em>Label</em> versehen werden</li>
+<li>Diese Gruppen können mit einem <i>Label</i> versehen werden</li>
 <li>Für jede Gruppe kann bestimmt werden, wieviel Systemresourcen Sie benutzen darf</li>
 </ul>
-<a href="./Prozessverwaltung/Cgroups.html" title="+Cgroups" class="page">+Cgroups</a><br>
+<a href="./Prozessverwaltung/Cgroups.html" title="+Cgroups" class="page">+Cgroups</a>
 </p>
 
 <h2>Magic Sys-Abf Taste</h2>
+
 <p>
 <ul>
 <li>ermöglicht das direkte Signalen und SysCalls an den Rechner</li>
 </ul>
-<a href="./Prozessverwaltung/Magic_Sys-Abf_Taste.html" title="Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste" class="page">Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste</a><br>
+<a href="./Prozessverwaltung/Magic_Sys-Abf_Taste.html" title="Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste" class="page">Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste</a>
 </p>
 
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='./SQL/Mysql_Server/Mysql_Clients/mysqladmin.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysqladmin</a></li>
-				<br><br>
+	</div>
 
-									<b>Attachments:</b>
-					<table>						<tr><td><a href='./Prozessverwaltung/Cgroups'>Cgroups</a></td><td>&nbsp;</td><td>4.10kb</td></tr>					</table>
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<br />
+
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='./SQL/Mysql_Server/Mysql_Clients/mysqladmin.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysqladmin</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

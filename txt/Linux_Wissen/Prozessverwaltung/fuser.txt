@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2014-11-20T17:39:03+01:00
+
+====== fuser ======
+Created Donnerstag 20 November 2014
+
+* Zum aufspüren welcher Dateien momentan von welchem Prozess geöffnet sind
+* Da in Linux alles eine Datei ist, können auch Ports und sockets überwacht werden
+
+**fuser  [-v] | [-k] | -i  [-m] <Parameter>**
+* ohne angabe weitere Optionen werden nur die Prozesse aufgelistet die von einer bestimmten Datei gerade in Verwendung sind
+* Parameter kann eine // Datei// , //Verzeichnis// oder //Socket//, //FIFO// sein
+**-v **→ verbose
+**-k **→ Prozess beenden (Signal 15) welches die Datei verwendet 
+**-i **→ in  Verwendung mit **-k **vorher nachfragen ob ein Befehl wirklich ausgeführt werden soll
+**-m **→ alle Dateien auf einem bestimmten Namen werden auf den 
+
+**fuser -l**
+* auflisten aller Signale die mit **kill **oder **-k ** erhalten können
+
+
+//Beispiele://
+Verbose Informationen anzeigen welcher Prozess im aktullen Verzeichnis 
+''fuser -v .''
+
+Aufisten welcher Prozess gerade eine bestimmte Datei benutzt
+''fuser -v /var/log/messages''
+			BEN.        PID ZUGR.  BEFEHL
+/var/log/messages:   root        731 F.... rsyslogd
+
+auflisten der Prozesse die auf einem Socket lauschen
+''fuser -n 8118 tcp ''
+					 BEN.        PID ZUGR.  BEFEHL
+8118/tcp:            privoxy    3933 F.... privoxy

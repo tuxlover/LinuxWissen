@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Man Pages</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Man Pages</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Man Pages</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='../Hilfe_erhalten.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='../Lokalisierung.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -56,10 +70,11 @@
 <li><a href="../Filterprogramme.html" title="Filterprogramme" class="page">Filterprogramme</a></li>
 <li><a href="../git_Vesionskontrolle.html" title="git Vesionskontrolle" class="page">git Vesionskontrolle</a></li>
 <li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen" class="page">Hardware und Systeminformationen</a></li>
-<li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten" class="page">Hilfe erhalten</a></li>
+<li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten" class="page">Hilfe erhalten</a>
 <ul>
-<li><strong class="activepage">Man Pages</strong></li>
+<li><b>Man Pages</b></li>
 </ul>
+</li>
 <li><a href="../Lokalisierung.html" title="Lokalisierung" class="page">Lokalisierung</a></li>
 <li><a href="../Monitoring.html" title="Monitoring" class="page">Monitoring</a></li>
 <li><a href="../Networking.html" title="Networking" class="page">Networking</a></li>
@@ -76,16 +91,23 @@
 <li><a href="../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Freitag 15 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Man Pages <a name='Linux Wissen:Hilfe erhalten:Man Pages'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Freitag 15 April 2011
 </p>
 
 <p>
@@ -97,36 +119,44 @@ Created Freitag 15 April 2011<br>
 </p>
 
 <p>
-<strong>man &lt;n&gt; &lt;Befehl&gt;</strong> → ruft die n-te Handbuchseite zum &lt;Befehl&gt; auf<br>
-                                     → wird n nicht mit angegben wird die erste aufgerufen die gefunden wird<br>
+<b>man &lt;n&gt; &lt;Befehl&gt;</b> → ruft die n-te Handbuchseite zum &lt;Befehl&gt; auf<br>
+<div style='padding-left: 270pt'>
+ → wird n nicht mit angegben wird die erste aufgerufen die gefunden wird
+</div>
 </p>
 
 <p>
-<strong>man -a &lt;Befehl&gt; </strong>→ zeigt alle Handbuchseiten von Befehl nacheinander an<br>
-<strong>man -l &lt;Mandatei&gt; </strong>→  &lt;Mandatei&gt; lesen die nicht der Datenbank steht<br>
-<strong>man -H&lt;Browser&gt; &lt;Befehl&gt; </strong>→ die Manpage von &lt;Befehl&gt; im angegebenen &lt;Browser&gt; lesen<br>
+<b>man -a &lt;Befehl&gt; </b>→ zeigt alle Handbuchseiten von Befehl nacheinander an<br>
+<b>man -l &lt;Mandatei&gt; </b>→  &lt;Mandatei&gt; lesen die nicht der Datenbank steht<br>
+<b>man -H&lt;Browser&gt; &lt;Befehl&gt; </b>→ die Manpage von &lt;Befehl&gt; im angegebenen &lt;Browser&gt; lesen
 </p>
 
 <p>
-<u>Hinweis: </u><strong> ./configure --prefix=~/test &amp;&amp; make &amp;&amp; make install </strong>durchführen um anschließend erst einmal <br>
-               die manpage mittels -l zu lesen.<br>
+<u>Hinweis: </u><b> ./configure --prefix=~/test &amp;&amp; make &amp;&amp; make install </b>durchführen um anschließend erst einmal <br>
+<div style='padding-left: 90pt'>
+   die manpage mittels -l zu lesen.
+</div>
 </p>
 
 <p>
-<strong>groff </strong>→ Programm das zum Betrachten von Manpages verwendet werden kann<br>
+<b>groff </b>→ Programm das zum Betrachten von Manpages verwendet werden kann
 </p>
 
 <h2>MANPATH</h2>
+
 <p>
 MANPATH → Umgebungsvariable ( <a href="../Shell/Bash/Shell_Varibalen_und_die_Umgebung.html" title="Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung" class="page">Linux Wissen:Shell:Bash:Shell Varibalen und die Umgebung</a> ) die Pfade durch :<br>
-                     getrennt zu den Manpages angeben<br>
+<div style='padding-left: 150pt'>
+ getrennt zu den Manpages angeben
+</div>
 </p>
 
 <p>
-<strong>manpath </strong>→ Programm zum Konfigurieren falls MANPATH nicht gesetzt ist<br>
+<b>manpath </b>→ Programm zum Konfigurieren falls MANPATH nicht gesetzt ist
 </p>
 
 <h2>Aufbau einer Man Page</h2>
+
 <p>
 NAME (Kommandoname mit knapper Kurzbeschreibung)<br>
 SYNOPSIS (Beschreibung der Befehlssyntax)<br>
@@ -138,19 +168,20 @@ EXAMPLES (Beispiele zur Anwendung)<br>
 SEE ALSO (Querverweise auf verwandte Themen)<br>
 DIAGNOSTICS (Fehlermeldung und Interpretationen des Befehls)<br>
 COPYRIGHT (Autoren des Programms)<br>
-BUGS (Fehler die aus dem Ansatz der Implementation des Programms folgen)<br>
+BUGS (Fehler die aus dem Ansatz der Implementation des Programms folgen)
 </p>
 
 <p>
-<strong>fetter Text</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;l<code>iterale Angaben wie in der Anzeige</code><br>
-<em>kursiver Text			</em>ersetzen durch passendes Argument<br>
+<b>fetter Text</b>		l<tt>iterale Angaben wie in der Anzeige</tt><br>
+<i>kursiver Text			</i>ersetzen durch passendes Argument<br>
 [-abc]				Ein oder mehrere Argumente innerhalb der [ ] sind optional<br>
 -a|-b   				Optionen die durch | abgegrenzt sind, können nicht zusammen benutzt werden<br>
 Argument... 			Argument kann wiederholt auftreten<br>
-[Ausdruck]			gesamter Ausdruck innerhalb der [ ] kann wiederholt angegeben werden<br>
+[Ausdruck]			gesamter Ausdruck innerhalb der [ ] kann wiederholt angegeben werden
 </p>
 
 <h2>Themengebiete der Man Pages</h2>
+
 <p>
 <ul>
 <li>Jede Man Page ist in Themenabschnitte 1 bis 9 und n unterteilt</li>
@@ -159,124 +190,141 @@ Argument... 			Argument kann wiederholt auftreten<br>
 </p>
 
 <p>
-1 Benutzerkommandos die jeder Benutzer ausführen darf<br>
+1 Benutzerkommandos die jeder Benutzer ausführen darf
 </p>
 
 <p>
-2 Systemcalls die an der Kernel geschickt werden können<br>
+2 Systemcalls die an der Kernel geschickt werden können
 </p>
 
 <p>
-3 Funktionen der Programmiersprache C<br>
+3 Funktionen der Programmiersprache C
 </p>
 
 <p>
-4 Gerätedateien und Treiber<br>
+4 Gerätedateien und Treiber
 </p>
 
 <p>
-5 Konfigurationsdateien und Dateiformate<br>
+5 Konfigurationsdateien und Dateiformate
 </p>
 
 <p>
-6 Spiele<br>
+6 Spiele
 </p>
 
 <p>
-7 Makros und Konventionen (ASCII Tabelle)<br>
+7 Makros und Konventionen (ASCII Tabelle)
 </p>
 
 <p>
-8 Programme die nur von root benutzt werden sollen<br>
+8 Programme die nur von root benutzt werden sollen
 </p>
 
 <p>
-9 Funktionen des Kernels<br>
+9 Funktionen des Kernels
 </p>
 
 <p>
-n neue Befehle<br>
+n neue Befehle
 </p>
 
 <h2>Navigieren in Man Pages</h2>
+
 <p>
 <ul>
-<li><strong>less </strong> wird als Pager für man Standardmäßig verwendet</li>
+<li><b>less </b> wird als Pager für man Standardmäßig verwendet</li>
 </ul>
-    <a href="../Dateien_verwalten/Dateien_betrachten.html" title="Linux Wissen:Dateien verwalten:Dateien betrachten" class="page">Linux Wissen:Dateien verwalten:Dateien betrachten</a><br>
+<div style='padding-left: 30pt'>
+<a href="../Dateien_verwalten/Dateien_betrachten.html" title="Linux Wissen:Dateien verwalten:Dateien betrachten" class="page">Linux Wissen:Dateien verwalten:Dateien betrachten</a>
+</div>
 </p>
 
 <p>
 Rückwärts suchen: /<br>
-Vorwärts suchen: ?<br>
+Vorwärts suchen: ?
 </p>
 
 <h4>Space</h4>
+
 <p>
-→ Seite vorblättern<br>
+→ Seite vorblättern
 </p>
 
 <h4>Alt+v</h4>
+
 <p>
-→ eine Seite zurückblättern<br>
+→ eine Seite zurückblättern
 </p>
 
 <h4>gg</h4>
+
 <p>
-→ zum Anfang der Manpage springen<br>
+→ zum Anfang der Manpage springen
 </p>
 
 <h4>g&lt;N&gt;</h4>
+
 <p>
-→ zur Zeile N in der Manpage springen<br>
+→ zur Zeile N in der Manpage springen
 </p>
 
 <h4>GG</h4>
+
 <p>
-→ zum Ende des Textes springen<br>
+→ zum Ende des Textes springen
 </p>
 
 <h4>q</h4>
+
 <p>
-→ verlassen der Man Page<br>
+→ verlassen der Man Page
 </p>
 
 <h4>h</h4>
+
 <p>
-→ kurze Hilfe zu less<br>
+→ kurze Hilfe zu less
 </p>
 
 <h2>Man Pages nach Namen durchsuchen</h2>
+
 <p>
-<strong>whatis &lt;Stichwort&gt;</strong><br>
+<b>whatis &lt;Stichwort&gt;</b>
 </p>
 
 <h2>Man Pages in Kurzbeschreibung durchsuchen</h2>
+
 <p>
-<strong>apropos &lt;Stichwort&gt;</strong><br>
-<strong>man -k &lt;Stichwort&gt;</strong><br>
+<b>apropos &lt;Stichwort&gt;</b><br>
+<b>man -k &lt;Stichwort&gt;</b>
 </p>
 
 <h2>Man Pages in Yelp|KDE</h2>
+
 <p>
-<code>yelp info:man</code><br>
-<code>info:man</code><br>
-→ die Manpages für man in KDE bzw. Gnome aufrufen.<br>
+<tt>yelp info:man</tt><br>
+<tt>info:man</tt><br>
+→ die Manpages für man in KDE bzw. Gnome aufrufen.
 </p>
 
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Hilfe_erhalten.html'>Linux Wissen:Hilfe erhalten</a></li>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Hilfe_erhalten.html'>Linux Wissen:Hilfe erhalten</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

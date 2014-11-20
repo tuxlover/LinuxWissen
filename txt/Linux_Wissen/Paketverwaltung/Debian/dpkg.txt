@@ -30,10 +30,19 @@ Created Montag 25 April 2011
 **-s |--status <Paket> **→ anzeigen des Status eines einzelnen Pakets
 **-L |--listfiles <Paket> **→ anzeigen der Dateien die zu <Paket gehören>
 **-S|--search <Datei> **→ zu welchem Paket gehört eine Datei
+
+**dpkg-query -> **Anzeigen von Paketen die von Debian zur Verfügung gestellt werden, Ausgabe kann formatiert werden
+**--show** → Auflisten der Pakete , kann mit **--show-format **angepasst werden
+ **--showformat **→ Ausgabe formatieren, Eine Fomratierungsangabe besteht aus angabe der einzelenen Zellen in einerm **'${Feld[;Breite]}, ....'** Array
+
  
 __Hinweis: Mit __**dpkg -l|grep ^ii.* **kann man sich installierte Pakete anzeigen lassen
 
 __Hinweis: MIt __**dpkg -l|grep ^rc.* **kann man sich Pakete anzeigen lassen von denen noch Konfigurationsdatein übrig sind. 
+
+//Beispiel://
+findet alle Pakete der Größe nach installiert
+''dpkg-query --show --showformat='${Package;-50}\t${Installed-Size} ${Status}\n' | sort -k 2 -n | grep -v deinstall''
 
 === Quellcode zu einem Paket aus dem Debianarchiv erhalten ===
 **dpkg-source -x <Paket>.dsc **→ der zu Paket passenden Quelldateien 
@@ -41,6 +50,7 @@ __Hinweis: MIt __**dpkg -l|grep ^rc.* **kann man sich Pakete anzeigen lassen von
 **debsums <Paket> **→ Überprüfen der Intigrität eines installierten Paketes
 ///var/lib/dpkg/info //
 [[Linux Wissen:FHS:var]]
+
 
 **dpkg-reconfigure <Paket> **→ eine neue Konfiguration für ein installiertes <Paket> erstellen
 **-f |--frontend **→ ein anderes Frontend definieren (**man 7 debconf **im  Paket debconf-doc)
@@ -56,4 +66,3 @@ DEBCONF_FRONTEND
 * Pakete die installiert sind, aber von keinem anderen Paket mehr benötigt werden und auch keine zusätzliche Funktionaliät anbieten.
 
 **deborphan **→ spürt Pakete auf, die verweist sind
-

@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>mysqldump</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>mysqldump</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>mysqldump</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./mysql_Client/USE.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./mysqlimport.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -66,7 +80,7 @@
 <li><a href="../../../root.html" title="root" class="page">root</a></li>
 <li><a href="../../../Shell.html" title="Shell" class="page">Shell</a></li>
 <li><a href="../../../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
-<li><a href="../../../SQL.html" title="SQL" class="page">SQL</a></li>
+<li><a href="../../../SQL.html" title="SQL" class="page">SQL</a>
 <ul>
 <li><a href="../../Bedingungen.html" title="Bedingungen" class="page">Bedingungen</a></li>
 <li><a href="../../Constraints.html" title="Constraints" class="page">Constraints</a></li>
@@ -74,46 +88,56 @@
 <li><a href="../../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="../../Design.html" title="Design" class="page">Design</a></li>
 <li><a href="../../Index.html" title="Index" class="page">Index</a></li>
-<li><a href="../../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln" class="page">Intigritätsregeln</a></li>
+<li><a href="../../Intigritätsregeln.html" title="Intigritätsregeln" class="page">Intigritätsregeln</a></li>
 <li><a href="../../Joins.html" title="Joins" class="page">Joins</a></li>
-<li><a href="../../Mysql_Server.html" title="Mysql Server" class="page">Mysql Server</a></li>
+<li><a href="../../Mysql_Server.html" title="Mysql Server" class="page">Mysql Server</a>
 <ul>
 <li><a href="../Anweisungen.html" title="Anweisungen" class="page">Anweisungen</a></li>
 <li><a href="../INFORMATION_SCHEMA.html" title="INFORMATION SCHEMA" class="page">INFORMATION SCHEMA</a></li>
-<li><a href="../Mysql_Clients.html" title="Mysql Clients" class="page">Mysql Clients</a></li>
+<li><a href="../Mysql_Clients.html" title="Mysql Clients" class="page">Mysql Clients</a>
 <ul>
 <li><a href="./mysqladmin.html" title="mysqladmin" class="page">mysqladmin</a></li>
 <li><a href="./mysql_Client.html" title="mysql Client" class="page">mysql Client</a></li>
-<li><strong class="activepage">mysqldump</strong></li>
+<li><b>mysqldump</b></li>
 <li><a href="./mysqlimport.html" title="mysqlimport" class="page">mysqlimport</a></li>
 <li><a href="./mysqlshow.html" title="mysqlshow" class="page">mysqlshow</a></li>
 <li><a href="./Prompt.html" title="Prompt" class="page">Prompt</a></li>
 <li><a href="./Server_SQL_Modes.html" title="Server SQL Modes" class="page">Server SQL Modes</a></li>
 </ul>
+</li>
 <li><a href="../Mysql_Daemon.html" title="Mysql Daemon" class="page">Mysql Daemon</a></li>
 <li><a href="../Upgrade_des_Servers.html" title="Upgrade des Servers" class="page">Upgrade des Servers</a></li>
 </ul>
+</li>
 <li><a href="../../Normalisierung.html" title="Normalisierung" class="page">Normalisierung</a></li>
 <li><a href="../../Schemaanweisungen.html" title="Schemaanweisungen" class="page">Schemaanweisungen</a></li>
 <li><a href="../../UML.html" title="UML" class="page">UML</a></li>
 <li><a href="../../Views.html" title="Views" class="page">Views</a></li>
 </ul>
+</li>
 <li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
 <li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
 <li><a href="../../../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
 <li><a href="../../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Mittwoch 28 Dezember 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>mysqldump <a name='Linux Wissen:SQL:Mysql Server:Mysql Clients:mysqldump'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Mittwoch 28 Dezember 2011
 </p>
 
 <p>
@@ -123,201 +147,202 @@ Created Mittwoch 28 Dezember 2011<br>
 <li>zur Übertragung von Daten an anedere Mysql Server</li>
 <li>Backups können mit dem SOURCE Befehl wieder eingelesen werden</li>
 </ul>
-<a href="./mysql_Client/SOURCE.html" title="mysql Client:SOURCE" class="page">mysql Client:SOURCE</a><br>
+<a href="./mysql_Client/SOURCE.html" title="mysql Client:SOURCE" class="page">mysql Client:SOURCE</a>
 </p>
 
 <p>
-<u>ACHTUNG: Mysqldump schreibt alles nach StdOut.</u><br>
+<u>ACHTUNG: Mysqldump schreibt alles nach StdOut.</u>
 </p>
 
 <p>
-<strong>mysqldump  [&lt;Optionen&gt;] &lt;Datenbank&gt; [&lt;Tabellen&gt;],...</strong><br>
+<b>mysqldump  [&lt;Optionen&gt;] &lt;Datenbank&gt; [&lt;Tabellen&gt;],...</b>
 </p>
 
 <p>
-<strong>&lt;Optionen&gt;</strong><br>
+<b>&lt;Optionen&gt;</b><br>
 <div style='padding-left: 30pt'>
-<strong>--help|-?</strong><br>
-→ Hilfe zu mysqldump anzeigen<br>
+<b>--help|-?</b><br>
+→ Hilfe zu mysqldump anzeigen
 </div>
 </p>
-	
-	 
+
+<br>
+
 <p>
 <div style='padding-left: 30pt'>
-<strong>--add-drop-table</strong><br>
+<b>--add-drop-table</b><br>
 → vor jedem CREATE &lt;TABLE&gt; STATEMENT wird ein DROP &lt;TABLE&gt; STATEMENT ausgeführt<br>
-→ um dumps zu aktualisierun und vorhanden Tabellen komplett neu zu schreiben<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--add-drop-database</strong><br>
-→ wie <strong>--add-drop-table </strong>für das CREATE &lt;DATABASE&gt; STATEMENT<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--all-databases|-A</strong><br>
-→ erstellt einen Speicheranzug aller Datenbanken und aller Tabellen<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--comments=0|1</strong><br>
-→  wenn dieser Wert 0 ist werden zusätzliche Informationen nicht im dump mit aufgenommen (Versionsnummer, Host)<br>
+→ um dumps zu aktualisierun und vorhanden Tabellen komplett neu zu schreiben
 </div>
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-→ wenn dieser Wert 1 (Standardwert ohne Angabe der Option) werden zusätzliche Informationen in den Dump geschrieben<br>
+<b>--add-drop-database</b><br>
+→ wie <b>--add-drop-table </b>für das CREATE &lt;DATABASE&gt; STATEMENT
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<strong>--skip-comments</strong><br>
-→ wie <strong>--comments=0</strong><br>
+<b>--all-databases|-A</b><br>
+→ erstellt einen Speicheranzug aller Datenbanken und aller Tabellen
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<strong>--databases |- B</strong><br>
+<b>--comments=0|1</b><br>
+→  wenn dieser Wert 0 ist werden zusätzliche Informationen nicht im dump mit aufgenommen (Versionsnummer, Host)
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+→ wenn dieser Wert 1 (Standardwert ohne Angabe der Option) werden zusätzliche Informationen in den Dump geschrieben
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>--skip-comments</b><br>
+→ wie <b>--comments=0</b>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>--databases |- B</b><br>
 → erstellen eines Speicherabzugs mehrere Datenbanken<br>
-→ Jedes Argument wird nun als Datenbankname behandelt<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--flush-logs|-F</strong><br>
-→ Synchronisieren der Logdateien des Mysql Servers auf der Festplatte bevor Speichervorgang gestartet wird<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--force|-f</strong><br>
-→ Dump auch bei Fehlern fortsetzen<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--lock-all-tables|-x</strong><br>
-→ für die Daueer des Dumps wird der Zugriff auf alle Tabellen gespeert<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--no-data|-d</strong><br>
-→ keine Datensatzinformationen schreiben, nur <code>CREATE </code>Anweisungen werden berücksichtigt<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>-p</strong><br>
-→ ein Prompt anzeigen der nach einem Passwort fragt (empfohlen)<br>
-</div>
-</p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--password=&lt;Passwort&gt;</strong><br>
-→ das Passwort in Klartext an der Befehlszeile übergeben (nicht empfohlen)<br>
+→ Jedes Argument wird nun als Datenbankname behandelt
 </div>
 </p>
 
 <p>
 <div style='padding-left: 30pt'>
-<strong>--port=N</strong><br>
-→  festelgen des Ports über den eine Verbindung erfolgt<br>
+<b>--flush-logs|-F</b><br>
+→ Synchronisieren der Logdateien des Mysql Servers auf der Festplatte bevor Speichervorgang gestartet wird
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<strong>--quick|-q</strong><br>
+<b>--force|-f</b><br>
+→ Dump auch bei Fehlern fortsetzen
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>--lock-all-tables|-x</b><br>
+→ für die Daueer des Dumps wird der Zugriff auf alle Tabellen gespeert
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>--no-data|-d</b><br>
+→ keine Datensatzinformationen schreiben, nur <tt>CREATE </tt>Anweisungen werden berücksichtigt
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>-p</b><br>
+→ ein Prompt anzeigen der nach einem Passwort fragt (empfohlen)
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>--password=&lt;Passwort&gt;</b><br>
+→ das Passwort in Klartext an der Befehlszeile übergeben (nicht empfohlen)
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>--port=N</b><br>
+→  festelgen des Ports über den eine Verbindung erfolgt
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<b>--quick|-q</b><br>
 → Datensätze einer Tabelle werden Datensatzweise vom Server geholt<br>
-→ nützlich für Datenbanken mit großen Datensätzen<br>
+→ nützlich für Datenbanken mit großen Datensätzen
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<strong>--result-file &lt;Datei&gt;|-r &lt;Datei&gt;</strong><br>
-→ Ausgabe in &lt;Datei&gt; schreiben<br>
+<b>--result-file &lt;Datei&gt;|-r &lt;Datei&gt;</b><br>
+→ Ausgabe in &lt;Datei&gt; schreiben
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<strong>--user|-u &lt;User&gt;</strong><br>
-→ Verbindung zum Server als dieser &lt;User&gt;<br>
+<b>--user|-u &lt;User&gt;</b><br>
+→ Verbindung zum Server als dieser &lt;User&gt;
 </div>
 </p>
-	
+
 <p>
 <div style='padding-left: 30pt'>
-<strong>--where="&lt;Bedingung&gt;"</strong><br>
+<b>--where="&lt;Bedingung&gt;"</b><br>
 → nur die Datensätze holen auf die die Bedingung zutrift<br>
 → <u>ACHTUNG: Die Bedingung muss in "" stehen.</u><br>
-<em>Beispiel:</em><br>
+<i>Beispiel:</i>
 </div>
 <div style='padding-left: 60pt'>
-<code>mysqldump --where="user='Horst'"</code><br>
+<tt>mysqldump --where="user='Horst'"</tt>
 </div>
 </p>
-	
-<p>
-<div style='padding-left: 30pt'>
-<strong>--xml|-X</strong><br>
-→ Speicherauszüge werden als Xml gespeichert<br>
-</div>
-</p>
-	
 
 <p>
-<em>Beispiele:</em><br>
+<div style='padding-left: 30pt'>
+<b>--xml|-X</b><br>
+→ Speicherauszüge werden als Xml gespeichert
+</div>
+</p>
+
+<br>
+
+<p>
+<i>Beispiele:</i><br>
 Erstellung eines Backups einer kompletten Datenbank:<br>
-<code>mysqldump --opt world &gt; world.sql</code><br>
+<tt>mysqldump --opt world &gt; world.sql</tt>
 </p>
 
 <p>
 Die Datensätze von einer Datenbank in ein andere leere Datenbank einfügen:<br>
-<code>mysqldump world -p|mysql -D Erde</code><br>
+<tt>mysqldump world -p|mysql -D Erde</tt>
 </p>
 
 <p>
 Auffüllen von Datenbanken durch kopieren von Datensätzen zwischen zwei MYsql Server Instanzen:<br>
-<code>mysqldump --opt sakila|mysql --host=Magrathea -C sakila2</code><br>
+<tt>mysqldump --opt sakila|mysql --host=Magrathea -C sakila2</tt>
 </p>
 
 <p>
 Speicherauszug aller Datenbanken erstellen:<br>
-<code>mysqldump --all-databases &gt; all.sql </code><br>
+<tt>mysqldump --all-databases &gt; all.sql </tt>
 </p>
 
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<i>No backlinks to this page.</i>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

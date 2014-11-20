@@ -67,15 +67,21 @@ __Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vorde
 * Jeder Prozess belegt Resourcen auf dem Rechner:
 					+ den Zustand eines Programms im Speicher nach einem Absturz  (Größe des Coredumps)
 					+ ein bereitgestelltes Datensegment in dem Objekte abgelegt werden (Größe des Heaps)
-			               + Anzahl von offenen und verwendeten Dateien während der Ausführung
-	                              +  Anzahl der zusätzliche aufgerufnenen Kindprozesse
-                                      + eine Anzahl Bytes im Arbeitsspeicher
-			               + eine Anzahl an Zeit auf der CPU 
+						   + Anzahl von offenen und verwendeten Dateien während der Ausführung
+					   +  Anzahl der zusätzliche aufgerufnenen Kindprozesse
+					   + eine Anzahl Bytes im Arbeitsspeicher
+					   + eine Anzahl an Zeit auf der CPU 
 	* **ulimit**
 [[Linux Wissen:Prozessverwaltung:ulimit]]
 
 ///etc/security/limits.conf//
 [[Linux Wissen:FHS:etc:security++limits.conf]]
+
+* **fuser**
+[[+fuser]]
+
+* **losof**
+[[+lsof]]
 
 ==== CGroups ====
 * Prozesse können zu hierarschichen Bäumen gruppiert werden, diese werden als CGroups bezeichnet
@@ -86,3 +92,4 @@ __Hinweis: grep ^state /proc/$!/status erfragt den Status des aktuellen im Vorde
 ===== Magic Sys-Abf Taste =====
 * ermöglicht das direkte Signalen und SysCalls an den Rechner
 [[Linux Wissen:Prozessverwaltung:Magic Sys-Abf Taste]]
+

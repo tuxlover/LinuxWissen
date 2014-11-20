@@ -5,6 +5,47 @@ Creation-Date: 2013-01-22T22:17:06+01:00
 ====== Dictionary Operationen ======
 Created Dienstag 22 Januar 2013
 
+
+=== Dictionaries sortieren ===
+* normalerweise gibr es keine Reihenfolge in Dictionaries
+* hat man aber als Keys sinnvoll sortierte Objekte eingegebene, so lassen sich Dictionaries anhand ihrer Keys sortieren
+
+snippet:
+++++
+'''
+Keysvalues = list(MyDict.keys())
+Keyvalues.sort()
+for Key in Keyvalue:
+'''
+	'''
+	print(Key + "-->"+MyDict[Key] )
+	'''
+
++++++
+
+**sorted(<Dictionay>)**
+→ die Funktion sorted erlaubt es ab #version3.2 dies ebenfalls das Sorteriren von Keys
+→ Es können nur die Keyswerte sortiert werden
+
+//Beispiele://
+''(1)''
+''In [30]: sorted(rucksack)''
+''Out[30]: ['healing potions', 'letters', 'mana potions', 'torches']''
+
+'''
+(2)
+In [32]: for key in sorted(rucksack):
+    print(key ,"-->", rucksack[key] )
+   ....:     
+healing potions --> 1
+letters --> King Emanuel
+mana potions --> 0
+torches --> 3
+'''
+
+
+
+
 [[Python:Datentypen:Dictionaries]]
 **len() **
 → gibt die Länge bzw. die Anzahl der //Key/Value// Paare zurück
@@ -18,3 +59,15 @@ Created Dienstag 22 Januar 2013
 **.join()**
 → siehe Dictionary Operationen
 [[Dictionary Operationen]]
+
+**.keys()**
+→ ausgeben der Schlüssel in einem Dictionary
+
+//Beispiel://
+'''
+# Ausgeben der Schlüssel die in diesem Dictionary vorkommen
+In [21]: rucksack.keys()
+Out[21]: dict_keys(['torches', 'letters', 'mana potions', 'healing potions'])
+'''
+
+

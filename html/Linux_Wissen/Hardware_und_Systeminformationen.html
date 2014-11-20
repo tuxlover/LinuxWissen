@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Hardware und Systeminformationen</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Hardware und Systeminformationen</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Hardware und Systeminformationen</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./git_Vesionskontrolle/git_init.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./Hardware_und_Systeminformationen/Devices.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="./Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="./Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -55,7 +69,7 @@
 <li><a href="./FHS.html" title="FHS" class="page">FHS</a></li>
 <li><a href="./Filterprogramme.html" title="Filterprogramme" class="page">Filterprogramme</a></li>
 <li><a href="./git_Vesionskontrolle.html" title="git Vesionskontrolle" class="page">git Vesionskontrolle</a></li>
-<li><strong class="activepage">Hardware und Systeminformationen</strong></li>
+<li><b>Hardware und Systeminformationen</b>
 <ul>
 <li><a href="./Hardware_und_Systeminformationen/Devices.html" title="Devices" class="page">Devices</a></li>
 <li><a href="./Hardware_und_Systeminformationen/IRQ.html" title="IRQ" class="page">IRQ</a></li>
@@ -68,6 +82,7 @@
 <li><a href="./Hardware_und_Systeminformationen/uname.html" title="uname" class="page">uname</a></li>
 <li><a href="./Hardware_und_Systeminformationen/USB.html" title="USB" class="page">USB</a></li>
 </ul>
+</li>
 <li><a href="./Hilfe_erhalten.html" title="Hilfe erhalten" class="page">Hilfe erhalten</a></li>
 <li><a href="./Lokalisierung.html" title="Lokalisierung" class="page">Lokalisierung</a></li>
 <li><a href="./Monitoring.html" title="Monitoring" class="page">Monitoring</a></li>
@@ -85,94 +100,107 @@
 <li><a href="./Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="./Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="./X11.html" title="X11" class="page">X11</a></li>
-<li><a href="./Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="./Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="./zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Sonntag 24 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Hardware und Systeminformationen <a name='Linux Wissen:Hardware und Systeminformationen'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Sonntag 24 April 2011
 </p>
 
 <h4>Systeminformationen</h4>
+
 <p>
 <ul>
-<li><strong>uname</strong></li>
+<li><b>uname</b></li>
 </ul>
 <a href="./Hardware_und_Systeminformationen/uname.html" title="Linux Wissen:Hardware und Systeminformationen:uname" class="page">Linux Wissen:Hardware und Systeminformationen:uname</a><br>
 <ul>
-<li><strong>lsdev</strong></li>
-<li><strong>hwinfo</strong></li>
-<li><strong>vmstat</strong></li>
-<li><strong>uptime</strong></li>
+<li><b>lsdev</b></li>
+<li><b>hwinfo</b></li>
+<li><b>vmstat</b></li>
+<li><b>uptime</b></li>
 </ul>
 <a href="./Hardware_und_Systeminformationen/Devices.html" title="Linux Wissen:Hardware und Systeminformationen:Devices" class="page">Linux Wissen:Hardware und Systeminformationen:Devices</a><br>
 <ul>
-<li><strong>iostat</strong></li>
-<li><strong>mpstat</strong></li>
-<li><strong>sar</strong></li>
-<li><strong>mpstat</strong></li>
-<li><strong>pmap</strong></li>
+<li><b>iostat</b></li>
+<li><b>mpstat</b></li>
+<li><b>sar</b></li>
+<li><b>mpstat</b></li>
+<li><b>pmap</b></li>
 </ul>
-<a href="./Hardware_und_Systeminformationen/sysstat.html" title="Linux Wissen:Hardware und Systeminformationen:sysstat" class="page">Linux Wissen:Hardware und Systeminformationen:sysstat</a><br>
+<a href="./Hardware_und_Systeminformationen/sysstat.html" title="Linux Wissen:Hardware und Systeminformationen:sysstat" class="page">Linux Wissen:Hardware und Systeminformationen:sysstat</a>
 </p>
 
 <h4>Geräte und Treiber</h4>
+
 <p>
 <ul>
-<li>Unter /<em>lib/modules/$(uname -r) </em>befinden sich die vom Kernel als Module ladbaren Treiber.</li>
+<li>Unter /<i>lib/modules/$(uname -r) </i>befinden sich die vom Kernel als Module ladbaren Treiber.</li>
 </ul>
 <a href="./FHS/lib.html" title="Linux Wissen:FHS:lib" class="page">Linux Wissen:FHS:lib</a><br>
 <a href="./Hardware_und_Systeminformationen/Module.html" title="Linux Wissen:Hardware und Systeminformationen:Module" class="page">Linux Wissen:Hardware und Systeminformationen:Module</a><br>
 <ul>
-<li>Während des Systemsarts benötigte Treiber werden in der Datei /<em>etc/modprobe.conf, /etc/modprobe.d</em> verwaltet</li>
+<li>Während des Systemsarts benötigte Treiber werden in der Datei /<i>etc/modprobe.conf, /etc/modprobe.d</i> verwaltet</li>
 </ul>
 <a href="./FHS/etc/modprobe.conf.html" title="Linux Wissen:FHS:etc:modprobe.conf" class="page">Linux Wissen:FHS:etc:modprobe.conf</a><br>
 <ul>
-<li>Eine Liste aller zu ladenden Module kann unter /<em>etc/modules.conf</em> bei älteren Systemen eingesehen werden</li>
+<li>Eine Liste aller zu ladenden Module kann unter /<i>etc/modules.conf</i> bei älteren Systemen eingesehen werden</li>
 </ul>
 </p>
 
 <h4>IRQ</h4>
+
 <p>
 Ein IRQ (Interupt Request) ist ein Signal dass an die CPU gesendet wird und den aktuellen Prozees unterbricht<br>
 um auf ein externes Hardwareereignis zu lauschen und dieses zu bearbeiten.<br>
-<a href="./Hardware_und_Systeminformationen/IRQ.html" title="Linux Wissen:Hardware und Systeminformationen:IRQ" class="page">Linux Wissen:Hardware und Systeminformationen:IRQ</a><br>
+<a href="./Hardware_und_Systeminformationen/IRQ.html" title="Linux Wissen:Hardware und Systeminformationen:IRQ" class="page">Linux Wissen:Hardware und Systeminformationen:IRQ</a>
 </p>
 
 <p>
-/<em>proc/interrupts</em><br>
-/<em>proc/dma</em><br>
-<a href="./FHS/proc.html" title="Linux Wissen:FHS:proc" class="page">Linux Wissen:FHS:proc</a><br>
+/<i>proc/interrupts</i><br>
+/<i>proc/dma</i><br>
+<a href="./FHS/proc.html" title="Linux Wissen:FHS:proc" class="page">Linux Wissen:FHS:proc</a>
 </p>
 
 <h4>PCI</h4>
+
 <p>
 <ul>
-<li><strong>setpci</strong></li>
-<li><strong>lspci</strong></li>
+<li><b>setpci</b></li>
+<li><b>lspci</b></li>
 </ul>
-<a href="./Hardware_und_Systeminformationen/PCI.html" title="Linux Wissen:Hardware und Systeminformationen:PCI" class="page">Linux Wissen:Hardware und Systeminformationen:PCI</a><br>
+<a href="./Hardware_und_Systeminformationen/PCI.html" title="Linux Wissen:Hardware und Systeminformationen:PCI" class="page">Linux Wissen:Hardware und Systeminformationen:PCI</a>
 </p>
 
 <h4>USB</h4>
+
 <p>
 wird von libusb Bereitgestellt<br>
 <ul>
-<li><strong>lsusb</strong></li>
+<li><b>lsusb</b></li>
 </ul>
 <a href="./Hardware_und_Systeminformationen/USB.html" title="Linux Wissen:Hardware und Systeminformationen:USB" class="page">Linux Wissen:Hardware und Systeminformationen:USB</a><br>
-<em>verwendete Kernelmodule:</em><br>
+<i>verwendete Kernelmodule:</i><br>
 usbcore  --&gt; Kernkomponente des Kernels<br>
 usb_ohci --&gt; Modul für USB UHCI Controler<br>
 usb_uhci --&gt; Modul für USB OHCI Controler<br>
-ehci_hcd --&gt; Hilfsmodul für den USB 1.1 to 2.0 Controler<br>
+ehci_hcd --&gt; Hilfsmodul für den USB 1.1 to 2.0 Controler
 </p>
 
 <h4>IDE und ATA</h4>
+
 <p>
 <ul>
 <li>meist Massenspeichergeräte</li>
@@ -183,12 +211,13 @@ ehci_hcd --&gt; Hilfsmodul für den USB 1.1 to 2.0 Controler<br>
 
 <p>
 <ul>
-<li>/<em>dev/hxX /dev/sdX </em>→ Gerätedatei</li>
+<li>/<i>dev/hxX /dev/sdX </i>→ Gerätedatei</li>
 </ul>
-<a href="./FHS/dev.html" title="Linux Wissen:FHS:dev" class="page">Linux Wissen:FHS:dev</a><br>
+<a href="./FHS/dev.html" title="Linux Wissen:FHS:dev" class="page">Linux Wissen:FHS:dev</a>
 </p>
 
 <h4>SCSI</h4>
+
 <p>
 <ul>
 <li>Protokoll zur Kommunikation mit Platten, Bandlaufwerken und anderen Geräten</li>
@@ -199,46 +228,50 @@ ehci_hcd --&gt; Hilfsmodul für den USB 1.1 to 2.0 Controler<br>
 
 <p>
 Jedes SCSI Gerät lässt sich eindeutig durch das Quadrupel identifizieren:<br>
-<em>&lt;host&gt;,&lt;channel&gt;,&lt;ID&gt;,&lt;LUN&gt;</em><br>
+<i>&lt;host&gt;,&lt;channel&gt;,&lt;ID&gt;,&lt;LUN&gt;</i><br>
 <ul>
-<li><strong>lsscsi</strong></li>
+<li><b>lsscsi</b></li>
 </ul>
-<a href="./Hardware_und_Systeminformationen/lsscsi.html" title="Linux Wissen:Hardware und Systeminformationen:lsscsi" class="page">Linux Wissen:Hardware und Systeminformationen:lsscsi</a><br>
+<a href="./Hardware_und_Systeminformationen/lsscsi.html" title="Linux Wissen:Hardware und Systeminformationen:lsscsi" class="page">Linux Wissen:Hardware und Systeminformationen:lsscsi</a>
 </p>
 
 <h4>Serial ATA</h4>
+
 <p>
 <ul>
 <li>schnellere Übertragungsraten als bei IDE</li>
 <li>hotswap möglich</li>
 <li>pro Controler können maximal 4 Geräte angeschlossen werden</li>
-<li>wird von <em>libata </em>ab Kernel 2.6 und 2.4.27 bereitgestellt</li>
+<li>wird von <i>libata </i>ab Kernel 2.6 und 2.4.27 bereitgestellt</li>
 </ul>
 <a href="./Hardware_und_Systeminformationen/lsscsi.html" title="Linux Wissen:Hardware und Systeminformationen:lsscsi" class="page">Linux Wissen:Hardware und Systeminformationen:lsscsi</a><br>
-<a href="./FHS/proc.html" title="Linux Wissen:FHS:proc" class="page">Linux Wissen:FHS:proc</a><br>
+<a href="./FHS/proc.html" title="Linux Wissen:FHS:proc" class="page">Linux Wissen:FHS:proc</a>
 </p>
 
 <h4>Serielle Schnittstellen</h4>
+
 <p>
 <ul>
 <li>I/O Ports serieller Geräte</li>
 <li>Maus, Tastatur, Drucker Terminals</li>
-<li><strong>setserial</strong></li>
+<li><b>setserial</b></li>
 </ul>
-<a href="./Hardware_und_Systeminformationen/setserial.html" title="Linux Wissen:Hardware und Systeminformationen:setserial" class="page">Linux Wissen:Hardware und Systeminformationen:setserial</a><br>
+<a href="./Hardware_und_Systeminformationen/setserial.html" title="Linux Wissen:Hardware und Systeminformationen:setserial" class="page">Linux Wissen:Hardware und Systeminformationen:setserial</a>
 </p>
 
 <h4>HAL</h4>
+
 <p>
 <ul>
 <li>Hardware Abstraction Layer</li>
 <li>läuft im Kernel User Space</li>
 <li>versorgt Programme mit Informationen die von einer Hardware gesendet wird</li>
 </ul>
-<strong>hald</strong> → der HAL Daemon<br>
+<b>hald</b> → der HAL Daemon
 </p>
 
 <h4>D-BUS</h4>
+
 <p>
 <ul>
 <li>Desktop BUS Daemon</li>
@@ -248,34 +281,39 @@ Jedes SCSI Gerät lässt sich eindeutig durch das Quadrupel identifizieren:<br>
 </p>
 
 <h4>Udev</h4>
+
 <p>
 <ul>
-<li>Daemon <strong>udevd </strong>zur dynamischen Geräteerzeugung lauscht /<em>sys</em> nach Geräten</li>
-<li>Die Dateien<em> /etc/udev/rules.d </em>wird gelesen</li>
-<li>Es werden Empfehlungen an den Kernel gegeben wie Geräte unter /<em>dev </em>verwaltet werden sollen</li>
+<li>Daemon <b>udevd </b>zur dynamischen Geräteerzeugung lauscht /<i>sys</i> nach Geräten</li>
+<li>Die Dateien<i> /etc/udev/rules.d </i>wird gelesen</li>
+<li>Es werden Empfehlungen an den Kernel gegeben wie Geräte unter /<i>dev </i>verwaltet werden sollen</li>
 </ul>
 Erstellen von Udev Regeln: <br>
-<a href="./FHS/etc/udev%2B%2Brules.d%2B%2B99-myrule.html" title="Linux Wissen:FHS:etc:udev++rules.d++99-myrule" class="page">Linux Wissen:FHS:etc:udev++rules.d++99-myrule</a><br>
+<a href="./FHS/etc/udev++rules.d++99-myrule.html" title="Linux Wissen:FHS:etc:udev++rules.d++99-myrule" class="page">Linux Wissen:FHS:etc:udev++rules.d++99-myrule</a><br>
 Konfiguration des Udev Daemon:<br>
-<a href="./FHS/etc/udev%2B%2Budev.conf.html" title="Linux Wissen:FHS:etc:udev++udev.conf" class="page">Linux Wissen:FHS:etc:udev++udev.conf</a><br>
+<a href="./FHS/etc/udev++udev.conf.html" title="Linux Wissen:FHS:etc:udev++udev.conf" class="page">Linux Wissen:FHS:etc:udev++udev.conf</a><br>
 <ul>
-<li><strong>udevadm</strong> </li>
+<li><b>udevadm</b> </li>
 </ul>
-<a href="./Hardware_und_Systeminformationen/udevadm.html" title="Linux Wissen:Hardware und Systeminformationen:udevadm" class="page">Linux Wissen:Hardware und Systeminformationen:udevadm</a><br>
+<a href="./Hardware_und_Systeminformationen/udevadm.html" title="Linux Wissen:Hardware und Systeminformationen:udevadm" class="page">Linux Wissen:Hardware und Systeminformationen:udevadm</a>
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='./Networking.html'>Linux Wissen:Networking</a></li>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='./Networking.html'>Linux Wissen:Networking</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

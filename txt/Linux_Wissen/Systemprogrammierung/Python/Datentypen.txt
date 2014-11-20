@@ -11,7 +11,7 @@ Created Sonntag 04 November 2012
 [[+Zahlen]]
 [[+Dictionaries]]
 [[+Datetime]]
-
+[[+Tuppel]]
 
 **type(<Data>)**
 → gibt den Datentyp des verwendeten Objekts zurück

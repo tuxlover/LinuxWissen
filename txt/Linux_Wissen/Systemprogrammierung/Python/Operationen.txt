@@ -28,6 +28,7 @@ Created Dienstag 25 Dezember 2012
 [[+Listen Operationen]]
 [[+String Operatoren]]
 [[+Typenkonvertierung]]
+[[+Operationen auf Dateien]]
 
 === Verketten von Operationen ===
 → Pythin arbeitet Operationen von links nach rechts ab.

@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>systemd++system++my.typ</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>systemd++system++my.typ</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>systemd++system++my.typ</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./syslog.conf.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./udev++rules.d++99-myrule.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -52,17 +66,17 @@
 <li><a href="../../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik" class="page">Datenrettung und Forensik</a></li>
 <li><a href="../../Drucken.html" title="Drucken" class="page">Drucken</a></li>
 <li><a href="../../Emacs_Editor.html" title="Emacs Editor" class="page">Emacs Editor</a></li>
-<li><a href="../../FHS.html" title="FHS" class="page">FHS</a></li>
+<li><a href="../../FHS.html" title="FHS" class="page">FHS</a>
 <ul>
 <li><a href="../bin.html" title="bin" class="page">bin</a></li>
 <li><a href="../boot.html" title="boot" class="page">boot</a></li>
 <li><a href="../dev.html" title="dev" class="page">dev</a></li>
-<li><a href="../etc.html" title="etc" class="page">etc</a></li>
+<li><a href="../etc.html" title="etc" class="page">etc</a>
 <ul>
 <li><a href="./anacrontab.html" title="anacrontab" class="page">anacrontab</a></li>
 <li><a href="./apt.conf.html" title="apt.conf" class="page">apt.conf</a></li>
-<li><a href="./apt%2B%2Bpreferences.conf.html" title="apt++preferences.conf" class="page">apt++preferences.conf</a></li>
-<li><a href="./apt%2B%2Bsoruces.list.html" title="apt++soruces.list" class="page">apt++soruces.list</a></li>
+<li><a href="./apt++preferences.conf.html" title="apt++preferences.conf" class="page">apt++preferences.conf</a></li>
+<li><a href="./apt++soruces.list.html" title="apt++soruces.list" class="page">apt++soruces.list</a></li>
 <li><a href="./auto.master.html" title="auto.master" class="page">auto.master</a></li>
 <li><a href="./auto.Verzeichnis.html" title="auto.Verzeichnis" class="page">auto.Verzeichnis</a></li>
 <li><a href="./cgconfig.conf.html" title="cgconfig.conf" class="page">cgconfig.conf</a></li>
@@ -80,7 +94,7 @@
 <li><a href="./hosts.deny.html" title="hosts.deny" class="page">hosts.deny</a></li>
 <li><a href="./hosts.lpd.html" title="hosts.lpd" class="page">hosts.lpd</a></li>
 <li><a href="./inetd.conf.html" title="inetd.conf" class="page">inetd.conf</a></li>
-<li><a href="./init.d%2B%2BScript.html" title="init.d++Script" class="page">init.d++Script</a></li>
+<li><a href="./init.d++Script.html" title="init.d++Script" class="page">init.d++Script</a></li>
 <li><a href="./inittab.html" title="inittab" class="page">inittab</a></li>
 <li><a href="./interfaces.html" title="interfaces" class="page">interfaces</a></li>
 <li><a href="./lilo.conf.html" title="lilo.conf" class="page">lilo.conf</a></li>
@@ -92,21 +106,22 @@
 <li><a href="./passwd.html" title="passwd" class="page">passwd</a></li>
 <li><a href="./protocols.html" title="protocols" class="page">protocols</a></li>
 <li><a href="./resolv.conf.html" title="resolv.conf" class="page">resolv.conf</a></li>
-<li><a href="./security%2B%2Blimits.conf.html" title="security++limits.conf" class="page">security++limits.conf</a></li>
+<li><a href="./security++limits.conf.html" title="security++limits.conf" class="page">security++limits.conf</a></li>
 <li><a href="./services.html" title="services" class="page">services</a></li>
 <li><a href="./shadow.html" title="shadow" class="page">shadow</a></li>
 <li><a href="./smb.conf.html" title="smb.conf" class="page">smb.conf</a></li>
 <li><a href="./ssh.html" title="ssh" class="page">ssh</a></li>
 <li><a href="./sudoers.html" title="sudoers" class="page">sudoers</a></li>
-<li><a href="./sysconfig%2B%2Bclock.html" title="sysconfig++clock" class="page">sysconfig++clock</a></li>
+<li><a href="./sysconfig++clock.html" title="sysconfig++clock" class="page">sysconfig++clock</a></li>
 <li><a href="./syslog.conf.html" title="syslog.conf" class="page">syslog.conf</a></li>
-<li><strong class="activepage">systemd++system++my.typ</strong></li>
-<li><a href="./udev%2B%2Brules.d%2B%2B99-myrule.html" title="udev++rules.d++99-myrule" class="page">udev++rules.d++99-myrule</a></li>
-<li><a href="./udev%2B%2Budev.conf.html" title="udev++udev.conf" class="page">udev++udev.conf</a></li>
-<li><a href="./X11%2B%2Bxdm.html" title="X11++xdm" class="page">X11++xdm</a></li>
+<li><b>systemd++system++my.typ</b></li>
+<li><a href="./udev++rules.d++99-myrule.html" title="udev++rules.d++99-myrule" class="page">udev++rules.d++99-myrule</a></li>
+<li><a href="./udev++udev.conf.html" title="udev++udev.conf" class="page">udev++udev.conf</a></li>
+<li><a href="./X11++xdm.html" title="X11++xdm" class="page">X11++xdm</a></li>
 <li><a href="./xinetd.conf.html" title="xinetd.conf" class="page">xinetd.conf</a></li>
 <li><a href="./Xorg.conf.html" title="Xorg.conf" class="page">Xorg.conf</a></li>
 </ul>
+</li>
 <li><a href="../lib.html" title="lib" class="page">lib</a></li>
 <li><a href="../proc.html" title="proc" class="page">proc</a></li>
 <li><a href="../sbin.html" title="sbin" class="page">sbin</a></li>
@@ -114,6 +129,7 @@
 <li><a href="../usr.html" title="usr" class="page">usr</a></li>
 <li><a href="../var.html" title="var" class="page">var</a></li>
 </ul>
+</li>
 <li><a href="../../Filterprogramme.html" title="Filterprogramme" class="page">Filterprogramme</a></li>
 <li><a href="../../git_Vesionskontrolle.html" title="git Vesionskontrolle" class="page">git Vesionskontrolle</a></li>
 <li><a href="../../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen" class="page">Hardware und Systeminformationen</a></li>
@@ -134,16 +150,23 @@
 <li><a href="../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Freitag 13 Januar 2012<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>systemd++system++my.typ <a name='Linux Wissen:FHS:etc:systemd++system++my.typ'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Freitag 13 Januar 2012
 </p>
 
 <p>
@@ -152,7 +175,7 @@ Created Freitag 13 Januar 2012<br>
 <li>selbsterstellte Units werden hierher kopiert</li>
 </ul>
 FHS:lib:lib++systemd<br>
-+++<br>
++++
 </p>
 <pre>
 [Unit]
@@ -171,21 +194,25 @@ ExecStart=/sbin/udevd
 </pre>
 
 <p>
-+++<br>
++++
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../etc.html'>Linux Wissen:FHS:etc</a></li>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../etc.html'>Linux Wissen:FHS:etc</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

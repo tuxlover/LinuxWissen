@@ -1,0 +1,65 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2014-11-20T17:39:17+01:00
+
+====== lsof ======
+Created Donnerstag 20 November 2014
+
+* **li**st **s**ort **o**pen **f**iles
+* auflisten aller offenen Dateien bzw. filtern nach in Verwendung befindlicher Dateien
+
+**lsof **
+* ohne Argumente liefert der Befehl alle Dateien die momentan vom System in verwenudng sind  / inklusive aller Sockets die göffnet sind
+**-u <username> **→ filtern nach Benutzernamen
+**-i <:Port> **→ filtern nach Ports
+**-p **→ nach PID filtern
+**-c **→ filtern nach Prozess namen
+**-a **→ Abfragen mit inanander logisch verknmüfen
+
+== Format 			Beschreibung ==
++D /home/benutzername 	Informationen über die Verwendung von Dateien z.B. des Home-Verzeichnisses des Anwenders
++p PID 					Liefert die Informationen welche PID welche Datei benutzt
++L1 	Liefert die Informationen über bereits gelöschte Dateien
+
+
+//Beispiele//
+Auflisten aller Dateien die der Nutzer max gerade benutzt
+''lsof -u max''
+
+Auflisten aller offenen Sockets / Ports durch einen bestimmen Nutzer
+''lsof -u max -i -a''  
+COMMAND     PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+firefox    1982 max   73u  IPv4 368515      0t0  TCP localhost:44115->localhost:8118 (ESTABLISHED)
+firefox    1982 max   74u  IPv4 368590      0t0  TCP localhost:44117->localhost:8118 (ESTABLISHED)
+firefox    1982 max   75u  IPv4 368333      0t0  TCP localhost:44101->localhost:8118 (ESTABLISHED)
+firefox    1982 max   76u  IPv4 369133      0t0  TCP localhost:44113->localhost:8118 (ESTABLISHED)
+
+Auflisten von Ports und von wewem sie gerade verwendet werden
+''lsof -i :5351''
+COMMAND    PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+transmiss 2436 l1zard   30u  IPv4  34178      0t0  UDP Marvin:49010->192.168.44.1:5351 
+
+Auflisten aller verwendeten Dateien unterhalb eines Verzeichnis 
+''lsof +D /var/log/''
+COMMAND    PID    USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME
+systemd-j  240    root  mem    REG  254,1 41943040 135646 /var/log/journal/310b1db43ac89c2282b770a000000013/user-1000.journal
+systemd-j  240    root  mem    REG  254,1  8388608 131527 /var/log/journal/310b1db43ac89c2282b770a000000013/system.journal
+systemd-j  240    root  mem    REG  254,1  8388608 131623 /var/log/journal/310b1db43ac89c2282b770a000000013/user-107.journal
+systemd-j  240    root   17u   REG  254,1  8388608 131623 /var/log/journal/310b1db43ac89c2282b770a000000013/user-107.journal
+systemd-j  240    root   24u   REG  254,1  8388608 131527 /var/log/journal/310b1db43ac89c2282b770a000000013/system.journal
+systemd-j  240    root   45u   REG  254,1 41943040 135646 /var/log/journal/310b1db43ac89c2282b770a000000013/user-1000.journal
+rsyslogd   731    root    6w   REG  254,1  1052704 132282 /var/log/syslog
+rsyslogd   731    root    7w   REG  254,1   925671 133250 /var/log/messages
+rsyslogd   731    root    9w   REG  254,1   925064 133234 /var/log/user.log
+rsyslogd   731    root   11w   REG  254,1   125723 132868 /var/log/daemon.log
+rsyslogd   731    root   12w   REG  254,1      606 133249 /var/log/cron.log
+rsyslogd   731    root   14w   REG  254,1      561 132861 /var/log/mail.log
+rsyslogd   731    root   16w   REG  254,1      464 133119 /var/log/kern.log
+rsyslogd   731    root   18w   REG  254,1     7019 133226 /var/log/auth.log
+console-k  755    root    7w   REG  254,1     8762 261160 /var/log/ConsoleKit/history
+ntpd      1083     ntp    4w   REG  254,1    12678 130806 /var/log/ntpstats/peerstats.20141120
+ntpd      1083     ntp    6w   REG  254,1      994 130945 /var/log/ntpstats/loopstats.20141120
+privoxy   3933 privoxy    3w   REG  254,1        0 394053 /var/log/privoxy/logfile
+
+Auflisten aller Dateien die bereits gelöscht oder durch neuere Dateien überschrieben wurden, jedoch weiterhin von Prozessen in verwendung sind
+''lsof +L1''

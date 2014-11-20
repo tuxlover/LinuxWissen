@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-08-23T18:15:42+02:00
+
+====== Tuppel ======
+Created Freitag 23 August 2013
+
+• Listenobjekt
+• immutable Objekt (einmal ins Leben gerufen kann die Länge dieses Objektees nicht mehr im Speicher verändert werden)
+* auf Tuppel können alle Operationen angewandt werden die das Objekt nicht verändern
+[[Python:Operationen:Listen Operationen]]
+
+* Tuppel werden durch **()** Klammern deklariert.
+
+//Beispiel://
+'''
+In [38]: zahlen = (1,2,3,4,5)
+
+In [39]: zahlen.append(7)
+---------------------------------------------------------------------------
+AttributeError                            Traceback (most recent call last)
+<ipython-input-39-78b2ab41242b> in <module>()
+----> 1 zahlen.append(7)
+
+AttributeError: 'tuple' object has no attribute 'append'
+'''
+
+
+== !!ACHTUNG!!  ==
+**Hier ist wichtig dass man Eckige und Runde Klamern nicht verwechselt. Sie sind nicht dasselbe.**
+

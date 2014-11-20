@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>/Pakete bauen</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>/Pakete bauen</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>/Pakete bauen</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./Metainformationen.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='../Rpm.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -60,17 +74,19 @@
 <li><a href="../../Lokalisierung.html" title="Lokalisierung" class="page">Lokalisierung</a></li>
 <li><a href="../../Monitoring.html" title="Monitoring" class="page">Monitoring</a></li>
 <li><a href="../../Networking.html" title="Networking" class="page">Networking</a></li>
-<li><a href="../../Paketverwaltung.html" title="Paketverwaltung" class="page">Paketverwaltung</a></li>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung" class="page">Paketverwaltung</a>
 <ul>
-<li><a href="../Debian.html" title="Debian" class="page">Debian</a></li>
+<li><a href="../Debian.html" title="Debian" class="page">Debian</a>
 <ul>
 <li><a href="./apt.html" title="apt" class="page">apt</a></li>
 <li><a href="./dpkg.html" title="dpkg" class="page">dpkg</a></li>
 <li><a href="./Metainformationen.html" title="Metainformationen" class="page">Metainformationen</a></li>
-<li><strong class="activepage">Pakete bauen</strong></li>
+<li><b>Pakete bauen</b></li>
 </ul>
+</li>
 <li><a href="../Rpm.html" title="Rpm" class="page">Rpm</a></li>
 </ul>
+</li>
 <li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme" class="page">Partitionen und Dateisysteme</a></li>
 <li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung" class="page">Prozessverwaltung</a></li>
 <li><a href="../../root.html" title="root" class="page">root</a></li>
@@ -83,16 +99,23 @@
 <li><a href="../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Montag 25 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>/Pakete bauen <a name='Linux Wissen:Paketverwaltung:Debian:Pakete bauen'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Montag 25 April 2011
 </p>
 
 <p>
@@ -105,300 +128,311 @@ Created Montag 25 April 2011<br>
 </p>
 
 <h4>Minimale Umgebung:</h4>
+
 <p>
-<strong>gcc, g++, make, libc6-dev, dpkg-dev } </strong>→ im Metapaket <em>build-essentials</em><br>
+<b>gcc, g++, make, libc6-dev, dpkg-dev } </b>→ im Metapaket <i>build-essentials</i>
 </p>
 
 <h4>zusätzliche Dokumentation:</h4>
+
 <p>
-<strong>debian-policy, developers-reference</strong><br>
-<a href="http://www.debian.org/doc/developers-reference/" title="http://www.debian.org/doc/developers-reference/" class="http">http://www.debian.org/doc/developers-reference/</a><br>
+<b>debian-policy, developers-reference</b><br>
+<a href="http://www.debian.org/doc/developers-reference/" title="http://www.debian.org/doc/developers-reference/" class="http">http://www.debian.org/doc/developers-reference/</a>
 </p>
 
 <p>
-<strong>apt-get build-dep &lt;Paket&gt;|aptitude build-dep &lt;Paket&gt; </strong><br>
-→ herunterladen und installieren der Paketbauabhängigkeiten für &lt;Paket&gt;<br>
+<b>apt-get build-dep &lt;Paket&gt;|aptitude build-dep &lt;Paket&gt; </b><br>
+→ herunterladen und installieren der Paketbauabhängigkeiten für &lt;Paket&gt;
 </p>
 
+<br>
 
 <p>
-<strong>fakeroot </strong><br>
+<b>fakeroot </b><br>
 → Programm was den Root Account unter Debian vortäuscht und so das Paket baut<br>
 → kann in einer Umgebung ausgeführt werden, um root Privilegien vorzutäuschen<br>
-<strong>--  &lt;Befehl&gt; </strong>→ einen kompletten &lt;Befehl&gt; an den Fakeroot account übergeben<br>
-<strong>-s &lt;Datei&gt; </strong>→ die Einstellungen der Fakeroot Umgebung als Snapshot in die &lt;Datei&gt; speichern<br>
-<strong>-i &lt;Datei&gt; </strong>→ den Snapshot für die Fakeroot Umgebung lesen<br>
-<strong>-u </strong>→ den Besitzer auf unknown wechseln anstelle von root:root<br>
+<b>--  &lt;Befehl&gt; </b>→ einen kompletten &lt;Befehl&gt; an den Fakeroot account übergeben<br>
+<b>-s &lt;Datei&gt; </b>→ die Einstellungen der Fakeroot Umgebung als Snapshot in die &lt;Datei&gt; speichern<br>
+<b>-i &lt;Datei&gt; </b>→ den Snapshot für die Fakeroot Umgebung lesen<br>
+<b>-u </b>→ den Besitzer auf unknown wechseln anstelle von root:root
 </p>
 
 <h5>Workflow ein Paket neu Übersetzen</h5>
+
 <p>
-<strong>(1) </strong><code>apt-get -d source </code><br>
+<b>(1) </b><tt>apt-get -d source </tt><br>
 → holt Quellpakete ohne sie zu entpacken<br>
-→ enthält in der Regel die Dateien &lt;programm.orig.tar.gz&gt;, &lt;programm.dsc&gt; und &lt;programm.diff.gz&gt;, die in das aktuelle Verzeichnis gepackt werden<br>
+→ enthält in der Regel die Dateien &lt;programm.orig.tar.gz&gt;, &lt;programm.dsc&gt; und &lt;programm.diff.gz&gt;, die in das aktuelle Verzeichnis gepackt werden
 </p>
 
 <p>
-<em>&lt;programm.orig.tar.gz&gt; → </em>Original Quellen auf dem das &lt;Paket&gt; basiert<br>
+<i>&lt;programm.orig.tar.gz&gt; → </i>Original Quellen auf dem das &lt;Paket&gt; basiert
 </p>
 
 <p>
-<em>&lt;programm.dsc&gt; </em>→ Prüfsummen zu den beiden anderen Dateien<br>
-<div style='padding-left: 90pt'>
-     → Email Adresse des Paketbetreuers<br>
-     → Informationen zum Paketbau <br>
-     → Ist vom Paketbetreuer signiert<br>
+<i>&lt;programm.dsc&gt; </i>→ Prüfsummen zu den beiden anderen Dateien<br>
+<div style='padding-left: 120pt'>
+ → Email Adresse des Paketbetreuers<br>
+ → Informationen zum Paketbau <br>
+ → Ist vom Paketbetreuer signiert
 </div>
 </p>
 
 <p>
-<em>&lt;Programm.diff.gz&gt; </em>→ enthält die Änderungen zum Original<br>
+<i>&lt;Programm.diff.gz&gt; </i>→ enthält die Änderungen zum Original
 </p>
 
 <p>
-<strong>(2)</strong><code> dpkg-source -x &lt;programm.dsc&gt; </code><br>
+<b>(2)</b><tt> dpkg-source -x &lt;programm.dsc&gt; </tt><br>
 → asupacken und für den Kompilationsvorgang vorbereiten<br>
 → anwenden der Patches<br>
-→ Dabei wird ein Ordner &lt;programm&gt;/debian angelegt<br>
+→ Dabei wird ein Ordner &lt;programm&gt;/debian angelegt
 </p>
 
 <p>
-<em>&lt;programm&gt;/debian/README.debian </em>→ Debian betreffende Änderungen und Anmerkungen<br>
+<i>&lt;programm&gt;/debian/README.debian </i>→ Debian betreffende Änderungen und Anmerkungen
 </p>
 
 <p>
-<em>&lt;programm&gt;/debian/changelog </em>→ Changelog des Paketmaintainers<br>
+<i>&lt;programm&gt;/debian/changelog </i>→ Changelog des Paketmaintainers<br>
 ++<br>
-<em>&lt;name_programm&gt; (&lt;Versionsnummer) &lt;Codename&gt;; urgency=&lt;level&gt;</em><br>
-<em>  * &lt;Kommantar&gt;</em><br>
-<em>  -- &lt;Name und Email in &lt;&gt; des Maintainers&gt; &lt;Tag der Woche&gt;, &lt;Tag des Jahes&gt; &lt;Monat&gt; &lt;Jahr&gt; &lt;Uhrzeit in HH:MM:SS&gt; &lt;+|-UTC&gt;</em><br>
+<i>&lt;name_programm&gt; (&lt;Versionsnummer) &lt;Codename&gt;; urgency=&lt;level&gt;</i><br>
+<i>  * &lt;Kommantar&gt;</i><br>
+<i>  -- &lt;Name und Email in &lt;&gt; des Maintainers&gt; &lt;Tag der Woche&gt;, &lt;Tag des Jahes&gt; &lt;Monat&gt; &lt;Jahr&gt; &lt;Uhrzeit in HH:MM:SS&gt; &lt;+|-UTC&gt;</i>
 </p>
 
 <p>
-<em>quemu (0.7.2-1) unstable; urgency=low</em><br>
-<em>  * Initial release Closes #nnn</em><br>
-//  -- Paul Seelig &lt;<a href="mailto:pseelig@debian.org" title="pseelig@debian.org" class="mailto">pseelig@debian.org</a>&gt; Wed, 7 Sep 2005 22:03:21 +0200//<br>
+<i>quemu (0.7.2-1) unstable; urgency=low</i><br>
+<i>  * Initial release Closes #nnn</i><br>
+<i>  -- Paul Seelig &lt;pseelig@debian.org&gt; Wed, 7 Sep 2005 22:03:21 +0200</i><br>
+++
+</p>
+
+<p>
+<i>&lt;programm&gt;/debian/control </i>→ enthält Informationen die zum Bau des Paketes benötigt werden<br>
 ++<br>
+<i>Source:                 &lt;Source Paket Name&gt;</i><br>
+<i>Section:                &lt;Angabe der Application Area für das Paket spezifiziert wurde&gt;</i><br>
+<i>Priority:               &lt;Wie wichtig ist es diese Paket zu installiern&gt; requiered, importend, standard, optional, extra</i><br>
+<i>Maintainer:             &lt;Name und E-Mail Adresse (in &lt;&gt;) des Package Maintainers&gt;</i><br>
+<i>Standard-Version:       &lt;Version des Standards (Policy, Manual) mit denen das Paket gebaut wird&gt;</i><br>
+<i>Build-Depends:          &lt;Abhängigkeiten die erfüllt sein müssen um das Paket zu bauen&gt; (&gt;, &lt;, = Versions), ...</i><br>
+<i>Recommends:             das zu installierende Paket empfiehlt dringend auch das hier aufgelistete mitzuinstallieren</i><br>
+<i>Suggests:               das zu installierende Paket ist nützlicher wenn auch dieses Paket installiert</i><br>
+<i>Enhances:               das zu installierende Paket wird durch dieses Paket sinnvoll ergänzt</i><br>
+<i>Conflicts:              Das zu installierende Paket kann nicht gleichzeitig mit diesem installiert sein</i>
 </p>
 
 <p>
-<em>&lt;programm&gt;/debian/control </em>→ enthält Informationen die zum Bau des Paketes benötigt werden<br>
+<i>Package:                &lt;Name des zu erzeugenden Debian Pakets&gt;</i><br>
+<i>Architecture:           &lt;die Zielarchitektur des Paketes&gt; any,all,i386,am64</i><br>
+<i>Depends:                &lt;Abhängigkeiten zur Laufzeit&gt;</i><br>
+<i>Description:            &lt;Kurze Beschreibung des Paketes&gt;</i><br>
+<i>&lt;Lange Beschreibung des Pakets&gt;</i>
+</p>
+
+<p>
+<i>Binary:                 &lt;Eine durch Kommata searierte Liste, die auflistet welche Binärpalete ein Quellpaket erzeugt&gt;</i><br>
+<i>Homepage:               &lt;URL von der der Original Qullcode erstanden werden kann&gt;</i><br>
+<i>Uploaders:              &lt;Liste von nbamen udn E-Mail Adressen weiterer Mitautoren</i><br>
+<i>Files:                  &lt;md5sum&gt; &lt;Größe&gt; &lt;Section&gt; &lt;Priorität&gt;</i><br>
+++
+</p>
+
+<p>
+<i>&lt;porgramm&gt;/debian/copyright </i>→ Lizenz und Autoren der Software
+</p>
+
+<p>
+<i>&lt;programm&gt;/debian/dirs </i>→ festlegen von Verzeichnissen, die gebraucht werden aber von Debian nicht automatisch erkannt werden<br>
 ++<br>
-<em>Source:                 &lt;Source Paket Name&gt;</em><br>
-<em>Section:                &lt;Angabe der Application Area für das Paket spezifiziert wurde&gt;</em><br>
-<em>Priority:               &lt;Wie wichtig ist es diese Paket zu installiern&gt; requiered, importend, standard, optional, extra</em><br>
-<em>Maintainer:             &lt;Name und E-Mail Adresse (in &lt;&gt;) des Package Maintainers&gt;</em><br>
-<em>Standard-Version:       &lt;Version des Standards (Policy, Manual) mit denen das Paket gebaut wird&gt;</em><br>
-<em>Build-Depends:          &lt;Abhängigkeiten die erfüllt sein müssen um das Paket zu bauen&gt; (&gt;, &lt;, = Versions), ...</em><br>
-<em>Recommends:             das zu installierende Paket empfiehlt dringend auch das hier aufgelistete mitzuinstallieren</em><br>
-<em>Suggests:               das zu installierende Paket ist nützlicher wenn auch dieses Paket installiert</em><br>
-<em>Enhances:               das zu installierende Paket wird durch dieses Paket sinnvoll ergänzt</em><br>
-<em>Conflicts:              Das zu installierende Paket kann nicht gleichzeitig mit diesem installiert sein</em><br>
+<i>etc/X11/app-defaults</i><br>
+<i>usr/bin</i><br>
+<i>usr/share/doc/xtartan</i><br>
+<i>usr/share/lintian/overrides</i><br>
+<i>usr/share/menu</i><br>
+++
 </p>
 
 <p>
-<em>Package:                &lt;Name des zu erzeugenden Debian Pakets&gt;</em><br>
-<em>Architecture:           &lt;die Zielarchitektur des Paketes&gt; any,all,i386,am64</em><br>
-<em>Depends:                &lt;Abhängigkeiten zur Laufzeit&gt;</em><br>
-<em>Description:            &lt;Kurze Beschreibung des Paketes&gt;</em><br>
-<em>&lt;Lange Beschreibung des Pakets&gt;</em><br>
+<i>&lt;programm&gt;/debian/lintian.overrides </i><br>
+→ Regeln und Definitionen die von <b>lintian </b>nicht beachtet werden<br>
+→ Ausnahmen 
 </p>
 
 <p>
-<em>Binary:                 &lt;Eine durch Kommata searierte Liste, die auflistet welche Binärpalete ein Quellpaket erzeugt&gt;</em><br>
-<em>Homepage:               &lt;URL von der der Original Qullcode erstanden werden kann&gt;</em><br>
-<em>Uploaders:              &lt;Liste von nbamen udn E-Mail Adressen weiterer Mitautoren</em><br>
-<em>Files:                  &lt;md5sum&gt; &lt;Größe&gt; &lt;Section&gt; &lt;Priorität&gt;</em><br>
-++<br>
-</p>
-
-<p>
-<em>&lt;porgramm&gt;/debian/copyright </em>→ Lizenz und Autoren der Software<br>
-</p>
-
-<p>
-<em>&lt;programm&gt;/debian/dirs </em>→ festlegen von Verzeichnissen, die gebraucht werden aber von Debian nicht automatisch erkannt werden<br>
-++<br>
-<em>etc/X11/app-defaults</em><br>
-<em>usr/bin</em><br>
-<em>usr/share/doc/xtartan</em><br>
-<em>usr/share/lintian/overrides</em><br>
-<em>usr/share/menu</em><br>
-++<br>
-</p>
-
-<p>
-<em>&lt;programm&gt;/debian/lintian.overrides </em><br>
-→ Regeln und Definitionen die von <strong>lintian </strong>nicht beachtet werden<br>
-→ Ausnahmen <br>
-</p>
-
-<p>
-<em>&lt;programm&gt;/debian/menu </em><br>
+<i>&lt;programm&gt;/debian/menu </i><br>
 → definieren einer Menudatei<br>
 ++<br>
-<em>?package(totem):\</em><br>
-<em>needs="X11"\</em><br>
-<em>section="Applications/Video"\</em><br>
-<em>title="Totem"\</em><br>
-<em>icon="/usr/share/pixmaps/totem.xpm"\</em><br>
-<em>command="/usr/bin/totem"</em><br>
+<i>?package(totem):\</i><br>
+<i>needs="X11"\</i><br>
+<i>section="Applications/Video"\</i><br>
+<i>title="Totem"\</i><br>
+<i>icon="/usr/share/pixmaps/totem.xpm"\</i><br>
+<i>command="/usr/bin/totem"</i><br>
+++
+</p>
+
+<p>
+<i>&lt;programm&gt;/debian/postinst → </i>Script dass nach der Installation ausgeführt wird <br>
+<a href="../../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting" class="page">Linux Wissen:Systemprogrammierung:Shellscripting</a>
+</p>
+
+<p>
+<i>&lt;programm&gt;/debian/prerm → </i>Scripte dass nach dem entfernen ausgeführt wird
+</p>
+
+<p>
+<i>&lt;programm&gt;/debian/rules </i><br>
+<i>→  </i>Regeln und <b>make</b> Anweisungen die aus dem Quellcode das Kompilat erzeugt<br>
+→ wird als <i>Makefile </i>relalisiert<br>
 ++<br>
+<i>#!/usr/bin/make -f</i><br>
+<i>config.status:  configure</i><br>
+<i>        dh_testdir</i><br>
+<i>        ./configure --cc=gcc-3.4 --preifx=/usr</i>
 </p>
 
 <p>
-<em>&lt;programm&gt;/debian/postinst → </em>Script dass nach der Installation ausgeführt wird <br>
-<a href="../../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting" class="page">Linux Wissen:Systemprogrammierung:Shellscripting</a><br>
+<i>build: build-stamp</i><br>
+<i>build-stamp:    config.status</i><br>
+<i>        dh_testdir</i><br>
+<i>        $(MAKE)</i><br>
+<i>        touch build-stamp</i><br>
+<i>clean:</i><br>
+<i>        dh_testdir</i><br>
+<i>        dh_testroot</i><br>
+<i>        rm -f build-stamp</i><br>
+<i>        -$(MAKE) distclean</i><br>
+<i>        dh_clean</i>
 </p>
 
 <p>
-<em>&lt;programm&gt;/debian/prerm → </em>Scripte dass nach dem entfernen ausgeführt wird<br>
+<i>install: build</i><br>
+<i>        #deb helper scripte befinden sich im paket dh-make</i><br>
+<i>        dh_testdir</i><br>
+<i>        dh_testroot</i><br>
+<i>        dh_clean -k</i><br>
+<i>        dh_installdirs</i><br>
+<i>        $(MAKE) install prefix=$(CURDIR)/debian/quemu/usr</i>
 </p>
 
 <p>
-<em>&lt;programm&gt;/debian/rules </em><br>
-<em>→  </em>Regeln und <strong>make</strong> Anweisungen die aus dem Quellcode das Kompilat erzeugt<br>
-→ wird als <em>Makefile </em>relalisiert<br>
-++<br>
-<em>#!/usr/bin/make -f</em><br>
-<em>config.status:  configure</em><br>
-<em>        dh_testdir</em><br>
-<em>        ./configure --cc=gcc-3.4 --preifx=/usr</em><br>
+<i>binary-indep: build install</i>
 </p>
 
 <p>
-<em>build: build-stamp</em><br>
-<em>build-stamp:    config.status</em><br>
-<em>        dh_testdir</em><br>
-<em>        $(MAKE)</em><br>
-<em>        touch build-stamp</em><br>
-<em>clean:</em><br>
-<em>        dh_testdir</em><br>
-<em>        dh_testroot</em><br>
-<em>        rm -f build-stamp</em><br>
-<em>        -$(MAKE) distclean</em><br>
-<em>        dh_clean</em><br>
+<i>binary-arch: build install</i><br>
+<i>        dh_...</i>
 </p>
 
 <p>
-<em>install: build</em><br>
-<em>        #deb helper scripte befinden sich im paket dh-make</em><br>
-<em>        dh_testdir</em><br>
-<em>        dh_testroot</em><br>
-<em>        dh_clean -k</em><br>
-<em>        dh_installdirs</em><br>
-<em>        $(MAKE) install prefix=$(CURDIR)/debian/quemu/usr</em><br>
-</p>
-
-<p>
-<em>binary-indep: build install</em><br>
-</p>
-
-<p>
-<em>binary-arch: build install</em><br>
-<em>        dh_...</em><br>
-</p>
-
-<p>
-<em>binary: binary-indep binary-arch #wird zuerst ausgeführt und ruft die verweisenden Sektionen auf</em><br>
-<em>.PHONY: build clean binary-indep binary-arch binary install</em><br>
-++<br>
+<i>binary: binary-indep binary-arch #wird zuerst ausgeführt und ruft die verweisenden Sektionen auf</i><br>
+<i>.PHONY: build clean binary-indep binary-arch binary install</i><br>
+++
 </p>
 
 <h5>Tools</h5>
-<p>
-<strong>dh-make </strong>→ konvertieren und anpassen eines Sourcecode Paketes an die Debian Reggeln<br>
-<strong>-c &lt;Lizenz&gt; </strong>→ angeben der Paketlizenz <br>
-**-e &lt;<a href="mailto:mail@mail.dom" title="mail@mail.dom" class="mailto">mail@mail.dom</a>&gt; **→ angeben einer E-Mail Adresse<br>
-<strong>-n </strong>→ natives Debian Paket bauen, es wird keine orig.tar.gz benötigt<br>
-<strong>-f &lt;File.tar.gz&gt; </strong>→ wandelt tar.gz Datei in eine orig.tar.gz Datei um<br>
-<strong>-l </strong>→ Setzen der Paketklasse auf Bibliothek<br>
-<strong>-s </strong>→ setzen der Paketklasse auf einzelne binäre Datei<br>
-<strong>-m </strong>→ setzen der Paketklasse auf multiple binäre Datei<br>
-<strong>-p &lt;Name&gt; </strong>→ angeben eines alternernativen Paketnamens abweichend von der Quelldatei<br>
-</p>
-
-  
-<p>
-<strong>dpkg-builder </strong>→ Programm dass aus einem Debian Konformen Quellpaket das Debian Paket baut<br>
-<strong>-us </strong>→ (unsigned) Paket nicht signieren<br>
-<strong>-uc </strong>→ <em> Changes </em>Datei nicht signieren<br>
-<strong>-b </strong>→ nur binäre Dateien bauen,keine Quelldateien ereugen<br>
-<strong>-S </strong>→ nur Quellpakete erzeugen, keine binären Dateien erzeugen<br>
-<strong>-a &lt;Arch&gt; </strong>→ explizite Angabe einer Zielarchitektur<br>
-<strong>-d </strong>→ Abhängigkeiten beim Bauen ignorieren<br>
-<strong>-rfakroot </strong>→ benutze eine gefälschte Rootumgebung zum Bauen<br>
-</p>
 
 <p>
-<strong>lintian &lt;Paket.deb&gt; </strong><br>
+<b>dh-make </b>→ konvertieren und anpassen eines Sourcecode Paketes an die Debian Reggeln<br>
+<b>-c &lt;Lizenz&gt; </b>→ angeben der Paketlizenz <br>
+<b>-e &lt;mail@mail.dom&gt; </b>→ angeben einer E-Mail Adresse<br>
+<b>-n </b>→ natives Debian Paket bauen, es wird keine orig.tar.gz benötigt<br>
+<b>-f &lt;File.tar.gz&gt; </b>→ wandelt tar.gz Datei in eine orig.tar.gz Datei um<br>
+<b>-l </b>→ Setzen der Paketklasse auf Bibliothek<br>
+<b>-s </b>→ setzen der Paketklasse auf einzelne binäre Datei<br>
+<b>-m </b>→ setzen der Paketklasse auf multiple binäre Datei<br>
+<b>-p &lt;Name&gt; </b>→ angeben eines alternernativen Paketnamens abweichend von der Quelldatei
+</p>
+
+<br>
+
+<p>
+<b>dpkg-builder </b>→ Programm dass aus einem Debian Konformen Quellpaket das Debian Paket baut<br>
+<b>-us </b>→ (unsigned) Paket nicht signieren<br>
+<b>-uc </b>→ <i> Changes </i>Datei nicht signieren<br>
+<b>-b </b>→ nur binäre Dateien bauen,keine Quelldateien ereugen<br>
+<b>-S </b>→ nur Quellpakete erzeugen, keine binären Dateien erzeugen<br>
+<b>-a &lt;Arch&gt; </b>→ explizite Angabe einer Zielarchitektur<br>
+<b>-d </b>→ Abhängigkeiten beim Bauen ignorieren<br>
+<b>-rfakroot </b>→ benutze eine gefälschte Rootumgebung zum Bauen
+</p>
+
+<p>
+<b>lintian &lt;Paket.deb&gt; </b><br>
 → Untersucht das Paket nach Bugs und Policyverletzungen<br>
 → dabei wird ein Verzeichnis, labortory angelegt in welche Informationen über das Paket abgelegt werden<br>
- <strong>-d </strong>→ anzeigen von Debugging Nachrichten<br>
-<strong>-i|--info </strong>→ anzeigen von detaillierten Informationen zu den einzelnnen Problemen<br>
-<strong>-o </strong>→ override Policy nicht benutzen<br>
-<strong>--color </strong>→ ein bisschen bunter<br>
-<strong>-l|--lab &lt;Verzeichnis&gt; </strong>→ ein alternatives labortory &lt;Verzeichnis&gt; angeben<br>
-<strong>-j N </strong>→ Anzahl der Aufträge die gleichzeitig abgewickelt werden<br>
+ <b>-d </b>→ anzeigen von Debugging Nachrichten<br>
+<b>-i|--info </b>→ anzeigen von detaillierten Informationen zu den einzelnnen Problemen<br>
+<b>-o </b>→ override Policy nicht benutzen<br>
+<b>--color </b>→ ein bisschen bunter<br>
+<b>-l|--lab &lt;Verzeichnis&gt; </b>→ ein alternatives labortory &lt;Verzeichnis&gt; angeben<br>
+<b>-j N </b>→ Anzahl der Aufträge die gleichzeitig abgewickelt werden
 </p>
 
 <p>
-<strong>pbuilder </strong><br>
+<b>pbuilder </b><br>
 → bauen eines .deb Pakets in einer sicheren sauberen Umgebung<br>
 → stellt sicher dass Abhängigkeiten richtig erkannt wurden<br>
-→ es wird eine Chroot Umgebung in einem tarball erstellt<br>
+→ es wird eine Chroot Umgebung in einem tarball erstellt
 </p>
 
 <p>
-<strong>pbuilder create </strong><br>
+<b>pbuilder create </b><br>
 → erstellt eine Chroot Umgebung für debian sid<br>
-<strong>--distribution &lt;Code&gt; </strong>→ erstellt eine Chroot Umgebung für die Distribution &lt;Code&gt;<br>
+<b>--distribution &lt;Code&gt; </b>→ erstellt eine Chroot Umgebung für die Distribution &lt;Code&gt;
 </p>
 
 <p>
-<strong>pbuilder update </strong>→ aktualisieren der Chroot Umgebung<br>
+<b>pbuilder update </b>→ aktualisieren der Chroot Umgebung
 </p>
 
 <p>
-<strong>pbuilder builder &lt;programm.dsc&gt; </strong>→ baut das Programm aus der  Datei <em>&lt;programm.dsc&gt;</em><br>
+<b>pbuilder builder &lt;programm.dsc&gt; </b>→ baut das Programm aus der  Datei <i>&lt;programm.dsc&gt;</i>
 </p>
 
 <h5>Workflow ein eigenes Paket bauen</h5>
+
 <p>
-<strong>(1) </strong>Herunterladen und auspacken des Quellcodes, sowie lesen der Dokumentation um entsprechend fehlende Libraries nachzuinstallieren<br>
+<b>(1) </b>Herunterladen und auspacken des Quellcodes, sowie lesen der Dokumentation um entsprechend fehlende Libraries nachzuinstallieren
 </p>
 
 <p>
-<strong>(2) </strong>Aufruf von <strong>dh_make:</strong><br>
-<strong>cd &lt;programm&gt;</strong><br>
-<code>dh_make -f ../&lt;programm.tar.gz&gt; --email noop@mail.dom -c gpl</code><br>
+<b>(2) </b>Aufruf von <b>dh_make:</b><br>
+<b>cd &lt;programm&gt;</b><br>
+<tt>dh_make -f ../&lt;programm.tar.gz&gt; --email noop@mail.dom -c gpl</tt>
 </p>
 
 <p>
-<strong>(3) </strong>Anpassen und bearbeiten von Dateien in <em>debian </em>Unterverzeichnis<br>
-(3.1) debuggen<br>
+<b>(3) </b>Anpassen und bearbeiten von Dateien in <i>debian </i>Unterverzeichnis<br>
+(3.1) debuggen
 </p>
 
 <p>
-<strong>(4) </strong>Das Paket mit <strong>dpkg-buildpackage </strong>bauen: <strong>dpkg-buildpackage -uc -us -rfakeroot</strong><br>
+<b>(4) </b>Das Paket mit <b>dpkg-buildpackage </b>bauen: <b>dpkg-buildpackage -uc -us -rfakeroot</b>
 </p>
 
 <p>
-<strong>(5) </strong>Paket mit <strong>lintian </strong>und <strong>pbuilder </strong>nach Fehlern durchsuchen <br>
+<b>(5) </b>Paket mit <b>lintian </b>und <b>pbuilder </b>nach Fehlern durchsuchen 
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../../Paketverwaltung.html'>Linux Wissen:Paketverwaltung</a></li>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../../Paketverwaltung.html'>Linux Wissen:Paketverwaltung</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

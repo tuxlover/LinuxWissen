@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Dictionary Operationen</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Dictionary Operationen</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Dictionary Operationen</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./boolische_Operationen.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./Listen_Operationen.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -67,13 +81,13 @@
 <li><a href="../../../Shell.html" title="Shell" class="page">Shell</a></li>
 <li><a href="../../../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
 <li><a href="../../../SQL.html" title="SQL" class="page">SQL</a></li>
-<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
+<li><a href="../../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a>
 <ul>
 <li><a href="../../Awk.html" title="Awk" class="page">Awk</a></li>
 <li><a href="../../C.html" title="C" class="page">C</a></li>
-<li><a href="../../C%2B%2B.html" title="C++" class="page">C++</a></li>
+<li><a href="../../C++.html" title="C++" class="page">C++</a></li>
 <li><a href="../../Perl.html" title="Perl" class="page">Perl</a></li>
-<li><a href="../../Python.html" title="Python" class="page">Python</a></li>
+<li><a href="../../Python.html" title="Python" class="page">Python</a>
 <ul>
 <li><a href="../Beispielprogramme.html" title="Beispielprogramme" class="page">Beispielprogramme</a></li>
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
@@ -84,74 +98,173 @@
 <li><a href="../Idle.html" title="Idle" class="page">Idle</a></li>
 <li><a href="../Input.html" title="Input" class="page">Input</a></li>
 <li><a href="../Module.html" title="Module" class="page">Module</a></li>
-<li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a></li>
+<li><a href="../Operationen.html" title="Operationen" class="page">Operationen</a>
 <ul>
 <li><a href="./arithmetische_Operationen.html" title="arithmetische Operationen" class="page">arithmetische Operationen</a></li>
 <li><a href="./boolische_Operationen.html" title="boolische Operationen" class="page">boolische Operationen</a></li>
-<li><strong class="activepage">Dictionary Operationen</strong></li>
+<li><b>Dictionary Operationen</b></li>
 <li><a href="./Listen_Operationen.html" title="Listen Operationen" class="page">Listen Operationen</a></li>
+<li><a href="./Operationen_auf_Dateien.html" title="Operationen auf Dateien" class="page">Operationen auf Dateien</a></li>
+<li><a href="./Sets_Operationen.html" title="Sets Operationen" class="page">Sets Operationen</a></li>
 <li><a href="./String_Operatoren.html" title="String Operatoren" class="page">String Operatoren</a></li>
 <li><a href="./Typenkonvertierung.html" title="Typenkonvertierung" class="page">Typenkonvertierung</a></li>
 </ul>
+</li>
 <li><a href="../Python_Interpreter.html" title="Python Interpreter" class="page">Python Interpreter</a></li>
 <li><a href="../Schleifen.html" title="Schleifen" class="page">Schleifen</a></li>
 <li><a href="../Test.html" title="Test" class="page">Test</a></li>
 <li><a href="../Variablen.html" title="Variablen" class="page">Variablen</a></li>
 </ul>
+</li>
 <li><a href="../../Sed.html" title="Sed" class="page">Sed</a></li>
 <li><a href="../../Shellscripting.html" title="Shellscripting" class="page">Shellscripting</a></li>
 </ul>
+</li>
 <li><a href="../../../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
 <li><a href="../../../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
 <li><a href="../../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Dienstag 22 Januar 2013<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Dictionary Operationen <a name='Linux Wissen:Systemprogrammierung:Python:Operationen:Dictionary Operationen'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Dienstag 22 Januar 2013
 </p>
+
+<br>
+
+<h4>Dictionaries sortieren</h4>
+
+<p>
+<ul>
+<li>normalerweise gibr es keine Reihenfolge in Dictionaries</li>
+<li>hat man aber als Keys sinnvoll sortierte Objekte eingegebene, so lassen sich Dictionaries anhand ihrer Keys sortieren</li>
+</ul>
+</p>
+
+<p>
+snippet:<br>
+++++
+</p>
+<pre>
+Keysvalues = list(MyDict.keys())
+Keyvalues.sort()
+for Key in Keyvalue:
+</pre>
+<pre style='padding-left: 30pt'>
+print(Key + "--&gt;"+MyDict[Key] )
+</pre>
+
+<p>
++++++
+</p>
+
+<p>
+<b>sorted(&lt;Dictionay&gt;)</b><br>
+→ die Funktion sorted erlaubt es ab #version3.2 dies ebenfalls das Sorteriren von Keys<br>
+→ Es können nur die Keyswerte sortiert werden
+</p>
+
+<p>
+<i>Beispiele:</i><br>
+<tt>(1)</tt><br>
+<tt>In [30]: sorted(rucksack)</tt><br>
+<tt>Out[30]: ['healing potions', 'letters', 'mana potions', 'torches']</tt>
+</p>
+
+<pre>
+(2)
+In [32]: for key in sorted(rucksack):
+	print(key ,"--&gt;", rucksack[key] )
+   ....:     
+healing potions --&gt; 1
+letters --&gt; King Emanuel
+mana potions --&gt; 0
+torches --&gt; 3
+</pre>
+
+<br>
+<br>
+<br>
 
 <p>
 <a href="../Datentypen/Dictionaries.html" title="Python:Datentypen:Dictionaries" class="page">Python:Datentypen:Dictionaries</a><br>
-<strong>len() </strong><br>
-→ gibt die Länge bzw. die Anzahl der <em>Key/Value</em> Paare zurück<br>
+<b>len() </b><br>
+→ gibt die Länge bzw. die Anzahl der <i>Key/Value</i> Paare zurück
 </p>
 
 <p>
-<strong>del &lt;Dictionary&gt;['&lt;Key'&gt;]</strong><br>
-→ entfernt den Schlüssel und den dazugehörigen Wert aus dem Dictionary basierend auf den Namen des <strong>&lt;Key&gt;</strong><br>
+<b>del &lt;Dictionary&gt;['&lt;Key'&gt;]</b><br>
+→ entfernt den Schlüssel und den dazugehörigen Wert aus dem Dictionary basierend auf den Namen des <b>&lt;Key&gt;</b>
 </p>
 
 <p>
-<strong>.remove('&lt;Value&gt;')</strong><br>
-→ entfernt den Wert und den Schlüssel aus dem Dictionary basierend auf dem Wert <strong>&lt;Value&gt;</strong><br>
+<b>.remove('&lt;Value&gt;')</b><br>
+→ entfernt den Wert und den Schlüssel aus dem Dictionary basierend auf dem Wert <b>&lt;Value&gt;</b>
 </p>
 
 <p>
-<strong>.join()</strong><br>
+<b>.join()</b><br>
 → siehe Dictionary Operationen<br>
-<a href="" title="Dictionary Operationen" class="page">Dictionary Operationen</a><br>
+<a href="#Linux Wissen:Systemprogrammierung:Python:Operationen:Dictionary Operationen" title="Dictionary Operationen" class="page">Dictionary Operationen</a>
 </p>
 
+<p>
+<b>.keys()</b><br>
+→ ausgeben der Schlüssel in einem Dictionary
+</p>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen</a></li>						<a href='../Datentypen/Dictionaries.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Dictionaries</a></li>						<a href='./String_Operatoren.html'>Linux Wissen:Systemprogrammierung:Python:Operationen:String Operatoren</a></li>
-				<br><br>
+<p>
+<i>Beispiel:</i>
+</p>
+<pre>
+# Ausgeben der Schlüssel die in diesem Dictionary vorkommen
+In [21]: rucksack.keys()
+Out[21]: dict_keys(['torches', 'letters', 'mana potions', 'healing potions'])
+</pre>
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+<br>
+
+
+	</div>
+
+	<br />
+
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Operationen.html'>Linux Wissen:Systemprogrammierung:Python:Operationen</a>
+
+		
+		
+
+		<a href='../Datentypen/Dictionaries.html'>Linux Wissen:Systemprogrammierung:Python:Datentypen:Dictionaries</a>
+
+		
+		
+
+		<a href='./String_Operatoren.html'>Linux Wissen:Systemprogrammierung:Python:Operationen:String Operatoren</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

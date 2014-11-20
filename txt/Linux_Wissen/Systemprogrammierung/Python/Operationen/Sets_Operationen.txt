@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-09-06T17:12:26+02:00
+
+====== Sets Operationen ======
+Created Freitag 06 September 2013
+
+* Es können die üblichen Operaationen auf Mengen ausgeführt werden
+
+'''
+In [1]: M = set("123")
+
+In [2]: N={"a","b","2"}
+'''
+
+
+
+=== Vereinigungn (UNION) ===
+**A | B **→ Vereinigung der beiden Mengen A und B zu einer neuen Menge
+
+//Beispiel://
+'''
+In [6]: M  | N
+Out[6]: set(['3', '2', '1', 'a', 'b'])
+'''
+
+
+
+=== Durchschnitt (Intersection) ===
+**A & B **→ Druchschnitt beider Mengen A und B
+
+//Beispiel://
+'''
+In [4]: M & N
+Out[4]: set(['2'])
+'''
+
+
+
+=== Mengendifferenz (A ohne B) ===
+**A - B **→ Differnezmenge der beiden Mengen A und B
+
+'''
+Beispiel:
+In [7]: M  - N
+Out[7]: set(['3', '1'])
+
+In [8]: N - M
+Out[8]: set(['b', 'a'])
+'''
+
+

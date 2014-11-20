@@ -18,6 +18,7 @@ SIGCONT		18			continue: setze einen mit SIGSTOP angehaltenen Prozess fort
 SIGTSTP		20			terminal stop: entspricht <Strg+z>
 
 __Hinweis: man 7 signal__
+**fuser -l  (siehe auch **[[fuser]]**)**
 
 //<PID>//
 PID > 0 → sende das <SIGNAL> an den Prozess mit der angegbenen PID
@@ -37,5 +38,5 @@ __Hinweis: __Es gilt__ "exit Status" -128 = <SIGNR>__
 [[Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status]]
 
 **nohup <Befehl> **→ <Befehl> wird auch nach dem beenden des Elternprozesses weiterausgeführt
-                               → normalerweise wird dieser <Befehl> dann direkter Kindprozess des init Prozesses
-                               → kann einen Zombie erzeugen
+							   → normalerweise wird dieser <Befehl> dann direkter Kindprozess des init Prozesses
+							   → kann einen Zombie erzeugen

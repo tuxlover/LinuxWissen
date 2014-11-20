@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>lsof</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
+
+		span.insen { color: grey                }
+
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./kill.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./Magic_Sys-Abf_Taste.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
+<ul>
+<li><a href="../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
+<li><a href="../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
+<li><a href="../Bibliotheken.html" title="Bibliotheken" class="page">Bibliotheken</a></li>
+<li><a href="../Booten.html" title="Booten" class="page">Booten</a></li>
+<li><a href="../Dateien_verwalten.html" title="Dateien verwalten" class="page">Dateien verwalten</a></li>
+<li><a href="../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik" class="page">Datenrettung und Forensik</a></li>
+<li><a href="../Drucken.html" title="Drucken" class="page">Drucken</a></li>
+<li><a href="../Emacs_Editor.html" title="Emacs Editor" class="page">Emacs Editor</a></li>
+<li><a href="../FHS.html" title="FHS" class="page">FHS</a></li>
+<li><a href="../Filterprogramme.html" title="Filterprogramme" class="page">Filterprogramme</a></li>
+<li><a href="../git_Vesionskontrolle.html" title="git Vesionskontrolle" class="page">git Vesionskontrolle</a></li>
+<li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen" class="page">Hardware und Systeminformationen</a></li>
+<li><a href="../Hilfe_erhalten.html" title="Hilfe erhalten" class="page">Hilfe erhalten</a></li>
+<li><a href="../Lokalisierung.html" title="Lokalisierung" class="page">Lokalisierung</a></li>
+<li><a href="../Monitoring.html" title="Monitoring" class="page">Monitoring</a></li>
+<li><a href="../Networking.html" title="Networking" class="page">Networking</a></li>
+<li><a href="../Paketverwaltung.html" title="Paketverwaltung" class="page">Paketverwaltung</a></li>
+<li><a href="../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme" class="page">Partitionen und Dateisysteme</a></li>
+<li><a href="../Prozessverwaltung.html" title="Prozessverwaltung" class="page">Prozessverwaltung</a>
+<ul>
+<li><a href="./Cgroups.html" title="Cgroups" class="page">Cgroups</a></li>
+<li><a href="./fuser.html" title="fuser" class="page">fuser</a></li>
+<li><a href="./kill.html" title="kill" class="page">kill</a></li>
+<li><b>lsof</b></li>
+<li><a href="./Magic_Sys-Abf_Taste.html" title="Magic Sys-Abf Taste" class="page">Magic Sys-Abf Taste</a></li>
+<li><a href="./Nice_Werte_kontrollieren.html" title="Nice Werte kontrollieren" class="page">Nice Werte kontrollieren</a></li>
+<li><a href="./ps.html" title="ps" class="page">ps</a></li>
+<li><a href="./strace.html" title="strace" class="page">strace</a></li>
+<li><a href="./top.html" title="top" class="page">top</a></li>
+<li><a href="./ulimit.html" title="ulimit" class="page">ulimit</a></li>
+</ul>
+</li>
+<li><a href="../root.html" title="root" class="page">root</a></li>
+<li><a href="../Shell.html" title="Shell" class="page">Shell</a></li>
+<li><a href="../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
+<li><a href="../SQL.html" title="SQL" class="page">SQL</a></li>
+<li><a href="../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
+<li><a href="../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
+<li><a href="../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
+<li><a href="../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
+<li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
+<li><a href="../X11.html" title="X11" class="page">X11</a></li>
+<li><a href="../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
+</ul></li>
+</ul>
+
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>lsof <a name='Linux Wissen:Prozessverwaltung:lsof'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Donnerstag 20 November 2014
+</p>
+
+<p>
+<ul>
+<li><b>li</b>st <b>s</b>ort <b>o</b>pen <b>f</b>iles</li>
+<li>auflisten aller offenen Dateien bzw. filtern nach in Verwendung befindlicher Dateien</li>
+</ul>
+</p>
+
+<p>
+<b>lsof </b><br>
+<ul>
+<li>ohne Argumente liefert der Befehl alle Dateien die momentan vom System in verwenudng sind  / inklusive aller Sockets die göffnet sind</li>
+</ul>
+<b>-u &lt;username&gt; </b>→ filtern nach Benutzernamen<br>
+<b>-i &lt;:Port&gt; </b>→ filtern nach Ports<br>
+<b>-p </b>→ nach PID filtern<br>
+<b>-c </b>→ filtern nach Prozess namen<br>
+<b>-a </b>→ Abfragen mit inanander logisch verknmüfen
+</p>
+
+<h5>Format 			Beschreibung</h5>
+
+<p>
++D /home/benutzername 	Informationen über die Verwendung von Dateien z.B. des Home-Verzeichnisses des Anwenders<br>
++p PID 					Liefert die Informationen welche PID welche Datei benutzt<br>
++L1 	Liefert die Informationen über bereits gelöschte Dateien
+</p>
+
+<br>
+
+<p>
+<i>Beispiele</i><br>
+Auflisten aller Dateien die der Nutzer max gerade benutzt<br>
+<tt>lsof -u max</tt>
+</p>
+
+<p>
+Auflisten aller offenen Sockets / Ports durch einen bestimmen Nutzer<br>
+<tt>lsof -u max -i -a</tt>  <br>
+COMMAND     PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME<br>
+firefox    1982 max   73u  IPv4 368515      0t0  TCP localhost:44115-&gt;localhost:8118 (ESTABLISHED)<br>
+firefox    1982 max   74u  IPv4 368590      0t0  TCP localhost:44117-&gt;localhost:8118 (ESTABLISHED)<br>
+firefox    1982 max   75u  IPv4 368333      0t0  TCP localhost:44101-&gt;localhost:8118 (ESTABLISHED)<br>
+firefox    1982 max   76u  IPv4 369133      0t0  TCP localhost:44113-&gt;localhost:8118 (ESTABLISHED)
+</p>
+
+<p>
+Auflisten von Ports und von wewem sie gerade verwendet werden<br>
+<tt>lsof -i :5351</tt><br>
+COMMAND    PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME<br>
+transmiss 2436 l1zard   30u  IPv4  34178      0t0  UDP Marvin:49010-&gt;192.168.44.1:5351 
+</p>
+
+<p>
+Auflisten aller verwendeten Dateien unterhalb eines Verzeichnis <br>
+<tt>lsof +D /var/log/</tt><br>
+COMMAND    PID    USER   FD   TYPE DEVICE SIZE/OFF   NODE NAME<br>
+systemd-j  240    root  mem    REG  254,1 41943040 135646 /var/log/journal/310b1db43ac89c2282b770a000000013/user-1000.journal<br>
+systemd-j  240    root  mem    REG  254,1  8388608 131527 /var/log/journal/310b1db43ac89c2282b770a000000013/system.journal<br>
+systemd-j  240    root  mem    REG  254,1  8388608 131623 /var/log/journal/310b1db43ac89c2282b770a000000013/user-107.journal<br>
+systemd-j  240    root   17u   REG  254,1  8388608 131623 /var/log/journal/310b1db43ac89c2282b770a000000013/user-107.journal<br>
+systemd-j  240    root   24u   REG  254,1  8388608 131527 /var/log/journal/310b1db43ac89c2282b770a000000013/system.journal<br>
+systemd-j  240    root   45u   REG  254,1 41943040 135646 /var/log/journal/310b1db43ac89c2282b770a000000013/user-1000.journal<br>
+rsyslogd   731    root    6w   REG  254,1  1052704 132282 /var/log/syslog<br>
+rsyslogd   731    root    7w   REG  254,1   925671 133250 /var/log/messages<br>
+rsyslogd   731    root    9w   REG  254,1   925064 133234 /var/log/user.log<br>
+rsyslogd   731    root   11w   REG  254,1   125723 132868 /var/log/daemon.log<br>
+rsyslogd   731    root   12w   REG  254,1      606 133249 /var/log/cron.log<br>
+rsyslogd   731    root   14w   REG  254,1      561 132861 /var/log/mail.log<br>
+rsyslogd   731    root   16w   REG  254,1      464 133119 /var/log/kern.log<br>
+rsyslogd   731    root   18w   REG  254,1     7019 133226 /var/log/auth.log<br>
+console-k  755    root    7w   REG  254,1     8762 261160 /var/log/ConsoleKit/history<br>
+ntpd      1083     ntp    4w   REG  254,1    12678 130806 /var/log/ntpstats/peerstats.20141120<br>
+ntpd      1083     ntp    6w   REG  254,1      994 130945 /var/log/ntpstats/loopstats.20141120<br>
+privoxy   3933 privoxy    3w   REG  254,1        0 394053 /var/log/privoxy/logfile
+</p>
+
+<p>
+Auflisten aller Dateien die bereits gelöscht oder durch neuere Dateien überschrieben wurden, jedoch weiterhin von Prozessen in verwendung sind<br>
+<tt>lsof +L1</tt>
+</p>
+
+	</div>
+
+	<br />
+
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Prozessverwaltung.html'>Linux Wissen:Prozessverwaltung</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
+</html>

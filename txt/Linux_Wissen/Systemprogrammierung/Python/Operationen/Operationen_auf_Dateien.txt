@@ -1,0 +1,58 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2013-08-23T18:25:05+02:00
+
+====== Operationen auf Dateien ======
+Created Freitag 23 August 2013
+
+=== Dateien erstellen und beschreiben ===
+* Für jede Dateioperation muss de Datei mit **open()** geöffnet und mit .**close() wieder geschlossen werden**
+
+**open("<Dateiname>",'<flag>',<encoding='utf8')**
+→ öffnet bzw. erstellt wenn nicht vorhanden die Datei <Dateiname>
+→ Python unterstützt auch die Angabe von kompletten Pfaden. Ist der Pfad aber nicht korrekt oder der angegebene Pfad nicht existent, wird Python **keinen** neuen erstellen
+→ Pyhton unterscheidet zwischen Dateien die in Byte und im Textmodus geöffnet werden
+→ ohne Angabe eines Flags wird eine Datei lesend geöffnet
+   **'r' **→ lesend öffnen
+   **'w'** → schreibend öffnen
+   **'x'** → neue Datei schreibend öffnen 
+    **'a' **→ nur an neue Datei anfügen
+    **'b'** → binärmodus
+    **'t'** →   text mode (default)
+    **'+' **→  Datei öffnen lesend und schreibend 
+→ zusätzliche Flags können den Encodingtypen angeben
+   **encoding='utf8'**
+
+//Beispiel://
+''In [47]: new_file = open('~/python.txt','w')''
+
+
+**.write('<Text>'|<Content>)**
+→ beschreibt eine Datei mit Ascii Text
+→ Dabei sind der Funktion die gleichen Metacharacter bekannt wie Strings
+→ es kann nur Text, d.h. Strings in eine Datei geschrieben werden
+
+//Beispiel://
+
+'''
+In [76]: new_file.write('Some Text \n')
+Out[76]: 11
+
+In [77]: new_file.write('goes here !! \n')
+Out[77]: 14
+'''
+
+
+
+**.close()**
+→ Die Methode **.close()** wird aufgerufen damit die Datei wieder aus dem Speicher entladen wird.
+→ Eine Datei die nach Ablauf des Programms nicht geclosed wird liegt im Arbeitspeicher
+
+== !ACHTUNG! Wird in eine Datei geschrieben, diese aber nicht geschlossen, werden Änderungen beim Ende des Ablauf des Programms nicht geschrieben! ==
+
+//Beispiel://
+	''new_file.close()''
+
+**(<Object>)**.**closed**
+→ überprüft ob das angegebnen Objekt nicht mehr im Speicher liegt und wirklich geschlossen wurde
+

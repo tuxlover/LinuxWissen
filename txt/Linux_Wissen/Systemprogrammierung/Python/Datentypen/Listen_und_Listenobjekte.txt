@@ -13,6 +13,8 @@ Created Sonntag 04 November 2012
 [[Strings]]
 [[Python:Operationen:Listen Operationen]]
 
+=== Definieren von Listen ===
+
 * Listen werden erstellt durch:
 		//list_name = [item1, item2,...]//
 * [] ist eine leere Liste
@@ -72,4 +74,9 @@ In [6]: print c
 //Beispiel://
 In [17]: print 5*"OTTO"
 OTTOOTTOOTTOOTTOOTTO
+
+=== Matrizen ===
+→ sind 2 ineinander verschachtelte Listen 
+→ werden durch Listenoperationen angesprochen und erzeugt.
+[[Python:Operationen:Listen Operationen]]
 

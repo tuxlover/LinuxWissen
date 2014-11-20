@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Test</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Test</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Test</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./select.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./tput.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -67,15 +81,15 @@
 <li><a href="../../Shell.html" title="Shell" class="page">Shell</a></li>
 <li><a href="../../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
 <li><a href="../../SQL.html" title="SQL" class="page">SQL</a></li>
-<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
+<li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a>
 <ul>
 <li><a href="../Awk.html" title="Awk" class="page">Awk</a></li>
 <li><a href="../C.html" title="C" class="page">C</a></li>
-<li><a href="../C%2B%2B.html" title="C++" class="page">C++</a></li>
+<li><a href="../C++.html" title="C++" class="page">C++</a></li>
 <li><a href="../Perl.html" title="Perl" class="page">Perl</a></li>
 <li><a href="../Python.html" title="Python" class="page">Python</a></li>
 <li><a href="../Sed.html" title="Sed" class="page">Sed</a></li>
-<li><a href="../Shellscripting.html" title="Shellscripting" class="page">Shellscripting</a></li>
+<li><a href="../Shellscripting.html" title="Shellscripting" class="page">Shellscripting</a>
 <ul>
 <li><a href="./Arrays.html" title="Arrays" class="page">Arrays</a></li>
 <li><a href="./Debugging.html" title="Debugging" class="page">Debugging</a></li>
@@ -89,38 +103,47 @@
 <li><a href="./Rezepte.html" title="Rezepte" class="page">Rezepte</a></li>
 <li><a href="./Schleifen.html" title="Schleifen" class="page">Schleifen</a></li>
 <li><a href="./select.html" title="select" class="page">select</a></li>
-<li><strong class="activepage">Test</strong></li>
+<li><b>Test</b></li>
 <li><a href="./tput.html" title="tput" class="page">tput</a></li>
 <li><a href="./Variablen_zuweisen.html" title="Variablen zuweisen" class="page">Variablen zuweisen</a></li>
+</ul></li>
 </ul>
-</ul>
+</li>
 <li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
 <li><a href="../../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
 <li><a href="../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Dienstag 26 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Test <a name='Linux Wissen:Systemprogrammierung:Shellscripting:Test'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Dienstag 26 April 2011
 </p>
 
 <p>
-<strong>test [ ]   (( ))  </strong><br>
+<b>test [ ]   (( ))  </b>
 </p>
 
 <h2>Pattern Matching</h2>
+
 <p>
 <ul>
-<li><strong>ohne </strong>"" angegeben</li>
+<li><b>ohne </b>"" angegeben</li>
 </ul>
-Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, benutzt man die neueren   und der passende Ausdruck wird <em>Beispiel:</em><br>
+Um zu überprüfen ob ein bestimmtes Muster auf eine Variablenexpansion passt, benutzt man die neueren   und der passende Ausdruck wird <i>Beispiel:</i>
 </p>
 <pre>
 if  ${FILE} == *.tar.gz 
@@ -132,351 +155,389 @@ then
 tar xvfz $FILE
 fi
 </pre>
+
+<br>
+
 <p>
 <ul>
-<li>erweitertes Patternmatching kann aktivert werden indem man <strong>shopt -s </strong>benutzt, damit wir das sogenannte Globbing eingeschaltet</li>
+<li>erweitertes Patternmatching kann aktivert werden indem man <b>shopt -s </b>benutzt, damit wir das sogenannte Globbing eingeschaltet</li>
 </ul>
 @( ... ) Nur ein einzelnes Vorkommen<br>
 *( ... ) Null oder mehr Vorkommen<br>
 +( ... ) Ein oder mehr Vorkommen<br>
 ?( ... ) Null oder ein Vorkommen<br>
-!( ... ) keine dieser Ausdrücke<br>
-<br>
+!( ... ) keine dieser Ausdrücke
 </p>
+
 <h2>Reguläre Ausdrücke</h2>
+
 <p>
 <ul>
-<li>Der Vergelichsoperator für reguläre Ausdrücke ist <strong>=~ (siehe unten)</strong></li>
+<li>Der Vergelichsoperator für reguläre Ausdrücke ist <b>=~ (siehe unten)</b></li>
 </ul>
-<br>
 </p>
+
 <h2>Arithmetische Tests</h2>
+
 <p>
-<strong>test "$x" </strong><br>
+<b>test "$x" </b><br>
 →   0 falls Variable exitiert und nicht leer<br>
-→  1 falls Variable leer oder nicht gesetzt<br>
-<br>
-<strong>test $x -gt N </strong><br>
-→  0 falls x größer als N<br>
-→  1 sonst<br>
-<br>
-<strong>test $x -ge N </strong><br>
-→  0 falls x größer oder gleich N<br>
-→  1 sonst<br>
-<br>
-<strong>test $x -eq N</strong><br>
- →  0 falls x gleich N<br>
-→  1 sonst<br>
-<br>
-<strong>test $x -lt N </strong><br>
-→  0 falls x kleiner N<br>
-→  1 sonst<br>
-<br>
-<strong>test $x -le N </strong><br>
-→  0 fals x kleiner oder gleich N<br>
- →  1 sonst<br>
-<br>
-<strong>test $x -ne N </strong><br>
-→  0 falls x ungleich N<br>
-→  1 sonst<br>
-<br>
+→  1 falls Variable leer oder nicht gesetzt
 </p>
-<h4>Arithmetische Tests mit (( ))</h4>
+
 <p>
-++<br>
+<b>test $x -gt N </b><br>
+→  0 falls x größer als N<br>
+→  1 sonst
+</p>
+
+<p>
+<b>test $x -ge N </b><br>
+→  0 falls x größer oder gleich N<br>
+→  1 sonst
+</p>
+
+<p>
+<b>test $x -eq N</b><br>
+ →  0 falls x gleich N<br>
+→  1 sonst
+</p>
+
+<p>
+<b>test $x -lt N </b><br>
+→  0 falls x kleiner N<br>
+→  1 sonst
+</p>
+
+<p>
+<b>test $x -le N </b><br>
+→  0 fals x kleiner oder gleich N<br>
+ →  1 sonst
+</p>
+
+<p>
+<b>test $x -ne N </b><br>
+→  0 falls x ungleich N<br>
+→  1 sonst
+</p>
+
+<h4>Arithmetische Tests mit (( ))</h4>
+
+<p>
+++
 </p>
 <pre>
 #!/bin/bash                                                            
 # arith-tests.sh                                                       
 # Arithmetic tests.                                                    
-                                                                        
+																		
  (( 0 ))                                                                
  echo "Exit status von \"(( 0 ))\" ist $?."         # 1                 
-                                                                        
+																		
  (( 1 ))                                                                
  echo "Exit status von \"(( 1 ))\" ist $?."         # 0                 
-                                                                        
+																		
  (( 5 &gt; 4 ))                                      # wahr                
  echo "Exit status von \"(( 5 &gt; 4 ))\" ist $?."   # 0                   
-                                                                        
+																		
  (( 5 &gt; 9 ))                                      # false               
  echo "Exit status von \"(( 5 &gt; 9 ))\" ist $?."   # 1                   
-                                                                        
+																		
  (( 5 == 5 ))                                     # wahr                
  # (( 5 = 5 ))  gibt einen Fehlerwert                                   
-                                                                        
+																		
  (( 5 - 5 ))                                      # 0                   
-                                                                        
+																		
  (( 5 / 4 ))                                      # Division o.k.       
-                                                                        
+																		
  (( 1 / 2 ))                                     # Division resultat &lt; 1. 
-                                                  # 1                   
-                                                                        
+												  # 1                   
+																		
  (( 1 / 0 )) 2&gt;/dev/null                        #Illegal division durch 0. 
  # 1          ^^^^^^^^^^^                                               
-                                                                        
-                                                                        
+																		
+																		
  if (( var1 &gt; var2 ))                                                   
  then #^      ^      Note: Not $var1, $var2. Why?                       
   echo "$var1 ist größer $var2"                                   
  fi     # 5 ist größer als 4                                          
-                                                                        
+																		
  exit 0            
 </pre>
-                                                     
+
 <p>
-++<br>
+++
 </p>
 
 <h2>Zeichenketten Tests</h2>
+
 <p>
-<strong>test -z $STRING </strong><br>
+<b>test -z $STRING </b><br>
 →  0 falls STRING nicht gesetzt oder die Länge Null hat<br>
- →  1 sonst<br>
+ →  1 sonst
 </p>
 
 <p>
-<strong>test -n $STRING </strong>→  <strong>test ! -z $STRING</strong><br>
+<b>test -n $STRING </b>→  <b>test ! -z $STRING</b>
 </p>
 
 <p>
-<strong>test ALPHA \&gt; OMEGA</strong><br>
+<b>test ALPHA \&gt; OMEGA</b><br>
 →  0 falls ALPHA lexiographisch nach OMEGA steht<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>test ALPHA \&lt; OMEGA </strong><br>
+<b>test ALPHA \&lt; OMEGA </b><br>
 →  0 falls ALPHA lexiographisch vor OMEGA steht<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>test ALPHA &gt; OMEGA </strong><br>
+<b>test ALPHA &gt; OMEGA </b><br>
 →  0 falls ALPHA in ASCII Reihenfolge nach OMEGA steht<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>test ALPHA &lt; OMEGA </strong><br>
+<b>test ALPHA &lt; OMEGA </b><br>
 →  0 falls ALPHA in ASCII Reienfolge vor OMEGA steht<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>test ALPHA == OMEGA</strong><br>
+<b>test ALPHA == OMEGA</b><br>
 →  0 falls ALPHA der Zeichenkette OMEGA genau entspricht<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>test ALPHA != OMEGA</strong><br>
+<b>test ALPHA != OMEGA</b><br>
  →  0 falls ALPHA der Zeichenkette OMEGA nicht entspricht<br>
- →  1 sonst<br>
+ →  1 sonst
 </p>
 
 <p>
-<strong>test $ALPHA =~ &lt;Ausdruck&gt;</strong><br>
-→ entspcht $ALPHA dem angegebenen regulären Ausdruck<br>
+<b>test $ALPHA =~ &lt;Ausdruck&gt;</b><br>
+→ entspcht $ALPHA dem angegebenen regulären Ausdruck
 </p>
 
 <h2>Dateioperatoren Tests</h2>
+
 <p>
-<strong>test -[a|e|f|s|d|b|c|p|h|L|S|t|r|w|x|g|u|k|O|G|N] &lt;Datei&gt;</strong> →  überprüft die Eigenschaft von Datei<br>
+<b>test -[a|e|f|s|d|b|c|p|h|L|S|t|r|w|x|g|u|k|O|G|N] &lt;Datei&gt;</b> →  überprüft die Eigenschaft von Datei
 </p>
 
 <p>
-<strong>-a|-e </strong><br>
+<b>-a|-e </b><br>
 →  0 falls Datei existiert<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-f</strong> <br>
+<b>-f</b> <br>
 →  0 falls Datei existiert und ist normale Datei<br>
-→  1 falls Datei nicht existiert oder Datei ein Verzeichnis oder Gerätedatei ist<br>
+→  1 falls Datei nicht existiert oder Datei ein Verzeichnis oder Gerätedatei ist
 </p>
 
 <p>
-<strong>-s </strong><br>
+<b>-s </b><br>
 →  0 falls Dateigröße ist Größer als 0<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-d </strong><br>
+<b>-d </b><br>
 →  0 falls Datei existiert und ist ein Verzeichnis<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-b </strong><br>
+<b>-b </b><br>
 →  0 falls Datei existiert und eine Blockgerätedatei ist<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-c </strong><br>
+<b>-c </b><br>
 →  0 falls Datei existiert und ein zeichenorientiertes Gerät ist<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-p </strong><br>
+<b>-p </b><br>
 →  0 falls Datei existiert und ein Pipe ist<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-h </strong><br>
+<b>-h </b><br>
 →  0 falls Datei existiert und ein symbolischer Link ist, auch wenn dieser defekt ist<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-S</strong> <br>
+<b>-S</b> <br>
 →  0 falls Datei existiert und ein Socket ist<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
+<br>
 
 <p>
-<strong>-t </strong><br>
+<b>-t </b><br>
 →  0 falls Datei mit einem Terminal Gerät assoziiert ist<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-r|-w|-x </strong><br>
+<b>-r|-w|-x </b><br>
 →  0 falls Datei existiert und lese|schreib|ausführbahr ist<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-g </strong><br>
+<b>-g </b><br>
 →  0 falls Verzeichnis|Datei das Setgid Bit gesetzt hat<br>
-→ 1 sonst<br>
+→ 1 sonst
 </p>
 
 <p>
-<strong>-u </strong><br>
+<b>-u </b><br>
 →  0 falls Datei das Setuid Bit gesetzt hat<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-k</strong> <br>
+<b>-k</b> <br>
 →  0 falls Verzeichnis|Datei das Sticky Bit gesetzt hat<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
+<br>
 
 <p>
-<strong>-O </strong><br>
+<b>-O </b><br>
 →  0 der Aufrufende ist Beseitzer der Datei<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-G </strong><br>
+<b>-G </b><br>
 →  0 der Aufrufende ist Mitglied der gleichen Gruppe wie Datei<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>-N</strong> <br>
+<b>-N</b> <br>
 →  0 Die Datei wurde seit dem letzten lesen geändert<br>
-→  1 sonst<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>test &lt;Datei1&gt; -nt &lt;Datei2&gt;</strong><br>
-→  0 falls <strong>&lt;Datei1&gt;</strong> neuer als <strong>&lt;Datei2&gt;</strong> ist<br>
-→  1 sonst<br>
+<b>test &lt;Datei1&gt; -nt &lt;Datei2&gt;</b><br>
+→  0 falls <b>&lt;Datei1&gt;</b> neuer als <b>&lt;Datei2&gt;</b> ist<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>test &lt;Datei1&gt; -ot &lt;Datei2&gt; </strong><br>
-→  0 falls <strong>&lt;Datei1&gt;</strong> älter als <strong>&lt;Datei2&gt;</strong> ist<br>
-→  1 sonst<br>
+<b>test &lt;Datei1&gt; -ot &lt;Datei2&gt; </b><br>
+→  0 falls <b>&lt;Datei1&gt;</b> älter als <b>&lt;Datei2&gt;</b> ist<br>
+→  1 sonst
 </p>
 
 <p>
-<strong>test &lt;Datei1&gt; -ef &lt;Datei2&gt;</strong><br>
-→  0 falls <strong>&lt;Datei1&gt;</strong> und<strong> &lt;Datei2&gt;</strong> Hardlinks zur gleichen Datei sind<br>
-→  1 sonst<br>
+<b>test &lt;Datei1&gt; -ef &lt;Datei2&gt;</b><br>
+→  0 falls <b>&lt;Datei1&gt;</b> und<b> &lt;Datei2&gt;</b> Hardlinks zur gleichen Datei sind<br>
+→  1 sonst
 </p>
 
 <h2>Bedinungen und Fallunterscheidungen</h2>
 
+<br>
+
 <h4>if-Konstrukt</h4>
+
 <p>
 ++<br>
-<em>if &lt;Test&gt;</em><br>
-<em>        then</em><br>
-<em>                &lt;Test gab Exitstatus 0 zurück&gt;</em><br>
-<em>        else</em><br>
-<em>                &lt;Test gab Exitstaus 1 oder größer zurück&gt;</em><br>
-<em>fi</em><br>
-++<br>
+<i>if &lt;Test&gt;</i><br>
+<i>        then</i><br>
+<i>                &lt;Test gab Exitstatus 0 zurück&gt;</i><br>
+<i>        else</i><br>
+<i>                &lt;Test gab Exitstaus 1 oder größer zurück&gt;</i><br>
+<i>fi</i><br>
+++
 </p>
 
+<br>
 
 <h4>Elif-Konstrukt</h4>
+
 <p>
 ++<br>
-<em>if &lt;Test&gt;</em><br>
-<em>        then</em><br>
-<em>                elif &lt;Test 1&gt;</em><br>
-<em>                        then</em><br>
-<em>                elif &lt;Test 2&gt;</em><br>
-<em>        else</em><br>
-<em>fi</em><br>
-++<br>
+<i>if &lt;Test&gt;</i><br>
+<i>        then</i><br>
+<i>                elif &lt;Test 1&gt;</i><br>
+<i>                        then</i><br>
+<i>                elif &lt;Test 2&gt;</i><br>
+<i>        else</i><br>
+<i>fi</i><br>
+++
 </p>
 
 <h4>If Konstrukt mit logischer Bedingungsverknüpfung</h4>
+
 <p>
 ++<br>
-<strong>if &lt;Ausdruck&gt;</strong><br>
-<strong>        then</strong><br>
-<strong>                &lt;Test gab Exitstatus 0 zurück&gt;</strong><br>
-<strong>        else</strong><br>
-<strong>                &lt;Test gab Exitstatus 1 oder größer zurück</strong><br>
-<strong>fi</strong><br>
-++<br>
+<b>if &lt;Ausdruck&gt;</b><br>
+<b>        then</b><br>
+<b>                &lt;Test gab Exitstatus 0 zurück&gt;</b><br>
+<b>        else</b><br>
+<b>                &lt;Test gab Exitstatus 1 oder größer zurück</b><br>
+<b>fi</b><br>
+++
 </p>
 
 <h4>Case-Konstruckt</h4>
+
 <p>
 ++<br>
-<em>case $&lt;Var&gt; in</em><br>
-<em>        Wert1) Aktion</em><br>
-<em>        ;;</em><br>
-<em>        Wert2) Aktion</em><br>
-<em>        ;;</em><br>
-<em>        ...</em><br>
-<em>        ;;</em><br>
-<em>        WertN) Aktion</em><br>
-<em>        ;;</em><br>
-<em>        \?) Aktion</em> #nichts davon traf zu<br>
+<i>case $&lt;Var&gt; in</i><br>
+<i>        Wert1) Aktion</i><br>
+<i>        ;;</i><br>
+<i>        Wert2) Aktion</i><br>
+<i>        ;;</i><br>
+<i>        ...</i><br>
+<i>        ;;</i><br>
+<i>        WertN) Aktion</i><br>
+<i>        ;;</i><br>
+<i>        \?) Aktion</i> #nichts davon traf zu<br>
 esac<br>
-++<br>
+++
 </p>
 
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='./Exit_Status.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a></li>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Shellscripting.html'>Linux Wissen:Systemprogrammierung:Shellscripting</a>
+
+		
+		
+
+		<a href='./Exit_Status.html'>Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

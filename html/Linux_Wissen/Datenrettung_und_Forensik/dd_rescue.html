@@ -1,59 +1,74 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>dd rescue</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>dd rescue</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>dd rescue</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='../Datenrettung_und_Forensik.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./foremost.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
 <li><a href="../Bibliotheken.html" title="Bibliotheken" class="page">Bibliotheken</a></li>
 <li><a href="../Booten.html" title="Booten" class="page">Booten</a></li>
 <li><a href="../Dateien_verwalten.html" title="Dateien verwalten" class="page">Dateien verwalten</a></li>
-<li><a href="../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik" class="page">Datenrettung und Forensik</a></li>
+<li><a href="../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik" class="page">Datenrettung und Forensik</a>
 <ul>
-<li><strong class="activepage">dd rescue</strong></li>
+<li><b>dd rescue</b></li>
 <li><a href="./foremost.html" title="foremost" class="page">foremost</a></li>
 </ul>
+</li>
 <li><a href="../Drucken.html" title="Drucken" class="page">Drucken</a></li>
 <li><a href="../Emacs_Editor.html" title="Emacs Editor" class="page">Emacs Editor</a></li>
 <li><a href="../FHS.html" title="FHS" class="page">FHS</a></li>
@@ -77,130 +92,164 @@
 <li><a href="../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Samstag 23 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>dd rescue <a name='Linux Wissen:Datenrettung und Forensik:dd rescue'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Samstag 23 April 2011
 </p>
 
 <p>
-<strong>dd_rescue [&lt;Options&gt;] &lt;Eingabe Datei&gt; &lt;Ausgabe Datei&gt; [&lt;Logfile&gt;]</strong><br>
+<b>dd_rescue [&lt;Options&gt;] &lt;Eingabe Datei&gt; &lt;Ausgabe Datei&gt; [&lt;Logfile&gt;]</b><br>
 → Tool zum lesen von Datenströmen aus Blockgeräten und Dateien<br>
 → bricht nicht bei Fehlermeldungen ab, eine maximale Fehlertoleranz kann angegeben werden<br>
 → kann Daten vom Ende einer Datei|Blockgerätes lesen<br>
 → Datenrettung von Fehlerhaften Partitionen und Geräten<br>
 → versucht erst die erhaltenen Daten zu retten, wenn ein Gerät gerade Probleme macht<br>
 → kann nach einer Unterbrechung fortgesetzt werden, ohne das Daten die bereits geschrieben wurden, verlorengehen<br>
-→ kann keine Sparse - oder Nulldateien erzeugen wie <strong>dd ( </strong><a href="../Partitionen_und_Dateisysteme/dd.html" title="Linux Wissen:Partitionen und Dateisysteme:dd" class="page">Linux Wissen:Partitionen und Dateisysteme:dd</a> )<br>
+→ kann keine Sparse - oder Nulldateien erzeugen wie <b>dd ( </b><a href="../Partitionen_und_Dateisysteme/dd.html" title="Linux Wissen:Partitionen und Dateisysteme:dd" class="page">Linux Wissen:Partitionen und Dateisysteme:dd</a> )
 </p>
 
 <p>
-<strong>--blocksize=&lt;512|1024|2048&gt; </strong>→ Sektorengröße des Eingabestroms<br>
-<div style='padding-left: 210pt'>
-          512: Harddisk, 3,5 '' Diskette<br>
-          1024: 5,25'' Diskette<br>
+<b>--blocksize=&lt;512|1024|2048&gt; </b>→ Sektorengröße des Eingabestroms<br>
+<div style='padding-left: 270pt'>
+  512: Harddisk, 3,5 '' Diskette<br>
+  1024: 5,25'' Diskette
 </div>
 <div style='padding-left: 240pt'>
-   2048: Isos, CD und Dvd<br>
+   2048: Isos, CD und Dvd
 </div>
 </p>
 
 <p>
-<strong>-e +N|--max-errors </strong>→ Angabe der Fehler die maximal auftreten dürfen<br>
+<b>-e +N|--max-errors </b>→ Angabe der Fehler die maximal auftreten dürfen
 </p>
 
 <p>
-<strong>-i &lt;pos&gt; </strong>→ eine Startposition auf dem Eingabegerät festelgen<br>
-<strong>-m &lt;logfile&gt; </strong>→ Die RescueDomain auf die bereits geretteten Blöcke beschränken<br>
-<strong>-o &lt;pos&gt; </strong>→ eine Zielposition auf der Ausgabedatei festlegen<br>
-<strong>-q </strong>→ keine Ausgabe<br>
-<strong>-r </strong>→ reverse<br>
-<strong>-s &lt;Bytes&gt;</strong> → maximale Anzahl der Bytes die aus der Ausgabedatei kopiert werden<br>
-<strong>-S </strong>→ nicht belegte Blöcke werden nicht in die Ausgabe Datei geschrieben<br>
+<b>-i &lt;pos&gt; </b>→ eine Startposition auf dem Eingabegerät festelgen<br>
+<b>-m &lt;logfile&gt; </b>→ Die RescueDomain auf die bereits geretteten Blöcke beschränken<br>
+<b>-o &lt;pos&gt; </b>→ eine Zielposition auf der Ausgabedatei festlegen<br>
+<b>-q </b>→ keine Ausgabe<br>
+<b>-r </b>→ reverse<br>
+<b>-s &lt;Bytes&gt;</b> → maximale Anzahl der Bytes die aus der Ausgabedatei kopiert werden<br>
+<b>-S </b>→ nicht belegte Blöcke werden nicht in die Ausgabe Datei geschrieben
 </p>
- 
+
+<br>
 
 <h4>Algorithmus:</h4>
+
 <p>
-<em>(1) Lesen einer Optionalen Datei, die ddrescue sagt, wo eszuletzt aufgehört hat (Logfile)</em><br>
+<i>(1) Lesen einer Optionalen Datei, die ddrescue sagt, wo eszuletzt aufgehört hat (Logfile)</i><br>
 <div style='padding-left: 30pt'>
-<em>a) wurde kein Logfile angegeben, wird angenommen dass das dd_rescue bisher keinen erfolgreichen Verusch</em><br>
-     <em>unternommen hat</em><br>
+<i>a) wurde kein Logfile angegeben, wird angenommen dass das dd_rescue bisher keinen erfolgreichen Verusch</i>
+</div>
+<div style='padding-left: 60pt'>
+ <i>unternommen hat</i>
 </div>
 </p>
 
 <p>
-<em>(2) Lesen der nicht probierten Blöcke aus der Einagedatei</em><br>
-<a href="http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html" title="http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html" class="http">http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html</a><br>
+<i>(2) Lesen der nicht probierten Blöcke aus der Einagedatei</i><br>
+<a href="http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html" title="http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html" class="http">http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html</a>
 </p>
 
 <p>
-<u>Hinweis: Das Logfile kann mit einem Texteditor geöffnet und bearbeitet werden. </u><br>
+<u>Hinweis: Das Logfile kann mit einem Texteditor geöffnet und bearbeitet werden. </u>
 </p>
 
 <p>
-<u>Hinweis: Ein rw eingehängtes Gerät kann als Einabe Datei benuztzt werden, das Resultat wird aber nutzlos sein.</u><br>
+<u>Hinweis: Ein rw eingehängtes Gerät kann als Einabe Datei benuztzt werden, das Resultat wird aber nutzlos sein.</u>
 </p>
 
+<br>
 
 <h2>Rezepte:</h2>
 
+<br>
+
 <h4>Retten einer ext-Festplatte /dev/sdX auf eine andere /dev/sdY</h4>
+
 <p>
-<strong>dd_rescue -f -n /dev/sdX /dev/sdY logfile</strong><br>
-<strong>sfdisk /dev/sdbY </strong><br>
-<strong>i=0;</strong> <strong>while true; $(($i++)); </strong> <strong>e2fsck -v -f /dev/sdY${1};done</strong><br>
+<b>dd_rescue -f -n /dev/sdX /dev/sdY logfile</b><br>
+<b>sfdisk /dev/sdbY </b><br>
+<b>i=0;</b> <b>while true; $(($i++)); </b> <b>e2fsck -v -f /dev/sdY${1};done</b><br>
 <a href="../Partitionen_und_Dateisysteme/Partitionswerkzeuge.html" title="Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge" class="page">Linux Wissen:Partitionen und Dateisysteme:Partitionswerkzeuge</a><br>
-<a href="../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting" class="page">Linux Wissen:Systemprogrammierung:Shellscripting</a><br>
+<a href="../Systemprogrammierung/Shellscripting.html" title="Linux Wissen:Systemprogrammierung:Shellscripting" class="page">Linux Wissen:Systemprogrammierung:Shellscripting</a>
 </p>
 
 <h4>Retten einer Partition /dev/sdX1 nach /dev/sdY2</h4>
+
 <p>
 <ul>
 <li>es muss vorher sdY2 erstellt worden sein und die entsprechende Größe haben </li>
 </ul>
-<strong>ddrescue -f -n /dev/sdX1 /dev/sdbY2 logfile</strong><br>
-<strong>ddrescue -d -f -r3 /dev/sdX1 /dev/sdY2 logfile</strong><br>
-<strong>e2fsck -v -f /dev/sdY2</strong><br>
-<strong>mount -t ext2 -o ro /dev/hdb2 /mnt</strong><br>
+<b>ddrescue -f -n /dev/sdX1 /dev/sdbY2 logfile</b><br>
+<b>ddrescue -d -f -r3 /dev/sdX1 /dev/sdY2 logfile</b><br>
+<b>e2fsck -v -f /dev/sdY2</b><br>
+<b>mount -t ext2 -o ro /dev/hdb2 /mnt</b>
 </p>
 
 <h4>Retten einer CD-Rom aus 2 Kopien mit defekten Blöcken</h4>
+
 <p>
-<strong>     ddrescue -n -b2048 /dev/cdrom cdimage logfile</strong><br>
-<strong>     ddrescue -d -b2048 /dev/cdrom cdimage logfile</strong><br>
-<strong>       (2. CD einlegen)</strong><br>
-<strong>     ddrescue -d -r1 -b2048 /dev/cdrom cdimage logfile</strong><br>
+<b>     ddrescue -n -b2048 /dev/cdrom cdimage logfile</b><br>
+<b>     ddrescue -d -b2048 /dev/cdrom cdimage logfile</b><br>
+<b>       (2. CD einlegen)</b><br>
+<b>     ddrescue -d -r1 -b2048 /dev/cdrom cdimage logfile</b>
 </p>
 
 <h4>Während der Rettung von /dev/sdX, schlägt die Rettung auf /dev/sdY fehl und eine Rettung</h4>
 
+<br>
+
 <h4>muss nun auf /dev/sdZ erfolgen</h4>
+
 <p>
-<strong>    ddrescue -f -n /dev/sdX /dev/sdY logfile1     </strong>&lt;-- /dev/hdY schlegt fehl<br>
-<strong>     ddrescue -f -m logfile1 /dev/sdY /dev/sdZ logfile2</strong><br>
-<strong>     ddrescue -f -n /dev/sdX /dev/sdZ logfile2</strong><br>
-<strong>     ddrescue -d -f -r3 /dev/sdX /dev/sdZ logfile2</strong><br>
+<b>    ddrescue -f -n /dev/sdX /dev/sdY logfile1     </b>&lt;-- /dev/hdY schlegt fehl<br>
+<b>     ddrescue -f -m logfile1 /dev/sdY /dev/sdZ logfile2</b><br>
+<b>     ddrescue -f -n /dev/sdX /dev/sdZ logfile2</b><br>
+<b>     ddrescue -d -f -r3 /dev/sdX /dev/sdZ logfile2</b>
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a></li>						<a href='../Partitionen_und_Dateisysteme/dd.html'>Linux Wissen:Partitionen und Dateisysteme:dd</a></li>						<a href='./foremost.html'>Linux Wissen:Datenrettung und Forensik:foremost</a></li>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Datenrettung_und_Forensik.html'>Linux Wissen:Datenrettung und Forensik</a>
+
+		
+		
+
+		<a href='../Partitionen_und_Dateisysteme/dd.html'>Linux Wissen:Partitionen und Dateisysteme:dd</a>
+
+		
+		
+
+		<a href='./foremost.html'>Linux Wissen:Datenrettung und Forensik:foremost</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

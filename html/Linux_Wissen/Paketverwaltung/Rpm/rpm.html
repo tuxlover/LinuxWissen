@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>rpm</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>rpm</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>rpm</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./Pakete_bauen.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./yum.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -60,17 +74,18 @@
 <li><a href="../../Lokalisierung.html" title="Lokalisierung" class="page">Lokalisierung</a></li>
 <li><a href="../../Monitoring.html" title="Monitoring" class="page">Monitoring</a></li>
 <li><a href="../../Networking.html" title="Networking" class="page">Networking</a></li>
-<li><a href="../../Paketverwaltung.html" title="Paketverwaltung" class="page">Paketverwaltung</a></li>
+<li><a href="../../Paketverwaltung.html" title="Paketverwaltung" class="page">Paketverwaltung</a>
 <ul>
 <li><a href="../Debian.html" title="Debian" class="page">Debian</a></li>
-<li><a href="../Rpm.html" title="Rpm" class="page">Rpm</a></li>
+<li><a href="../Rpm.html" title="Rpm" class="page">Rpm</a>
 <ul>
 <li><a href="./Pakete_bauen.html" title="Pakete bauen" class="page">Pakete bauen</a></li>
-<li><strong class="activepage">rpm</strong></li>
+<li><b>rpm</b></li>
 <li><a href="./yum.html" title="yum" class="page">yum</a></li>
 <li><a href="./zypper.html" title="zypper" class="page">zypper</a></li>
+</ul></li>
 </ul>
-</ul>
+</li>
 <li><a href="../../Partitionen_und_Dateisysteme.html" title="Partitionen und Dateisysteme" class="page">Partitionen und Dateisysteme</a></li>
 <li><a href="../../Prozessverwaltung.html" title="Prozessverwaltung" class="page">Prozessverwaltung</a></li>
 <li><a href="../../root.html" title="root" class="page">root</a></li>
@@ -83,202 +98,233 @@
 <li><a href="../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Montag 25 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>rpm <a name='Linux Wissen:Paketverwaltung:Rpm:rpm'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Montag 25 April 2011
 </p>
 
 <p>
-/<em>var/lib/rpm </em>→ Paketdatenbank<br>
+/<i>var/lib/rpm </i>→ Paketdatenbank<br>
 Linux Wissen:FHS:var<br>
 — <br>
-<strong>rpm </strong>→ Installieren und Verwalten von Rpm Paketen<br>
+<b>rpm </b>→ Installieren und Verwalten von Rpm Paketen
 </p>
 
 <h4>installieren</h4>
+
 <p>
-<strong>rpm -i|-F|-U &lt;Paket&gt;,... </strong><br>
+<b>rpm -i|-F|-U &lt;Paket&gt;,... </b><br>
 → Installieren|Erneuern falls vorhanden|in jedem Fall erneuern oder installieren von &lt;Paket&gt;<br>
 → Globbing ist erlaubt<br>
-<strong>-h </strong>→ ausgeben eines durch # gekennzeichneten Fortschrittbalkens<br>
-<strong>-v </strong>→ verbose<br>
-<strong>-vv </strong>→ noch detailierter<br>
-<strong>--exclude-docs </strong>→ Dateien die als Dokumentationsdokumente gekennzeichnet sind nicht installieren<br>
-<strong>--nodeps </strong>→ keinen Abhängigkeitscheck ausführen<br>
-<strong>--nosuggest </strong>→ Suggests nicht als Paketabhängigkeit behandeln<br>
-<strong>--nopre --nopost --nopreun --nopostun </strong>→ Das Pre Post Preun Postun Script nicht ausführen<br>
+<b>-h </b>→ ausgeben eines durch # gekennzeichneten Fortschrittbalkens<br>
+<b>-v </b>→ verbose<br>
+<b>-vv </b>→ noch detailierter<br>
+<b>--exclude-docs </b>→ Dateien die als Dokumentationsdokumente gekennzeichnet sind nicht installieren<br>
+<b>--nodeps </b>→ keinen Abhängigkeitscheck ausführen<br>
+<b>--nosuggest </b>→ Suggests nicht als Paketabhängigkeit behandeln<br>
+<b>--nopre --nopost --nopreun --nopostun </b>→ Das Pre Post Preun Postun Script nicht ausführen<br>
 <div style='padding-left: 270pt'>
-   → hilfreich wenn ein Paket defekte Scripte enthält<br>
+   → hilfreich wenn ein Paket defekte Scripte enthält
 </div>
-<strong>--oldpackage </strong>→ Nur mit <strong>-U, </strong>ersetzt ein neues durch ein altes Paket<br>
-<strong>--replacefiles </strong>→ ersetzt bereits auf dem System vorhandene Dateien<br>
-<strong>--replacepkgs </strong>→  ersetze ein bereits installiertes Paket<br>
-<strong>--force </strong>→ entspricht <strong>--replacepkgs --replacefiles --oldpackage</strong><br>
-<strong>--test </strong>→ nichts machen,nur die Aktion testen<br>
-<strong>--justdb </strong>→ nur die Datenbank erneuern, tatsächlich aber keine Installation der Dateien vornehmen<br>
+<b>--oldpackage </b>→ Nur mit <b>-U, </b>ersetzt ein neues durch ein altes Paket<br>
+<b>--replacefiles </b>→ ersetzt bereits auf dem System vorhandene Dateien<br>
+<b>--replacepkgs </b>→  ersetze ein bereits installiertes Paket<br>
+<b>--force </b>→ entspricht <b>--replacepkgs --replacefiles --oldpackage</b><br>
+<b>--test </b>→ nichts machen,nur die Aktion testen<br>
+<b>--justdb </b>→ nur die Datenbank erneuern, tatsächlich aber keine Installation der Dateien vornehmen
 </p>
- 
+
 <p>
-<u>Hinweis: Benutzen der Option </u><strong>--justdb</strong><u> um einen zweiten Kernel zu installieren.</u><br>
-<code>rpm -i --justdb kernel-default-2.26.3.i586.rm &amp;&amp; rpm -i &lt;mein-generierter-Kernel&gt;.rpm</code><br>
+<u>Hinweis: Benutzen der Option </u><b>--justdb</b><u> um einen zweiten Kernel zu installieren.</u><br>
+<tt>rpm -i --justdb kernel-default-2.26.3.i586.rm &amp;&amp; rpm -i &lt;mein-generierter-Kernel&gt;.rpm</tt>
 </p>
 
 <h4>löschen</h4>
+
 <p>
-<strong>rpm -e &lt;Paket&gt; </strong>→ deinstallieren von &lt;Paket&gt;<br>
-<strong>--allmatches </strong>→ kann benutzt werden um ein zweites Paket zu entfernen, falls es einen fehlerhaften Eintrag in der 				Datenbank gibt<br>
-<strong>--nodeps </strong>→ keinen Abhängigkeitscheck durchführen<br>
-<strong>--noscripts </strong>→ keinerlei Scipte bei der Deinstallation durchführen, zum Umgehen defekter Deinstallationsscripte<br>
-<strong>--test </strong>→ nichts machen, nur die Aktion testen<br>
+<b>rpm -e &lt;Paket&gt; </b>→ deinstallieren von &lt;Paket&gt;<br>
+<b>--allmatches </b>→ kann benutzt werden um ein zweites Paket zu entfernen, falls es einen fehlerhaften Eintrag in der 				Datenbank gibt<br>
+<b>--nodeps </b>→ keinen Abhängigkeitscheck durchführen<br>
+<b>--noscripts </b>→ keinerlei Scipte bei der Deinstallation durchführen, zum Umgehen defekter Deinstallationsscripte<br>
+<b>--test </b>→ nichts machen, nur die Aktion testen
 </p>
 
 <h4>abfragen</h4>
+
 <p>
-<strong>rpm -q &lt;Paket&gt; |</strong>-<strong>-qa|-qp &lt;Paket&gt; [--qf "&lt;Formatierung&gt;"]|-qf &lt;Datei&gt; </strong><br>
+<b>rpm -q &lt;Paket&gt; |</b>-<b>-qa|-qp &lt;Paket&gt; [--qf "&lt;Formatierung&gt;"]|-qf &lt;Datei&gt; </b><br>
 → Informationen über ein &lt;Paket&gt; erhalten<br>
-→ ohne weiter Option fragt <strong>-q </strong>nur ab, ob das &lt;Paket&gt; in der Liste der installierten Pakete steht<br>
-<strong>-a </strong>→ die Abfrage auf alle Pakete ausdehnen|bzw mit <strong>-qa </strong>alle installierten Pakete anzeigen <br>
-<strong>--last </strong>→ Die Pakete in ihrrer nach Datum absteigend sortierten Installationsreihenfolge<br>
-<strong>-p </strong>→ Informationen über Pakete die noch nicht installtiert wurden sind, als Argument wird ein Rpm-Datei benötigt<br>
-<strong>-l </strong>→ auflisten der von Paket installierten Dateien<br>
-<strong>-f &lt;Datei&gt; </strong>→ Welches Paket hat &lt;Datei&gt; installiert, dabei ist &lt;Datei&gt; ein vollständiger absoluter Pfad<br>
-<strong>-d </strong>→ nur als Dokumentationen gekennzeichnete Dateien listen, impliziert <strong>-l</strong><br>
-<strong>-c </strong>→ nur als Konfigurationsdateien gekennzeichnete Dateien listen, imliziert <strong>-l</strong><br>
-<strong>--provides </strong>→ zeigt an, welche virutellen Abhängigkeiten ein Paket anbietet<br>
-<strong>-R|--requires </strong>→ zeigt an welche Abhängigkeiten ein Paket hat<br>
-<strong>--qf "%Formatstring"</strong>→ Ausgabe formatieren<br>
+→ ohne weiter Option fragt <b>-q </b>nur ab, ob das &lt;Paket&gt; in der Liste der installierten Pakete steht<br>
+<b>-a </b>→ die Abfrage auf alle Pakete ausdehnen|bzw mit <b>-qa </b>alle installierten Pakete anzeigen <br>
+<b>--last </b>→ Die Pakete in ihrrer nach Datum absteigend sortierten Installationsreihenfolge<br>
+<b>-p </b>→ Informationen über Pakete die noch nicht installtiert wurden sind, als Argument wird ein Rpm-Datei benötigt<br>
+<b>-l </b>→ auflisten der von Paket installierten Dateien<br>
+<b>-f &lt;Datei&gt; </b>→ Welches Paket hat &lt;Datei&gt; installiert, dabei ist &lt;Datei&gt; ein vollständiger absoluter Pfad<br>
+<b>-d </b>→ nur als Dokumentationen gekennzeichnete Dateien listen, impliziert <b>-l</b><br>
+<b>-c </b>→ nur als Konfigurationsdateien gekennzeichnete Dateien listen, imliziert <b>-l</b><br>
+<b>--provides </b>→ zeigt an, welche virutellen Abhängigkeiten ein Paket anbietet<br>
+<b>-R|--requires </b>→ zeigt an welche Abhängigkeiten ein Paket hat<br>
+<b>--qf "%Formatstring"</b>→ Ausgabe formatieren
 </p>
 
 <p>
-<u>Hinweis: Mit </u> <code>rpm -qa --last|head -N</code><u> kann man sich die letzten N installierten Pakete anzeigen lassen.</u><br>
+<u>Hinweis: Mit </u> <tt>rpm -qa --last|head -N</tt><u> kann man sich die letzten N installierten Pakete anzeigen lassen.</u>
 </p>
 
 <p>
-<u>Hinweis: Benutzen von </u><code>rpm -qa --last|head -1|awk '{print $1}' |xargs rpm -e</code> <u>kann man das zuletzt installierte</u><br>
-<u>Paket deinstallieren, auch wenn man den Namen nicht mehr weiß.</u><br>
+<u>Hinweis: Benutzen von </u><tt>rpm -qa --last|head -1|awk '{print $1}' |xargs rpm -e</tt> <u>kann man das zuletzt installierte</u><br>
+<u>Paket deinstallieren, auch wenn man den Namen nicht mehr weiß.</u>
 </p>
 
 <h4>überprüfen</h4>
+
 <p>
-<strong>rpm -V &lt;Paket&gt;|-Va </strong>→ verifizieren der von Paket installierten| aller Pakete installierten Dateien<br>
+<b>rpm -V &lt;Paket&gt;|-Va </b>→ verifizieren der von Paket installierten| aller Pakete installierten Dateien
 </p>
 
 <h4>Makros überürüfen</h4>
+
 <p>
-<strong>rpm --eval %__macro </strong><br>
+<b>rpm --eval %__macro </b><br>
 → zeigt an zu welchem Wert ein Macro evaluiert wird<br>
-<strong>rpm --showrc </strong><br>
-→ Anzeigen der globalen rc Datei<br>
+<b>rpm --showrc </b><br>
+→ Anzeigen der globalen rc Datei
 </p>
 
 <h4>Signaturen</h4>
+
 <p>
-<strong>rpm --import &lt;Pubkey&gt; </strong>→ importiert einen öffentlichen Schlüssel &lt;Pubkey&gt; in die Datenbank<br>
-<strong>rpm -K &lt;Paket&gt; </strong>→ überprüfen der Signatur eines Paketes<br>
+<b>rpm --import &lt;Pubkey&gt; </b>→ importiert einen öffentlichen Schlüssel &lt;Pubkey&gt; in die Datenbank<br>
+<b>rpm -K &lt;Paket&gt; </b>→ überprüfen der Signatur eines Paketes
 </p>
 
 <h4>Paketdatenbank verwalten</h4>
+
 <p>
-<strong>rpm --rebuilddb </strong>→ die rpm Paketdatenbank neu erzeugen<br>
-<strong>rpm --initdb </strong>→ die Paketdatenbank initialisieren, diese Option wird beim erstmaligen installieren vorgenommen<br>
-<strong>--dbpath =&lt;PATH&gt; </strong>→ Pfad zu einer neuen Datenbank setzen<br>
-— <br>
+<b>rpm --rebuilddb </b>→ die rpm Paketdatenbank neu erzeugen<br>
+<b>rpm --initdb </b>→ die Paketdatenbank initialisieren, diese Option wird beim erstmaligen installieren vorgenommen<br>
+<b>--dbpath =&lt;PATH&gt; </b>→ Pfad zu einer neuen Datenbank setzen<br>
+— 
 </p>
 
 <h4>Ein Quellpaket übersetzen</h4>
+
 <p>
-<strong>rpmbuild --rebuild &lt;Paket&gt;.src.rpm </strong><br>
+<b>rpmbuild --rebuild &lt;Paket&gt;.src.rpm </b><br>
 → ein Quellpaket wird erneut übersetzt<br>
-→ fertig gebaute Pakte findet man in /<em>usr/src/packages/RPMS</em><br>
+→ fertig gebaute Pakte findet man in /<i>usr/src/packages/RPMS</i><br>
 Linux Wissen:FHS:usr<br>
-Linux Wissen:Paketverwaltung:Rpm:Pakete bauen<br>
+Linux Wissen:Paketverwaltung:Rpm:Pakete bauen
 </p>
 
+<br>
 
 <h2>Rpms aus einem Delta erzeugen</h2>
+
 <p>
 <ul>
 <li>Ein delta.rpm ist wie das diff eines Binärcodes und enthält nur die Unterschiede zu einer früheren Version.</li>
-<li>mit <strong>applydeltarpm </strong>lässt sich daraus ein neues Rpm erstellen. Dazu muss eine ältere Version des Pakets im System </li>
+<li>mit <b>applydeltarpm </b>lässt sich daraus ein neues Rpm erstellen. Dazu muss eine ältere Version des Pakets im System </li>
 </ul>
-installiert sein.<br>
+installiert sein.
 </p>
 
 <p>
-<em>Aufbau eines Delta-rpms</em><br>
-<em>&lt;Programm&gt;_&lt;Version-alt&gt;-&lt;Release-alt&gt;_&lt;Version-neu&gt;-&lt;Release-neu&gt;.&lt;Arch&gt;.delta.rpm</em><br>
+<i>Aufbau eines Delta-rpms</i><br>
+<i>&lt;Programm&gt;_&lt;Version-alt&gt;-&lt;Release-alt&gt;_&lt;Version-neu&gt;-&lt;Release-neu&gt;.&lt;Arch&gt;.delta.rpm</i>
 </p>
 
 <p>
-<strong>applydeltarpm -r &lt;Programm&gt;-&lt;Version-alt&gt;-&lt;Release-alt&gt;.&lt;Arch&gt;.rpm -pv  &lt;Delta&gt; &lt;Programm&gt;-&lt;Version-neu&gt;-&lt;Release-neu&gt;.&lt;Arch&gt;.rpm</strong><br>
-→ erezugt aus einem delta.rpm ein neues Paket <br>
+<b>applydeltarpm -r &lt;Programm&gt;-&lt;Version-alt&gt;-&lt;Release-alt&gt;.&lt;Arch&gt;.rpm -pv  &lt;Delta&gt; &lt;Programm&gt;-&lt;Version-neu&gt;-&lt;Release-neu&gt;.&lt;Arch&gt;.rpm</b><br>
+→ erezugt aus einem delta.rpm ein neues Paket 
 </p>
 
 <p>
-<strong>applydeltarpm -c &lt;delta&gt;</strong><br>
- → überprüfen des delta.rpm und anzeigen der Änderungen, sowie ob dieses installiert werden kann<br>
+<b>applydeltarpm -c &lt;delta&gt;</b><br>
+ → überprüfen des delta.rpm und anzeigen der Änderungen, sowie ob dieses installiert werden kann
 </p>
 
 <h2>Rpm Paketabhängigkeiten als Baum ausgeben</h2>
+
 <p>
-<strong>rpmgraph &lt;Paket&gt; </strong>→ zeigt einen Abhängigkeitsbaum für ein noch nicht installiertes &lt;Paket&gt; an<br>
-<div style='padding-left: 30pt'>
-                           →  zeigt auch Probleme mit defekten oder unsignierten Paketen an<br>
+<b>rpmgraph &lt;Paket&gt; </b>→ zeigt einen Abhängigkeitsbaum für ein noch nicht installiertes &lt;Paket&gt; an<br>
+<div style='padding-left: 210pt'>
+   →  zeigt auch Probleme mit defekten oder unsignierten Paketen an
 </div>
 </p>
 
+<br>
 
 <h2>Verweise Pakete finden</h2>
+
 <p>
 <ul>
 <li>Pakete die installiert sind, aber von keinem anderen Paket mehr benötigt werden und auch keine zusätzliche Funktionaliät anbieten.</li>
 </ul>
-<strong>rpmorphan [&lt;Optionen&gt; &lt;Tragets&gt; ] </strong>→ auflisten aller verweisten Pakete<br>
-<strong>-gui|-tk </strong>→ ein grafisches Userinterface erzeugen<br>
-<strong>-curses </strong>→ ein ncurses basierter Userinterface erzeugen<br>
-<strong>-exclude &lt;Paket&gt; </strong>→ dieses Paket bei den Resultaten nicht berücksichtigen<br>
-<strong>-keep-file &lt;Datei&gt; </strong>→ Paketnamen die in &lt;Datei&gt; stehen werden nicht angezeigt<br>
+<b>rpmorphan [&lt;Optionen&gt; &lt;Tragets&gt; ] </b>→ auflisten aller verweisten Pakete<br>
+<b>-gui|-tk </b>→ ein grafisches Userinterface erzeugen<br>
+<b>-curses </b>→ ein ncurses basierter Userinterface erzeugen<br>
+<b>-exclude &lt;Paket&gt; </b>→ dieses Paket bei den Resultaten nicht berücksichtigen<br>
+<b>-keep-file &lt;Datei&gt; </b>→ Paketnamen die in &lt;Datei&gt; stehen werden nicht angezeigt
 </p>
 
 <p>
-<em>Targets</em><br>
-<strong>-guess-all → </strong>alle <br>
--<strong>guess-perl|-guess-python </strong>→ nur verweiste perl|python Pakete finden<br>
-<strong>-guess-lib </strong>→ nach verweisten Bibliotheken suchen<br>
-<strong>-guess-dev </strong>→ nach verweisten development Paketen suchen<br>
+<i>Targets</i><br>
+<b>-guess-all → </b>alle <br>
+-<b>guess-perl|-guess-python </b>→ nur verweiste perl|python Pakete finden<br>
+<b>-guess-lib </b>→ nach verweisten Bibliotheken suchen<br>
+<b>-guess-dev </b>→ nach verweisten development Paketen suchen
 </p>
 
+<br>
 
 <p>
-<em>Beispiel:</em><br>
-<code>rpmorphan -gui -exclude libdvdcss2 libdvdcss -guess-lib</code><br>
+<i>Beispiel:</i><br>
+<tt>rpmorphan -gui -exclude libdvdcss2 libdvdcss -guess-lib</tt>
 </p>
 
 <p>
-<u>Hinweis: Von rpmorphan vorgeschlagenen Pakete sollten sehr gründlich geprüft werden.</u><br>
+<u>Hinweis: Von rpmorphan vorgeschlagenen Pakete sollten sehr gründlich geprüft werden.</u>
 </p>
 
+<br>
 
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Rpm.html'>Linux Wissen:Paketverwaltung:Rpm</a></li>						<a href='../../FHS/var.html'>Linux Wissen:FHS:var</a></li>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Rpm.html'>Linux Wissen:Paketverwaltung:Rpm</a>
+
+		
+		
+
+		<a href='../../FHS/var.html'>Linux Wissen:FHS:var</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

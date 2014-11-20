@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>etc</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>etc</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>etc</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./dev/shm.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./etc/anacrontab.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -52,17 +66,17 @@
 <li><a href="../Datenrettung_und_Forensik.html" title="Datenrettung und Forensik" class="page">Datenrettung und Forensik</a></li>
 <li><a href="../Drucken.html" title="Drucken" class="page">Drucken</a></li>
 <li><a href="../Emacs_Editor.html" title="Emacs Editor" class="page">Emacs Editor</a></li>
-<li><a href="../FHS.html" title="FHS" class="page">FHS</a></li>
+<li><a href="../FHS.html" title="FHS" class="page">FHS</a>
 <ul>
 <li><a href="./bin.html" title="bin" class="page">bin</a></li>
 <li><a href="./boot.html" title="boot" class="page">boot</a></li>
 <li><a href="./dev.html" title="dev" class="page">dev</a></li>
-<li><strong class="activepage">etc</strong></li>
+<li><b>etc</b>
 <ul>
 <li><a href="./etc/anacrontab.html" title="anacrontab" class="page">anacrontab</a></li>
 <li><a href="./etc/apt.conf.html" title="apt.conf" class="page">apt.conf</a></li>
-<li><a href="./etc/apt%2B%2Bpreferences.conf.html" title="apt++preferences.conf" class="page">apt++preferences.conf</a></li>
-<li><a href="./etc/apt%2B%2Bsoruces.list.html" title="apt++soruces.list" class="page">apt++soruces.list</a></li>
+<li><a href="./etc/apt++preferences.conf.html" title="apt++preferences.conf" class="page">apt++preferences.conf</a></li>
+<li><a href="./etc/apt++soruces.list.html" title="apt++soruces.list" class="page">apt++soruces.list</a></li>
 <li><a href="./etc/auto.master.html" title="auto.master" class="page">auto.master</a></li>
 <li><a href="./etc/auto.Verzeichnis.html" title="auto.Verzeichnis" class="page">auto.Verzeichnis</a></li>
 <li><a href="./etc/cgconfig.conf.html" title="cgconfig.conf" class="page">cgconfig.conf</a></li>
@@ -80,7 +94,7 @@
 <li><a href="./etc/hosts.deny.html" title="hosts.deny" class="page">hosts.deny</a></li>
 <li><a href="./etc/hosts.lpd.html" title="hosts.lpd" class="page">hosts.lpd</a></li>
 <li><a href="./etc/inetd.conf.html" title="inetd.conf" class="page">inetd.conf</a></li>
-<li><a href="./etc/init.d%2B%2BScript.html" title="init.d++Script" class="page">init.d++Script</a></li>
+<li><a href="./etc/init.d++Script.html" title="init.d++Script" class="page">init.d++Script</a></li>
 <li><a href="./etc/inittab.html" title="inittab" class="page">inittab</a></li>
 <li><a href="./etc/interfaces.html" title="interfaces" class="page">interfaces</a></li>
 <li><a href="./etc/lilo.conf.html" title="lilo.conf" class="page">lilo.conf</a></li>
@@ -92,21 +106,22 @@
 <li><a href="./etc/passwd.html" title="passwd" class="page">passwd</a></li>
 <li><a href="./etc/protocols.html" title="protocols" class="page">protocols</a></li>
 <li><a href="./etc/resolv.conf.html" title="resolv.conf" class="page">resolv.conf</a></li>
-<li><a href="./etc/security%2B%2Blimits.conf.html" title="security++limits.conf" class="page">security++limits.conf</a></li>
+<li><a href="./etc/security++limits.conf.html" title="security++limits.conf" class="page">security++limits.conf</a></li>
 <li><a href="./etc/services.html" title="services" class="page">services</a></li>
 <li><a href="./etc/shadow.html" title="shadow" class="page">shadow</a></li>
 <li><a href="./etc/smb.conf.html" title="smb.conf" class="page">smb.conf</a></li>
 <li><a href="./etc/ssh.html" title="ssh" class="page">ssh</a></li>
 <li><a href="./etc/sudoers.html" title="sudoers" class="page">sudoers</a></li>
-<li><a href="./etc/sysconfig%2B%2Bclock.html" title="sysconfig++clock" class="page">sysconfig++clock</a></li>
+<li><a href="./etc/sysconfig++clock.html" title="sysconfig++clock" class="page">sysconfig++clock</a></li>
 <li><a href="./etc/syslog.conf.html" title="syslog.conf" class="page">syslog.conf</a></li>
-<li><a href="./etc/systemd%2B%2Bsystem%2B%2Bmy.typ.html" title="systemd++system++my.typ" class="page">systemd++system++my.typ</a></li>
-<li><a href="./etc/udev%2B%2Brules.d%2B%2B99-myrule.html" title="udev++rules.d++99-myrule" class="page">udev++rules.d++99-myrule</a></li>
-<li><a href="./etc/udev%2B%2Budev.conf.html" title="udev++udev.conf" class="page">udev++udev.conf</a></li>
-<li><a href="./etc/X11%2B%2Bxdm.html" title="X11++xdm" class="page">X11++xdm</a></li>
+<li><a href="./etc/systemd++system++my.typ.html" title="systemd++system++my.typ" class="page">systemd++system++my.typ</a></li>
+<li><a href="./etc/udev++rules.d++99-myrule.html" title="udev++rules.d++99-myrule" class="page">udev++rules.d++99-myrule</a></li>
+<li><a href="./etc/udev++udev.conf.html" title="udev++udev.conf" class="page">udev++udev.conf</a></li>
+<li><a href="./etc/X11++xdm.html" title="X11++xdm" class="page">X11++xdm</a></li>
 <li><a href="./etc/xinetd.conf.html" title="xinetd.conf" class="page">xinetd.conf</a></li>
 <li><a href="./etc/Xorg.conf.html" title="Xorg.conf" class="page">Xorg.conf</a></li>
 </ul>
+</li>
 <li><a href="./lib.html" title="lib" class="page">lib</a></li>
 <li><a href="./proc.html" title="proc" class="page">proc</a></li>
 <li><a href="./sbin.html" title="sbin" class="page">sbin</a></li>
@@ -114,6 +129,7 @@
 <li><a href="./usr.html" title="usr" class="page">usr</a></li>
 <li><a href="./var.html" title="var" class="page">var</a></li>
 </ul>
+</li>
 <li><a href="../Filterprogramme.html" title="Filterprogramme" class="page">Filterprogramme</a></li>
 <li><a href="../git_Vesionskontrolle.html" title="git Vesionskontrolle" class="page">git Vesionskontrolle</a></li>
 <li><a href="../Hardware_und_Systeminformationen.html" title="Hardware und Systeminformationen" class="page">Hardware und Systeminformationen</a></li>
@@ -134,360 +150,415 @@
 <li><a href="../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
+</ul></li>
 </ul>
-</ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Dienstag 19 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>etc <a name='Linux Wissen:FHS:etc'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Dienstag 19 April 2011
 </p>
 
 <p>
-/<em>etc/auto.master</em><br>
-/etc/auto.&lt;Verzeichnis&gt;<br>
+/<i>etc/auto.master</i><br>
+/etc/auto.&lt;Verzeichnis&gt;
 </p>
 
 <p>
-/<em>etc/at.allow</em> → Liste der Nutzer die at benutzen dürfen<br>
-/<em>etc/at.deny</em> → Liste der Nutzer die at nicht benutzen dürfen<br>
+/<i>etc/at.allow</i> → Liste der Nutzer die at benutzen dürfen<br>
+/<i>etc/at.deny</i> → Liste der Nutzer die at nicht benutzen dürfen<br>
 → .allow wird zuerst gelesen<br>
-<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge" class="page">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
-<a href="../Zeitgesteuerte_Vorg%C3%A4nge/at.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:at" class="page">Linux Wissen:Zeitgesteuerte Vorgänge:at</a><br>
+<a href="../Zeitgesteuerte_Vorgänge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge" class="page">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
+<a href="../Zeitgesteuerte_Vorgänge/at.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:at" class="page">Linux Wissen:Zeitgesteuerte Vorgänge:at</a>
 </p>
 
+<br>
 
 <p>
-/<em>etc/cron.allow </em>→ Liste der Nutzer die cron benutzen dürfen<br>
-/<em>etc/cron.deny</em> → Liste der Nutzer die cron nicht benutzen dürfen<br>
+/<i>etc/cron.allow </i>→ Liste der Nutzer die cron benutzen dürfen<br>
+/<i>etc/cron.deny</i> → Liste der Nutzer die cron nicht benutzen dürfen<br>
 → .allow wird zuerst gelesen<br>
-<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge" class="page">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
-<a href="../Zeitgesteuerte_Vorg%C3%A4nge/crontab.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:crontab" class="page">Linux Wissen:Zeitgesteuerte Vorgänge:crontab</a><br>
-/<em>etc/crontab </em><br>
+<a href="../Zeitgesteuerte_Vorgänge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge" class="page">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
+<a href="../Zeitgesteuerte_Vorgänge/crontab.html" title="Linux Wissen:Zeitgesteuerte Vorgänge:crontab" class="page">Linux Wissen:Zeitgesteuerte Vorgänge:crontab</a><br>
+/<i>etc/crontab </i><br>
 → vom System auszuführende periodische Dienste<br>
 → unter $$SUSE$$ ist hier ein Script eingetragen, welches dafür sorgt dass die anderen Systemordner systematische abgearbeitet werden<br>
-/<em>etc/cron.d </em>→ alles was nicht täglich, wöchentlich, stündlch, monatlich oder wöschentlich vom System ausgeführt wird<br>
-/<em>etc/cron.daily</em> → Shellscripte die einmal täglich ausgeführt werden<br>
-/<em>etc/cron.hourly</em> → Shellscripte die einmal stündlich ausgeführt werden<br>
-/<em>etc/cron.monthly</em> → Shellscripte die einmal monatlich ausgeführt werden<br>
-/<em>etc/cron.weekly</em> → Shellscripte die einmal wöchentlich ausgeführt werden<br>
-/<em>etc/anacrontab</em> → Konfiguration des anacron Daemons (<a href="./etc/anacrontab.html" title="+anacrontab" class="page">+anacrontab</a>)<br>
-<a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge" class="page">Linux Wissen:Zeitgesteuerte Vorgänge</a><br>
+/<i>etc/cron.d </i>→ alles was nicht täglich, wöchentlich, stündlch, monatlich oder wöschentlich vom System ausgeführt wird<br>
+/<i>etc/cron.daily</i> → Shellscripte die einmal täglich ausgeführt werden<br>
+/<i>etc/cron.hourly</i> → Shellscripte die einmal stündlich ausgeführt werden<br>
+/<i>etc/cron.monthly</i> → Shellscripte die einmal monatlich ausgeführt werden<br>
+/<i>etc/cron.weekly</i> → Shellscripte die einmal wöchentlich ausgeführt werden<br>
+/<i>etc/anacrontab</i> → Konfiguration des anacron Daemons (<a href="./etc/anacrontab.html" title="+anacrontab" class="page">+anacrontab</a>)<br>
+<a href="../Zeitgesteuerte_Vorgänge.html" title="Linux Wissen:Zeitgesteuerte Vorgänge" class="page">Linux Wissen:Zeitgesteuerte Vorgänge</a>
 </p>
 
 <p>
-/<em>etc/sudoers → </em>Konfigurationsdatei für das sudo Kommando<br>
+/<i>etc/sudoers → </i>Konfigurationsdatei für das sudo Kommando<br>
 <a href="../Sicherheit/sudo.html" title="Linux Wissen:Sicherheit:sudo" class="page">Linux Wissen:Sicherheit:sudo</a><br>
-<a href="./etc/sudoers.html" title="+sudoers" class="page">+sudoers</a><br>
+<a href="./etc/sudoers.html" title="+sudoers" class="page">+sudoers</a>
 </p>
 
 <p>
-/<em>etc/cgconfig.conf </em>→ Konfigurationsdatei für den cgcnfig Daemon <br>
-<div style='padding-left: 120pt'>
-      → zur Erstellung persistenter Cgroups<br>
+/<i>etc/cgconfig.conf </i>→ Konfigurationsdatei für den cgcnfig Daemon <br>
+<div style='padding-left: 150pt'>
+  → zur Erstellung persistenter Cgroups
 </div>
 <a href="../Prozessverwaltung/Cgroups.html" title="Linux Wissen:Prozessverwaltung:Cgroups" class="page">Linux Wissen:Prozessverwaltung:Cgroups</a> <br>
 <a href="./etc/cgconfig.conf.html" title="+cgconfig.conf" class="page">+cgconfig.conf</a><br>
-<a href="../Prozessverwaltung/Cgroups/cgconfig_und_cgred.html" title="Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred" class="page">Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred</a><br>
+<a href="../Prozessverwaltung/Cgroups/cgconfig_und_cgred.html" title="Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred" class="page">Linux Wissen:Prozessverwaltung:Cgroups:cgconfig und cgred</a>
 </p>
 
 <p>
-/<em>etc/fstab</em> → alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften<br>
-<a href="./etc/fstab.html" title="Linux Wissen:FHS:etc:fstab" class="page">Linux Wissen:FHS:etc:fstab</a><br>
+/<i>etc/fstab</i> → alle beim Start einzuhängende Dateisysteme mit Optionen und Eigenschaften<br>
+<a href="./etc/fstab.html" title="Linux Wissen:FHS:etc:fstab" class="page">Linux Wissen:FHS:etc:fstab</a>
 </p>
 
 <p>
-/<em>etc/gitconfig</em> → globale Konfigurationsdatei für Git<br>
-<a href="./etc/gitconfig.html" title="+gitconfig" class="page">+gitconfig</a><br>
+/<i>etc/gitconfig</i> → globale Konfigurationsdatei für Git<br>
+<a href="./etc/gitconfig.html" title="+gitconfig" class="page">+gitconfig</a>
 </p>
 
 <p>
-/<em>etc/lilo.conf</em> → Konfiguratonsdatei für den Bootloader LILO<br>
-<a href="./etc/lilo.conf.html" title="Linux Wissen:FHS:etc:lilo.conf" class="page">Linux Wissen:FHS:etc:lilo.conf</a><br>
+/<i>etc/lilo.conf</i> → Konfiguratonsdatei für den Bootloader LILO<br>
+<a href="./etc/lilo.conf.html" title="Linux Wissen:FHS:etc:lilo.conf" class="page">Linux Wissen:FHS:etc:lilo.conf</a>
 </p>
 
 <p>
-/<em>etc/mtab </em>→ alle momentan eingehängten Dateisysteme<br>
-/<em>etc/hosts</em> → Konfiguration der lokalen DNS Auflösung<br>
-/<em>etc/inittab </em>→ Konfigurationsdatei für den Start von Linux <br>
+/<i>etc/mtab </i>→ alle momentan eingehängten Dateisysteme<br>
+/<i>etc/hosts</i> → Konfiguration der lokalen DNS Auflösung<br>
+/<i>etc/inittab </i>→ Konfigurationsdatei für den Start von Linux 
 </p>
 
 <p>
-/<em>etc/init.d/rc.x</em> → Scripte die im Runlevel x ausgeführt werden<br>
-<div style='padding-left: 90pt'>
-     → links aus dem Übergeordneten Elternverzeichnis *<strong>/etc/init.d/</strong> <br>
+/<i>etc/init.d/rc.x</i> → Scripte die im Runlevel x ausgeführt werden<br>
+<div style='padding-left: 120pt'>
+ → links aus dem Übergeordneten Elternverzeichnis *<b>/etc/init.d/</b> 
 </div>
 <a href="../Booten.html" title="Linux Wissen:Booten" class="page">Linux Wissen:Booten</a><br>
-<a href="./etc/init.d%2B%2BScript.html" title="Linux Wissen:FHS:etc:init.d++Script" class="page">Linux Wissen:FHS:etc:init.d++Script</a><br>
+<a href="./etc/init.d++Script.html" title="Linux Wissen:FHS:etc:init.d++Script" class="page">Linux Wissen:FHS:etc:init.d++Script</a>
 </p>
 
 <p>
-/<em>etc/ld.so.conf </em>→ Konfigurationdati für den dynamischen Linker<br>
-/<em>etc/ld.so.cache </em>→ Cache für den dynamischen Linker<br>
- <a href="../Bibliotheken/dynamische_Bibliotheken.html" title="Linux Wissen:Bibliotheken:dynamische Bibliotheken" class="page">Linux Wissen:Bibliotheken:dynamische Bibliotheken</a><br>
+/<i>etc/ld.so.conf </i>→ Konfigurationdati für den dynamischen Linker<br>
+/<i>etc/ld.so.cache </i>→ Cache für den dynamischen Linker<br>
+ <a href="../Bibliotheken/dynamische_Bibliotheken.html" title="Linux Wissen:Bibliotheken:dynamische Bibliotheken" class="page">Linux Wissen:Bibliotheken:dynamische Bibliotheken</a>
 </p>
 
 <p>
-<em> /etc/localtime</em> → konfigurieren der lokalen Zeitzone<br>
-<em> /etc/timezone</em><strong> → </strong>Zeitzone festlegen<br>
-<em> /etc/ntp.conf</em> → Konfigurieren des ntpd<br>
+<i> /etc/localtime</i> → konfigurieren der lokalen Zeitzone<br>
+<i> /etc/timezone</i><b> → </b>Zeitzone festlegen<br>
+<i> /etc/ntp.conf</i> → Konfigurieren des ntpd<br>
 <a href="../Systemzeit.html" title="Linux Wissen:Systemzeit" class="page">Linux Wissen:Systemzeit</a><br>
-<a href="./etc/ntp.conf.html" title="Linux Wissen:FHS:etc:ntp.conf" class="page">Linux Wissen:FHS:etc:ntp.conf</a><br>
+<a href="./etc/ntp.conf.html" title="Linux Wissen:FHS:etc:ntp.conf" class="page">Linux Wissen:FHS:etc:ntp.conf</a>
 </p>
 
 <p>
-/<em>etc/issue.net → </em>Begrüßungstext der vor der Anmeldung remote ausgeliefert wird<br>
-/<em>etc/issue</em> → Begrüßungstext der vor der Anmeldung angezeigt werden<br>
-/<em>etc/motd</em> → Begrüßungstext der nach der Anmeldung angezeigt werden<br>
+/<i>etc/issue.net → </i>Begrüßungstext der vor der Anmeldung remote ausgeliefert wird<br>
+/<i>etc/issue</i> → Begrüßungstext der vor der Anmeldung angezeigt werden<br>
+/<i>etc/motd</i> → Begrüßungstext der nach der Anmeldung angezeigt werden
 </p>
 
 <p>
-/<em>etc/modprobe.conf </em>→ Liste der zu ladenden Module während des systmstarts<br>
+/<i>etc/modprobe.conf </i>→ Liste der zu ladenden Module während des systmstarts<br>
 <div style='padding-left: 150pt'>
  → Konfiguration der zu ladentdeen module<br>
- → kann auch aufgeteilt sein in einzelne Dateien <strong>modprobe.d/</strong><br>
-→ in <strong>modprobe.d/local.conf </strong>können eigenen Module eingetragen werden<br>
+ → kann auch aufgeteilt sein in einzelne Dateien <b>modprobe.d/</b><br>
+→ in <b>modprobe.d/local.conf </b>können eigenen Module eingetragen werden
 </div>
 </p>
 
 <p>
-/<em>etc/modules.conf </em>→ Liste verwendeter Kernelmoduel (veraltet)<br>
+/<i>etc/modules.conf </i>→ Liste verwendeter Kernelmoduel (veraltet)
 </p>
 
 <p>
-/<em>etc/nologin </em>→ Wenn angelegt kann sich niemand ausser root am System anmelden<br>
-                         → wird von <strong>PAM </strong>ausgewertet <strong>(missing link)</strong>           <br>
+/<i>etc/nologin </i>→ Wenn angelegt kann sich niemand ausser root am System anmelden<br>
+<div style='padding-left: 180pt'>
+ → wird von <b>PAM </b>ausgewertet <b>(missing link)</b>           
+</div>
 </p>
 
 <p>
-/<em>etc/passwd </em>→ Nutzer inklusive Gruppenzugehörigkeit und Shell sind hier festgelegt <br>
-<a href="./etc/passwd.html" title="Linux Wissen:FHS:etc:passwd" class="page">Linux Wissen:FHS:etc:passwd</a><br>
+/<i>etc/passwd </i>→ Nutzer inklusive Gruppenzugehörigkeit und Shell sind hier festgelegt <br>
+<a href="./etc/passwd.html" title="Linux Wissen:FHS:etc:passwd" class="page">Linux Wissen:FHS:etc:passwd</a>
 </p>
 
 <p>
-/<em>etc/shadow</em> → enthält verschlüsselte Passwörter und ihre Einstellungen<br>
+/<i>etc/shadow</i> → enthält verschlüsselte Passwörter und ihre Einstellungen
 </p>
 
 <p>
-/<em>etc/skel</em>/ → Dateien die beim Anlegen eines neuen Nutzers in dessen Heimatverzeichnis kopiert werden<br>
+/<i>etc/skel</i>/ → Dateien die beim Anlegen eines neuen Nutzers in dessen Heimatverzeichnis kopiert werden
 </p>
 
 <p>
-/<em>etc/group</em> → Gruppen und zugehröige GID und ihr angehörende Nutzer <br>
-<a href="./etc/group.html" title="Linux Wissen:FHS:etc:group" class="page">Linux Wissen:FHS:etc:group</a><br>
+/<i>etc/group</i> → Gruppen und zugehröige GID und ihr angehörende Nutzer <br>
+<a href="./etc/group.html" title="Linux Wissen:FHS:etc:group" class="page">Linux Wissen:FHS:etc:group</a>
 </p>
 
 <p>
-/<em>etc/security/limits.conf</em><br>
-<a href="./etc/security%2B%2Blimits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf" class="page">Linux Wissen:FHS:etc:security++limits.conf</a><br>
+/<i>etc/security/limits.conf</i><br>
+<a href="./etc/security++limits.conf.html" title="Linux Wissen:FHS:etc:security++limits.conf" class="page">Linux Wissen:FHS:etc:security++limits.conf</a>
 </p>
 
 <p>
-/<em>etc/foremost.conf </em><br>
-<a href="./etc/foremost.conf.html" title="Linux Wissen:FHS:etc:foremost.conf" class="page">Linux Wissen:FHS:etc:foremost.conf</a><br>
+/<i>etc/foremost.conf </i><br>
+<a href="./etc/foremost.conf.html" title="Linux Wissen:FHS:etc:foremost.conf" class="page">Linux Wissen:FHS:etc:foremost.conf</a>
 </p>
 
 <p>
-/<em>etc/udev</em>/ → Konfigurattion des Udev Daemons<br>
+/<i>etc/udev</i>/ → Konfigurattion des Udev Daemons<br>
 <div style='padding-left: 60pt'>
-<em>udev.conf</em> → globale Konfiguration (logging, loglevel)<br>
-<em>rules.d/ </em>→ Verzeichnis für Udev-Regeln die beim Start des Daemons gelesen werden<br>
+<i>udev.conf</i> → globale Konfiguration (logging, loglevel)<br>
+<i>rules.d/ </i>→ Verzeichnis für Udev-Regeln die beim Start des Daemons gelesen werden
 </div>
 </p>
 
+<br>
 
 <p>
-/<em>etc/apt.conf </em>→ generelle Konfiguration von der apt Tools <br>
+/<i>etc/apt.conf </i>→ generelle Konfiguration von der apt Tools <br>
 <a href="./etc/apt.conf.html" title="+apt.conf" class="page">+apt.conf</a><br>
-/<em>etc/apt/sources</em> → nur bei $Debian$, Liste von Bezugsquellen für das <strong>apt-get</strong> Paketmanagement<br>
-<a href="./etc/apt%2B%2Bsoruces.list.html" title="+apt++soruces.list" class="page">+apt++soruces.list</a><br>
+/<i>etc/apt/sources</i> → nur bei $Debian$, Liste von Bezugsquellen für das <b>apt-get</b> Paketmanagement<br>
+<a href="./etc/apt++soruces.list.html" title="+apt++soruces.list" class="page">+apt++soruces.list</a>
 </p>
 
 <p>
 /etc/apt/preferences.d → Konfiguration von Paketprioritäten in einezlnnen Dateien<br>
  /etc/apt/preferences → Konfiguraron von Paketprioritäten<br>
-<a href="./etc/apt%2B%2Bpreferences.conf.html" title="+apt++preferences.conf" class="page">+apt++preferences.conf</a><br>
-<a href="../Paketverwaltung/Debian/apt.html" title="Linux Wissen:Paketverwaltung:Debian:apt" class="page">Linux Wissen:Paketverwaltung:Debian:apt</a><br>
+<a href="./etc/apt++preferences.conf.html" title="+apt++preferences.conf" class="page">+apt++preferences.conf</a><br>
+<a href="../Paketverwaltung/Debian/apt.html" title="Linux Wissen:Paketverwaltung:Debian:apt" class="page">Linux Wissen:Paketverwaltung:Debian:apt</a>
 </p>
 
+<br>
 
 <p>
-/<em>rpm/ </em>→ Scripte und globale Macors die von der Paketverwaltung <strong>rpm </strong>benötigt werden<br>
+/<i>rpm/ </i>→ Scripte und globale Macors die von der Paketverwaltung <b>rpm </b>benötigt werden<br>
 <div style='padding-left: 30pt'>
-<em>macros</em> → Konfigurationsdatei für global verfügbare Macros<br>
+<i>macros</i> → Konfigurationsdatei für global verfügbare Macros
 </div>
 </p>
 
 <p>
 <a href="../Paketverwaltung/Rpm.html" title="Linux Wissen:Paketverwaltung:Rpm" class="page">Linux Wissen:Paketverwaltung:Rpm</a><br>
-/<em>etc/yum/repos.d</em> → Konfigurationsdateien für einzelne Yum Repos<br>
-/<em>etc/yum.conf</em> → globale Konfigurationsdateien für yum <br>
-<a href="../Paketverwaltung/Rpm/yum.html" title="Linux Wissen:Paketverwaltung:Rpm:yum" class="page">Linux Wissen:Paketverwaltung:Rpm:yum</a><br>
+/<i>etc/yum/repos.d</i> → Konfigurationsdateien für einzelne Yum Repos<br>
+/<i>etc/yum.conf</i> → globale Konfigurationsdateien für yum <br>
+<a href="../Paketverwaltung/Rpm/yum.html" title="Linux Wissen:Paketverwaltung:Rpm:yum" class="page">Linux Wissen:Paketverwaltung:Rpm:yum</a>
 </p>
 
 <p>
-/<em>etc/my.cnf </em>→ Konfigurationsatei für den Mysql Server und den Mysql Clients<br>
+/<i>etc/my.cnf </i>→ Konfigurationsatei für den Mysql Server und den Mysql Clients<br>
 <a href="../SQL/Mysql_Server.html" title="Linux Wissen:SQL:Mysql Server" class="page">Linux Wissen:SQL:Mysql Server</a><br>
-<a href="./etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf" class="page">Linux Wissen:FHS:etc:my.cnf</a><br>
+<a href="./etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf" class="page">Linux Wissen:FHS:etc:my.cnf</a>
 </p>
 
 <p>
-/<em>etc/services</em><strong> → </strong>mappt Ports an den <strong>inetd</strong> bzw. <strong>xinetd</strong> bzw an den syscall <em>getserverbyname()</em><br>
+/<i>etc/services</i><b> → </b>mappt Ports an den <b>inetd</b> bzw. <b>xinetd</b> bzw an den syscall <i>getserverbyname()</i><br>
 <a href="./etc/services.html" title="Linux Wissen:FHS:etc:services" class="page">Linux Wissen:FHS:etc:services</a><br>
-/<em>etc/ethers </em>→ Konfigurieren des Arp Caches<br>
+/<i>etc/ethers </i>→ Konfigurieren des Arp Caches<br>
 <a href="./etc/ethers.html" title="Linux Wissen:FHS:etc:ethers" class="page">Linux Wissen:FHS:etc:ethers</a><br>
-/<em>etc/resolv.conf</em> → Einstellungen für die lokale Namensauflösung<br>
-/<em>etc/hosts</em> → lokale Auflösung von Rechnernamen auf IP-Adressen ist eine Tabellenförmige Datei die IP-Adressen ihren Hosts zuweist<br>
+/<i>etc/resolv.conf</i> → Einstellungen für die lokale Namensauflösung<br>
+/<i>etc/hosts</i> → lokale Auflösung von Rechnernamen auf IP-Adressen ist eine Tabellenförmige Datei die IP-Adressen ihren Hosts zuweist<br>
 <a href="./etc/hosts.html" title="+hosts" class="page">+hosts</a><br>
-/<em>etc/nsswich.conf </em>→ festlegen der Reihenfolge in der Abfragen durchgeführt werden <br>
-<div style='padding-left: 90pt'>
-          → NIS Datenbanken (missing link NIS)<br>
+/<i>etc/nsswich.conf </i>→ festlegen der Reihenfolge in der Abfragen durchgeführt werden <br>
+<div style='padding-left: 150pt'>
+  → NIS Datenbanken (missing link NIS)
 </div>
 <a href="../Networking/Dienste/DNS.html" title="Linux Wissen:Networking:Dienste:DNS" class="page">Linux Wissen:Networking:Dienste:DNS</a><br>
-<a href="./etc/nsswitch.conf.html" title="+nsswitch.conf" class="page">+nsswitch.conf</a><br>
+<a href="./etc/nsswitch.conf.html" title="+nsswitch.conf" class="page">+nsswitch.conf</a>
 </p>
 
 <p>
-/<em>etc/inetd.conf</em> → Konfigurieren des Internet Daemin <strong>inetd</strong><br>
+/<i>etc/inetd.conf</i> → Konfigurieren des Internet Daemin <b>inetd</b><br>
 <a href="./etc/inetd.conf.html" title="+inetd.conf" class="page">+inetd.conf</a><br>
-/<em>etc/xinetd.conf </em><strong>|| </strong>/<em>etc/xinetd.d </em>→ Konfigurieren des xinetd<br>
-<a href="./etc/xinetd.conf.html" title="+xinetd.conf" class="page">+xinetd.conf</a><br>
+/<i>etc/xinetd.conf </i><b>|| </b>/<i>etc/xinetd.d </i>→ Konfigurieren des xinetd<br>
+<a href="./etc/xinetd.conf.html" title="+xinetd.conf" class="page">+xinetd.conf</a>
 </p>
 
 <p>
-/<em>etc/protocols </em>→ mappen von Protokollnummern auf ihr Protokoll<br>
-<a href="./etc/protocols.html" title="+protocols" class="page">+protocols</a><br>
+/<i>etc/protocols </i>→ mappen von Protokollnummern auf ihr Protokoll<br>
+<a href="./etc/protocols.html" title="+protocols" class="page">+protocols</a>
 </p>
 
 <p>
-/<em>etc/hosts.allow</em> → explizit vom TCP Wrapper <strong>tcpd </strong>erlaubte Dienste<br>
+/<i>etc/hosts.allow</i> → explizit vom TCP Wrapper <b>tcpd </b>erlaubte Dienste<br>
 <a href="./etc/hosts.allow.html" title="+hosts.allow" class="page">+hosts.allow</a><br>
-/<em>etc/hosts.deny </em>→ explizit vom TCP Wrapper <strong>tcpd </strong>nicht zulässige Dienste<br>
-<a href="./etc/hosts.deny.html" title="+hosts.deny" class="page">+hosts.deny</a><br>
+/<i>etc/hosts.deny </i>→ explizit vom TCP Wrapper <b>tcpd </b>nicht zulässige Dienste<br>
+<a href="./etc/hosts.deny.html" title="+hosts.deny" class="page">+hosts.deny</a>
 </p>
 
 <p>
-/<em>etc/syslog.conf</em> → Konfiguration für den <strong>syslogd </strong><br>
-/<em>etc/rsyslog.conf </em>→ Konfiguration für den neueren <strong>syslogd </strong>(rsyslog)<br>
+/<i>etc/syslog.conf</i> → Konfiguration für den <b>syslogd </b><br>
+/<i>etc/rsyslog.conf </i>→ Konfiguration für den neueren <b>syslogd </b>(rsyslog)<br>
 <a href="../Systemprotokollierung.html" title="Linux Wissen:Systemprotokollierung" class="page">Linux Wissen:Systemprotokollierung</a><br>
-<u>Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.</u><br>
+<u>Hinweis: Die Syntax der Konfiguration ist bei beiden gleich.</u>
 </p>
 
 <p>
-/<em>etc/logrotate.conf</em> → Konfiguration des Logrotierungsdinestes<br>
-<a href="./etc/logrotate.conf.html" title="Linux Wissen:FHS:etc:logrotate.conf" class="page">Linux Wissen:FHS:etc:logrotate.conf</a><br>
+/<i>etc/logrotate.conf</i> → Konfiguration des Logrotierungsdinestes<br>
+<a href="./etc/logrotate.conf.html" title="Linux Wissen:FHS:etc:logrotate.conf" class="page">Linux Wissen:FHS:etc:logrotate.conf</a>
 </p>
 
 <p>
-/<em>etc/systemd/ </em><strong>→ </strong>Konfigurationsdateien des Sys-V-Init komaptiblen systemd die zur Laufzeit benötigt werden<br>
+/<i>etc/systemd/ </i><b>→ </b>Konfigurationsdateien des Sys-V-Init komaptiblen systemd die zur Laufzeit benötigt werden<br>
 <div style='padding-left: 30pt'>
-<em>system/ </em>→ Verzeichnis in dem die von systemd genutzten Units abgelegt werden<br>
+<i>system/ </i>→ Verzeichnis in dem die von systemd genutzten Units abgelegt werden
 </div>
-<a href="./etc/systemd%2B%2Bsystem%2B%2Bmy.typ.html" title="+systemd++system++my.typ" class="page">+systemd++system++my.typ</a><br>
-/<em>etc/sysconfig/ </em><strong>→ </strong>Konfigurationsdateien die für die einzelnen Dienste  spezifische Umgebungsvariablen setzen <br>
+<a href="./etc/systemd++system++my.typ.html" title="+systemd++system++my.typ" class="page">+systemd++system++my.typ</a><br>
+/<i>etc/sysconfig/ </i><b>→ </b>Konfigurationsdateien die für die einzelnen Dienste  spezifische Umgebungsvariablen setzen 
 </p>
 
 <p>
-/<em>etc/termcap</em><br>
-→ obsolete Datenbank die von <strong>tput </strong>benutzt wird<br>
-<a href="../Systemprogrammierung/Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a><br>
+/<i>etc/termcap</i><br>
+→ obsolete Datenbank die von <b>tput </b>benutzt wird<br>
+<a href="../Systemprogrammierung/Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a>
 </p>
 
 <p>
-/<em>etc/X11</em><strong> → </strong>Einstellungen für den X-Server<br>
+/<i>etc/X11</i><b> → </b>Einstellungen für den X-Server<br>
 <div style='padding-left: 30pt'>
-/<em>etc/X11/xdm</em><strong> → </strong>Einstellungen und Resources für den X-Displaymanager<br>
+/<i>etc/X11/xdm</i><b> → </b>Einstellungen und Resources für den X-Displaymanager
 </div>
 <div style='padding-left: 150pt'>
-<a href="./etc/X11%2B%2Bxdm.html" title="Linux Wissen:FHS:etc:X11++xdm" class="page">Linux Wissen:FHS:etc:X11++xdm</a><br>
+<a href="./etc/X11++xdm.html" title="Linux Wissen:FHS:etc:X11++xdm" class="page">Linux Wissen:FHS:etc:X11++xdm</a>
 </div>
 <div style='padding-left: 30pt'>
-/<em>etc/X11/kdm | /etc/kdm</em> → Konfigurationsdatei für kdm <strong>kcontrol</strong><br>
-/<em>etc/X11/gdm | /etc/gdm</em> → Konfigurationsdatei für den gdm <strong>gdmconfig</strong><br>
-/<em>etc/X11/twm | /etc/twm</em> → Konfigurationsdatei für den TWM (Tiny Windows Manager) des LXDE<br>
-/<em>etc/X11/apps-default/&lt;Name&gt;</em> → stellt X Resourcen für das Programm &lt;Name&gt; zur Verfügung<br>
+/<i>etc/X11/kdm | /etc/kdm</i> → Konfigurationsdatei für kdm <b>kcontrol</b><br>
+/<i>etc/X11/gdm | /etc/gdm</i> → Konfigurationsdatei für den gdm <b>gdmconfig</b><br>
+/<i>etc/X11/twm | /etc/twm</i> → Konfigurationsdatei für den TWM (Tiny Windows Manager) des LXDE<br>
+/<i>etc/X11/apps-default/&lt;Name&gt;</i> → stellt X Resourcen für das Programm &lt;Name&gt; zur Verfügung
 </div>
-<div style='padding-left: 210pt'>
-        → Systemweite Einstellungen für diese Resource festlegen<br>
+<div style='padding-left: 270pt'>
+→ Systemweite Einstellungen für diese Resource festlegen
 </div>
 <div style='padding-left: 30pt'>
-/<em>etc/X11/Xmodmap |*~/.Xmodmap</em> → Konfigurieren des Tastaurlayouts für den X-Server<br>
+/<i>etc/X11/Xmodmap |*~/.Xmodmap</i> → Konfigurieren des Tastaurlayouts für den X-Server
 </div>
 </p>
 
 <p>
-/<em>etc/X11/xorg.conf </em><strong>→</strong> Konfigurationsdatei für X11 bis X11R6<br>
-/<em>etc/X11/xorg.conf.d</em><strong> → </strong>Konfigurationsdateien im X11R6 Stil aufgesplittet nach Section und Device<br>
-/<em>etc/X11/Xsession.d </em><strong>→ </strong>Konfigurationsdateien für X11 ab X11R7<br>
-<div style='padding-left: 90pt'>
-           → enthält eine Reihe von Scripten die beim Starten einer X-Session ausgeführt werden<br>
+/<i>etc/X11/xorg.conf </i><b>→</b> Konfigurationsdatei für X11 bis X11R6<br>
+/<i>etc/X11/xorg.conf.d</i><b> → </b>Konfigurationsdateien im X11R6 Stil aufgesplittet nach Section und Device<br>
+/<i>etc/X11/Xsession.d </i><b>→ </b>Konfigurationsdateien für X11 ab X11R7<br>
+<div style='padding-left: 150pt'>
+   → enthält eine Reihe von Scripten die beim Starten einer X-Session ausgeführt werden
 </div>
-<a href="./etc/Xorg.conf.html" title="Linux Wissen:FHS:etc:Xorg.conf" class="page">Linux Wissen:FHS:etc:Xorg.conf</a><br>
+<a href="./etc/Xorg.conf.html" title="Linux Wissen:FHS:etc:Xorg.conf" class="page">Linux Wissen:FHS:etc:Xorg.conf</a>
 </p>
 
 <p>
-/<em>etc/hosts.lpd </em>→  Eine Liste von Hosts die über diesen DruckerServer mit Druckern kommunizieren dürfen<br>
+/<i>etc/hosts.lpd </i>→  Eine Liste von Hosts die über diesen DruckerServer mit Druckern kommunizieren dürfen<br>
 <div style='padding-left: 30pt'>
-<a href="./etc/hosts.lpd.html" title="+hosts.lpd" class="page">+hosts.lpd</a><br>
+<a href="./etc/hosts.lpd.html" title="+hosts.lpd" class="page">+hosts.lpd</a>
 </div>
-/<em>etc/cups/mime.types</em> →  Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden<br>
+/<i>etc/cups/mime.types</i> →  Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden<br>
 <div style='padding-left: 150pt'>
 → Informationen die zur Umwandlung von Formatten in druckbares Format gebraucht werden<br>
-→ wie wird zum Beispiel ein Pdf behandelt<br>
+→ wie wird zum Beispiel ein Pdf behandelt
 </div>
-/<em>etc/cups/classes.conf </em>→ definieren von  verschiedenen lokalen Drucker Klassen<br>
-<a href="./etc/cups/cups%2B%2Bclasses.conf.html" title="+cups:cups++classes.conf" class="page">+cups:cups++classes.conf</a><br>
-/<em>etc/cups/printers.conf</em> <em>→ </em>enthält die Konfiguration für die einzelnen Drucker<br>
-<a href="./etc/cups/cups%2B%2Bprinters.conf.html" title="+cups:cups++printers.conf" class="page">+cups:cups++printers.conf</a><br>
-/<em>etc/cups/ppd </em>→ hierher wird für jeden konfigurierten Drucker eine <strong>ppd </strong>Datei aus dem Verzeichnis <em>*/usr/share/cups/model </em> kopiert<br>
-<a href="./usr/usr%2B%2Bshare%2B%2Bcups%2B%2Bmodel.html" title="usr:usr++share++cups++model" class="page">usr:usr++share++cups++model</a><br>
-/<em>etc/cups</em>cupsd.conf //→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)<br>
-<a href="./etc/cups/cups%2B%2Bcupsd.conf.html" title="+cups:cups++cupsd.conf" class="page">+cups:cups++cupsd.conf</a><br>
-<a href="../Drucken.html" title="Linux Wissen:Drucken" class="page">Linux Wissen:Drucken</a><br>
+/<i>etc/cups/classes.conf </i>→ definieren von  verschiedenen lokalen Drucker Klassen<br>
+<a href="./etc/cups/cups++classes.conf.html" title="+cups:cups++classes.conf" class="page">+cups:cups++classes.conf</a><br>
+/<i>etc/cups/printers.conf</i> <i>→ </i>enthält die Konfiguration für die einzelnen Drucker<br>
+<a href="./etc/cups/cups++printers.conf.html" title="+cups:cups++printers.conf" class="page">+cups:cups++printers.conf</a><br>
+/<i>etc/cups/ppd </i>→ hierher wird für jeden konfigurierten Drucker eine <b>ppd </b>Datei aus dem Verzeichnis <i>*/usr/share/cups/model </i> kopiert<br>
+<a href="./usr/usr++share++cups++model.html" title="usr:usr++share++cups++model" class="page">usr:usr++share++cups++model</a><br>
+/<i>etc/cups</i>cupsd.conf //→ allgemeine Konfigurationseinstellungen des Cups Daemons (Drucker Schedulers)<br>
+<a href="./etc/cups/cups++cupsd.conf.html" title="+cups:cups++cupsd.conf" class="page">+cups:cups++cupsd.conf</a><br>
+<a href="../Drucken.html" title="Linux Wissen:Drucken" class="page">Linux Wissen:Drucken</a>
 </p>
 
 <p>
-/<em>etc/ssh</em> → Dateien für das Cleintseitige und Serverseitige Konfigurieren von SSH<br>
+/<i>etc/ssh</i> → Dateien für das Cleintseitige und Serverseitige Konfigurieren von SSH
 </p>
 
 <p>
-/<em>etc/smb.conf</em> → Samba Konfigurationsdatei<br>
+/<i>etc/smb.conf</i> → Samba Konfigurationsdatei
 </p>
 
 <p>
-/<em>etc/network/interfaces</em><br>
+/<i>etc/network/interfaces</i><br>
 /etc/networks<br>
-<a href="./etc/interfaces.html" title="+interfaces" class="page">+interfaces</a><br>
+<a href="./etc/interfaces.html" title="+interfaces" class="page">+interfaces</a>
 </p>
 
 <p>
-/<em>etc/dhclient.conf | /etc/dhcp/dhclient.conf</em><br>
+/<i>etc/dhclient.conf | /etc/dhcp/dhclient.conf</i><br>
 → Clientseitige Konfiguraion des DHCP<br>
 <a href="./etc/dhclient.conf.html" title="+dhclient.conf" class="page">+dhclient.conf</a><br>
 <a href="../Networking/Protokolle/DHCP.html" title="Linux Wissen:Networking:Protokolle:DHCP" class="page">Linux Wissen:Networking:Protokolle:DHCP</a><br>
-/<em>etc/dhcpd.conf |/etc/dhcp/dhcpd.conf</em><br>
+/<i>etc/dhcpd.conf |/etc/dhcp/dhcpd.conf</i><br>
 → Serverseitige Konfiguration des DHCP<br>
 <a href="./etc/dhcpd.conf.html" title="+dhcpd.conf" class="page">+dhcpd.conf</a><br>
 <a href="../Networking/Protokolle/DHCP.html" title="Linux Wissen:Networking:Protokolle:DHCP" class="page">Linux Wissen:Networking:Protokolle:DHCP</a><br>
-/<em>etc/zypp/zypper.conf</em><strong> → </strong>Zypper Konfigurationsdatei<br>
+/<i>etc/zypp/zypper.conf</i><b> → </b>Zypper Konfigurationsdatei
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Drucken.html'>Linux Wissen:Drucken</a></li>						<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a></li>						<a href='../X11.html'>Linux Wissen:X11</a></li>						<a href='../Zeitgesteuerte_Vorg%C3%A4nge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a></li>						<a href='../Bibliotheken/dynamische_Bibliotheken.html'>Linux Wissen:Bibliotheken:dynamische Bibliotheken</a></li>						<a href='../Paketverwaltung/Rpm.html'>Linux Wissen:Paketverwaltung:Rpm</a></li>						<a href='../Benutzer_und_Gruppen/Benutzerkonten_verwalten.html'>Linux Wissen:Benutzer und Gruppen:Benutzerkonten verwalten</a></li>						<a href='../Booten/Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a></li>
-				<br><br>
+	<br />
 
-									<b>Attachments:</b>
-					<table>						<tr><td><a href='./etc/cups'>cups</a></td><td>&nbsp;</td><td>4.10kb</td></tr>						<tr><td><a href='./etc/ssh'>ssh</a></td><td>&nbsp;</td><td>4.10kb</td></tr>					</table>
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Drucken.html'>Linux Wissen:Drucken</a>
+
+		
+		
+
+		<a href='../Systemzeit.html'>Linux Wissen:Systemzeit</a>
+
+		
+		
+
+		<a href='../X11.html'>Linux Wissen:X11</a>
+
+		
+		
+
+		<a href='../Zeitgesteuerte_Vorgänge.html'>Linux Wissen:Zeitgesteuerte Vorgänge</a>
+
+		
+		
+
+		<a href='../Bibliotheken/dynamische_Bibliotheken.html'>Linux Wissen:Bibliotheken:dynamische Bibliotheken</a>
+
+		
+		
+
+		<a href='../Paketverwaltung/Rpm.html'>Linux Wissen:Paketverwaltung:Rpm</a>
+
+		
+		
+
+		<a href='../Benutzer_und_Gruppen/Benutzerkonten_verwalten.html'>Linux Wissen:Benutzer und Gruppen:Benutzerkonten verwalten</a>
+
+		
+		
+
+		<a href='../Partitionen_und_Dateisysteme/Mounten.html'>Linux Wissen:Partitionen und Dateisysteme:Mounten</a>
+
+		
+		
+
+		<a href='../Booten/Herunterfahren_und_Neustarten.html'>Linux Wissen:Booten:Herunterfahren und Neustarten</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

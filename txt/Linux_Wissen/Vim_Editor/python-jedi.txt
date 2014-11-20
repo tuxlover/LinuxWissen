@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2014-10-02T20:33:14+02:00
+
+====== python-jedi ======
+Created Donnerstag 02 Oktober 2014
+
+* ist ein addin für die programmiersprache python ( [[Linux Wissen:Systemprogrammierung:Python]] )
+* erlaubt die einfache Benutzung von Autocompletion etc.
+
+=== How to use: ===
+**→ nach** **der installation über den paketmanager muss das plugin in vim integriert werden**
+''vim-addons install python-jedi''
+**:help**
+**<shift>-k** -> auf die installierte Dokumentation zurückgreifne
+**<strg>-leer** -> autocompletion

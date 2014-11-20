@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Shellscripting</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Shellscripting</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>Shellscripting</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./Sed/Suchen_und_Ersetzen.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./Shellscripting/Arrays.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -67,15 +81,15 @@
 <li><a href="../Shell.html" title="Shell" class="page">Shell</a></li>
 <li><a href="../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
 <li><a href="../SQL.html" title="SQL" class="page">SQL</a></li>
-<li><a href="../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
+<li><a href="../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a>
 <ul>
 <li><a href="./Awk.html" title="Awk" class="page">Awk</a></li>
 <li><a href="./C.html" title="C" class="page">C</a></li>
-<li><a href="./C%2B%2B.html" title="C++" class="page">C++</a></li>
+<li><a href="./C++.html" title="C++" class="page">C++</a></li>
 <li><a href="./Perl.html" title="Perl" class="page">Perl</a></li>
 <li><a href="./Python.html" title="Python" class="page">Python</a></li>
 <li><a href="./Sed.html" title="Sed" class="page">Sed</a></li>
-<li><strong class="activepage">Shellscripting</strong></li>
+<li><b>Shellscripting</b>
 <ul>
 <li><a href="./Shellscripting/Arrays.html" title="Arrays" class="page">Arrays</a></li>
 <li><a href="./Shellscripting/Debugging.html" title="Debugging" class="page">Debugging</a></li>
@@ -92,34 +106,43 @@
 <li><a href="./Shellscripting/Test.html" title="Test" class="page">Test</a></li>
 <li><a href="./Shellscripting/tput.html" title="tput" class="page">tput</a></li>
 <li><a href="./Shellscripting/Variablen_zuweisen.html" title="Variablen zuweisen" class="page">Variablen zuweisen</a></li>
+</ul></li>
 </ul>
-</ul>
+</li>
 <li><a href="../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
 <li><a href="../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
 <li><a href="../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Dienstag 26 April 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>Shellscripting <a name='Linux Wissen:Systemprogrammierung:Shellscripting'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Dienstag 26 April 2011
 </p>
 
 <p>
-<a href="http://tldp.org/LDP/abs/html/" title="http://tldp.org/LDP/abs/html/" class="http">http://tldp.org/LDP/abs/html/</a><br>
+<a href="http://tldp.org/LDP/abs/html/" title="http://tldp.org/LDP/abs/html/" class="http">http://tldp.org/LDP/abs/html/</a>
 </p>
 
 <h2>Shell Scripte ausführen</h2>
+
 <p>
 <ul>
 <li>Shell Scripte beginnen immer mit #!/bin/bash (dem SheBang teilt mit welcher Interpreter verwendet werden soll)</li>
-<li>muss die Rechte <strong>x </strong>und <strong>r </strong>besitzen</li>
+<li>muss die Rechte <b>x </b>und <b>r </b>besitzen</li>
 <li>Mehrere Befehle können in eine Datei geschrieben und verarbeitet werden</li>
 </ul>
 <a href="../Dateien_verwalten/Zugriffsrechte.html" title="Linux Wissen:Dateien verwalten:Zugriffsrechte" class="page">Linux Wissen:Dateien verwalten:Zugriffsrechte</a><br>
@@ -133,29 +156,31 @@ Created Dienstag 26 April 2011<br>
 </p>
 
 <p>
-<strong>./PFAD/script.sh </strong>→ ausführen auf einer Subshell mit expliziter Pfadangabe <br>
-<strong>bash /Pfad/script.sh </strong>→ ausführen einer Subshell ohne Ausführungsrechte<br>
-<strong>source Script | </strong>. <strong>Script </strong>→ ausführen in der aktuellen Shell ohne erzeugen einer Subshell<br>
+<b>./PFAD/script.sh </b>→ ausführen auf einer Subshell mit expliziter Pfadangabe <br>
+<b>bash /Pfad/script.sh </b>→ ausführen einer Subshell ohne Ausführungsrechte<br>
+<b>source Script | </b>. <b>Script </b>→ ausführen in der aktuellen Shell ohne erzeugen einer Subshell
 </p>
 
 <p>
-<u>Hinweis: Die Endung .sh ist nicht notwendig wird aber beim Schreiben von ShellScripten empfohlen.</u><br>
+<u>Hinweis: Die Endung .sh ist nicht notwendig wird aber beim Schreiben von ShellScripten empfohlen.</u>
 </p>
 
+<br>
 
 <h2>Debuggen von Shellscripten</h2>
+
 <p>
 <ul>
-<li>Aufrufen von <strong>-x </strong>aktiviert das Tracing</li>
+<li>Aufrufen von <b>-x </b>aktiviert das Tracing</li>
 </ul>
-<strong>set -x </strong>→ dauerhaftes Tracing in der aktuellen Shell aktivieren<br>
-<strong>sh -x &lt;Script.sh&gt; </strong>→ Shellscript mit Tracing aufrufen<br>
- <a href="../Shell/Bash/Optionen_f%C3%BCr_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash" class="page">Linux Wissen:Shell:Bash:Optionen für die Bash</a><br>
+<b>set -x </b>→ dauerhaftes Tracing in der aktuellen Shell aktivieren<br>
+<b>sh -x &lt;Script.sh&gt; </b>→ Shellscript mit Tracing aufrufen<br>
+ <a href="../Shell/Bash/Optionen_für_die_Bash.html" title="Linux Wissen:Shell:Bash:Optionen für die Bash" class="page">Linux Wissen:Shell:Bash:Optionen für die Bash</a>
 </p>
 
 <p>
 <u>Hinweis: Innerhalb eines Shellscript das Tracing nur für einen Block aktivieren:</u><br>
-++<br>
+++
 </p>
 <pre>
 sh -x 
@@ -166,21 +191,21 @@ sh +x
 </pre>
 
 <p>
-++<br>
+++
 </p>
 
 <p>
 <ul>
-<li>Aufrufen von <strong>-v </strong>aktiviert verbosity, die Shell zeigt alle Befehle an, die durch das Script aufgerufen werden</li>
+<li>Aufrufen von <b>-v </b>aktiviert verbosity, die Shell zeigt alle Befehle an, die durch das Script aufgerufen werden</li>
 </ul>
-<strong>sh -v &lt;Script.sh&gt;</strong><br>
+<b>sh -v &lt;Script.sh&gt;</b>
 </p>
 
 <p>
 <ul>
-<li>Aufrufen von <strong>-u </strong>warnt vor undefinierten Variablen</li>
+<li>Aufrufen von <b>-u </b>warnt vor undefinierten Variablen</li>
 </ul>
-<strong>sh -u &lt;Script.sh&gt;</strong><br>
+<b>sh -u &lt;Script.sh&gt;</b>
 </p>
 
 <p>
@@ -190,169 +215,188 @@ sh +x
 </p>
 
 <h2>Variablen</h2>
+
 <p>
 <ul>
 <li>Variablen können Rückgabewerte, Programmausgaben oder Werte von Berechnungen enthalten.</li>
 <li>Die Bash kann diese weiter verarbeiten|auswerten.</li>
 <li>Können Zeichenketten, Zahlen, oder Felder (Arrays) sein, generell gibt es in Bash aber keiner Typitisierung</li>
 </ul>
-<a href="./Shellscripting/Variablen_zuweisen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen</a><br>
+<a href="./Shellscripting/Variablen_zuweisen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Variablen zuweisen</a>
 </p>
 
 <h2>Arithmetik</h2>
+
 <p>
 <ul>
-<li>einfache arithmetische Ausdrücke werden durch <strong>$((Berechnung)) </strong>beschrieben und ausgewertet.</li>
+<li>einfache arithmetische Ausdrücke werden durch <b>$((Berechnung)) </b>beschrieben und ausgewertet.</li>
 <li>Shellscripting eigent sich nicht für das Lösen komplexer Mathematischer Algorithmen.</li>
 </ul>
 </p>
 
 <h4>Addition</h4>
+
 <p>
-<strong>$((a+b))</strong><br>
+<b>$((a+b))</b>
 </p>
 
 <h4>Multiplikation</h4>
+
 <p>
-<strong>$((a*b))</strong><br>
+<b>$((a*b))</b>
 </p>
 
 <h4>Division</h4>
+
 <p>
-<strong>$((a/b))</strong><br>
+<b>$((a/b))</b>
 </p>
 
 <h4>Modulo</h4>
+
 <p>
-<strong>$((a%b))</strong><br>
+<b>$((a%b))</b>
 </p>
 
 <h4>Potenz</h4>
+
 <p>
-<strong>$((a</strong>b))**<br>
+<b>$((a</b>b))**
 </p>
 
 <p>
-<u>Hinweis: Bash rundet die Ergebnisse immer ab.</u><br>
+<u>Hinweis: Bash rundet die Ergebnisse immer ab.</u>
 </p>
 
 <h2>Exit Status</h2>
+
 <p>
 <ul>
 <li>Programme und Funktionen haben immer einen Rückgabewert der über Erfolg oder Misserfolg informiert</li>
 <li>Anhand des Exit-Status kann ein Fehler meist genauer diagnostiziert werden</li>
 <li>Wird von einem Kindprozess an die aktuelle Shell übergeben</li>
-<li>Der Befehl <strong>exit </strong>beendet ein Script und gibt einen Wert an den Vaterprozess des Scriptes weiter.</li>
+<li>Der Befehl <b>exit </b>beendet ein Script und gibt einen Wert an den Vaterprozess des Scriptes weiter.</li>
 </ul>
 <a href="./Shellscripting/Exit_Status.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Exit Status</a><br>
-<a href="./Shellscripting/Debugging.html" title="+Debugging" class="page">+Debugging</a><br>
+<a href="./Shellscripting/Debugging.html" title="+Debugging" class="page">+Debugging</a>
 </p>
 
 <h2>Test</h2>
+
 <p>
 <ul>
-<li>der <strong>test </strong>Befehl ist ein Bash Buildin</li>
-<li>Ein <strong>if/then/else </strong>Konstrukt testet ob der <strong>exit</strong>-Status eines Befehls gleich <strong>0</strong> ist, und falls </li>
-<li>Der Befehl <strong>[ ] </strong>ist ein Synonym für das <strong>test </strong>Buildin. </li>
-<li><strong>ist ein Synonym für </strong>test <strong>Buildin. Mit </strong> **können logische Verknüpfungen vorgenommen werden</li>
+<li>der <b>test </b>Befehl ist ein Bash Buildin</li>
+<li>Ein <b>if/then/else </b>Konstrukt testet ob der <b>exit</b>-Status eines Befehls gleich <b>0</b> ist, und falls </li>
+<li>Der Befehl <b>[ ] </b>ist ein Synonym für das <b>test </b>Buildin. </li>
+<li><b>ist ein Synonym für </b>test <b>Buildin. Mit </b> **können logische Verknüpfungen vorgenommen werden</li>
 </ul>
 Der Befehl **  <br>
 <ul>
-<li>In <strong>(( ))</strong> können arithmetische ausgewertet werden.</li>
+<li>In <b>(( ))</b> können arithmetische ausgewertet werden.</li>
 </ul>
 <a href="../Shell/Befehle.html" title="Linux Wissen:Shell:Befehle" class="page">Linux Wissen:Shell:Befehle</a><br>
-<a href="./Shellscripting/Test.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Test" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Test</a><br>
+<a href="./Shellscripting/Test.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Test" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Test</a>
 </p>
 
 <h2>Schleifen</h2>
+
 <p>
 <ul>
 <li>Eine Schleife ist ein Code Block der solange wiederholt wird, bis die Anweisung aufgrund eines Exit-Wertes beendet ist</li>
-<li><strong>for </strong>Schleife zur Iteration über eine Liste von Werten oder Dateien</li>
-<li><strong>while </strong>Schleife zur Iteration bis eine Aussage falsch oder wahr ist</li>
-<li><strong>break, continue </strong>zur Abbruchssteuerung von Schleifen</li>
-<li><strong>seq </strong>Programm um Zahlenintervalle definieren</li>
+<li><b>for </b>Schleife zur Iteration über eine Liste von Werten oder Dateien</li>
+<li><b>while </b>Schleife zur Iteration bis eine Aussage falsch oder wahr ist</li>
+<li><b>break, continue </b>zur Abbruchssteuerung von Schleifen</li>
+<li><b>seq </b>Programm um Zahlenintervalle definieren</li>
 </ul>
 <u>Hinweis: Für die Turingvollständigkeit reicht die while Schleife.</u><br>
-<a href="./Shellscripting/Schleifen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen</a><br>
+<a href="./Shellscripting/Schleifen.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Schleifen</a>
 </p>
 
 <h2>Arrays</h2>
+
 <p>
 <ul>
 <li>Eine Liste von Werten die nacheinander verarbeitet werden kann</li>
-<li><strong>ARRAY=(Wer1 Wert2 Wert3 ...)</strong></li>
-<li><strong>${ARRAY[@]}; ${ARRAY[*]}</strong></li>
+<li><b>ARRAY=(Wer1 Wert2 Wert3 ...)</b></li>
+<li><b>${ARRAY[@]}; ${ARRAY[*]}</b></li>
 </ul>
 </p>
 
 <h2>Funktionen definieren und verwenden</h2>
+
 <p>
 <ul>
-<li>Unterprogramme im aktuellen Shellscript die einen <strong>return </strong>Wert liefern können</li>
+<li>Unterprogramme im aktuellen Shellscript die einen <b>return </b>Wert liefern können</li>
 <li>Häufig verwendete Programmschnipsel nur einmal implementiert zu werden</li>
 <li>schaffen Übersichtlichkeit und lesbarkeit</li>
 <li>Positionsparameter innerhalb der Funktion entsprechen denen der Funktion und nicht der des eigentlichen Scripts</li>
 </ul>
- <a href="./Shellscripting/Funktion.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Funktion" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Funktion</a><br>
+ <a href="./Shellscripting/Funktion.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Funktion" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Funktion</a>
 </p>
 
 <h2>Here-Dokumente</h2>
+
 <p>
 <ul>
 <li>bietet einen Codeblock der mit einem Kommando anschließend eingelesen und verarbeitet werden kann</li>
-<li>der Codeblock wird mit einem Schlüsselwort beendet, welches vorher festgelegt wird. meist <em>EOF </em>oder <em>EOL</em></li>
-<li>dem lesenden &lt;Befehl&gt; wird mittels <strong>&lt;Befel&gt; &lt;&lt; &lt;Schlüsselwort&gt;</strong>  das &lt;Schlüsselwort zum Ende des lesens mitgeteilt</li>
+<li>der Codeblock wird mit einem Schlüsselwort beendet, welches vorher festgelegt wird. meist <i>EOF </i>oder <i>EOL</i></li>
+<li>dem lesenden &lt;Befehl&gt; wird mittels <b>&lt;Befel&gt; &lt;&lt; &lt;Schlüsselwort&gt;</b>  das &lt;Schlüsselwort zum Ende des lesens mitgeteilt</li>
 </ul>
-<a href="./Shellscripting/Here-Dokumente.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente</a><br>
+<a href="./Shellscripting/Here-Dokumente.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:Here-Dokumente</a>
 </p>
 
 <h2>read</h2>
+
 <p>
 <ul>
 <li>liest Zeilen von StdIn</li>
 </ul>
-<a href="./Shellscripting/read.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:read" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:read</a><br>
+<a href="./Shellscripting/read.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:read" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:read</a>
 </p>
 
 <h3>tput</h3>
+
 <p>
 <ul>
 <li>eigenstädndiges Programm zum Initialisieren eines Terminals oder Abfrage terminfo-Datenbank</li>
 <li>zur Steuerung des Bildschirm</li>
 <li>nutzt */etc/termcap</li>
 </ul>
-<a href="./Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a><br>
+<a href="./Shellscripting/tput.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:tput" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:tput</a>
 </p>
 
 <h3>Script mit Optionen steuern</h3>
+
 <p>
 <ul>
-<li>Mit dem Buildin <strong>getopts </strong><code>lassen sich Optionen in einem Script implementieren</code></li>
+<li>Mit dem Buildin <b>getopts </b><tt>lassen sich Optionen in einem Script implementieren</tt></li>
 </ul>
-<a href="./Shellscripting/getopts.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:getopts" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:getopts</a><br>
+<a href="./Shellscripting/getopts.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:getopts" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:getopts</a>
 </p>
 
 <h2>Eine Menuauswahl mit select erstellen</h2>
+
 <p>
 <ul>
-<li>Mit dem Shell Schlüsselwort <strong>select </strong>lassen sich einfache Auswahlmenus erstellen</li>
+<li>Mit dem Shell Schlüsselwort <b>select </b>lassen sich einfache Auswahlmenus erstellen</li>
 </ul>
-<a href="./Shellscripting/select.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:select" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:select</a><br>
+<a href="./Shellscripting/select.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:select" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:select</a>
 </p>
 
 <h2>dialog</h2>
+
 <p>
 <ul>
-<li>Mit <strong>dialog </strong>lassen sich komolexere Menus erstellen</li>
+<li>Mit <b>dialog </b>lassen sich komolexere Menus erstellen</li>
 <li>es verwendet ncurses und Umleitungsoperatoren</li>
-<li><strong>kdialog</strong></li>
-<li><strong>zenity</strong></li>
+<li><b>kdialog</b></li>
+<li><b>zenity</b></li>
 </ul>
-<a href="./Shellscripting/dialog.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:dialog" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:dialog</a><br>
+<a href="./Shellscripting/dialog.html" title="Linux Wissen:Systemprogrammierung:Shellscripting:dialog" class="page">Linux Wissen:Systemprogrammierung:Shellscripting:dialog</a>
 </p>
 
 <h2>Rezepte</h2>
+
 <p>
 <a href="./Shellscripting/Rezepte/Am_I__Root.html" title="+Rezepte:Am I  Root" class="page">+Rezepte:Am I  Root</a> (Überprüfen ob der Ausführende über Rootrechte verfügt)<br>
 <a href="./Shellscripting/Rezepte/Taken_User.html" title="+Rezepte:Taken User" class="page">+Rezepte:Taken User</a> (Überprüfen ob ein Nutzername schon exisitert)<br>
@@ -370,22 +414,50 @@ Der Befehl **  <br>
 <a href="./Shellscripting/Rezepte/AreWeInteractive.html" title="+Rezepte:AreWeInteractive" class="page">+Rezepte:AreWeInteractive</a> (Testen ob die bash interaktiv läuft oder nicht und entsprechende zuweisung von Anweisungen)<br>
 <a href="./Shellscripting/Rezepte/SelectYourWeapon.html" title="+Rezepte:SelectYourWeapon" class="page">+Rezepte:SelectYourWeapon</a> (Eine Auswahltliste erstellen)<br>
 <a href="./Shellscripting/Rezepte/Daemon.html" title="+Rezepte:Daemon" class="page">+Rezepte:Daemon</a> (Ein Script als Daemon laufen lassen)<br>
-<a href="./Shellscripting/Rezepte/string_has_path.html" title="+Rezepte:string has path" class="page">+Rezepte:string has path</a> (Überprüfen ob ein String mit einem Substring beginnt, der auf einen bestimmten Pfad referenziert)<br>
+<a href="./Shellscripting/Rezepte/string_has_path.html" title="+Rezepte:string has path" class="page">+Rezepte:string has path</a> (Überprüfen ob ein String mit einem Substring beginnt, der auf einen bestimmten Pfad referenziert)
 </p>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Systemprogrammierung.html'>Linux Wissen:Systemprogrammierung</a></li>						<a href='../Hardware_und_Systeminformationen/sysstat.html'>Linux Wissen:Hardware und Systeminformationen:sysstat</a></li>						<a href='../Hardware_und_Systeminformationen/PCI.html'>Linux Wissen:Hardware und Systeminformationen:PCI</a></li>						<a href='../X11/xauth.html'>Linux Wissen:X11:xauth</a></li>						<a href='../Datenrettung_und_Forensik/dd_rescue.html'>Linux Wissen:Datenrettung und Forensik:dd rescue</a></li>						<a href='../Paketverwaltung/Debian/Pakete_bauen.html'>Linux Wissen:Paketverwaltung:Debian:Pakete bauen</a></li>
-				<br><br>
+	<br />
 
-									<b>Attachments:</b>
-					<table>						<tr><td><a href='./Shellscripting/Rezepte'>Rezepte</a></td><td>&nbsp;</td><td>4.10kb</td></tr>					</table>
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Systemprogrammierung.html'>Linux Wissen:Systemprogrammierung</a>
+
+		
+		
+
+		<a href='../Hardware_und_Systeminformationen/sysstat.html'>Linux Wissen:Hardware und Systeminformationen:sysstat</a>
+
+		
+		
+
+		<a href='../Hardware_und_Systeminformationen/PCI.html'>Linux Wissen:Hardware und Systeminformationen:PCI</a>
+
+		
+		
+
+		<a href='../X11/xauth.html'>Linux Wissen:X11:xauth</a>
+
+		
+		
+
+		<a href='../Datenrettung_und_Forensik/dd_rescue.html'>Linux Wissen:Datenrettung und Forensik:dd rescue</a>
+
+		
+		
+
+		<a href='../Paketverwaltung/Debian/Pakete_bauen.html'>Linux Wissen:Paketverwaltung:Debian:Pakete bauen</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>

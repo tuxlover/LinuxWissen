@@ -1,48 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>DML</title>
-		<meta name='Generator' content='Zim 0.60'>
-		<style type='text/css'>
-			a          { text-decoration: none      }
-			a:hover    { text-decoration: underline }
-			a:active   { text-decoration: underline }
-			strike     { color: grey                }
-			u          { text-decoration: none;
-			             background-color: yellow   }
-			tt         { color: #2e3436;            }
-			pre        { color: #2e3436;
-			             margin-left: 20px          }
-			h1         { text-align: center;
-			             color: #4e9a06             }
-			h2         { color: #4e9a06             }
-			h3         { color: #4e9a06             }
-			h4         { color: #4e9a06             }
-			h5         { color: #4e9a06             }
-			span.insen { color: grey                }
-			.page { max-width: 1000px;}
-			.menu{
-				float:left; width: 300px;
-			}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>DML</title>
+	<meta name='Generator' content='Zim 0.62'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
 
-			.content { padding-left: 320px;}
-			.notebook{font-variant: small-caps;
-					color:#4e9a06;
-					padding: 0px 20px;}
-			hr{clear:both;}
-		</style>
+		span.insen { color: grey                }
 
-	</head>
-	<body>
-		<div class="page">
-			<div class="heading">
-									<h1>DML</h1>
-			</div>
-			<hr>
-			<div class="menu">
-				<ul>
-<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a></li>
+		.pages { max-width: 1000px;}
+		.menu{
+			float:left; width: 300px;
+		}
+		.content { padding-left: 320px;}
+		hr{clear:both;}
+	</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class='header'>
+	[ <a href='./DDL.html'>Prev</a> ]
+
+	[ <a href='index'>Index</a> ]
+
+	[ <a href='./Domänen.html'>Next</a> ]
+</div>
+
+<hr />
+
+<div class="menu">
+<ul>
+<li><a href="../../../Linux_Wissen.html" title="Linux Wissen" class="page">Linux Wissen</a>
 <ul>
 <li><a href="../../Accessabillity.html" title="Accessabillity" class="page">Accessabillity</a></li>
 <li><a href="../../Benutzer_und_Gruppen.html" title="Benutzer und Gruppen" class="page">Benutzer und Gruppen</a></li>
@@ -66,20 +80,21 @@
 <li><a href="../../root.html" title="root" class="page">root</a></li>
 <li><a href="../../Shell.html" title="Shell" class="page">Shell</a></li>
 <li><a href="../../Sicherheit.html" title="Sicherheit" class="page">Sicherheit</a></li>
-<li><a href="../../SQL.html" title="SQL" class="page">SQL</a></li>
+<li><a href="../../SQL.html" title="SQL" class="page">SQL</a>
 <ul>
 <li><a href="../Bedingungen.html" title="Bedingungen" class="page">Bedingungen</a></li>
 <li><a href="../Constraints.html" title="Constraints" class="page">Constraints</a></li>
-<li><a href="../Datenanweisungen.html" title="Datenanweisungen" class="page">Datenanweisungen</a></li>
+<li><a href="../Datenanweisungen.html" title="Datenanweisungen" class="page">Datenanweisungen</a>
 <ul>
 <li><a href="./DDL.html" title="DDL" class="page">DDL</a></li>
-<li><strong class="activepage">DML</strong></li>
-<li><a href="./Dom%C3%A4nen.html" title="Domänen" class="page">Domänen</a></li>
+<li><b>DML</b></li>
+<li><a href="./Domänen.html" title="Domänen" class="page">Domänen</a></li>
 </ul>
+</li>
 <li><a href="../Datentypen.html" title="Datentypen" class="page">Datentypen</a></li>
 <li><a href="../Design.html" title="Design" class="page">Design</a></li>
 <li><a href="../Index.html" title="Index" class="page">Index</a></li>
-<li><a href="../Intigrit%C3%A4tsregeln.html" title="Intigritätsregeln" class="page">Intigritätsregeln</a></li>
+<li><a href="../Intigritätsregeln.html" title="Intigritätsregeln" class="page">Intigritätsregeln</a></li>
 <li><a href="../Joins.html" title="Joins" class="page">Joins</a></li>
 <li><a href="../Mysql_Server.html" title="Mysql Server" class="page">Mysql Server</a></li>
 <li><a href="../Normalisierung.html" title="Normalisierung" class="page">Normalisierung</a></li>
@@ -87,22 +102,30 @@
 <li><a href="../UML.html" title="UML" class="page">UML</a></li>
 <li><a href="../Views.html" title="Views" class="page">Views</a></li>
 </ul>
+</li>
 <li><a href="../../Systemprogrammierung.html" title="Systemprogrammierung" class="page">Systemprogrammierung</a></li>
 <li><a href="../../Systemprotokollierung.html" title="Systemprotokollierung" class="page">Systemprotokollierung</a></li>
 <li><a href="../../Systemzeit.html" title="Systemzeit" class="page">Systemzeit</a></li>
 <li><a href="../../Vim_Editor.html" title="Vim Editor" class="page">Vim Editor</a></li>
 <li><a href="../../Web_Fetch_Tools.html" title="Web Fetch Tools" class="page">Web Fetch Tools</a></li>
 <li><a href="../../X11.html" title="X11" class="page">X11</a></li>
-<li><a href="../../Zeitgesteuerte_Vorg%C3%A4nge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
+<li><a href="../../Zeitgesteuerte_Vorgänge.html" title="Zeitgesteuerte Vorgänge" class="page">Zeitgesteuerte Vorgänge</a></li>
 <li><a href="../../zzz_Undokumentiert.html" title="zzz Undokumentiert" class="page">zzz Undokumentiert</a></li>
-</ul>
+</ul></li>
 </ul>
 
-			</div>
-			<div class="content">
-			<!-- Wiki content -->
-				<p>
-Created Samstag 12 November 2011<br>
+</div>
+
+<!-- Wiki content -->
+
+<div class='pages'>
+	<div class='heading'>
+	<h1>DML <a name='Linux Wissen:SQL:Datenanweisungen:DML'></a></h1>
+	</div>
+
+	<div class='content'>
+	<p>
+Created Samstag 12 November 2011
 </p>
 
 <p>
@@ -113,45 +136,46 @@ Created Samstag 12 November 2011<br>
 </p>
 
 <h4>Querry</h4>
+
 <p>
 <ul>
 <li>können mit Aggregatfunktionen kombiniert werden</li>
 </ul>
 Linux Wissen:SQL:Datenanweisungen:Aggregatfunktionen<br>
-Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen<br>
+Linux Wissen:SQL:Datenanweisungen:Mathematische Funktionen
 </p>
 
 <p>
-<strong>SELECT [&lt;Name&gt; AS ] [DISTINCT] &lt;Werte&gt;</strong><br>
+<b>SELECT [&lt;Name&gt; AS ] [DISTINCT] &lt;Werte&gt;</b><br>
 <div style='padding-left: 30pt'>
-<strong>FROM &lt;Tabelle|View&gt;</strong><br>
-<strong>[WHERE &lt;Filter&gt;</strong><br>
-<strong>GROUP BY &lt;wie_soll_gruppiert_werden&gt;</strong><br>
-<strong>HAVING &lt;Ausddruck&gt;</strong><br>
-<strong>ORDER BY &lt;ASC|DESC&gt;[,&lt;Spalte1&gt;,...&lt;Spalte N&gt;]</strong><br>
-<code>LIMIT</code><strong> &lt;Anzahl der Zeilen&gt;];|\G|\g</strong><br>
+<b>FROM &lt;Tabelle|View&gt;</b><br>
+<b>[WHERE &lt;Filter&gt;</b><br>
+<b>GROUP BY &lt;wie_soll_gruppiert_werden&gt;</b><br>
+<b>HAVING &lt;Ausddruck&gt;</b><br>
+<b>ORDER BY &lt;ASC|DESC&gt;[,&lt;Spalte1&gt;,...&lt;Spalte N&gt;]</b><br>
+<tt>LIMIT</tt><b> &lt;Anzahl der Zeilen&gt;];|\G|\g</b>
 </div>
 </p>
 
 <p>
-<strong>SELECT version(),user() [&lt;Database&gt;]</strong><br>
-→ Nutzer und Version der Datenbank &lt;Database&gt;<br>
+<b>SELECT version(),user() [&lt;Database&gt;]</b><br>
+→ Nutzer und Version der Datenbank &lt;Database&gt;
 </p>
 
 <p>
-<strong>SELECT * FROM &lt;table&gt;</strong><br>
+<b>SELECT * FROM &lt;table&gt;</b><br>
 → aus der der Tabelle &lt;table&gt; alle Zeilen anzeigen<br>
-→ die ganze Tabelle &lt;table anzeigen&gt; <br>
+→ die ganze Tabelle &lt;table anzeigen&gt; 
 </p>
 
 <p>
-<strong>SELCECT * FROM &lt;table1&gt;,...,&lt;tableN&gt;</strong><br>
+<b>SELCECT * FROM &lt;table1&gt;,...,&lt;tableN&gt;</b><br>
 → aus allen Tabellen &lt;table1&gt; bis &lt;tableN&gt; alle Zeilen auswählen<br>
-→ die Tabellen werden dabei kartesisch verknüpft<br>
+→ die Tabellen werden dabei kartesisch verknüpft
 </p>
 
 <p>
-<em>Beispiel:</em><br>
+<i>Beispiel:</i>
 </p>
 <pre>
 SELECT Name,Population FROM City 
@@ -159,65 +183,70 @@ WHERE CountryCode='IND'
 AND Population &gt; 3000000;
 </pre>
 
+<br>
 
 <h5>→ !Achtung!:</h5>
+
 <p>
-<strong>Sehr hohe Laufzeit!</strong><br>
+<b>Sehr hohe Laufzeit!</b>
 </p>
 
 <p>
-<strong>SELECT &lt;Spalte1&gt;,&lt;Spalte2&gt;,... FROM &lt;table&gt; &lt;Alias&gt;</strong><br>
+<b>SELECT &lt;Spalte1&gt;,&lt;Spalte2&gt;,... FROM &lt;table&gt; &lt;Alias&gt;</b><br>
 → aus einer Tabelle &lt;table&gt; mehrere Spalten abfragen<br>
-→ ein * steht stellvertretend für alle Spalten einer Tabelle<br>
+→ ein * steht stellvertretend für alle Spalten einer Tabelle
 </p>
 
 <p>
-<strong>SELECT &lt;Spalte&gt; INTO OUTFILE &lt;Datei&gt; FROM &lt;table&gt;</strong><br>
+<b>SELECT &lt;Spalte&gt; INTO OUTFILE &lt;Datei&gt; FROM &lt;table&gt;</b><br>
 → eine &lt;Spalte&gt; einer Tabelle &lt;table&gt; in eine &lt;Datei&gt; schreiben<br>
-→ der Nutzer mysql muss entsprechend auf die Dateien Zugriff haben<br>
+→ der Nutzer mysql muss entsprechend auf die Dateien Zugriff haben
 </p>
 
 <h5>WHERE</h5>
+
 <p>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt;</strong><br>
+<b>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt;</b><br>
 → nur die Werte von Spalte ausgeben die auf &lt;Condition&gt; passen<br>
 → die &lt;Condition&gt; kann auch auf andere auf andere &lt;Spalten&gt; als auf die angezeigte verweisen<br>
 → Währende des Querries<br>
-<a href="../Bedingungen.html" title="Linux Wissen:SQL:Bedingungen" class="page">Linux Wissen:SQL:Bedingungen</a><br>
+<a href="../Bedingungen.html" title="Linux Wissen:SQL:Bedingungen" class="page">Linux Wissen:SQL:Bedingungen</a>
 </p>
 
 <p>
-<strong>SELECT &lt;Spalte1&gt;,... /*eine oder mehrere Spalten */</strong><br>
+<b>SELECT &lt;Spalte1&gt;,... /*eine oder mehrere Spalten */</b><br>
 <div style='padding-left: 30pt'>
-<strong>FROM &lt;Tabelle&gt; /* aus Tabelle */</strong><br>
-<strong>WHERE &lt;BEDINGUNG&gt; /* Wobei folgende Bedingugnen gelten */</strong><br>
-<strong>(</strong><br>
-<strong>SELECT &lt;ABFRAGE&gt;</strong><br>
-<strong>);</strong><br>
+<b>FROM &lt;Tabelle&gt; /* aus Tabelle */</b><br>
+<b>WHERE &lt;BEDINGUNG&gt; /* Wobei folgende Bedingugnen gelten */</b><br>
+<b>(</b><br>
+<b>SELECT &lt;ABFRAGE&gt;</b><br>
+<b>);</b>
 </div>
-→ Unterabfrage in einer Abfrage<br>
+→ Unterabfrage in einer Abfrage
 </p>
 
 <h5>DISTINCT</h5>
+
 <p>
-→ festlegen dass jeder Wert nur einmal angezeigt werden soll<br>
+→ festlegen dass jeder Wert nur einmal angezeigt werden soll
 </p>
 
 <p>
-<strong>SELECT DISTINCT &lt;Spalte&gt; from &lt;Tabelle&gt;</strong><br>
+<b>SELECT DISTINCT &lt;Spalte&gt; from &lt;Tabelle&gt;</b><br>
 → eindeutige Zuordnungseinheiten<br>
-→ muss in sortierter From vorliegen<br>
+→ muss in sortierter From vorliegen
 </p>
 
 <h5>GROUP BY</h5>
+
 <p>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt; GROUP BY </strong><br>
-→ fasst Zeilen nach gemeinsamen Werten entsprechend von Spalte zusammen<br>
+<b>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition&gt; GROUP BY </b><br>
+→ fasst Zeilen nach gemeinsamen Werten entsprechend von Spalte zusammen
 </p>
 
 <p>
-<em>Beispiel:</em><br>
-<em>+++</em><br>
+<i>Beispiel:</i><br>
+<i>+++</i>
 </p>
 <pre>
 SELECT ort, COUNT(*)
@@ -228,19 +257,22 @@ WHERE ort = 'Berlin' OR ort = 'Hamburg'
 GROUP BY ort;
 </pre>
 <p>
-<em>+++</em><br>
-<em>&gt;&gt; Berlin 212</em><br>
-<em>&gt;&gt; Hamburg 17</em><br>
-<br>
+<i>+++</i><br>
+<i>&gt;&gt; Berlin 212</i><br>
+<i>&gt;&gt; Hamburg 17</i>
 </p>
+
 <h5>HAVING</h5>
+
 <p>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; GROUPBY &lt;Spalte&gt; HAVING &lt;Conditon2&gt; </strong><br>
+<b>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; GROUPBY &lt;Spalte&gt; HAVING &lt;Conditon2&gt; </b><br>
 → herausfiltern von unerwünschten Gruppen<br>
-→ Having wirkt nach dem Querry<br>
-<br>
-<em>Beispiel:</em><br>
-<em>+++</em><br>
+→ Having wirkt nach dem Querry
+</p>
+
+<p>
+<i>Beispiel:</i><br>
+<i>+++</i>
 </p>
 <pre>
 SELECT ort, COUNT(*)
@@ -251,41 +283,56 @@ GROUP BY ort
 HAVING COUNT(*) &gt;= 100;
 </pre>
 <p>
-<em>+++</em><br>
-<em>&gt;&gt; Berlin 212</em><br>
-<em>&gt;&gt; Dresden 112</em><br>
-<em>&gt;&gt; Köln 150</em><br>
-<br>
+<i>+++</i><br>
+<i>&gt;&gt; Berlin 212</i><br>
+<i>&gt;&gt; Dresden 112</i><br>
+<i>&gt;&gt; Köln 150</i>
 </p>
+
 <h5>LIMIT</h5>
+
 <p>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; LIMIT N</strong><br>
-→ die auf &lt;Condition&gt; zutreffenden Ergebnisse auf die ersten N Ergebnise limmitiren<br>
-<br>
+<b>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condition1&gt; LIMIT N</b><br>
+→ die auf &lt;Condition&gt; zutreffenden Ergebnisse auf die ersten N Ergebnise limmitiren
 </p>
+
 <h5>ORDER BY</h5>
+
 <p>
-<strong>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condtion&gt; ORDER BY &lt;SpalteA&gt; [ ASC | DESC ]</strong><br>
+<b>SELECT &lt;Spalte&gt; FROM &lt;table&gt; WHERE &lt;Condtion&gt; ORDER BY &lt;SpalteA&gt; [ ASC | DESC ]</b><br>
 → die auf &lt;Condition&gt; zutreffenden Ergebnisse nach &lt;SpalteA&gt; sortieren<br>
-→ sortiren der Abfrage nach <br>
-<br>
+→ sortiren der Abfrage nach 
 </p>
+
 <h5>CONCAT</h5>
+
 <p>
-<strong>SELECT CONCAT(&lt;Zeile1&gt; ,'[&lt;TRENNER]',... ) AS Aliasse</strong><br>
-<strong>FROM &lt;Tabelle&gt;</strong><br>
-<strong>WHERE &lt;Bedingung&gt;</strong><br>
-<strong>ORDER BY &lt;Spalte&gt; DESC|ASC;</strong><br>
-<br>
-→ zusammenführen von Spalten ohne Schlüsselpaar<br>
-<br>
-<em>Beispiele:</em><br>
+<b>SELECT CONCAT(&lt;Zeile1&gt; ,'[&lt;TRENNER]',... ) AS Aliasse</b><br>
+<b>FROM &lt;Tabelle&gt;</b><br>
+<b>WHERE &lt;Bedingung&gt;</b><br>
+<b>ORDER BY &lt;Spalte&gt; DESC|ASC;</b>
+</p>
+
+<p>
+→ zusammenführen von Spalten ohne Schlüsselpaar
+</p>
+
+<p>
+<i>Beispiele:</i><br>
 <div style='padding-left: 30pt'>
-<code>SELECT * FROM City;</code><br>
-<br>
-<code>SELECT * FROM world.City;</code><br>
-<br>
-<code>SELECT ID,Name,Population</code><br>
+<tt>SELECT * FROM City;</tt>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<tt>SELECT * FROM world.City;</tt>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<tt>SELECT ID,Name,Population</tt>
 </div>
 </p>
 <pre style='padding-left: 60pt'>
@@ -293,36 +340,46 @@ FROM City;
 </pre>
 <p>
 <div style='padding-left: 30pt'>
-<code>SELECT Name AS 'City Name', Population Pop</code><br>
+<tt>SELECT Name AS 'City Name', Population Pop</tt>
 </div>
 <div style='padding-left: 60pt'>
-<code>FROM City;</code><br>
-<br>
-</div>
-<div style='padding-left: 30pt'>
-<code>SELECT * FROM Country WHERE IndepYear &gt; 1988;</code><br>
-<br>
-<code>SELECT * FROM Country</code><br>
-</div>
-<div style='padding-left: 60pt'>
-<code>WHERE Population &gt; 50000 AND Conitnet='Africa';</code><br>
-<br>
-</div>
-<div style='padding-left: 30pt'>
-<code>SELECT ID,firstname,lastname,hiredate</code><br>
-</div>
-<div style='padding-left: 60pt'>
-<code>ORDER BY hiredate DESC;</code><br>
-<br>
-</div>
-<div style='padding-left: 30pt'>
-SELECT * FROM Country<br>
-</div>
-<div style='padding-left: 60pt'>
-<code>WHERE (GNP &gt; 500 AND Continent = 'Asia') OR Continent = 'Europe';</code><br>
-<br>
+<tt>FROM City;</tt>
 </div>
 </p>
+
+<p>
+<div style='padding-left: 30pt'>
+<tt>SELECT * FROM Country WHERE IndepYear &gt; 1988;</tt>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<tt>SELECT * FROM Country</tt>
+</div>
+<div style='padding-left: 60pt'>
+<tt>WHERE Population &gt; 50000 AND Conitnet='Africa';</tt>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+<tt>SELECT ID,firstname,lastname,hiredate</tt>
+</div>
+<div style='padding-left: 60pt'>
+<tt>ORDER BY hiredate DESC;</tt>
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+SELECT * FROM Country
+</div>
+<div style='padding-left: 60pt'>
+<tt>WHERE (GNP &gt; 500 AND Continent = 'Asia') OR Continent = 'Europe';</tt>
+</div>
+</p>
+
 <pre style='padding-left: 30pt'>
 SELECT * FROM Country
 </pre>
@@ -338,93 +395,118 @@ SELECT CONCAT(table_schema,'.',table_name)
 				ORDER BY table_rows DESC;
 </pre>
 <h3>Manipulieren</h3>
+
 <p>
 <ul>
 <li>Tabellen mit Daten auffüllen</li>
 <li>Daten in Tabellen aktualisierien</li>
 <li>Daten in Tabellen verändern</li>
 </ul>
-<br>
 </p>
+
 <h5>INSERT</h5>
+
 <p>
 → schreiben von Daten in eine Tabelle<br>
 → neue Einträge in eine Datenbank Tabelle hinzufügen<br>
-→ wird der Wert <code>DEFAULT </code>benutzt, wird der definierte Standardwert gesetzt<br>
-→ überschreibt keine bestehenden Werte<br>
-<br>
-<strong>INSERT INTO &lt;table&gt;  (&lt;Attribute&gt;,...)  VALUES  (&lt;Werte&gt;,...),(&lt;Werte&gt;,...)...;</strong><br>
+→ wird der Wert <tt>DEFAULT </tt>benutzt, wird der definierte Standardwert gesetzt<br>
+→ überschreibt keine bestehenden Werte
+</p>
+
+<p>
+<b>INSERT INTO &lt;table&gt;  (&lt;Attribute&gt;,...)  VALUES  (&lt;Werte&gt;,...),(&lt;Werte&gt;,...)...;</b><br>
 → fügt in die Tabelle &lt;table&gt; die entsprrechenden &lt;Attribute&gt; und den dazugerhörigen &lt;Werte&gt; ein<br>
 → bijektiv Abbildung<br>
 → jeder Record wird als Vektor in einem Klammerpaar dargestellt<br>
-→ die &lt;Attribute&gt; müssen bereits definiert sein<br>
-<br>
-<strong>INSERT INTO &lt;Tabelle&gt; VALUES (&lt;Werte&gt;)</strong><br>
-→ NULL und DEFAULT Werte werden ersetzt<br>
-<br>
-<strong>INSERT INTO &lt;table1&gt; SELECT &lt;Spalte&gt; FROM &lt;table2&gt;</strong><br>
+→ die &lt;Attribute&gt; müssen bereits definiert sein
+</p>
+
+<p>
+<b>INSERT INTO &lt;Tabelle&gt; VALUES (&lt;Werte&gt;)</b><br>
+→ NULL und DEFAULT Werte werden ersetzt
+</p>
+
+<p>
+<b>INSERT INTO &lt;table1&gt; SELECT &lt;Spalte&gt; FROM &lt;table2&gt;</b><br>
 → Werte von einer Tabelle &lt;table2&gt; einer &lt;Spalte&gt; in die Tabelle &lt;table1&gt; einfügen<br>
-→ Dimenstion und Attribute müssen übereinstimmen<br>
-<br>
-<strong>INSERT INTO emp SET &lt;Spalte&gt;=&lt;Wert&gt;,...;</strong><br>
-<br>
-<em>Beispiel:</em><br>
+→ Dimenstion und Attribute müssen übereinstimmen
+</p>
+
+<p>
+<b>INSERT INTO emp SET &lt;Spalte&gt;=&lt;Wert&gt;,...;</b>
+</p>
+
+<p>
+<i>Beispiel:</i><br>
 3 verschieden Möglichkeiten;<br>
-(1) <code>INSERT INTO emp(id,last_name,Number) </code><br>
+(1) <tt>INSERT INTO emp(id,last_name,Number) </tt>
 </p>
 <pre style='padding-left: 30pt'>
 VALUES (10,'jonson',2089487);
 </pre>
 <p>
-(2)<code> INSERT INTO emp VALUES(10,'jonson',2089487);</code><br>
-<br>
-(3) <code>INSERT INTO emp</code><br>
+(2)<tt> INSERT INTO emp VALUES(10,'jonson',2089487);</tt>
+</p>
+
+<p>
+(3) <tt>INSERT INTO emp</tt>
 </p>
 <pre style='padding-left: 30pt'>
 SET id=10, last_name='jonson',Number=2089487;
 </pre>
 <p>
 Mehere Records einfügen:<br>
-(1) <code>INSERT INTO Dinner(Vorspeise,Nachspeise) </code><br>
+(1) <tt>INSERT INTO Dinner(Vorspeise,Nachspeise) </tt>
 </p>
 <pre style='padding-left: 30pt'>
 VALUES('Nudeln','Pudding'),('Steak','Joghurt');
 </pre>
 <h5>REPLACE</h5>
+
 <p>
 → hinzufügen meherer Records<br>
 → ersetzt bestehende Records<br>
-→ <code>DELETE und INSERT</code> als ein Befehl<br>
-<br>
-<strong>REPLACE INTO &lt;Tabelle&gt; </strong><br>
-<div style='padding-left: 30pt'>
-<strong>SET &lt;Spalte1&gt;=&lt;Wert1&gt;,...,&lt;SpalteN&gt;=&lt;WertN&gt;;</strong><br>
-<br>
-</div>
-<em>Beispiel:</em><br>
-<code>REPLACE INTO emp</code><br>
-<div style='padding-left: 30pt'>
-<code>SET id=3,frst_name='Joseph',Geld=1000;</code><br>
-</div>
-<br>
-<br>
+→ <tt>DELETE und INSERT</tt> als ein Befehl
 </p>
+
+<p>
+<b>REPLACE INTO &lt;Tabelle&gt; </b><br>
+<div style='padding-left: 30pt'>
+<b>SET &lt;Spalte1&gt;=&lt;Wert1&gt;,...,&lt;SpalteN&gt;=&lt;WertN&gt;;</b>
+</div>
+</p>
+
+<p>
+<i>Beispiel:</i><br>
+<tt>REPLACE INTO emp</tt><br>
+<div style='padding-left: 30pt'>
+<tt>SET id=3,frst_name='Joseph',Geld=1000;</tt>
+</div>
+</p>
+
+<br>
+
 <h5>UPDATE</h5>
+
 <p>
 → ANSI/ISO Standard DML Statement<br>
 → verändern von Daten in einer Tabelle<br>
 → das Attribut ist bereits vergeben<br>
-→ Ein Attribut wird aufgrund eines Matches in einer WHERE Klausel geändert<br>
-<br>
-<strong>UPDATE &lt;table&gt; SET &lt;Attribut&gt;=&lt;Wert&gt; [ WHERE= &lt;Condition&gt;] [LIMIT N,M]</strong><br>
+→ Ein Attribut wird aufgrund eines Matches in einer WHERE Klausel geändert
+</p>
+
+<p>
+<b>UPDATE &lt;table&gt; SET &lt;Attribut&gt;=&lt;Wert&gt; [ WHERE= &lt;Condition&gt;] [LIMIT N,M]</b><br>
 → setzt einen neuen &lt;Wert&gt; für Attribut von Tabelle &lt;table&gt; wo die Bedingungen &lt;Condition&gt; zutreffen<br>
 → mehrere Attribute müssen durch Kommata getrennt werden<br>
-→ <code>WHERE </code>Klausel muss mit angegeben werden, da sonst jeder Record aktualisiert wird<br>
+→ <tt>WHERE </tt>Klausel muss mit angegeben werden, da sonst jeder Record aktualisiert wird<br>
 → Mit LIMIT wird die WHERE Klausel weiter eingeschärnkt, falls es zum Beispiel meherer Einträge Maier gibt<br>
-→ <code>sql_safe_update </code>in my.cnf  erzwingt die eindeutige Eingrenzung durch <code>WHERE</code> Klausel<br>
-<a href="../../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf" class="page">Linux Wissen:FHS:etc:my.cnf</a><br>
-<br>
-<em>Beispiel:</em><br>
+→ <tt>sql_safe_update </tt>in my.cnf  erzwingt die eindeutige Eingrenzung durch <tt>WHERE</tt> Klausel<br>
+<a href="../../FHS/etc/my.cnf.html" title="Linux Wissen:FHS:etc:my.cnf" class="page">Linux Wissen:FHS:etc:my.cnf</a>
+</p>
+
+<p>
+<i>Beispiel:</i>
 </p>
 <pre>
 UPDATE personen
@@ -439,18 +521,32 @@ WHERE nachname='Anders'
 LIMIT 1;
 </pre>
 
+	</div>
 
-			<!-- End wiki content -->
-			</div>
-			<hr>
-			<!-- Backlinks -->
-			<div class="footer">
-									<b>Backlinks:</b>						<a href='../Views.html'>Linux Wissen:SQL:Views</a></li>						<a href='../Mysql_Server/Mysql_Clients/mysql_Client/Funktionen.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client:Funktionen</a></li>
-				<br><br>
+	<br />
 
-				
-			<!-- End Backlinks -->
-			</div>
-		</div>
-	</body>
+	<div class='page-footer'>
+		<b>Backlinks:</b>
+
+		<a href='../Views.html'>Linux Wissen:SQL:Views</a>
+
+		
+		
+
+		<a href='../Datenanweisungen.html'>Linux Wissen:SQL:Datenanweisungen</a>
+
+		
+		
+
+		<a href='../Mysql_Server/Mysql_Clients/mysql_Client/Funktionen.html'>Linux Wissen:SQL:Mysql Server:Mysql Clients:mysql Client:Funktionen</a>
+
+		<br /><br />
+
+	</div>
+
+	
+
+</div>
+
+</body>
 </html>
